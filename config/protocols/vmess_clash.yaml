@@ -1,0 +1,4907 @@
+mixed-port: 7890
+allow-lan: true
+bind-address: '*'
+mode: rule
+log-level: warning
+ipv6: false
+external-controller: 127.0.0.1:9090
+secret: ""
+unified-delay: true
+tcp-concurrent: true
+global-client-fingerprint: chrome
+find-process-mode: strict
+keep-alive-interval: 30
+
+dns:
+  enable: true
+  ipv6: false
+  listen: 0.0.0.0:5353
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+    - "*.lan"
+    - "*.local"
+    - "*.ir"
+    - "+.stun.*.*"
+    - "+.stun.*.*.*"
+    - "localhost.ptlogin2.qq.com"
+    - "time.windows.com"
+    - "time.nist.gov"
+    - "time.apple.com"
+  default-nameserver:
+    - 8.8.8.8
+    - 1.1.1.1
+  nameserver:
+    - https://8.8.8.8/dns-query
+    - https://1.1.1.1/dns-query
+    - https://dns.google/dns-query
+  proxy-server-nameserver:
+    - https://8.8.8.8/dns-query
+    - https://1.1.1.1/dns-query
+  fallback:
+    - https://1.1.1.1/dns-query
+    - tls://8.8.8.8:853
+    - tls://1.1.1.1:853
+  fallback-filter:
+    geoip: true
+    geoip-code: IR
+    ipcidr:
+      - 240.0.0.0/4
+      - 0.0.0.0/8
+
+proxies:
+  - name: "Delta-Kronecker-vmess-001"
+    type: vmess
+    server: "172.233.229.91"
+    port: 14102
+    uuid: "27ba87fc-583f-4763-9060-83cf0b9264db"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+  - name: "Delta-Kronecker-vmess-002"
+    type: vmess
+    server: "8.210.79.212"
+    port: 55185
+    uuid: "aa3c3018-288b-46f3-af1c-9044e18d6e5b"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/Notif_Chat"
+  - name: "Delta-Kronecker-vmess-003"
+    type: vmess
+    server: "209.126.84.189"
+    port: 443
+    uuid: "2c981164-9b93-4bca-94ff-b78d3f8498d7"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/vmessws"
+      headers:
+        Host: "209.126.84.189"
+  - name: "Delta-Kronecker-vmess-004"
+    type: vmess
+    server: "pq-Hungary1.09vpn.com"
+    port: 80
+    uuid: "703f722a-4bdf-4e9d-9afd-a681fdf87c74"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/vmess/"
+  - name: "Delta-Kronecker-vmess-005"
+    type: vmess
+    server: "165.140.216.141"
+    port: 443
+    uuid: "e7d72a8d-26f2-4b54-b366-0c43e0bcba7d"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+  - name: "Delta-Kronecker-vmess-006"
+    type: vmess
+    server: "165.154.195.38"
+    port: 35034
+    uuid: "959a8caf-4cea-43d0-a548-3628e7ddfafc"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+  - name: "Delta-Kronecker-vmess-007"
+    type: vmess
+    server: "15.235.83.228"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "lammaland.org"
+    network: ws
+    ws-opts:
+      path: "linkvws"
+      headers:
+        Host: "lammaland.org"
+  - name: "Delta-Kronecker-vmess-008"
+    type: vmess
+    server: "148.113.176.192"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "fapeng.org"
+    network: ws
+    ws-opts:
+      path: "linkvws"
+  - name: "Delta-Kronecker-vmess-009"
+    type: vmess
+    server: "v2ray.codefyinc.com"
+    port: 443
+    uuid: "2c981164-9b93-4bca-94ff-b78d3f8498d7"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/vmessws"
+      headers:
+        Host: "v2ray.codefyinc.com"
+  - name: "Delta-Kronecker-vmess-010"
+    type: vmess
+    server: "57.129.25.22"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc"
+    network: ws
+    ws-opts:
+      path: "/linkvws"
+      headers:
+        Host: "o.metuji.com"
+  - name: "Delta-Kronecker-vmess-011"
+    type: vmess
+    server: "45.13.227.118"
+    port: 80
+    uuid: "8ce64662-f8b8-4955-bdf2-a55b821bc4aa"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/eyJqdW5rIjoiNDBNWGY3Z0NPd0loZ2YiLCJwcm90b2NvbCI6InZsIiwibW9kZSI6InByb3h5aXAiLCJwYW5lbElQcyI6W119"
+      headers:
+        Host: "......................................................................................()..........................................................................................................................................................................................................................................................."
+  - name: "Delta-Kronecker-vmess-012"
+    type: vmess
+    server: "162.159.152.4"
+    port: 443
+    uuid: "2c981164-9b93-4bca-94ff-b78d3f8498d7"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "v2ray.codefyinc.com"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/vmessws"
+      headers:
+        Host: "v2ray.codefyinc.com"
+  - name: "Delta-Kronecker-vmess-013"
+    type: vmess
+    server: "vc.fly.dev"
+    port: 443
+    uuid: "35379219-6535-4f2e-a4fe-3e44f61e0eee"
+    alterId: 32
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vc.fly.dev"
+    network: ws
+    ws-opts:
+      path: "/vc"
+      headers:
+        Host: "vc.fly.dev"
+  - name: "Delta-Kronecker-vmess-014"
+    type: vmess
+    server: "tr1-smart.adelping.com"
+    port: 80
+    uuid: "43dcdce1-3cea-4193-bc8d-90b92071d779"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+  - name: "Delta-Kronecker-vmess-015"
+    type: vmess
+    server: "45.89.52.207"
+    port: 39651
+    uuid: "ac4c12c5-45f2-4398-a718-9983941ede2b"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+  - name: "Delta-Kronecker-vmess-016"
+    type: vmess
+    server: "dll.avaaaal.ir"
+    port: 8443
+    uuid: "725f5fcd-721d-40a0-ba6b-3c7477633110"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "cdge.avaaaal.ir"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "cdge.avaaaal.ir"
+  - name: "Delta-Kronecker-vmess-017"
+    type: vmess
+    server: "YyYYuUI.iRAn1912.dpDNs.oRG"
+    port: 443
+    uuid: "4a7baca1-8048-4a91-8316-595b36657a54"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "YYyYUui.iran1912.dpdNS.OrG"
+    network: ws
+    ws-opts:
+      path: "/TaBvkrUbsyvsvinsGGg"
+      headers:
+        Host: "YYyYUui.iran1912.dpdNS.OrG"
+  - name: "Delta-Kronecker-vmess-018"
+    type: vmess
+    server: "adelmeli.com"
+    port: 80
+    uuid: "89e25562-d0f1-4f54-8afb-6ee374e30fbb"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+  - name: "Delta-Kronecker-vmess-019"
+    type: vmess
+    server: "104.21.44.213"
+    port: 443
+    uuid: "98b419ef-83a2-4d1b-a23d-566b7f24477b"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "BBBBbbBh.HUangSHaNg.oNline"
+    network: ws
+    ws-opts:
+      path: "/Iu415Fpf5REYxWLpTGA5AqzZ2Mj"
+      headers:
+        Host: "BBBBbbBh.HUangSHaNg.oNline"
+  - name: "Delta-Kronecker-vmess-020"
+    type: vmess
+    server: "6c00bf1f-a569-4d54-9f71-a13611801867.661.qzz.io"
+    port: 443
+    uuid: "0c6b96bc-5e3a-4500-8497-6dead1965609"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "6c00bf1f-a569-4d54-9f71-a13611801867.661.qzz.io"
+    network: ws
+    ws-opts:
+      path: "/KHtPvNZl371C8NsbbZ1wwDhJ3"
+      headers:
+        Host: "6c00bf1f-a569-4d54-9f71-a13611801867.661.qzz.io"
+  - name: "Delta-Kronecker-vmess-021"
+    type: vmess
+    server: "51.79.102.253"
+    port: 80
+    uuid: "58fe1542-5290-40ad-815a-77707a81afe5"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/IOebhLMhl1CTbFHbL95myfRX2"
+  - name: "Delta-Kronecker-vmess-022"
+    type: vmess
+    server: "51.79.103.76"
+    port: 80
+    uuid: "58fe1542-5290-40ad-815a-77707a81afe5"
+    alterId: 0
+    cipher: "aes-128-gcm"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/IOebhLMhl1CTbFHbL95myfRX2"
+      headers:
+        Host: "google.com"
+  - name: "Delta-Kronecker-vmess-023"
+    type: vmess
+    server: "23.162.200.227"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "23.162.200.227"
+    network: ws
+    ws-opts:
+      path: "/linkvws"
+  - name: "Delta-Kronecker-vmess-024"
+    type: vmess
+    server: "15.235.85.147"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "pelang.org"
+    network: ws
+    ws-opts:
+      path: "linkvws"
+      headers:
+        Host: "pelang.org"
+  - name: "Delta-Kronecker-vmess-025"
+    type: vmess
+    server: "15.235.85.156"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "kampong.org"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "linkvws"
+      headers:
+        Host: "kampong.org"
+  - name: "Delta-Kronecker-vmess-026"
+    type: vmess
+    server: "94.232.247.165"
+    port: 45653
+    uuid: "9e91d19a-c73f-4276-adbc-b337c374259c"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+  - name: "Delta-Kronecker-vmess-027"
+    type: vmess
+    server: "162.19.248.238"
+    port: 550
+    uuid: "ede27a79-b039-490b-932c-495de4b68880"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+  - name: "Delta-Kronecker-vmess-028"
+    type: vmess
+    server: "141.95.126.134"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "jamekk.org"
+    network: ws
+    ws-opts:
+      path: "linkvws"
+      headers:
+        Host: "jamekk.org"
+  - name: "Delta-Kronecker-vmess-029"
+    type: vmess
+    server: "15.235.41.200"
+    port: 80
+    uuid: "58fe1542-5290-40ad-815a-77707a81afe5"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/IOebhLMhl1CTbFHbL95myfRX2"
+  - name: "Delta-Kronecker-vmess-030"
+    type: vmess
+    server: "57.129.24.131"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "kampong.org"
+    network: ws
+    ws-opts:
+      path: "linkvws"
+      headers:
+        Host: "kampong.org"
+  - name: "Delta-Kronecker-vmess-031"
+    type: vmess
+    server: "57.129.28.216"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "fapeng.org"
+    network: ws
+    ws-opts:
+      path: "linkvws"
+      headers:
+        Host: "fapeng.org"
+  - name: "Delta-Kronecker-vmess-032"
+    type: vmess
+    server: "104.21.75.124"
+    port: 443
+    uuid: "5cccb4da-8aee-4b01-be84-2056265e52dc"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "BbbbBb.tAiwaN2028.InDeVs.iN"
+    network: ws
+    ws-opts:
+      path: "/AwUJyGh9Ym6vVzg35A6ueyyZnWd"
+      headers:
+        Host: "BbBbBB.taIwAN2028.InDeVs.iN"
+  - name: "Delta-Kronecker-vmess-033"
+    type: vmess
+    server: "57.129.132.223"
+    port: 80
+    uuid: "a25cbf11-2908-4a1b-a3a8-9a571777dca3"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/vmess/"
+      headers:
+        Host: "google.com"
+  - name: "Delta-Kronecker-vmess-034"
+    type: vmess
+    server: "57.129.24.132"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "serkat.org"
+    network: ws
+    ws-opts:
+      path: "linkvws"
+      headers:
+        Host: "serkat.org"
+  - name: "Delta-Kronecker-vmess-035"
+    type: vmess
+    server: "172.64.149.182"
+    port: 8080
+    uuid: "nasnet"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/nasnet/cdn"
+      headers:
+        Host: "nasnet-5712964102.sharghdaily.co"
+  - name: "Delta-Kronecker-vmess-036"
+    type: vmess
+    server: "57.129.28.63"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "fapeng.org"
+    network: ws
+    ws-opts:
+      path: "linkvws"
+      headers:
+        Host: "fapeng.org"
+  - name: "Delta-Kronecker-vmess-037"
+    type: vmess
+    server: "15.235.50.172"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "baradiha.com"
+    network: ws
+    ws-opts:
+      path: "/linkvws"
+      headers:
+        Host: "baradiha.com"
+  - name: "Delta-Kronecker-vmess-038"
+    type: vmess
+    server: "104.21.70.50"
+    port: 443
+    uuid: "0c6b96bc-5e3a-4500-8497-6dead1965609"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "6c00bf1f-a569-4d54-9f71-a13611801867.661.qzz.io"
+    network: ws
+    ws-opts:
+      path: "/KHtPvNZl371C8NsbbZ1wwDhJ3"
+      headers:
+        Host: "6c00bf1f-a569-4d54-9f71-a13611801867.661.qzz.io"
+  - name: "Delta-Kronecker-vmess-039"
+    type: vmess
+    server: "lop.bb3.indevs.in"
+    port: 80
+    uuid: "b020865b-7404-4894-ba65-a7414b10cda3"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/boWUVaU0sxrNtFSdOPjqSc7fzeJr"
+      headers:
+        Host: "lop.bb3.indevs.in"
+  - name: "Delta-Kronecker-vmess-040"
+    type: vmess
+    server: "172.67.208.155"
+    port: 443
+    uuid: "5cccb4da-8aee-4b01-be84-2056265e52dc"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "bbbnmkl.2030.pp.ua"
+    network: ws
+    ws-opts:
+      path: "/AwUJyGh9Ym6vVzg35A6ueyyZnWd"
+      headers:
+        Host: "bbbnmkl.2030.pp.ua"
+  - name: "Delta-Kronecker-vmess-041"
+    type: vmess
+    server: "104.21.15.232"
+    port: 443
+    uuid: "5cccb4da-8aee-4b01-be84-2056265e52dc"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "bbbnmkl.2030.pp.ua"
+    network: ws
+    ws-opts:
+      path: "/AwUJyGh9Ym6vVzg35A6ueyyZnWd"
+      headers:
+        Host: "bbbnmkl.2030.pp.ua"
+  - name: "Delta-Kronecker-vmess-042"
+    type: vmess
+    server: "l98.222560.xyz"
+    port: 443
+    uuid: "c558328b-eb46-424c-b9e0-574770f0b072"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "l98.222560.xyz"
+    network: ws
+    ws-opts:
+      path: "/7sOz0p4SzU1D6XNC0BXGtJ"
+      headers:
+        Host: "l98.222560.xyz"
+  - name: "Delta-Kronecker-vmess-043"
+    type: vmess
+    server: "172.67.203.235"
+    port: 443
+    uuid: "98b419ef-83a2-4d1b-a23d-566b7f24477b"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "BBBBbbBh.HUangSHaNg.oNline"
+    network: ws
+    ws-opts:
+      path: "/Iu415Fpf5REYxWLpTGA5AqzZ2Mj"
+      headers:
+        Host: "BBBBbbBh.HUangSHaNg.oNline"
+  - name: "Delta-Kronecker-vmess-044"
+    type: vmess
+    server: "57.129.25.23"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "yichueng.org"
+    network: ws
+    ws-opts:
+      path: "linkvws"
+      headers:
+        Host: "yichueng.org"
+  - name: "Delta-Kronecker-vmess-045"
+    type: vmess
+    server: "57.128.189.240"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "57.128.189.240"
+    network: ws
+    ws-opts:
+      path: "/linkvws"
+  - name: "Delta-Kronecker-vmess-046"
+    type: vmess
+    server: "BbBBBBBh.hUAngsHANg.OnLINe"
+    port: 443
+    uuid: "98b419ef-83a2-4d1b-a23d-566b7f24477b"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "BBBBbbBh.HUangSHaNg.oNline"
+    network: ws
+    ws-opts:
+      path: "/Iu415Fpf5REYxWLpTGA5AqzZ2Mj"
+      headers:
+        Host: "BBBBbbBh.HUangSHaNg.oNline"
+  - name: "Delta-Kronecker-vmess-047"
+    type: vmess
+    server: "c7.620720.xyz"
+    port: 8443
+    uuid: "516d8a7a-3f0b-41d3-bad0-246116381516"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "c7.620720.xyz"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "c7.620720.xyz"
+  - name: "Delta-Kronecker-vmess-048"
+    type: vmess
+    server: "mko.bb1.indevs.in"
+    port: 443
+    uuid: "b020865b-7404-4894-ba65-a7414b10cda3"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "mko.bb1.indevs.in"
+    network: ws
+    ws-opts:
+      path: "/boWUVaU0sxrNtFSdOPjqSc7fzeJr"
+      headers:
+        Host: "mko.bb1.indevs.in"
+  - name: "Delta-Kronecker-vmess-049"
+    type: vmess
+    server: "mmki9.kk1.ccwu.cc"
+    port: 443
+    uuid: "9d24b07c-71f4-4aa5-95ac-3307c6995619"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "mmki9.kk1.ccwu.cc"
+    network: ws
+    ws-opts:
+      path: "/FlydU79Rnu0lNhu1YZc7zZ"
+      headers:
+        Host: "mmki9.kk1.ccwu.cc"
+  - name: "Delta-Kronecker-vmess-050"
+    type: vmess
+    server: "85.133.204.67"
+    port: 80
+    uuid: "89e25562-d0f1-4f54-8afb-6ee374e30fbb"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+  - name: "Delta-Kronecker-vmess-051"
+    type: vmess
+    server: "104.21.29.205"
+    port: 443
+    uuid: "13ad36e6-c091-43f2-8505-47d868dd544c"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "njk.222560.xyz"
+    network: ws
+    ws-opts:
+      path: "/YsmRouA9ZbxgW4"
+      headers:
+        Host: "njk.222560.xyz"
+  - name: "Delta-Kronecker-vmess-052"
+    type: vmess
+    server: "n1761214905.wpg27.xyz"
+    port: 443
+    uuid: "b1d3007c-441a-42d5-84b5-20301c46fa2c"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "n1761214905.wpg27.xyz"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "n1761214905.wpg27.xyz"
+  - name: "Delta-Kronecker-vmess-053"
+    type: vmess
+    server: "njk.222560.xyz"
+    port: 443
+    uuid: "13ad36e6-c091-43f2-8505-47d868dd544c"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "njk.222560.xyz"
+    network: ws
+    ws-opts:
+      path: "/YsmRouA9ZbxgW4"
+      headers:
+        Host: "njk.222560.xyz"
+  - name: "Delta-Kronecker-vmess-054"
+    type: vmess
+    server: "57.129.28.64"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "serkat.org"
+    network: ws
+    ws-opts:
+      path: "linkvws"
+      headers:
+        Host: "Join---v2rayngzendegimamad"
+  - name: "Delta-Kronecker-vmess-055"
+    type: vmess
+    server: "89.31.120.192"
+    port: 443
+    uuid: "44537595-9ccc-4b83-8936-5f9ad3229019"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+  - name: "Delta-Kronecker-vmess-056"
+    type: vmess
+    server: "NNmJKIo.TaiPeI101.indEVS.In"
+    port: 443
+    uuid: "98b419ef-83a2-4d1b-a23d-566b7f24477b"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "NnmjKIo.TaIpei101.iNdevS.iN"
+    network: ws
+    ws-opts:
+      path: "/Iu415Fpf5REYxWLpTGA5AqzZ2Mj"
+      headers:
+        Host: "NnmjKIo.TaIpei101.iNdevS.iN"
+  - name: "Delta-Kronecker-vmess-057"
+    type: vmess
+    server: "jjkm.zem.indevs.in"
+    port: 80
+    uuid: "c558328b-eb46-424c-b9e0-574770f0b072"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/7sOz0p4SzU1D6XNC0BXGtJ"
+      headers:
+        Host: "jjkm.zem.indevs.in"
+  - name: "Delta-Kronecker-vmess-058"
+    type: vmess
+    server: "turk1.net.net"
+    port: 80
+    uuid: "43dcdce1-3cea-4193-bc8d-90b92071d779"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "tr1-smart.adelping.com."
+  - name: "Delta-Kronecker-vmess-059"
+    type: vmess
+    server: "TM_AZARBAYJAB1.SERV.9.pagES.DEV"
+    port: 80
+    uuid: "43dcdce1-3cea-4193-bc8d-90b92071d779"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "tr1-smart.adelping.com"
+  - name: "Delta-Kronecker-vmess-060"
+    type: vmess
+    server: "8.217.13.74"
+    port: 31769
+    uuid: "cf1ad6c7-5987-4314-82bb-b4399040d047"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+  - name: "Delta-Kronecker-vmess-061"
+    type: vmess
+    server: "NNnMJJu.131.PP.ua"
+    port: 443
+    uuid: "98b419ef-83a2-4d1b-a23d-566b7f24477b"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "NNnmJJu.131.PP.Ua"
+    network: ws
+    ws-opts:
+      path: "/Iu415Fpf5REYxWLpTGA5AqzZ2Mj"
+      headers:
+        Host: "NNnmJJu.131.PP.Ua"
+  - name: "Delta-Kronecker-vmess-062"
+    type: vmess
+    server: "45.141.148.143"
+    port: 5059
+    uuid: "e720d2b6-80dd-4664-b64e-6cc784bce329"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "bmi.ir"
+  - name: "Delta-Kronecker-vmess-063"
+    type: vmess
+    server: "3er.8900604.xyz"
+    port: 443
+    uuid: "4c205c81-5694-43fe-a287-af563a2ebc05"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "3er.8900604.xyz"
+    network: ws
+    ws-opts:
+      path: "/djA07iUsSp0K2Fo4gds7cXpDB5nO5"
+      headers:
+        Host: "3er.8900604.xyz"
+  - name: "Delta-Kronecker-vmess-064"
+    type: vmess
+    server: "v36.hdacd.com"
+    port: 30836
+    uuid: "cbb3f877-d1fb-344c-87a9-d153bffd5484"
+    alterId: 2
+    cipher: "auto"
+    udp: true
+  - name: "Delta-Kronecker-vmess-065"
+    type: vmess
+    server: "188.114.98.0"
+    port: 8080
+    uuid: "e8b1500b-e9e8-5492-8312-f4eadf7d0767"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/nasnet/cdn"
+      headers:
+        Host: "nasnet-162191099.sharghdaily.co"
+  - name: "Delta-Kronecker-vmess-066"
+    type: vmess
+    server: "172.67.73.163"
+    port: 8080
+    uuid: "e8b1500b-e9e8-5492-8312-f4eadf7d0767"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/nasnet/cdn"
+      headers:
+        Host: "nasnet-162191099.sharghdaily.co"
+  - name: "Delta-Kronecker-vmess-067"
+    type: vmess
+    server: "chatgpt.com"
+    port: 80
+    uuid: "43dcdce1-3cea-4193-bc8d-90b92071d779"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "tr1-smart.adelping.com."
+  - name: "Delta-Kronecker-vmess-068"
+    type: vmess
+    server: "n1761214915.mv7wh.tech"
+    port: 443
+    uuid: "1f2daf43-ff90-4df9-9276-dfb8486d72bc"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "n1761214915.mv7wh.tech"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "n1761214915.mv7wh.tech"
+  - name: "Delta-Kronecker-vmess-069"
+    type: vmess
+    server: "8.6.112.0"
+    port: 2083
+    uuid: "e6395c20-4571-4b34-d6b1-55a5d36e49ea"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "hgtrojan.zabc.net"
+    network: ws
+    ws-opts:
+      path: "/e6395c20"
+      headers:
+        Host: "hgtrojan.zabc.net"
+  - name: "Delta-Kronecker-vmess-070"
+    type: vmess
+    server: "tgju.org"
+    port: 8080
+    uuid: "e8b1500b-e9e8-5492-8312-f4eadf7d0767"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/nasnet/cdn"
+      headers:
+        Host: "nasnet-571296497.iranpress.co"
+  - name: "Delta-Kronecker-vmess-071"
+    type: vmess
+    server: "pq-brazil1.09vpn.com"
+    port: 80
+    uuid: "c04c3b34-70fd-4fec-963e-c12d09f36bef"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/vmess/"
+      headers:
+        Host: "pq-brazil1.09vpn.com"
+  - name: "Delta-Kronecker-vmess-072"
+    type: vmess
+    server: "104.26.14.85"
+    port: 8080
+    uuid: "e8b1500b-e9e8-5492-8312-f4eadf7d0767"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/nasnet/cdn"
+      headers:
+        Host: "nasnet-162191099.sharghdaily.co"
+  - name: "Delta-Kronecker-vmess-073"
+    type: vmess
+    server: "47.243.95.187"
+    port: 443
+    uuid: "c28a6258-7baa-40fc-8a51-87f59c847cd7"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "n1761214906.wpg27.xyz"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "n1761214906.wpg27.xyz"
+  - name: "Delta-Kronecker-vmess-074"
+    type: vmess
+    server: "mko.859886.xyz"
+    port: 443
+    uuid: "b020865b-7404-4894-ba65-a7414b10cda3"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "mko.859886.xyz"
+    network: ws
+    ws-opts:
+      path: "/boWUVaU0sxrNtFSdOPjqSc7fzeJr"
+      headers:
+        Host: "mko.859886.xyz"
+  - name: "Delta-Kronecker-vmess-075"
+    type: vmess
+    server: "104.21.76.158"
+    port: 443
+    uuid: "516d8a7a-3f0b-41d3-bad0-246116381516"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sy4.620720.xyz"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "sy4.620720.xyz"
+  - name: "Delta-Kronecker-vmess-076"
+    type: vmess
+    server: "57.129.25.20"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "lammaland.org"
+    network: ws
+    ws-opts:
+      path: "linkvws"
+      headers:
+        Host: "lammaland.org"
+  - name: "Delta-Kronecker-vmess-077"
+    type: vmess
+    server: "freedom.vipgsmteam.info"
+    port: 17356
+    uuid: "f95cb5ae-1b06-4a57-aba0-30afe12d23ed"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+  - name: "Delta-Kronecker-vmess-078"
+    type: vmess
+    server: "172.67.190.94"
+    port: 443
+    uuid: "9d24b07c-71f4-4aa5-95ac-3307c6995619"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "mmki9.kk1.ccwu.cc"
+    network: ws
+    ws-opts:
+      path: "/FlydU79Rnu0lNhu1YZc7zZ"
+      headers:
+        Host: "mmki9.kk1.ccwu.cc"
+  - name: "Delta-Kronecker-vmess-079"
+    type: vmess
+    server: "47.242.192.233"
+    port: 52190
+    uuid: "98689724-deb2-4a3d-b83b-602221995baf"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+  - name: "Delta-Kronecker-vmess-080"
+    type: vmess
+    server: "sy4.620720.xyz"
+    port: 443
+    uuid: "516d8a7a-3f0b-41d3-bad0-246116381516"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sy4.620720.xyz"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "sy4.620720.xyz"
+  - name: "Delta-Kronecker-vmess-081"
+    type: vmess
+    server: "t1.620720.xyz"
+    port: 8443
+    uuid: "516d8a7a-3f0b-41d3-bad0-246116381516"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "t1.620720.xyz"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "t1.620720.xyz"
+  - name: "Delta-Kronecker-vmess-082"
+    type: vmess
+    server: "104.26.14.85"
+    port: 8080
+    uuid: "nasnet"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/nasnet/cdn"
+      headers:
+        Host: "nasnet-162191099.sharghdaily.co"
+  - name: "Delta-Kronecker-vmess-083"
+    type: vmess
+    server: "5.83.150.108"
+    port: 52117
+    uuid: "27104fae-f047-4993-902a-9368d8a3e9bc"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "imafake.locker"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/speedtest"
+      headers:
+        Host: "imafake.locker"
+  - name: "Delta-Kronecker-vmess-084"
+    type: vmess
+    server: "dvgt.zem.indevs.in"
+    port: 80
+    uuid: "c558328b-eb46-424c-b9e0-574770f0b072"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/7sOz0p4SzU1D6XNC0BXGtJ"
+      headers:
+        Host: "dvgt.zem.indevs.in"
+  - name: "Delta-Kronecker-vmess-085"
+    type: vmess
+    server: "57.128.216.125"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "kampong.org"
+    network: ws
+    ws-opts:
+      path: "linkvws"
+      headers:
+        Host: "kampong.org"
+  - name: "Delta-Kronecker-vmess-086"
+    type: vmess
+    server: "n1753598451.74qxv.top"
+    port: 443
+    uuid: "9798678f-5b8c-4ff1-bbdd-b9b5c1539de0"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "n1753598451.74qxv.top"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "n1753598451.74qxv.top"
+  - name: "Delta-Kronecker-vmess-087"
+    type: vmess
+    server: "104.21.82.39"
+    port: 443
+    uuid: "5cccb4da-8aee-4b01-be84-2056265e52dc"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vvVBNhJ.191288.xyZ"
+    network: ws
+    ws-opts:
+      path: "/AwUJyGh9Ym6vVzg35A6ueyyZnWd"
+      headers:
+        Host: "vvVBNhJ.191288.xyZ"
+  - name: "Delta-Kronecker-vmess-088"
+    type: vmess
+    server: "3h-kazakhstan1.09vpn.com"
+    port: 80
+    uuid: "567f4be5-12ab-42e1-b8d9-db6fd1fdd31c"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/vmess/"
+      headers:
+        Host: "3h-kazakhstan1.09vpn.com"
+  - name: "Delta-Kronecker-vmess-089"
+    type: vmess
+    server: "146.59.55.50"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "o.metuji.com"
+    network: ws
+    ws-opts:
+      path: "/linkvws"
+      headers:
+        Host: "o.metuji.com"
+  - name: "Delta-Kronecker-vmess-090"
+    type: vmess
+    server: "158.51.121.63"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "seribus.org"
+    network: ws
+    ws-opts:
+      path: "linkvws"
+      headers:
+        Host: "seribus.org"
+  - name: "Delta-Kronecker-vmess-091"
+    type: vmess
+    server: "172.67.214.21"
+    port: 443
+    uuid: "5cccb4da-8aee-4b01-be84-2056265e52dc"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "jjjk.191268.xyz"
+    network: ws
+    ws-opts:
+      path: "/AwUJyGh9Ym6vVzg35A6ueyyZnWd"
+      headers:
+        Host: "jjjk.191268.xyz"
+  - name: "Delta-Kronecker-vmess-092"
+    type: vmess
+    server: "n1761214919.mv7wh.tech"
+    port: 443
+    uuid: "c592f040-faff-47dc-a464-9bccf2dd4e7b"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "n1761214919.mv7wh.tech"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "n1761214919.mv7wh.tech"
+  - name: "Delta-Kronecker-vmess-093"
+    type: vmess
+    server: "91.134.8.101"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "91.134.8.101"
+    network: ws
+    ws-opts:
+      path: "/linkvws"
+  - name: "Delta-Kronecker-vmess-094"
+    type: vmess
+    server: "gggh.huangshang.online"
+    port: 443
+    uuid: "98b419ef-83a2-4d1b-a23d-566b7f24477b"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "gggh.huangshang.online"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/Iu415Fpf5REYxWLpTGA5AqzZ2Mj"
+      headers:
+        Host: "gggh.huangshang.online"
+  - name: "Delta-Kronecker-vmess-095"
+    type: vmess
+    server: "n1761214907.74qxv.top"
+    port: 443
+    uuid: "4c17399f-c93d-4527-8ace-5bdc2f0901f3"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "n1761214907.74qxv.top"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "n1761214907.74qxv.top"
+  - name: "Delta-Kronecker-vmess-096"
+    type: vmess
+    server: "104.21.23.162"
+    port: 443
+    uuid: "98b419ef-83a2-4d1b-a23d-566b7f24477b"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "NNnmJJu.131.PP.Ua"
+    network: ws
+    ws-opts:
+      path: "/Iu415Fpf5REYxWLpTGA5AqzZ2Mj"
+      headers:
+        Host: "NNnmJJu.131.PP.Ua"
+  - name: "Delta-Kronecker-vmess-097"
+    type: vmess
+    server: "n1753598452.wpg27.xyz"
+    port: 443
+    uuid: "4f23eb7c-ef2f-43b0-90dd-f2b8a75954a5"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "n1753598452.wpg27.xyz"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "n1753598452.wpg27.xyz"
+  - name: "Delta-Kronecker-vmess-098"
+    type: vmess
+    server: "57.129.24.125"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc"
+    network: ws
+    ws-opts:
+      path: "/linkvws"
+      headers:
+        Host: "wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc"
+  - name: "Delta-Kronecker-vmess-099"
+    type: vmess
+    server: "n1747624282.lie5d.cyou"
+    port: 443
+    uuid: "30109222-8c53-41bc-9781-a01cdeb68e4c"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "n1747624282.lie5d.cyou"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "n1747624282.lie5d.cyou"
+  - name: "Delta-Kronecker-vmess-100"
+    type: vmess
+    server: "n1761214902.wpg27.xyz"
+    port: 443
+    uuid: "469e9a38-b64e-46c3-9793-234158942d3b"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "n1761214902.wpg27.xyz"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "n1761214902.wpg27.xyz"
+  - name: "Delta-Kronecker-vmess-101"
+    type: vmess
+    server: "149.88.95.217"
+    port: 40741
+    uuid: "1b8a751b-4909-4fec-f019-907d92e6c47f"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+  - name: "Delta-Kronecker-vmess-102"
+    type: vmess
+    server: "149.88.95.217"
+    port: 18937
+    uuid: "ebaa1ae1-fa4d-40d8-958f-d4524d551218"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+  - name: "Delta-Kronecker-vmess-103"
+    type: vmess
+    server: "149.88.95.217"
+    port: 35760
+    uuid: "17e96792-d8c3-4741-9c34-e5d1c11d754f"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+  - name: "Delta-Kronecker-vmess-104"
+    type: vmess
+    server: "57.128.189.253"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "kapelleng.com"
+    network: ws
+    ws-opts:
+      path: "/linkvws"
+      headers:
+        Host: "kapelleng.com"
+  - name: "Delta-Kronecker-vmess-105"
+    type: vmess
+    server: "57.129.24.130"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "serkat.org"
+    network: ws
+    ws-opts:
+      path: "linkvws"
+      headers:
+        Host: "serkat.org"
+  - name: "Delta-Kronecker-vmess-106"
+    type: vmess
+    server: "n1753598446.wpg27.xyz"
+    port: 443
+    uuid: "a5047d95-24b8-451a-93e3-f2a387b93d5a"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "n1753598446.wpg27.xyz"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "n1753598446.wpg27.xyz"
+  - name: "Delta-Kronecker-vmess-107"
+    type: vmess
+    server: "57.129.25.26"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "yichueng.org"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "linkvws"
+      headers:
+        Host: "yichueng.org"
+  - name: "Delta-Kronecker-vmess-108"
+    type: vmess
+    server: "57.129.59.201"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "kampong.org"
+    network: ws
+    ws-opts:
+      path: "linkvws"
+      headers:
+        Host: "kampong.org"
+  - name: "Delta-Kronecker-vmess-109"
+    type: vmess
+    server: "57.129.64.238"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "kapelleng.com"
+    network: ws
+    ws-opts:
+      path: "/linkvws"
+      headers:
+        Host: "kapelleng.com"
+  - name: "Delta-Kronecker-vmess-110"
+    type: vmess
+    server: "57.129.64.199"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "pelang.org"
+    network: ws
+    ws-opts:
+      path: "linkvws"
+      headers:
+        Host: "pelang.org"
+  - name: "Delta-Kronecker-vmess-111"
+    type: vmess
+    server: "45.15.185.17"
+    port: 80
+    uuid: "c503a96a-a2f5-4847-a31f-20c17ecf3be4"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/vmess/"
+  - name: "Delta-Kronecker-vmess-112"
+    type: vmess
+    server: "n1761214910.74qxv.top"
+    port: 443
+    uuid: "011c4670-cdde-44fb-b9be-8a1e27af26c9"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "n1761214910.74qxv.top"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "n1761214910.74qxv.top"
+  - name: "Delta-Kronecker-vmess-113"
+    type: vmess
+    server: "148.113.153.109"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "yichueng.org"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "linkvws"
+      headers:
+        Host: "yichueng.org"
+  - name: "Delta-Kronecker-vmess-114"
+    type: vmess
+    server: "146.59.85.226"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "pelang.org"
+    network: ws
+    ws-opts:
+      path: "linkvws"
+      headers:
+        Host: "pelang.org"
+  - name: "Delta-Kronecker-vmess-115"
+    type: vmess
+    server: "n1761214912.wpg27.xyz"
+    port: 443
+    uuid: "4f86a909-836d-4643-b650-d812144a1fa9"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "n1761214912.wpg27.xyz"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "n1761214912.wpg27.xyz"
+  - name: "Delta-Kronecker-vmess-116"
+    type: vmess
+    server: "pq-Hungary1.09vpn.com"
+    port: 8443
+    uuid: "6f1f1a18-ecc4-4513-890e-fd193042f564"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "pq-Hungary1.09vpn.com"
+    network: ws
+    ws-opts:
+      path: "/vmess/"
+  - name: "Delta-Kronecker-vmess-117"
+    type: vmess
+    server: "5.83.150.108"
+    port: 10600
+    uuid: "6d600864-32da-49fd-baf4-7df051762454"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "imafake.locker"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/speedtest"
+      headers:
+        Host: "imafake.locker"
+  - name: "Delta-Kronecker-vmess-118"
+    type: vmess
+    server: "92.246.87.170"
+    port: 18355
+    uuid: "caf921c7-ac63-40bc-faa1-cda097fd7e42"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+  - name: "Delta-Kronecker-vmess-119"
+    type: vmess
+    server: "gggbnh7.www890604.dpdns.org"
+    port: 443
+    uuid: "2bfe58f7-da1d-45df-ab43-7c665b20ee29"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "gggbnh7.www890604.dpdns.org"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/t1UV4HSrzbWGmJtbBhmKb8nOkg"
+      headers:
+        Host: "gggbnh7.www890604.dpdns.org"
+  - name: "Delta-Kronecker-vmess-120"
+    type: vmess
+    server: "bbnnhyt.7777112.xyz"
+    port: 443
+    uuid: "2bfe58f7-da1d-45df-ab43-7c665b20ee29"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "bbnnhyt.7777112.xyz"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/t1UV4HSrzbWGmJtbBhmKb8nOkg"
+      headers:
+        Host: "bbnnhyt.7777112.xyz"
+  - name: "Delta-Kronecker-vmess-121"
+    type: vmess
+    server: "ujjjmkkk.7777112.xyz"
+    port: 443
+    uuid: "2bfe58f7-da1d-45df-ab43-7c665b20ee29"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ujjjmkkk.7777112.xyz"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/t1UV4HSrzbWGmJtbBhmKb8nOkg"
+      headers:
+        Host: "ujjjmkkk.7777112.xyz"
+  - name: "Delta-Kronecker-vmess-122"
+    type: vmess
+    server: "hhhnmju.932.pp.ua"
+    port: 443
+    uuid: "2bfe58f7-da1d-45df-ab43-7c665b20ee29"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "hhhnmju.932.pp.ua"
+    network: ws
+    ws-opts:
+      path: "/t1UV4HSrzbWGmJtbBhmKb8nOkg"
+      headers:
+        Host: "hhhnmju.932.pp.ua"
+  - name: "Delta-Kronecker-vmess-123"
+    type: vmess
+    server: "dddfghyju.taipei102.indevs.in"
+    port: 443
+    uuid: "2bfe58f7-da1d-45df-ab43-7c665b20ee29"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "dddfghyju.taipei102.indevs.in"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/t1UV4HSrzbWGmJtbBhmKb8nOkg"
+      headers:
+        Host: "dddfghyju.taipei102.indevs.in"
+  - name: "Delta-Kronecker-vmess-124"
+    type: vmess
+    server: "n1761214911.74qxv.top"
+    port: 443
+    uuid: "372c1939-299d-4946-9633-5ffa971f8b67"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "n1761214911.74qxv.top"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "n1761214911.74qxv.top"
+  - name: "Delta-Kronecker-vmess-125"
+    type: vmess
+    server: "v33.hdacd.com"
+    port: 30833
+    uuid: "cbb3f877-d1fb-344c-87a9-d153bffd5484"
+    alterId: 2
+    cipher: "auto"
+    udp: true
+  - name: "Delta-Kronecker-vmess-126"
+    type: vmess
+    server: "vvvbnj.taipei102.indevs.in"
+    port: 443
+    uuid: "2bfe58f7-da1d-45df-ab43-7c665b20ee29"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vvvbnj.taipei102.indevs.in"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/t1UV4HSrzbWGmJtbBhmKb8nOkg"
+      headers:
+        Host: "vvvbnj.taipei102.indevs.in"
+  - name: "Delta-Kronecker-vmess-127"
+    type: vmess
+    server: "hhhnju.taipei102.indevs.in"
+    port: 443
+    uuid: "2bfe58f7-da1d-45df-ab43-7c665b20ee29"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "hhhnju.taipei102.indevs.in"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/t1UV4HSrzbWGmJtbBhmKb8nOkg"
+      headers:
+        Host: "hhhnju.taipei102.indevs.in"
+  - name: "Delta-Kronecker-vmess-128"
+    type: vmess
+    server: "uuujki.7777112.xyz"
+    port: 443
+    uuid: "2bfe58f7-da1d-45df-ab43-7c665b20ee29"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "uuujki.7777112.xyz"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/t1UV4HSrzbWGmJtbBhmKb8nOkg"
+      headers:
+        Host: "uuujki.7777112.xyz"
+  - name: "Delta-Kronecker-vmess-129"
+    type: vmess
+    server: "gggbnh.www890604.dpdns.org"
+    port: 443
+    uuid: "2bfe58f7-da1d-45df-ab43-7c665b20ee29"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "gggbnh.www890604.dpdns.org"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/t1UV4HSrzbWGmJtbBhmKb8nOkg"
+      headers:
+        Host: "gggbnh.www890604.dpdns.org"
+  - name: "Delta-Kronecker-vmess-130"
+    type: vmess
+    server: "gbnh.7777112.xyz"
+    port: 443
+    uuid: "2bfe58f7-da1d-45df-ab43-7c665b20ee29"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "gbnh.7777112.xyz"
+    network: ws
+    ws-opts:
+      path: "/t1UV4HSrzbWGmJtbBhmKb8nOkg"
+      headers:
+        Host: "gbnh.7777112.xyz"
+  - name: "Delta-Kronecker-vmess-131"
+    type: vmess
+    server: "bbbnmju.932.pp.ua"
+    port: 443
+    uuid: "2bfe58f7-da1d-45df-ab43-7c665b20ee29"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "bbbnmju.932.pp.ua"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/t1UV4HSrzbWGmJtbBhmKb8nOkg"
+      headers:
+        Host: "bbbnmju.932.pp.ua"
+  - name: "Delta-Kronecker-vmess-132"
+    type: vmess
+    server: "ffvvbnhju.2030.pp.ua"
+    port: 443
+    uuid: "2bfe58f7-da1d-45df-ab43-7c665b20ee29"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ffvvbnhju.2030.pp.ua"
+    network: ws
+    ws-opts:
+      path: "/t1UV4HSrzbWGmJtbBhmKb8nOkg"
+      headers:
+        Host: "ffvvbnhju.2030.pp.ua"
+  - name: "Delta-Kronecker-vmess-133"
+    type: vmess
+    server: "hhhhhhhhj.191266.xyz"
+    port: 443
+    uuid: "2bfe58f7-da1d-45df-ab43-7c665b20ee29"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "hhhhhhhhj.191266.xyz"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/t1UV4HSrzbWGmJtbBhmKb8nOkg"
+      headers:
+        Host: "hhhhhhhhj.191266.xyz"
+  - name: "Delta-Kronecker-vmess-134"
+    type: vmess
+    server: "5.83.150.108"
+    port: 58753
+    uuid: "6d600864-32da-49fd-baf4-7df051762454"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "imafake.locker"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/speedtest"
+      headers:
+        Host: "imafake.locker"
+  - name: "Delta-Kronecker-vmess-135"
+    type: vmess
+    server: "BBBbBb.tAiWAn2028.IndEvs.In"
+    port: 443
+    uuid: "5cccb4da-8aee-4b01-be84-2056265e52dc"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "BbbbBb.tAiwaN2028.InDeVs.iN"
+    network: ws
+    ws-opts:
+      path: "/AwUJyGh9Ym6vVzg35A6ueyyZnWd"
+      headers:
+        Host: "BbBbBB.taIwAN2028.InDeVs.iN"
+  - name: "Delta-Kronecker-vmess-136"
+    type: vmess
+    server: "bBbNHJ.890634.xyz"
+    port: 443
+    uuid: "5cccb4da-8aee-4b01-be84-2056265e52dc"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "bBbNHJ.890634.xyz"
+    network: ws
+    ws-opts:
+      path: "/AwUJyGh9Ym6vVzg35A6ueyyZnWd"
+      headers:
+        Host: "bbbnHJ.890634.XYz"
+  - name: "Delta-Kronecker-vmess-137"
+    type: vmess
+    server: "vvvbbbnhj.taipei102.indevs.in"
+    port: 443
+    uuid: "2bfe58f7-da1d-45df-ab43-7c665b20ee29"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vvvbbbnhj.taipei102.indevs.in"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/t1UV4HSrzbWGmJtbBhmKb8nOkg"
+      headers:
+        Host: "vvvbbbnhj.taipei102.indevs.in"
+  - name: "Delta-Kronecker-vmess-138"
+    type: vmess
+    server: "vvvbbnhj.191266.xyz"
+    port: 443
+    uuid: "2bfe58f7-da1d-45df-ab43-7c665b20ee29"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vvvbbnhj.191266.xyz"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/t1UV4HSrzbWGmJtbBhmKb8nOkg"
+      headers:
+        Host: "vvvbbnhj.191266.xyz"
+  - name: "Delta-Kronecker-vmess-139"
+    type: vmess
+    server: "vvvbnh.taipei102.indevs.in"
+    port: 443
+    uuid: "2bfe58f7-da1d-45df-ab43-7c665b20ee29"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vvvbnh.taipei102.indevs.in"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/t1UV4HSrzbWGmJtbBhmKb8nOkg"
+      headers:
+        Host: "vvvbnh.taipei102.indevs.in"
+  - name: "Delta-Kronecker-vmess-140"
+    type: vmess
+    server: "vvbnhju.191292.xyz"
+    port: 443
+    uuid: "b9bb332d-5e0d-41af-adac-49362dde8661"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vvbnhju.191292.xyz"
+    network: ws
+    ws-opts:
+      path: "/iqjxVCqiIAaLCt5Q2GkKGWRMg"
+      headers:
+        Host: "vvbnhju.191292.xyz"
+  - name: "Delta-Kronecker-vmess-141"
+    type: vmess
+    server: "vvVBNhJ.191288.xyZ"
+    port: 443
+    uuid: "5cccb4da-8aee-4b01-be84-2056265e52dc"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vvVBNhJ.191288.xyZ"
+    network: ws
+    ws-opts:
+      path: "/AwUJyGh9Ym6vVzg35A6ueyyZnWd"
+      headers:
+        Host: "vvVBNhJ.191288.xyZ"
+  - name: "Delta-Kronecker-vmess-142"
+    type: vmess
+    server: "bbbnmkl.2030.pp.ua"
+    port: 443
+    uuid: "5cccb4da-8aee-4b01-be84-2056265e52dc"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "bbbnmkl.2030.pp.ua"
+    network: ws
+    ws-opts:
+      path: "/AwUJyGh9Ym6vVzg35A6ueyyZnWd"
+      headers:
+        Host: "bbbnmkl.2030.pp.ua"
+  - name: "Delta-Kronecker-vmess-143"
+    type: vmess
+    server: "5.83.150.108"
+    port: 25344
+    uuid: "6d600864-32da-49fd-baf4-7df051762454"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "imafake.locker"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/speedtest"
+      headers:
+        Host: "imafake.locker"
+  - name: "Delta-Kronecker-vmess-144"
+    type: vmess
+    server: "hhynnmki.www890604.dpdns.org"
+    port: 443
+    uuid: "2bfe58f7-da1d-45df-ab43-7c665b20ee29"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "hhynnmki.www890604.dpdns.org"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/t1UV4HSrzbWGmJtbBhmKb8nOkg"
+      headers:
+        Host: "hhynnmki.www890604.dpdns.org"
+  - name: "Delta-Kronecker-vmess-145"
+    type: vmess
+    server: "57.129.25.25"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc"
+    network: ws
+    ws-opts:
+      path: "/linkvws"
+      headers:
+        Host: "f.khilei.com"
+  - name: "Delta-Kronecker-vmess-146"
+    type: vmess
+    server: "15.235.83.227"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc"
+    network: ws
+    ws-opts:
+      path: "/linkvws"
+      headers:
+        Host: "mankadmu.com"
+  - name: "Delta-Kronecker-vmess-147"
+    type: vmess
+    server: "57.129.28.65"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "kapelleng.com"
+    network: ws
+    ws-opts:
+      path: "/linkvws"
+      headers:
+        Host: "kapelleng.com"
+  - name: "Delta-Kronecker-vmess-148"
+    type: vmess
+    server: "57.129.28.69"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc"
+    network: ws
+    ws-opts:
+      path: "/linkvws"
+      headers:
+        Host: "baradiha.com"
+  - name: "Delta-Kronecker-vmess-149"
+    type: vmess
+    server: "5.83.150.108"
+    port: 55084
+    uuid: "6d600864-32da-49fd-baf4-7df051762454"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "imafake.locker"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/speedtest"
+      headers:
+        Host: "imafake.locker"
+  - name: "Delta-Kronecker-vmess-150"
+    type: vmess
+    server: "1.ae1.indevs.in"
+    port: 80
+    uuid: "0c6b96bc-5e3a-4500-8497-6dead1965609"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/KHtPvNZl371C8NsbbZ1wwDhJ3"
+      headers:
+        Host: "1.aE1.InDevs.In"
+  - name: "Delta-Kronecker-vmess-151"
+    type: vmess
+    server: "v29.hdacd.com"
+    port: 30829
+    uuid: "cbb3f877-d1fb-344c-87a9-d153bffd5484"
+    alterId: 2
+    cipher: "auto"
+    udp: true
+  - name: "Delta-Kronecker-vmess-152"
+    type: vmess
+    server: "104.21.20.160"
+    port: 80
+    uuid: "b020865b-7404-4894-ba65-a7414b10cda3"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/boWUVaU0sxrNtFSdOPjqSc7fzeJr"
+      headers:
+        Host: "nju.bb4.indevs.in"
+  - name: "Delta-Kronecker-vmess-153"
+    type: vmess
+    server: "104.21.23.132"
+    port: 80
+    uuid: "1798b14b-aee0-4008-ba9a-2e53877761b4"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/kFK9O5cl8ZycyrxcJWNVFC21"
+      headers:
+        Host: "bnmj.wc6.ccwu.cc"
+  - name: "Delta-Kronecker-vmess-154"
+    type: vmess
+    server: "104.26.15.85"
+    port: 8080
+    uuid: "e8b1500b-e9e8-5492-8312-f4eadf7d0767"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/nasnet/cdn"
+      headers:
+        Host: "nasnet-571296497.iranpress.co"
+  - name: "Delta-Kronecker-vmess-155"
+    type: vmess
+    server: "141.94.155.228"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "kampong.org"
+    network: ws
+    ws-opts:
+      path: "linkvws"
+      headers:
+        Host: "kampong.org"
+  - name: "Delta-Kronecker-vmess-156"
+    type: vmess
+    server: "141.94.155.224"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "fapeng.org"
+    network: ws
+    ws-opts:
+      path: "linkvws"
+      headers:
+        Host: "fapeng.org"
+  - name: "Delta-Kronecker-vmess-157"
+    type: vmess
+    server: "146.56.112.110"
+    port: 8888
+    uuid: "e7c302f3-90d6-42dd-9d7d-94a3683a3707"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+  - name: "Delta-Kronecker-vmess-158"
+    type: vmess
+    server: "146.59.70.146"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "yichueng.org"
+    network: ws
+    ws-opts:
+      path: "linkvws"
+      headers:
+        Host: "yichueng.org"
+  - name: "Delta-Kronecker-vmess-159"
+    type: vmess
+    server: "146.59.118.249"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "fapeng.org"
+    network: ws
+    ws-opts:
+      path: "linkvws"
+      headers:
+        Host: "fapeng.org"
+  - name: "Delta-Kronecker-vmess-160"
+    type: vmess
+    server: "146.59.118.250"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "lammaland.org"
+    network: ws
+    ws-opts:
+      path: "linkvws"
+      headers:
+        Host: "lammaland.org"
+  - name: "Delta-Kronecker-vmess-161"
+    type: vmess
+    server: "15.204.103.7"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "lammaland.org"
+    network: ws
+    ws-opts:
+      path: "linkvws"
+      headers:
+        Host: "lammaland.org"
+  - name: "Delta-Kronecker-vmess-162"
+    type: vmess
+    server: "15.204.64.214"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "yichueng.org"
+    network: ws
+    ws-opts:
+      path: "linkvws"
+      headers:
+        Host: "yichueng.org"
+  - name: "Delta-Kronecker-vmess-163"
+    type: vmess
+    server: "149.88.95.94"
+    port: 40741
+    uuid: "1b8a751b-4909-4fec-f019-907d92e6c47f"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+  - name: "Delta-Kronecker-vmess-164"
+    type: vmess
+    server: "149.88.95.94"
+    port: 35760
+    uuid: "17e96792-d8c3-4741-9c34-e5d1c11d754f"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+  - name: "Delta-Kronecker-vmess-165"
+    type: vmess
+    server: "149.88.95.94"
+    port: 18937
+    uuid: "ebaa1ae1-fa4d-40d8-958f-d4524d551218"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+  - name: "Delta-Kronecker-vmess-166"
+    type: vmess
+    server: "172.64.80.1"
+    port: 80
+    uuid: "1798b14b-aee0-4008-ba9a-2e53877761b4"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/kFK9O5cl8ZycyrxcJWNVFC21"
+      headers:
+        Host: "bnmj.wc6.ccwu.cc"
+  - name: "Delta-Kronecker-vmess-167"
+    type: vmess
+    server: "172.67.133.191"
+    port: 80
+    uuid: "1798b14b-aee0-4008-ba9a-2e53877761b4"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/kFK9O5cl8ZycyrxcJWNVFC21"
+      headers:
+        Host: "vvvbnhj.kk4.ccwu.cc"
+  - name: "Delta-Kronecker-vmess-168"
+    type: vmess
+    server: "172.67.145.18"
+    port: 80
+    uuid: "1798b14b-aee0-4008-ba9a-2e53877761b4"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/kFK9O5cl8ZycyrxcJWNVFC21"
+      headers:
+        Host: "hnj.wc4.ccwu.cc"
+  - name: "Delta-Kronecker-vmess-169"
+    type: vmess
+    server: "172.67.142.251"
+    port: 80
+    uuid: "1798b14b-aee0-4008-ba9a-2e53877761b4"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/kFK9O5cl8ZycyrxcJWNVFC21"
+      headers:
+        Host: "nmk.tc7.ccwu.cc"
+  - name: "Delta-Kronecker-vmess-170"
+    type: vmess
+    server: "172.67.158.145"
+    port: 80
+    uuid: "1798b14b-aee0-4008-ba9a-2e53877761b4"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/kFK9O5cl8ZycyrxcJWNVFC21"
+      headers:
+        Host: "yhj.tc1.ccwu.cc"
+  - name: "Delta-Kronecker-vmess-171"
+    type: vmess
+    server: "172.67.193.48"
+    port: 80
+    uuid: "b020865b-7404-4894-ba65-a7414b10cda3"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/boWUVaU0sxrNtFSdOPjqSc7fzeJr"
+      headers:
+        Host: "nju.bb4.indevs.in"
+  - name: "Delta-Kronecker-vmess-172"
+    type: vmess
+    server: "172.67.168.168"
+    port: 80
+    uuid: "1798b14b-aee0-4008-ba9a-2e53877761b4"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/kFK9O5cl8ZycyrxcJWNVFC21"
+      headers:
+        Host: "bbbnmki.kk7.ccwu.cc"
+  - name: "Delta-Kronecker-vmess-173"
+    type: vmess
+    server: "172.67.213.82"
+    port: 80
+    uuid: "1798b14b-aee0-4008-ba9a-2e53877761b4"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/kFK9O5cl8ZycyrxcJWNVFC21"
+      headers:
+        Host: "bbnj.wc9.ccwu.cc"
+  - name: "Delta-Kronecker-vmess-174"
+    type: vmess
+    server: "172.67.203.187"
+    port: 80
+    uuid: "1798b14b-aee0-4008-ba9a-2e53877761b4"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/kFK9O5cl8ZycyrxcJWNVFC21"
+      headers:
+        Host: "mko.tc4.ccwu.cc"
+  - name: "Delta-Kronecker-vmess-175"
+    type: vmess
+    server: "188.114.96.3"
+    port: 8443
+    uuid: "516d8a7a-3f0b-41d3-bad0-246116381516"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "t1.620720.xyz"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "t1.620720.xyz"
+  - name: "Delta-Kronecker-vmess-176"
+    type: vmess
+    server: "188.114.96.3"
+    port: 443
+    uuid: "516d8a7a-3f0b-41d3-bad0-246116381516"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sy4.620720.xyz"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "sy4.620720.xyz"
+  - name: "Delta-Kronecker-vmess-177"
+    type: vmess
+    server: "209.54.104.219"
+    port: 43966
+    uuid: "0e3606ae-321a-4d0b-85ec-5f4352f4bc24"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+  - name: "Delta-Kronecker-vmess-178"
+    type: vmess
+    server: "38.107.234.57"
+    port: 80
+    uuid: "567f4be5-12ab-42e1-b8d9-db6fd1fdd31c"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/vmess/"
+      headers:
+        Host: "google.com"
+  - name: "Delta-Kronecker-vmess-179"
+    type: vmess
+    server: "38.54.98.110"
+    port: 20522
+    uuid: "cfb08f31-bca2-4f78-a8fa-2784a83ab1f8"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/telegram_@sswia"
+  - name: "Delta-Kronecker-vmess-180"
+    type: vmess
+    server: "38.54.98.110"
+    port: 2052
+    uuid: "665d9b8f-153d-4907-adac-de12afd9c851"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ml0724.ysds168.shop"
+  - name: "Delta-Kronecker-vmess-181"
+    type: vmess
+    server: "45.12.132.183"
+    port: 80
+    uuid: "703f722a-4bdf-4e9d-9afd-a681fdf87c74"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/vmess/"
+      headers:
+        Host: "45.12.132.183"
+  - name: "Delta-Kronecker-vmess-182"
+    type: vmess
+    server: "43.100.32.6"
+    port: 443
+    uuid: "8c5d150c-b046-4440-8230-e84506a065a3"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "n1747624267.4u9ma.icu"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "n1747624267.4u9ma.icu"
+  - name: "Delta-Kronecker-vmess-183"
+    type: vmess
+    server: "45.15.170.237"
+    port: 80
+    uuid: "820d4b4f-3357-4dc7-9381-6e5fd52b5f39"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/vmess/"
+      headers:
+        Host: "45.15.170.237"
+  - name: "Delta-Kronecker-vmess-184"
+    type: vmess
+    server: "45.207.157.29"
+    port: 13852
+    uuid: "845764df-ecb3-4b13-bed2-bf1551b68e9a"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+  - name: "Delta-Kronecker-vmess-185"
+    type: vmess
+    server: "47.243.244.164"
+    port: 443
+    uuid: "3514a93f-bb26-4442-8f99-971b2ff3388a"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "n1761214908.wpg27.xyz"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "n1761214908.wpg27.xyz"
+  - name: "Delta-Kronecker-vmess-186"
+    type: vmess
+    server: "47.245.15.239"
+    port: 443
+    uuid: "a5047d95-24b8-451a-93e3-f2a387b93d5a"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "47.245.15.239"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "n1753598446.wpg27.xyz"
+  - name: "Delta-Kronecker-vmess-187"
+    type: vmess
+    server: "47.243.63.35"
+    port: 443
+    uuid: "c592f040-faff-47dc-a464-9bccf2dd4e7b"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "n1761214919.mv7wh.tech"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "n1761214919.mv7wh.tech"
+  - name: "Delta-Kronecker-vmess-188"
+    type: vmess
+    server: "47.243.205.58"
+    port: 443
+    uuid: "4f86a909-836d-4643-b650-d812144a1fa9"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "n1761214912.wpg27.xyz"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "n1761214912.wpg27.xyz"
+  - name: "Delta-Kronecker-vmess-189"
+    type: vmess
+    server: "47.245.42.92"
+    port: 443
+    uuid: "4f23eb7c-ef2f-43b0-90dd-f2b8a75954a5"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "n1753598452.wpg27.xyz"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "n1753598452.wpg27.xyz"
+  - name: "Delta-Kronecker-vmess-190"
+    type: vmess
+    server: "47.74.1.191"
+    port: 443
+    uuid: "9798678f-5b8c-4ff1-bbdd-b9b5c1539de0"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "n1753598451.74qxv.top"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "n1753598451.74qxv.top"
+  - name: "Delta-Kronecker-vmess-191"
+    type: vmess
+    server: "47.74.52.195"
+    port: 443
+    uuid: "3cd6f849-078e-4da9-8080-a2791b51b766"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "n1753598448.74qxv.top"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "n1753598448.74qxv.top"
+  - name: "Delta-Kronecker-vmess-192"
+    type: vmess
+    server: "57.128.189.143"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "lammaland.org"
+    network: ws
+    ws-opts:
+      path: "linkvws"
+      headers:
+        Host: "lammaland.org"
+  - name: "Delta-Kronecker-vmess-193"
+    type: vmess
+    server: "57.128.189.211"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "yichueng.org"
+    network: ws
+    ws-opts:
+      path: "linkvws"
+      headers:
+        Host: "yichueng.org"
+  - name: "Delta-Kronecker-vmess-194"
+    type: vmess
+    server: "57.128.189.222"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "lammaland.org"
+    network: ws
+    ws-opts:
+      path: "linkvws"
+      headers:
+        Host: "lammaland.org"
+  - name: "Delta-Kronecker-vmess-195"
+    type: vmess
+    server: "57.129.2.121"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "pelang.org"
+    network: ws
+    ws-opts:
+      path: "linkvws"
+      headers:
+        Host: "pelang.org"
+  - name: "Delta-Kronecker-vmess-196"
+    type: vmess
+    server: "57.129.28.212"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "fapeng.org"
+    network: ws
+    ws-opts:
+      path: "linkvws"
+      headers:
+        Host: "fapeng.org"
+  - name: "Delta-Kronecker-vmess-197"
+    type: vmess
+    server: "57.129.28.214"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "kampong.org"
+    network: ws
+    ws-opts:
+      path: "linkvws"
+      headers:
+        Host: "kampong.org"
+  - name: "Delta-Kronecker-vmess-198"
+    type: vmess
+    server: "57.129.28.215"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "serkat.org"
+    network: ws
+    ws-opts:
+      path: "linkvws"
+      headers:
+        Host: "serkat.org"
+  - name: "Delta-Kronecker-vmess-199"
+    type: vmess
+    server: "57.129.59.199"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "kampong.org"
+    network: ws
+    ws-opts:
+      path: "linkvws"
+      headers:
+        Host: "kampong.org"
+  - name: "Delta-Kronecker-vmess-200"
+    type: vmess
+    server: "57.129.59.194"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "yichueng.org"
+    network: ws
+    ws-opts:
+      path: "linkvws"
+      headers:
+        Host: "yichueng.org"
+  - name: "Delta-Kronecker-vmess-201"
+    type: vmess
+    server: "57.129.59.202"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "fapeng.org"
+    network: ws
+    ws-opts:
+      path: "linkvws"
+      headers:
+        Host: "fapeng.org"
+  - name: "Delta-Kronecker-vmess-202"
+    type: vmess
+    server: "57.129.64.163"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "yichueng.org"
+    network: ws
+    ws-opts:
+      path: "linkvws"
+      headers:
+        Host: "yichueng.org"
+  - name: "Delta-Kronecker-vmess-203"
+    type: vmess
+    server: "61.245.11.60"
+    port: 80
+    uuid: "a3e3a710-79f8-4ae0-b83c-607aab40d197"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/vmess/"
+      headers:
+        Host: "61.245.11.60"
+  - name: "Delta-Kronecker-vmess-204"
+    type: vmess
+    server: "62.60.245.128"
+    port: 18188
+    uuid: "7ba52802-3108-4cfa-8d44-917965ff61dd"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+  - name: "Delta-Kronecker-vmess-205"
+    type: vmess
+    server: "8.210.165.109"
+    port: 443
+    uuid: "b141803a-209c-47bd-be6e-14d6bc1e96be"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "n1761214918.74qxv.top"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "n1761214918.74qxv.top"
+  - name: "Delta-Kronecker-vmess-206"
+    type: vmess
+    server: "8.218.19.101"
+    port: 443
+    uuid: "469e9a38-b64e-46c3-9793-234158942d3b"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "n1761214902.wpg27.xyz"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "n1761214902.wpg27.xyz"
+  - name: "Delta-Kronecker-vmess-207"
+    type: vmess
+    server: "82.21.80.224"
+    port: 17310
+    uuid: "656920dc-ed05-4f41-8c49-bdff41e383a9"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "viffes.shortanimedrama.space"
+  - name: "Delta-Kronecker-vmess-208"
+    type: vmess
+    server: "8.34.146.199"
+    port: 443
+    uuid: "f08369d1-5ee7-4b16-d786-30bce12fc33c"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ous3.dean52.top"
+    network: ws
+    ws-opts:
+      path: "/f08369d1-5ee7-4b16-d786-30bce12fc33c"
+      headers:
+        Host: "ous3.dean52.top"
+  - name: "Delta-Kronecker-vmess-209"
+    type: vmess
+    server: "91.134.8.102"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "serkat.org"
+    network: ws
+    ws-opts:
+      path: "linkvws"
+      headers:
+        Host: "serkat.org"
+  - name: "Delta-Kronecker-vmess-210"
+    type: vmess
+    server: "91.134.8.88"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "lammaland.org"
+    network: ws
+    ws-opts:
+      path: "linkvws"
+      headers:
+        Host: "lammaland.org"
+  - name: "Delta-Kronecker-vmess-211"
+    type: vmess
+    server: "91.134.8.92"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "yichueng.org"
+    network: ws
+    ws-opts:
+      path: "linkvws"
+      headers:
+        Host: "yichueng.org"
+  - name: "Delta-Kronecker-vmess-212"
+    type: vmess
+    server: "94.247.142.199"
+    port: 443
+    uuid: "f08369d1-5ee7-4b16-d786-30bce12fc33c"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ous3.dean52.top"
+    network: ws
+    ws-opts:
+      path: "/f08369d1-5ee7-4b16-d786-30bce12fc33c"
+      headers:
+        Host: "ous3.dean52.top"
+  - name: "Delta-Kronecker-vmess-213"
+    type: vmess
+    server: "95.164.4.88"
+    port: 80
+    uuid: "c04c3b34-70fd-4fec-963e-c12d09f36bef"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/vmess/"
+      headers:
+        Host: "95.164.4.88"
+  - name: "Delta-Kronecker-vmess-214"
+    type: vmess
+    server: "a89.333856.xyz"
+    port: 443
+    uuid: "c558328b-eb46-424c-b9e0-574770f0b072"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "a89.333856.xyz"
+    network: ws
+    ws-opts:
+      path: "/7sOz0p4SzU1D6XNC0BXGtJ"
+      headers:
+        Host: "a89.333856.xyz"
+  - name: "Delta-Kronecker-vmess-215"
+    type: vmess
+    server: "bbbnhj.890634.xyz"
+    port: 443
+    uuid: "5cccb4da-8aee-4b01-be84-2056265e52dc"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "bbbnHJ.890634.XYz"
+    network: ws
+    ws-opts:
+      path: "/AwUJyGh9Ym6vVzg35A6ueyyZnWd"
+      headers:
+        Host: "bbbnHJ.890634.XYz"
+  - name: "Delta-Kronecker-vmess-216"
+    type: vmess
+    server: "bh.bb2.indevs.in"
+    port: 80
+    uuid: "b020865b-7404-4894-ba65-a7414b10cda3"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/boWUVaU0sxrNtFSdOPjqSc7fzeJr"
+      headers:
+        Host: "bh.bb2.indevs.in"
+  - name: "Delta-Kronecker-vmess-217"
+    type: vmess
+    server: "bhnju.666470.xyz"
+    port: 443
+    uuid: "4c205c81-5694-43fe-a287-af563a2ebc05"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "bhnju.666470.xyz"
+    network: ws
+    ws-opts:
+      path: "/djA07iUsSp0K2Fo4gds7cXpDB5nO5"
+      headers:
+        Host: "bhnju.666470.xyz"
+  - name: "Delta-Kronecker-vmess-218"
+    type: vmess
+    server: "bbbnmjki.932.pp.ua"
+    port: 443
+    uuid: "2bfe58f7-da1d-45df-ab43-7c665b20ee29"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "bbbnmjki.932.pp.ua"
+    network: ws
+    ws-opts:
+      path: "/t1UV4HSrzbWGmJtbBhmKb8nOkg"
+      headers:
+        Host: "bbbnmjki.932.pp.ua"
+  - name: "Delta-Kronecker-vmess-219"
+    type: vmess
+    server: "bn.457.pp.ua"
+    port: 443
+    uuid: "b020865b-7404-4894-ba65-a7414b10cda3"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "bn.457.pp.ua"
+    network: ws
+    ws-opts:
+      path: "/boWUVaU0sxrNtFSdOPjqSc7fzeJr"
+      headers:
+        Host: "bn.457.pp.ua"
+  - name: "Delta-Kronecker-vmess-220"
+    type: vmess
+    server: "bnh.tt8.ccwu.cc"
+    port: 443
+    uuid: "b020865b-7404-4894-ba65-a7414b10cda3"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "bnh.tt8.ccwu.cc"
+    network: ws
+    ws-opts:
+      path: "/boWUVaU0sxrNtFSdOPjqSc7fzeJr"
+      headers:
+        Host: "bnh.tt8.ccwu.cc"
+  - name: "Delta-Kronecker-vmess-221"
+    type: vmess
+    server: "cdfr.ae1autumn.dpdns.org"
+    port: 443
+    uuid: "13ad36e6-c091-43f2-8505-47d868dd544c"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "cdfr.ae1autumn.dpdns.org"
+    network: ws
+    ws-opts:
+      path: "/YsmRouA9ZbxgW4"
+      headers:
+        Host: "cdfr.ae1autumn.dpdns.org"
+  - name: "Delta-Kronecker-vmess-222"
+    type: vmess
+    server: "IiIIIi9.huANgShAnG.us.cI"
+    port: 443
+    uuid: "dd39bb7d-2bea-41b5-be20-fa228a45f639"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "IiiIIi9.HuaNgshaNG.us.Ci"
+    network: ws
+    ws-opts:
+      path: "/vitRvGVofV7ia41dH"
+      headers:
+        Host: "IIiiiI9.HUangsHANG.us.cI"
+  - name: "Delta-Kronecker-vmess-223"
+    type: vmess
+    server: "bbnmj.kk9.ccwu.cc"
+    port: 80
+    uuid: "1798b14b-aee0-4008-ba9a-2e53877761b4"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/kFK9O5cl8ZycyrxcJWNVFC21"
+      headers:
+        Host: "bbnmj.kk9.ccwu.cc"
+  - name: "Delta-Kronecker-vmess-224"
+    type: vmess
+    server: "bbnmji.tc5.ccwu.cc"
+    port: 80
+    uuid: "1798b14b-aee0-4008-ba9a-2e53877761b4"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/kFK9O5cl8ZycyrxcJWNVFC21"
+      headers:
+        Host: "bbnmji.tc5.ccwu.cc"
+  - name: "Delta-Kronecker-vmess-225"
+    type: vmess
+    server: "bbbnmki.kk7.ccwu.cc"
+    port: 80
+    uuid: "1798b14b-aee0-4008-ba9a-2e53877761b4"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/kFK9O5cl8ZycyrxcJWNVFC21"
+      headers:
+        Host: "bbbnmki.kk7.ccwu.cc"
+  - name: "Delta-Kronecker-vmess-226"
+    type: vmess
+    server: "fffvg.7777125.xyz"
+    port: 443
+    uuid: "fc3704d6-8e5e-443a-bd5b-20ec7cfbe990"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "fffvg.7777125.xyz"
+    network: ws
+    ws-opts:
+      path: "/eszjp4nTT8TxDHFepMpfNkCk8"
+      headers:
+        Host: "fffvg.7777125.xyz"
+  - name: "Delta-Kronecker-vmess-227"
+    type: vmess
+    server: "fvbg.ae1autumn.cc.cd"
+    port: 80
+    uuid: "13ad36e6-c091-43f2-8505-47d868dd544c"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/YsmRouA9ZbxgW4"
+      headers:
+        Host: "fvbg.ae1autumn.cc.cd"
+  - name: "Delta-Kronecker-vmess-228"
+    type: vmess
+    server: "dfg.ae1autumn.cc.cd"
+    port: 80
+    uuid: "13ad36e6-c091-43f2-8505-47d868dd544c"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/YsmRouA9ZbxgW4"
+  - name: "Delta-Kronecker-vmess-229"
+    type: vmess
+    server: "ggbnhj.932.pp.ua"
+    port: 443
+    uuid: "2bfe58f7-da1d-45df-ab43-7c665b20ee29"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ggbnhj.932.pp.ua"
+    network: ws
+    ws-opts:
+      path: "/t1UV4HSrzbWGmJtbBhmKb8nOkg"
+      headers:
+        Host: "ggbnhj.932.pp.ua"
+  - name: "Delta-Kronecker-vmess-230"
+    type: vmess
+    server: "hju.ae1autumn.cc.cd"
+    port: 80
+    uuid: "13ad36e6-c091-43f2-8505-47d868dd544c"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/YsmRouA9ZbxgW4"
+  - name: "Delta-Kronecker-vmess-231"
+    type: vmess
+    server: "fvb.zem.indevs.in"
+    port: 80
+    uuid: "0c6b96bc-5e3a-4500-8497-6dead1965609"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/KHtPvNZl371C8NsbbZ1wwDhJ3"
+      headers:
+        Host: "Fvb.zeM.inDevs.in"
+  - name: "Delta-Kronecker-vmess-232"
+    type: vmess
+    server: "gg.zem.indevs.in"
+    port: 80
+    uuid: "0c6b96bc-5e3a-4500-8497-6dead1965609"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/KHtPvNZl371C8NsbbZ1wwDhJ3"
+      headers:
+        Host: "GG.zEM.INDeVs.in"
+  - name: "Delta-Kronecker-vmess-233"
+    type: vmess
+    server: "ggGBnHJ.890404.iNdEvs.iN"
+    port: 443
+    uuid: "dd39bb7d-2bea-41b5-be20-fa228a45f639"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ggGBnHJ.890404.INDEVS.IN"
+    network: ws
+    ws-opts:
+      path: "/vitRvGVofV7ia41dH"
+      headers:
+        Host: "ggGBnHJ.890404.INDEVS.IN"
+  - name: "Delta-Kronecker-vmess-234"
+    type: vmess
+    server: "jjjkkk.2030.pp.ua"
+    port: 443
+    uuid: "2bfe58f7-da1d-45df-ab43-7c665b20ee29"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "jjjkkk.2030.pp.ua"
+    network: ws
+    ws-opts:
+      path: "/t1UV4HSrzbWGmJtbBhmKb8nOkg"
+      headers:
+        Host: "jjjkkk.2030.pp.ua"
+  - name: "Delta-Kronecker-vmess-235"
+    type: vmess
+    server: "jjjmki.930.pp.ua"
+    port: 443
+    uuid: "b9bb332d-5e0d-41af-adac-49362dde8661"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "jjjmki.930.pp.ua"
+    network: ws
+    ws-opts:
+      path: "/iqjxVCqiIAaLCt5Q2GkKGWRMg"
+      headers:
+        Host: "jjjmki.930.pp.ua"
+  - name: "Delta-Kronecker-vmess-236"
+    type: vmess
+    server: "llloooiu.191292.xyz"
+    port: 443
+    uuid: "b9bb332d-5e0d-41af-adac-49362dde8661"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "llloooiu.191292.xyz"
+    network: ws
+    ws-opts:
+      path: "/iqjxVCqiIAaLCt5Q2GkKGWRMg"
+      headers:
+        Host: "llloooiu.191292.xyz"
+  - name: "Delta-Kronecker-vmess-237"
+    type: vmess
+    server: "mk.tc0.ccwu.cc"
+    port: 80
+    uuid: "1798b14b-aee0-4008-ba9a-2e53877761b4"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/kFK9O5cl8ZycyrxcJWNVFC21"
+      headers:
+        Host: "mk.tc0.ccwu.cc"
+  - name: "Delta-Kronecker-vmess-238"
+    type: vmess
+    server: "mki.tt5.ccwu.cc"
+    port: 80
+    uuid: "1798b14b-aee0-4008-ba9a-2e53877761b4"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/kFK9O5cl8ZycyrxcJWNVFC21"
+      headers:
+        Host: "mki.tt5.ccwu.cc"
+  - name: "Delta-Kronecker-vmess-239"
+    type: vmess
+    server: "mmko.tt0.ccwu.cc"
+    port: 80
+    uuid: "1798b14b-aee0-4008-ba9a-2e53877761b4"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/kFK9O5cl8ZycyrxcJWNVFC21"
+      headers:
+        Host: "mmko.tt0.ccwu.cc"
+  - name: "Delta-Kronecker-vmess-240"
+    type: vmess
+    server: "n1761214908.wpg27.xyz"
+    port: 443
+    uuid: "3514a93f-bb26-4442-8f99-971b2ff3388a"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "n1761214908.wpg27.xyz"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "n1761214908.wpg27.xyz"
+  - name: "Delta-Kronecker-vmess-241"
+    type: vmess
+    server: "nnnmj.wc7.ccwu.cc"
+    port: 80
+    uuid: "1798b14b-aee0-4008-ba9a-2e53877761b4"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/kFK9O5cl8ZycyrxcJWNVFC21"
+      headers:
+        Host: "nnnmj.wc7.ccwu.cc"
+  - name: "Delta-Kronecker-vmess-242"
+    type: vmess
+    server: "nji.kk0.ccwu.cc"
+    port: 443
+    uuid: "2215657e-2af4-405f-b770-4e61b298d5b8"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "nji.kk0.ccwu.cc"
+    network: ws
+    ws-opts:
+      path: "/PGsqb2SHJfbCLo"
+      headers:
+        Host: "nji.kk0.ccwu.cc"
+  - name: "Delta-Kronecker-vmess-243"
+    type: vmess
+    server: "rgt.ae1autumn.dpdns.org"
+    port: 80
+    uuid: "13ad36e6-c091-43f2-8505-47d868dd544c"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/YsmRouA9ZbxgW4"
+  - name: "Delta-Kronecker-vmess-244"
+    type: vmess
+    server: "rgt.ae1autumn.dpdns.org"
+    port: 443
+    uuid: "13ad36e6-c091-43f2-8505-47d868dd544c"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "rgt.ae1autumn.dpdns.org"
+    network: ws
+    ws-opts:
+      path: "/YsmRouA9ZbxgW4"
+      headers:
+        Host: "rgt.ae1autumn.dpdns.org"
+  - name: "Delta-Kronecker-vmess-245"
+    type: vmess
+    server: "se.n1n.indevs.in"
+    port: 80
+    uuid: "4115f84d-3b03-4b03-babf-21b36b2f9c03"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/GgigazFGDLgFWDItkD5XgXAL"
+      headers:
+        Host: "SE.N1N.INDEvs.IN"
+  - name: "Delta-Kronecker-vmess-246"
+    type: vmess
+    server: "nj.222856.xyz"
+    port: 443
+    uuid: "c558328b-eb46-424c-b9e0-574770f0b072"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "nj.222856.xyz"
+    network: ws
+    ws-opts:
+      path: "/7sOz0p4SzU1D6XNC0BXGtJ"
+      headers:
+        Host: "nj.222856.xyz"
+  - name: "Delta-Kronecker-vmess-247"
+    type: vmess
+    server: "nnmk.bb5.indevs.in"
+    port: 80
+    uuid: "b020865b-7404-4894-ba65-a7414b10cda3"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/boWUVaU0sxrNtFSdOPjqSc7fzeJr"
+      headers:
+        Host: "nnmk.bb5.indevs.in"
+  - name: "Delta-Kronecker-vmess-248"
+    type: vmess
+    server: "q2w3.o09.indevs.in"
+    port: 80
+    uuid: "4115f84d-3b03-4b03-babf-21b36b2f9c03"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/GgigazFGDLgFWDItkD5XgXAL"
+      headers:
+        Host: "q2W3.o09.INdeVs.In"
+  - name: "Delta-Kronecker-vmess-249"
+    type: vmess
+    server: "u9.89060004.xyz"
+    port: 443
+    uuid: "4c205c81-5694-43fe-a287-af563a2ebc05"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "u9.89060004.xyz"
+    network: ws
+    ws-opts:
+      path: "/djA07iUsSp0K2Fo4gds7cXpDB5nO5"
+  - name: "Delta-Kronecker-vmess-250"
+    type: vmess
+    server: "vfgt.wc3.ccwu.cc"
+    port: 80
+    uuid: "1798b14b-aee0-4008-ba9a-2e53877761b4"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/kFK9O5cl8ZycyrxcJWNVFC21"
+      headers:
+        Host: "vfgt.wc3.ccwu.cc"
+  - name: "Delta-Kronecker-vmess-251"
+    type: vmess
+    server: "vg.333756.xyz"
+    port: 443
+    uuid: "603f6524-7a34-473c-94fe-a967b6b25095"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vg.333756.xyz"
+    network: ws
+    ws-opts:
+      path: "/czprTuhzc5gNlUuOCnhD"
+      headers:
+        Host: "vg.333756.xyz"
+  - name: "Delta-Kronecker-vmess-252"
+    type: vmess
+    server: "vvvbnhj.kk4.ccwu.cc"
+    port: 80
+    uuid: "1798b14b-aee0-4008-ba9a-2e53877761b4"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/kFK9O5cl8ZycyrxcJWNVFC21"
+      headers:
+        Host: "vvvbnhj.kk4.ccwu.cc"
+  - name: "Delta-Kronecker-vmess-253"
+    type: vmess
+    server: "vvvbnhju.932.pp.ua"
+    port: 443
+    uuid: "2bfe58f7-da1d-45df-ab43-7c665b20ee29"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vvvbnhju.932.pp.ua"
+    network: ws
+    ws-opts:
+      path: "/t1UV4HSrzbWGmJtbBhmKb8nOkg"
+      headers:
+        Host: "vvvbnhju.932.pp.ua"
+  - name: "Delta-Kronecker-vmess-254"
+    type: vmess
+    server: "ty7.8900604.xyz"
+    port: 443
+    uuid: "4c205c81-5694-43fe-a287-af563a2ebc05"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ty7.8900604.xyz"
+    network: ws
+    ws-opts:
+      path: "/djA07iUsSp0K2Fo4gds7cXpDB5nO5"
+      headers:
+        Host: "ty7.8900604.xyz"
+  - name: "Delta-Kronecker-vmess-255"
+    type: vmess
+    server: "vip2.kaixincloud.top"
+    port: 443
+    uuid: "516d8a7a-3f0b-41d3-bad0-246116381516"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sy4.620720.xyz"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "sy4.620720.xyz"
+  - name: "Delta-Kronecker-vmess-256"
+    type: vmess
+    server: "vvvbnhj.191288.xyz"
+    port: 443
+    uuid: "5cccb4da-8aee-4b01-be84-2056265e52dc"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "VvvbnhJ.191288.xyZ"
+    network: ws
+    ws-opts:
+      path: "/AwUJyGh9Ym6vVzg35A6ueyyZnWd"
+      headers:
+        Host: "VvvbnhJ.191288.xyZ"
+  - name: "Delta-Kronecker-vmess-257"
+    type: vmess
+    server: "y78.ae1.indevs.in"
+    port: 80
+    uuid: "0c6b96bc-5e3a-4500-8497-6dead1965609"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/KHtPvNZl371C8NsbbZ1wwDhJ3"
+      headers:
+        Host: "y78.Ae1.indEVS.IN"
+  - name: "Delta-Kronecker-vmess-258"
+    type: vmess
+    server: "zxd.oo1.ccwu.cc"
+    port: 80
+    uuid: "077a4330-7cb0-4d4b-8feb-7ceb3cd43f69"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/DatH8bwo7YKaAHx8c"
+      headers:
+        Host: "zxd.oo1.ccwu.cc"
+  - name: "Delta-Kronecker-vmess-259"
+    type: vmess
+    server: "chatgpt.com"
+    port: 8443
+    uuid: "516d8a7a-3f0b-41d3-bad0-246116381516"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "c7.620720.xyz"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "c7.620720.xyz"
+  - name: "Delta-Kronecker-vmess-260"
+    type: vmess
+    server: "s5.forwardscdn.com"
+    port: 2091
+    uuid: "0ae58406-b054-4710-d451-a6904f360cca"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+  - name: "Delta-Kronecker-vmess-261"
+    type: vmess
+    server: "95.164.4.88"
+    port: 80
+    uuid: "24b6bbfb-9b27-4f17-bd32-67523bf487d9"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/vmess/"
+  - name: "Delta-Kronecker-vmess-262"
+    type: vmess
+    server: "8.218.8.135"
+    port: 443
+    uuid: "011c4670-cdde-44fb-b9be-8a1e27af26c9"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "n1761214910.74qxv.top"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "n1761214910.74qxv.top"
+  - name: "Delta-Kronecker-vmess-263"
+    type: vmess
+    server: "s3.forwardscdn.com"
+    port: 2089
+    uuid: "3453d05c-4671-48a5-d0fb-d5ef862dd762"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+  - name: "Delta-Kronecker-vmess-264"
+    type: vmess
+    server: "40.160.16.219"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "serkat.org"
+    network: ws
+    ws-opts:
+      path: "linkvws"
+      headers:
+        Host: "serkat.org"
+  - name: "Delta-Kronecker-vmess-265"
+    type: vmess
+    server: "57.129.28.67"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "yichueng.org"
+    network: ws
+    ws-opts:
+      path: "linkvws"
+      headers:
+        Host: "yichueng.org"
+  - name: "Delta-Kronecker-vmess-266"
+    type: vmess
+    server: "57.129.59.200"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    alterId: 1
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "serkat.org"
+    network: ws
+    ws-opts:
+      path: "linkvws"
+      headers:
+        Host: "serkat.org"
+  - name: "Delta-Kronecker-vmess-267"
+    type: vmess
+    server: "15.204.64.212"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "pelang.org"
+    network: ws
+    ws-opts:
+      path: "linkvws"
+      headers:
+        Host: "pelang.org"
+  - name: "Delta-Kronecker-vmess-268"
+    type: vmess
+    server: "15.235.13.69"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vkvd127.mycdn.me"
+    network: ws
+    ws-opts:
+      path: "/linkvws"
+      headers:
+        Host: "vkvd127.mycdn.me"
+  - name: "Delta-Kronecker-vmess-269"
+    type: vmess
+    server: "47.242.31.79"
+    port: 443
+    uuid: "7f6f64ae-3778-434c-adfc-95cb67ee8b73"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "n1761214904.wpg27.xyz"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "n1761214904.wpg27.xyz"
+  - name: "Delta-Kronecker-vmess-270"
+    type: vmess
+    server: "n1747624267.4u9ma.icu"
+    port: 443
+    uuid: "8c5d150c-b046-4440-8230-e84506a065a3"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "n1747624267.4u9ma.icu"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "n1747624267.4u9ma.icu"
+  - name: "Delta-Kronecker-vmess-271"
+    type: vmess
+    server: "n1753598445.74qxv.top"
+    port: 443
+    uuid: "f53b95dc-3ec3-49a2-803a-510e614ae577"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "n1753598445.74qxv.top"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "n1753598445.74qxv.top"
+  - name: "Delta-Kronecker-vmess-272"
+    type: vmess
+    server: "n1761214918.74qxv.top"
+    port: 443
+    uuid: "b141803a-209c-47bd-be6e-14d6bc1e96be"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "n1761214918.74qxv.top"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "n1761214918.74qxv.top"
+  - name: "Delta-Kronecker-vmess-273"
+    type: vmess
+    server: "8.218.52.5"
+    port: 443
+    uuid: "1f2daf43-ff90-4df9-9276-dfb8486d72bc"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "n1761214915.mv7wh.tech"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "n1761214915.mv7wh.tech"
+  - name: "Delta-Kronecker-vmess-274"
+    type: vmess
+    server: "40.160.16.216"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "fapeng.org"
+    network: ws
+    ws-opts:
+      path: "linkvws"
+      headers:
+        Host: "fapeng.org"
+
+proxy-groups:
+  - name: "PROXY"
+    type: select
+    proxies:
+      - "AUTO"
+      - "FALLBACK"
+      - "DIRECT"
+      - "Delta-Kronecker-vmess-001"
+      - "Delta-Kronecker-vmess-002"
+      - "Delta-Kronecker-vmess-003"
+      - "Delta-Kronecker-vmess-004"
+      - "Delta-Kronecker-vmess-005"
+      - "Delta-Kronecker-vmess-006"
+      - "Delta-Kronecker-vmess-007"
+      - "Delta-Kronecker-vmess-008"
+      - "Delta-Kronecker-vmess-009"
+      - "Delta-Kronecker-vmess-010"
+      - "Delta-Kronecker-vmess-011"
+      - "Delta-Kronecker-vmess-012"
+      - "Delta-Kronecker-vmess-013"
+      - "Delta-Kronecker-vmess-014"
+      - "Delta-Kronecker-vmess-015"
+      - "Delta-Kronecker-vmess-016"
+      - "Delta-Kronecker-vmess-017"
+      - "Delta-Kronecker-vmess-018"
+      - "Delta-Kronecker-vmess-019"
+      - "Delta-Kronecker-vmess-020"
+      - "Delta-Kronecker-vmess-021"
+      - "Delta-Kronecker-vmess-022"
+      - "Delta-Kronecker-vmess-023"
+      - "Delta-Kronecker-vmess-024"
+      - "Delta-Kronecker-vmess-025"
+      - "Delta-Kronecker-vmess-026"
+      - "Delta-Kronecker-vmess-027"
+      - "Delta-Kronecker-vmess-028"
+      - "Delta-Kronecker-vmess-029"
+      - "Delta-Kronecker-vmess-030"
+      - "Delta-Kronecker-vmess-031"
+      - "Delta-Kronecker-vmess-032"
+      - "Delta-Kronecker-vmess-033"
+      - "Delta-Kronecker-vmess-034"
+      - "Delta-Kronecker-vmess-035"
+      - "Delta-Kronecker-vmess-036"
+      - "Delta-Kronecker-vmess-037"
+      - "Delta-Kronecker-vmess-038"
+      - "Delta-Kronecker-vmess-039"
+      - "Delta-Kronecker-vmess-040"
+      - "Delta-Kronecker-vmess-041"
+      - "Delta-Kronecker-vmess-042"
+      - "Delta-Kronecker-vmess-043"
+      - "Delta-Kronecker-vmess-044"
+      - "Delta-Kronecker-vmess-045"
+      - "Delta-Kronecker-vmess-046"
+      - "Delta-Kronecker-vmess-047"
+      - "Delta-Kronecker-vmess-048"
+      - "Delta-Kronecker-vmess-049"
+      - "Delta-Kronecker-vmess-050"
+      - "Delta-Kronecker-vmess-051"
+      - "Delta-Kronecker-vmess-052"
+      - "Delta-Kronecker-vmess-053"
+      - "Delta-Kronecker-vmess-054"
+      - "Delta-Kronecker-vmess-055"
+      - "Delta-Kronecker-vmess-056"
+      - "Delta-Kronecker-vmess-057"
+      - "Delta-Kronecker-vmess-058"
+      - "Delta-Kronecker-vmess-059"
+      - "Delta-Kronecker-vmess-060"
+      - "Delta-Kronecker-vmess-061"
+      - "Delta-Kronecker-vmess-062"
+      - "Delta-Kronecker-vmess-063"
+      - "Delta-Kronecker-vmess-064"
+      - "Delta-Kronecker-vmess-065"
+      - "Delta-Kronecker-vmess-066"
+      - "Delta-Kronecker-vmess-067"
+      - "Delta-Kronecker-vmess-068"
+      - "Delta-Kronecker-vmess-069"
+      - "Delta-Kronecker-vmess-070"
+      - "Delta-Kronecker-vmess-071"
+      - "Delta-Kronecker-vmess-072"
+      - "Delta-Kronecker-vmess-073"
+      - "Delta-Kronecker-vmess-074"
+      - "Delta-Kronecker-vmess-075"
+      - "Delta-Kronecker-vmess-076"
+      - "Delta-Kronecker-vmess-077"
+      - "Delta-Kronecker-vmess-078"
+      - "Delta-Kronecker-vmess-079"
+      - "Delta-Kronecker-vmess-080"
+      - "Delta-Kronecker-vmess-081"
+      - "Delta-Kronecker-vmess-082"
+      - "Delta-Kronecker-vmess-083"
+      - "Delta-Kronecker-vmess-084"
+      - "Delta-Kronecker-vmess-085"
+      - "Delta-Kronecker-vmess-086"
+      - "Delta-Kronecker-vmess-087"
+      - "Delta-Kronecker-vmess-088"
+      - "Delta-Kronecker-vmess-089"
+      - "Delta-Kronecker-vmess-090"
+      - "Delta-Kronecker-vmess-091"
+      - "Delta-Kronecker-vmess-092"
+      - "Delta-Kronecker-vmess-093"
+      - "Delta-Kronecker-vmess-094"
+      - "Delta-Kronecker-vmess-095"
+      - "Delta-Kronecker-vmess-096"
+      - "Delta-Kronecker-vmess-097"
+      - "Delta-Kronecker-vmess-098"
+      - "Delta-Kronecker-vmess-099"
+      - "Delta-Kronecker-vmess-100"
+      - "Delta-Kronecker-vmess-101"
+      - "Delta-Kronecker-vmess-102"
+      - "Delta-Kronecker-vmess-103"
+      - "Delta-Kronecker-vmess-104"
+      - "Delta-Kronecker-vmess-105"
+      - "Delta-Kronecker-vmess-106"
+      - "Delta-Kronecker-vmess-107"
+      - "Delta-Kronecker-vmess-108"
+      - "Delta-Kronecker-vmess-109"
+      - "Delta-Kronecker-vmess-110"
+      - "Delta-Kronecker-vmess-111"
+      - "Delta-Kronecker-vmess-112"
+      - "Delta-Kronecker-vmess-113"
+      - "Delta-Kronecker-vmess-114"
+      - "Delta-Kronecker-vmess-115"
+      - "Delta-Kronecker-vmess-116"
+      - "Delta-Kronecker-vmess-117"
+      - "Delta-Kronecker-vmess-118"
+      - "Delta-Kronecker-vmess-119"
+      - "Delta-Kronecker-vmess-120"
+      - "Delta-Kronecker-vmess-121"
+      - "Delta-Kronecker-vmess-122"
+      - "Delta-Kronecker-vmess-123"
+      - "Delta-Kronecker-vmess-124"
+      - "Delta-Kronecker-vmess-125"
+      - "Delta-Kronecker-vmess-126"
+      - "Delta-Kronecker-vmess-127"
+      - "Delta-Kronecker-vmess-128"
+      - "Delta-Kronecker-vmess-129"
+      - "Delta-Kronecker-vmess-130"
+      - "Delta-Kronecker-vmess-131"
+      - "Delta-Kronecker-vmess-132"
+      - "Delta-Kronecker-vmess-133"
+      - "Delta-Kronecker-vmess-134"
+      - "Delta-Kronecker-vmess-135"
+      - "Delta-Kronecker-vmess-136"
+      - "Delta-Kronecker-vmess-137"
+      - "Delta-Kronecker-vmess-138"
+      - "Delta-Kronecker-vmess-139"
+      - "Delta-Kronecker-vmess-140"
+      - "Delta-Kronecker-vmess-141"
+      - "Delta-Kronecker-vmess-142"
+      - "Delta-Kronecker-vmess-143"
+      - "Delta-Kronecker-vmess-144"
+      - "Delta-Kronecker-vmess-145"
+      - "Delta-Kronecker-vmess-146"
+      - "Delta-Kronecker-vmess-147"
+      - "Delta-Kronecker-vmess-148"
+      - "Delta-Kronecker-vmess-149"
+      - "Delta-Kronecker-vmess-150"
+      - "Delta-Kronecker-vmess-151"
+      - "Delta-Kronecker-vmess-152"
+      - "Delta-Kronecker-vmess-153"
+      - "Delta-Kronecker-vmess-154"
+      - "Delta-Kronecker-vmess-155"
+      - "Delta-Kronecker-vmess-156"
+      - "Delta-Kronecker-vmess-157"
+      - "Delta-Kronecker-vmess-158"
+      - "Delta-Kronecker-vmess-159"
+      - "Delta-Kronecker-vmess-160"
+      - "Delta-Kronecker-vmess-161"
+      - "Delta-Kronecker-vmess-162"
+      - "Delta-Kronecker-vmess-163"
+      - "Delta-Kronecker-vmess-164"
+      - "Delta-Kronecker-vmess-165"
+      - "Delta-Kronecker-vmess-166"
+      - "Delta-Kronecker-vmess-167"
+      - "Delta-Kronecker-vmess-168"
+      - "Delta-Kronecker-vmess-169"
+      - "Delta-Kronecker-vmess-170"
+      - "Delta-Kronecker-vmess-171"
+      - "Delta-Kronecker-vmess-172"
+      - "Delta-Kronecker-vmess-173"
+      - "Delta-Kronecker-vmess-174"
+      - "Delta-Kronecker-vmess-175"
+      - "Delta-Kronecker-vmess-176"
+      - "Delta-Kronecker-vmess-177"
+      - "Delta-Kronecker-vmess-178"
+      - "Delta-Kronecker-vmess-179"
+      - "Delta-Kronecker-vmess-180"
+      - "Delta-Kronecker-vmess-181"
+      - "Delta-Kronecker-vmess-182"
+      - "Delta-Kronecker-vmess-183"
+      - "Delta-Kronecker-vmess-184"
+      - "Delta-Kronecker-vmess-185"
+      - "Delta-Kronecker-vmess-186"
+      - "Delta-Kronecker-vmess-187"
+      - "Delta-Kronecker-vmess-188"
+      - "Delta-Kronecker-vmess-189"
+      - "Delta-Kronecker-vmess-190"
+      - "Delta-Kronecker-vmess-191"
+      - "Delta-Kronecker-vmess-192"
+      - "Delta-Kronecker-vmess-193"
+      - "Delta-Kronecker-vmess-194"
+      - "Delta-Kronecker-vmess-195"
+      - "Delta-Kronecker-vmess-196"
+      - "Delta-Kronecker-vmess-197"
+      - "Delta-Kronecker-vmess-198"
+      - "Delta-Kronecker-vmess-199"
+      - "Delta-Kronecker-vmess-200"
+      - "Delta-Kronecker-vmess-201"
+      - "Delta-Kronecker-vmess-202"
+      - "Delta-Kronecker-vmess-203"
+      - "Delta-Kronecker-vmess-204"
+      - "Delta-Kronecker-vmess-205"
+      - "Delta-Kronecker-vmess-206"
+      - "Delta-Kronecker-vmess-207"
+      - "Delta-Kronecker-vmess-208"
+      - "Delta-Kronecker-vmess-209"
+      - "Delta-Kronecker-vmess-210"
+      - "Delta-Kronecker-vmess-211"
+      - "Delta-Kronecker-vmess-212"
+      - "Delta-Kronecker-vmess-213"
+      - "Delta-Kronecker-vmess-214"
+      - "Delta-Kronecker-vmess-215"
+      - "Delta-Kronecker-vmess-216"
+      - "Delta-Kronecker-vmess-217"
+      - "Delta-Kronecker-vmess-218"
+      - "Delta-Kronecker-vmess-219"
+      - "Delta-Kronecker-vmess-220"
+      - "Delta-Kronecker-vmess-221"
+      - "Delta-Kronecker-vmess-222"
+      - "Delta-Kronecker-vmess-223"
+      - "Delta-Kronecker-vmess-224"
+      - "Delta-Kronecker-vmess-225"
+      - "Delta-Kronecker-vmess-226"
+      - "Delta-Kronecker-vmess-227"
+      - "Delta-Kronecker-vmess-228"
+      - "Delta-Kronecker-vmess-229"
+      - "Delta-Kronecker-vmess-230"
+      - "Delta-Kronecker-vmess-231"
+      - "Delta-Kronecker-vmess-232"
+      - "Delta-Kronecker-vmess-233"
+      - "Delta-Kronecker-vmess-234"
+      - "Delta-Kronecker-vmess-235"
+      - "Delta-Kronecker-vmess-236"
+      - "Delta-Kronecker-vmess-237"
+      - "Delta-Kronecker-vmess-238"
+      - "Delta-Kronecker-vmess-239"
+      - "Delta-Kronecker-vmess-240"
+      - "Delta-Kronecker-vmess-241"
+      - "Delta-Kronecker-vmess-242"
+      - "Delta-Kronecker-vmess-243"
+      - "Delta-Kronecker-vmess-244"
+      - "Delta-Kronecker-vmess-245"
+      - "Delta-Kronecker-vmess-246"
+      - "Delta-Kronecker-vmess-247"
+      - "Delta-Kronecker-vmess-248"
+      - "Delta-Kronecker-vmess-249"
+      - "Delta-Kronecker-vmess-250"
+      - "Delta-Kronecker-vmess-251"
+      - "Delta-Kronecker-vmess-252"
+      - "Delta-Kronecker-vmess-253"
+      - "Delta-Kronecker-vmess-254"
+      - "Delta-Kronecker-vmess-255"
+      - "Delta-Kronecker-vmess-256"
+      - "Delta-Kronecker-vmess-257"
+      - "Delta-Kronecker-vmess-258"
+      - "Delta-Kronecker-vmess-259"
+      - "Delta-Kronecker-vmess-260"
+      - "Delta-Kronecker-vmess-261"
+      - "Delta-Kronecker-vmess-262"
+      - "Delta-Kronecker-vmess-263"
+      - "Delta-Kronecker-vmess-264"
+      - "Delta-Kronecker-vmess-265"
+      - "Delta-Kronecker-vmess-266"
+      - "Delta-Kronecker-vmess-267"
+      - "Delta-Kronecker-vmess-268"
+      - "Delta-Kronecker-vmess-269"
+      - "Delta-Kronecker-vmess-270"
+      - "Delta-Kronecker-vmess-271"
+      - "Delta-Kronecker-vmess-272"
+      - "Delta-Kronecker-vmess-273"
+      - "Delta-Kronecker-vmess-274"
+
+  - name: "AUTO"
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    lazy: true
+    proxies:
+      - "Delta-Kronecker-vmess-001"
+      - "Delta-Kronecker-vmess-002"
+      - "Delta-Kronecker-vmess-003"
+      - "Delta-Kronecker-vmess-004"
+      - "Delta-Kronecker-vmess-005"
+      - "Delta-Kronecker-vmess-006"
+      - "Delta-Kronecker-vmess-007"
+      - "Delta-Kronecker-vmess-008"
+      - "Delta-Kronecker-vmess-009"
+      - "Delta-Kronecker-vmess-010"
+      - "Delta-Kronecker-vmess-011"
+      - "Delta-Kronecker-vmess-012"
+      - "Delta-Kronecker-vmess-013"
+      - "Delta-Kronecker-vmess-014"
+      - "Delta-Kronecker-vmess-015"
+      - "Delta-Kronecker-vmess-016"
+      - "Delta-Kronecker-vmess-017"
+      - "Delta-Kronecker-vmess-018"
+      - "Delta-Kronecker-vmess-019"
+      - "Delta-Kronecker-vmess-020"
+      - "Delta-Kronecker-vmess-021"
+      - "Delta-Kronecker-vmess-022"
+      - "Delta-Kronecker-vmess-023"
+      - "Delta-Kronecker-vmess-024"
+      - "Delta-Kronecker-vmess-025"
+      - "Delta-Kronecker-vmess-026"
+      - "Delta-Kronecker-vmess-027"
+      - "Delta-Kronecker-vmess-028"
+      - "Delta-Kronecker-vmess-029"
+      - "Delta-Kronecker-vmess-030"
+      - "Delta-Kronecker-vmess-031"
+      - "Delta-Kronecker-vmess-032"
+      - "Delta-Kronecker-vmess-033"
+      - "Delta-Kronecker-vmess-034"
+      - "Delta-Kronecker-vmess-035"
+      - "Delta-Kronecker-vmess-036"
+      - "Delta-Kronecker-vmess-037"
+      - "Delta-Kronecker-vmess-038"
+      - "Delta-Kronecker-vmess-039"
+      - "Delta-Kronecker-vmess-040"
+      - "Delta-Kronecker-vmess-041"
+      - "Delta-Kronecker-vmess-042"
+      - "Delta-Kronecker-vmess-043"
+      - "Delta-Kronecker-vmess-044"
+      - "Delta-Kronecker-vmess-045"
+      - "Delta-Kronecker-vmess-046"
+      - "Delta-Kronecker-vmess-047"
+      - "Delta-Kronecker-vmess-048"
+      - "Delta-Kronecker-vmess-049"
+      - "Delta-Kronecker-vmess-050"
+      - "Delta-Kronecker-vmess-051"
+      - "Delta-Kronecker-vmess-052"
+      - "Delta-Kronecker-vmess-053"
+      - "Delta-Kronecker-vmess-054"
+      - "Delta-Kronecker-vmess-055"
+      - "Delta-Kronecker-vmess-056"
+      - "Delta-Kronecker-vmess-057"
+      - "Delta-Kronecker-vmess-058"
+      - "Delta-Kronecker-vmess-059"
+      - "Delta-Kronecker-vmess-060"
+      - "Delta-Kronecker-vmess-061"
+      - "Delta-Kronecker-vmess-062"
+      - "Delta-Kronecker-vmess-063"
+      - "Delta-Kronecker-vmess-064"
+      - "Delta-Kronecker-vmess-065"
+      - "Delta-Kronecker-vmess-066"
+      - "Delta-Kronecker-vmess-067"
+      - "Delta-Kronecker-vmess-068"
+      - "Delta-Kronecker-vmess-069"
+      - "Delta-Kronecker-vmess-070"
+      - "Delta-Kronecker-vmess-071"
+      - "Delta-Kronecker-vmess-072"
+      - "Delta-Kronecker-vmess-073"
+      - "Delta-Kronecker-vmess-074"
+      - "Delta-Kronecker-vmess-075"
+      - "Delta-Kronecker-vmess-076"
+      - "Delta-Kronecker-vmess-077"
+      - "Delta-Kronecker-vmess-078"
+      - "Delta-Kronecker-vmess-079"
+      - "Delta-Kronecker-vmess-080"
+      - "Delta-Kronecker-vmess-081"
+      - "Delta-Kronecker-vmess-082"
+      - "Delta-Kronecker-vmess-083"
+      - "Delta-Kronecker-vmess-084"
+      - "Delta-Kronecker-vmess-085"
+      - "Delta-Kronecker-vmess-086"
+      - "Delta-Kronecker-vmess-087"
+      - "Delta-Kronecker-vmess-088"
+      - "Delta-Kronecker-vmess-089"
+      - "Delta-Kronecker-vmess-090"
+      - "Delta-Kronecker-vmess-091"
+      - "Delta-Kronecker-vmess-092"
+      - "Delta-Kronecker-vmess-093"
+      - "Delta-Kronecker-vmess-094"
+      - "Delta-Kronecker-vmess-095"
+      - "Delta-Kronecker-vmess-096"
+      - "Delta-Kronecker-vmess-097"
+      - "Delta-Kronecker-vmess-098"
+      - "Delta-Kronecker-vmess-099"
+      - "Delta-Kronecker-vmess-100"
+      - "Delta-Kronecker-vmess-101"
+      - "Delta-Kronecker-vmess-102"
+      - "Delta-Kronecker-vmess-103"
+      - "Delta-Kronecker-vmess-104"
+      - "Delta-Kronecker-vmess-105"
+      - "Delta-Kronecker-vmess-106"
+      - "Delta-Kronecker-vmess-107"
+      - "Delta-Kronecker-vmess-108"
+      - "Delta-Kronecker-vmess-109"
+      - "Delta-Kronecker-vmess-110"
+      - "Delta-Kronecker-vmess-111"
+      - "Delta-Kronecker-vmess-112"
+      - "Delta-Kronecker-vmess-113"
+      - "Delta-Kronecker-vmess-114"
+      - "Delta-Kronecker-vmess-115"
+      - "Delta-Kronecker-vmess-116"
+      - "Delta-Kronecker-vmess-117"
+      - "Delta-Kronecker-vmess-118"
+      - "Delta-Kronecker-vmess-119"
+      - "Delta-Kronecker-vmess-120"
+      - "Delta-Kronecker-vmess-121"
+      - "Delta-Kronecker-vmess-122"
+      - "Delta-Kronecker-vmess-123"
+      - "Delta-Kronecker-vmess-124"
+      - "Delta-Kronecker-vmess-125"
+      - "Delta-Kronecker-vmess-126"
+      - "Delta-Kronecker-vmess-127"
+      - "Delta-Kronecker-vmess-128"
+      - "Delta-Kronecker-vmess-129"
+      - "Delta-Kronecker-vmess-130"
+      - "Delta-Kronecker-vmess-131"
+      - "Delta-Kronecker-vmess-132"
+      - "Delta-Kronecker-vmess-133"
+      - "Delta-Kronecker-vmess-134"
+      - "Delta-Kronecker-vmess-135"
+      - "Delta-Kronecker-vmess-136"
+      - "Delta-Kronecker-vmess-137"
+      - "Delta-Kronecker-vmess-138"
+      - "Delta-Kronecker-vmess-139"
+      - "Delta-Kronecker-vmess-140"
+      - "Delta-Kronecker-vmess-141"
+      - "Delta-Kronecker-vmess-142"
+      - "Delta-Kronecker-vmess-143"
+      - "Delta-Kronecker-vmess-144"
+      - "Delta-Kronecker-vmess-145"
+      - "Delta-Kronecker-vmess-146"
+      - "Delta-Kronecker-vmess-147"
+      - "Delta-Kronecker-vmess-148"
+      - "Delta-Kronecker-vmess-149"
+      - "Delta-Kronecker-vmess-150"
+      - "Delta-Kronecker-vmess-151"
+      - "Delta-Kronecker-vmess-152"
+      - "Delta-Kronecker-vmess-153"
+      - "Delta-Kronecker-vmess-154"
+      - "Delta-Kronecker-vmess-155"
+      - "Delta-Kronecker-vmess-156"
+      - "Delta-Kronecker-vmess-157"
+      - "Delta-Kronecker-vmess-158"
+      - "Delta-Kronecker-vmess-159"
+      - "Delta-Kronecker-vmess-160"
+      - "Delta-Kronecker-vmess-161"
+      - "Delta-Kronecker-vmess-162"
+      - "Delta-Kronecker-vmess-163"
+      - "Delta-Kronecker-vmess-164"
+      - "Delta-Kronecker-vmess-165"
+      - "Delta-Kronecker-vmess-166"
+      - "Delta-Kronecker-vmess-167"
+      - "Delta-Kronecker-vmess-168"
+      - "Delta-Kronecker-vmess-169"
+      - "Delta-Kronecker-vmess-170"
+      - "Delta-Kronecker-vmess-171"
+      - "Delta-Kronecker-vmess-172"
+      - "Delta-Kronecker-vmess-173"
+      - "Delta-Kronecker-vmess-174"
+      - "Delta-Kronecker-vmess-175"
+      - "Delta-Kronecker-vmess-176"
+      - "Delta-Kronecker-vmess-177"
+      - "Delta-Kronecker-vmess-178"
+      - "Delta-Kronecker-vmess-179"
+      - "Delta-Kronecker-vmess-180"
+      - "Delta-Kronecker-vmess-181"
+      - "Delta-Kronecker-vmess-182"
+      - "Delta-Kronecker-vmess-183"
+      - "Delta-Kronecker-vmess-184"
+      - "Delta-Kronecker-vmess-185"
+      - "Delta-Kronecker-vmess-186"
+      - "Delta-Kronecker-vmess-187"
+      - "Delta-Kronecker-vmess-188"
+      - "Delta-Kronecker-vmess-189"
+      - "Delta-Kronecker-vmess-190"
+      - "Delta-Kronecker-vmess-191"
+      - "Delta-Kronecker-vmess-192"
+      - "Delta-Kronecker-vmess-193"
+      - "Delta-Kronecker-vmess-194"
+      - "Delta-Kronecker-vmess-195"
+      - "Delta-Kronecker-vmess-196"
+      - "Delta-Kronecker-vmess-197"
+      - "Delta-Kronecker-vmess-198"
+      - "Delta-Kronecker-vmess-199"
+      - "Delta-Kronecker-vmess-200"
+      - "Delta-Kronecker-vmess-201"
+      - "Delta-Kronecker-vmess-202"
+      - "Delta-Kronecker-vmess-203"
+      - "Delta-Kronecker-vmess-204"
+      - "Delta-Kronecker-vmess-205"
+      - "Delta-Kronecker-vmess-206"
+      - "Delta-Kronecker-vmess-207"
+      - "Delta-Kronecker-vmess-208"
+      - "Delta-Kronecker-vmess-209"
+      - "Delta-Kronecker-vmess-210"
+      - "Delta-Kronecker-vmess-211"
+      - "Delta-Kronecker-vmess-212"
+      - "Delta-Kronecker-vmess-213"
+      - "Delta-Kronecker-vmess-214"
+      - "Delta-Kronecker-vmess-215"
+      - "Delta-Kronecker-vmess-216"
+      - "Delta-Kronecker-vmess-217"
+      - "Delta-Kronecker-vmess-218"
+      - "Delta-Kronecker-vmess-219"
+      - "Delta-Kronecker-vmess-220"
+      - "Delta-Kronecker-vmess-221"
+      - "Delta-Kronecker-vmess-222"
+      - "Delta-Kronecker-vmess-223"
+      - "Delta-Kronecker-vmess-224"
+      - "Delta-Kronecker-vmess-225"
+      - "Delta-Kronecker-vmess-226"
+      - "Delta-Kronecker-vmess-227"
+      - "Delta-Kronecker-vmess-228"
+      - "Delta-Kronecker-vmess-229"
+      - "Delta-Kronecker-vmess-230"
+      - "Delta-Kronecker-vmess-231"
+      - "Delta-Kronecker-vmess-232"
+      - "Delta-Kronecker-vmess-233"
+      - "Delta-Kronecker-vmess-234"
+      - "Delta-Kronecker-vmess-235"
+      - "Delta-Kronecker-vmess-236"
+      - "Delta-Kronecker-vmess-237"
+      - "Delta-Kronecker-vmess-238"
+      - "Delta-Kronecker-vmess-239"
+      - "Delta-Kronecker-vmess-240"
+      - "Delta-Kronecker-vmess-241"
+      - "Delta-Kronecker-vmess-242"
+      - "Delta-Kronecker-vmess-243"
+      - "Delta-Kronecker-vmess-244"
+      - "Delta-Kronecker-vmess-245"
+      - "Delta-Kronecker-vmess-246"
+      - "Delta-Kronecker-vmess-247"
+      - "Delta-Kronecker-vmess-248"
+      - "Delta-Kronecker-vmess-249"
+      - "Delta-Kronecker-vmess-250"
+      - "Delta-Kronecker-vmess-251"
+      - "Delta-Kronecker-vmess-252"
+      - "Delta-Kronecker-vmess-253"
+      - "Delta-Kronecker-vmess-254"
+      - "Delta-Kronecker-vmess-255"
+      - "Delta-Kronecker-vmess-256"
+      - "Delta-Kronecker-vmess-257"
+      - "Delta-Kronecker-vmess-258"
+      - "Delta-Kronecker-vmess-259"
+      - "Delta-Kronecker-vmess-260"
+      - "Delta-Kronecker-vmess-261"
+      - "Delta-Kronecker-vmess-262"
+      - "Delta-Kronecker-vmess-263"
+      - "Delta-Kronecker-vmess-264"
+      - "Delta-Kronecker-vmess-265"
+      - "Delta-Kronecker-vmess-266"
+      - "Delta-Kronecker-vmess-267"
+      - "Delta-Kronecker-vmess-268"
+      - "Delta-Kronecker-vmess-269"
+      - "Delta-Kronecker-vmess-270"
+      - "Delta-Kronecker-vmess-271"
+      - "Delta-Kronecker-vmess-272"
+      - "Delta-Kronecker-vmess-273"
+      - "Delta-Kronecker-vmess-274"
+
+  - name: "FALLBACK"
+    type: fallback
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    proxies:
+      - "Delta-Kronecker-vmess-001"
+      - "Delta-Kronecker-vmess-002"
+      - "Delta-Kronecker-vmess-003"
+      - "Delta-Kronecker-vmess-004"
+      - "Delta-Kronecker-vmess-005"
+      - "Delta-Kronecker-vmess-006"
+      - "Delta-Kronecker-vmess-007"
+      - "Delta-Kronecker-vmess-008"
+      - "Delta-Kronecker-vmess-009"
+      - "Delta-Kronecker-vmess-010"
+      - "Delta-Kronecker-vmess-011"
+      - "Delta-Kronecker-vmess-012"
+      - "Delta-Kronecker-vmess-013"
+      - "Delta-Kronecker-vmess-014"
+      - "Delta-Kronecker-vmess-015"
+      - "Delta-Kronecker-vmess-016"
+      - "Delta-Kronecker-vmess-017"
+      - "Delta-Kronecker-vmess-018"
+      - "Delta-Kronecker-vmess-019"
+      - "Delta-Kronecker-vmess-020"
+      - "Delta-Kronecker-vmess-021"
+      - "Delta-Kronecker-vmess-022"
+      - "Delta-Kronecker-vmess-023"
+      - "Delta-Kronecker-vmess-024"
+      - "Delta-Kronecker-vmess-025"
+      - "Delta-Kronecker-vmess-026"
+      - "Delta-Kronecker-vmess-027"
+      - "Delta-Kronecker-vmess-028"
+      - "Delta-Kronecker-vmess-029"
+      - "Delta-Kronecker-vmess-030"
+      - "Delta-Kronecker-vmess-031"
+      - "Delta-Kronecker-vmess-032"
+      - "Delta-Kronecker-vmess-033"
+      - "Delta-Kronecker-vmess-034"
+      - "Delta-Kronecker-vmess-035"
+      - "Delta-Kronecker-vmess-036"
+      - "Delta-Kronecker-vmess-037"
+      - "Delta-Kronecker-vmess-038"
+      - "Delta-Kronecker-vmess-039"
+      - "Delta-Kronecker-vmess-040"
+      - "Delta-Kronecker-vmess-041"
+      - "Delta-Kronecker-vmess-042"
+      - "Delta-Kronecker-vmess-043"
+      - "Delta-Kronecker-vmess-044"
+      - "Delta-Kronecker-vmess-045"
+      - "Delta-Kronecker-vmess-046"
+      - "Delta-Kronecker-vmess-047"
+      - "Delta-Kronecker-vmess-048"
+      - "Delta-Kronecker-vmess-049"
+      - "Delta-Kronecker-vmess-050"
+      - "Delta-Kronecker-vmess-051"
+      - "Delta-Kronecker-vmess-052"
+      - "Delta-Kronecker-vmess-053"
+      - "Delta-Kronecker-vmess-054"
+      - "Delta-Kronecker-vmess-055"
+      - "Delta-Kronecker-vmess-056"
+      - "Delta-Kronecker-vmess-057"
+      - "Delta-Kronecker-vmess-058"
+      - "Delta-Kronecker-vmess-059"
+      - "Delta-Kronecker-vmess-060"
+      - "Delta-Kronecker-vmess-061"
+      - "Delta-Kronecker-vmess-062"
+      - "Delta-Kronecker-vmess-063"
+      - "Delta-Kronecker-vmess-064"
+      - "Delta-Kronecker-vmess-065"
+      - "Delta-Kronecker-vmess-066"
+      - "Delta-Kronecker-vmess-067"
+      - "Delta-Kronecker-vmess-068"
+      - "Delta-Kronecker-vmess-069"
+      - "Delta-Kronecker-vmess-070"
+      - "Delta-Kronecker-vmess-071"
+      - "Delta-Kronecker-vmess-072"
+      - "Delta-Kronecker-vmess-073"
+      - "Delta-Kronecker-vmess-074"
+      - "Delta-Kronecker-vmess-075"
+      - "Delta-Kronecker-vmess-076"
+      - "Delta-Kronecker-vmess-077"
+      - "Delta-Kronecker-vmess-078"
+      - "Delta-Kronecker-vmess-079"
+      - "Delta-Kronecker-vmess-080"
+      - "Delta-Kronecker-vmess-081"
+      - "Delta-Kronecker-vmess-082"
+      - "Delta-Kronecker-vmess-083"
+      - "Delta-Kronecker-vmess-084"
+      - "Delta-Kronecker-vmess-085"
+      - "Delta-Kronecker-vmess-086"
+      - "Delta-Kronecker-vmess-087"
+      - "Delta-Kronecker-vmess-088"
+      - "Delta-Kronecker-vmess-089"
+      - "Delta-Kronecker-vmess-090"
+      - "Delta-Kronecker-vmess-091"
+      - "Delta-Kronecker-vmess-092"
+      - "Delta-Kronecker-vmess-093"
+      - "Delta-Kronecker-vmess-094"
+      - "Delta-Kronecker-vmess-095"
+      - "Delta-Kronecker-vmess-096"
+      - "Delta-Kronecker-vmess-097"
+      - "Delta-Kronecker-vmess-098"
+      - "Delta-Kronecker-vmess-099"
+      - "Delta-Kronecker-vmess-100"
+      - "Delta-Kronecker-vmess-101"
+      - "Delta-Kronecker-vmess-102"
+      - "Delta-Kronecker-vmess-103"
+      - "Delta-Kronecker-vmess-104"
+      - "Delta-Kronecker-vmess-105"
+      - "Delta-Kronecker-vmess-106"
+      - "Delta-Kronecker-vmess-107"
+      - "Delta-Kronecker-vmess-108"
+      - "Delta-Kronecker-vmess-109"
+      - "Delta-Kronecker-vmess-110"
+      - "Delta-Kronecker-vmess-111"
+      - "Delta-Kronecker-vmess-112"
+      - "Delta-Kronecker-vmess-113"
+      - "Delta-Kronecker-vmess-114"
+      - "Delta-Kronecker-vmess-115"
+      - "Delta-Kronecker-vmess-116"
+      - "Delta-Kronecker-vmess-117"
+      - "Delta-Kronecker-vmess-118"
+      - "Delta-Kronecker-vmess-119"
+      - "Delta-Kronecker-vmess-120"
+      - "Delta-Kronecker-vmess-121"
+      - "Delta-Kronecker-vmess-122"
+      - "Delta-Kronecker-vmess-123"
+      - "Delta-Kronecker-vmess-124"
+      - "Delta-Kronecker-vmess-125"
+      - "Delta-Kronecker-vmess-126"
+      - "Delta-Kronecker-vmess-127"
+      - "Delta-Kronecker-vmess-128"
+      - "Delta-Kronecker-vmess-129"
+      - "Delta-Kronecker-vmess-130"
+      - "Delta-Kronecker-vmess-131"
+      - "Delta-Kronecker-vmess-132"
+      - "Delta-Kronecker-vmess-133"
+      - "Delta-Kronecker-vmess-134"
+      - "Delta-Kronecker-vmess-135"
+      - "Delta-Kronecker-vmess-136"
+      - "Delta-Kronecker-vmess-137"
+      - "Delta-Kronecker-vmess-138"
+      - "Delta-Kronecker-vmess-139"
+      - "Delta-Kronecker-vmess-140"
+      - "Delta-Kronecker-vmess-141"
+      - "Delta-Kronecker-vmess-142"
+      - "Delta-Kronecker-vmess-143"
+      - "Delta-Kronecker-vmess-144"
+      - "Delta-Kronecker-vmess-145"
+      - "Delta-Kronecker-vmess-146"
+      - "Delta-Kronecker-vmess-147"
+      - "Delta-Kronecker-vmess-148"
+      - "Delta-Kronecker-vmess-149"
+      - "Delta-Kronecker-vmess-150"
+      - "Delta-Kronecker-vmess-151"
+      - "Delta-Kronecker-vmess-152"
+      - "Delta-Kronecker-vmess-153"
+      - "Delta-Kronecker-vmess-154"
+      - "Delta-Kronecker-vmess-155"
+      - "Delta-Kronecker-vmess-156"
+      - "Delta-Kronecker-vmess-157"
+      - "Delta-Kronecker-vmess-158"
+      - "Delta-Kronecker-vmess-159"
+      - "Delta-Kronecker-vmess-160"
+      - "Delta-Kronecker-vmess-161"
+      - "Delta-Kronecker-vmess-162"
+      - "Delta-Kronecker-vmess-163"
+      - "Delta-Kronecker-vmess-164"
+      - "Delta-Kronecker-vmess-165"
+      - "Delta-Kronecker-vmess-166"
+      - "Delta-Kronecker-vmess-167"
+      - "Delta-Kronecker-vmess-168"
+      - "Delta-Kronecker-vmess-169"
+      - "Delta-Kronecker-vmess-170"
+      - "Delta-Kronecker-vmess-171"
+      - "Delta-Kronecker-vmess-172"
+      - "Delta-Kronecker-vmess-173"
+      - "Delta-Kronecker-vmess-174"
+      - "Delta-Kronecker-vmess-175"
+      - "Delta-Kronecker-vmess-176"
+      - "Delta-Kronecker-vmess-177"
+      - "Delta-Kronecker-vmess-178"
+      - "Delta-Kronecker-vmess-179"
+      - "Delta-Kronecker-vmess-180"
+      - "Delta-Kronecker-vmess-181"
+      - "Delta-Kronecker-vmess-182"
+      - "Delta-Kronecker-vmess-183"
+      - "Delta-Kronecker-vmess-184"
+      - "Delta-Kronecker-vmess-185"
+      - "Delta-Kronecker-vmess-186"
+      - "Delta-Kronecker-vmess-187"
+      - "Delta-Kronecker-vmess-188"
+      - "Delta-Kronecker-vmess-189"
+      - "Delta-Kronecker-vmess-190"
+      - "Delta-Kronecker-vmess-191"
+      - "Delta-Kronecker-vmess-192"
+      - "Delta-Kronecker-vmess-193"
+      - "Delta-Kronecker-vmess-194"
+      - "Delta-Kronecker-vmess-195"
+      - "Delta-Kronecker-vmess-196"
+      - "Delta-Kronecker-vmess-197"
+      - "Delta-Kronecker-vmess-198"
+      - "Delta-Kronecker-vmess-199"
+      - "Delta-Kronecker-vmess-200"
+      - "Delta-Kronecker-vmess-201"
+      - "Delta-Kronecker-vmess-202"
+      - "Delta-Kronecker-vmess-203"
+      - "Delta-Kronecker-vmess-204"
+      - "Delta-Kronecker-vmess-205"
+      - "Delta-Kronecker-vmess-206"
+      - "Delta-Kronecker-vmess-207"
+      - "Delta-Kronecker-vmess-208"
+      - "Delta-Kronecker-vmess-209"
+      - "Delta-Kronecker-vmess-210"
+      - "Delta-Kronecker-vmess-211"
+      - "Delta-Kronecker-vmess-212"
+      - "Delta-Kronecker-vmess-213"
+      - "Delta-Kronecker-vmess-214"
+      - "Delta-Kronecker-vmess-215"
+      - "Delta-Kronecker-vmess-216"
+      - "Delta-Kronecker-vmess-217"
+      - "Delta-Kronecker-vmess-218"
+      - "Delta-Kronecker-vmess-219"
+      - "Delta-Kronecker-vmess-220"
+      - "Delta-Kronecker-vmess-221"
+      - "Delta-Kronecker-vmess-222"
+      - "Delta-Kronecker-vmess-223"
+      - "Delta-Kronecker-vmess-224"
+      - "Delta-Kronecker-vmess-225"
+      - "Delta-Kronecker-vmess-226"
+      - "Delta-Kronecker-vmess-227"
+      - "Delta-Kronecker-vmess-228"
+      - "Delta-Kronecker-vmess-229"
+      - "Delta-Kronecker-vmess-230"
+      - "Delta-Kronecker-vmess-231"
+      - "Delta-Kronecker-vmess-232"
+      - "Delta-Kronecker-vmess-233"
+      - "Delta-Kronecker-vmess-234"
+      - "Delta-Kronecker-vmess-235"
+      - "Delta-Kronecker-vmess-236"
+      - "Delta-Kronecker-vmess-237"
+      - "Delta-Kronecker-vmess-238"
+      - "Delta-Kronecker-vmess-239"
+      - "Delta-Kronecker-vmess-240"
+      - "Delta-Kronecker-vmess-241"
+      - "Delta-Kronecker-vmess-242"
+      - "Delta-Kronecker-vmess-243"
+      - "Delta-Kronecker-vmess-244"
+      - "Delta-Kronecker-vmess-245"
+      - "Delta-Kronecker-vmess-246"
+      - "Delta-Kronecker-vmess-247"
+      - "Delta-Kronecker-vmess-248"
+      - "Delta-Kronecker-vmess-249"
+      - "Delta-Kronecker-vmess-250"
+      - "Delta-Kronecker-vmess-251"
+      - "Delta-Kronecker-vmess-252"
+      - "Delta-Kronecker-vmess-253"
+      - "Delta-Kronecker-vmess-254"
+      - "Delta-Kronecker-vmess-255"
+      - "Delta-Kronecker-vmess-256"
+      - "Delta-Kronecker-vmess-257"
+      - "Delta-Kronecker-vmess-258"
+      - "Delta-Kronecker-vmess-259"
+      - "Delta-Kronecker-vmess-260"
+      - "Delta-Kronecker-vmess-261"
+      - "Delta-Kronecker-vmess-262"
+      - "Delta-Kronecker-vmess-263"
+      - "Delta-Kronecker-vmess-264"
+      - "Delta-Kronecker-vmess-265"
+      - "Delta-Kronecker-vmess-266"
+      - "Delta-Kronecker-vmess-267"
+      - "Delta-Kronecker-vmess-268"
+      - "Delta-Kronecker-vmess-269"
+      - "Delta-Kronecker-vmess-270"
+      - "Delta-Kronecker-vmess-271"
+      - "Delta-Kronecker-vmess-272"
+      - "Delta-Kronecker-vmess-273"
+      - "Delta-Kronecker-vmess-274"
+
+
+rules:
+  - DOMAIN-SUFFIX,ir,DIRECT
+  - DOMAIN,localhost,DIRECT
+  - DOMAIN-SUFFIX,local,DIRECT
+  - DOMAIN-SUFFIX,aparat.com,DIRECT
+  - DOMAIN-SUFFIX,digikala.com,DIRECT
+  - DOMAIN-SUFFIX,snapp.ir,DIRECT
+  - DOMAIN-SUFFIX,divar.ir,DIRECT
+  - DOMAIN-SUFFIX,filmnet.ir,DIRECT
+  - DOMAIN-SUFFIX,namava.ir,DIRECT
+  - DOMAIN-SUFFIX,filimo.com,DIRECT
+  - DOMAIN-SUFFIX,telewebion.com,DIRECT
+  - DOMAIN-SUFFIX,rubika.ir,DIRECT
+  - DOMAIN-SUFFIX,eitaa.com,DIRECT
+  - DOMAIN-SUFFIX,bale.ai,DIRECT
+  - DOMAIN-SUFFIX,gap.im,DIRECT
+  - DOMAIN-SUFFIX,igap.net,DIRECT
+  - DOMAIN-SUFFIX,balad.ir,DIRECT
+  - DOMAIN-SUFFIX,snappfood.ir,DIRECT
+  - DOMAIN-SUFFIX,tapsi.ir,DIRECT
+  - DOMAIN-SUFFIX,sheypoor.com,DIRECT
+  - DOMAIN-SUFFIX,torob.com,DIRECT
+  - DOMAIN-SUFFIX,basalam.com,DIRECT
+  - DOMAIN-SUFFIX,alibaba.ir,DIRECT
+  - DOMAIN-SUFFIX,flightio.com,DIRECT
+  - DOMAIN-SUFFIX,varzesh3.com,DIRECT
+  - DOMAIN-SUFFIX,zoomit.ir,DIRECT
+  - DOMAIN-SUFFIX,isna.ir,DIRECT
+  - DOMAIN-SUFFIX,farsnews.ir,DIRECT
+  - DOMAIN-SUFFIX,irna.ir,DIRECT
+  - DOMAIN-SUFFIX,tasnimnews.com,DIRECT
+  - DOMAIN-SUFFIX,mehrnews.com,DIRECT
+  - DOMAIN-SUFFIX,mci.ir,DIRECT
+  - DOMAIN-SUFFIX,irancell.ir,DIRECT
+  - DOMAIN-SUFFIX,hamraheawal.com,DIRECT
+  - DOMAIN-SUFFIX,sep.ir,DIRECT
+  - DOMAIN-SUFFIX,enamad.ir,DIRECT
+  - DOMAIN-SUFFIX,shaparak.ir,DIRECT
+  - DOMAIN-SUFFIX,isc.co.ir,DIRECT
+  - DOMAIN-SUFFIX,tamin.ir,DIRECT
+  - DOMAIN-SUFFIX,rahnameh.ir,DIRECT
+  - DOMAIN-SUFFIX,saipa.ir,DIRECT
+  - DOMAIN-SUFFIX,ikco.ir,DIRECT
+  - DOMAIN-SUFFIX,pasargad.ir,DIRECT
+  - DOMAIN-SUFFIX,parsian-bank.ir,DIRECT
+  - DOMAIN-SUFFIX,mellat.ir,DIRECT
+  - DOMAIN-SUFFIX,bmi.ir,DIRECT
+  - DOMAIN-SUFFIX,samanbank.ir,DIRECT
+  - DOMAIN-SUFFIX,karafarin.com,DIRECT
+  - DOMAIN-SUFFIX,eniak.ir,DIRECT
+  - DOMAIN-SUFFIX,mrud.ir,DIRECT
+  - DOMAIN-SUFFIX,behdasht.gov.ir,DIRECT
+  - DOMAIN-SUFFIX,eservices.ir,DIRECT
+  - GEOIP,IR,DIRECT
+  - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
+  - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
+  - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,100.64.0.0/10,DIRECT,no-resolve
+  - IP-CIDR,169.254.0.0/16,DIRECT,no-resolve
+  - IP-CIDR,224.0.0.0/4,DIRECT,no-resolve
+  - IP-CIDR,240.0.0.0/4,DIRECT,no-resolve
+  - MATCH,PROXY

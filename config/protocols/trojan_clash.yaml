@@ -1,0 +1,2759 @@
+mixed-port: 7890
+allow-lan: true
+bind-address: '*'
+mode: rule
+log-level: warning
+ipv6: false
+external-controller: 127.0.0.1:9090
+secret: ""
+unified-delay: true
+tcp-concurrent: true
+global-client-fingerprint: chrome
+find-process-mode: strict
+keep-alive-interval: 30
+
+dns:
+  enable: true
+  ipv6: false
+  listen: 0.0.0.0:5353
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+    - "*.lan"
+    - "*.local"
+    - "*.ir"
+    - "+.stun.*.*"
+    - "+.stun.*.*.*"
+    - "localhost.ptlogin2.qq.com"
+    - "time.windows.com"
+    - "time.nist.gov"
+    - "time.apple.com"
+  default-nameserver:
+    - 8.8.8.8
+    - 1.1.1.1
+  nameserver:
+    - https://8.8.8.8/dns-query
+    - https://1.1.1.1/dns-query
+    - https://dns.google/dns-query
+  proxy-server-nameserver:
+    - https://8.8.8.8/dns-query
+    - https://1.1.1.1/dns-query
+  fallback:
+    - https://1.1.1.1/dns-query
+    - tls://8.8.8.8:853
+    - tls://1.1.1.1:853
+  fallback-filter:
+    geoip: true
+    geoip-code: IR
+    ipcidr:
+      - 240.0.0.0/4
+      - 0.0.0.0/8
+
+proxies:
+  - name: "Delta-Kronecker-trojan-001"
+    type: trojan
+    server: "3.69.220.38"
+    port: 22223
+    password: "telegram-id-directvpn"
+    sni: "trojan.burgerip.co.uk"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-trojan-002"
+    type: trojan
+    server: "188.114.98.0"
+    port: 443
+    password: "humanity"
+    sni: "www.calmlunch.com"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/assignment"
+      headers:
+        Host: "www.calmlunch.com"
+  - name: "Delta-Kronecker-trojan-003"
+    type: trojan
+    server: "172.67.180.92"
+    port: 443
+    password: "humanity"
+    sni: "www.multiplydose.com"
+    skip-cert-verify: true
+    udp: true
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/assignment"
+      headers:
+        Host: "www.multiplydose.com"
+  - name: "Delta-Kronecker-trojan-004"
+    type: trojan
+    server: "153.121.70.134"
+    port: 400
+    password: "9372cb81c7b0ad903f91f2f8a4d3f02b"
+    sni: "www.nintendogames.net"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-trojan-005"
+    type: trojan
+    server: "www.multiplydose.com"
+    port: 443
+    password: "humanity"
+    sni: "www.multiplydose.com"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/assignment"
+      headers:
+        Host: "www.multiplydose.com"
+  - name: "Delta-Kronecker-trojan-006"
+    type: trojan
+    server: "80.173.230.196"
+    port: 26279
+    password: "a5inYFE=JGV89+hjxIqgDp1tcWBd6"
+    sni: "80.173.230.196"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-trojan-007"
+    type: trojan
+    server: "160.16.236.32"
+    port: 1281
+    password: "9372cb81c7b0ad903f91f2f8a4d3f02b"
+    sni: "www.nintendogames.net"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-trojan-008"
+    type: trojan
+    server: "188.114.96.3"
+    port: 443
+    password: "humanity"
+    sni: "www.gossipglove.com"
+    skip-cert-verify: true
+    udp: true
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/assignment"
+      headers:
+        Host: "www.gossipglove.com"
+  - name: "Delta-Kronecker-trojan-009"
+    type: trojan
+    server: "chatgpt.com"
+    port: 443
+    password: "humanity"
+    sni: "www.gossipglove.com"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/assignment"
+      headers:
+        Host: "www.gossipglove.com"
+  - name: "Delta-Kronecker-trojan-010"
+    type: trojan
+    server: "v1.dabache.top"
+    port: 443
+    password: "humanity"
+    sni: "www.multiplydose.com"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/assignment"
+      headers:
+        Host: "www.multiplydose.com"
+  - name: "Delta-Kronecker-trojan-011"
+    type: trojan
+    server: "188.116.22.217"
+    port: 2083
+    password: "0zmdDXd0Qt5ff_7Qg67R-Rtq4Tmt4c"
+    sni: "xo.e0f.cx"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/trojan-ws"
+      headers:
+        Host: "xo.e0f.cx"
+  - name: "Delta-Kronecker-trojan-012"
+    type: trojan
+    server: "160.16.231.103"
+    port: 400
+    password: "9372cb81c7b0ad903f91f2f8a4d3f02b"
+    sni: "www.nintendogames.net"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-trojan-013"
+    type: trojan
+    server: "104.21.40.34"
+    port: 443
+    password: "humanity"
+    sni: "www.gossipglove.com"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/assignment"
+      headers:
+        Host: "www.gossipglove.com"
+  - name: "Delta-Kronecker-trojan-014"
+    type: trojan
+    server: "13.39.52.135"
+    port: 22222
+    password: "telegram-id-privatevpns"
+    sni: "trojan.burgerip.co.uk"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-trojan-015"
+    type: trojan
+    server: "www.gossipglove.com"
+    port: 443
+    password: "humanity"
+    sni: "www.gossipglove.com"
+    skip-cert-verify: true
+    udp: true
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/assignment"
+  - name: "Delta-Kronecker-trojan-016"
+    type: trojan
+    server: "160.16.124.55"
+    port: 3901
+    password: "9372cb81c7b0ad903f91f2f8a4d3f02b"
+    sni: "www.nintendogames.net"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-trojan-017"
+    type: trojan
+    server: "v1.dabache.top"
+    port: 8443
+    password: "T9BpZIVMNv"
+    sni: "sweden.vmaxpanel.com"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/amd"
+      headers:
+        Host: "sweden.vmaxpanel.com"
+  - name: "Delta-Kronecker-trojan-018"
+    type: trojan
+    server: "160.16.138.24"
+    port: 3901
+    password: "9372cb81c7b0ad903f91f2f8a4d3f02b"
+    sni: "www.nintendogames.net"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-trojan-019"
+    type: trojan
+    server: "37.235.49.209"
+    port: 28099
+    password: "qmBSKnAl6LYi9=z23Rs.Z"
+    sni: "celestialcorset.crystalhamster.click"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-trojan-020"
+    type: trojan
+    server: "www.calmlunch.com"
+    port: 443
+    password: "humanity"
+    sni: "www.calmlunch.com"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/assignment"
+      headers:
+        Host: "www.calmlunch.com"
+  - name: "Delta-Kronecker-trojan-021"
+    type: trojan
+    server: "160.16.124.17"
+    port: 3423
+    password: "9372cb81c7b0ad903f91f2f8a4d3f02b"
+    sni: "www.nintendogames.net"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-trojan-022"
+    type: trojan
+    server: "172.64.155.209"
+    port: 443
+    password: "humanity"
+    sni: "www.gossipglove.com"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/assignment"
+      headers:
+        Host: "www.gossipglove.com"
+  - name: "Delta-Kronecker-trojan-023"
+    type: trojan
+    server: "jjjkkk.2030.pp.ua"
+    port: 443
+    password: "2bfe58f7-da1d-45df-ab43-7c665b20ee29"
+    sni: "jjjkkk.2030.pp.ua"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/2cO5FH0xUmT9oqnbBhmKb8nOkg"
+      headers:
+        Host: "jjjkkk.2030.pp.ua"
+  - name: "Delta-Kronecker-trojan-024"
+    type: trojan
+    server: "hhynnmki.www890604.dpdns.org"
+    port: 443
+    password: "2bfe58f7-da1d-45df-ab43-7c665b20ee29"
+    sni: "hhynnmki.www890604.dpdns.org"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/2cO5FH0xUmT9oqnbBhmKb8nOkg"
+      headers:
+        Host: "hhynnmki.www890604.dpdns.org"
+  - name: "Delta-Kronecker-trojan-025"
+    type: trojan
+    server: "v3.dabache.top"
+    port: 443
+    password: "humanity"
+    sni: "www.calmlunch.com"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "//assignment"
+      headers:
+        Host: "www.calmlunch.com"
+  - name: "Delta-Kronecker-trojan-026"
+    type: trojan
+    server: "104.21.17.25"
+    port: 443
+    password: "2bfe58f7-da1d-45df-ab43-7c665b20ee29"
+    sni: "vvvbnj.taipei102.indevs.in"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/2cO5FH0xUmT9oqnbBhmKb8nOkg"
+      headers:
+        Host: "vvvbnj.taipei102.indevs.in"
+  - name: "Delta-Kronecker-trojan-027"
+    type: trojan
+    server: "160.16.89.176"
+    port: 3901
+    password: "9372cb81c7b0ad903f91f2f8a4d3f02b"
+    sni: "www.nintendogames.net"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-trojan-028"
+    type: trojan
+    server: "hhhnmju.932.pp.ua"
+    port: 443
+    password: "2bfe58f7-da1d-45df-ab43-7c665b20ee29"
+    sni: "hhhnmju.932.pp.ua"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/2cO5FH0xUmT9oqnbBhmKb8nOkg"
+      headers:
+        Host: "hhhnmju.932.pp.ua"
+  - name: "Delta-Kronecker-trojan-029"
+    type: trojan
+    server: "153.121.38.213"
+    port: 1281
+    password: "9372cb81c7b0ad903f91f2f8a4d3f02b"
+    sni: "www.nintendogames.net"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-trojan-030"
+    type: trojan
+    server: "104.21.23.210"
+    port: 443
+    password: "2bfe58f7-da1d-45df-ab43-7c665b20ee29"
+    sni: "ggbnhj.932.pp.ua"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/2cO5FH0xUmT9oqnbBhmKb8nOkg"
+      headers:
+        Host: "ggbnhj.932.pp.ua"
+  - name: "Delta-Kronecker-trojan-031"
+    type: trojan
+    server: "153.121.39.240"
+    port: 3901
+    password: "9372cb81c7b0ad903f91f2f8a4d3f02b"
+    sni: "www.nintendogames.net"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-trojan-032"
+    type: trojan
+    server: "www.creationlong.org"
+    port: 443
+    password: "humanity"
+    sni: "www.creationlong.org"
+    skip-cert-verify: true
+    udp: true
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/assignment"
+  - name: "Delta-Kronecker-trojan-033"
+    type: trojan
+    server: "153.121.65.107"
+    port: 1281
+    password: "9372cb81c7b0ad903f91f2f8a4d3f02b"
+    sni: "www.nintendogames.net"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-trojan-034"
+    type: trojan
+    server: "bbbnmjki.932.pp.ua"
+    port: 443
+    password: "2bfe58f7-da1d-45df-ab43-7c665b20ee29"
+    sni: "bbbnmjki.932.pp.ua"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/2cO5FH0xUmT9oqnbBhmKb8nOkg"
+      headers:
+        Host: "bbbnmjki.932.pp.ua"
+  - name: "Delta-Kronecker-trojan-035"
+    type: trojan
+    server: "sweden.vmaxpanel.com"
+    port: 8443
+    password: "T9BpZIVMNv"
+    sni: "sweden.vmaxpanel.com"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/amd"
+  - name: "Delta-Kronecker-trojan-036"
+    type: trojan
+    server: "160.16.81.84"
+    port: 3901
+    password: "9372cb81c7b0ad903f91f2f8a4d3f02b"
+    sni: "www.nintendogames.net"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-trojan-037"
+    type: trojan
+    server: "bbbnmju.932.pp.ua"
+    port: 443
+    password: "2bfe58f7-da1d-45df-ab43-7c665b20ee29"
+    sni: "bbbnmju.932.pp.ua"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/2cO5FH0xUmT9oqnbBhmKb8nOkg"
+      headers:
+        Host: "bbbnmju.932.pp.ua"
+  - name: "Delta-Kronecker-trojan-038"
+    type: trojan
+    server: "ilop.uk2033.ccwu.cc"
+    port: 443
+    password: "1338f666-2fcc-4538-bc29-1ebf89624383"
+    sni: "ilop.uk2033.ccwu.cc"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/XCLcnSashhgSVE3HOw1VI85y"
+      headers:
+        Host: "ilop.uk2033.ccwu.cc"
+  - name: "Delta-Kronecker-trojan-039"
+    type: trojan
+    server: "160.16.130.21"
+    port: 3423
+    password: "9372cb81c7b0ad903f91f2f8a4d3f02b"
+    sni: "www.nintendogames.net"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-trojan-040"
+    type: trojan
+    server: "5.34.222.4"
+    port: 43074
+    password: "347ca311-8fc2-499c-8fe1-bd0ecb50f1b3"
+    sni: "iepl.jpz2.cat.bilibili.com"
+    skip-cert-verify: true
+    udp: true
+    client-fingerprint: "chrome"
+  - name: "Delta-Kronecker-trojan-041"
+    type: trojan
+    server: "hhhnmjki.932.pp.ua"
+    port: 443
+    password: "2bfe58f7-da1d-45df-ab43-7c665b20ee29"
+    sni: "hhhnmjki.932.pp.ua"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/2cO5FH0xUmT9oqnbBhmKb8nOkg"
+      headers:
+        Host: "hhhnmjki.932.pp.ua"
+  - name: "Delta-Kronecker-trojan-042"
+    type: trojan
+    server: "hhhhhhhhj.191266.xyz"
+    port: 443
+    password: "2bfe58f7-da1d-45df-ab43-7c665b20ee29"
+    sni: "hhhhhhhhj.191266.xyz"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/2cO5FH0xUmT9oqnbBhmKb8nOkg"
+      headers:
+        Host: "hhhhhhhhj.191266.xyz"
+  - name: "Delta-Kronecker-trojan-043"
+    type: trojan
+    server: "ggbnhj.932.pp.ua"
+    port: 443
+    password: "2bfe58f7-da1d-45df-ab43-7c665b20ee29"
+    sni: "ggbnhj.932.pp.ua"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/2cO5FH0xUmT9oqnbBhmKb8nOkg"
+      headers:
+        Host: "ggbnhj.932.pp.ua"
+  - name: "Delta-Kronecker-trojan-044"
+    type: trojan
+    server: "hhhnju.taipei102.indevs.in"
+    port: 443
+    password: "2bfe58f7-da1d-45df-ab43-7c665b20ee29"
+    sni: "hhhnju.taipei102.indevs.in"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/2cO5FH0xUmT9oqnbBhmKb8nOkg"
+      headers:
+        Host: "hhhnju.taipei102.indevs.in"
+  - name: "Delta-Kronecker-trojan-045"
+    type: trojan
+    server: "free-de-3.undef.network"
+    port: 443
+    password: "yoi9VG3vimwIPZf4hoYwWJ8SW"
+    sni: "free-de-3.undef.network"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/f2fc2a1f"
+      headers:
+        Host: "free-de-3.undef.network"
+  - name: "Delta-Kronecker-trojan-046"
+    type: trojan
+    server: "80.173.231.254"
+    port: 12420
+    password: "wp9IsiY82uQhcmgNC1eoBM"
+    sni: "www.semanticstaplegun.click"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-trojan-047"
+    type: trojan
+    server: "220.130.58.136"
+    port: 31103
+    password: "852a0251-7fbd-4a07-a365-352695af950c"
+    sni: "green2.cdntencentmusic.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-trojan-048"
+    type: trojan
+    server: "160.16.85.33"
+    port: 193
+    password: "9372cb81c7b0ad903f91f2f8a4d3f02b"
+    sni: "www.nintendogames.net"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-trojan-049"
+    type: trojan
+    server: "220.130.58.136"
+    port: 31103
+    password: "36325a98-46a4-4770-977a-9a9570e0bcc6"
+    sni: "green2.cdntencentmusic.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-trojan-050"
+    type: trojan
+    server: "dddfghyju.taipei102.indevs.in"
+    port: 443
+    password: "2bfe58f7-da1d-45df-ab43-7c665b20ee29"
+    sni: "dddfghyju.taipei102.indevs.in"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/2cO5FH0xUmT9oqnbBhmKb8nOkg"
+      headers:
+        Host: "dddfghyju.taipei102.indevs.in"
+  - name: "Delta-Kronecker-trojan-051"
+    type: trojan
+    server: "160.16.132.38"
+    port: 193
+    password: "9372cb81c7b0ad903f91f2f8a4d3f02b"
+    sni: "www.nintendogames.net"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-trojan-052"
+    type: trojan
+    server: "160.16.117.182"
+    port: 193
+    password: "9372cb81c7b0ad903f91f2f8a4d3f02b"
+    sni: "www.nintendogames.net"
+    skip-cert-verify: true
+    udp: true
+    client-fingerprint: "chrome"
+  - name: "Delta-Kronecker-trojan-053"
+    type: trojan
+    server: "172.64.80.1"
+    port: 443
+    password: "5cccb4da-8aee-4b01-be84-2056265e52dc"
+    sni: "nMk.288288.sHOP"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/hV829BTVzg35A6ueyyZnWd"
+      headers:
+        Host: "nMk.288288.sHOP"
+  - name: "Delta-Kronecker-trojan-054"
+    type: trojan
+    server: "160.16.144.208"
+    port: 3423
+    password: "9372cb81c7b0ad903f91f2f8a4d3f02b"
+    sni: "www.nintendogames.net"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-trojan-055"
+    type: trojan
+    server: "212.193.18.144"
+    port: 36158
+    password: "ZblhWr0mqMakCPg.N"
+    sni: "ya.ru"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-trojan-056"
+    type: trojan
+    server: "h7.89060004.xyz"
+    port: 443
+    password: "4c205c81-5694-43fe-a287-af563a2ebc05"
+    sni: "h7.89060004.xyz"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/P23lDbkARo4gds7cXpDB5nO5"
+  - name: "Delta-Kronecker-trojan-057"
+    type: trojan
+    server: "bhy.89060004.xyz"
+    port: 443
+    password: "4c205c81-5694-43fe-a287-af563a2ebc05"
+    sni: "bhy.89060004.xyz"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/P23lDbkARo4gds7cXpDB5nO5"
+  - name: "Delta-Kronecker-trojan-058"
+    type: trojan
+    server: "r56.bb0.ccwu.cc"
+    port: 443
+    password: "4c205c81-5694-43fe-a287-af563a2ebc05"
+    sni: "r56.bb0.ccwu.cc"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/P23lDbkARo4gds7cXpDB5nO5"
+  - name: "Delta-Kronecker-trojan-059"
+    type: trojan
+    server: "kk9.89060004.xyz"
+    port: 443
+    password: "4c205c81-5694-43fe-a287-af563a2ebc05"
+    sni: "kk9.89060004.xyz"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/P23lDbkARo4gds7cXpDB5nO5"
+  - name: "Delta-Kronecker-trojan-060"
+    type: trojan
+    server: "220.130.58.136"
+    port: 35502
+    password: "6f038cee-6ba1-4941-bce5-de1969f37405"
+    sni: "green2.cdntencentmusic.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-trojan-061"
+    type: trojan
+    server: "35.156.151.126"
+    port: 22223
+    password: "telegram-id-directvpn"
+    sni: "trojan.burgerip.co.uk"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-trojan-062"
+    type: trojan
+    server: "ghj.ok7.ccwu.cc"
+    port: 443
+    password: "1338f666-2fcc-4538-bc29-1ebf89624383"
+    sni: "ghj.ok7.ccwu.cc"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/XCLcnSashhgSVE3HOw1VI85y"
+  - name: "Delta-Kronecker-trojan-063"
+    type: trojan
+    server: "u8.ok8.ccwu.cc"
+    port: 443
+    password: "1338f666-2fcc-4538-bc29-1ebf89624383"
+    sni: "u8.ok8.ccwu.cc"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/XCLcnSashhgSVE3HOw1VI85y"
+  - name: "Delta-Kronecker-trojan-064"
+    type: trojan
+    server: "35.156.151.126"
+    port: 22222
+    password: "telegram-id-privatevpns"
+    sni: "trojan.burgerip.co.uk"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-trojan-065"
+    type: trojan
+    server: "64.94.95.118"
+    port: 57142
+    password: "kkzh2prsyr2ik47as615"
+    sni: "64.94.95.118"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-trojan-066"
+    type: trojan
+    server: "58.152.25.208"
+    port: 443
+    password: "BxceQaOe"
+    sni: "t.me/ripaojiedian"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-trojan-067"
+    type: trojan
+    server: "58.152.18.130"
+    port: 443
+    password: "BxceQaOe"
+    sni: "t.me/ripaojiedian"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-trojan-068"
+    type: trojan
+    server: "58.152.53.45"
+    port: 443
+    password: "BxceQaOe"
+    sni: "t.me/ripaojiedian"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-trojan-069"
+    type: trojan
+    server: "ttt6.006660666.xyz"
+    port: 443
+    password: "795ef99b-3260-4d18-ac98-5130bba9f168"
+    sni: "ttt6.006660666.xyz"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/OkVaxoknnGWI7hLRpJ1"
+      headers:
+        Host: "ttt6.006660666.xyz"
+  - name: "Delta-Kronecker-trojan-070"
+    type: trojan
+    server: "z.linglingqi.dpdns.org"
+    port: 443
+    password: "919f16d2-ae91-4589-8bb2-a672890e3537"
+    sni: "z.linglingqi.dpdns.org"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/?ed=2048"
+      headers:
+        Host: "z.linglingqi.dpdns.org"
+  - name: "Delta-Kronecker-trojan-071"
+    type: trojan
+    server: "ooiuyt.890699.xyz"
+    port: 443
+    password: "98b419ef-83a2-4d1b-a23d-566b7f24477b"
+    sni: "OOIuyT.890699.xYZ"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/Klh0x8wtLpTGA5AqzZ2Mj"
+      headers:
+        Host: "OOIuyT.890699.xYZ"
+  - name: "Delta-Kronecker-trojan-072"
+    type: trojan
+    server: "yyyhhjki.taipei101.indevs.in"
+    port: 443
+    password: "98b419ef-83a2-4d1b-a23d-566b7f24477b"
+    sni: "YyYhHjKI.TAIPEi101.INdEVs.in"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/Klh0x8wtLpTGA5AqzZ2Mj"
+      headers:
+        Host: "YyYhHjKI.TAIPEi101.INdEVs.in"
+  - name: "Delta-Kronecker-trojan-073"
+    type: trojan
+    server: "172.67.211.79"
+    port: 443
+    password: "Puj01Rc8UcA9IzcFcYOs8KMOhCz6aX2Q"
+    sni: "mfyousheng.nl.eu.org"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/tjwsLhx0SFASG4l9FERJ1g"
+      headers:
+        Host: "mfyousheng.nl.eu.org"
+  - name: "Delta-Kronecker-trojan-074"
+    type: trojan
+    server: "uu.852224.xyz"
+    port: 443
+    password: "b020865b-7404-4894-ba65-a7414b10cda3"
+    sni: "uu.852224.xyz"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/iEIlQmeiFdOPjqSc7fzeJr"
+      headers:
+        Host: "uu.852224.xyz"
+  - name: "Delta-Kronecker-trojan-075"
+    type: trojan
+    server: "bbbnhju.huangshang.online"
+    port: 443
+    password: "b9bb332d-5e0d-41af-adac-49362dde8661"
+    sni: "bbbnhju.huangshang.online"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/QmR662lkasAQbt5Q2GkKGWRMg"
+      headers:
+        Host: "bbbnhju.huangshang.online"
+  - name: "Delta-Kronecker-trojan-076"
+    type: trojan
+    server: "lll9.7777198.xyz"
+    port: 443
+    password: "b9bb332d-5e0d-41af-adac-49362dde8661"
+    sni: "lll9.7777198.xyz"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/QmR662lkasAQbt5Q2GkKGWRMg"
+      headers:
+        Host: "lll9.7777198.xyz"
+  - name: "Delta-Kronecker-trojan-077"
+    type: trojan
+    server: "bgty6.852224.xyz"
+    port: 443
+    password: "c52d2de2-fc6d-490c-8421-132f87615736"
+    sni: "bgty6.852224.xyz"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/PDbJ6Qn4xImwtg6PusRbe"
+      headers:
+        Host: "bgty6.852224.xyz"
+  - name: "Delta-Kronecker-trojan-078"
+    type: trojan
+    server: "green2.cdntencentmusic.com"
+    port: 35501
+    password: "bbde1e79-49d4-448a-a81d-38bfbba3480d"
+    sni: "green2.cdntencentmusic.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-trojan-079"
+    type: trojan
+    server: "141.94.68.216"
+    port: 2053
+    password: "iwangjie"
+    sni: "nodes.830901.xyz"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "nodes.830901.xyz"
+  - name: "Delta-Kronecker-trojan-080"
+    type: trojan
+    server: "135.125.232.253"
+    port: 2053
+    password: "iwangjie"
+    sni: "nodes.830901.xyz"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "nodes.830901.xyz"
+  - name: "Delta-Kronecker-trojan-081"
+    type: trojan
+    server: "gggbnh.www890604.dpdns.org"
+    port: 443
+    password: "2bfe58f7-da1d-45df-ab43-7c665b20ee29"
+    sni: "gggbnh.www890604.dpdns.org"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/2cO5FH0xUmT9oqnbBhmKb8nOkg"
+      headers:
+        Host: "gggbnh.www890604.dpdns.org"
+  - name: "Delta-Kronecker-trojan-082"
+    type: trojan
+    server: "mkouy.99890604.xyz"
+    port: 443
+    password: "5196aae7-1479-4f3c-978b-68e74977b509"
+    sni: "mkouy.99890604.xyz"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/mSZVb4DmOGWZIKMBivnR3"
+      headers:
+        Host: "mkouy.99890604.xyz"
+  - name: "Delta-Kronecker-trojan-083"
+    type: trojan
+    server: "nnnmjku.932.pp.ua"
+    port: 443
+    password: "2bfe58f7-da1d-45df-ab43-7c665b20ee29"
+    sni: "nnnmjku.932.pp.ua"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/2cO5FH0xUmT9oqnbBhmKb8nOkg"
+      headers:
+        Host: "nnnmjku.932.pp.ua"
+  - name: "Delta-Kronecker-trojan-084"
+    type: trojan
+    server: "nnnmjk.www890604.dpdns.org"
+    port: 443
+    password: "2bfe58f7-da1d-45df-ab43-7c665b20ee29"
+    sni: "nnnmjk.www890604.dpdns.org"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/2cO5FH0xUmT9oqnbBhmKb8nOkg"
+      headers:
+        Host: "nnnmjk.www890604.dpdns.org"
+  - name: "Delta-Kronecker-trojan-085"
+    type: trojan
+    server: "vvvbnj.taipei102.indevs.in"
+    port: 443
+    password: "2bfe58f7-da1d-45df-ab43-7c665b20ee29"
+    sni: "vvvbnj.taipei102.indevs.in"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/2cO5FH0xUmT9oqnbBhmKb8nOkg"
+      headers:
+        Host: "vvvbnj.taipei102.indevs.in"
+  - name: "Delta-Kronecker-trojan-086"
+    type: trojan
+    server: "vvvbnhju.932.pp.ua"
+    port: 443
+    password: "2bfe58f7-da1d-45df-ab43-7c665b20ee29"
+    sni: "vvvbnhju.932.pp.ua"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/2cO5FH0xUmT9oqnbBhmKb8nOkg"
+      headers:
+        Host: "vvvbnhju.932.pp.ua"
+  - name: "Delta-Kronecker-trojan-087"
+    type: trojan
+    server: "vvvbnh.taipei102.indevs.in"
+    port: 443
+    password: "2bfe58f7-da1d-45df-ab43-7c665b20ee29"
+    sni: "vvvbnh.taipei102.indevs.in"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/2cO5FH0xUmT9oqnbBhmKb8nOkg"
+      headers:
+        Host: "vvvbnh.taipei102.indevs.in"
+  - name: "Delta-Kronecker-trojan-088"
+    type: trojan
+    server: "vvvbbbnhj.taipei102.indevs.in"
+    port: 443
+    password: "2bfe58f7-da1d-45df-ab43-7c665b20ee29"
+    sni: "vvvbbbnhj.taipei102.indevs.in"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/2cO5FH0xUmT9oqnbBhmKb8nOkg"
+      headers:
+        Host: "vvvbbbnhj.taipei102.indevs.in"
+  - name: "Delta-Kronecker-trojan-089"
+    type: trojan
+    server: "green2.cdntencentmusic.com"
+    port: 35501
+    password: "8595b855-e4c4-40cd-834d-d34bb65ec928"
+    sni: "green2.cdntencentmusic.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-trojan-090"
+    type: trojan
+    server: "hl-freedom-2.undef.network"
+    port: 443
+    password: "Tn2Bf0iRwJkJQgDk6gX6x81RB"
+    sni: "hl-freedom-2.undef.network"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-trojan-091"
+    type: trojan
+    server: "green2.cdntencentmusic.com"
+    port: 31103
+    password: "4250b3bb-d1ae-4e77-bf71-4069e0d2c383"
+    sni: "green2.cdntencentmusic.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-trojan-092"
+    type: trojan
+    server: "172.67.180.227"
+    port: 443
+    password: "bpb-trojan"
+    sni: "mashdt.pages.dev"
+    skip-cert-verify: true
+    udp: true
+    client-fingerprint: "randomized"
+    network: ws
+    ws-opts:
+      path: "/tr?ed=2560"
+      headers:
+        Host: "mashdt.pages.dev"
+  - name: "Delta-Kronecker-trojan-093"
+    type: trojan
+    server: "188.114.97.3"
+    port: 443
+    password: "Puj01Rc8UcA9IzcFcYOs8KMOhCz6aX2Q"
+    sni: "mfyousheng.nl.eu.org"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/tjwsLhx0SFASG4l9FERJ1g"
+      headers:
+        Host: "mfyousheng.nl.eu.org"
+  - name: "Delta-Kronecker-trojan-094"
+    type: trojan
+    server: "mfyousheng.nl.eu.org"
+    port: 443
+    password: "Puj01Rc8UcA9IzcFcYOs8KMOhCz6aX2Q"
+    sni: "mfyousheng.nl.eu.org"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/tjwsLhx0SFASG4l9FERJ1g"
+      headers:
+        Host: "mfyousheng.nl.eu.org"
+  - name: "Delta-Kronecker-trojan-095"
+    type: trojan
+    server: "208.103.161.110"
+    port: 443
+    password: "humanity"
+    sni: "www.creationlong.org"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/assignment"
+      headers:
+        Host: "www.creationlong.org"
+  - name: "Delta-Kronecker-trojan-096"
+    type: trojan
+    server: "185.18.250.245"
+    port: 443
+    password: "humanity"
+    sni: "www.calmlunch.com"
+    skip-cert-verify: true
+    udp: true
+    client-fingerprint: "random"
+    network: ws
+    ws-opts:
+      path: "/assignment"
+      headers:
+        Host: "www.calmlunch.com"
+  - name: "Delta-Kronecker-trojan-097"
+    type: trojan
+    server: "104.21.50.233"
+    port: 443
+    password: "98b419ef-83a2-4d1b-a23d-566b7f24477b"
+    sni: "YyYhHjKI.TAIPEi101.INdEVs.in"
+    skip-cert-verify: true
+    udp: true
+    client-fingerprint: "random"
+    network: ws
+    ws-opts:
+      path: "/Klh0x8wtLpTGA5AqzZ2Mj"
+      headers:
+        Host: "YyYhHjKI.TAIPEi101.INdEVs.in"
+  - name: "Delta-Kronecker-trojan-098"
+    type: trojan
+    server: "172.66.47.45"
+    port: 443
+    password: "humanity"
+    sni: "www.creationlong.org"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/assignment"
+      headers:
+        Host: "www.creationlong.org"
+  - name: "Delta-Kronecker-trojan-099"
+    type: trojan
+    server: "194.87.77.91"
+    port: 443
+    password: "00..Bia-Pain-Bache..00"
+    sni: "lively-dust-9341.juyrlbdkpibq.workers.dev"
+    skip-cert-verify: true
+    udp: true
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "lively-dust-9341.juyrlbdkpibq.workers.dev"
+  - name: "Delta-Kronecker-trojan-100"
+    type: trojan
+    server: "104.21.40.66"
+    port: 443
+    password: "2bfe58f7-da1d-45df-ab43-7c665b20ee29"
+    sni: "gbnh.7777112.xyz"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/2cO5FH0xUmT9oqnbBhmKb8nOkg"
+      headers:
+        Host: "gbnh.7777112.xyz"
+  - name: "Delta-Kronecker-trojan-101"
+    type: trojan
+    server: "104.16.250.22"
+    port: 443
+    password: "919f16d2-ae91-4589-8bb2-a672890e3537"
+    sni: "z.linglingqi.dpdns.org"
+    skip-cert-verify: true
+    udp: true
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/?ed=2048"
+      headers:
+        Host: "z.linglingqi.dpdns.org"
+  - name: "Delta-Kronecker-trojan-102"
+    type: trojan
+    server: "104.17.53.83"
+    port: 443
+    password: "919f16d2-ae91-4589-8bb2-a672890e3537"
+    sni: "z.linglingqi.dpdns.org"
+    skip-cert-verify: true
+    udp: true
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/?ed=2048"
+      headers:
+        Host: "z.linglingqi.dpdns.org"
+  - name: "Delta-Kronecker-trojan-103"
+    type: trojan
+    server: "104.18.185.26"
+    port: 443
+    password: "919f16d2-ae91-4589-8bb2-a672890e3537"
+    sni: "z.linglingqi.dpdns.org"
+    skip-cert-verify: true
+    udp: true
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/?ed=2048"
+      headers:
+        Host: "z.linglingqi.dpdns.org"
+  - name: "Delta-Kronecker-trojan-104"
+    type: trojan
+    server: "172.82.67.154"
+    port: 443
+    password: "dd39bb7d-2bea-41b5-be20-fa228a45f639"
+    sni: "llllllllo.890404.indevs.in"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/tSROScnWofV7ia41dH"
+      headers:
+        Host: "llllllllo.890404.indevs.in"
+  - name: "Delta-Kronecker-trojan-105"
+    type: trojan
+    server: "38.54.82.205"
+    port: 27877
+    password: "pUF+zmIw0QuRESBPLofx7eOj6Xc49"
+    sni: "www.metaphysicalmagnet.click"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-trojan-106"
+    type: trojan
+    server: "3er.8900604.xyz"
+    port: 443
+    password: "4c205c81-5694-43fe-a287-af563a2ebc05"
+    sni: "3er.8900604.xyz"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/P23lDbkARo4gds7cXpDB5nO5"
+      headers:
+        Host: "3er.8900604.xyz"
+  - name: "Delta-Kronecker-trojan-107"
+    type: trojan
+    server: "45.89.111.112"
+    port: 443
+    password: "76yTlnTIsjCTlmqnUJ5Tzc1rM"
+    sni: "hl-freedom-0.undef.network"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-trojan-108"
+    type: trojan
+    server: "5tyu.8900604.xyz"
+    port: 443
+    password: "4c205c81-5694-43fe-a287-af563a2ebc05"
+    sni: "5tyu.8900604.xyz"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/P23lDbkARo4gds7cXpDB5nO5"
+      headers:
+        Host: "5tyu.8900604.xyz"
+  - name: "Delta-Kronecker-trojan-109"
+    type: trojan
+    server: "94.131.122.254"
+    port: 443
+    password: "jJT7gd5O9vwJzL6RiXpxxXIAL"
+    sni: "hl-freedom-2.undef.network"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/f2fc2a1f"
+      headers:
+        Host: "hl-freedom-2.undef.network"
+  - name: "Delta-Kronecker-trojan-110"
+    type: trojan
+    server: "9io.988988.shop"
+    port: 443
+    password: "4ed4ac41-4b56-42c4-b31c-4d7bc36f74ce"
+    sni: "9io.988988.shop"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/4e633j8uZI4BWzwNzcYz"
+      headers:
+        Host: "9io.988988.shop"
+  - name: "Delta-Kronecker-trojan-111"
+    type: trojan
+    server: "CcCVgt.7777125.xyz"
+    port: 443
+    password: "dd39bb7d-2bea-41b5-be20-fa228a45f639"
+    sni: "CccvGT.7777125.XyZ"
+    skip-cert-verify: true
+    udp: true
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/tSROScnWofV7ia41dH"
+      headers:
+        Host: "ccCVGT.7777125.XyZ"
+  - name: "Delta-Kronecker-trojan-112"
+    type: trojan
+    server: "cdn.tzpro.xyz"
+    port: 443
+    password: "919f16d2-ae91-4589-8bb2-a672890e3537"
+    sni: "z.linglingqi.dpdns.org"
+    skip-cert-verify: true
+    udp: true
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/?ed=2048"
+      headers:
+        Host: "z.linglingqi.dpdns.org"
+  - name: "Delta-Kronecker-trojan-113"
+    type: trojan
+    server: "bmk.988988.shop"
+    port: 443
+    password: "4ed4ac41-4b56-42c4-b31c-4d7bc36f74ce"
+    sni: "bmk.988988.shop"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/4e633j8uZI4BWzwNzcYz"
+      headers:
+        Host: "bmk.988988.shop"
+  - name: "Delta-Kronecker-trojan-114"
+    type: trojan
+    server: "cfip.1323123.xyz"
+    port: 443
+    password: "919f16d2-ae91-4589-8bb2-a672890e3537"
+    sni: "z.linglingqi.dpdns.org"
+    skip-cert-verify: true
+    udp: true
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/?ed=2048"
+      headers:
+        Host: "z.linglingqi.dpdns.org"
+  - name: "Delta-Kronecker-trojan-115"
+    type: trojan
+    server: "cccvgt.7777125.xyz"
+    port: 443
+    password: "dd39bb7d-2bea-41b5-be20-fa228a45f639"
+    sni: "CccvGT.7777125.XyZ"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/tSROScnWofV7ia41dH"
+      headers:
+        Host: "ccCVGT.7777125.XyZ"
+  - name: "Delta-Kronecker-trojan-116"
+    type: trojan
+    server: "bmk.xx8.ccwu.cc"
+    port: 443
+    password: "c558328b-eb46-424c-b9e0-574770f0b072"
+    sni: "bmk.xx8.ccwu.cc"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/ks4McWjhV7bXNC0BXGtJ"
+      headers:
+        Host: "bmk.xx8.ccwu.cc"
+  - name: "Delta-Kronecker-trojan-117"
+    type: trojan
+    server: "cloudflare-ip.mofashi.ltd"
+    port: 443
+    password: "919f16d2-ae91-4589-8bb2-a672890e3537"
+    sni: "z.linglingqi.dpdns.org"
+    skip-cert-verify: true
+    udp: true
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/?ed=2048"
+      headers:
+        Host: "z.linglingqi.dpdns.org"
+  - name: "Delta-Kronecker-trojan-118"
+    type: trojan
+    server: "cdfr.89890604.xyz"
+    port: 443
+    password: "c558328b-eb46-424c-b9e0-574770f0b072"
+    sni: "cdfr.89890604.xyz"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/ks4McWjhV7bXNC0BXGtJ"
+      headers:
+        Host: "cdfr.89890604.xyz"
+  - name: "Delta-Kronecker-trojan-119"
+    type: trojan
+    server: "gbnh.7777112.xyz"
+    port: 443
+    password: "2bfe58f7-da1d-45df-ab43-7c665b20ee29"
+    sni: "gbnh.7777112.xyz"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/2cO5FH0xUmT9oqnbBhmKb8nOkg"
+  - name: "Delta-Kronecker-trojan-120"
+    type: trojan
+    server: "gggbnh7.www890604.dpdns.org"
+    port: 443
+    password: "2bfe58f7-da1d-45df-ab43-7c665b20ee29"
+    sni: "gggbnh7.www890604.dpdns.org"
+    skip-cert-verify: true
+    udp: true
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/2cO5FH0xUmT9oqnbBhmKb8nOkg"
+      headers:
+        Host: "gggbnh7.www890604.dpdns.org"
+  - name: "Delta-Kronecker-trojan-121"
+    type: trojan
+    server: "gggh.huangshang.online"
+    port: 443
+    password: "98b419ef-83a2-4d1b-a23d-566b7f24477b"
+    sni: "gggh.huangshang.online"
+    skip-cert-verify: true
+    udp: true
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/Klh0x8wtLpTGA5AqzZ2Mj"
+      headers:
+        Host: "gggh.huangshang.online"
+  - name: "Delta-Kronecker-trojan-122"
+    type: trojan
+    server: "hhju8.huangshang.site"
+    port: 443
+    password: "c558328b-eb46-424c-b9e0-574770f0b072"
+    sni: "hhju8.huangshang.site"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/ks4McWjhV7bXNC0BXGtJ"
+      headers:
+        Host: "hhju8.huangshang.site"
+  - name: "Delta-Kronecker-trojan-123"
+    type: trojan
+    server: "IiiIIi9.hUaNgSHANG.uS.CI"
+    port: 443
+    password: "dd39bb7d-2bea-41b5-be20-fa228a45f639"
+    sni: "iiiiiI9.hUANgShaNG.uS.Ci"
+    skip-cert-verify: true
+    udp: true
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/tSROScnWofV7ia41dH"
+      headers:
+        Host: "iiiiii9.HuANGShANg.uS.ci"
+  - name: "Delta-Kronecker-trojan-124"
+    type: trojan
+    server: "eed4.7777125.xyz"
+    port: 443
+    password: "fc3704d6-8e5e-443a-bd5b-20ec7cfbe990"
+    sni: "eed4.7777125.xyz"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/cSIyXrtyqeOFepMpfNkCk8"
+  - name: "Delta-Kronecker-trojan-125"
+    type: trojan
+    server: "eett.taiwan2026.indevs.in"
+    port: 443
+    password: "fc3704d6-8e5e-443a-bd5b-20ec7cfbe990"
+    sni: "eett.taiwan2026.indevs.in"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/cSIyXrtyqeOFepMpfNkCk8"
+      headers:
+        Host: "eett.taiwan2026.indevs.in"
+  - name: "Delta-Kronecker-trojan-126"
+    type: trojan
+    server: "jmk.8900604.xyz"
+    port: 443
+    password: "c558328b-eb46-424c-b9e0-574770f0b072"
+    sni: "jmk.8900604.xyz"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/ks4McWjhV7bXNC0BXGtJ"
+      headers:
+        Host: "jmk.8900604.xyz"
+  - name: "Delta-Kronecker-trojan-127"
+    type: trojan
+    server: "zs.666470.xyz"
+    port: 443
+    password: "4c205c81-5694-43fe-a287-af563a2ebc05"
+    sni: "zs.666470.xyz"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/P23lDbkARo4gds7cXpDB5nO5"
+      headers:
+        Host: "zs.666470.xyz"
+  - name: "Delta-Kronecker-trojan-128"
+    type: trojan
+    server: "27.50.49.2"
+    port: 443
+    password: "5a2c16f9"
+    sni: "5c.hhhhh.eu.org"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/27.50.49.2:443"
+      headers:
+        Host: "5c.hhhhh.eu.org"
+  - name: "Delta-Kronecker-trojan-129"
+    type: trojan
+    server: "cf.0sm.com"
+    port: 443
+    password: "919f16d2-ae91-4589-8bb2-a672890e3537"
+    sni: "z.linglingqi.dpdns.org"
+    skip-cert-verify: true
+    udp: true
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/?ed=2048"
+      headers:
+        Host: "z.linglingqi.dpdns.org"
+  - name: "Delta-Kronecker-trojan-130"
+    type: trojan
+    server: "185.18.250.252"
+    port: 443
+    password: "humanity"
+    sni: "www.calmlunch.com"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/assignment"
+      headers:
+        Host: "www.calmlunch.com"
+  - name: "Delta-Kronecker-trojan-131"
+    type: trojan
+    server: "nnmjku.932.pp.ua"
+    port: 443
+    password: "2bfe58f7-da1d-45df-ab43-7c665b20ee29"
+    sni: "nnmjku.932.pp.ua"
+    skip-cert-verify: true
+    udp: true
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/2cO5FH0xUmT9oqnbBhmKb8nOkg"
+      headers:
+        Host: "nnmjku.932.pp.ua"
+  - name: "Delta-Kronecker-trojan-132"
+    type: trojan
+    server: "104.18.8.83"
+    port: 443
+    password: "humanity"
+    sni: "www.calmlunch.com"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/assignment"
+      headers:
+        Host: "www.calmlunch.com"
+  - name: "Delta-Kronecker-trojan-133"
+    type: trojan
+    server: "bgh.333756.xyz"
+    port: 443
+    password: "c558328b-eb46-424c-b9e0-574770f0b072"
+    sni: "bgh.333756.xyz"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/ks4McWjhV7bXNC0BXGtJ"
+      headers:
+        Host: "bgh.333756.xyz"
+  - name: "Delta-Kronecker-trojan-134"
+    type: trojan
+    server: "172.67.146.249"
+    port: 443
+    password: "919f16d2-ae91-4589-8bb2-a672890e3537"
+    sni: "z.linglingqi.dpdns.org"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/?ed=2048"
+      headers:
+        Host: "z.linglingqi.dpdns.org"
+  - name: "Delta-Kronecker-trojan-135"
+    type: trojan
+    server: "172.66.44.211"
+    port: 443
+    password: "humanity"
+    sni: "www.multiplydose.com"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/assignment"
+      headers:
+        Host: "www.multiplydose.com"
+  - name: "Delta-Kronecker-trojan-136"
+    type: trojan
+    server: "172.67.213.142"
+    port: 443
+    password: "98b419ef-83a2-4d1b-a23d-566b7f24477b"
+    sni: "YyYhHjKI.TAIPEi101.INdEVs.in"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/Klh0x8wtLpTGA5AqzZ2Mj"
+      headers:
+        Host: "YyYhHjKI.TAIPEi101.INdEVs.in"
+  - name: "Delta-Kronecker-trojan-137"
+    type: trojan
+    server: "104.18.9.83"
+    port: 443
+    password: "humanity"
+    sni: "www.calmlunch.com"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/assignment"
+      headers:
+        Host: "www.calmlunch.com"
+  - name: "Delta-Kronecker-trojan-138"
+    type: trojan
+    server: "104.21.40.221"
+    port: 443
+    password: "98b419ef-83a2-4d1b-a23d-566b7f24477b"
+    sni: "OOIuyT.890699.xYZ"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/Klh0x8wtLpTGA5AqzZ2Mj"
+      headers:
+        Host: "OOIuyT.890699.xYZ"
+  - name: "Delta-Kronecker-trojan-139"
+    type: trojan
+    server: "172.67.157.38"
+    port: 443
+    password: "98b419ef-83a2-4d1b-a23d-566b7f24477b"
+    sni: "OOIuyT.890699.xYZ"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/Klh0x8wtLpTGA5AqzZ2Mj"
+      headers:
+        Host: "OOIuyT.890699.xYZ"
+  - name: "Delta-Kronecker-trojan-140"
+    type: trojan
+    server: "172.67.142.247"
+    port: 443
+    password: "5196aae7-1479-4f3c-978b-68e74977b509"
+    sni: "mkouy.99890604.xyz"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/mSZVb4DmOGWZIKMBivnR3"
+      headers:
+        Host: "mkouy.99890604.xyz"
+  - name: "Delta-Kronecker-trojan-141"
+    type: trojan
+    server: "hhnm.7777128.xyz"
+    port: 443
+    password: "dd39bb7d-2bea-41b5-be20-fa228a45f639"
+    sni: "hhnm.7777128.xyz"
+    skip-cert-verify: true
+    udp: true
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/tSROScnWofV7ia41dH"
+      headers:
+        Host: "hhnm.7777128.xyz"
+  - name: "Delta-Kronecker-trojan-142"
+    type: trojan
+    server: "172.66.47.45"
+    port: 8443
+    password: "T9BpZIVMNv"
+    sni: "sweden.vmaxpanel.com"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/amd"
+      headers:
+        Host: "sweden.vmaxpanel.com"
+  - name: "Delta-Kronecker-trojan-143"
+    type: trojan
+    server: "jjji.2030.pp.ua"
+    port: 443
+    password: "fc3704d6-8e5e-443a-bd5b-20ec7cfbe990"
+    sni: "jjji.2030.pp.ua"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/cSIyXrtyqeOFepMpfNkCk8"
+  - name: "Delta-Kronecker-trojan-144"
+    type: trojan
+    server: "v2.dabache.top"
+    port: 8443
+    password: "T9BpZIVMNv"
+    sni: "sweden.vmaxpanel.com"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/amd"
+      headers:
+        Host: "sweden.vmaxpanel.com"
+  - name: "Delta-Kronecker-trojan-145"
+    type: trojan
+    server: "saas.sin.fan"
+    port: 443
+    password: "919f16d2-ae91-4589-8bb2-a672890e3537"
+    sni: "z.linglingqi.dpdns.org"
+    skip-cert-verify: true
+    udp: true
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "z.linglingqi.dpdns.org"
+  - name: "Delta-Kronecker-trojan-146"
+    type: trojan
+    server: "185.235.137.77"
+    port: 443
+    password: "yoi9VG3vimwIPZf4hoYwWJ8SW"
+    sni: "free-de-3.undef.network"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/f2fc2a1f"
+      headers:
+        Host: "free-de-3.undef.network"
+  - name: "Delta-Kronecker-trojan-147"
+    type: trojan
+    server: "cloudflare.182682.xyz"
+    port: 443
+    password: "919f16d2-ae91-4589-8bb2-a672890e3537"
+    sni: "z.linglingqi.dpdns.org"
+    skip-cert-verify: true
+    udp: true
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/?ed=2048"
+      headers:
+        Host: "z.linglingqi.dpdns.org"
+  - name: "Delta-Kronecker-trojan-148"
+    type: trojan
+    server: "94.131.122.254"
+    port: 443
+    password: "Tn2Bf0iRwJkJQgDk6gX6x81RB"
+    sni: "hl-freedom-2.undef.network"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/f2fc2a1f"
+  - name: "Delta-Kronecker-trojan-149"
+    type: trojan
+    server: "hl-freedom-2.undef.network"
+    port: 443
+    password: "jJT7gd5O9vwJzL6RiXpxxXIAL"
+    sni: "hl-freedom-2.undef.network"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/f2fc2a1f"
+      headers:
+        Host: "hl-freedom-2.undef.network"
+  - name: "Delta-Kronecker-trojan-150"
+    type: trojan
+    server: "172.67.140.108"
+    port: 443
+    password: "4115f84d-3b03-4b03-babf-21b36b2f9c03"
+    sni: "GGbNH.7777198.xyZ"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/r862SIwqItkD5XgXAL"
+      headers:
+        Host: "GGbNH.7777198.xyZ"
+  - name: "Delta-Kronecker-trojan-151"
+    type: trojan
+    server: "172.67.203.235"
+    port: 443
+    password: "b9bb332d-5e0d-41af-adac-49362dde8661"
+    sni: "bbbnhju.huangshang.online"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/QmR662lkasAQbt5Q2GkKGWRMg"
+      headers:
+        Host: "bbbnhju.huangshang.online"
+  - name: "Delta-Kronecker-trojan-152"
+    type: trojan
+    server: "172.67.140.108"
+    port: 443
+    password: "b9bb332d-5e0d-41af-adac-49362dde8661"
+    sni: "lll9.7777198.xyz"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/QmR662lkasAQbt5Q2GkKGWRMg"
+      headers:
+        Host: "lll9.7777198.xyz"
+  - name: "Delta-Kronecker-trojan-153"
+    type: trojan
+    server: "104.21.44.213"
+    port: 443
+    password: "b9bb332d-5e0d-41af-adac-49362dde8661"
+    sni: "bbbnhju.huangshang.online"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/QmR662lkasAQbt5Q2GkKGWRMg"
+      headers:
+        Host: "bbbnhju.huangshang.online"
+  - name: "Delta-Kronecker-trojan-154"
+    type: trojan
+    server: "amanm.wsone.icu"
+    port: 443
+    password: "M7v%w11Se*"
+    sni: "amanm.wsone.icu"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-trojan-155"
+    type: trojan
+    server: "172.67.194.25"
+    port: 443
+    password: "dd39bb7d-2bea-41b5-be20-fa228a45f639"
+    sni: "hhnm.7777128.xyz"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/tSROScnWofV7ia41dH"
+      headers:
+        Host: "hhnm.7777128.xyz"
+  - name: "Delta-Kronecker-trojan-156"
+    type: trojan
+    server: "172.67.161.17"
+    port: 443
+    password: "1338f666-2fcc-4538-bc29-1ebf89624383"
+    sni: "ghj.ok7.ccwu.cc"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/XCLcnSashhgSVE3HOw1VI85y"
+      headers:
+        Host: "ghj.ok7.ccwu.cc"
+  - name: "Delta-Kronecker-trojan-157"
+    type: trojan
+    server: "104.21.88.226"
+    port: 443
+    password: "2bfe58f7-da1d-45df-ab43-7c665b20ee29"
+    sni: "hhynnmki.www890604.dpdns.org"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/2cO5FH0xUmT9oqnbBhmKb8nOkg"
+      headers:
+        Host: "hhynnmki.www890604.dpdns.org"
+  - name: "Delta-Kronecker-trojan-158"
+    type: trojan
+    server: "104.21.44.213"
+    port: 443
+    password: "98b419ef-83a2-4d1b-a23d-566b7f24477b"
+    sni: "gggh.huangshang.online"
+    skip-cert-verify: true
+    udp: true
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/Klh0x8wtLpTGA5AqzZ2Mj"
+      headers:
+        Host: "gggh.huangshang.online"
+  - name: "Delta-Kronecker-trojan-159"
+    type: trojan
+    server: "104.21.85.29"
+    port: 443
+    password: "1338f666-2fcc-4538-bc29-1ebf89624383"
+    sni: "u8.ok8.ccwu.cc"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/XCLcnSashhgSVE3HOw1VI85y"
+      headers:
+        Host: "u8.ok8.ccwu.cc"
+  - name: "Delta-Kronecker-trojan-160"
+    type: trojan
+    server: "172.67.201.59"
+    port: 443
+    password: "1338f666-2fcc-4538-bc29-1ebf89624383"
+    sni: "u8.ok8.ccwu.cc"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/XCLcnSashhgSVE3HOw1VI85y"
+      headers:
+        Host: "u8.ok8.ccwu.cc"
+  - name: "Delta-Kronecker-trojan-161"
+    type: trojan
+    server: "104.21.38.163"
+    port: 443
+    password: "4115f84d-3b03-4b03-babf-21b36b2f9c03"
+    sni: "BbNHmJK.191262.xYZ"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/r862SIwqItkD5XgXAL"
+      headers:
+        Host: "BbNhMjk.191262.xYz"
+  - name: "Delta-Kronecker-trojan-162"
+    type: trojan
+    server: "104.21.74.78"
+    port: 443
+    password: "4115f84d-3b03-4b03-babf-21b36b2f9c03"
+    sni: "cCcVBGt6.890634.xyz"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/r862SIwqItkD5XgXAL"
+      headers:
+        Host: "CcCVbgT6.890634.XYz"
+  - name: "Delta-Kronecker-trojan-163"
+    type: trojan
+    server: "104.21.42.250"
+    port: 443
+    password: "4115f84d-3b03-4b03-babf-21b36b2f9c03"
+    sni: "BBbhNY.191268.xYz"
+    skip-cert-verify: true
+    udp: true
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/r862SIwqItkD5XgXAL"
+      headers:
+        Host: "BBBHNY.191268.XyZ"
+  - name: "Delta-Kronecker-trojan-164"
+    type: trojan
+    server: "172.67.200.117"
+    port: 443
+    password: "4115f84d-3b03-4b03-babf-21b36b2f9c03"
+    sni: "cCcVBGt6.890634.xyz"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/r862SIwqItkD5XgXAL"
+      headers:
+        Host: "CcCVbgT6.890634.XYz"
+  - name: "Delta-Kronecker-trojan-165"
+    type: trojan
+    server: "172.67.203.235"
+    port: 443
+    password: "4115f84d-3b03-4b03-babf-21b36b2f9c03"
+    sni: "FfFBGh.hUAngshanG.onLinE"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/r862SIwqItkD5XgXAL"
+      headers:
+        Host: "fFFbGh.hUAngSHanG.onLINE"
+  - name: "Delta-Kronecker-trojan-166"
+    type: trojan
+    server: "172.67.214.21"
+    port: 443
+    password: "4115f84d-3b03-4b03-babf-21b36b2f9c03"
+    sni: "BBbhNY.191268.xYz"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/r862SIwqItkD5XgXAL"
+      headers:
+        Host: "BBBHNY.191268.XyZ"
+  - name: "Delta-Kronecker-trojan-167"
+    type: trojan
+    server: "green2.cdntencentmusic.com"
+    port: 31103
+    password: "45d5fe0e-5a37-4881-ace7-df1c9046ba91"
+    sni: "green2.cdntencentmusic.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-trojan-168"
+    type: trojan
+    server: "185.220.238.77"
+    port: 10443
+    password: "HutaoCloud"
+    sni: "185.220.238.77"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-trojan-169"
+    type: trojan
+    server: "78.159.131.12"
+    port: 28259
+    password: "MeaDiUmPlkWbZJ2BON8tz"
+    sni: "ads.x5.ru"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-trojan-170"
+    type: trojan
+    server: "172.66.44.211"
+    port: 8443
+    password: "T9BpZIVMNv"
+    sni: "sweden.vmaxpanel.com"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/amd"
+      headers:
+        Host: "sweden.vmaxpanel.com"
+  - name: "Delta-Kronecker-trojan-171"
+    type: trojan
+    server: "green2.cdntencentmusic.com"
+    port: 31103
+    password: "bef1e608-83df-4935-8169-8a345f5643e9"
+    sni: "green2.cdntencentmusic.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-trojan-172"
+    type: trojan
+    server: "220.130.58.136"
+    port: 35501
+    password: "ba222255-00e9-434d-88f0-e0c22ac529f4"
+    sni: "green2.cdntencentmusic.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-trojan-173"
+    type: trojan
+    server: "green2.cdntencentmusic.com"
+    port: 35501
+    password: "bef1e608-83df-4935-8169-8a345f5643e9"
+    sni: "green2.cdntencentmusic.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-trojan-174"
+    type: trojan
+    server: "104.21.23.136"
+    port: 443
+    password: "Puj01Rc8UcA9IzcFcYOs8KMOhCz6aX2Q"
+    sni: "mfyousheng.nl.eu.org"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/tjwsLhx0SFASG4l9FERJ1g"
+      headers:
+        Host: "mfyousheng.nl.eu.org"
+  - name: "Delta-Kronecker-trojan-175"
+    type: trojan
+    server: "green2.cdntencentmusic.com"
+    port: 35501
+    password: "fe040a20-827e-42eb-994f-ec16d4ae5aa4"
+    sni: "green2.cdntencentmusic.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-trojan-176"
+    type: trojan
+    server: "64.94.95.114"
+    port: 57142
+    password: "kkzh2prsyr2ik47as615"
+    sni: "static.rutube.ru"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-trojan-177"
+    type: trojan
+    server: "64.94.95.115"
+    port: 57142
+    password: "kkzh2prsyr2ik47as615"
+    sni: "static.rutube.ru"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-trojan-178"
+    type: trojan
+    server: "64.94.95.117"
+    port: 57142
+    password: "kkzh2prsyr2ik47as615"
+    sni: "static.rutube.ru"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-trojan-179"
+    type: trojan
+    server: "162.159.153.212"
+    port: 2087
+    password: "r137979f"
+    sni: "sheleqaz.emotionreza.workers.dev"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "sheleqaz.emotionreza.workers.dev"
+
+proxy-groups:
+  - name: "PROXY"
+    type: select
+    proxies:
+      - "AUTO"
+      - "FALLBACK"
+      - "DIRECT"
+      - "Delta-Kronecker-trojan-001"
+      - "Delta-Kronecker-trojan-002"
+      - "Delta-Kronecker-trojan-003"
+      - "Delta-Kronecker-trojan-004"
+      - "Delta-Kronecker-trojan-005"
+      - "Delta-Kronecker-trojan-006"
+      - "Delta-Kronecker-trojan-007"
+      - "Delta-Kronecker-trojan-008"
+      - "Delta-Kronecker-trojan-009"
+      - "Delta-Kronecker-trojan-010"
+      - "Delta-Kronecker-trojan-011"
+      - "Delta-Kronecker-trojan-012"
+      - "Delta-Kronecker-trojan-013"
+      - "Delta-Kronecker-trojan-014"
+      - "Delta-Kronecker-trojan-015"
+      - "Delta-Kronecker-trojan-016"
+      - "Delta-Kronecker-trojan-017"
+      - "Delta-Kronecker-trojan-018"
+      - "Delta-Kronecker-trojan-019"
+      - "Delta-Kronecker-trojan-020"
+      - "Delta-Kronecker-trojan-021"
+      - "Delta-Kronecker-trojan-022"
+      - "Delta-Kronecker-trojan-023"
+      - "Delta-Kronecker-trojan-024"
+      - "Delta-Kronecker-trojan-025"
+      - "Delta-Kronecker-trojan-026"
+      - "Delta-Kronecker-trojan-027"
+      - "Delta-Kronecker-trojan-028"
+      - "Delta-Kronecker-trojan-029"
+      - "Delta-Kronecker-trojan-030"
+      - "Delta-Kronecker-trojan-031"
+      - "Delta-Kronecker-trojan-032"
+      - "Delta-Kronecker-trojan-033"
+      - "Delta-Kronecker-trojan-034"
+      - "Delta-Kronecker-trojan-035"
+      - "Delta-Kronecker-trojan-036"
+      - "Delta-Kronecker-trojan-037"
+      - "Delta-Kronecker-trojan-038"
+      - "Delta-Kronecker-trojan-039"
+      - "Delta-Kronecker-trojan-040"
+      - "Delta-Kronecker-trojan-041"
+      - "Delta-Kronecker-trojan-042"
+      - "Delta-Kronecker-trojan-043"
+      - "Delta-Kronecker-trojan-044"
+      - "Delta-Kronecker-trojan-045"
+      - "Delta-Kronecker-trojan-046"
+      - "Delta-Kronecker-trojan-047"
+      - "Delta-Kronecker-trojan-048"
+      - "Delta-Kronecker-trojan-049"
+      - "Delta-Kronecker-trojan-050"
+      - "Delta-Kronecker-trojan-051"
+      - "Delta-Kronecker-trojan-052"
+      - "Delta-Kronecker-trojan-053"
+      - "Delta-Kronecker-trojan-054"
+      - "Delta-Kronecker-trojan-055"
+      - "Delta-Kronecker-trojan-056"
+      - "Delta-Kronecker-trojan-057"
+      - "Delta-Kronecker-trojan-058"
+      - "Delta-Kronecker-trojan-059"
+      - "Delta-Kronecker-trojan-060"
+      - "Delta-Kronecker-trojan-061"
+      - "Delta-Kronecker-trojan-062"
+      - "Delta-Kronecker-trojan-063"
+      - "Delta-Kronecker-trojan-064"
+      - "Delta-Kronecker-trojan-065"
+      - "Delta-Kronecker-trojan-066"
+      - "Delta-Kronecker-trojan-067"
+      - "Delta-Kronecker-trojan-068"
+      - "Delta-Kronecker-trojan-069"
+      - "Delta-Kronecker-trojan-070"
+      - "Delta-Kronecker-trojan-071"
+      - "Delta-Kronecker-trojan-072"
+      - "Delta-Kronecker-trojan-073"
+      - "Delta-Kronecker-trojan-074"
+      - "Delta-Kronecker-trojan-075"
+      - "Delta-Kronecker-trojan-076"
+      - "Delta-Kronecker-trojan-077"
+      - "Delta-Kronecker-trojan-078"
+      - "Delta-Kronecker-trojan-079"
+      - "Delta-Kronecker-trojan-080"
+      - "Delta-Kronecker-trojan-081"
+      - "Delta-Kronecker-trojan-082"
+      - "Delta-Kronecker-trojan-083"
+      - "Delta-Kronecker-trojan-084"
+      - "Delta-Kronecker-trojan-085"
+      - "Delta-Kronecker-trojan-086"
+      - "Delta-Kronecker-trojan-087"
+      - "Delta-Kronecker-trojan-088"
+      - "Delta-Kronecker-trojan-089"
+      - "Delta-Kronecker-trojan-090"
+      - "Delta-Kronecker-trojan-091"
+      - "Delta-Kronecker-trojan-092"
+      - "Delta-Kronecker-trojan-093"
+      - "Delta-Kronecker-trojan-094"
+      - "Delta-Kronecker-trojan-095"
+      - "Delta-Kronecker-trojan-096"
+      - "Delta-Kronecker-trojan-097"
+      - "Delta-Kronecker-trojan-098"
+      - "Delta-Kronecker-trojan-099"
+      - "Delta-Kronecker-trojan-100"
+      - "Delta-Kronecker-trojan-101"
+      - "Delta-Kronecker-trojan-102"
+      - "Delta-Kronecker-trojan-103"
+      - "Delta-Kronecker-trojan-104"
+      - "Delta-Kronecker-trojan-105"
+      - "Delta-Kronecker-trojan-106"
+      - "Delta-Kronecker-trojan-107"
+      - "Delta-Kronecker-trojan-108"
+      - "Delta-Kronecker-trojan-109"
+      - "Delta-Kronecker-trojan-110"
+      - "Delta-Kronecker-trojan-111"
+      - "Delta-Kronecker-trojan-112"
+      - "Delta-Kronecker-trojan-113"
+      - "Delta-Kronecker-trojan-114"
+      - "Delta-Kronecker-trojan-115"
+      - "Delta-Kronecker-trojan-116"
+      - "Delta-Kronecker-trojan-117"
+      - "Delta-Kronecker-trojan-118"
+      - "Delta-Kronecker-trojan-119"
+      - "Delta-Kronecker-trojan-120"
+      - "Delta-Kronecker-trojan-121"
+      - "Delta-Kronecker-trojan-122"
+      - "Delta-Kronecker-trojan-123"
+      - "Delta-Kronecker-trojan-124"
+      - "Delta-Kronecker-trojan-125"
+      - "Delta-Kronecker-trojan-126"
+      - "Delta-Kronecker-trojan-127"
+      - "Delta-Kronecker-trojan-128"
+      - "Delta-Kronecker-trojan-129"
+      - "Delta-Kronecker-trojan-130"
+      - "Delta-Kronecker-trojan-131"
+      - "Delta-Kronecker-trojan-132"
+      - "Delta-Kronecker-trojan-133"
+      - "Delta-Kronecker-trojan-134"
+      - "Delta-Kronecker-trojan-135"
+      - "Delta-Kronecker-trojan-136"
+      - "Delta-Kronecker-trojan-137"
+      - "Delta-Kronecker-trojan-138"
+      - "Delta-Kronecker-trojan-139"
+      - "Delta-Kronecker-trojan-140"
+      - "Delta-Kronecker-trojan-141"
+      - "Delta-Kronecker-trojan-142"
+      - "Delta-Kronecker-trojan-143"
+      - "Delta-Kronecker-trojan-144"
+      - "Delta-Kronecker-trojan-145"
+      - "Delta-Kronecker-trojan-146"
+      - "Delta-Kronecker-trojan-147"
+      - "Delta-Kronecker-trojan-148"
+      - "Delta-Kronecker-trojan-149"
+      - "Delta-Kronecker-trojan-150"
+      - "Delta-Kronecker-trojan-151"
+      - "Delta-Kronecker-trojan-152"
+      - "Delta-Kronecker-trojan-153"
+      - "Delta-Kronecker-trojan-154"
+      - "Delta-Kronecker-trojan-155"
+      - "Delta-Kronecker-trojan-156"
+      - "Delta-Kronecker-trojan-157"
+      - "Delta-Kronecker-trojan-158"
+      - "Delta-Kronecker-trojan-159"
+      - "Delta-Kronecker-trojan-160"
+      - "Delta-Kronecker-trojan-161"
+      - "Delta-Kronecker-trojan-162"
+      - "Delta-Kronecker-trojan-163"
+      - "Delta-Kronecker-trojan-164"
+      - "Delta-Kronecker-trojan-165"
+      - "Delta-Kronecker-trojan-166"
+      - "Delta-Kronecker-trojan-167"
+      - "Delta-Kronecker-trojan-168"
+      - "Delta-Kronecker-trojan-169"
+      - "Delta-Kronecker-trojan-170"
+      - "Delta-Kronecker-trojan-171"
+      - "Delta-Kronecker-trojan-172"
+      - "Delta-Kronecker-trojan-173"
+      - "Delta-Kronecker-trojan-174"
+      - "Delta-Kronecker-trojan-175"
+      - "Delta-Kronecker-trojan-176"
+      - "Delta-Kronecker-trojan-177"
+      - "Delta-Kronecker-trojan-178"
+      - "Delta-Kronecker-trojan-179"
+
+  - name: "AUTO"
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    lazy: true
+    proxies:
+      - "Delta-Kronecker-trojan-001"
+      - "Delta-Kronecker-trojan-002"
+      - "Delta-Kronecker-trojan-003"
+      - "Delta-Kronecker-trojan-004"
+      - "Delta-Kronecker-trojan-005"
+      - "Delta-Kronecker-trojan-006"
+      - "Delta-Kronecker-trojan-007"
+      - "Delta-Kronecker-trojan-008"
+      - "Delta-Kronecker-trojan-009"
+      - "Delta-Kronecker-trojan-010"
+      - "Delta-Kronecker-trojan-011"
+      - "Delta-Kronecker-trojan-012"
+      - "Delta-Kronecker-trojan-013"
+      - "Delta-Kronecker-trojan-014"
+      - "Delta-Kronecker-trojan-015"
+      - "Delta-Kronecker-trojan-016"
+      - "Delta-Kronecker-trojan-017"
+      - "Delta-Kronecker-trojan-018"
+      - "Delta-Kronecker-trojan-019"
+      - "Delta-Kronecker-trojan-020"
+      - "Delta-Kronecker-trojan-021"
+      - "Delta-Kronecker-trojan-022"
+      - "Delta-Kronecker-trojan-023"
+      - "Delta-Kronecker-trojan-024"
+      - "Delta-Kronecker-trojan-025"
+      - "Delta-Kronecker-trojan-026"
+      - "Delta-Kronecker-trojan-027"
+      - "Delta-Kronecker-trojan-028"
+      - "Delta-Kronecker-trojan-029"
+      - "Delta-Kronecker-trojan-030"
+      - "Delta-Kronecker-trojan-031"
+      - "Delta-Kronecker-trojan-032"
+      - "Delta-Kronecker-trojan-033"
+      - "Delta-Kronecker-trojan-034"
+      - "Delta-Kronecker-trojan-035"
+      - "Delta-Kronecker-trojan-036"
+      - "Delta-Kronecker-trojan-037"
+      - "Delta-Kronecker-trojan-038"
+      - "Delta-Kronecker-trojan-039"
+      - "Delta-Kronecker-trojan-040"
+      - "Delta-Kronecker-trojan-041"
+      - "Delta-Kronecker-trojan-042"
+      - "Delta-Kronecker-trojan-043"
+      - "Delta-Kronecker-trojan-044"
+      - "Delta-Kronecker-trojan-045"
+      - "Delta-Kronecker-trojan-046"
+      - "Delta-Kronecker-trojan-047"
+      - "Delta-Kronecker-trojan-048"
+      - "Delta-Kronecker-trojan-049"
+      - "Delta-Kronecker-trojan-050"
+      - "Delta-Kronecker-trojan-051"
+      - "Delta-Kronecker-trojan-052"
+      - "Delta-Kronecker-trojan-053"
+      - "Delta-Kronecker-trojan-054"
+      - "Delta-Kronecker-trojan-055"
+      - "Delta-Kronecker-trojan-056"
+      - "Delta-Kronecker-trojan-057"
+      - "Delta-Kronecker-trojan-058"
+      - "Delta-Kronecker-trojan-059"
+      - "Delta-Kronecker-trojan-060"
+      - "Delta-Kronecker-trojan-061"
+      - "Delta-Kronecker-trojan-062"
+      - "Delta-Kronecker-trojan-063"
+      - "Delta-Kronecker-trojan-064"
+      - "Delta-Kronecker-trojan-065"
+      - "Delta-Kronecker-trojan-066"
+      - "Delta-Kronecker-trojan-067"
+      - "Delta-Kronecker-trojan-068"
+      - "Delta-Kronecker-trojan-069"
+      - "Delta-Kronecker-trojan-070"
+      - "Delta-Kronecker-trojan-071"
+      - "Delta-Kronecker-trojan-072"
+      - "Delta-Kronecker-trojan-073"
+      - "Delta-Kronecker-trojan-074"
+      - "Delta-Kronecker-trojan-075"
+      - "Delta-Kronecker-trojan-076"
+      - "Delta-Kronecker-trojan-077"
+      - "Delta-Kronecker-trojan-078"
+      - "Delta-Kronecker-trojan-079"
+      - "Delta-Kronecker-trojan-080"
+      - "Delta-Kronecker-trojan-081"
+      - "Delta-Kronecker-trojan-082"
+      - "Delta-Kronecker-trojan-083"
+      - "Delta-Kronecker-trojan-084"
+      - "Delta-Kronecker-trojan-085"
+      - "Delta-Kronecker-trojan-086"
+      - "Delta-Kronecker-trojan-087"
+      - "Delta-Kronecker-trojan-088"
+      - "Delta-Kronecker-trojan-089"
+      - "Delta-Kronecker-trojan-090"
+      - "Delta-Kronecker-trojan-091"
+      - "Delta-Kronecker-trojan-092"
+      - "Delta-Kronecker-trojan-093"
+      - "Delta-Kronecker-trojan-094"
+      - "Delta-Kronecker-trojan-095"
+      - "Delta-Kronecker-trojan-096"
+      - "Delta-Kronecker-trojan-097"
+      - "Delta-Kronecker-trojan-098"
+      - "Delta-Kronecker-trojan-099"
+      - "Delta-Kronecker-trojan-100"
+      - "Delta-Kronecker-trojan-101"
+      - "Delta-Kronecker-trojan-102"
+      - "Delta-Kronecker-trojan-103"
+      - "Delta-Kronecker-trojan-104"
+      - "Delta-Kronecker-trojan-105"
+      - "Delta-Kronecker-trojan-106"
+      - "Delta-Kronecker-trojan-107"
+      - "Delta-Kronecker-trojan-108"
+      - "Delta-Kronecker-trojan-109"
+      - "Delta-Kronecker-trojan-110"
+      - "Delta-Kronecker-trojan-111"
+      - "Delta-Kronecker-trojan-112"
+      - "Delta-Kronecker-trojan-113"
+      - "Delta-Kronecker-trojan-114"
+      - "Delta-Kronecker-trojan-115"
+      - "Delta-Kronecker-trojan-116"
+      - "Delta-Kronecker-trojan-117"
+      - "Delta-Kronecker-trojan-118"
+      - "Delta-Kronecker-trojan-119"
+      - "Delta-Kronecker-trojan-120"
+      - "Delta-Kronecker-trojan-121"
+      - "Delta-Kronecker-trojan-122"
+      - "Delta-Kronecker-trojan-123"
+      - "Delta-Kronecker-trojan-124"
+      - "Delta-Kronecker-trojan-125"
+      - "Delta-Kronecker-trojan-126"
+      - "Delta-Kronecker-trojan-127"
+      - "Delta-Kronecker-trojan-128"
+      - "Delta-Kronecker-trojan-129"
+      - "Delta-Kronecker-trojan-130"
+      - "Delta-Kronecker-trojan-131"
+      - "Delta-Kronecker-trojan-132"
+      - "Delta-Kronecker-trojan-133"
+      - "Delta-Kronecker-trojan-134"
+      - "Delta-Kronecker-trojan-135"
+      - "Delta-Kronecker-trojan-136"
+      - "Delta-Kronecker-trojan-137"
+      - "Delta-Kronecker-trojan-138"
+      - "Delta-Kronecker-trojan-139"
+      - "Delta-Kronecker-trojan-140"
+      - "Delta-Kronecker-trojan-141"
+      - "Delta-Kronecker-trojan-142"
+      - "Delta-Kronecker-trojan-143"
+      - "Delta-Kronecker-trojan-144"
+      - "Delta-Kronecker-trojan-145"
+      - "Delta-Kronecker-trojan-146"
+      - "Delta-Kronecker-trojan-147"
+      - "Delta-Kronecker-trojan-148"
+      - "Delta-Kronecker-trojan-149"
+      - "Delta-Kronecker-trojan-150"
+      - "Delta-Kronecker-trojan-151"
+      - "Delta-Kronecker-trojan-152"
+      - "Delta-Kronecker-trojan-153"
+      - "Delta-Kronecker-trojan-154"
+      - "Delta-Kronecker-trojan-155"
+      - "Delta-Kronecker-trojan-156"
+      - "Delta-Kronecker-trojan-157"
+      - "Delta-Kronecker-trojan-158"
+      - "Delta-Kronecker-trojan-159"
+      - "Delta-Kronecker-trojan-160"
+      - "Delta-Kronecker-trojan-161"
+      - "Delta-Kronecker-trojan-162"
+      - "Delta-Kronecker-trojan-163"
+      - "Delta-Kronecker-trojan-164"
+      - "Delta-Kronecker-trojan-165"
+      - "Delta-Kronecker-trojan-166"
+      - "Delta-Kronecker-trojan-167"
+      - "Delta-Kronecker-trojan-168"
+      - "Delta-Kronecker-trojan-169"
+      - "Delta-Kronecker-trojan-170"
+      - "Delta-Kronecker-trojan-171"
+      - "Delta-Kronecker-trojan-172"
+      - "Delta-Kronecker-trojan-173"
+      - "Delta-Kronecker-trojan-174"
+      - "Delta-Kronecker-trojan-175"
+      - "Delta-Kronecker-trojan-176"
+      - "Delta-Kronecker-trojan-177"
+      - "Delta-Kronecker-trojan-178"
+      - "Delta-Kronecker-trojan-179"
+
+  - name: "FALLBACK"
+    type: fallback
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    proxies:
+      - "Delta-Kronecker-trojan-001"
+      - "Delta-Kronecker-trojan-002"
+      - "Delta-Kronecker-trojan-003"
+      - "Delta-Kronecker-trojan-004"
+      - "Delta-Kronecker-trojan-005"
+      - "Delta-Kronecker-trojan-006"
+      - "Delta-Kronecker-trojan-007"
+      - "Delta-Kronecker-trojan-008"
+      - "Delta-Kronecker-trojan-009"
+      - "Delta-Kronecker-trojan-010"
+      - "Delta-Kronecker-trojan-011"
+      - "Delta-Kronecker-trojan-012"
+      - "Delta-Kronecker-trojan-013"
+      - "Delta-Kronecker-trojan-014"
+      - "Delta-Kronecker-trojan-015"
+      - "Delta-Kronecker-trojan-016"
+      - "Delta-Kronecker-trojan-017"
+      - "Delta-Kronecker-trojan-018"
+      - "Delta-Kronecker-trojan-019"
+      - "Delta-Kronecker-trojan-020"
+      - "Delta-Kronecker-trojan-021"
+      - "Delta-Kronecker-trojan-022"
+      - "Delta-Kronecker-trojan-023"
+      - "Delta-Kronecker-trojan-024"
+      - "Delta-Kronecker-trojan-025"
+      - "Delta-Kronecker-trojan-026"
+      - "Delta-Kronecker-trojan-027"
+      - "Delta-Kronecker-trojan-028"
+      - "Delta-Kronecker-trojan-029"
+      - "Delta-Kronecker-trojan-030"
+      - "Delta-Kronecker-trojan-031"
+      - "Delta-Kronecker-trojan-032"
+      - "Delta-Kronecker-trojan-033"
+      - "Delta-Kronecker-trojan-034"
+      - "Delta-Kronecker-trojan-035"
+      - "Delta-Kronecker-trojan-036"
+      - "Delta-Kronecker-trojan-037"
+      - "Delta-Kronecker-trojan-038"
+      - "Delta-Kronecker-trojan-039"
+      - "Delta-Kronecker-trojan-040"
+      - "Delta-Kronecker-trojan-041"
+      - "Delta-Kronecker-trojan-042"
+      - "Delta-Kronecker-trojan-043"
+      - "Delta-Kronecker-trojan-044"
+      - "Delta-Kronecker-trojan-045"
+      - "Delta-Kronecker-trojan-046"
+      - "Delta-Kronecker-trojan-047"
+      - "Delta-Kronecker-trojan-048"
+      - "Delta-Kronecker-trojan-049"
+      - "Delta-Kronecker-trojan-050"
+      - "Delta-Kronecker-trojan-051"
+      - "Delta-Kronecker-trojan-052"
+      - "Delta-Kronecker-trojan-053"
+      - "Delta-Kronecker-trojan-054"
+      - "Delta-Kronecker-trojan-055"
+      - "Delta-Kronecker-trojan-056"
+      - "Delta-Kronecker-trojan-057"
+      - "Delta-Kronecker-trojan-058"
+      - "Delta-Kronecker-trojan-059"
+      - "Delta-Kronecker-trojan-060"
+      - "Delta-Kronecker-trojan-061"
+      - "Delta-Kronecker-trojan-062"
+      - "Delta-Kronecker-trojan-063"
+      - "Delta-Kronecker-trojan-064"
+      - "Delta-Kronecker-trojan-065"
+      - "Delta-Kronecker-trojan-066"
+      - "Delta-Kronecker-trojan-067"
+      - "Delta-Kronecker-trojan-068"
+      - "Delta-Kronecker-trojan-069"
+      - "Delta-Kronecker-trojan-070"
+      - "Delta-Kronecker-trojan-071"
+      - "Delta-Kronecker-trojan-072"
+      - "Delta-Kronecker-trojan-073"
+      - "Delta-Kronecker-trojan-074"
+      - "Delta-Kronecker-trojan-075"
+      - "Delta-Kronecker-trojan-076"
+      - "Delta-Kronecker-trojan-077"
+      - "Delta-Kronecker-trojan-078"
+      - "Delta-Kronecker-trojan-079"
+      - "Delta-Kronecker-trojan-080"
+      - "Delta-Kronecker-trojan-081"
+      - "Delta-Kronecker-trojan-082"
+      - "Delta-Kronecker-trojan-083"
+      - "Delta-Kronecker-trojan-084"
+      - "Delta-Kronecker-trojan-085"
+      - "Delta-Kronecker-trojan-086"
+      - "Delta-Kronecker-trojan-087"
+      - "Delta-Kronecker-trojan-088"
+      - "Delta-Kronecker-trojan-089"
+      - "Delta-Kronecker-trojan-090"
+      - "Delta-Kronecker-trojan-091"
+      - "Delta-Kronecker-trojan-092"
+      - "Delta-Kronecker-trojan-093"
+      - "Delta-Kronecker-trojan-094"
+      - "Delta-Kronecker-trojan-095"
+      - "Delta-Kronecker-trojan-096"
+      - "Delta-Kronecker-trojan-097"
+      - "Delta-Kronecker-trojan-098"
+      - "Delta-Kronecker-trojan-099"
+      - "Delta-Kronecker-trojan-100"
+      - "Delta-Kronecker-trojan-101"
+      - "Delta-Kronecker-trojan-102"
+      - "Delta-Kronecker-trojan-103"
+      - "Delta-Kronecker-trojan-104"
+      - "Delta-Kronecker-trojan-105"
+      - "Delta-Kronecker-trojan-106"
+      - "Delta-Kronecker-trojan-107"
+      - "Delta-Kronecker-trojan-108"
+      - "Delta-Kronecker-trojan-109"
+      - "Delta-Kronecker-trojan-110"
+      - "Delta-Kronecker-trojan-111"
+      - "Delta-Kronecker-trojan-112"
+      - "Delta-Kronecker-trojan-113"
+      - "Delta-Kronecker-trojan-114"
+      - "Delta-Kronecker-trojan-115"
+      - "Delta-Kronecker-trojan-116"
+      - "Delta-Kronecker-trojan-117"
+      - "Delta-Kronecker-trojan-118"
+      - "Delta-Kronecker-trojan-119"
+      - "Delta-Kronecker-trojan-120"
+      - "Delta-Kronecker-trojan-121"
+      - "Delta-Kronecker-trojan-122"
+      - "Delta-Kronecker-trojan-123"
+      - "Delta-Kronecker-trojan-124"
+      - "Delta-Kronecker-trojan-125"
+      - "Delta-Kronecker-trojan-126"
+      - "Delta-Kronecker-trojan-127"
+      - "Delta-Kronecker-trojan-128"
+      - "Delta-Kronecker-trojan-129"
+      - "Delta-Kronecker-trojan-130"
+      - "Delta-Kronecker-trojan-131"
+      - "Delta-Kronecker-trojan-132"
+      - "Delta-Kronecker-trojan-133"
+      - "Delta-Kronecker-trojan-134"
+      - "Delta-Kronecker-trojan-135"
+      - "Delta-Kronecker-trojan-136"
+      - "Delta-Kronecker-trojan-137"
+      - "Delta-Kronecker-trojan-138"
+      - "Delta-Kronecker-trojan-139"
+      - "Delta-Kronecker-trojan-140"
+      - "Delta-Kronecker-trojan-141"
+      - "Delta-Kronecker-trojan-142"
+      - "Delta-Kronecker-trojan-143"
+      - "Delta-Kronecker-trojan-144"
+      - "Delta-Kronecker-trojan-145"
+      - "Delta-Kronecker-trojan-146"
+      - "Delta-Kronecker-trojan-147"
+      - "Delta-Kronecker-trojan-148"
+      - "Delta-Kronecker-trojan-149"
+      - "Delta-Kronecker-trojan-150"
+      - "Delta-Kronecker-trojan-151"
+      - "Delta-Kronecker-trojan-152"
+      - "Delta-Kronecker-trojan-153"
+      - "Delta-Kronecker-trojan-154"
+      - "Delta-Kronecker-trojan-155"
+      - "Delta-Kronecker-trojan-156"
+      - "Delta-Kronecker-trojan-157"
+      - "Delta-Kronecker-trojan-158"
+      - "Delta-Kronecker-trojan-159"
+      - "Delta-Kronecker-trojan-160"
+      - "Delta-Kronecker-trojan-161"
+      - "Delta-Kronecker-trojan-162"
+      - "Delta-Kronecker-trojan-163"
+      - "Delta-Kronecker-trojan-164"
+      - "Delta-Kronecker-trojan-165"
+      - "Delta-Kronecker-trojan-166"
+      - "Delta-Kronecker-trojan-167"
+      - "Delta-Kronecker-trojan-168"
+      - "Delta-Kronecker-trojan-169"
+      - "Delta-Kronecker-trojan-170"
+      - "Delta-Kronecker-trojan-171"
+      - "Delta-Kronecker-trojan-172"
+      - "Delta-Kronecker-trojan-173"
+      - "Delta-Kronecker-trojan-174"
+      - "Delta-Kronecker-trojan-175"
+      - "Delta-Kronecker-trojan-176"
+      - "Delta-Kronecker-trojan-177"
+      - "Delta-Kronecker-trojan-178"
+      - "Delta-Kronecker-trojan-179"
+
+
+rules:
+  - DOMAIN-SUFFIX,ir,DIRECT
+  - DOMAIN,localhost,DIRECT
+  - DOMAIN-SUFFIX,local,DIRECT
+  - DOMAIN-SUFFIX,aparat.com,DIRECT
+  - DOMAIN-SUFFIX,digikala.com,DIRECT
+  - DOMAIN-SUFFIX,snapp.ir,DIRECT
+  - DOMAIN-SUFFIX,divar.ir,DIRECT
+  - DOMAIN-SUFFIX,filmnet.ir,DIRECT
+  - DOMAIN-SUFFIX,namava.ir,DIRECT
+  - DOMAIN-SUFFIX,filimo.com,DIRECT
+  - DOMAIN-SUFFIX,telewebion.com,DIRECT
+  - DOMAIN-SUFFIX,rubika.ir,DIRECT
+  - DOMAIN-SUFFIX,eitaa.com,DIRECT
+  - DOMAIN-SUFFIX,bale.ai,DIRECT
+  - DOMAIN-SUFFIX,gap.im,DIRECT
+  - DOMAIN-SUFFIX,igap.net,DIRECT
+  - DOMAIN-SUFFIX,balad.ir,DIRECT
+  - DOMAIN-SUFFIX,snappfood.ir,DIRECT
+  - DOMAIN-SUFFIX,tapsi.ir,DIRECT
+  - DOMAIN-SUFFIX,sheypoor.com,DIRECT
+  - DOMAIN-SUFFIX,torob.com,DIRECT
+  - DOMAIN-SUFFIX,basalam.com,DIRECT
+  - DOMAIN-SUFFIX,alibaba.ir,DIRECT
+  - DOMAIN-SUFFIX,flightio.com,DIRECT
+  - DOMAIN-SUFFIX,varzesh3.com,DIRECT
+  - DOMAIN-SUFFIX,zoomit.ir,DIRECT
+  - DOMAIN-SUFFIX,isna.ir,DIRECT
+  - DOMAIN-SUFFIX,farsnews.ir,DIRECT
+  - DOMAIN-SUFFIX,irna.ir,DIRECT
+  - DOMAIN-SUFFIX,tasnimnews.com,DIRECT
+  - DOMAIN-SUFFIX,mehrnews.com,DIRECT
+  - DOMAIN-SUFFIX,mci.ir,DIRECT
+  - DOMAIN-SUFFIX,irancell.ir,DIRECT
+  - DOMAIN-SUFFIX,hamraheawal.com,DIRECT
+  - DOMAIN-SUFFIX,sep.ir,DIRECT
+  - DOMAIN-SUFFIX,enamad.ir,DIRECT
+  - DOMAIN-SUFFIX,shaparak.ir,DIRECT
+  - DOMAIN-SUFFIX,isc.co.ir,DIRECT
+  - DOMAIN-SUFFIX,tamin.ir,DIRECT
+  - DOMAIN-SUFFIX,rahnameh.ir,DIRECT
+  - DOMAIN-SUFFIX,saipa.ir,DIRECT
+  - DOMAIN-SUFFIX,ikco.ir,DIRECT
+  - DOMAIN-SUFFIX,pasargad.ir,DIRECT
+  - DOMAIN-SUFFIX,parsian-bank.ir,DIRECT
+  - DOMAIN-SUFFIX,mellat.ir,DIRECT
+  - DOMAIN-SUFFIX,bmi.ir,DIRECT
+  - DOMAIN-SUFFIX,samanbank.ir,DIRECT
+  - DOMAIN-SUFFIX,karafarin.com,DIRECT
+  - DOMAIN-SUFFIX,eniak.ir,DIRECT
+  - DOMAIN-SUFFIX,mrud.ir,DIRECT
+  - DOMAIN-SUFFIX,behdasht.gov.ir,DIRECT
+  - DOMAIN-SUFFIX,eservices.ir,DIRECT
+  - GEOIP,IR,DIRECT
+  - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
+  - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
+  - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,100.64.0.0/10,DIRECT,no-resolve
+  - IP-CIDR,169.254.0.0/16,DIRECT,no-resolve
+  - IP-CIDR,224.0.0.0/4,DIRECT,no-resolve
+  - IP-CIDR,240.0.0.0/4,DIRECT,no-resolve
+  - MATCH,PROXY

@@ -1,0 +1,150 @@
+mixed-port: 7890
+allow-lan: true
+bind-address: '*'
+mode: rule
+log-level: warning
+ipv6: false
+external-controller: 127.0.0.1:9090
+secret: ""
+unified-delay: true
+tcp-concurrent: true
+global-client-fingerprint: chrome
+find-process-mode: strict
+keep-alive-interval: 30
+
+dns:
+  enable: true
+  ipv6: false
+  listen: 0.0.0.0:5353
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+    - "*.lan"
+    - "*.local"
+    - "*.ir"
+    - "+.stun.*.*"
+    - "+.stun.*.*.*"
+    - "localhost.ptlogin2.qq.com"
+    - "time.windows.com"
+    - "time.nist.gov"
+    - "time.apple.com"
+  default-nameserver:
+    - 8.8.8.8
+    - 1.1.1.1
+  nameserver:
+    - https://8.8.8.8/dns-query
+    - https://1.1.1.1/dns-query
+    - https://dns.google/dns-query
+  proxy-server-nameserver:
+    - https://8.8.8.8/dns-query
+    - https://1.1.1.1/dns-query
+  fallback:
+    - https://1.1.1.1/dns-query
+    - tls://8.8.8.8:853
+    - tls://1.1.1.1:853
+  fallback-filter:
+    geoip: true
+    geoip-code: IR
+    ipcidr:
+      - 240.0.0.0/4
+      - 0.0.0.0/8
+
+proxies:
+  - name: "Delta-Kronecker-hy2-001"
+    type: hysteria2
+    server: "130.61.50.75"
+    port: 6443
+    password: "zhangyang"
+    sni: "dash.cloudflare.com"
+    skip-cert-verify: true
+    udp: true
+
+proxy-groups:
+  - name: "PROXY"
+    type: select
+    proxies:
+      - "AUTO"
+      - "FALLBACK"
+      - "DIRECT"
+      - "Delta-Kronecker-hy2-001"
+
+  - name: "AUTO"
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    lazy: true
+    proxies:
+      - "Delta-Kronecker-hy2-001"
+
+  - name: "FALLBACK"
+    type: fallback
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    proxies:
+      - "Delta-Kronecker-hy2-001"
+
+
+rules:
+  - DOMAIN-SUFFIX,ir,DIRECT
+  - DOMAIN,localhost,DIRECT
+  - DOMAIN-SUFFIX,local,DIRECT
+  - DOMAIN-SUFFIX,aparat.com,DIRECT
+  - DOMAIN-SUFFIX,digikala.com,DIRECT
+  - DOMAIN-SUFFIX,snapp.ir,DIRECT
+  - DOMAIN-SUFFIX,divar.ir,DIRECT
+  - DOMAIN-SUFFIX,filmnet.ir,DIRECT
+  - DOMAIN-SUFFIX,namava.ir,DIRECT
+  - DOMAIN-SUFFIX,filimo.com,DIRECT
+  - DOMAIN-SUFFIX,telewebion.com,DIRECT
+  - DOMAIN-SUFFIX,rubika.ir,DIRECT
+  - DOMAIN-SUFFIX,eitaa.com,DIRECT
+  - DOMAIN-SUFFIX,bale.ai,DIRECT
+  - DOMAIN-SUFFIX,gap.im,DIRECT
+  - DOMAIN-SUFFIX,igap.net,DIRECT
+  - DOMAIN-SUFFIX,balad.ir,DIRECT
+  - DOMAIN-SUFFIX,snappfood.ir,DIRECT
+  - DOMAIN-SUFFIX,tapsi.ir,DIRECT
+  - DOMAIN-SUFFIX,sheypoor.com,DIRECT
+  - DOMAIN-SUFFIX,torob.com,DIRECT
+  - DOMAIN-SUFFIX,basalam.com,DIRECT
+  - DOMAIN-SUFFIX,alibaba.ir,DIRECT
+  - DOMAIN-SUFFIX,flightio.com,DIRECT
+  - DOMAIN-SUFFIX,varzesh3.com,DIRECT
+  - DOMAIN-SUFFIX,zoomit.ir,DIRECT
+  - DOMAIN-SUFFIX,isna.ir,DIRECT
+  - DOMAIN-SUFFIX,farsnews.ir,DIRECT
+  - DOMAIN-SUFFIX,irna.ir,DIRECT
+  - DOMAIN-SUFFIX,tasnimnews.com,DIRECT
+  - DOMAIN-SUFFIX,mehrnews.com,DIRECT
+  - DOMAIN-SUFFIX,mci.ir,DIRECT
+  - DOMAIN-SUFFIX,irancell.ir,DIRECT
+  - DOMAIN-SUFFIX,hamraheawal.com,DIRECT
+  - DOMAIN-SUFFIX,sep.ir,DIRECT
+  - DOMAIN-SUFFIX,enamad.ir,DIRECT
+  - DOMAIN-SUFFIX,shaparak.ir,DIRECT
+  - DOMAIN-SUFFIX,isc.co.ir,DIRECT
+  - DOMAIN-SUFFIX,tamin.ir,DIRECT
+  - DOMAIN-SUFFIX,rahnameh.ir,DIRECT
+  - DOMAIN-SUFFIX,saipa.ir,DIRECT
+  - DOMAIN-SUFFIX,ikco.ir,DIRECT
+  - DOMAIN-SUFFIX,pasargad.ir,DIRECT
+  - DOMAIN-SUFFIX,parsian-bank.ir,DIRECT
+  - DOMAIN-SUFFIX,mellat.ir,DIRECT
+  - DOMAIN-SUFFIX,bmi.ir,DIRECT
+  - DOMAIN-SUFFIX,samanbank.ir,DIRECT
+  - DOMAIN-SUFFIX,karafarin.com,DIRECT
+  - DOMAIN-SUFFIX,eniak.ir,DIRECT
+  - DOMAIN-SUFFIX,mrud.ir,DIRECT
+  - DOMAIN-SUFFIX,behdasht.gov.ir,DIRECT
+  - DOMAIN-SUFFIX,eservices.ir,DIRECT
+  - GEOIP,IR,DIRECT
+  - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
+  - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
+  - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,100.64.0.0/10,DIRECT,no-resolve
+  - IP-CIDR,169.254.0.0/16,DIRECT,no-resolve
+  - IP-CIDR,224.0.0.0/4,DIRECT,no-resolve
+  - IP-CIDR,240.0.0.0/4,DIRECT,no-resolve
+  - MATCH,PROXY
