@@ -57,6 +57,9 @@ proxy-groups:
       - server2
     url: http://www.gstatic.com/generate_204
     interval: 300
+    timeout: 5000
+    tolerance: 150
+    lazy: false
 
   - name: FALLBACK
     type: fallback
@@ -65,6 +68,8 @@ proxy-groups:
       - server2
     url: http://www.gstatic.com/generate_204
     interval: 300
+    timeout: 5000
+    lazy: false
 
   - name: LOAD-BALANCE
     type: load-balance
@@ -73,12 +78,21 @@ proxy-groups:
       - server2
     url: http://www.gstatic.com/generate_204
     interval: 300
+    timeout: 5000
     strategy: round-robin
+    lazy: false
+
+  - name: PROXY
+    type: select
+    proxies:
+      - LOAD-BALANCE
+      - AUTO
+      - FALLBACK
 
 proxies:
   - name: server1
     type: vless
-    server: your-server-address.com
+    server: your-server1.com
     port: 443
     uuid: your-uuid-here
     network: ws
@@ -87,11 +101,11 @@ proxies:
     ws-opts:
       path: /
       headers:
-        Host: your-server-address.com
+        Host: your-server1.com
 
   - name: server2
     type: vless
-    server: your-second-server.com
+    server: your-server2.com
     port: 443
     uuid: your-uuid-here
     network: ws
@@ -100,7 +114,69 @@ proxies:
     ws-opts:
       path: /
       headers:
-        Host: your-second-server.com
+        Host: your-server2.com
 
+# ---RULES---
 rules:
-  - MATCH,LOAD-BALANCE
+  - DOMAIN-SUFFIX,ir,DIRECT
+  - DOMAIN,localhost,DIRECT
+  - DOMAIN-SUFFIX,local,DIRECT
+  - DOMAIN-SUFFIX,aparat.com,DIRECT
+  - DOMAIN-SUFFIX,digikala.com,DIRECT
+  - DOMAIN-SUFFIX,snapp.ir,DIRECT
+  - DOMAIN-SUFFIX,divar.ir,DIRECT
+  - DOMAIN-SUFFIX,filmnet.ir,DIRECT
+  - DOMAIN-SUFFIX,namava.ir,DIRECT
+  - DOMAIN-SUFFIX,filimo.com,DIRECT
+  - DOMAIN-SUFFIX,telewebion.com,DIRECT
+  - DOMAIN-SUFFIX,rubika.ir,DIRECT
+  - DOMAIN-SUFFIX,eitaa.com,DIRECT
+  - DOMAIN-SUFFIX,bale.ai,DIRECT
+  - DOMAIN-SUFFIX,gap.im,DIRECT
+  - DOMAIN-SUFFIX,igap.net,DIRECT
+  - DOMAIN-SUFFIX,balad.ir,DIRECT
+  - DOMAIN-SUFFIX,snappfood.ir,DIRECT
+  - DOMAIN-SUFFIX,tapsi.ir,DIRECT
+  - DOMAIN-SUFFIX,sheypoor.com,DIRECT
+  - DOMAIN-SUFFIX,torob.com,DIRECT
+  - DOMAIN-SUFFIX,basalam.com,DIRECT
+  - DOMAIN-SUFFIX,alibaba.ir,DIRECT
+  - DOMAIN-SUFFIX,flightio.com,DIRECT
+  - DOMAIN-SUFFIX,varzesh3.com,DIRECT
+  - DOMAIN-SUFFIX,zoomit.ir,DIRECT
+  - DOMAIN-SUFFIX,isna.ir,DIRECT
+  - DOMAIN-SUFFIX,farsnews.ir,DIRECT
+  - DOMAIN-SUFFIX,irna.ir,DIRECT
+  - DOMAIN-SUFFIX,tasnimnews.com,DIRECT
+  - DOMAIN-SUFFIX,mehrnews.com,DIRECT
+  - DOMAIN-SUFFIX,mci.ir,DIRECT
+  - DOMAIN-SUFFIX,irancell.ir,DIRECT
+  - DOMAIN-SUFFIX,hamraheawal.com,DIRECT
+  - DOMAIN-SUFFIX,sep.ir,DIRECT
+  - DOMAIN-SUFFIX,enamad.ir,DIRECT
+  - DOMAIN-SUFFIX,shaparak.ir,DIRECT
+  - DOMAIN-SUFFIX,isc.co.ir,DIRECT
+  - DOMAIN-SUFFIX,tamin.ir,DIRECT
+  - DOMAIN-SUFFIX,rahnameh.ir,DIRECT
+  - DOMAIN-SUFFIX,saipa.ir,DIRECT
+  - DOMAIN-SUFFIX,ikco.ir,DIRECT
+  - DOMAIN-SUFFIX,pasargad.ir,DIRECT
+  - DOMAIN-SUFFIX,parsian-bank.ir,DIRECT
+  - DOMAIN-SUFFIX,mellat.ir,DIRECT
+  - DOMAIN-SUFFIX,bmi.ir,DIRECT
+  - DOMAIN-SUFFIX,samanbank.ir,DIRECT
+  - DOMAIN-SUFFIX,karafarin.com,DIRECT
+  - DOMAIN-SUFFIX,eniak.ir,DIRECT
+  - DOMAIN-SUFFIX,mrud.ir,DIRECT
+  - DOMAIN-SUFFIX,behdasht.gov.ir,DIRECT
+  - DOMAIN-SUFFIX,eservices.ir,DIRECT
+  - GEOIP,IR,DIRECT
+  - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
+  - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
+  - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,100.64.0.0/10,DIRECT,no-resolve
+  - IP-CIDR,169.254.0.0/16,DIRECT,no-resolve
+  - IP-CIDR,224.0.0.0/4,DIRECT,no-resolve
+  - IP-CIDR,240.0.0.0/4,DIRECT,no-resolve
+  - MATCH,PROXY
