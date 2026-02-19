@@ -46,32 +46,29 @@ jobs:
 
     - name: Verify
       run: |
-        echo "=== Main Config Output ==="
+        echo "=== Config Output ==="
         ls -lh config/
-        echo ""
-        echo "=== Protocol Files ==="
-        ls -lh config/protocols/ 2>/dev/null || echo "No protocols directory"
-        echo ""
-        echo "=== Batch Files ==="
-        echo "V2Ray batches:"
-        ls config/batches/v2ray/ 2>/dev/null | wc -l || echo 0
-        echo "Clash batches:"
-        ls config/batches/clash/ 2>/dev/null | wc -l || echo 0
-        echo "Clash Advanced batches:"
-        ls config/batches/clash_advanced/ 2>/dev/null | wc -l || echo 0
-        echo ""
-        echo "=== Stats ==="
+        ls -lh config/protocols/ 2>/dev/null || true
+        ls -lh config/batches/v2ray/ 2>/dev/null || true
+        ls -lh config/batches/clash/ 2>/dev/null || true
+        ls -lh config/batches/clash_advanced/ 2>/dev/null || true
+
         if [ -f "config/all_configs.txt" ]; then
-          echo "Total V2Ray configs: $(wc -l < config/all_configs.txt)"
+          echo "Total V2ray configs: $(wc -l < config/all_configs.txt)"
         fi
         if [ -f "config/clash.yaml" ]; then
-          echo "Clash proxies: $(grep -c '  - name:' config/clash.yaml || echo 0)"
+          CLASH_COUNT=$(grep -c '  - name:' config/clash.yaml 2>/dev/null || echo 0)
+          echo "Clash standard proxies: $CLASH_COUNT"
         fi
         if [ -f "config/clash_advanced.yaml" ]; then
-          echo "Clash Advanced proxies: $(grep -c '  - name:' config/clash_advanced.yaml || echo 0)"
+          ADV_COUNT=$(grep -c '  - name:' config/clash_advanced.yaml 2>/dev/null || echo 0)
+          echo "Clash advanced proxies: $ADV_COUNT"
         fi
-        echo ""
-        echo "=== Validation Logs ==="
+        echo "V2ray batches: $(ls config/batches/v2ray/*.txt 2>/dev/null | wc -l)"
+        echo "Clash standard batches: $(ls config/batches/clash/*.yaml 2>/dev/null | wc -l)"
+        echo "Clash advanced batches: $(ls config/batches/clash_advanced/*.yaml 2>/dev/null | wc -l)"
+
+        echo "=== Logs ==="
         ls -lh logs/ 2>/dev/null || echo "No logs directory"
         if ls logs/*.log 2>/dev/null | head -1 | xargs -I{} tail -30 {}; then
           true
