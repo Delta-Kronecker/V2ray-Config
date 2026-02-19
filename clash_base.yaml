@@ -3,7 +3,7 @@ socks-port: 7891
 port: 7892
 allow-lan: true
 bind-address: '*'
-mode: rule
+mode: global
 log-level: info
 ipv6: false
 external-controller: 127.0.0.1:9090
@@ -26,7 +26,6 @@ dns:
   enhanced-mode: fake-ip
   fake-ip-range: 198.18.0.1/16
   fake-ip-filter:
-    - '*.ir'
     - '*.local'
     - '*.lan'
     - '*.localhost'
@@ -39,38 +38,9 @@ dns:
     - 'captive.apple.com'
     - 'www.msftncsi.com'
     - 'cp.cloudflare.com'
-    - '*.digikala.com'
-    - '*.aparat.com'
-    - '*.varzesh3.com'
-    - '*.snapp.ir'
-    - '*.tapsi.ir'
-    - '*.divar.ir'
-    - '*.bale.ai'
-    - '*.eitaa.com'
-    - '*.rubika.ir'
-    - '*.filimo.com'
-    - '*.namava.ir'
-    - '*.snappfood.ir'
-    - '*.sheypoor.com'
-    - '*.torob.com'
-    - '*.basalam.com'
-    - '*.alibaba.ir'
-    - '*.mci.ir'
-    - '*.irancell.ir'
-    - '*.hamraheawal.com'
-    - '*.sep.ir'
-    - '*.enamad.ir'
-    - '*.shaparak.ir'
-    - '*.balad.ir'
-    - '*.zoomit.ir'
-    - '*.gap.im'
-    - '*.igap.net'
-    - '*.telewebion.com'
   default-nameserver:
     - 178.22.122.100
     - 185.51.200.2
-    - 217.218.155.155
-    - 217.218.127.127
     - 223.5.5.5
     - 119.29.29.29
   nameserver:
@@ -86,47 +56,12 @@ dns:
     - tls://208.67.222.222:853
     - https://dns.adguard.com/dns-query
     - tls://94.140.14.14:853
-  nameserver-policy:
-    "geosite:ir":
-      - 178.22.122.100
-      - 185.51.200.2
-      - 217.218.155.155
-      - 217.218.127.127
-      - 185.55.225.25
-      - 185.55.227.22
-    "geosite:google":
-      - https://dns.google/dns-query
-      - tls://8.8.8.8:853
-    "geosite:telegram":
-      - https://cloudflare-dns.com/dns-query
-      - tls://1.1.1.1:853
-  fallback:
-    - tls://8.8.8.8:853
-    - tls://8.8.4.4:853
-    - tls://1.1.1.1:853
-    - tls://1.0.0.1:853
-    - tls://9.9.9.9:853
-    - https://dns.google/dns-query
-    - https://cloudflare-dns.com/dns-query
-  fallback-filter:
-    geoip: true
-    geoip-code: IR
-    ipcidr:
-      - 240.0.0.0/4
-      - 10.0.0.0/8
-      - 172.16.0.0/12
-      - 192.168.0.0/16
-      - 127.0.0.0/8
-      - 100.64.0.0/10
-      - 169.254.0.0/16
-    domain:
-      - '+.ir'
 
 proxies:
 # ---PROXIES---
 
 proxy-groups:
-  # Top-level selector — only shows logical groups, not individual proxies
+  # Top-level selector — only logical groups shown here
   - name: "PROXY"
     type: select
     proxies:
@@ -163,113 +98,4 @@ proxy-groups:
 # ---PROXY-NAMES---
 
 rules:
-  - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
-  - IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
-  - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
-  - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
-  - IP-CIDR,100.64.0.0/10,DIRECT,no-resolve
-  - IP-CIDR,169.254.0.0/16,DIRECT,no-resolve
-  - IP-CIDR,224.0.0.0/4,DIRECT,no-resolve
-  - IP-CIDR,240.0.0.0/4,DIRECT,no-resolve
-  - IP-CIDR6,::1/128,DIRECT,no-resolve
-  - IP-CIDR6,fc00::/7,DIRECT,no-resolve
-  - IP-CIDR6,fe80::/10,DIRECT,no-resolve
-  - GEOIP,IR,DIRECT
-  - DOMAIN-SUFFIX,ir,DIRECT
-  - DOMAIN-SUFFIX,iran,DIRECT
-  - DOMAIN-SUFFIX,digikala.com,DIRECT
-  - DOMAIN-SUFFIX,aparat.com,DIRECT
-  - DOMAIN-SUFFIX,varzesh3.com,DIRECT
-  - DOMAIN-SUFFIX,torob.com,DIRECT
-  - DOMAIN-SUFFIX,filimo.com,DIRECT
-  - DOMAIN-SUFFIX,namava.ir,DIRECT
-  - DOMAIN-SUFFIX,rubika.ir,DIRECT
-  - DOMAIN-SUFFIX,eitaa.com,DIRECT
-  - DOMAIN-SUFFIX,bale.ai,DIRECT
-  - DOMAIN-SUFFIX,gap.im,DIRECT
-  - DOMAIN-SUFFIX,igap.net,DIRECT
-  - DOMAIN-SUFFIX,snappfood.ir,DIRECT
-  - DOMAIN-SUFFIX,sheypoor.com,DIRECT
-  - DOMAIN-SUFFIX,basalam.com,DIRECT
-  - DOMAIN-SUFFIX,alibaba.ir,DIRECT
-  - DOMAIN-SUFFIX,flightio.com,DIRECT
-  - DOMAIN-SUFFIX,zoomit.ir,DIRECT
-  - DOMAIN-SUFFIX,tasnimnews.com,DIRECT
-  - DOMAIN-SUFFIX,mehrnews.com,DIRECT
-  - DOMAIN-SUFFIX,karafarin.com,DIRECT
-  - DOMAIN-SUFFIX,digipay.ir,DIRECT
-  - DOMAIN-SUFFIX,behpardakht.ir,DIRECT
-  - IP-CIDR,178.22.122.100/32,DIRECT,no-resolve
-  - IP-CIDR,185.51.200.2/32,DIRECT,no-resolve
-  - IP-CIDR,217.218.155.155/32,DIRECT,no-resolve
-  - IP-CIDR,217.218.127.127/32,DIRECT,no-resolve
-  - IP-CIDR,185.55.225.25/32,DIRECT,no-resolve
-  - IP-CIDR,185.55.227.22/32,DIRECT,no-resolve
-  - DOMAIN,connectivitycheck.gstatic.com,PROXY
-  - DOMAIN,cp.cloudflare.com,PROXY
-  - DOMAIN,detectportal.firefox.com,PROXY
-  - DOMAIN,captive.apple.com,PROXY
-  - DOMAIN,www.msftncsi.com,PROXY
-  - DOMAIN-SUFFIX,telegram.org,PROXY
-  - DOMAIN-SUFFIX,t.me,PROXY
-  - DOMAIN-SUFFIX,tdesktop.com,PROXY
-  - DOMAIN-SUFFIX,telegra.ph,PROXY
-  - DOMAIN-SUFFIX,whatsapp.com,PROXY
-  - DOMAIN-SUFFIX,whatsapp.net,PROXY
-  - DOMAIN-SUFFIX,signal.org,PROXY
-  - DOMAIN-SUFFIX,instagram.com,PROXY
-  - DOMAIN-SUFFIX,cdninstagram.com,PROXY
-  - DOMAIN-SUFFIX,facebook.com,PROXY
-  - DOMAIN-SUFFIX,fbcdn.net,PROXY
-  - DOMAIN-SUFFIX,messenger.com,PROXY
-  - DOMAIN-SUFFIX,twitter.com,PROXY
-  - DOMAIN-SUFFIX,x.com,PROXY
-  - DOMAIN-SUFFIX,twimg.com,PROXY
-  - DOMAIN-SUFFIX,t.co,PROXY
-  - DOMAIN-SUFFIX,linkedin.com,PROXY
-  - DOMAIN-SUFFIX,licdn.com,PROXY
-  - DOMAIN-SUFFIX,reddit.com,PROXY
-  - DOMAIN-SUFFIX,redd.it,PROXY
-  - DOMAIN-SUFFIX,tiktok.com,PROXY
-  - DOMAIN-SUFFIX,tiktokcdn.com,PROXY
-  - DOMAIN-SUFFIX,youtube.com,PROXY
-  - DOMAIN-SUFFIX,youtu.be,PROXY
-  - DOMAIN-SUFFIX,googlevideo.com,PROXY
-  - DOMAIN-SUFFIX,ytimg.com,PROXY
-  - DOMAIN-SUFFIX,netflix.com,PROXY
-  - DOMAIN-SUFFIX,nflxvideo.net,PROXY
-  - DOMAIN-SUFFIX,nflximg.net,PROXY
-  - DOMAIN-SUFFIX,spotify.com,PROXY
-  - DOMAIN-SUFFIX,scdn.co,PROXY
-  - DOMAIN-SUFFIX,github.com,PROXY
-  - DOMAIN-SUFFIX,githubusercontent.com,PROXY
-  - DOMAIN-SUFFIX,ghcr.io,PROXY
-  - DOMAIN-SUFFIX,githubassets.com,PROXY
-  - DOMAIN-SUFFIX,stackoverflow.com,PROXY
-  - DOMAIN-SUFFIX,sstatic.net,PROXY
-  - DOMAIN-SUFFIX,docker.com,PROXY
-  - DOMAIN-SUFFIX,docker.io,PROXY
-  - DOMAIN-SUFFIX,npmjs.com,PROXY
-  - DOMAIN-SUFFIX,pypi.org,PROXY
-  - DOMAIN-SUFFIX,openai.com,PROXY
-  - DOMAIN-SUFFIX,oaiusercontent.com,PROXY
-  - DOMAIN-SUFFIX,anthropic.com,PROXY
-  - DOMAIN-SUFFIX,claude.ai,PROXY
-  - DOMAIN-SUFFIX,google.com,PROXY
-  - DOMAIN-SUFFIX,googleapis.com,PROXY
-  - DOMAIN-SUFFIX,gstatic.com,PROXY
-  - DOMAIN-SUFFIX,gmail.com,PROXY
-  - DOMAIN-SUFFIX,cloudflare.com,PROXY
-  - DOMAIN-SUFFIX,fastly.net,PROXY
-  - DOMAIN-SUFFIX,jsdelivr.net,PROXY
-  - DOMAIN-SUFFIX,unpkg.com,PROXY
-  - DOMAIN-SUFFIX,amazonaws.com,PROXY
-  - DOMAIN-SUFFIX,cloudfront.net,PROXY
-  - DOMAIN-SUFFIX,azure.com,PROXY
-  - DOMAIN-SUFFIX,azureedge.net,PROXY
-  - DOMAIN-SUFFIX,wikipedia.org,PROXY
-  - DOMAIN-SUFFIX,wikimedia.org,PROXY
-  - DOMAIN-SUFFIX,medium.com,PROXY
-  - DOMAIN-SUFFIX,apkpure.com,PROXY
-  - DOMAIN-SUFFIX,apkmirror.com,PROXY
   - MATCH,PROXY
