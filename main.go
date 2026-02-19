@@ -1792,7 +1792,7 @@ func writeSummary(results []configResult, failedLinks []string, duration float64
 	w.WriteString("## Statistics\n\n")
 
 	w.WriteString("### Per-Protocol Input & Output\n\n")
-	fmt.Fprintf(w, "| Protocol | Input (unique) | Output (valid) | Pass Rate |\n|---|---|---|---|\n")
+	fmt.Fprintf(w, "| Protocol | Tested (unique) | valid | Pass Rate |\n|---|---|---|---|\n")
 	totalIn := 0
 	totalOut := 0
 	for _, p := range cfg.ProtocolOrder {
@@ -1835,7 +1835,7 @@ func writeSummary(results []configResult, failedLinks []string, duration float64
 	}
 	w.WriteString("\n")
 
-	w.WriteString("### Clash — Standard Structure\n\n")
+	w.WriteString("### Clash \n\n")
 	fmt.Fprintf(w, "Groups: **PROXY** (selector) → **Load-Balance** · **Auto** · **Fallback**\n\n")
 	fmt.Fprintf(w, "| File | Link |\n|---|---|\n")
 	fmt.Fprintf(w, "| clash.yaml (all protocols) | [clash.yaml](%s/config/clash.yaml) |\n", repoBase)
@@ -1863,7 +1863,7 @@ func writeSummary(results []configResult, failedLinks []string, duration float64
 	}
 	w.WriteString("\n")
 
-	w.WriteString("### Clash Standard Batches\n\n")
+	w.WriteString("### Clash Batches\n\n")
 	fmt.Fprintf(w, "| Batch | Link |\n|---|---|\n")
 	for i := 1; i <= clashBatches; i++ {
 		fmt.Fprintf(w, "| Batch %03d | [batch_%03d.yaml](%s/config/batches/clash/batch_%03d.yaml) |\n",
