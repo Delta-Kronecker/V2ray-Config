@@ -1,6 +1,6 @@
 # V2Ray Config Aggregator
 
-**آخرین بروزرسانی:** 2026-02-19 01:24:19 UTC
+**آخرین بروزرسانی:** 2026-02-19 01:26:54 UTC
 
 این پروژه به صورت خودکار کانفیگ‌های V2Ray را از منابع مختلف جمع‌آوری، اعتبارسنجی و دسته‌بندی می‌کند.
 
@@ -11,21 +11,21 @@
 | شاخص | مقدار |
 |------|-------|
 | کل دریافت‌شده (ورودی) | 2248 |
-| کانفیگ‌های معتبر (خروجی) | 372 |
-| کاهش (تکراری + نامعتبر) | 83.5% |
-| زمان پردازش | 31.35 ثانیه |
+| کانفیگ‌های معتبر (خروجی) | 377 |
+| کاهش (تکراری + نامعتبر) | 83.2% |
+| زمان پردازش | 30.82 ثانیه |
 | تعداد دسته‌های ۵۰۰تایی | 1 |
 
 ## آمار به تفکیک پروتکل
 
 | پروتکل | تعداد ورودی (تخمین) | تعداد خروجی (معتبر) |
 |--------|---------------------|---------------------|
-| VMESS | - | 29 |
-| VLESS | - | 124 |
-| TROJAN | - | 135 |
-| SS | - | 83 |
+| VMESS | - | 31 |
+| VLESS | - | 127 |
+| TROJAN | - | 136 |
+| SS | - | 82 |
 | HY2 | - | 1 |
-| **مجموع** | **2248** | **372** |
+| **مجموع** | **2248** | **377** |
 
 ---
 
@@ -73,19 +73,19 @@
 
 | دسته | تعداد | لینک دانلود |
 |------|-------|-------------|
-| دسته 1 | 372 | [batch_001.txt](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/batches/v2ray/batch_001.txt) |
+| دسته 1 | 377 | [batch_001.txt](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/batches/v2ray/batch_001.txt) |
 
 ### Clash Batches — معمولی
 
 | دسته | تعداد | لینک دانلود |
 |------|-------|-------------|
-| دسته 1 | 372 | [batch_001.yaml](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/batches/clash/batch_001.yaml) |
+| دسته 1 | 377 | [batch_001.yaml](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/batches/clash/batch_001.yaml) |
 
 ### Clash Batches — پیشرفته
 
 | دسته | تعداد | لینک دانلود |
 |------|-------|-------------|
-| دسته 1 | 372 | [batch_001.yaml](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/batches/clash_advanced/batch_001.yaml) |
+| دسته 1 | 377 | [batch_001.yaml](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/batches/clash_advanced/batch_001.yaml) |
 
 ---
 
