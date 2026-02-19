@@ -1,0 +1,5869 @@
+mixed-port: 7890
+socks-port: 7891
+port: 7892
+allow-lan: true
+bind-address: '*'
+mode: global
+log-level: info
+ipv6: false
+external-controller: 127.0.0.1:9090
+external-ui: ui
+secret: ""
+unified-delay: true
+tcp-concurrent: true
+global-client-fingerprint: chrome
+find-process-mode: strict
+keep-alive-interval: 15
+
+profile:
+  store-selected: true
+  store-fake-ip: false
+
+dns:
+  enable: true
+  ipv6: false
+  listen: 0.0.0.0:5353
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+    - '*.local'
+    - '*.lan'
+    - '*.localhost'
+    - '+.stun.*.*'
+    - '+.stun.*.*.*'
+    - 'time.*'
+    - 'time.*.com'
+    - 'connectivitycheck.gstatic.com'
+    - 'detectportal.firefox.com'
+    - 'captive.apple.com'
+    - 'www.msftncsi.com'
+    - 'cp.cloudflare.com'
+  default-nameserver:
+    - 178.22.122.100
+    - 185.51.200.2
+    - 223.5.5.5
+    - 119.29.29.29
+  nameserver:
+    - https://dns.google/dns-query
+    - tls://8.8.8.8:853
+    - tls://8.8.4.4:853
+    - https://cloudflare-dns.com/dns-query
+    - tls://1.1.1.1:853
+    - tls://1.0.0.1:853
+    - https://dns.quad9.net/dns-query
+    - tls://9.9.9.9:853
+    - tls://149.112.112.112:853
+    - https://doh.opendns.com/dns-query
+    - tls://208.67.222.222:853
+    - https://dns.adguard.com/dns-query
+    - tls://94.140.14.14:853
+
+proxies:
+  - name: "Delta-Kronecker-ss-2200"
+    type: ss
+    server: "151.242.183.196"
+    port: 24868
+    cipher: "chacha20-ietf-poly1305"
+    password: "13df5feb-756e-4627-bcee-497f3c81bab4"
+    udp: true
+  - name: "Delta-Kronecker-ss-1240"
+    type: ss
+    server: "82.180.146.173"
+    port: 35652
+    cipher: "aes-128-gcm"
+    password: "93498539-7838-4836-b9b3-8311ffc79bcf"
+    udp: true
+  - name: "Delta-Kronecker-vless-2199"
+    type: vless
+    server: "193.37.70.98"
+    port: 2053
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.indevs.in"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "sni.111000.indevs.in"
+  - name: "Delta-Kronecker-ss-1455"
+    type: ss
+    server: "169.150.242.77"
+    port: 990
+    cipher: "chacha20-ietf-poly1305"
+    password: "ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44="
+    udp: true
+  - name: "Delta-Kronecker-ss-2103"
+    type: ss
+    server: "194.165.59.93"
+    port: 442
+    cipher: "aes-256-gcm"
+    password: "8801339e-8ed3-4389-9d1d-2f211ccf07be"
+    udp: true
+  - name: "Delta-Kronecker-ss-1512"
+    type: ss
+    server: "163.171.207.11"
+    port: 29464
+    cipher: "chacha20-ietf-poly1305"
+    password: "cb4258dc1b53613c"
+    udp: true
+  - name: "Delta-Kronecker-vless-1398"
+    type: vless
+    server: "162.19.246.53"
+    port: 2053
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.indevs.in"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🇨🇳@WangCai2"
+      headers:
+        Host: "sni.111000.indevs.in"
+  - name: "Delta-Kronecker-ss-1108"
+    type: ss
+    server: "217.30.10.18"
+    port: 9053
+    cipher: "aes-256-cfb"
+    password: "SBM7R883jBmnqe6C"
+    udp: true
+  - name: "Delta-Kronecker-ss-1089"
+    type: ss
+    server: "38.54.59.107"
+    port: 990
+    cipher: "chacha20-ietf-poly1305"
+    password: "ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44="
+    udp: true
+  - name: "Delta-Kronecker-vless-725"
+    type: vless
+    server: "ficdn2.suio.me"
+    port: 443
+    uuid: "94a03e9a-74d5-4036-95e9-563cc19355de"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ficdn2.suio.me"
+  - name: "Delta-Kronecker-vless-292"
+    type: vless
+    server: "144.31.100.120"
+    port: 443
+    uuid: "be420958-a605-4513-9371-838e9ddb2866"
+    udp: true
+    tls: true
+    skip-cert-verify: false
+    servername: "google.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "ihtXyG0UidSbXjvCJXUhABwZGCCB62DUsVBFn_qVd3g"
+      short-id: "352e3a94"
+  - name: "Delta-Kronecker-ss-1079"
+    type: ss
+    server: "109.61.39.28"
+    port: 990
+    cipher: "chacha20-ietf-poly1305"
+    password: "ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44="
+    udp: true
+  - name: "Delta-Kronecker-vless-267"
+    type: vless
+    server: "64.188.73.12"
+    port: 443
+    uuid: "99bd2791-8e27-435b-a1e2-c9b625101af9"
+    udp: true
+    flow: "xtls-rprx-vision"
+    tls: true
+    skip-cert-verify: false
+    servername: "www.intel.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "PJQxY2FFwn9nXutKZx1t9TcMnRjqXpBAnIDB5jvwEAU"
+      short-id: "d91248fbca"
+  - name: "Delta-Kronecker-trojan-269"
+    type: trojan
+    server: "172.66.44.233"
+    port: 443
+    password: "38720105-063f-40f5-a5eb-f3198b9b617d"
+    sni: "aksnmaioas.pages.dev"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-ss-2181"
+    type: ss
+    server: "151.242.183.219"
+    port: 15783
+    cipher: "chacha20-ietf-poly1305"
+    password: "13df5feb-756e-4627-bcee-497f3c81bab4"
+    udp: true
+  - name: "Delta-Kronecker-trojan-276"
+    type: trojan
+    server: "104.21.88.226"
+    port: 443
+    password: "357b1bba-6400-4944-baff-1b933311ff28"
+    sni: "XxxxxXXXXXXxXf.wwW890604.Dpdns.orG"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-vless-1433"
+    type: vless
+    server: "51.91.254.177"
+    port: 443
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.indevs.in"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🇨🇳+@WangCai2"
+      headers:
+        Host: "sni.111000.indevs.in"
+  - name: "Delta-Kronecker-vless-1319"
+    type: vless
+    server: "51.38.44.17"
+    port: 443
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.indevs.in"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🇨🇳 @WangCai2"
+      headers:
+        Host: "sni.111000.indevs.in"
+  - name: "Delta-Kronecker-vless-1770"
+    type: vless
+    server: "135.84.73.239"
+    port: 443
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.dynv6.net"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🇨🇳@WangCai2"
+      headers:
+        Host: "sni.111000.dynv6.net"
+  - name: "Delta-Kronecker-ss-356"
+    type: ss
+    server: "103.186.154.141"
+    port: 38388
+    cipher: "aes-256-cfb"
+    password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV"
+    udp: true
+  - name: "Delta-Kronecker-ss-355"
+    type: ss
+    server: "103.186.154.254"
+    port: 38388
+    cipher: "aes-256-cfb"
+    password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV"
+    udp: true
+  - name: "Delta-Kronecker-vless-2111"
+    type: vless
+    server: "47.250.132.147"
+    port: 443
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.indevs.in"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🇨🇳 @WangCai2"
+      headers:
+        Host: "sni.111000.indevs.in"
+  - name: "Delta-Kronecker-ss-1190"
+    type: ss
+    server: "64.227.144.190"
+    port: 50690
+    cipher: "chacha20-ietf-poly1305"
+    password: "AbkZdd2F8nEUp4o6M3FA1M"
+    udp: true
+  - name: "Delta-Kronecker-vless-750"
+    type: vless
+    server: "45.43.79.73"
+    port: 443
+    uuid: "f79d200c-ac04-45a8-98a7-031d629f705c"
+    udp: true
+    tls: true
+    skip-cert-verify: false
+    servername: "google.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "sSxz8on32QOT9c9J-03K911U9vFr6xBKcK2zVfvk4QI"
+      short-id: "cd620180"
+  - name: "Delta-Kronecker-trojan-198"
+    type: trojan
+    server: "22b.net"
+    port: 2087
+    password: "trojan"
+    sni: "22b.net"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-trojan-220"
+    type: trojan
+    server: "104.21.29.75"
+    port: 443
+    password: "891d999f-7864-45c5-8db9-3c69f35dcb96"
+    sni: "uciranir-uciranir-uciranir-uciranir-uciranir-uiranir-uciranir4.bopidi6268.workers.dev"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-ss-1569"
+    type: ss
+    server: "185.93.173.60"
+    port: 990
+    cipher: "chacha20-ietf-poly1305"
+    password: "ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44="
+    udp: true
+  - name: "Delta-Kronecker-vless-2811"
+    type: vless
+    server: "5.34.179.145"
+    port: 3443
+    uuid: "35ea0172-9993-4164-893e-38d0ae967dbd"
+    udp: true
+    flow: "xtls-rprx-vision"
+    tls: true
+    skip-cert-verify: false
+    servername: "google.com"
+    client-fingerprint: "qq"
+    reality-opts:
+      public-key: "CsUm6jBZvd5KzFN8Klm9KYF5kiUmztspcA9InbcnwXM"
+      short-id: "e49b4e3d5f46d5c2"
+  - name: "Delta-Kronecker-vless-2708"
+    type: vless
+    server: "172.67.73.14"
+    port: 443
+    uuid: "4a942a11-2178-4b10-af73-15b1cfee99df"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "afrcloud22.mmv.kr"
+    network: ws
+    ws-opts:
+      path: "/185.186.245.205=81"
+      headers:
+        Host: "afrcloud22.mmv.kr"
+  - name: "Delta-Kronecker-vless-213"
+    type: vless
+    server: "62.84.102.169"
+    port: 8443
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.dynv6.net"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "sni.111000.dynv6.net"
+  - name: "Delta-Kronecker-trojan-008"
+    type: trojan
+    server: "104.21.40.34"
+    port: 443
+    password: "humanity"
+    sni: "www.gossipglove.com"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/assignment"
+      headers:
+        Host: "www.gossipglove.com"
+  - name: "Delta-Kronecker-vless-1645"
+    type: vless
+    server: "160.153.1.156"
+    port: 443
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.v6.navy"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🇨🇳 @WangCai2"
+      headers:
+        Host: "sni.111000.v6.navy"
+  - name: "Delta-Kronecker-ss-596"
+    type: ss
+    server: "217.30.10.18"
+    port: 9053
+    cipher: "aes-256-cfb"
+    password: "SBM7R883jBmnqe6C"
+    udp: true
+  - name: "Delta-Kronecker-ss-359"
+    type: ss
+    server: "103.186.154.52"
+    port: 38388
+    cipher: "aes-256-cfb"
+    password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV"
+    udp: true
+  - name: "Delta-Kronecker-ss-741"
+    type: ss
+    server: "217.30.10.18"
+    port: 9031
+    cipher: "aes-256-cfb"
+    password: "BwcAUZk8hUFAkDGN"
+    udp: true
+  - name: "Delta-Kronecker-vless-838"
+    type: vless
+    server: "104.21.227.134"
+    port: 80
+    uuid: "e31085f9-7f55-4a7d-b00e-ce94149477cb"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "PrICKLy-AdverTisEMEnt6OaD5Z64MK.onEEaT.cO"
+  - name: "Delta-Kronecker-vless-1475"
+    type: vless
+    server: "57.129.137.233"
+    port: 443
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.v6.navy"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🇨🇳+@WangCai2"
+      headers:
+        Host: "sni.111000.v6.navy"
+  - name: "Delta-Kronecker-ss-1571"
+    type: ss
+    server: "38.60.250.107"
+    port: 990
+    cipher: "chacha20-ietf-poly1305"
+    password: "ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44="
+    udp: true
+  - name: "Delta-Kronecker-vless-120"
+    type: vless
+    server: "afrcloud22.mmv.kr"
+    port: 443
+    uuid: "61066a16-78fc-4446-8013-6646bc3f27ba"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "afrcloud22.mmv.kr"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "afrcloud22.mmv.kr"
+  - name: "Delta-Kronecker-vless-1430"
+    type: vless
+    server: "51.91.254.111"
+    port: 8443
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.indevs.in"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🇨🇳+@WangCai2"
+      headers:
+        Host: "sni.111000.indevs.in"
+  - name: "Delta-Kronecker-trojan-1184"
+    type: trojan
+    server: "sg05.170203.xyz"
+    port: 443
+    password: "aab77372-534b-4878-a7d0-b9339ddc1868"
+    sni: "sg05.170203.xyz"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-ss-1840"
+    type: ss
+    server: "103.186.154.23"
+    port: 38388
+    cipher: "aes-256-cfb"
+    password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV"
+    udp: true
+  - name: "Delta-Kronecker-vless-2431"
+    type: vless
+    server: "212.34.148.122"
+    port: 2053
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.indevs.in"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🇨🇳 @WangCai2"
+      headers:
+        Host: "sni.111000.indevs.in"
+  - name: "Delta-Kronecker-ss-540"
+    type: ss
+    server: "103.186.154.66"
+    port: 38388
+    cipher: "aes-256-cfb"
+    password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV"
+    udp: true
+  - name: "Delta-Kronecker-vless-1895"
+    type: vless
+    server: "64.227.73.131"
+    port: 443
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.indevs.in"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🇨🇳+@WangCai2"
+      headers:
+        Host: "sni.111000.indevs.in"
+  - name: "Delta-Kronecker-vless-692"
+    type: vless
+    server: "87.106.65.110"
+    port: 443
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.v6.navy"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "sni.111000.v6.navy"
+  - name: "Delta-Kronecker-ss-2114"
+    type: ss
+    server: "64.176.215.70"
+    port: 443
+    cipher: "aes-256-gcm"
+    password: "hbhO0xomsJzhO24F"
+    udp: true
+  - name: "Delta-Kronecker-vless-1598"
+    type: vless
+    server: "198.71.232.238"
+    port: 2096
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.jpmj.dev"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🇨🇳@WangCai2"
+      headers:
+        Host: "sni.jpmj.dev"
+  - name: "Delta-Kronecker-vless-2098"
+    type: vless
+    server: "151.242.183.220"
+    port: 35549
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.v6.navy"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🇨🇳+@WangCai2"
+      headers:
+        Host: "sni.111000.v6.navy"
+  - name: "Delta-Kronecker-vmess-037"
+    type: vmess
+    server: "141.94.155.224"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "fapeng.org"
+    network: ws
+    ws-opts:
+      path: "linkvws"
+  - name: "Delta-Kronecker-ss-1225"
+    type: ss
+    server: "103.106.228.247"
+    port: 990
+    cipher: "chacha20-ietf-poly1305"
+    password: "ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44="
+    udp: true
+  - name: "Delta-Kronecker-trojan-463"
+    type: trojan
+    server: "172.67.212.82"
+    port: 443
+    password: "f82fb954-06a1-4f0b-9180-17e07585b61f"
+    sni: "6yuioph.131.pp.ua"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-trojan-1111"
+    type: trojan
+    server: "18.238.109.37"
+    port: 443
+    password: "0000000"
+    sni: "www.lovelive-anime.jp"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-ss-539"
+    type: ss
+    server: "103.186.155.34"
+    port: 38388
+    cipher: "aes-256-cfb"
+    password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV"
+    udp: true
+  - name: "Delta-Kronecker-vless-1184"
+    type: vless
+    server: "5.253.41.52"
+    port: 8443
+    uuid: "309fa273-6579-4cb2-9143-7cad50401eba"
+    udp: true
+    flow: "xtls-rprx-vision"
+    tls: true
+    skip-cert-verify: false
+    servername: "www.cloudflare.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "gZGVp5PUdafgsmi1gawa1yLuha_XhXRc_W9SvPiGmTY"
+      short-id: "7cad5040"
+  - name: "Delta-Kronecker-ss-473"
+    type: ss
+    server: "103.186.154.29"
+    port: 38388
+    cipher: "aes-256-cfb"
+    password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV"
+    udp: true
+  - name: "Delta-Kronecker-vless-996"
+    type: vless
+    server: "94.23.167.24"
+    port: 2053
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.dynv6.net"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🇨🇳@WangCai2"
+      headers:
+        Host: "sni.111000.dynv6.net"
+  - name: "Delta-Kronecker-ss-749"
+    type: ss
+    server: "141.98.101.181"
+    port: 443
+    cipher: "aes-128-gcm"
+    password: "shadowsocks"
+    udp: true
+  - name: "Delta-Kronecker-ss-1083"
+    type: ss
+    server: "176.123.5.253"
+    port: 990
+    cipher: "chacha20-ietf-poly1305"
+    password: "ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44="
+    udp: true
+  - name: "Delta-Kronecker-vless-2508"
+    type: vless
+    server: "5.34.208.44"
+    port: 2053
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.indevs.in"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🇨🇳 @WangCai2"
+      headers:
+        Host: "sni.111000.indevs.in"
+  - name: "Delta-Kronecker-ss-475"
+    type: ss
+    server: "103.186.154.38"
+    port: 38388
+    cipher: "aes-256-cfb"
+    password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV"
+    udp: true
+  - name: "Delta-Kronecker-trojan-391"
+    type: trojan
+    server: "104.21.36.165"
+    port: 443
+    password: "azadnet-trojan"
+    sni: "XN----PmCnaaC0dKn0Rb71NdA.PagES.DeV"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-vless-2212"
+    type: vless
+    server: "37.59.97.136"
+    port: 443
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.indevs.in"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "sni.111000.indevs.in"
+  - name: "Delta-Kronecker-ss-326"
+    type: ss
+    server: "103.186.154.46"
+    port: 38388
+    cipher: "aes-256-cfb"
+    password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV"
+    udp: true
+  - name: "Delta-Kronecker-trojan-213"
+    type: trojan
+    server: "162.159.153.229"
+    port: 443
+    password: "bpb-trojan"
+    sni: "cf.090227.xyz"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-vless-284"
+    type: vless
+    server: "92.63.224.18"
+    port: 443
+    uuid: "b823aaa4-7b6f-49cb-98e4-ffc0a1fb19ee"
+    udp: true
+    tls: true
+    skip-cert-verify: false
+    servername: "google.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "N7QOAJAui59pdM3FtsS9Ey-KFpr36OuhincNGnkm_E4"
+      short-id: "f6ae0c7beb"
+  - name: "Delta-Kronecker-ss-1548"
+    type: ss
+    server: "119.159.245.24"
+    port: 26736
+    cipher: "chacha20-ietf-poly1305"
+    password: "1d1bc54689ed4b75"
+    udp: true
+  - name: "Delta-Kronecker-vless-2989"
+    type: vless
+    server: "174.136.205.68"
+    port: 443
+    uuid: "04dc49a0-d588-4898-8634-ca09bc19d3ad"
+    udp: true
+    tls: true
+    skip-cert-verify: false
+    servername: "navi.bankrate.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "UT9tFQOdy54SeW_tg-XQN3QkGYoWUpO_88XFXijkrXc"
+      short-id: "2da72ce6"
+  - name: "Delta-Kronecker-vless-2629"
+    type: vless
+    server: "94.101.178.163"
+    port: 2086
+    uuid: "0696d558-118e-4613-8262-59fe272cac59"
+    udp: true
+  - name: "Delta-Kronecker-vless-139"
+    type: vless
+    server: "167.68.42.238"
+    port: 2096
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.jpmj.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "sni.jpmj.dev"
+  - name: "Delta-Kronecker-vless-641"
+    type: vless
+    server: "195.245.221.138"
+    port: 2096
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.indevs.in"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "sni.111000.indevs.in"
+  - name: "Delta-Kronecker-trojan-1227"
+    type: trojan
+    server: "153.121.65.107"
+    port: 3076
+    password: "c1d83c0c7d57cead4379ba14a82df69b"
+    sni: "www.nintendogames.net"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-trojan-278"
+    type: trojan
+    server: "172.66.47.95"
+    port: 443
+    password: "5A%7Cqwun(Ne*!6%7CQo"
+    sni: "joInMahdISeRVeR-71l.PAGEs.dev"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-ss-124"
+    type: ss
+    server: "138.186.142.81"
+    port: 990
+    cipher: "chacha20-ietf-poly1305"
+    password: "ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44="
+    udp: true
+  - name: "Delta-Kronecker-ss-057"
+    type: ss
+    server: "3.112.130.53"
+    port: 8316
+    cipher: "chacha20-ietf-poly1305"
+    password: "ljqdalu13.."
+    udp: true
+  - name: "Delta-Kronecker-trojan-818"
+    type: trojan
+    server: "green2.cdntencentmusic.com"
+    port: 35502
+    password: "92953fc6-f497-43af-9d6d-f3b5589df318"
+    sni: "green2.cdntencentmusic.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-ss-998"
+    type: ss
+    server: "154.12.240.141"
+    port: 443
+    cipher: "aes-256-gcm"
+    password: "mK7eN3z276Tr0vVA"
+    udp: true
+  - name: "Delta-Kronecker-trojan-353"
+    type: trojan
+    server: "188.114.97.248"
+    port: 443
+    password: "NISHIKUITAN222"
+    sni: "188.114.97.248"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-vless-1551"
+    type: vless
+    server: "143.20.213.32"
+    port: 8443
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.indevs.in"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🇨🇳@WangCai2"
+      headers:
+        Host: "sni.111000.indevs.in"
+  - name: "Delta-Kronecker-trojan-1144"
+    type: trojan
+    server: "94.131.122.254"
+    port: 443
+    password: "jJT7gd5O9vwJzL6RiXpxxXIAL"
+    sni: "hl-freedom-2.undef.network"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/f2fc2a1f"
+      headers:
+        Host: "hl-freedom-2.undef.network"
+  - name: "Delta-Kronecker-ss-720"
+    type: ss
+    server: "94.72.127.55"
+    port: 80
+    cipher: "aes-256-gcm"
+    password: "wlJSF0fC8uqB5Gm5"
+    udp: true
+  - name: "Delta-Kronecker-vless-538"
+    type: vless
+    server: "45.135.160.57"
+    port: 443
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.indevs.in"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&telegram🇨🇳 @wangcai2"
+      headers:
+        Host: "sni.111000.indevs.in"
+  - name: "Delta-Kronecker-vless-1231"
+    type: vless
+    server: "mkiuy.1x9.indevs.in"
+    port: 80
+    uuid: "4e45c1b4-9107-45dd-9995-cdf7cbb44d9d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/hBasD7EdpBQ0zGAzsYHmsMrnO"
+      headers:
+        Host: "mkiuy.1x9.indevs.in"
+  - name: "Delta-Kronecker-ss-1417"
+    type: ss
+    server: "103.186.155.142"
+    port: 38388
+    cipher: "aes-256-cfb"
+    password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV"
+    udp: true
+  - name: "Delta-Kronecker-vless-280"
+    type: vless
+    server: "104.20.0.31"
+    port: 443
+    uuid: "aaaaaabb-4ddd-4eee-9fff-ffffffffffff"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "joinProxyVPN11.afrcloud22.mmv.kr"
+    network: ws
+    ws-opts:
+      path: "/43.218.77.16=1443"
+      headers:
+        Host: "afrcloud22.mmv.kr"
+  - name: "Delta-Kronecker-ss-1402"
+    type: ss
+    server: "141.98.101.182"
+    port: 443
+    cipher: "aes-128-gcm"
+    password: "shadowsocks"
+    udp: true
+  - name: "Delta-Kronecker-trojan-821"
+    type: trojan
+    server: "154.197.75.178"
+    port: 2096
+    password: "d6b8011a-c725-435a-9fec-bf6d3530392c"
+    sni: "vle.amclubdns.dpdns.org"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-ss-824"
+    type: ss
+    server: "51.161.80.138"
+    port: 12743
+    cipher: "chacha20-ietf-poly1305"
+    password: "ae1f6fea74b7391a"
+    udp: true
+  - name: "Delta-Kronecker-ss-1972"
+    type: ss
+    server: "103.186.155.183"
+    port: 38388
+    cipher: "aes-256-cfb"
+    password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV"
+    udp: true
+  - name: "Delta-Kronecker-ss-370"
+    type: ss
+    server: "103.186.155.204"
+    port: 38388
+    cipher: "aes-256-cfb"
+    password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV"
+    udp: true
+  - name: "Delta-Kronecker-vless-2376"
+    type: vless
+    server: "162.19.66.26"
+    port: 8443
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.v6.navy"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🇨🇳 @WangCai2"
+      headers:
+        Host: "sni.111000.v6.navy"
+  - name: "Delta-Kronecker-vless-2326"
+    type: vless
+    server: "141.98.197.83"
+    port: 28245
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.indevs.in"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🇨🇳+@WangCai2"
+      headers:
+        Host: "sni.111000.indevs.in"
+  - name: "Delta-Kronecker-vless-787"
+    type: vless
+    server: "194.8.6.33"
+    port: 443
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.dynv6.net"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🇨🇳 @WangCai2"
+      headers:
+        Host: "sni.111000.dynv6.net"
+  - name: "Delta-Kronecker-ss-1181"
+    type: ss
+    server: "38.54.2.182"
+    port: 990
+    cipher: "chacha20-ietf-poly1305"
+    password: "ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44="
+    udp: true
+  - name: "Delta-Kronecker-ss-389"
+    type: ss
+    server: "103.186.155.222"
+    port: 38388
+    cipher: "aes-256-cfb"
+    password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV"
+    udp: true
+  - name: "Delta-Kronecker-trojan-341"
+    type: trojan
+    server: "188.114.96.153"
+    port: 443
+    password: "NISHIKUITAN111"
+    sni: "188.114.96.153"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-ss-411"
+    type: ss
+    server: "103.186.154.15"
+    port: 38388
+    cipher: "aes-256-cfb"
+    password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV"
+    udp: true
+  - name: "Delta-Kronecker-trojan-1067"
+    type: trojan
+    server: "120.241.226.93"
+    port: 2053
+    password: "6e1b9a65-884f-3aa9-9469-bf6ec0f08610"
+    sni: "45.32.28.232"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-vless-823"
+    type: vless
+    server: "90.156.217.130"
+    port: 8443
+    uuid: "6408b7b0-2527-4d9f-b361-928222ec624f"
+    udp: true
+    flow: "xtls-rprx-vision"
+    tls: true
+    skip-cert-verify: false
+    servername: "m.vk.ru"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "_CjW0Khlrr5z5oc9Oy6-w2ZEanz-zMBktVn5EOX9oTM"
+      short-id: "6419bed7fd0a2cff"
+  - name: "Delta-Kronecker-trojan-770"
+    type: trojan
+    server: "102.177.176.178"
+    port: 2096
+    password: "d6b8011a-c725-435a-9fec-bf6d3530392c"
+    sni: "vle.amclubdns.dpdns.org"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-vless-1517"
+    type: vless
+    server: "138.124.3.201"
+    port: 443
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.indevs.in"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🇨🇳 @WangCai2"
+      headers:
+        Host: "sni.111000.indevs.in"
+  - name: "Delta-Kronecker-ss-1421"
+    type: ss
+    server: "51.159.106.175"
+    port: 989
+    cipher: "aes-256-cfb"
+    password: "f8f7aCzcPKbsF8p3"
+    udp: true
+  - name: "Delta-Kronecker-ss-235"
+    type: ss
+    server: "103.186.155.52"
+    port: 38388
+    cipher: "aes-256-cfb"
+    password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV"
+    udp: true
+  - name: "Delta-Kronecker-trojan-992"
+    type: trojan
+    server: "89.116.250.178"
+    port: 2096
+    password: "d6b8011a-c725-435a-9fec-bf6d3530392c"
+    sni: "vle.amclubdns.dpdns.org"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-ss-1035"
+    type: ss
+    server: "82.38.31.99"
+    port: 8080
+    cipher: "chacha20-ietf-poly1305"
+    password: "oZIoA69Q8yhcQV8ka3Pa3A"
+    udp: true
+  - name: "Delta-Kronecker-ss-2222"
+    type: ss
+    server: "151.242.183.196"
+    port: 15783
+    cipher: "chacha20-ietf-poly1305"
+    password: "13df5feb-756e-4627-bcee-497f3c81bab4"
+    udp: true
+  - name: "Delta-Kronecker-ss-2100"
+    type: ss
+    server: "218.237.185.230"
+    port: 4652
+    cipher: "aes-256-cfb"
+    password: "qwerREWQ@@"
+    udp: true
+  - name: "Delta-Kronecker-trojan-839"
+    type: trojan
+    server: "160.153.138.178"
+    port: 2096
+    password: "d6b8011a-c725-435a-9fec-bf6d3530392c"
+    sni: "vle.amclubdns.dpdns.org"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-trojan-847"
+    type: trojan
+    server: "167.68.4.178"
+    port: 2096
+    password: "d6b8011a-c725-435a-9fec-bf6d3530392c"
+    sni: "vle.amclubdns.dpdns.org"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-trojan-061"
+    type: trojan
+    server: "167.17.185.172"
+    port: 10889
+    password: "cTv.9PDdCt-wybBrG1qlxI5UJuaEj"
+    sni: "web.max.ru"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-trojan-436"
+    type: trojan
+    server: "172.66.47.53"
+    port: 443
+    password: "bpb-trojan"
+    sni: "403b3611-99bC-43b7-88D7-26ED5D0825A9-3.pagES.DEv"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-trojan-114"
+    type: trojan
+    server: "103.224.182.208"
+    port: 443
+    password: "47258c2d-6b4c-444c-9085-5131bf0aff64"
+    sni: "18-140-66-207.nhost.00cdn.com"
+    skip-cert-verify: true
+    udp: true
+    client-fingerprint: "chrome"
+  - name: "Delta-Kronecker-ss-1716"
+    type: ss
+    server: "217.30.10.18"
+    port: 9027
+    cipher: "aes-256-cfb"
+    password: "EXN3S3eQpjE7EJu8"
+    udp: true
+  - name: "Delta-Kronecker-trojan-439"
+    type: trojan
+    server: "172.67.180.238"
+    port: 443
+    password: "bpb-trojan"
+    sni: "403b3611-99BC-43B7-88d7-26eD5D0825A9-3.PAges.DEV"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-ss-992"
+    type: ss
+    server: "94.72.127.58"
+    port: 80
+    cipher: "aes-256-gcm"
+    password: "jJHq807bQ7TM0yOh"
+    udp: true
+  - name: "Delta-Kronecker-trojan-826"
+    type: trojan
+    server: "154.83.2.178"
+    port: 2096
+    password: "d6b8011a-c725-435a-9fec-bf6d3530392c"
+    sni: "vle.amclubdns.dpdns.org"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-vless-2562"
+    type: vless
+    server: "46.226.162.232"
+    port: 443
+    uuid: "0e90f352-e9bc-4834-8ff6-49ba887eded4"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "1323.world"
+    client-fingerprint: "chrome"
+    alpn: ["h2"]
+  - name: "Delta-Kronecker-ss-2205"
+    type: ss
+    server: "151.242.183.196"
+    port: 42295
+    cipher: "chacha20-ietf-poly1305"
+    password: "13df5feb-756e-4627-bcee-497f3c81bab4"
+    udp: true
+  - name: "Delta-Kronecker-trojan-342"
+    type: trojan
+    server: "188.114.96.162"
+    port: 443
+    password: "NISHIKUITAN111"
+    sni: "188.114.96.162"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-vless-1506"
+    type: vless
+    server: "51.91.254.189"
+    port: 443
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.v6.navy"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🇨🇳+@WangCai2"
+      headers:
+        Host: "sni.111000.v6.navy"
+  - name: "Delta-Kronecker-vless-043"
+    type: vless
+    server: "osn.takovpn.ru"
+    port: 443
+    uuid: "2b9c6fa8-4b29-454e-9668-4e976bfff86e"
+    udp: true
+    tls: true
+    skip-cert-verify: false
+    servername: "www.google.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "ihtXyG0UidSbXjvCJXUhABwZGCCB62DUsVBFn_qVd3g"
+      short-id: "3d3c3fc7e9"
+  - name: "Delta-Kronecker-vless-2632"
+    type: vless
+    server: "94.159.101.93"
+    port: 443
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.v6.navy"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🇨🇳 @WangCai2"
+      headers:
+        Host: "sni.111000.v6.navy"
+  - name: "Delta-Kronecker-ss-186"
+    type: ss
+    server: "154.53.57.143"
+    port: 80
+    cipher: "aes-256-gcm"
+    password: "uwmRUOVM5ljNAtPj"
+    udp: true
+  - name: "Delta-Kronecker-trojan-254"
+    type: trojan
+    server: "104.17.215.8"
+    port: 443
+    password: "2cba4104747d49d18319e5ade1b93ab5"
+    sni: "jobscareertoday.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-vless-020"
+    type: vless
+    server: "104.26.15.21"
+    port: 443
+    uuid: "16068e83-af4c-49ba-8048-98fcff3e5e7b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "afrcloud22.mmv.kr"
+    network: ws
+    ws-opts:
+      path: "/131.186.26.129"
+      headers:
+        Host: "afrcloud22.mmv.kr"
+  - name: "Delta-Kronecker-ss-2136"
+    type: ss
+    server: "68.183.227.4"
+    port: 8080
+    cipher: "rc4-md5"
+    password: "14fFPrbezE3HDZzsMOr6"
+    udp: true
+  - name: "Delta-Kronecker-vless-367"
+    type: vless
+    server: "91.99.218.107"
+    port: 36454
+    uuid: "98fb333c-3d84-4fa4-b1f7-1683b509f65a"
+    udp: true
+  - name: "Delta-Kronecker-ss-149"
+    type: ss
+    server: "147.78.1.230"
+    port: 989
+    cipher: "aes-256-cfb"
+    password: "f8f7aCzcPKbsF8p3"
+    udp: true
+  - name: "Delta-Kronecker-vless-2343"
+    type: vless
+    server: "146.59.228.27"
+    port: 8443
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.v6.navy"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🇨🇳 @WangCai2"
+      headers:
+        Host: "sni.111000.v6.navy"
+  - name: "Delta-Kronecker-vless-3087"
+    type: vless
+    server: "174.136.205.68"
+    port: 443
+    uuid: "ab7a9203-db46-4f63-8879-92d119a2aae1"
+    udp: true
+    tls: true
+    skip-cert-verify: false
+    servername: "navi.bankrate.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "UT9tFQOdy54SeW_tg-XQN3QkGYoWUpO_88XFXijkrXc"
+      short-id: "2da72ce6"
+  - name: "Delta-Kronecker-trojan-365"
+    type: trojan
+    server: "104.20.19.145"
+    port: 443
+    password: "auto"
+    sni: "b96ef9ae.trojanfree-76s.pages.dev"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-vless-551"
+    type: vless
+    server: "40.160.6.133"
+    port: 8880
+    uuid: "6251f84e-9c02-4140-921c-6b47d394fb96"
+    udp: true
+    network: grpc
+    grpc-opts:
+      grpc-service-name: ""
+  - name: "Delta-Kronecker-vless-459"
+    type: vless
+    server: "139.144.77.170"
+    port: 443
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.indevs.in"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "sni.111000.indevs.in"
+  - name: "Delta-Kronecker-vless-3069"
+    type: vless
+    server: "174.136.205.68"
+    port: 443
+    uuid: "8f29728e-4788-4e15-82c7-cb8e50407600"
+    udp: true
+    tls: true
+    skip-cert-verify: false
+    servername: "navi.bankrate.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "UT9tFQOdy54SeW_tg-XQN3QkGYoWUpO_88XFXijkrXc"
+      short-id: "2da72ce6"
+  - name: "Delta-Kronecker-ss-1449"
+    type: ss
+    server: "216.105.168.18"
+    port: 443
+    cipher: "chacha20-ietf-poly1305"
+    password: "y72NUqETVKMPae4SMgzwzZ"
+    udp: true
+  - name: "Delta-Kronecker-vless-2872"
+    type: vless
+    server: "144.31.100.120"
+    port: 443
+    uuid: "b2dbc3c1-aa7f-4ebe-950e-ce35e5afcbc6"
+    udp: true
+    tls: true
+    skip-cert-verify: false
+    servername: "google.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "ihtXyG0UidSbXjvCJXUhABwZGCCB62DUsVBFn_qVd3g"
+      short-id: "9de7"
+  - name: "Delta-Kronecker-vless-3018"
+    type: vless
+    server: "154.31.114.125"
+    port: 443
+    uuid: "108ab6db-bd0a-4379-9021-56163f1721b1"
+    udp: true
+    tls: true
+    skip-cert-verify: false
+    servername: "navi.bankrate.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "UT9tFQOdy54SeW_tg-XQN3QkGYoWUpO_88XFXijkrXc"
+      short-id: "2da72ce6"
+  - name: "Delta-Kronecker-vless-1154"
+    type: vless
+    server: "172.104.186.30"
+    port: 443
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.v6.navy"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🇨🇳+@WangCai2"
+      headers:
+        Host: "sni.111000.v6.navy"
+  - name: "Delta-Kronecker-vless-1427"
+    type: vless
+    server: "141.94.221.189"
+    port: 2053
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.indevs.in"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🇨🇳+@WangCai2"
+      headers:
+        Host: "sni.111000.indevs.in"
+  - name: "Delta-Kronecker-ss-503"
+    type: ss
+    server: "103.186.155.10"
+    port: 38388
+    cipher: "aes-256-cfb"
+    password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV"
+    udp: true
+  - name: "Delta-Kronecker-vless-030"
+    type: vless
+    server: "157.173.127.225"
+    port: 443
+    uuid: "11beaf11-726d-4c11-8ce9-27308c1c608c"
+    udp: true
+    tls: true
+    skip-cert-verify: false
+    servername: "analytics.google.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "v3EwzA9RIIh5Ndxm-gypRY6RCJhOpQ-2WO7KaH8nsC8"
+      short-id: "eab26c4a32"
+  - name: "Delta-Kronecker-vless-2028"
+    type: vless
+    server: "165.232.94.31"
+    port: 443
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.indevs.in"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "sni.111000.indevs.in"
+  - name: "Delta-Kronecker-ss-1521"
+    type: ss
+    server: "193.29.139.206"
+    port: 8080
+    cipher: "chacha20-ietf-poly1305"
+    password: "4a2rfixophdjffa8KVA4Aa"
+    udp: true
+  - name: "Delta-Kronecker-trojan-1027"
+    type: trojan
+    server: "ivory.qzz.io"
+    port: 443
+    password: "e2e3b171-33a8-4c8f-9e5f-ae6e92299e40"
+    sni: "ivory.qzz.io"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-vless-2604"
+    type: vless
+    server: "88.99.189.60"
+    port: 443
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.indevs.in"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🎖@AliXTso"
+      headers:
+        Host: "sni.111000.indevs.in"
+  - name: "Delta-Kronecker-vless-2689"
+    type: vless
+    server: "104.26.14.21"
+    port: 443
+    uuid: "1dbebdd3-3922-40c0-9b0e-ace270adb479"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "afrcloud22.mmv.kr"
+    network: ws
+    ws-opts:
+      path: "/175.202.135.114=12427"
+      headers:
+        Host: "afrcloud22.mmv.kr"
+  - name: "Delta-Kronecker-ss-2045"
+    type: ss
+    server: "103.186.155.52"
+    port: 38388
+    cipher: "aes-256-cfb"
+    password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV"
+    udp: true
+  - name: "Delta-Kronecker-ss-394"
+    type: ss
+    server: "103.186.155.226"
+    port: 38388
+    cipher: "aes-256-cfb"
+    password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV"
+    udp: true
+  - name: "Delta-Kronecker-vmess-067"
+    type: vmess
+    server: "47.74.52.195"
+    port: 443
+    uuid: "3cd6f849-078e-4da9-8080-a2791b51b766"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "n1753598448.74qxv.top"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "n1753598448.74qxv.top"
+  - name: "Delta-Kronecker-vless-2003"
+    type: vless
+    server: "46.17.99.40"
+    port: 443
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.dynv6.net"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🇨🇳 @WangCai2"
+      headers:
+        Host: "sni.111000.dynv6.net"
+  - name: "Delta-Kronecker-vless-2778"
+    type: vless
+    server: "5.34.179.145"
+    port: 3443
+    uuid: "65fdb25e-bd71-4d94-bd05-bb234b1213b0"
+    udp: true
+    flow: "xtls-rprx-vision"
+    tls: true
+    skip-cert-verify: false
+    servername: "google.com"
+    client-fingerprint: "qq"
+    reality-opts:
+      public-key: "CsUm6jBZvd5KzFN8Klm9KYF5kiUmztspcA9InbcnwXM"
+      short-id: "e49b4e3d5f46d5c2"
+  - name: "Delta-Kronecker-vless-1196"
+    type: vless
+    server: "139.162.102.152"
+    port: 7002
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.dynv6.net"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🇨🇳 @WangCai2"
+      headers:
+        Host: "sni.111000.dynv6.net"
+  - name: "Delta-Kronecker-trojan-453"
+    type: trojan
+    server: "198.41.215.216"
+    port: 443
+    password: "bpb-trojan"
+    sni: "bpb.my79801.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-vless-309"
+    type: vless
+    server: "104.21.18.41"
+    port: 443
+    uuid: "dd0cfef0-fda9-47ec-8a65-49d7bc004f82"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "nic3-1.workers.dev"
+    client-fingerprint: "chrome"
+    alpn: ["http/1.1"]
+    network: ws
+    ws-opts:
+      path: "/--Telegram---@MiTiVPN/---@MiTiVPN"
+      headers:
+        Host: "mitivpn-2.nic3-1.workers.dev"
+  - name: "Delta-Kronecker-vmess-085"
+    type: vmess
+    server: "140.238.2.250"
+    port: 443
+    uuid: "41a7089a-040b-4538-8b8d-010902405bde"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+  - name: "Delta-Kronecker-vless-2788"
+    type: vless
+    server: "v3.dabache.top"
+    port: 443
+    uuid: "53cddd30-34a1-32dd-b598-c1c4c8a0f813"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "dabaihk.webn.cc"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/db1024a105975707"
+      headers:
+        Host: "dabaihk.webn.cc"
+  - name: "Delta-Kronecker-trojan-547"
+    type: trojan
+    server: "104.17.147.5"
+    port: 443
+    password: "2e3562a819634de686ade78e434c0963"
+    sni: "jobscareertoday.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-vless-2065"
+    type: vless
+    server: "129.154.48.176"
+    port: 36355
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.indevs.in"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🇨🇳+@WangCai2"
+      headers:
+        Host: "sni.111000.indevs.in"
+  - name: "Delta-Kronecker-vless-1886"
+    type: vless
+    server: "178.208.66.27"
+    port: 443
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.dynv6.net"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "sni.111000.dynv6.net"
+  - name: "Delta-Kronecker-ss-586"
+    type: ss
+    server: "217.30.10.70"
+    port: 9070
+    cipher: "aes-256-cfb"
+    password: "bf7v334KKDV3YDhH"
+    udp: true
+  - name: "Delta-Kronecker-vless-2690"
+    type: vless
+    server: "104.26.14.21"
+    port: 443
+    uuid: "440b7d83-8b15-4e8b-bd08-5c2fa27025fc"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "afrcloud22.mmv.kr"
+    network: ws
+    ws-opts:
+      path: "/138.199.42.85=443"
+      headers:
+        Host: "afrcloud22.mmv.kr"
+  - name: "Delta-Kronecker-vmess-005"
+    type: vmess
+    server: "57.128.189.143"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "lammaland.org"
+    network: ws
+    ws-opts:
+      path: "linkvws"
+      headers:
+        Host: "lammaland.org"
+  - name: "Delta-Kronecker-trojan-1100"
+    type: trojan
+    server: "172.67.152.170"
+    port: 443
+    password: "fefba36d-5142-42f1-b14d-db5249511d93"
+    sni: "5ttt.191288.xyz"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-ss-1016"
+    type: ss
+    server: "62.146.171.59"
+    port: 80
+    cipher: "aes-256-gcm"
+    password: "MEmsQeJtPF1GMwJm"
+    udp: true
+  - name: "Delta-Kronecker-ss-381"
+    type: ss
+    server: "103.186.155.19"
+    port: 38388
+    cipher: "aes-256-cfb"
+    password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV"
+    udp: true
+  - name: "Delta-Kronecker-ss-619"
+    type: ss
+    server: "171.22.254.17"
+    port: 989
+    cipher: "aes-256-cfb"
+    password: "f8f7aCzcPKbsF8p3"
+    udp: true
+  - name: "Delta-Kronecker-vless-1993"
+    type: vless
+    server: "88.210.13.136"
+    port: 8443
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.dynv6.net"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🇨🇳 @WangCai2"
+      headers:
+        Host: "sni.111000.dynv6.net"
+  - name: "Delta-Kronecker-trojan-1085"
+    type: trojan
+    server: "158.180.82.98"
+    port: 15446
+    password: "63dbc6d0-4890-320c-8874-56f9f002d425"
+    sni: "freehr01.jd0001.top"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-vless-947"
+    type: vless
+    server: "91.107.139.23"
+    port: 7002
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.indevs.in"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🇨🇳@WangCai2"
+      headers:
+        Host: "sni.111000.indevs.in"
+  - name: "Delta-Kronecker-vless-1816"
+    type: vless
+    server: "158.101.5.192"
+    port: 8443
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.indevs.in"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "sni.111000.indevs.in"
+  - name: "Delta-Kronecker-vmess-071"
+    type: vmess
+    server: "104.21.69.44"
+    port: 8080
+    uuid: "nasnet"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/nasnet/cdn"
+      headers:
+        Host: "nasnet-511952424.mcitel.co"
+  - name: "Delta-Kronecker-hy2-001"
+    type: hysteria2
+    server: "130.61.50.75"
+    port: 6443
+    password: "zhangyang"
+    sni: "dash.cloudflare.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-vless-1817"
+    type: vless
+    server: "178.128.45.156"
+    port: 443
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.indevs.in"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "sni.111000.indevs.in"
+  - name: "Delta-Kronecker-ss-1090"
+    type: ss
+    server: "38.60.250.107"
+    port: 990
+    cipher: "chacha20-ietf-poly1305"
+    password: "ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44="
+    udp: true
+  - name: "Delta-Kronecker-ss-126"
+    type: ss
+    server: "82.180.146.173"
+    port: 35652
+    cipher: "aes-128-gcm"
+    password: "93498539-7838-4836-b9b3-8311ffc79bcf"
+    udp: true
+  - name: "Delta-Kronecker-trojan-156"
+    type: trojan
+    server: "104.21.25.193"
+    port: 2083
+    password: "6dCf6Syv1FwpjcAoCB2vfQ"
+    sni: "cdn15.cdn2cdn.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-vless-696"
+    type: vless
+    server: "83.147.216.182"
+    port: 443
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.indevs.in"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🇨🇳 @WangCai2"
+      headers:
+        Host: "sni.111000.indevs.in"
+  - name: "Delta-Kronecker-trojan-1101"
+    type: trojan
+    server: "172.67.152.188"
+    port: 443
+    password: "7743e1b5-d301-4a66-b765-17094890fae2"
+    sni: "ssp1.100896.xyz"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-vless-192"
+    type: vless
+    server: "5.10.246.138"
+    port: 2096
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.indevs.in"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "sni.111000.indevs.in"
+  - name: "Delta-Kronecker-ss-1792"
+    type: ss
+    server: "103.186.154.196"
+    port: 38388
+    cipher: "aes-256-cfb"
+    password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV"
+    udp: true
+  - name: "Delta-Kronecker-trojan-307"
+    type: trojan
+    server: "104.16.48.180"
+    port: 443
+    password: "Aimer"
+    sni: "epccv.ambercc.filegear-sg.me"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-vless-2749"
+    type: vless
+    server: "5.34.179.145"
+    port: 3443
+    uuid: "fbf32d68-4681-45db-9170-c7e4ca1c0e0c"
+    udp: true
+    flow: "xtls-rprx-vision"
+    tls: true
+    skip-cert-verify: false
+    servername: "google.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "CsUm6jBZvd5KzFN8Klm9KYF5kiUmztspcA9InbcnwXM"
+      short-id: "e49b4e3d5f46d5c2"
+  - name: "Delta-Kronecker-ss-876"
+    type: ss
+    server: "148.113.138.47"
+    port: 48704
+    cipher: "chacha20-ietf-poly1305"
+    password: "b27bc0b4fad33e46"
+    udp: true
+  - name: "Delta-Kronecker-trojan-015"
+    type: trojan
+    server: "188.114.98.0"
+    port: 443
+    password: "humanity"
+    sni: "www.creationlong.org"
+    skip-cert-verify: true
+    udp: true
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/assignment"
+      headers:
+        Host: "www.creationlong.org"
+  - name: "Delta-Kronecker-ss-117"
+    type: ss
+    server: "51.159.106.175"
+    port: 989
+    cipher: "aes-256-cfb"
+    password: "f8f7aCzcPKbsF8p3"
+    udp: true
+  - name: "Delta-Kronecker-vless-744"
+    type: vless
+    server: "176.108.241.183"
+    port: 443
+    uuid: "e1ed1d6f-11ed-4a9e-910c-c13b56573949"
+    udp: true
+    flow: "xtls-rprx-vision"
+    tls: true
+    skip-cert-verify: false
+    servername: "where.strelkavpn.ru"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "hz4RUTTL7KkdeGm884ZhRRYIXRulXCGwW1Jh1aQJmWg"
+      short-id: "a35f12908735"
+  - name: "Delta-Kronecker-vless-2587"
+    type: vless
+    server: "80.209.242.156"
+    port: 8443
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.v6.navy"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🇨🇳 @WangCai2"
+      headers:
+        Host: "sni.111000.v6.navy"
+  - name: "Delta-Kronecker-ss-2032"
+    type: ss
+    server: "103.186.155.41"
+    port: 38388
+    cipher: "aes-256-cfb"
+    password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV"
+    udp: true
+  - name: "Delta-Kronecker-ss-253"
+    type: ss
+    server: "103.186.154.221"
+    port: 38388
+    cipher: "aes-256-cfb"
+    password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV"
+    udp: true
+  - name: "Delta-Kronecker-trojan-091"
+    type: trojan
+    server: "20.89.130.227"
+    port: 443
+    password: "9995cc0e-2e9d-4c80-8c81-4fdbb6322a3a"
+    sni: "fscus.fscloud123456789.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-vless-2863"
+    type: vless
+    server: "144.31.100.120"
+    port: 443
+    uuid: "7e7a0203-6c9b-4f77-ae2d-0c537e636107"
+    udp: true
+    tls: true
+    skip-cert-verify: false
+    servername: "google.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "ihtXyG0UidSbXjvCJXUhABwZGCCB62DUsVBFn_qVd3g"
+      short-id: "3d3c3fc7e9"
+  - name: "Delta-Kronecker-ss-1350"
+    type: ss
+    server: "promo18v.bystrivpn.ru"
+    port: 443
+    cipher: "chacha20-ietf-poly1305"
+    password: "dAHM1pm8ag7KdlrUylQi6t"
+    udp: true
+  - name: "Delta-Kronecker-trojan-301"
+    type: trojan
+    server: "104.16.202.243"
+    port: 443
+    password: "Aimer"
+    sni: "epccf.ambercc.filegear-sg.me"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-vless-1757"
+    type: vless
+    server: "208.103.161.92"
+    port: 2096
+    uuid: "26524cce-d514-4014-a426-365fb266a14d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "WangCai.443888.xyz"
+    network: ws
+    ws-opts:
+      path: "/danfeng?ed=2560&Telegram🇨🇳@WangCai2"
+      headers:
+        Host: "WangCai.443888.xyz"
+  - name: "Delta-Kronecker-trojan-074"
+    type: trojan
+    server: "20.255.74.102"
+    port: 443
+    password: "8aab51da-6b67-4bd2-b6e6-5ab3008cf53e"
+    sni: "jp.iamnotagoodman.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-vless-488"
+    type: vless
+    server: "77.73.232.61"
+    port: 19747
+    uuid: "2a9ed01e-5455-44b4-a66a-76ee8165f0ac"
+    udp: true
+    tls: true
+    skip-cert-verify: false
+    servername: "yahoo.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "ZO9dTeg1slvTXgVsBsaJ1BDvz_YUImTLJjbHs-GdVyM"
+      short-id: "2001"
+  - name: "Delta-Kronecker-vless-1056"
+    type: vless
+    server: "64.238.203.123"
+    port: 8443
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.dynv6.net"
+    network: ws
+    ws-opts:
+      path: "/?Telegram%F0%9F%87%A8%F0%9F%87%B3+%40WangCai2="
+      headers:
+        Host: "sni.111000.dynv6.net"
+  - name: "Delta-Kronecker-ss-1742"
+    type: ss
+    server: "103.186.154.151"
+    port: 38388
+    cipher: "aes-256-cfb"
+    password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV"
+    udp: true
+  - name: "Delta-Kronecker-trojan-070"
+    type: trojan
+    server: "198.244.190.189"
+    port: 443
+    password: "d150c8c3-a667-4d3e-843c-739f8558c7d2"
+    sni: "198.244.190.189"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-vless-2897"
+    type: vless
+    server: "5.34.179.145"
+    port: 3443
+    uuid: "aecc0499-1f51-447b-91bb-6258607b241a"
+    udp: true
+    flow: "xtls-rprx-vision"
+    tls: true
+    skip-cert-verify: false
+    servername: "google.com"
+    client-fingerprint: "qq"
+    reality-opts:
+      public-key: "CsUm6jBZvd5KzFN8Klm9KYF5kiUmztspcA9InbcnwXM"
+      short-id: "e49b4e3d5f46d5c2"
+  - name: "Delta-Kronecker-trojan-033"
+    type: trojan
+    server: "160.16.236.32"
+    port: 1281
+    password: "64a59181551b5773e390bd717a7b7c06"
+    sni: "www.nintendogames.net"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-vless-1340"
+    type: vless
+    server: "141.94.222.33"
+    port: 8443
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.v6.navy"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🇨🇳+@WangCai2"
+      headers:
+        Host: "sni.111000.v6.navy"
+  - name: "Delta-Kronecker-ss-994"
+    type: ss
+    server: "154.53.63.32"
+    port: 443
+    cipher: "aes-256-gcm"
+    password: "k6ruJuwgAUxIrkHb"
+    udp: true
+  - name: "Delta-Kronecker-vless-3040"
+    type: vless
+    server: "154.31.114.125"
+    port: 443
+    uuid: "4d0e22c8-b8cf-4c92-be26-aa7115971be7"
+    udp: true
+    tls: true
+    skip-cert-verify: false
+    servername: "navi.bankrate.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "UT9tFQOdy54SeW_tg-XQN3QkGYoWUpO_88XFXijkrXc"
+      short-id: "2da72ce6"
+  - name: "Delta-Kronecker-trojan-205"
+    type: trojan
+    server: "172.67.198.177"
+    port: 443
+    password: "9yu6m5okr"
+    sni: "production.tj.ojan.workers.dev"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-ss-2116"
+    type: ss
+    server: "94.72.127.58"
+    port: 443
+    cipher: "aes-256-gcm"
+    password: "jJHq807bQ7TM0yOh"
+    udp: true
+  - name: "Delta-Kronecker-ss-418"
+    type: ss
+    server: "103.186.154.16"
+    port: 38388
+    cipher: "aes-256-cfb"
+    password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV"
+    udp: true
+  - name: "Delta-Kronecker-ss-660"
+    type: ss
+    server: "141.98.101.182"
+    port: 443
+    cipher: "aes-128-gcm"
+    password: "shadowsocks"
+    udp: true
+  - name: "Delta-Kronecker-ss-047"
+    type: ss
+    server: "82.38.31.189"
+    port: 8080
+    cipher: "chacha20-ietf-poly1305"
+    password: "k1dBOmOB4oqi7Ump37a1bQ"
+    udp: true
+  - name: "Delta-Kronecker-vless-2370"
+    type: vless
+    server: "162.19.64.105"
+    port: 2053
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.v6.navy"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🇨🇳 @WangCai2"
+      headers:
+        Host: "sni.111000.v6.navy"
+  - name: "Delta-Kronecker-vless-2890"
+    type: vless
+    server: "144.31.100.120"
+    port: 443
+    uuid: "42a3bc73-c3c9-40e0-a402-ccf05848dea4"
+    udp: true
+    tls: true
+    skip-cert-verify: false
+    servername: "google.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "ihtXyG0UidSbXjvCJXUhABwZGCCB62DUsVBFn_qVd3g"
+      short-id: "97"
+  - name: "Delta-Kronecker-trojan-632"
+    type: trojan
+    server: "103.176.78.153"
+    port: 443
+    password: "idc117okt"
+    sni: "103.176.78.153"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-ss-707"
+    type: ss
+    server: "51.89.117.154"
+    port: 11201
+    cipher: "chacha20-ietf-poly1305"
+    password: "9bfee1388e960537"
+    udp: true
+  - name: "Delta-Kronecker-vless-237"
+    type: vless
+    server: "104.21.224.5"
+    port: 2096
+    uuid: "686c62d9-17a7-43c9-a40a-f6747df60a9f"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ca.adobe-connect.top"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "ca.adobe-connect.top"
+  - name: "Delta-Kronecker-trojan-1093"
+    type: trojan
+    server: "168.138.185.234"
+    port: 443
+    password: "bpb-trojan"
+    sni: "skwygx.top"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-vless-647"
+    type: vless
+    server: "195.123.212.216"
+    port: 2053
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.indevs.in"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🇨🇳 @WangCai2"
+      headers:
+        Host: "sni.111000.indevs.in"
+  - name: "Delta-Kronecker-vless-455"
+    type: vless
+    server: "172.64.155.209"
+    port: 2096
+    uuid: "3f0f36f5-f091-45c5-88c9-4bcc545b922c"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "hetz.x-smm.com"
+    network: ws
+    ws-opts:
+      path: "/45.76.183.217=49292"
+      headers:
+        Host: "hetz.x-smm.com"
+  - name: "Delta-Kronecker-vless-584"
+    type: vless
+    server: "45.12.75.242"
+    port: 26424
+    uuid: "633f424e-2b11-48da-a6b3-a849dd71456f"
+    udp: true
+    tls: true
+    skip-cert-verify: false
+    servername: "ya.ru"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
+      short-id: "23103e1e"
+  - name: "Delta-Kronecker-trojan-1244"
+    type: trojan
+    server: "160.16.138.24"
+    port: 1281
+    password: "381f2e86233720eacda26d50e9aa26da"
+    sni: "www.nintendogames.net"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-vless-2368"
+    type: vless
+    server: "162.19.65.2"
+    port: 8443
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.v6.navy"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🇨🇳 @WangCai2"
+      headers:
+        Host: "sni.111000.v6.navy"
+  - name: "Delta-Kronecker-ss-954"
+    type: ss
+    server: "95.111.250.4"
+    port: 443
+    cipher: "aes-256-gcm"
+    password: "BbOUgNLUyT6rdrxE"
+    udp: true
+  - name: "Delta-Kronecker-ss-2166"
+    type: ss
+    server: "151.242.180.5"
+    port: 48973
+    cipher: "chacha20-ietf-poly1305"
+    password: "13df5feb-756e-4627-bcee-497f3c81bab4"
+    udp: true
+  - name: "Delta-Kronecker-vless-2019"
+    type: vless
+    server: "134.209.136.197"
+    port: 443
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.indevs.in"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "sni.111000.indevs.in"
+  - name: "Delta-Kronecker-trojan-902"
+    type: trojan
+    server: "193.9.49.178"
+    port: 2096
+    password: "d6b8011a-c725-435a-9fec-bf6d3530392c"
+    sni: "vle.amclubdns.dpdns.org"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-ss-2211"
+    type: ss
+    server: "151.242.183.196"
+    port: 48973
+    cipher: "chacha20-ietf-poly1305"
+    password: "13df5feb-756e-4627-bcee-497f3c81bab4"
+    udp: true
+  - name: "Delta-Kronecker-vless-2341"
+    type: vless
+    server: "144.124.235.107"
+    port: 8443
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.dynv6.net"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🇨🇳 @WangCai2"
+      headers:
+        Host: "sni.111000.dynv6.net"
+  - name: "Delta-Kronecker-vless-2531"
+    type: vless
+    server: "51.38.49.187"
+    port: 8443
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.v6.navy"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🇨🇳 @WangCai2"
+      headers:
+        Host: "sni.111000.v6.navy"
+  - name: "Delta-Kronecker-vless-1559"
+    type: vless
+    server: "138.124.183.112"
+    port: 2053
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.dynv6.net"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🇨🇳 @WangCai2"
+      headers:
+        Host: "sni.111000.dynv6.net"
+  - name: "Delta-Kronecker-ss-517"
+    type: ss
+    server: "103.186.155.133"
+    port: 38388
+    cipher: "aes-256-cfb"
+    password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV"
+    udp: true
+  - name: "Delta-Kronecker-ss-1236"
+    type: ss
+    server: "156.146.38.167"
+    port: 443
+    cipher: "aes-128-gcm"
+    password: "shadowsocks"
+    udp: true
+  - name: "Delta-Kronecker-vless-694"
+    type: vless
+    server: "89.168.43.31"
+    port: 8443
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.indevs.in"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🇨🇳 @WangCai2"
+      headers:
+        Host: "sni.111000.indevs.in"
+  - name: "Delta-Kronecker-ss-1992"
+    type: ss
+    server: "103.186.155.224"
+    port: 38388
+    cipher: "aes-256-cfb"
+    password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV"
+    udp: true
+  - name: "Delta-Kronecker-trojan-757"
+    type: trojan
+    server: "us-full.privateip.net"
+    port: 443
+    password: "87ec85ad-8e8e-40a0-9b23-1fa8217c9647"
+    sni: "us-full.privateip.net"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-vless-2902"
+    type: vless
+    server: "144.31.100.120"
+    port: 443
+    uuid: "18f376e5-a4ce-4df3-b67b-77ed68533133"
+    udp: true
+    tls: true
+    skip-cert-verify: false
+    servername: "www.google.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "ihtXyG0UidSbXjvCJXUhABwZGCCB62DUsVBFn_qVd3g"
+      short-id: "97"
+  - name: "Delta-Kronecker-trojan-131"
+    type: trojan
+    server: "104.21.44.185"
+    port: 2053
+    password: "dreDeMpIQpnv"
+    sni: "aryanews.onetwothree123.ir"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-vless-1637"
+    type: vless
+    server: "160.153.1.8"
+    port: 443
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.indevs.in"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "sni.111000.indevs.in"
+  - name: "Delta-Kronecker-vless-2427"
+    type: vless
+    server: "209.124.84.15"
+    port: 443
+    uuid: "26524cce-d514-4014-a426-365fb266a14d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "WangCai.443888.xyz"
+    network: ws
+    ws-opts:
+      path: "/danfeng?ed=2560&Telegram🇨🇳 @WangCai2"
+      headers:
+        Host: "WangCai.443888.xyz"
+  - name: "Delta-Kronecker-ss-385"
+    type: ss
+    server: "103.186.155.206"
+    port: 38388
+    cipher: "aes-256-cfb"
+    password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV"
+    udp: true
+  - name: "Delta-Kronecker-vless-299"
+    type: vless
+    server: "us.connectv.net"
+    port: 443
+    uuid: "d38ee50c-c3d5-402f-907a-ab6ba229d774"
+    udp: true
+    flow: "xtls-rprx-vision"
+    tls: true
+    skip-cert-verify: false
+    servername: "us.connectv.net"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "vegx20Xc9XIkr8nfdEB7LZnficXNURVnDbB8_ND97Dw"
+  - name: "Delta-Kronecker-vless-1745"
+    type: vless
+    server: "74.48.0.99"
+    port: 443
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.v6.navy"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🇨🇳+@WangCai2"
+      headers:
+        Host: "sni.111000.v6.navy"
+  - name: "Delta-Kronecker-trojan-212"
+    type: trojan
+    server: "official.tokyometropolis.odesa.ua"
+    port: 2053
+    password: "96983eb4-c8f1-316e-ab00-500014ed3d8b"
+    sni: "official.tokyometropolis.odesa.ua"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-ss-782"
+    type: ss
+    server: "154.205.148.202"
+    port: 11205
+    cipher: "chacha20-ietf-poly1305"
+    password: "71807718f593d3e6"
+    udp: true
+  - name: "Delta-Kronecker-vless-2347"
+    type: vless
+    server: "147.45.42.73"
+    port: 2053
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.v6.navy"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🇨🇳 @WangCai2"
+      headers:
+        Host: "sni.111000.v6.navy"
+  - name: "Delta-Kronecker-ss-2086"
+    type: ss
+    server: "38.60.223.8"
+    port: 989
+    cipher: "aes-256-cfb"
+    password: "f8f7aCzcPKbsF8p3"
+    udp: true
+  - name: "Delta-Kronecker-vless-1526"
+    type: vless
+    server: "209.102.207.190"
+    port: 443
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.indevs.in"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🇨🇳@WangCai2"
+      headers:
+        Host: "sni.111000.indevs.in"
+  - name: "Delta-Kronecker-vless-369"
+    type: vless
+    server: "afrcloud22.mmv.kr"
+    port: 443
+    uuid: "9751a75b-b27c-4766-9e67-380599588612"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "afrcloud22.mmv.kr"
+    network: ws
+    ws-opts:
+      path: "/138.2.95.61=1111"
+      headers:
+        Host: "afrcloud22.mmv.kr"
+  - name: "Delta-Kronecker-vless-1029"
+    type: vless
+    server: "167.172.187.174"
+    port: 443
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.indevs.in"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🇨🇳@WangCai2"
+      headers:
+        Host: "sni.111000.indevs.in"
+  - name: "Delta-Kronecker-ss-784"
+    type: ss
+    server: "154.205.148.202"
+    port: 11203
+    cipher: "chacha20-ietf-poly1305"
+    password: "71807718f593d3e6"
+    udp: true
+  - name: "Delta-Kronecker-vless-1917"
+    type: vless
+    server: "45.131.6.238"
+    port: 2096
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.jpmj.dev"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🇨🇳@WangCai2"
+      headers:
+        Host: "sni.jpmj.dev"
+  - name: "Delta-Kronecker-vless-2740"
+    type: vless
+    server: "51.250.26.75"
+    port: 443
+    uuid: "dddd3838-5cd6-4c2f-953f-d41a34a46336"
+    udp: true
+    flow: "xtls-rprx-vision"
+    tls: true
+    skip-cert-verify: false
+    servername: "eh.vk.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "7IOtSp0-n2_uNS5nMO9ywZbn2HibMRGy0KbLad3szXc"
+      short-id: "a1b2c3d4"
+  - name: "Delta-Kronecker-trojan-1236"
+    type: trojan
+    server: "172.67.159.13"
+    port: 443
+    password: "22f86840-bcac-11ee-abea-1239d0255272"
+    sni: "chatbuzzteambhm.chatbuzzt7150.workers.dev"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-ss-2193"
+    type: ss
+    server: "151.242.183.196"
+    port: 33220
+    cipher: "chacha20-ietf-poly1305"
+    password: "13df5feb-756e-4627-bcee-497f3c81bab4"
+    udp: true
+  - name: "Delta-Kronecker-vless-2211"
+    type: vless
+    server: "37.46.19.60"
+    port: 2053
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.indevs.in"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "sni.111000.indevs.in"
+  - name: "Delta-Kronecker-trojan-546"
+    type: trojan
+    server: "160.16.124.55"
+    port: 5553
+    password: "2274c52572e721086f8bd8f88984643c"
+    sni: "www.nintendogames.net"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-ss-961"
+    type: ss
+    server: "54.36.116.190"
+    port: 11201
+    cipher: "chacha20-ietf-poly1305"
+    password: "ca5efd5cf9e947ad"
+    udp: true
+  - name: "Delta-Kronecker-ss-666"
+    type: ss
+    server: "217.30.10.18"
+    port: 9084
+    cipher: "aes-256-cfb"
+    password: "c3NtHJ5ujV2tGDfj"
+    udp: true
+  - name: "Delta-Kronecker-vless-1336"
+    type: vless
+    server: "57.128.177.206"
+    port: 443
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.v6.navy"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🇨🇳+@WangCai2"
+      headers:
+        Host: "sni.111000.v6.navy"
+  - name: "Delta-Kronecker-trojan-958"
+    type: trojan
+    server: "45.80.110.178"
+    port: 2096
+    password: "d6b8011a-c725-435a-9fec-bf6d3530392c"
+    sni: "vle.amclubdns.dpdns.org"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-ss-2027"
+    type: ss
+    server: "103.186.155.3"
+    port: 38388
+    cipher: "aes-256-cfb"
+    password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV"
+    udp: true
+  - name: "Delta-Kronecker-ss-2240"
+    type: ss
+    server: "185.189.160.105"
+    port: 41632
+    cipher: "aes-256-cfb"
+    password: "qwerREWQ@@"
+    udp: true
+  - name: "Delta-Kronecker-vless-1045"
+    type: vless
+    server: "45.84.138.237"
+    port: 443
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.indevs.in"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "sni.111000.indevs.in"
+  - name: "Delta-Kronecker-ss-455"
+    type: ss
+    server: "103.186.154.218"
+    port: 38388
+    cipher: "aes-256-cfb"
+    password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV"
+    udp: true
+  - name: "Delta-Kronecker-vless-734"
+    type: vless
+    server: "89.232.177.58"
+    port: 443
+    uuid: "c3e06f32-3009-4a11-94af-10028b3dc05e"
+    udp: true
+    flow: "xtls-rprx-vision"
+    tls: true
+    skip-cert-verify: false
+    servername: "finder.strelkavpn.ru"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "_PtIcz5TCqpHBG6Xxi85mBaDT5cogsEPIYXlyKc9g2A"
+      short-id: "bc8074b9a0f0e964"
+  - name: "Delta-Kronecker-trojan-1194"
+    type: trojan
+    server: "dl-us2.steamdownload.top"
+    port: 443
+    password: "d7fdbf6d-6c9b-41af-924f-5944cd88dcf5"
+    sni: "dl-us2.steamdownload.top"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-ss-1322"
+    type: ss
+    server: "46.183.217.204"
+    port: 990
+    cipher: "chacha20-ietf-poly1305"
+    password: "ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44="
+    udp: true
+  - name: "Delta-Kronecker-vless-2285"
+    type: vless
+    server: "134.209.246.179"
+    port: 443
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.v6.navy"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🇨🇳 @WangCai2"
+      headers:
+        Host: "sni.111000.v6.navy"
+  - name: "Delta-Kronecker-vless-957"
+    type: vless
+    server: "57.129.63.145"
+    port: 8443
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.indevs.in"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🇨🇳@WangCai2"
+      headers:
+        Host: "sni.111000.indevs.in"
+  - name: "Delta-Kronecker-ss-1640"
+    type: ss
+    server: "82.38.31.202"
+    port: 8080
+    cipher: "chacha20-ietf-poly1305"
+    password: "k1dBOmOB4oqi7Ump37a1bQ"
+    udp: true
+  - name: "Delta-Kronecker-ss-1264"
+    type: ss
+    server: "37.143.130.203"
+    port: 990
+    cipher: "chacha20-ietf-poly1305"
+    password: "ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44="
+    udp: true
+  - name: "Delta-Kronecker-vless-1187"
+    type: vless
+    server: "152.70.82.101"
+    port: 18650
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.indevs.in"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🇨🇳+@WangCai2"
+      headers:
+        Host: "sni.111000.indevs.in"
+  - name: "Delta-Kronecker-vless-114"
+    type: vless
+    server: "osn.takovpn.ru"
+    port: 443
+    uuid: "57e63c31-de17-4afd-a575-089c8b9e4daf"
+    udp: true
+    tls: true
+    skip-cert-verify: false
+    servername: "google.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "ihtXyG0UidSbXjvCJXUhABwZGCCB62DUsVBFn_qVd3g"
+      short-id: "768c60"
+  - name: "Delta-Kronecker-vless-2925"
+    type: vless
+    server: "87.239.106.153"
+    port: 8443
+    uuid: "2936e344-2c52-4508-9523-1f3ed6824770"
+    udp: true
+    flow: "xtls-rprx-vision"
+    tls: true
+    skip-cert-verify: false
+    servername: "m.vk.ru"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "zr8_rtHm86s_G1gfRwNtunStGngYZSdYkA3PyBFXpDg"
+      short-id: "28047c78b3f5ee2c"
+  - name: "Delta-Kronecker-ss-513"
+    type: ss
+    server: "103.186.155.124"
+    port: 38388
+    cipher: "aes-256-cfb"
+    password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV"
+    udp: true
+  - name: "Delta-Kronecker-vless-1937"
+    type: vless
+    server: "188.116.21.186"
+    port: 2053
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.indevs.in"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🇨🇳 @WangCai2"
+      headers:
+        Host: "sni.111000.indevs.in"
+  - name: "Delta-Kronecker-vless-2583"
+    type: vless
+    server: "77.246.110.66"
+    port: 443
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.dynv6.net"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🇨🇳 @WangCai2"
+      headers:
+        Host: "sni.111000.dynv6.net"
+  - name: "Delta-Kronecker-vless-492"
+    type: vless
+    server: "45.88.183.100"
+    port: 8443
+    uuid: "309fa273-6579-4cb2-9143-7cad50401eba"
+    udp: true
+    flow: "xtls-rprx-vision"
+    tls: true
+    skip-cert-verify: false
+    servername: "www.cloudflare.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "gZGVp5PUdafgsmi1gawa1yLuha_XhXRc_W9SvPiGmTY"
+      short-id: "7cad5040"
+  - name: "Delta-Kronecker-trojan-1237"
+    type: trojan
+    server: "45.149.92.71"
+    port: 443
+    password: "1ba48a0e-af2e-45fb-9e15-2b2d4134657c"
+    sni: "usla.mjt000.com"
+    skip-cert-verify: true
+    udp: true
+    client-fingerprint: "chrome"
+  - name: "Delta-Kronecker-vless-2207"
+    type: vless
+    server: "185.81.28.95"
+    port: 30503
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.indevs.in"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "sni.111000.indevs.in"
+  - name: "Delta-Kronecker-ss-1057"
+    type: ss
+    server: "193.29.139.235"
+    port: 8080
+    cipher: "chacha20-ietf-poly1305"
+    password: "oZIoA69Q8yhcQV8ka3Pa3A"
+    udp: true
+  - name: "Delta-Kronecker-vless-2387"
+    type: vless
+    server: "176.124.199.193"
+    port: 8443
+    uuid: "6ce9c4d5-bc26-414a-9641-2899ad53b868"
+    udp: true
+    flow: "xtls-rprx-vision"
+    tls: true
+    skip-cert-verify: false
+    servername: "isharing.us"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "oy7HvK2b2f44HoOwTcx-v-mIySy690bIUbbI9DnCq0k"
+      short-id: "a4eed13ebbf2f9d2"
+  - name: "Delta-Kronecker-trojan-681"
+    type: trojan
+    server: "45.205.0.93"
+    port: 443
+    password: "bpb-trojan"
+    sni: "bpb.my79801.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-ss-2012"
+    type: ss
+    server: "103.186.155.240"
+    port: 38388
+    cipher: "aes-256-cfb"
+    password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV"
+    udp: true
+  - name: "Delta-Kronecker-vless-2371"
+    type: vless
+    server: "162.19.79.59"
+    port: 2053
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.v6.navy"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🇨🇳 @WangCai2"
+      headers:
+        Host: "sni.111000.v6.navy"
+  - name: "Delta-Kronecker-ss-665"
+    type: ss
+    server: "141.98.101.179"
+    port: 443
+    cipher: "aes-128-gcm"
+    password: "shadowsocks"
+    udp: true
+  - name: "Delta-Kronecker-ss-600"
+    type: ss
+    server: "217.30.10.70"
+    port: 9011
+    cipher: "aes-256-cfb"
+    password: "M3t2ZEQcMGRWBjRa"
+    udp: true
+  - name: "Delta-Kronecker-vless-560"
+    type: vless
+    server: "afrcloud22.mmv.kr"
+    port: 443
+    uuid: "7dbc427e-1afd-4f76-b916-f7349e8131ce"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "afrcloud22.mmv.kr"
+    network: ws
+    ws-opts:
+      path: "/44.217.235.114=8443"
+      headers:
+        Host: "afrcloud22.mmv.kr"
+  - name: "Delta-Kronecker-ss-333"
+    type: ss
+    server: "103.186.155.67"
+    port: 38388
+    cipher: "aes-256-cfb"
+    password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV"
+    udp: true
+  - name: "Delta-Kronecker-vless-2694"
+    type: vless
+    server: "144.31.100.120"
+    port: 443
+    uuid: "454dfe09-9562-4217-bd9c-2dcc188d9272"
+    udp: true
+    tls: true
+    skip-cert-verify: false
+    servername: "www.google.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "ihtXyG0UidSbXjvCJXUhABwZGCCB62DUsVBFn_qVd3g"
+      short-id: "768c60"
+  - name: "Delta-Kronecker-ss-1590"
+    type: ss
+    server: "154.70.207.97"
+    port: 990
+    cipher: "chacha20-ietf-poly1305"
+    password: "ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44="
+    udp: true
+  - name: "Delta-Kronecker-trojan-032"
+    type: trojan
+    server: "160.16.116.227"
+    port: 1281
+    password: "64a59181551b5773e390bd717a7b7c06"
+    sni: "www.nintendogames.net"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-vless-2276"
+    type: vless
+    server: "108.174.61.161"
+    port: 59581
+    uuid: "26524cce-d514-4014-a426-365fb266a14d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "WangCai.443888.xyz"
+    network: ws
+    ws-opts:
+      path: "/danfeng?ed=2560&Telegram🇨🇳 @WangCai2"
+      headers:
+        Host: "WangCai.443888.xyz"
+  - name: "Delta-Kronecker-ss-116"
+    type: ss
+    server: "82.38.31.99"
+    port: 8080
+    cipher: "chacha20-ietf-poly1305"
+    password: "oZIoA69Q8yhcQV8ka3Pa3A"
+    udp: true
+  - name: "Delta-Kronecker-vless-2453"
+    type: vless
+    server: "31.192.237.186"
+    port: 8443
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.indevs.in"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&telegram🇨🇳+@wangcai2"
+      headers:
+        Host: "sni.111000.indevs.in"
+  - name: "Delta-Kronecker-ss-466"
+    type: ss
+    server: "103.186.154.242"
+    port: 38388
+    cipher: "aes-256-cfb"
+    password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV"
+    udp: true
+  - name: "Delta-Kronecker-vless-412"
+    type: vless
+    server: "104.18.32.47"
+    port: 8443
+    uuid: "57ba2ab1-a283-42eb-82ee-dc3561a805b8"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ovhwuxian.pai50288.uk"
+    network: ws
+    ws-opts:
+      path: "/57ba2ab1"
+      headers:
+        Host: "ovhwuxian.pai50288.uk"
+  - name: "Delta-Kronecker-ss-538"
+    type: ss
+    server: "103.186.155.33"
+    port: 38388
+    cipher: "aes-256-cfb"
+    password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV"
+    udp: true
+  - name: "Delta-Kronecker-vless-2950"
+    type: vless
+    server: "178.154.253.80"
+    port: 443
+    uuid: "36316bec-8976-4b1f-8042-b87db88faa25"
+    udp: true
+    flow: "xtls-rprx-vision"
+    tls: true
+    skip-cert-verify: false
+    servername: "yandex.ru"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "7zd9mJilgjOrg_ohtw23Vmio-pdnYqeP_r-kiWt87Cg"
+      short-id: "8ba12e75110b7a9c"
+  - name: "Delta-Kronecker-vless-1657"
+    type: vless
+    server: "23.95.252.186"
+    port: 8443
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.indevs.in"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🇨🇳 @WangCai2"
+      headers:
+        Host: "sni.111000.indevs.in"
+  - name: "Delta-Kronecker-vless-579"
+    type: vless
+    server: "37.233.82.140"
+    port: 40478
+    uuid: "e977d854-33f3-4345-abee-bf3fa9a6d880"
+    udp: true
+    tls: true
+    skip-cert-verify: false
+    servername: "yahoo.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "lcJ0LSh015XRfz5-7wB_hln3-bq5ZatFgPugSUCrdR0"
+      short-id: "3c"
+  - name: "Delta-Kronecker-vless-3141"
+    type: vless
+    server: "154.31.114.125"
+    port: 443
+    uuid: "e5004b82-72ac-4b07-9437-1b65634259b1"
+    udp: true
+    tls: true
+    skip-cert-verify: false
+    servername: "navi.bankrate.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "UT9tFQOdy54SeW_tg-XQN3QkGYoWUpO_88XFXijkrXc"
+      short-id: "2da72ce6"
+  - name: "Delta-Kronecker-vless-2458"
+    type: vless
+    server: "213.190.29.106"
+    port: 443
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.v6.navy"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🇨🇳 @WangCai2"
+      headers:
+        Host: "sni.111000.v6.navy"
+  - name: "Delta-Kronecker-ss-611"
+    type: ss
+    server: "217.30.10.18"
+    port: 9025
+    cipher: "aes-256-cfb"
+    password: "XPtzA9sCug3SPR4c"
+    udp: true
+  - name: "Delta-Kronecker-ss-462"
+    type: ss
+    server: "103.186.154.23"
+    port: 38388
+    cipher: "aes-256-cfb"
+    password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV"
+    udp: true
+  - name: "Delta-Kronecker-ss-058"
+    type: ss
+    server: "82.38.31.61"
+    port: 8080
+    cipher: "chacha20-ietf-poly1305"
+    password: "oZIoA69Q8yhcQV8ka3Pa3A"
+    udp: true
+  - name: "Delta-Kronecker-vless-850"
+    type: vless
+    server: "141.101.121.14"
+    port: 2053
+    uuid: "e5f8a9f6-f164-479b-b3b5-b90f213c7145"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ir1.airpanel.top"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "ir1.airpanel.top"
+  - name: "Delta-Kronecker-vless-2255"
+    type: vless
+    server: "154.16.10.34"
+    port: 8080
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.jpmj.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "sni.jpmj.dev"
+  - name: "Delta-Kronecker-vless-516"
+    type: vless
+    server: "185.82.126.239"
+    port: 2053
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.indevs.in"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🇨🇳@@jdfxq"
+      headers:
+        Host: "sni.111000.indevs.in"
+  - name: "Delta-Kronecker-vless-1697"
+    type: vless
+    server: "103.124.105.222"
+    port: 443
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.indevs.in"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "sni.111000.indevs.in"
+  - name: "Delta-Kronecker-vless-1858"
+    type: vless
+    server: "45.43.76.107"
+    port: 443
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.indevs.in"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🇨🇳@@jdfxq"
+      headers:
+        Host: "sni.111000.indevs.in"
+  - name: "Delta-Kronecker-trojan-1083"
+    type: trojan
+    server: "159.203.22.227"
+    port: 443
+    password: "acfef609-b3c7-4e52-b292-8921d5fca90d"
+    sni: "ca-full.privateip.net"
+    skip-cert-verify: true
+    udp: true
+    client-fingerprint: "chrome"
+  - name: "Delta-Kronecker-trojan-312"
+    type: trojan
+    server: "104.17.150.82"
+    port: 443
+    password: "Aimer"
+    sni: "epcca.ambercc.filegear-sg.me"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-vless-2647"
+    type: vless
+    server: "cloudflare.seeck.cn"
+    port: 2053
+    uuid: "26524cce-d514-4014-a426-365fb266a14d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "snippet.fgfw.eu.org"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/danfeng?ed=2560"
+      headers:
+        Host: "snippet.fgfw.eu.org"
+  - name: "Delta-Kronecker-trojan-1013"
+    type: trojan
+    server: "160.16.231.103"
+    port: 400
+    password: "9372cb81c7b0ad903f91f2f8a4d3f02b"
+    sni: "www.nintendogames.net"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-ss-1293"
+    type: ss
+    server: "51.89.119.213"
+    port: 11201
+    cipher: "chacha20-ietf-poly1305"
+    password: "15b0573830081d01"
+    udp: true
+  - name: "Delta-Kronecker-vless-156"
+    type: vless
+    server: "188.114.99.243"
+    port: 2096
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.indevs.in"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "sni.111000.indevs.in"
+  - name: "Delta-Kronecker-trojan-895"
+    type: trojan
+    server: "190.93.246.178"
+    port: 2096
+    password: "d6b8011a-c725-435a-9fec-bf6d3530392c"
+    sni: "vle.amclubdns.dpdns.org"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-vless-1323"
+    type: vless
+    server: "51.91.254.99"
+    port: 443
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.indevs.in"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🇨🇳 @WangCai2"
+      headers:
+        Host: "sni.111000.indevs.in"
+  - name: "Delta-Kronecker-ss-1317"
+    type: ss
+    server: "79.127.200.169"
+    port: 990
+    cipher: "chacha20-ietf-poly1305"
+    password: "ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44="
+    udp: true
+  - name: "Delta-Kronecker-vless-697"
+    type: vless
+    server: "94.131.9.202"
+    port: 443
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.indevs.in"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🇨🇳 @WangCai2"
+      headers:
+        Host: "sni.111000.indevs.in"
+  - name: "Delta-Kronecker-vless-2260"
+    type: vless
+    server: "104.131.172.195"
+    port: 443
+    uuid: "26524cce-d514-4014-a426-365fb266a14d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "WangCai.443888.xyz"
+    network: ws
+    ws-opts:
+      path: "/danfeng?ed=2560&Telegram🇨🇳 @WangCai2"
+      headers:
+        Host: "WangCai.443888.xyz"
+  - name: "Delta-Kronecker-ss-070"
+    type: ss
+    server: "141.98.101.182"
+    port: 443
+    cipher: "aes-128-gcm"
+    password: "shadowsocks"
+    udp: true
+  - name: "Delta-Kronecker-vless-2191"
+    type: vless
+    server: "172.64.155.209"
+    port: 8443
+    uuid: "57ba2ab1-a283-42eb-82ee-dc3561a805b8"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ovhwuxian.pai50288.uk"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/57ba2ab1"
+      headers:
+        Host: "ovhwuxian.pai50288.uk"
+  - name: "Delta-Kronecker-vless-2279"
+    type: vless
+    server: "116.203.195.253"
+    port: 8443
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.v6.navy"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🇨🇳 @WangCai2"
+      headers:
+        Host: "sni.111000.v6.navy"
+  - name: "Delta-Kronecker-vless-845"
+    type: vless
+    server: "104.17.212.227"
+    port: 443
+    uuid: "0194f069-ebfd-49c2-b90f-bd9b1412c2b0"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "pa-7oa.pages.dev"
+    client-fingerprint: "chrome"
+    alpn: ["h3"]
+    network: ws
+    ws-opts:
+      path: "/?ed=2048"
+      headers:
+        Host: "pa-7oa.pages.dev"
+  - name: "Delta-Kronecker-ss-296"
+    type: ss
+    server: "103.186.155.28"
+    port: 38388
+    cipher: "aes-256-cfb"
+    password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV"
+    udp: true
+  - name: "Delta-Kronecker-trojan-084"
+    type: trojan
+    server: "23.102.238.146"
+    port: 443
+    password: "8aab51da-6b67-4bd2-b6e6-5ab3008cf53e"
+    sni: "jp.iamnotagoodman.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-vless-225"
+    type: vless
+    server: "ipbaz.ping-box.com"
+    port: 2096
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.indevs.in"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "sni.111000.indevs.in"
+  - name: "Delta-Kronecker-vless-2416"
+    type: vless
+    server: "194.164.34.40"
+    port: 443
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.dynv6.net"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🇨🇳 @WangCai2"
+      headers:
+        Host: "sni.111000.dynv6.net"
+  - name: "Delta-Kronecker-trojan-810"
+    type: trojan
+    server: "141.11.203.178"
+    port: 2096
+    password: "d6b8011a-c725-435a-9fec-bf6d3530392c"
+    sni: "vle.amclubdns.dpdns.org"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-vless-1755"
+    type: vless
+    server: "66.45.118.238"
+    port: 2096
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.jpmj.dev"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "sni.jpmj.dev"
+  - name: "Delta-Kronecker-vless-190"
+    type: vless
+    server: "37.1.203.104"
+    port: 2053
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.v6.navy"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "sni.111000.v6.navy"
+  - name: "Delta-Kronecker-trojan-340"
+    type: trojan
+    server: "104.19.241.122"
+    port: 443
+    password: "NISHIKUITAN111"
+    sni: "104.19.241.122"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-vless-2953"
+    type: vless
+    server: "cf.090227.xyz"
+    port: 443
+    uuid: "5a2c16f9-e365-4080-8d38-6924c3835586"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "pg.hhhhh.eu.org"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "pg.hhhhh.eu.org"
+  - name: "Delta-Kronecker-vless-2567"
+    type: vless
+    server: "62.60.245.80"
+    port: 443
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.v6.navy"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🇨🇳@WangCai2"
+      headers:
+        Host: "sni.111000.v6.navy"
+  - name: "Delta-Kronecker-vmess-036"
+    type: vmess
+    server: "91.134.8.102"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "serkat.org"
+    network: ws
+    ws-opts:
+      path: "linkvws"
+      headers:
+        Host: "serkat.org"
+  - name: "Delta-Kronecker-trojan-271"
+    type: trojan
+    server: "104.21.71.131"
+    port: 443
+    password: "4069c35c-54ea-48ee-9ffa-05d9a0302043"
+    sni: "m5rt.999854.xyz"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-ss-1471"
+    type: ss
+    server: "216.105.168.18"
+    port: 443
+    cipher: "chacha20-ietf-poly1305"
+    password: "9QZiTtEQMthTgZRDHEKVjp"
+    udp: true
+  - name: "Delta-Kronecker-ss-1000"
+    type: ss
+    server: "154.53.57.143"
+    port: 80
+    cipher: "aes-256-gcm"
+    password: "uwmRUOVM5ljNAtPj"
+    udp: true
+  - name: "Delta-Kronecker-ss-1873"
+    type: ss
+    server: "103.186.154.44"
+    port: 38388
+    cipher: "aes-256-cfb"
+    password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV"
+    udp: true
+  - name: "Delta-Kronecker-vless-2090"
+    type: vless
+    server: "43.252.41.204"
+    port: 2443
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.jpmj.dev"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🇨🇳@WangCai2"
+      headers:
+        Host: "sni.jpmj.dev"
+  - name: "Delta-Kronecker-vless-2757"
+    type: vless
+    server: "89.106.89.112"
+    port: 2053
+    uuid: "b8a44195-0860-4312-a0df-dae178585a48"
+    udp: true
+    flow: "xtls-rprx-vision"
+    tls: true
+    skip-cert-verify: false
+    servername: "www.ibm.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "WckOSneVajAzpH0sZSAFAWPnmwuuEXKZrTICNj5_hHU"
+      short-id: "423bccc9c13fb509"
+  - name: "Delta-Kronecker-vless-676"
+    type: vless
+    server: "50.62.195.238"
+    port: 2096
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.jpmj.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🇨🇳 @WangCai2"
+      headers:
+        Host: "sni.jpmj.dev"
+  - name: "Delta-Kronecker-ss-1520"
+    type: ss
+    server: "154.205.145.37"
+    port: 11201
+    cipher: "chacha20-ietf-poly1305"
+    password: "47509ba3679b9df9"
+    udp: true
+  - name: "Delta-Kronecker-ss-314"
+    type: ss
+    server: "103.186.154.237"
+    port: 38388
+    cipher: "aes-256-cfb"
+    password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV"
+    udp: true
+  - name: "Delta-Kronecker-vless-2087"
+    type: vless
+    server: "146.56.140.79"
+    port: 22561
+    uuid: "26524cce-d514-4014-a426-365fb266a14d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "WangCai.443888.xyz"
+    network: ws
+    ws-opts:
+      path: "/danfeng?ed=2560&Telegram🇨🇳+@WangCai2"
+      headers:
+        Host: "WangCai.443888.xyz"
+  - name: "Delta-Kronecker-trojan-357"
+    type: trojan
+    server: "108.162.193.110"
+    port: 443
+    password: "Trevely"
+    sni: "trojan.trevely.us.kg"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-vless-2819"
+    type: vless
+    server: "5.34.179.145"
+    port: 3443
+    uuid: "d86f24ea-cb85-42f9-bd83-67249df3c3ae"
+    udp: true
+    flow: "xtls-rprx-vision"
+    tls: true
+    skip-cert-verify: false
+    servername: "google.com"
+    client-fingerprint: "qq"
+    reality-opts:
+      public-key: "CsUm6jBZvd5KzFN8Klm9KYF5kiUmztspcA9InbcnwXM"
+      short-id: "e49b4e3d5f46d5c2"
+  - name: "Delta-Kronecker-vless-1627"
+    type: vless
+    server: "141.98.168.233"
+    port: 443
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.111000.indevs.in"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560&Telegram🇨🇳 @WangCai2"
+      headers:
+        Host: "sni.111000.indevs.in"
+
+proxy-groups:
+  # ── Top-level selector ────────────────────────────────────────────────────
+  - name: "PROXY-BEST"
+    type: select
+    proxies:
+      - "SCEN-OPEN"
+      - "SCEN-CDN"
+      - "UDP-BEST"
+      - "FAST-ALL"
+      - "LB-ALL"
+      - "MANUAL"
+      - DIRECT
+
+  # ── Scenario groups ───────────────────────────────────────────────────────
+  - name: "SCEN-OPEN"
+    type: fallback
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    lazy: true
+    proxies:
+      - "LB-ALL"
+      - "FAST-ALL"
+
+  - name: "SCEN-CDN"
+    type: fallback
+    url: http://cp.cloudflare.com/generate_204
+    interval: 300
+    lazy: true
+    proxies:
+      - "LB-CDN"
+      - "FAST-CDN"
+
+  # ── Load-balance groups ───────────────────────────────────────────────────
+  - name: "LB-ALL"
+    type: load-balance
+    strategy: consistent-hashing
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 150
+    lazy: true
+    proxies:
+      - "Delta-Kronecker-ss-2200"
+      - "Delta-Kronecker-ss-1240"
+      - "Delta-Kronecker-vless-2199"
+      - "Delta-Kronecker-ss-1455"
+      - "Delta-Kronecker-ss-2103"
+      - "Delta-Kronecker-ss-1512"
+      - "Delta-Kronecker-vless-1398"
+      - "Delta-Kronecker-ss-1108"
+      - "Delta-Kronecker-ss-1089"
+      - "Delta-Kronecker-vless-725"
+      - "Delta-Kronecker-vless-292"
+      - "Delta-Kronecker-ss-1079"
+      - "Delta-Kronecker-vless-267"
+      - "Delta-Kronecker-trojan-269"
+      - "Delta-Kronecker-ss-2181"
+      - "Delta-Kronecker-trojan-276"
+      - "Delta-Kronecker-vless-1433"
+      - "Delta-Kronecker-vless-1319"
+      - "Delta-Kronecker-vless-1770"
+      - "Delta-Kronecker-ss-356"
+      - "Delta-Kronecker-ss-355"
+      - "Delta-Kronecker-vless-2111"
+      - "Delta-Kronecker-ss-1190"
+      - "Delta-Kronecker-vless-750"
+      - "Delta-Kronecker-trojan-198"
+      - "Delta-Kronecker-trojan-220"
+      - "Delta-Kronecker-ss-1569"
+      - "Delta-Kronecker-vless-2811"
+      - "Delta-Kronecker-vless-2708"
+      - "Delta-Kronecker-vless-213"
+      - "Delta-Kronecker-trojan-008"
+      - "Delta-Kronecker-vless-1645"
+      - "Delta-Kronecker-ss-596"
+      - "Delta-Kronecker-ss-359"
+      - "Delta-Kronecker-ss-741"
+      - "Delta-Kronecker-vless-838"
+      - "Delta-Kronecker-vless-1475"
+      - "Delta-Kronecker-ss-1571"
+      - "Delta-Kronecker-vless-120"
+      - "Delta-Kronecker-vless-1430"
+      - "Delta-Kronecker-trojan-1184"
+      - "Delta-Kronecker-ss-1840"
+      - "Delta-Kronecker-vless-2431"
+      - "Delta-Kronecker-ss-540"
+      - "Delta-Kronecker-vless-1895"
+      - "Delta-Kronecker-vless-692"
+      - "Delta-Kronecker-ss-2114"
+      - "Delta-Kronecker-vless-1598"
+      - "Delta-Kronecker-vless-2098"
+      - "Delta-Kronecker-vmess-037"
+      - "Delta-Kronecker-ss-1225"
+      - "Delta-Kronecker-trojan-463"
+      - "Delta-Kronecker-trojan-1111"
+      - "Delta-Kronecker-ss-539"
+      - "Delta-Kronecker-vless-1184"
+      - "Delta-Kronecker-ss-473"
+      - "Delta-Kronecker-vless-996"
+      - "Delta-Kronecker-ss-749"
+      - "Delta-Kronecker-ss-1083"
+      - "Delta-Kronecker-vless-2508"
+      - "Delta-Kronecker-ss-475"
+      - "Delta-Kronecker-trojan-391"
+      - "Delta-Kronecker-vless-2212"
+      - "Delta-Kronecker-ss-326"
+      - "Delta-Kronecker-trojan-213"
+      - "Delta-Kronecker-vless-284"
+      - "Delta-Kronecker-ss-1548"
+      - "Delta-Kronecker-vless-2989"
+      - "Delta-Kronecker-vless-2629"
+      - "Delta-Kronecker-vless-139"
+      - "Delta-Kronecker-vless-641"
+      - "Delta-Kronecker-trojan-1227"
+      - "Delta-Kronecker-trojan-278"
+      - "Delta-Kronecker-ss-124"
+      - "Delta-Kronecker-ss-057"
+      - "Delta-Kronecker-trojan-818"
+      - "Delta-Kronecker-ss-998"
+      - "Delta-Kronecker-trojan-353"
+      - "Delta-Kronecker-vless-1551"
+      - "Delta-Kronecker-trojan-1144"
+      - "Delta-Kronecker-ss-720"
+      - "Delta-Kronecker-vless-538"
+      - "Delta-Kronecker-vless-1231"
+      - "Delta-Kronecker-ss-1417"
+      - "Delta-Kronecker-vless-280"
+      - "Delta-Kronecker-ss-1402"
+      - "Delta-Kronecker-trojan-821"
+      - "Delta-Kronecker-ss-824"
+      - "Delta-Kronecker-ss-1972"
+      - "Delta-Kronecker-ss-370"
+      - "Delta-Kronecker-vless-2376"
+      - "Delta-Kronecker-vless-2326"
+      - "Delta-Kronecker-vless-787"
+      - "Delta-Kronecker-ss-1181"
+      - "Delta-Kronecker-ss-389"
+      - "Delta-Kronecker-trojan-341"
+      - "Delta-Kronecker-ss-411"
+      - "Delta-Kronecker-trojan-1067"
+      - "Delta-Kronecker-vless-823"
+      - "Delta-Kronecker-trojan-770"
+      - "Delta-Kronecker-vless-1517"
+      - "Delta-Kronecker-ss-1421"
+      - "Delta-Kronecker-ss-235"
+      - "Delta-Kronecker-trojan-992"
+      - "Delta-Kronecker-ss-1035"
+      - "Delta-Kronecker-ss-2222"
+      - "Delta-Kronecker-ss-2100"
+      - "Delta-Kronecker-trojan-839"
+      - "Delta-Kronecker-trojan-847"
+      - "Delta-Kronecker-trojan-061"
+      - "Delta-Kronecker-trojan-436"
+      - "Delta-Kronecker-trojan-114"
+      - "Delta-Kronecker-ss-1716"
+      - "Delta-Kronecker-trojan-439"
+      - "Delta-Kronecker-ss-992"
+      - "Delta-Kronecker-trojan-826"
+      - "Delta-Kronecker-vless-2562"
+      - "Delta-Kronecker-ss-2205"
+      - "Delta-Kronecker-trojan-342"
+      - "Delta-Kronecker-vless-1506"
+      - "Delta-Kronecker-vless-043"
+      - "Delta-Kronecker-vless-2632"
+      - "Delta-Kronecker-ss-186"
+      - "Delta-Kronecker-trojan-254"
+      - "Delta-Kronecker-vless-020"
+      - "Delta-Kronecker-ss-2136"
+      - "Delta-Kronecker-vless-367"
+      - "Delta-Kronecker-ss-149"
+      - "Delta-Kronecker-vless-2343"
+      - "Delta-Kronecker-vless-3087"
+      - "Delta-Kronecker-trojan-365"
+      - "Delta-Kronecker-vless-551"
+      - "Delta-Kronecker-vless-459"
+      - "Delta-Kronecker-vless-3069"
+      - "Delta-Kronecker-ss-1449"
+      - "Delta-Kronecker-vless-2872"
+      - "Delta-Kronecker-vless-3018"
+      - "Delta-Kronecker-vless-1154"
+      - "Delta-Kronecker-vless-1427"
+      - "Delta-Kronecker-ss-503"
+      - "Delta-Kronecker-vless-030"
+      - "Delta-Kronecker-vless-2028"
+      - "Delta-Kronecker-ss-1521"
+      - "Delta-Kronecker-trojan-1027"
+      - "Delta-Kronecker-vless-2604"
+      - "Delta-Kronecker-vless-2689"
+      - "Delta-Kronecker-ss-2045"
+      - "Delta-Kronecker-ss-394"
+      - "Delta-Kronecker-vmess-067"
+      - "Delta-Kronecker-vless-2003"
+      - "Delta-Kronecker-vless-2778"
+      - "Delta-Kronecker-vless-1196"
+      - "Delta-Kronecker-trojan-453"
+      - "Delta-Kronecker-vless-309"
+      - "Delta-Kronecker-vmess-085"
+      - "Delta-Kronecker-vless-2788"
+      - "Delta-Kronecker-trojan-547"
+      - "Delta-Kronecker-vless-2065"
+      - "Delta-Kronecker-vless-1886"
+      - "Delta-Kronecker-ss-586"
+      - "Delta-Kronecker-vless-2690"
+      - "Delta-Kronecker-vmess-005"
+      - "Delta-Kronecker-trojan-1100"
+      - "Delta-Kronecker-ss-1016"
+      - "Delta-Kronecker-ss-381"
+      - "Delta-Kronecker-ss-619"
+      - "Delta-Kronecker-vless-1993"
+      - "Delta-Kronecker-trojan-1085"
+      - "Delta-Kronecker-vless-947"
+      - "Delta-Kronecker-vless-1816"
+      - "Delta-Kronecker-vmess-071"
+      - "Delta-Kronecker-hy2-001"
+      - "Delta-Kronecker-vless-1817"
+      - "Delta-Kronecker-ss-1090"
+      - "Delta-Kronecker-ss-126"
+      - "Delta-Kronecker-trojan-156"
+      - "Delta-Kronecker-vless-696"
+      - "Delta-Kronecker-trojan-1101"
+      - "Delta-Kronecker-vless-192"
+      - "Delta-Kronecker-ss-1792"
+      - "Delta-Kronecker-trojan-307"
+      - "Delta-Kronecker-vless-2749"
+      - "Delta-Kronecker-ss-876"
+      - "Delta-Kronecker-trojan-015"
+      - "Delta-Kronecker-ss-117"
+      - "Delta-Kronecker-vless-744"
+      - "Delta-Kronecker-vless-2587"
+      - "Delta-Kronecker-ss-2032"
+      - "Delta-Kronecker-ss-253"
+      - "Delta-Kronecker-trojan-091"
+      - "Delta-Kronecker-vless-2863"
+      - "Delta-Kronecker-ss-1350"
+      - "Delta-Kronecker-trojan-301"
+      - "Delta-Kronecker-vless-1757"
+      - "Delta-Kronecker-trojan-074"
+      - "Delta-Kronecker-vless-488"
+      - "Delta-Kronecker-vless-1056"
+      - "Delta-Kronecker-ss-1742"
+      - "Delta-Kronecker-trojan-070"
+      - "Delta-Kronecker-vless-2897"
+      - "Delta-Kronecker-trojan-033"
+      - "Delta-Kronecker-vless-1340"
+      - "Delta-Kronecker-ss-994"
+      - "Delta-Kronecker-vless-3040"
+      - "Delta-Kronecker-trojan-205"
+      - "Delta-Kronecker-ss-2116"
+      - "Delta-Kronecker-ss-418"
+      - "Delta-Kronecker-ss-660"
+      - "Delta-Kronecker-ss-047"
+      - "Delta-Kronecker-vless-2370"
+      - "Delta-Kronecker-vless-2890"
+      - "Delta-Kronecker-trojan-632"
+      - "Delta-Kronecker-ss-707"
+      - "Delta-Kronecker-vless-237"
+      - "Delta-Kronecker-trojan-1093"
+      - "Delta-Kronecker-vless-647"
+      - "Delta-Kronecker-vless-455"
+      - "Delta-Kronecker-vless-584"
+      - "Delta-Kronecker-trojan-1244"
+      - "Delta-Kronecker-vless-2368"
+      - "Delta-Kronecker-ss-954"
+      - "Delta-Kronecker-ss-2166"
+      - "Delta-Kronecker-vless-2019"
+      - "Delta-Kronecker-trojan-902"
+      - "Delta-Kronecker-ss-2211"
+      - "Delta-Kronecker-vless-2341"
+      - "Delta-Kronecker-vless-2531"
+      - "Delta-Kronecker-vless-1559"
+      - "Delta-Kronecker-ss-517"
+      - "Delta-Kronecker-ss-1236"
+      - "Delta-Kronecker-vless-694"
+      - "Delta-Kronecker-ss-1992"
+      - "Delta-Kronecker-trojan-757"
+      - "Delta-Kronecker-vless-2902"
+      - "Delta-Kronecker-trojan-131"
+      - "Delta-Kronecker-vless-1637"
+      - "Delta-Kronecker-vless-2427"
+      - "Delta-Kronecker-ss-385"
+      - "Delta-Kronecker-vless-299"
+      - "Delta-Kronecker-vless-1745"
+      - "Delta-Kronecker-trojan-212"
+      - "Delta-Kronecker-ss-782"
+      - "Delta-Kronecker-vless-2347"
+      - "Delta-Kronecker-ss-2086"
+      - "Delta-Kronecker-vless-1526"
+      - "Delta-Kronecker-vless-369"
+      - "Delta-Kronecker-vless-1029"
+      - "Delta-Kronecker-ss-784"
+      - "Delta-Kronecker-vless-1917"
+      - "Delta-Kronecker-vless-2740"
+      - "Delta-Kronecker-trojan-1236"
+      - "Delta-Kronecker-ss-2193"
+      - "Delta-Kronecker-vless-2211"
+      - "Delta-Kronecker-trojan-546"
+      - "Delta-Kronecker-ss-961"
+      - "Delta-Kronecker-ss-666"
+      - "Delta-Kronecker-vless-1336"
+      - "Delta-Kronecker-trojan-958"
+      - "Delta-Kronecker-ss-2027"
+      - "Delta-Kronecker-ss-2240"
+      - "Delta-Kronecker-vless-1045"
+      - "Delta-Kronecker-ss-455"
+      - "Delta-Kronecker-vless-734"
+      - "Delta-Kronecker-trojan-1194"
+      - "Delta-Kronecker-ss-1322"
+      - "Delta-Kronecker-vless-2285"
+      - "Delta-Kronecker-vless-957"
+      - "Delta-Kronecker-ss-1640"
+      - "Delta-Kronecker-ss-1264"
+      - "Delta-Kronecker-vless-1187"
+      - "Delta-Kronecker-vless-114"
+      - "Delta-Kronecker-vless-2925"
+      - "Delta-Kronecker-ss-513"
+      - "Delta-Kronecker-vless-1937"
+      - "Delta-Kronecker-vless-2583"
+      - "Delta-Kronecker-vless-492"
+      - "Delta-Kronecker-trojan-1237"
+      - "Delta-Kronecker-vless-2207"
+      - "Delta-Kronecker-ss-1057"
+      - "Delta-Kronecker-vless-2387"
+      - "Delta-Kronecker-trojan-681"
+      - "Delta-Kronecker-ss-2012"
+      - "Delta-Kronecker-vless-2371"
+      - "Delta-Kronecker-ss-665"
+      - "Delta-Kronecker-ss-600"
+      - "Delta-Kronecker-vless-560"
+      - "Delta-Kronecker-ss-333"
+      - "Delta-Kronecker-vless-2694"
+      - "Delta-Kronecker-ss-1590"
+      - "Delta-Kronecker-trojan-032"
+      - "Delta-Kronecker-vless-2276"
+      - "Delta-Kronecker-ss-116"
+      - "Delta-Kronecker-vless-2453"
+      - "Delta-Kronecker-ss-466"
+      - "Delta-Kronecker-vless-412"
+      - "Delta-Kronecker-ss-538"
+      - "Delta-Kronecker-vless-2950"
+      - "Delta-Kronecker-vless-1657"
+      - "Delta-Kronecker-vless-579"
+      - "Delta-Kronecker-vless-3141"
+      - "Delta-Kronecker-vless-2458"
+      - "Delta-Kronecker-ss-611"
+      - "Delta-Kronecker-ss-462"
+      - "Delta-Kronecker-ss-058"
+      - "Delta-Kronecker-vless-850"
+      - "Delta-Kronecker-vless-2255"
+      - "Delta-Kronecker-vless-516"
+      - "Delta-Kronecker-vless-1697"
+      - "Delta-Kronecker-vless-1858"
+      - "Delta-Kronecker-trojan-1083"
+      - "Delta-Kronecker-trojan-312"
+      - "Delta-Kronecker-vless-2647"
+      - "Delta-Kronecker-trojan-1013"
+      - "Delta-Kronecker-ss-1293"
+      - "Delta-Kronecker-vless-156"
+      - "Delta-Kronecker-trojan-895"
+      - "Delta-Kronecker-vless-1323"
+      - "Delta-Kronecker-ss-1317"
+      - "Delta-Kronecker-vless-697"
+      - "Delta-Kronecker-vless-2260"
+      - "Delta-Kronecker-ss-070"
+      - "Delta-Kronecker-vless-2191"
+      - "Delta-Kronecker-vless-2279"
+      - "Delta-Kronecker-vless-845"
+      - "Delta-Kronecker-ss-296"
+      - "Delta-Kronecker-trojan-084"
+      - "Delta-Kronecker-vless-225"
+      - "Delta-Kronecker-vless-2416"
+      - "Delta-Kronecker-trojan-810"
+      - "Delta-Kronecker-vless-1755"
+      - "Delta-Kronecker-vless-190"
+      - "Delta-Kronecker-trojan-340"
+      - "Delta-Kronecker-vless-2953"
+      - "Delta-Kronecker-vless-2567"
+      - "Delta-Kronecker-vmess-036"
+      - "Delta-Kronecker-trojan-271"
+      - "Delta-Kronecker-ss-1471"
+      - "Delta-Kronecker-ss-1000"
+      - "Delta-Kronecker-ss-1873"
+      - "Delta-Kronecker-vless-2090"
+      - "Delta-Kronecker-vless-2757"
+      - "Delta-Kronecker-vless-676"
+      - "Delta-Kronecker-ss-1520"
+      - "Delta-Kronecker-ss-314"
+      - "Delta-Kronecker-vless-2087"
+      - "Delta-Kronecker-trojan-357"
+      - "Delta-Kronecker-vless-2819"
+      - "Delta-Kronecker-vless-1627"
+
+  - name: "LB-CDN"
+    type: load-balance
+    strategy: round-robin
+    url: http://cp.cloudflare.com/generate_204
+    interval: 300
+    tolerance: 150
+    lazy: true
+    proxies:
+      - "Delta-Kronecker-ss-2200"
+      - "Delta-Kronecker-ss-1240"
+      - "Delta-Kronecker-vless-2199"
+      - "Delta-Kronecker-ss-1455"
+      - "Delta-Kronecker-ss-2103"
+      - "Delta-Kronecker-ss-1512"
+      - "Delta-Kronecker-vless-1398"
+      - "Delta-Kronecker-ss-1108"
+      - "Delta-Kronecker-ss-1089"
+      - "Delta-Kronecker-vless-725"
+      - "Delta-Kronecker-vless-292"
+      - "Delta-Kronecker-ss-1079"
+      - "Delta-Kronecker-vless-267"
+      - "Delta-Kronecker-trojan-269"
+      - "Delta-Kronecker-ss-2181"
+      - "Delta-Kronecker-trojan-276"
+      - "Delta-Kronecker-vless-1433"
+      - "Delta-Kronecker-vless-1319"
+      - "Delta-Kronecker-vless-1770"
+      - "Delta-Kronecker-ss-356"
+      - "Delta-Kronecker-ss-355"
+      - "Delta-Kronecker-vless-2111"
+      - "Delta-Kronecker-ss-1190"
+      - "Delta-Kronecker-vless-750"
+      - "Delta-Kronecker-trojan-198"
+      - "Delta-Kronecker-trojan-220"
+      - "Delta-Kronecker-ss-1569"
+      - "Delta-Kronecker-vless-2811"
+      - "Delta-Kronecker-vless-2708"
+      - "Delta-Kronecker-vless-213"
+      - "Delta-Kronecker-trojan-008"
+      - "Delta-Kronecker-vless-1645"
+      - "Delta-Kronecker-ss-596"
+      - "Delta-Kronecker-ss-359"
+      - "Delta-Kronecker-ss-741"
+      - "Delta-Kronecker-vless-838"
+      - "Delta-Kronecker-vless-1475"
+      - "Delta-Kronecker-ss-1571"
+      - "Delta-Kronecker-vless-120"
+      - "Delta-Kronecker-vless-1430"
+      - "Delta-Kronecker-trojan-1184"
+      - "Delta-Kronecker-ss-1840"
+      - "Delta-Kronecker-vless-2431"
+      - "Delta-Kronecker-ss-540"
+      - "Delta-Kronecker-vless-1895"
+      - "Delta-Kronecker-vless-692"
+      - "Delta-Kronecker-ss-2114"
+      - "Delta-Kronecker-vless-1598"
+      - "Delta-Kronecker-vless-2098"
+      - "Delta-Kronecker-vmess-037"
+      - "Delta-Kronecker-ss-1225"
+      - "Delta-Kronecker-trojan-463"
+      - "Delta-Kronecker-trojan-1111"
+      - "Delta-Kronecker-ss-539"
+      - "Delta-Kronecker-vless-1184"
+      - "Delta-Kronecker-ss-473"
+      - "Delta-Kronecker-vless-996"
+      - "Delta-Kronecker-ss-749"
+      - "Delta-Kronecker-ss-1083"
+      - "Delta-Kronecker-vless-2508"
+      - "Delta-Kronecker-ss-475"
+      - "Delta-Kronecker-trojan-391"
+      - "Delta-Kronecker-vless-2212"
+      - "Delta-Kronecker-ss-326"
+      - "Delta-Kronecker-trojan-213"
+      - "Delta-Kronecker-vless-284"
+      - "Delta-Kronecker-ss-1548"
+      - "Delta-Kronecker-vless-2989"
+      - "Delta-Kronecker-vless-2629"
+      - "Delta-Kronecker-vless-139"
+      - "Delta-Kronecker-vless-641"
+      - "Delta-Kronecker-trojan-1227"
+      - "Delta-Kronecker-trojan-278"
+      - "Delta-Kronecker-ss-124"
+      - "Delta-Kronecker-ss-057"
+      - "Delta-Kronecker-trojan-818"
+      - "Delta-Kronecker-ss-998"
+      - "Delta-Kronecker-trojan-353"
+      - "Delta-Kronecker-vless-1551"
+      - "Delta-Kronecker-trojan-1144"
+      - "Delta-Kronecker-ss-720"
+      - "Delta-Kronecker-vless-538"
+      - "Delta-Kronecker-vless-1231"
+      - "Delta-Kronecker-ss-1417"
+      - "Delta-Kronecker-vless-280"
+      - "Delta-Kronecker-ss-1402"
+      - "Delta-Kronecker-trojan-821"
+      - "Delta-Kronecker-ss-824"
+      - "Delta-Kronecker-ss-1972"
+      - "Delta-Kronecker-ss-370"
+      - "Delta-Kronecker-vless-2376"
+      - "Delta-Kronecker-vless-2326"
+      - "Delta-Kronecker-vless-787"
+      - "Delta-Kronecker-ss-1181"
+      - "Delta-Kronecker-ss-389"
+      - "Delta-Kronecker-trojan-341"
+      - "Delta-Kronecker-ss-411"
+      - "Delta-Kronecker-trojan-1067"
+      - "Delta-Kronecker-vless-823"
+      - "Delta-Kronecker-trojan-770"
+      - "Delta-Kronecker-vless-1517"
+      - "Delta-Kronecker-ss-1421"
+      - "Delta-Kronecker-ss-235"
+      - "Delta-Kronecker-trojan-992"
+      - "Delta-Kronecker-ss-1035"
+      - "Delta-Kronecker-ss-2222"
+      - "Delta-Kronecker-ss-2100"
+      - "Delta-Kronecker-trojan-839"
+      - "Delta-Kronecker-trojan-847"
+      - "Delta-Kronecker-trojan-061"
+      - "Delta-Kronecker-trojan-436"
+      - "Delta-Kronecker-trojan-114"
+      - "Delta-Kronecker-ss-1716"
+      - "Delta-Kronecker-trojan-439"
+      - "Delta-Kronecker-ss-992"
+      - "Delta-Kronecker-trojan-826"
+      - "Delta-Kronecker-vless-2562"
+      - "Delta-Kronecker-ss-2205"
+      - "Delta-Kronecker-trojan-342"
+      - "Delta-Kronecker-vless-1506"
+      - "Delta-Kronecker-vless-043"
+      - "Delta-Kronecker-vless-2632"
+      - "Delta-Kronecker-ss-186"
+      - "Delta-Kronecker-trojan-254"
+      - "Delta-Kronecker-vless-020"
+      - "Delta-Kronecker-ss-2136"
+      - "Delta-Kronecker-vless-367"
+      - "Delta-Kronecker-ss-149"
+      - "Delta-Kronecker-vless-2343"
+      - "Delta-Kronecker-vless-3087"
+      - "Delta-Kronecker-trojan-365"
+      - "Delta-Kronecker-vless-551"
+      - "Delta-Kronecker-vless-459"
+      - "Delta-Kronecker-vless-3069"
+      - "Delta-Kronecker-ss-1449"
+      - "Delta-Kronecker-vless-2872"
+      - "Delta-Kronecker-vless-3018"
+      - "Delta-Kronecker-vless-1154"
+      - "Delta-Kronecker-vless-1427"
+      - "Delta-Kronecker-ss-503"
+      - "Delta-Kronecker-vless-030"
+      - "Delta-Kronecker-vless-2028"
+      - "Delta-Kronecker-ss-1521"
+      - "Delta-Kronecker-trojan-1027"
+      - "Delta-Kronecker-vless-2604"
+      - "Delta-Kronecker-vless-2689"
+      - "Delta-Kronecker-ss-2045"
+      - "Delta-Kronecker-ss-394"
+      - "Delta-Kronecker-vmess-067"
+      - "Delta-Kronecker-vless-2003"
+      - "Delta-Kronecker-vless-2778"
+      - "Delta-Kronecker-vless-1196"
+      - "Delta-Kronecker-trojan-453"
+      - "Delta-Kronecker-vless-309"
+      - "Delta-Kronecker-vmess-085"
+      - "Delta-Kronecker-vless-2788"
+      - "Delta-Kronecker-trojan-547"
+      - "Delta-Kronecker-vless-2065"
+      - "Delta-Kronecker-vless-1886"
+      - "Delta-Kronecker-ss-586"
+      - "Delta-Kronecker-vless-2690"
+      - "Delta-Kronecker-vmess-005"
+      - "Delta-Kronecker-trojan-1100"
+      - "Delta-Kronecker-ss-1016"
+      - "Delta-Kronecker-ss-381"
+      - "Delta-Kronecker-ss-619"
+      - "Delta-Kronecker-vless-1993"
+      - "Delta-Kronecker-trojan-1085"
+      - "Delta-Kronecker-vless-947"
+      - "Delta-Kronecker-vless-1816"
+      - "Delta-Kronecker-vmess-071"
+      - "Delta-Kronecker-hy2-001"
+      - "Delta-Kronecker-vless-1817"
+      - "Delta-Kronecker-ss-1090"
+      - "Delta-Kronecker-ss-126"
+      - "Delta-Kronecker-trojan-156"
+      - "Delta-Kronecker-vless-696"
+      - "Delta-Kronecker-trojan-1101"
+      - "Delta-Kronecker-vless-192"
+      - "Delta-Kronecker-ss-1792"
+      - "Delta-Kronecker-trojan-307"
+      - "Delta-Kronecker-vless-2749"
+      - "Delta-Kronecker-ss-876"
+      - "Delta-Kronecker-trojan-015"
+      - "Delta-Kronecker-ss-117"
+      - "Delta-Kronecker-vless-744"
+      - "Delta-Kronecker-vless-2587"
+      - "Delta-Kronecker-ss-2032"
+      - "Delta-Kronecker-ss-253"
+      - "Delta-Kronecker-trojan-091"
+      - "Delta-Kronecker-vless-2863"
+      - "Delta-Kronecker-ss-1350"
+      - "Delta-Kronecker-trojan-301"
+      - "Delta-Kronecker-vless-1757"
+      - "Delta-Kronecker-trojan-074"
+      - "Delta-Kronecker-vless-488"
+      - "Delta-Kronecker-vless-1056"
+      - "Delta-Kronecker-ss-1742"
+      - "Delta-Kronecker-trojan-070"
+      - "Delta-Kronecker-vless-2897"
+      - "Delta-Kronecker-trojan-033"
+      - "Delta-Kronecker-vless-1340"
+      - "Delta-Kronecker-ss-994"
+      - "Delta-Kronecker-vless-3040"
+      - "Delta-Kronecker-trojan-205"
+      - "Delta-Kronecker-ss-2116"
+      - "Delta-Kronecker-ss-418"
+      - "Delta-Kronecker-ss-660"
+      - "Delta-Kronecker-ss-047"
+      - "Delta-Kronecker-vless-2370"
+      - "Delta-Kronecker-vless-2890"
+      - "Delta-Kronecker-trojan-632"
+      - "Delta-Kronecker-ss-707"
+      - "Delta-Kronecker-vless-237"
+      - "Delta-Kronecker-trojan-1093"
+      - "Delta-Kronecker-vless-647"
+      - "Delta-Kronecker-vless-455"
+      - "Delta-Kronecker-vless-584"
+      - "Delta-Kronecker-trojan-1244"
+      - "Delta-Kronecker-vless-2368"
+      - "Delta-Kronecker-ss-954"
+      - "Delta-Kronecker-ss-2166"
+      - "Delta-Kronecker-vless-2019"
+      - "Delta-Kronecker-trojan-902"
+      - "Delta-Kronecker-ss-2211"
+      - "Delta-Kronecker-vless-2341"
+      - "Delta-Kronecker-vless-2531"
+      - "Delta-Kronecker-vless-1559"
+      - "Delta-Kronecker-ss-517"
+      - "Delta-Kronecker-ss-1236"
+      - "Delta-Kronecker-vless-694"
+      - "Delta-Kronecker-ss-1992"
+      - "Delta-Kronecker-trojan-757"
+      - "Delta-Kronecker-vless-2902"
+      - "Delta-Kronecker-trojan-131"
+      - "Delta-Kronecker-vless-1637"
+      - "Delta-Kronecker-vless-2427"
+      - "Delta-Kronecker-ss-385"
+      - "Delta-Kronecker-vless-299"
+      - "Delta-Kronecker-vless-1745"
+      - "Delta-Kronecker-trojan-212"
+      - "Delta-Kronecker-ss-782"
+      - "Delta-Kronecker-vless-2347"
+      - "Delta-Kronecker-ss-2086"
+      - "Delta-Kronecker-vless-1526"
+      - "Delta-Kronecker-vless-369"
+      - "Delta-Kronecker-vless-1029"
+      - "Delta-Kronecker-ss-784"
+      - "Delta-Kronecker-vless-1917"
+      - "Delta-Kronecker-vless-2740"
+      - "Delta-Kronecker-trojan-1236"
+      - "Delta-Kronecker-ss-2193"
+      - "Delta-Kronecker-vless-2211"
+      - "Delta-Kronecker-trojan-546"
+      - "Delta-Kronecker-ss-961"
+      - "Delta-Kronecker-ss-666"
+      - "Delta-Kronecker-vless-1336"
+      - "Delta-Kronecker-trojan-958"
+      - "Delta-Kronecker-ss-2027"
+      - "Delta-Kronecker-ss-2240"
+      - "Delta-Kronecker-vless-1045"
+      - "Delta-Kronecker-ss-455"
+      - "Delta-Kronecker-vless-734"
+      - "Delta-Kronecker-trojan-1194"
+      - "Delta-Kronecker-ss-1322"
+      - "Delta-Kronecker-vless-2285"
+      - "Delta-Kronecker-vless-957"
+      - "Delta-Kronecker-ss-1640"
+      - "Delta-Kronecker-ss-1264"
+      - "Delta-Kronecker-vless-1187"
+      - "Delta-Kronecker-vless-114"
+      - "Delta-Kronecker-vless-2925"
+      - "Delta-Kronecker-ss-513"
+      - "Delta-Kronecker-vless-1937"
+      - "Delta-Kronecker-vless-2583"
+      - "Delta-Kronecker-vless-492"
+      - "Delta-Kronecker-trojan-1237"
+      - "Delta-Kronecker-vless-2207"
+      - "Delta-Kronecker-ss-1057"
+      - "Delta-Kronecker-vless-2387"
+      - "Delta-Kronecker-trojan-681"
+      - "Delta-Kronecker-ss-2012"
+      - "Delta-Kronecker-vless-2371"
+      - "Delta-Kronecker-ss-665"
+      - "Delta-Kronecker-ss-600"
+      - "Delta-Kronecker-vless-560"
+      - "Delta-Kronecker-ss-333"
+      - "Delta-Kronecker-vless-2694"
+      - "Delta-Kronecker-ss-1590"
+      - "Delta-Kronecker-trojan-032"
+      - "Delta-Kronecker-vless-2276"
+      - "Delta-Kronecker-ss-116"
+      - "Delta-Kronecker-vless-2453"
+      - "Delta-Kronecker-ss-466"
+      - "Delta-Kronecker-vless-412"
+      - "Delta-Kronecker-ss-538"
+      - "Delta-Kronecker-vless-2950"
+      - "Delta-Kronecker-vless-1657"
+      - "Delta-Kronecker-vless-579"
+      - "Delta-Kronecker-vless-3141"
+      - "Delta-Kronecker-vless-2458"
+      - "Delta-Kronecker-ss-611"
+      - "Delta-Kronecker-ss-462"
+      - "Delta-Kronecker-ss-058"
+      - "Delta-Kronecker-vless-850"
+      - "Delta-Kronecker-vless-2255"
+      - "Delta-Kronecker-vless-516"
+      - "Delta-Kronecker-vless-1697"
+      - "Delta-Kronecker-vless-1858"
+      - "Delta-Kronecker-trojan-1083"
+      - "Delta-Kronecker-trojan-312"
+      - "Delta-Kronecker-vless-2647"
+      - "Delta-Kronecker-trojan-1013"
+      - "Delta-Kronecker-ss-1293"
+      - "Delta-Kronecker-vless-156"
+      - "Delta-Kronecker-trojan-895"
+      - "Delta-Kronecker-vless-1323"
+      - "Delta-Kronecker-ss-1317"
+      - "Delta-Kronecker-vless-697"
+      - "Delta-Kronecker-vless-2260"
+      - "Delta-Kronecker-ss-070"
+      - "Delta-Kronecker-vless-2191"
+      - "Delta-Kronecker-vless-2279"
+      - "Delta-Kronecker-vless-845"
+      - "Delta-Kronecker-ss-296"
+      - "Delta-Kronecker-trojan-084"
+      - "Delta-Kronecker-vless-225"
+      - "Delta-Kronecker-vless-2416"
+      - "Delta-Kronecker-trojan-810"
+      - "Delta-Kronecker-vless-1755"
+      - "Delta-Kronecker-vless-190"
+      - "Delta-Kronecker-trojan-340"
+      - "Delta-Kronecker-vless-2953"
+      - "Delta-Kronecker-vless-2567"
+      - "Delta-Kronecker-vmess-036"
+      - "Delta-Kronecker-trojan-271"
+      - "Delta-Kronecker-ss-1471"
+      - "Delta-Kronecker-ss-1000"
+      - "Delta-Kronecker-ss-1873"
+      - "Delta-Kronecker-vless-2090"
+      - "Delta-Kronecker-vless-2757"
+      - "Delta-Kronecker-vless-676"
+      - "Delta-Kronecker-ss-1520"
+      - "Delta-Kronecker-ss-314"
+      - "Delta-Kronecker-vless-2087"
+      - "Delta-Kronecker-trojan-357"
+      - "Delta-Kronecker-vless-2819"
+      - "Delta-Kronecker-vless-1627"
+
+  # ── Fastest-proxy groups ──────────────────────────────────────────────────
+  - name: "FAST-ALL"
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    lazy: true
+    proxies:
+      - "Delta-Kronecker-ss-2200"
+      - "Delta-Kronecker-ss-1240"
+      - "Delta-Kronecker-vless-2199"
+      - "Delta-Kronecker-ss-1455"
+      - "Delta-Kronecker-ss-2103"
+      - "Delta-Kronecker-ss-1512"
+      - "Delta-Kronecker-vless-1398"
+      - "Delta-Kronecker-ss-1108"
+      - "Delta-Kronecker-ss-1089"
+      - "Delta-Kronecker-vless-725"
+      - "Delta-Kronecker-vless-292"
+      - "Delta-Kronecker-ss-1079"
+      - "Delta-Kronecker-vless-267"
+      - "Delta-Kronecker-trojan-269"
+      - "Delta-Kronecker-ss-2181"
+      - "Delta-Kronecker-trojan-276"
+      - "Delta-Kronecker-vless-1433"
+      - "Delta-Kronecker-vless-1319"
+      - "Delta-Kronecker-vless-1770"
+      - "Delta-Kronecker-ss-356"
+      - "Delta-Kronecker-ss-355"
+      - "Delta-Kronecker-vless-2111"
+      - "Delta-Kronecker-ss-1190"
+      - "Delta-Kronecker-vless-750"
+      - "Delta-Kronecker-trojan-198"
+      - "Delta-Kronecker-trojan-220"
+      - "Delta-Kronecker-ss-1569"
+      - "Delta-Kronecker-vless-2811"
+      - "Delta-Kronecker-vless-2708"
+      - "Delta-Kronecker-vless-213"
+      - "Delta-Kronecker-trojan-008"
+      - "Delta-Kronecker-vless-1645"
+      - "Delta-Kronecker-ss-596"
+      - "Delta-Kronecker-ss-359"
+      - "Delta-Kronecker-ss-741"
+      - "Delta-Kronecker-vless-838"
+      - "Delta-Kronecker-vless-1475"
+      - "Delta-Kronecker-ss-1571"
+      - "Delta-Kronecker-vless-120"
+      - "Delta-Kronecker-vless-1430"
+      - "Delta-Kronecker-trojan-1184"
+      - "Delta-Kronecker-ss-1840"
+      - "Delta-Kronecker-vless-2431"
+      - "Delta-Kronecker-ss-540"
+      - "Delta-Kronecker-vless-1895"
+      - "Delta-Kronecker-vless-692"
+      - "Delta-Kronecker-ss-2114"
+      - "Delta-Kronecker-vless-1598"
+      - "Delta-Kronecker-vless-2098"
+      - "Delta-Kronecker-vmess-037"
+      - "Delta-Kronecker-ss-1225"
+      - "Delta-Kronecker-trojan-463"
+      - "Delta-Kronecker-trojan-1111"
+      - "Delta-Kronecker-ss-539"
+      - "Delta-Kronecker-vless-1184"
+      - "Delta-Kronecker-ss-473"
+      - "Delta-Kronecker-vless-996"
+      - "Delta-Kronecker-ss-749"
+      - "Delta-Kronecker-ss-1083"
+      - "Delta-Kronecker-vless-2508"
+      - "Delta-Kronecker-ss-475"
+      - "Delta-Kronecker-trojan-391"
+      - "Delta-Kronecker-vless-2212"
+      - "Delta-Kronecker-ss-326"
+      - "Delta-Kronecker-trojan-213"
+      - "Delta-Kronecker-vless-284"
+      - "Delta-Kronecker-ss-1548"
+      - "Delta-Kronecker-vless-2989"
+      - "Delta-Kronecker-vless-2629"
+      - "Delta-Kronecker-vless-139"
+      - "Delta-Kronecker-vless-641"
+      - "Delta-Kronecker-trojan-1227"
+      - "Delta-Kronecker-trojan-278"
+      - "Delta-Kronecker-ss-124"
+      - "Delta-Kronecker-ss-057"
+      - "Delta-Kronecker-trojan-818"
+      - "Delta-Kronecker-ss-998"
+      - "Delta-Kronecker-trojan-353"
+      - "Delta-Kronecker-vless-1551"
+      - "Delta-Kronecker-trojan-1144"
+      - "Delta-Kronecker-ss-720"
+      - "Delta-Kronecker-vless-538"
+      - "Delta-Kronecker-vless-1231"
+      - "Delta-Kronecker-ss-1417"
+      - "Delta-Kronecker-vless-280"
+      - "Delta-Kronecker-ss-1402"
+      - "Delta-Kronecker-trojan-821"
+      - "Delta-Kronecker-ss-824"
+      - "Delta-Kronecker-ss-1972"
+      - "Delta-Kronecker-ss-370"
+      - "Delta-Kronecker-vless-2376"
+      - "Delta-Kronecker-vless-2326"
+      - "Delta-Kronecker-vless-787"
+      - "Delta-Kronecker-ss-1181"
+      - "Delta-Kronecker-ss-389"
+      - "Delta-Kronecker-trojan-341"
+      - "Delta-Kronecker-ss-411"
+      - "Delta-Kronecker-trojan-1067"
+      - "Delta-Kronecker-vless-823"
+      - "Delta-Kronecker-trojan-770"
+      - "Delta-Kronecker-vless-1517"
+      - "Delta-Kronecker-ss-1421"
+      - "Delta-Kronecker-ss-235"
+      - "Delta-Kronecker-trojan-992"
+      - "Delta-Kronecker-ss-1035"
+      - "Delta-Kronecker-ss-2222"
+      - "Delta-Kronecker-ss-2100"
+      - "Delta-Kronecker-trojan-839"
+      - "Delta-Kronecker-trojan-847"
+      - "Delta-Kronecker-trojan-061"
+      - "Delta-Kronecker-trojan-436"
+      - "Delta-Kronecker-trojan-114"
+      - "Delta-Kronecker-ss-1716"
+      - "Delta-Kronecker-trojan-439"
+      - "Delta-Kronecker-ss-992"
+      - "Delta-Kronecker-trojan-826"
+      - "Delta-Kronecker-vless-2562"
+      - "Delta-Kronecker-ss-2205"
+      - "Delta-Kronecker-trojan-342"
+      - "Delta-Kronecker-vless-1506"
+      - "Delta-Kronecker-vless-043"
+      - "Delta-Kronecker-vless-2632"
+      - "Delta-Kronecker-ss-186"
+      - "Delta-Kronecker-trojan-254"
+      - "Delta-Kronecker-vless-020"
+      - "Delta-Kronecker-ss-2136"
+      - "Delta-Kronecker-vless-367"
+      - "Delta-Kronecker-ss-149"
+      - "Delta-Kronecker-vless-2343"
+      - "Delta-Kronecker-vless-3087"
+      - "Delta-Kronecker-trojan-365"
+      - "Delta-Kronecker-vless-551"
+      - "Delta-Kronecker-vless-459"
+      - "Delta-Kronecker-vless-3069"
+      - "Delta-Kronecker-ss-1449"
+      - "Delta-Kronecker-vless-2872"
+      - "Delta-Kronecker-vless-3018"
+      - "Delta-Kronecker-vless-1154"
+      - "Delta-Kronecker-vless-1427"
+      - "Delta-Kronecker-ss-503"
+      - "Delta-Kronecker-vless-030"
+      - "Delta-Kronecker-vless-2028"
+      - "Delta-Kronecker-ss-1521"
+      - "Delta-Kronecker-trojan-1027"
+      - "Delta-Kronecker-vless-2604"
+      - "Delta-Kronecker-vless-2689"
+      - "Delta-Kronecker-ss-2045"
+      - "Delta-Kronecker-ss-394"
+      - "Delta-Kronecker-vmess-067"
+      - "Delta-Kronecker-vless-2003"
+      - "Delta-Kronecker-vless-2778"
+      - "Delta-Kronecker-vless-1196"
+      - "Delta-Kronecker-trojan-453"
+      - "Delta-Kronecker-vless-309"
+      - "Delta-Kronecker-vmess-085"
+      - "Delta-Kronecker-vless-2788"
+      - "Delta-Kronecker-trojan-547"
+      - "Delta-Kronecker-vless-2065"
+      - "Delta-Kronecker-vless-1886"
+      - "Delta-Kronecker-ss-586"
+      - "Delta-Kronecker-vless-2690"
+      - "Delta-Kronecker-vmess-005"
+      - "Delta-Kronecker-trojan-1100"
+      - "Delta-Kronecker-ss-1016"
+      - "Delta-Kronecker-ss-381"
+      - "Delta-Kronecker-ss-619"
+      - "Delta-Kronecker-vless-1993"
+      - "Delta-Kronecker-trojan-1085"
+      - "Delta-Kronecker-vless-947"
+      - "Delta-Kronecker-vless-1816"
+      - "Delta-Kronecker-vmess-071"
+      - "Delta-Kronecker-hy2-001"
+      - "Delta-Kronecker-vless-1817"
+      - "Delta-Kronecker-ss-1090"
+      - "Delta-Kronecker-ss-126"
+      - "Delta-Kronecker-trojan-156"
+      - "Delta-Kronecker-vless-696"
+      - "Delta-Kronecker-trojan-1101"
+      - "Delta-Kronecker-vless-192"
+      - "Delta-Kronecker-ss-1792"
+      - "Delta-Kronecker-trojan-307"
+      - "Delta-Kronecker-vless-2749"
+      - "Delta-Kronecker-ss-876"
+      - "Delta-Kronecker-trojan-015"
+      - "Delta-Kronecker-ss-117"
+      - "Delta-Kronecker-vless-744"
+      - "Delta-Kronecker-vless-2587"
+      - "Delta-Kronecker-ss-2032"
+      - "Delta-Kronecker-ss-253"
+      - "Delta-Kronecker-trojan-091"
+      - "Delta-Kronecker-vless-2863"
+      - "Delta-Kronecker-ss-1350"
+      - "Delta-Kronecker-trojan-301"
+      - "Delta-Kronecker-vless-1757"
+      - "Delta-Kronecker-trojan-074"
+      - "Delta-Kronecker-vless-488"
+      - "Delta-Kronecker-vless-1056"
+      - "Delta-Kronecker-ss-1742"
+      - "Delta-Kronecker-trojan-070"
+      - "Delta-Kronecker-vless-2897"
+      - "Delta-Kronecker-trojan-033"
+      - "Delta-Kronecker-vless-1340"
+      - "Delta-Kronecker-ss-994"
+      - "Delta-Kronecker-vless-3040"
+      - "Delta-Kronecker-trojan-205"
+      - "Delta-Kronecker-ss-2116"
+      - "Delta-Kronecker-ss-418"
+      - "Delta-Kronecker-ss-660"
+      - "Delta-Kronecker-ss-047"
+      - "Delta-Kronecker-vless-2370"
+      - "Delta-Kronecker-vless-2890"
+      - "Delta-Kronecker-trojan-632"
+      - "Delta-Kronecker-ss-707"
+      - "Delta-Kronecker-vless-237"
+      - "Delta-Kronecker-trojan-1093"
+      - "Delta-Kronecker-vless-647"
+      - "Delta-Kronecker-vless-455"
+      - "Delta-Kronecker-vless-584"
+      - "Delta-Kronecker-trojan-1244"
+      - "Delta-Kronecker-vless-2368"
+      - "Delta-Kronecker-ss-954"
+      - "Delta-Kronecker-ss-2166"
+      - "Delta-Kronecker-vless-2019"
+      - "Delta-Kronecker-trojan-902"
+      - "Delta-Kronecker-ss-2211"
+      - "Delta-Kronecker-vless-2341"
+      - "Delta-Kronecker-vless-2531"
+      - "Delta-Kronecker-vless-1559"
+      - "Delta-Kronecker-ss-517"
+      - "Delta-Kronecker-ss-1236"
+      - "Delta-Kronecker-vless-694"
+      - "Delta-Kronecker-ss-1992"
+      - "Delta-Kronecker-trojan-757"
+      - "Delta-Kronecker-vless-2902"
+      - "Delta-Kronecker-trojan-131"
+      - "Delta-Kronecker-vless-1637"
+      - "Delta-Kronecker-vless-2427"
+      - "Delta-Kronecker-ss-385"
+      - "Delta-Kronecker-vless-299"
+      - "Delta-Kronecker-vless-1745"
+      - "Delta-Kronecker-trojan-212"
+      - "Delta-Kronecker-ss-782"
+      - "Delta-Kronecker-vless-2347"
+      - "Delta-Kronecker-ss-2086"
+      - "Delta-Kronecker-vless-1526"
+      - "Delta-Kronecker-vless-369"
+      - "Delta-Kronecker-vless-1029"
+      - "Delta-Kronecker-ss-784"
+      - "Delta-Kronecker-vless-1917"
+      - "Delta-Kronecker-vless-2740"
+      - "Delta-Kronecker-trojan-1236"
+      - "Delta-Kronecker-ss-2193"
+      - "Delta-Kronecker-vless-2211"
+      - "Delta-Kronecker-trojan-546"
+      - "Delta-Kronecker-ss-961"
+      - "Delta-Kronecker-ss-666"
+      - "Delta-Kronecker-vless-1336"
+      - "Delta-Kronecker-trojan-958"
+      - "Delta-Kronecker-ss-2027"
+      - "Delta-Kronecker-ss-2240"
+      - "Delta-Kronecker-vless-1045"
+      - "Delta-Kronecker-ss-455"
+      - "Delta-Kronecker-vless-734"
+      - "Delta-Kronecker-trojan-1194"
+      - "Delta-Kronecker-ss-1322"
+      - "Delta-Kronecker-vless-2285"
+      - "Delta-Kronecker-vless-957"
+      - "Delta-Kronecker-ss-1640"
+      - "Delta-Kronecker-ss-1264"
+      - "Delta-Kronecker-vless-1187"
+      - "Delta-Kronecker-vless-114"
+      - "Delta-Kronecker-vless-2925"
+      - "Delta-Kronecker-ss-513"
+      - "Delta-Kronecker-vless-1937"
+      - "Delta-Kronecker-vless-2583"
+      - "Delta-Kronecker-vless-492"
+      - "Delta-Kronecker-trojan-1237"
+      - "Delta-Kronecker-vless-2207"
+      - "Delta-Kronecker-ss-1057"
+      - "Delta-Kronecker-vless-2387"
+      - "Delta-Kronecker-trojan-681"
+      - "Delta-Kronecker-ss-2012"
+      - "Delta-Kronecker-vless-2371"
+      - "Delta-Kronecker-ss-665"
+      - "Delta-Kronecker-ss-600"
+      - "Delta-Kronecker-vless-560"
+      - "Delta-Kronecker-ss-333"
+      - "Delta-Kronecker-vless-2694"
+      - "Delta-Kronecker-ss-1590"
+      - "Delta-Kronecker-trojan-032"
+      - "Delta-Kronecker-vless-2276"
+      - "Delta-Kronecker-ss-116"
+      - "Delta-Kronecker-vless-2453"
+      - "Delta-Kronecker-ss-466"
+      - "Delta-Kronecker-vless-412"
+      - "Delta-Kronecker-ss-538"
+      - "Delta-Kronecker-vless-2950"
+      - "Delta-Kronecker-vless-1657"
+      - "Delta-Kronecker-vless-579"
+      - "Delta-Kronecker-vless-3141"
+      - "Delta-Kronecker-vless-2458"
+      - "Delta-Kronecker-ss-611"
+      - "Delta-Kronecker-ss-462"
+      - "Delta-Kronecker-ss-058"
+      - "Delta-Kronecker-vless-850"
+      - "Delta-Kronecker-vless-2255"
+      - "Delta-Kronecker-vless-516"
+      - "Delta-Kronecker-vless-1697"
+      - "Delta-Kronecker-vless-1858"
+      - "Delta-Kronecker-trojan-1083"
+      - "Delta-Kronecker-trojan-312"
+      - "Delta-Kronecker-vless-2647"
+      - "Delta-Kronecker-trojan-1013"
+      - "Delta-Kronecker-ss-1293"
+      - "Delta-Kronecker-vless-156"
+      - "Delta-Kronecker-trojan-895"
+      - "Delta-Kronecker-vless-1323"
+      - "Delta-Kronecker-ss-1317"
+      - "Delta-Kronecker-vless-697"
+      - "Delta-Kronecker-vless-2260"
+      - "Delta-Kronecker-ss-070"
+      - "Delta-Kronecker-vless-2191"
+      - "Delta-Kronecker-vless-2279"
+      - "Delta-Kronecker-vless-845"
+      - "Delta-Kronecker-ss-296"
+      - "Delta-Kronecker-trojan-084"
+      - "Delta-Kronecker-vless-225"
+      - "Delta-Kronecker-vless-2416"
+      - "Delta-Kronecker-trojan-810"
+      - "Delta-Kronecker-vless-1755"
+      - "Delta-Kronecker-vless-190"
+      - "Delta-Kronecker-trojan-340"
+      - "Delta-Kronecker-vless-2953"
+      - "Delta-Kronecker-vless-2567"
+      - "Delta-Kronecker-vmess-036"
+      - "Delta-Kronecker-trojan-271"
+      - "Delta-Kronecker-ss-1471"
+      - "Delta-Kronecker-ss-1000"
+      - "Delta-Kronecker-ss-1873"
+      - "Delta-Kronecker-vless-2090"
+      - "Delta-Kronecker-vless-2757"
+      - "Delta-Kronecker-vless-676"
+      - "Delta-Kronecker-ss-1520"
+      - "Delta-Kronecker-ss-314"
+      - "Delta-Kronecker-vless-2087"
+      - "Delta-Kronecker-trojan-357"
+      - "Delta-Kronecker-vless-2819"
+      - "Delta-Kronecker-vless-1627"
+
+  - name: "FAST-CDN"
+    type: url-test
+    url: http://cp.cloudflare.com/generate_204
+    interval: 300
+    tolerance: 50
+    lazy: true
+    proxies:
+      - "Delta-Kronecker-ss-2200"
+      - "Delta-Kronecker-ss-1240"
+      - "Delta-Kronecker-vless-2199"
+      - "Delta-Kronecker-ss-1455"
+      - "Delta-Kronecker-ss-2103"
+      - "Delta-Kronecker-ss-1512"
+      - "Delta-Kronecker-vless-1398"
+      - "Delta-Kronecker-ss-1108"
+      - "Delta-Kronecker-ss-1089"
+      - "Delta-Kronecker-vless-725"
+      - "Delta-Kronecker-vless-292"
+      - "Delta-Kronecker-ss-1079"
+      - "Delta-Kronecker-vless-267"
+      - "Delta-Kronecker-trojan-269"
+      - "Delta-Kronecker-ss-2181"
+      - "Delta-Kronecker-trojan-276"
+      - "Delta-Kronecker-vless-1433"
+      - "Delta-Kronecker-vless-1319"
+      - "Delta-Kronecker-vless-1770"
+      - "Delta-Kronecker-ss-356"
+      - "Delta-Kronecker-ss-355"
+      - "Delta-Kronecker-vless-2111"
+      - "Delta-Kronecker-ss-1190"
+      - "Delta-Kronecker-vless-750"
+      - "Delta-Kronecker-trojan-198"
+      - "Delta-Kronecker-trojan-220"
+      - "Delta-Kronecker-ss-1569"
+      - "Delta-Kronecker-vless-2811"
+      - "Delta-Kronecker-vless-2708"
+      - "Delta-Kronecker-vless-213"
+      - "Delta-Kronecker-trojan-008"
+      - "Delta-Kronecker-vless-1645"
+      - "Delta-Kronecker-ss-596"
+      - "Delta-Kronecker-ss-359"
+      - "Delta-Kronecker-ss-741"
+      - "Delta-Kronecker-vless-838"
+      - "Delta-Kronecker-vless-1475"
+      - "Delta-Kronecker-ss-1571"
+      - "Delta-Kronecker-vless-120"
+      - "Delta-Kronecker-vless-1430"
+      - "Delta-Kronecker-trojan-1184"
+      - "Delta-Kronecker-ss-1840"
+      - "Delta-Kronecker-vless-2431"
+      - "Delta-Kronecker-ss-540"
+      - "Delta-Kronecker-vless-1895"
+      - "Delta-Kronecker-vless-692"
+      - "Delta-Kronecker-ss-2114"
+      - "Delta-Kronecker-vless-1598"
+      - "Delta-Kronecker-vless-2098"
+      - "Delta-Kronecker-vmess-037"
+      - "Delta-Kronecker-ss-1225"
+      - "Delta-Kronecker-trojan-463"
+      - "Delta-Kronecker-trojan-1111"
+      - "Delta-Kronecker-ss-539"
+      - "Delta-Kronecker-vless-1184"
+      - "Delta-Kronecker-ss-473"
+      - "Delta-Kronecker-vless-996"
+      - "Delta-Kronecker-ss-749"
+      - "Delta-Kronecker-ss-1083"
+      - "Delta-Kronecker-vless-2508"
+      - "Delta-Kronecker-ss-475"
+      - "Delta-Kronecker-trojan-391"
+      - "Delta-Kronecker-vless-2212"
+      - "Delta-Kronecker-ss-326"
+      - "Delta-Kronecker-trojan-213"
+      - "Delta-Kronecker-vless-284"
+      - "Delta-Kronecker-ss-1548"
+      - "Delta-Kronecker-vless-2989"
+      - "Delta-Kronecker-vless-2629"
+      - "Delta-Kronecker-vless-139"
+      - "Delta-Kronecker-vless-641"
+      - "Delta-Kronecker-trojan-1227"
+      - "Delta-Kronecker-trojan-278"
+      - "Delta-Kronecker-ss-124"
+      - "Delta-Kronecker-ss-057"
+      - "Delta-Kronecker-trojan-818"
+      - "Delta-Kronecker-ss-998"
+      - "Delta-Kronecker-trojan-353"
+      - "Delta-Kronecker-vless-1551"
+      - "Delta-Kronecker-trojan-1144"
+      - "Delta-Kronecker-ss-720"
+      - "Delta-Kronecker-vless-538"
+      - "Delta-Kronecker-vless-1231"
+      - "Delta-Kronecker-ss-1417"
+      - "Delta-Kronecker-vless-280"
+      - "Delta-Kronecker-ss-1402"
+      - "Delta-Kronecker-trojan-821"
+      - "Delta-Kronecker-ss-824"
+      - "Delta-Kronecker-ss-1972"
+      - "Delta-Kronecker-ss-370"
+      - "Delta-Kronecker-vless-2376"
+      - "Delta-Kronecker-vless-2326"
+      - "Delta-Kronecker-vless-787"
+      - "Delta-Kronecker-ss-1181"
+      - "Delta-Kronecker-ss-389"
+      - "Delta-Kronecker-trojan-341"
+      - "Delta-Kronecker-ss-411"
+      - "Delta-Kronecker-trojan-1067"
+      - "Delta-Kronecker-vless-823"
+      - "Delta-Kronecker-trojan-770"
+      - "Delta-Kronecker-vless-1517"
+      - "Delta-Kronecker-ss-1421"
+      - "Delta-Kronecker-ss-235"
+      - "Delta-Kronecker-trojan-992"
+      - "Delta-Kronecker-ss-1035"
+      - "Delta-Kronecker-ss-2222"
+      - "Delta-Kronecker-ss-2100"
+      - "Delta-Kronecker-trojan-839"
+      - "Delta-Kronecker-trojan-847"
+      - "Delta-Kronecker-trojan-061"
+      - "Delta-Kronecker-trojan-436"
+      - "Delta-Kronecker-trojan-114"
+      - "Delta-Kronecker-ss-1716"
+      - "Delta-Kronecker-trojan-439"
+      - "Delta-Kronecker-ss-992"
+      - "Delta-Kronecker-trojan-826"
+      - "Delta-Kronecker-vless-2562"
+      - "Delta-Kronecker-ss-2205"
+      - "Delta-Kronecker-trojan-342"
+      - "Delta-Kronecker-vless-1506"
+      - "Delta-Kronecker-vless-043"
+      - "Delta-Kronecker-vless-2632"
+      - "Delta-Kronecker-ss-186"
+      - "Delta-Kronecker-trojan-254"
+      - "Delta-Kronecker-vless-020"
+      - "Delta-Kronecker-ss-2136"
+      - "Delta-Kronecker-vless-367"
+      - "Delta-Kronecker-ss-149"
+      - "Delta-Kronecker-vless-2343"
+      - "Delta-Kronecker-vless-3087"
+      - "Delta-Kronecker-trojan-365"
+      - "Delta-Kronecker-vless-551"
+      - "Delta-Kronecker-vless-459"
+      - "Delta-Kronecker-vless-3069"
+      - "Delta-Kronecker-ss-1449"
+      - "Delta-Kronecker-vless-2872"
+      - "Delta-Kronecker-vless-3018"
+      - "Delta-Kronecker-vless-1154"
+      - "Delta-Kronecker-vless-1427"
+      - "Delta-Kronecker-ss-503"
+      - "Delta-Kronecker-vless-030"
+      - "Delta-Kronecker-vless-2028"
+      - "Delta-Kronecker-ss-1521"
+      - "Delta-Kronecker-trojan-1027"
+      - "Delta-Kronecker-vless-2604"
+      - "Delta-Kronecker-vless-2689"
+      - "Delta-Kronecker-ss-2045"
+      - "Delta-Kronecker-ss-394"
+      - "Delta-Kronecker-vmess-067"
+      - "Delta-Kronecker-vless-2003"
+      - "Delta-Kronecker-vless-2778"
+      - "Delta-Kronecker-vless-1196"
+      - "Delta-Kronecker-trojan-453"
+      - "Delta-Kronecker-vless-309"
+      - "Delta-Kronecker-vmess-085"
+      - "Delta-Kronecker-vless-2788"
+      - "Delta-Kronecker-trojan-547"
+      - "Delta-Kronecker-vless-2065"
+      - "Delta-Kronecker-vless-1886"
+      - "Delta-Kronecker-ss-586"
+      - "Delta-Kronecker-vless-2690"
+      - "Delta-Kronecker-vmess-005"
+      - "Delta-Kronecker-trojan-1100"
+      - "Delta-Kronecker-ss-1016"
+      - "Delta-Kronecker-ss-381"
+      - "Delta-Kronecker-ss-619"
+      - "Delta-Kronecker-vless-1993"
+      - "Delta-Kronecker-trojan-1085"
+      - "Delta-Kronecker-vless-947"
+      - "Delta-Kronecker-vless-1816"
+      - "Delta-Kronecker-vmess-071"
+      - "Delta-Kronecker-hy2-001"
+      - "Delta-Kronecker-vless-1817"
+      - "Delta-Kronecker-ss-1090"
+      - "Delta-Kronecker-ss-126"
+      - "Delta-Kronecker-trojan-156"
+      - "Delta-Kronecker-vless-696"
+      - "Delta-Kronecker-trojan-1101"
+      - "Delta-Kronecker-vless-192"
+      - "Delta-Kronecker-ss-1792"
+      - "Delta-Kronecker-trojan-307"
+      - "Delta-Kronecker-vless-2749"
+      - "Delta-Kronecker-ss-876"
+      - "Delta-Kronecker-trojan-015"
+      - "Delta-Kronecker-ss-117"
+      - "Delta-Kronecker-vless-744"
+      - "Delta-Kronecker-vless-2587"
+      - "Delta-Kronecker-ss-2032"
+      - "Delta-Kronecker-ss-253"
+      - "Delta-Kronecker-trojan-091"
+      - "Delta-Kronecker-vless-2863"
+      - "Delta-Kronecker-ss-1350"
+      - "Delta-Kronecker-trojan-301"
+      - "Delta-Kronecker-vless-1757"
+      - "Delta-Kronecker-trojan-074"
+      - "Delta-Kronecker-vless-488"
+      - "Delta-Kronecker-vless-1056"
+      - "Delta-Kronecker-ss-1742"
+      - "Delta-Kronecker-trojan-070"
+      - "Delta-Kronecker-vless-2897"
+      - "Delta-Kronecker-trojan-033"
+      - "Delta-Kronecker-vless-1340"
+      - "Delta-Kronecker-ss-994"
+      - "Delta-Kronecker-vless-3040"
+      - "Delta-Kronecker-trojan-205"
+      - "Delta-Kronecker-ss-2116"
+      - "Delta-Kronecker-ss-418"
+      - "Delta-Kronecker-ss-660"
+      - "Delta-Kronecker-ss-047"
+      - "Delta-Kronecker-vless-2370"
+      - "Delta-Kronecker-vless-2890"
+      - "Delta-Kronecker-trojan-632"
+      - "Delta-Kronecker-ss-707"
+      - "Delta-Kronecker-vless-237"
+      - "Delta-Kronecker-trojan-1093"
+      - "Delta-Kronecker-vless-647"
+      - "Delta-Kronecker-vless-455"
+      - "Delta-Kronecker-vless-584"
+      - "Delta-Kronecker-trojan-1244"
+      - "Delta-Kronecker-vless-2368"
+      - "Delta-Kronecker-ss-954"
+      - "Delta-Kronecker-ss-2166"
+      - "Delta-Kronecker-vless-2019"
+      - "Delta-Kronecker-trojan-902"
+      - "Delta-Kronecker-ss-2211"
+      - "Delta-Kronecker-vless-2341"
+      - "Delta-Kronecker-vless-2531"
+      - "Delta-Kronecker-vless-1559"
+      - "Delta-Kronecker-ss-517"
+      - "Delta-Kronecker-ss-1236"
+      - "Delta-Kronecker-vless-694"
+      - "Delta-Kronecker-ss-1992"
+      - "Delta-Kronecker-trojan-757"
+      - "Delta-Kronecker-vless-2902"
+      - "Delta-Kronecker-trojan-131"
+      - "Delta-Kronecker-vless-1637"
+      - "Delta-Kronecker-vless-2427"
+      - "Delta-Kronecker-ss-385"
+      - "Delta-Kronecker-vless-299"
+      - "Delta-Kronecker-vless-1745"
+      - "Delta-Kronecker-trojan-212"
+      - "Delta-Kronecker-ss-782"
+      - "Delta-Kronecker-vless-2347"
+      - "Delta-Kronecker-ss-2086"
+      - "Delta-Kronecker-vless-1526"
+      - "Delta-Kronecker-vless-369"
+      - "Delta-Kronecker-vless-1029"
+      - "Delta-Kronecker-ss-784"
+      - "Delta-Kronecker-vless-1917"
+      - "Delta-Kronecker-vless-2740"
+      - "Delta-Kronecker-trojan-1236"
+      - "Delta-Kronecker-ss-2193"
+      - "Delta-Kronecker-vless-2211"
+      - "Delta-Kronecker-trojan-546"
+      - "Delta-Kronecker-ss-961"
+      - "Delta-Kronecker-ss-666"
+      - "Delta-Kronecker-vless-1336"
+      - "Delta-Kronecker-trojan-958"
+      - "Delta-Kronecker-ss-2027"
+      - "Delta-Kronecker-ss-2240"
+      - "Delta-Kronecker-vless-1045"
+      - "Delta-Kronecker-ss-455"
+      - "Delta-Kronecker-vless-734"
+      - "Delta-Kronecker-trojan-1194"
+      - "Delta-Kronecker-ss-1322"
+      - "Delta-Kronecker-vless-2285"
+      - "Delta-Kronecker-vless-957"
+      - "Delta-Kronecker-ss-1640"
+      - "Delta-Kronecker-ss-1264"
+      - "Delta-Kronecker-vless-1187"
+      - "Delta-Kronecker-vless-114"
+      - "Delta-Kronecker-vless-2925"
+      - "Delta-Kronecker-ss-513"
+      - "Delta-Kronecker-vless-1937"
+      - "Delta-Kronecker-vless-2583"
+      - "Delta-Kronecker-vless-492"
+      - "Delta-Kronecker-trojan-1237"
+      - "Delta-Kronecker-vless-2207"
+      - "Delta-Kronecker-ss-1057"
+      - "Delta-Kronecker-vless-2387"
+      - "Delta-Kronecker-trojan-681"
+      - "Delta-Kronecker-ss-2012"
+      - "Delta-Kronecker-vless-2371"
+      - "Delta-Kronecker-ss-665"
+      - "Delta-Kronecker-ss-600"
+      - "Delta-Kronecker-vless-560"
+      - "Delta-Kronecker-ss-333"
+      - "Delta-Kronecker-vless-2694"
+      - "Delta-Kronecker-ss-1590"
+      - "Delta-Kronecker-trojan-032"
+      - "Delta-Kronecker-vless-2276"
+      - "Delta-Kronecker-ss-116"
+      - "Delta-Kronecker-vless-2453"
+      - "Delta-Kronecker-ss-466"
+      - "Delta-Kronecker-vless-412"
+      - "Delta-Kronecker-ss-538"
+      - "Delta-Kronecker-vless-2950"
+      - "Delta-Kronecker-vless-1657"
+      - "Delta-Kronecker-vless-579"
+      - "Delta-Kronecker-vless-3141"
+      - "Delta-Kronecker-vless-2458"
+      - "Delta-Kronecker-ss-611"
+      - "Delta-Kronecker-ss-462"
+      - "Delta-Kronecker-ss-058"
+      - "Delta-Kronecker-vless-850"
+      - "Delta-Kronecker-vless-2255"
+      - "Delta-Kronecker-vless-516"
+      - "Delta-Kronecker-vless-1697"
+      - "Delta-Kronecker-vless-1858"
+      - "Delta-Kronecker-trojan-1083"
+      - "Delta-Kronecker-trojan-312"
+      - "Delta-Kronecker-vless-2647"
+      - "Delta-Kronecker-trojan-1013"
+      - "Delta-Kronecker-ss-1293"
+      - "Delta-Kronecker-vless-156"
+      - "Delta-Kronecker-trojan-895"
+      - "Delta-Kronecker-vless-1323"
+      - "Delta-Kronecker-ss-1317"
+      - "Delta-Kronecker-vless-697"
+      - "Delta-Kronecker-vless-2260"
+      - "Delta-Kronecker-ss-070"
+      - "Delta-Kronecker-vless-2191"
+      - "Delta-Kronecker-vless-2279"
+      - "Delta-Kronecker-vless-845"
+      - "Delta-Kronecker-ss-296"
+      - "Delta-Kronecker-trojan-084"
+      - "Delta-Kronecker-vless-225"
+      - "Delta-Kronecker-vless-2416"
+      - "Delta-Kronecker-trojan-810"
+      - "Delta-Kronecker-vless-1755"
+      - "Delta-Kronecker-vless-190"
+      - "Delta-Kronecker-trojan-340"
+      - "Delta-Kronecker-vless-2953"
+      - "Delta-Kronecker-vless-2567"
+      - "Delta-Kronecker-vmess-036"
+      - "Delta-Kronecker-trojan-271"
+      - "Delta-Kronecker-ss-1471"
+      - "Delta-Kronecker-ss-1000"
+      - "Delta-Kronecker-ss-1873"
+      - "Delta-Kronecker-vless-2090"
+      - "Delta-Kronecker-vless-2757"
+      - "Delta-Kronecker-vless-676"
+      - "Delta-Kronecker-ss-1520"
+      - "Delta-Kronecker-ss-314"
+      - "Delta-Kronecker-vless-2087"
+      - "Delta-Kronecker-trojan-357"
+      - "Delta-Kronecker-vless-2819"
+      - "Delta-Kronecker-vless-1627"
+
+  # ── UDP group ─────────────────────────────────────────────────────────────
+  - name: "UDP-BEST"
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 180
+    tolerance: 50
+    lazy: true
+    proxies:
+      - "Delta-Kronecker-ss-2200"
+      - "Delta-Kronecker-ss-1240"
+      - "Delta-Kronecker-vless-2199"
+      - "Delta-Kronecker-ss-1455"
+      - "Delta-Kronecker-ss-2103"
+      - "Delta-Kronecker-ss-1512"
+      - "Delta-Kronecker-vless-1398"
+      - "Delta-Kronecker-ss-1108"
+      - "Delta-Kronecker-ss-1089"
+      - "Delta-Kronecker-vless-725"
+      - "Delta-Kronecker-vless-292"
+      - "Delta-Kronecker-ss-1079"
+      - "Delta-Kronecker-vless-267"
+      - "Delta-Kronecker-trojan-269"
+      - "Delta-Kronecker-ss-2181"
+      - "Delta-Kronecker-trojan-276"
+      - "Delta-Kronecker-vless-1433"
+      - "Delta-Kronecker-vless-1319"
+      - "Delta-Kronecker-vless-1770"
+      - "Delta-Kronecker-ss-356"
+      - "Delta-Kronecker-ss-355"
+      - "Delta-Kronecker-vless-2111"
+      - "Delta-Kronecker-ss-1190"
+      - "Delta-Kronecker-vless-750"
+      - "Delta-Kronecker-trojan-198"
+      - "Delta-Kronecker-trojan-220"
+      - "Delta-Kronecker-ss-1569"
+      - "Delta-Kronecker-vless-2811"
+      - "Delta-Kronecker-vless-2708"
+      - "Delta-Kronecker-vless-213"
+      - "Delta-Kronecker-trojan-008"
+      - "Delta-Kronecker-vless-1645"
+      - "Delta-Kronecker-ss-596"
+      - "Delta-Kronecker-ss-359"
+      - "Delta-Kronecker-ss-741"
+      - "Delta-Kronecker-vless-838"
+      - "Delta-Kronecker-vless-1475"
+      - "Delta-Kronecker-ss-1571"
+      - "Delta-Kronecker-vless-120"
+      - "Delta-Kronecker-vless-1430"
+      - "Delta-Kronecker-trojan-1184"
+      - "Delta-Kronecker-ss-1840"
+      - "Delta-Kronecker-vless-2431"
+      - "Delta-Kronecker-ss-540"
+      - "Delta-Kronecker-vless-1895"
+      - "Delta-Kronecker-vless-692"
+      - "Delta-Kronecker-ss-2114"
+      - "Delta-Kronecker-vless-1598"
+      - "Delta-Kronecker-vless-2098"
+      - "Delta-Kronecker-vmess-037"
+      - "Delta-Kronecker-ss-1225"
+      - "Delta-Kronecker-trojan-463"
+      - "Delta-Kronecker-trojan-1111"
+      - "Delta-Kronecker-ss-539"
+      - "Delta-Kronecker-vless-1184"
+      - "Delta-Kronecker-ss-473"
+      - "Delta-Kronecker-vless-996"
+      - "Delta-Kronecker-ss-749"
+      - "Delta-Kronecker-ss-1083"
+      - "Delta-Kronecker-vless-2508"
+      - "Delta-Kronecker-ss-475"
+      - "Delta-Kronecker-trojan-391"
+      - "Delta-Kronecker-vless-2212"
+      - "Delta-Kronecker-ss-326"
+      - "Delta-Kronecker-trojan-213"
+      - "Delta-Kronecker-vless-284"
+      - "Delta-Kronecker-ss-1548"
+      - "Delta-Kronecker-vless-2989"
+      - "Delta-Kronecker-vless-2629"
+      - "Delta-Kronecker-vless-139"
+      - "Delta-Kronecker-vless-641"
+      - "Delta-Kronecker-trojan-1227"
+      - "Delta-Kronecker-trojan-278"
+      - "Delta-Kronecker-ss-124"
+      - "Delta-Kronecker-ss-057"
+      - "Delta-Kronecker-trojan-818"
+      - "Delta-Kronecker-ss-998"
+      - "Delta-Kronecker-trojan-353"
+      - "Delta-Kronecker-vless-1551"
+      - "Delta-Kronecker-trojan-1144"
+      - "Delta-Kronecker-ss-720"
+      - "Delta-Kronecker-vless-538"
+      - "Delta-Kronecker-vless-1231"
+      - "Delta-Kronecker-ss-1417"
+      - "Delta-Kronecker-vless-280"
+      - "Delta-Kronecker-ss-1402"
+      - "Delta-Kronecker-trojan-821"
+      - "Delta-Kronecker-ss-824"
+      - "Delta-Kronecker-ss-1972"
+      - "Delta-Kronecker-ss-370"
+      - "Delta-Kronecker-vless-2376"
+      - "Delta-Kronecker-vless-2326"
+      - "Delta-Kronecker-vless-787"
+      - "Delta-Kronecker-ss-1181"
+      - "Delta-Kronecker-ss-389"
+      - "Delta-Kronecker-trojan-341"
+      - "Delta-Kronecker-ss-411"
+      - "Delta-Kronecker-trojan-1067"
+      - "Delta-Kronecker-vless-823"
+      - "Delta-Kronecker-trojan-770"
+      - "Delta-Kronecker-vless-1517"
+      - "Delta-Kronecker-ss-1421"
+      - "Delta-Kronecker-ss-235"
+      - "Delta-Kronecker-trojan-992"
+      - "Delta-Kronecker-ss-1035"
+      - "Delta-Kronecker-ss-2222"
+      - "Delta-Kronecker-ss-2100"
+      - "Delta-Kronecker-trojan-839"
+      - "Delta-Kronecker-trojan-847"
+      - "Delta-Kronecker-trojan-061"
+      - "Delta-Kronecker-trojan-436"
+      - "Delta-Kronecker-trojan-114"
+      - "Delta-Kronecker-ss-1716"
+      - "Delta-Kronecker-trojan-439"
+      - "Delta-Kronecker-ss-992"
+      - "Delta-Kronecker-trojan-826"
+      - "Delta-Kronecker-vless-2562"
+      - "Delta-Kronecker-ss-2205"
+      - "Delta-Kronecker-trojan-342"
+      - "Delta-Kronecker-vless-1506"
+      - "Delta-Kronecker-vless-043"
+      - "Delta-Kronecker-vless-2632"
+      - "Delta-Kronecker-ss-186"
+      - "Delta-Kronecker-trojan-254"
+      - "Delta-Kronecker-vless-020"
+      - "Delta-Kronecker-ss-2136"
+      - "Delta-Kronecker-vless-367"
+      - "Delta-Kronecker-ss-149"
+      - "Delta-Kronecker-vless-2343"
+      - "Delta-Kronecker-vless-3087"
+      - "Delta-Kronecker-trojan-365"
+      - "Delta-Kronecker-vless-551"
+      - "Delta-Kronecker-vless-459"
+      - "Delta-Kronecker-vless-3069"
+      - "Delta-Kronecker-ss-1449"
+      - "Delta-Kronecker-vless-2872"
+      - "Delta-Kronecker-vless-3018"
+      - "Delta-Kronecker-vless-1154"
+      - "Delta-Kronecker-vless-1427"
+      - "Delta-Kronecker-ss-503"
+      - "Delta-Kronecker-vless-030"
+      - "Delta-Kronecker-vless-2028"
+      - "Delta-Kronecker-ss-1521"
+      - "Delta-Kronecker-trojan-1027"
+      - "Delta-Kronecker-vless-2604"
+      - "Delta-Kronecker-vless-2689"
+      - "Delta-Kronecker-ss-2045"
+      - "Delta-Kronecker-ss-394"
+      - "Delta-Kronecker-vmess-067"
+      - "Delta-Kronecker-vless-2003"
+      - "Delta-Kronecker-vless-2778"
+      - "Delta-Kronecker-vless-1196"
+      - "Delta-Kronecker-trojan-453"
+      - "Delta-Kronecker-vless-309"
+      - "Delta-Kronecker-vmess-085"
+      - "Delta-Kronecker-vless-2788"
+      - "Delta-Kronecker-trojan-547"
+      - "Delta-Kronecker-vless-2065"
+      - "Delta-Kronecker-vless-1886"
+      - "Delta-Kronecker-ss-586"
+      - "Delta-Kronecker-vless-2690"
+      - "Delta-Kronecker-vmess-005"
+      - "Delta-Kronecker-trojan-1100"
+      - "Delta-Kronecker-ss-1016"
+      - "Delta-Kronecker-ss-381"
+      - "Delta-Kronecker-ss-619"
+      - "Delta-Kronecker-vless-1993"
+      - "Delta-Kronecker-trojan-1085"
+      - "Delta-Kronecker-vless-947"
+      - "Delta-Kronecker-vless-1816"
+      - "Delta-Kronecker-vmess-071"
+      - "Delta-Kronecker-hy2-001"
+      - "Delta-Kronecker-vless-1817"
+      - "Delta-Kronecker-ss-1090"
+      - "Delta-Kronecker-ss-126"
+      - "Delta-Kronecker-trojan-156"
+      - "Delta-Kronecker-vless-696"
+      - "Delta-Kronecker-trojan-1101"
+      - "Delta-Kronecker-vless-192"
+      - "Delta-Kronecker-ss-1792"
+      - "Delta-Kronecker-trojan-307"
+      - "Delta-Kronecker-vless-2749"
+      - "Delta-Kronecker-ss-876"
+      - "Delta-Kronecker-trojan-015"
+      - "Delta-Kronecker-ss-117"
+      - "Delta-Kronecker-vless-744"
+      - "Delta-Kronecker-vless-2587"
+      - "Delta-Kronecker-ss-2032"
+      - "Delta-Kronecker-ss-253"
+      - "Delta-Kronecker-trojan-091"
+      - "Delta-Kronecker-vless-2863"
+      - "Delta-Kronecker-ss-1350"
+      - "Delta-Kronecker-trojan-301"
+      - "Delta-Kronecker-vless-1757"
+      - "Delta-Kronecker-trojan-074"
+      - "Delta-Kronecker-vless-488"
+      - "Delta-Kronecker-vless-1056"
+      - "Delta-Kronecker-ss-1742"
+      - "Delta-Kronecker-trojan-070"
+      - "Delta-Kronecker-vless-2897"
+      - "Delta-Kronecker-trojan-033"
+      - "Delta-Kronecker-vless-1340"
+      - "Delta-Kronecker-ss-994"
+      - "Delta-Kronecker-vless-3040"
+      - "Delta-Kronecker-trojan-205"
+      - "Delta-Kronecker-ss-2116"
+      - "Delta-Kronecker-ss-418"
+      - "Delta-Kronecker-ss-660"
+      - "Delta-Kronecker-ss-047"
+      - "Delta-Kronecker-vless-2370"
+      - "Delta-Kronecker-vless-2890"
+      - "Delta-Kronecker-trojan-632"
+      - "Delta-Kronecker-ss-707"
+      - "Delta-Kronecker-vless-237"
+      - "Delta-Kronecker-trojan-1093"
+      - "Delta-Kronecker-vless-647"
+      - "Delta-Kronecker-vless-455"
+      - "Delta-Kronecker-vless-584"
+      - "Delta-Kronecker-trojan-1244"
+      - "Delta-Kronecker-vless-2368"
+      - "Delta-Kronecker-ss-954"
+      - "Delta-Kronecker-ss-2166"
+      - "Delta-Kronecker-vless-2019"
+      - "Delta-Kronecker-trojan-902"
+      - "Delta-Kronecker-ss-2211"
+      - "Delta-Kronecker-vless-2341"
+      - "Delta-Kronecker-vless-2531"
+      - "Delta-Kronecker-vless-1559"
+      - "Delta-Kronecker-ss-517"
+      - "Delta-Kronecker-ss-1236"
+      - "Delta-Kronecker-vless-694"
+      - "Delta-Kronecker-ss-1992"
+      - "Delta-Kronecker-trojan-757"
+      - "Delta-Kronecker-vless-2902"
+      - "Delta-Kronecker-trojan-131"
+      - "Delta-Kronecker-vless-1637"
+      - "Delta-Kronecker-vless-2427"
+      - "Delta-Kronecker-ss-385"
+      - "Delta-Kronecker-vless-299"
+      - "Delta-Kronecker-vless-1745"
+      - "Delta-Kronecker-trojan-212"
+      - "Delta-Kronecker-ss-782"
+      - "Delta-Kronecker-vless-2347"
+      - "Delta-Kronecker-ss-2086"
+      - "Delta-Kronecker-vless-1526"
+      - "Delta-Kronecker-vless-369"
+      - "Delta-Kronecker-vless-1029"
+      - "Delta-Kronecker-ss-784"
+      - "Delta-Kronecker-vless-1917"
+      - "Delta-Kronecker-vless-2740"
+      - "Delta-Kronecker-trojan-1236"
+      - "Delta-Kronecker-ss-2193"
+      - "Delta-Kronecker-vless-2211"
+      - "Delta-Kronecker-trojan-546"
+      - "Delta-Kronecker-ss-961"
+      - "Delta-Kronecker-ss-666"
+      - "Delta-Kronecker-vless-1336"
+      - "Delta-Kronecker-trojan-958"
+      - "Delta-Kronecker-ss-2027"
+      - "Delta-Kronecker-ss-2240"
+      - "Delta-Kronecker-vless-1045"
+      - "Delta-Kronecker-ss-455"
+      - "Delta-Kronecker-vless-734"
+      - "Delta-Kronecker-trojan-1194"
+      - "Delta-Kronecker-ss-1322"
+      - "Delta-Kronecker-vless-2285"
+      - "Delta-Kronecker-vless-957"
+      - "Delta-Kronecker-ss-1640"
+      - "Delta-Kronecker-ss-1264"
+      - "Delta-Kronecker-vless-1187"
+      - "Delta-Kronecker-vless-114"
+      - "Delta-Kronecker-vless-2925"
+      - "Delta-Kronecker-ss-513"
+      - "Delta-Kronecker-vless-1937"
+      - "Delta-Kronecker-vless-2583"
+      - "Delta-Kronecker-vless-492"
+      - "Delta-Kronecker-trojan-1237"
+      - "Delta-Kronecker-vless-2207"
+      - "Delta-Kronecker-ss-1057"
+      - "Delta-Kronecker-vless-2387"
+      - "Delta-Kronecker-trojan-681"
+      - "Delta-Kronecker-ss-2012"
+      - "Delta-Kronecker-vless-2371"
+      - "Delta-Kronecker-ss-665"
+      - "Delta-Kronecker-ss-600"
+      - "Delta-Kronecker-vless-560"
+      - "Delta-Kronecker-ss-333"
+      - "Delta-Kronecker-vless-2694"
+      - "Delta-Kronecker-ss-1590"
+      - "Delta-Kronecker-trojan-032"
+      - "Delta-Kronecker-vless-2276"
+      - "Delta-Kronecker-ss-116"
+      - "Delta-Kronecker-vless-2453"
+      - "Delta-Kronecker-ss-466"
+      - "Delta-Kronecker-vless-412"
+      - "Delta-Kronecker-ss-538"
+      - "Delta-Kronecker-vless-2950"
+      - "Delta-Kronecker-vless-1657"
+      - "Delta-Kronecker-vless-579"
+      - "Delta-Kronecker-vless-3141"
+      - "Delta-Kronecker-vless-2458"
+      - "Delta-Kronecker-ss-611"
+      - "Delta-Kronecker-ss-462"
+      - "Delta-Kronecker-ss-058"
+      - "Delta-Kronecker-vless-850"
+      - "Delta-Kronecker-vless-2255"
+      - "Delta-Kronecker-vless-516"
+      - "Delta-Kronecker-vless-1697"
+      - "Delta-Kronecker-vless-1858"
+      - "Delta-Kronecker-trojan-1083"
+      - "Delta-Kronecker-trojan-312"
+      - "Delta-Kronecker-vless-2647"
+      - "Delta-Kronecker-trojan-1013"
+      - "Delta-Kronecker-ss-1293"
+      - "Delta-Kronecker-vless-156"
+      - "Delta-Kronecker-trojan-895"
+      - "Delta-Kronecker-vless-1323"
+      - "Delta-Kronecker-ss-1317"
+      - "Delta-Kronecker-vless-697"
+      - "Delta-Kronecker-vless-2260"
+      - "Delta-Kronecker-ss-070"
+      - "Delta-Kronecker-vless-2191"
+      - "Delta-Kronecker-vless-2279"
+      - "Delta-Kronecker-vless-845"
+      - "Delta-Kronecker-ss-296"
+      - "Delta-Kronecker-trojan-084"
+      - "Delta-Kronecker-vless-225"
+      - "Delta-Kronecker-vless-2416"
+      - "Delta-Kronecker-trojan-810"
+      - "Delta-Kronecker-vless-1755"
+      - "Delta-Kronecker-vless-190"
+      - "Delta-Kronecker-trojan-340"
+      - "Delta-Kronecker-vless-2953"
+      - "Delta-Kronecker-vless-2567"
+      - "Delta-Kronecker-vmess-036"
+      - "Delta-Kronecker-trojan-271"
+      - "Delta-Kronecker-ss-1471"
+      - "Delta-Kronecker-ss-1000"
+      - "Delta-Kronecker-ss-1873"
+      - "Delta-Kronecker-vless-2090"
+      - "Delta-Kronecker-vless-2757"
+      - "Delta-Kronecker-vless-676"
+      - "Delta-Kronecker-ss-1520"
+      - "Delta-Kronecker-ss-314"
+      - "Delta-Kronecker-vless-2087"
+      - "Delta-Kronecker-trojan-357"
+      - "Delta-Kronecker-vless-2819"
+      - "Delta-Kronecker-vless-1627"
+
+  # ── Manual selector ───────────────────────────────────────────────────────
+  - name: "MANUAL"
+    type: select
+    proxies:
+      - "Delta-Kronecker-ss-2200"
+      - "Delta-Kronecker-ss-1240"
+      - "Delta-Kronecker-vless-2199"
+      - "Delta-Kronecker-ss-1455"
+      - "Delta-Kronecker-ss-2103"
+      - "Delta-Kronecker-ss-1512"
+      - "Delta-Kronecker-vless-1398"
+      - "Delta-Kronecker-ss-1108"
+      - "Delta-Kronecker-ss-1089"
+      - "Delta-Kronecker-vless-725"
+      - "Delta-Kronecker-vless-292"
+      - "Delta-Kronecker-ss-1079"
+      - "Delta-Kronecker-vless-267"
+      - "Delta-Kronecker-trojan-269"
+      - "Delta-Kronecker-ss-2181"
+      - "Delta-Kronecker-trojan-276"
+      - "Delta-Kronecker-vless-1433"
+      - "Delta-Kronecker-vless-1319"
+      - "Delta-Kronecker-vless-1770"
+      - "Delta-Kronecker-ss-356"
+      - "Delta-Kronecker-ss-355"
+      - "Delta-Kronecker-vless-2111"
+      - "Delta-Kronecker-ss-1190"
+      - "Delta-Kronecker-vless-750"
+      - "Delta-Kronecker-trojan-198"
+      - "Delta-Kronecker-trojan-220"
+      - "Delta-Kronecker-ss-1569"
+      - "Delta-Kronecker-vless-2811"
+      - "Delta-Kronecker-vless-2708"
+      - "Delta-Kronecker-vless-213"
+      - "Delta-Kronecker-trojan-008"
+      - "Delta-Kronecker-vless-1645"
+      - "Delta-Kronecker-ss-596"
+      - "Delta-Kronecker-ss-359"
+      - "Delta-Kronecker-ss-741"
+      - "Delta-Kronecker-vless-838"
+      - "Delta-Kronecker-vless-1475"
+      - "Delta-Kronecker-ss-1571"
+      - "Delta-Kronecker-vless-120"
+      - "Delta-Kronecker-vless-1430"
+      - "Delta-Kronecker-trojan-1184"
+      - "Delta-Kronecker-ss-1840"
+      - "Delta-Kronecker-vless-2431"
+      - "Delta-Kronecker-ss-540"
+      - "Delta-Kronecker-vless-1895"
+      - "Delta-Kronecker-vless-692"
+      - "Delta-Kronecker-ss-2114"
+      - "Delta-Kronecker-vless-1598"
+      - "Delta-Kronecker-vless-2098"
+      - "Delta-Kronecker-vmess-037"
+      - "Delta-Kronecker-ss-1225"
+      - "Delta-Kronecker-trojan-463"
+      - "Delta-Kronecker-trojan-1111"
+      - "Delta-Kronecker-ss-539"
+      - "Delta-Kronecker-vless-1184"
+      - "Delta-Kronecker-ss-473"
+      - "Delta-Kronecker-vless-996"
+      - "Delta-Kronecker-ss-749"
+      - "Delta-Kronecker-ss-1083"
+      - "Delta-Kronecker-vless-2508"
+      - "Delta-Kronecker-ss-475"
+      - "Delta-Kronecker-trojan-391"
+      - "Delta-Kronecker-vless-2212"
+      - "Delta-Kronecker-ss-326"
+      - "Delta-Kronecker-trojan-213"
+      - "Delta-Kronecker-vless-284"
+      - "Delta-Kronecker-ss-1548"
+      - "Delta-Kronecker-vless-2989"
+      - "Delta-Kronecker-vless-2629"
+      - "Delta-Kronecker-vless-139"
+      - "Delta-Kronecker-vless-641"
+      - "Delta-Kronecker-trojan-1227"
+      - "Delta-Kronecker-trojan-278"
+      - "Delta-Kronecker-ss-124"
+      - "Delta-Kronecker-ss-057"
+      - "Delta-Kronecker-trojan-818"
+      - "Delta-Kronecker-ss-998"
+      - "Delta-Kronecker-trojan-353"
+      - "Delta-Kronecker-vless-1551"
+      - "Delta-Kronecker-trojan-1144"
+      - "Delta-Kronecker-ss-720"
+      - "Delta-Kronecker-vless-538"
+      - "Delta-Kronecker-vless-1231"
+      - "Delta-Kronecker-ss-1417"
+      - "Delta-Kronecker-vless-280"
+      - "Delta-Kronecker-ss-1402"
+      - "Delta-Kronecker-trojan-821"
+      - "Delta-Kronecker-ss-824"
+      - "Delta-Kronecker-ss-1972"
+      - "Delta-Kronecker-ss-370"
+      - "Delta-Kronecker-vless-2376"
+      - "Delta-Kronecker-vless-2326"
+      - "Delta-Kronecker-vless-787"
+      - "Delta-Kronecker-ss-1181"
+      - "Delta-Kronecker-ss-389"
+      - "Delta-Kronecker-trojan-341"
+      - "Delta-Kronecker-ss-411"
+      - "Delta-Kronecker-trojan-1067"
+      - "Delta-Kronecker-vless-823"
+      - "Delta-Kronecker-trojan-770"
+      - "Delta-Kronecker-vless-1517"
+      - "Delta-Kronecker-ss-1421"
+      - "Delta-Kronecker-ss-235"
+      - "Delta-Kronecker-trojan-992"
+      - "Delta-Kronecker-ss-1035"
+      - "Delta-Kronecker-ss-2222"
+      - "Delta-Kronecker-ss-2100"
+      - "Delta-Kronecker-trojan-839"
+      - "Delta-Kronecker-trojan-847"
+      - "Delta-Kronecker-trojan-061"
+      - "Delta-Kronecker-trojan-436"
+      - "Delta-Kronecker-trojan-114"
+      - "Delta-Kronecker-ss-1716"
+      - "Delta-Kronecker-trojan-439"
+      - "Delta-Kronecker-ss-992"
+      - "Delta-Kronecker-trojan-826"
+      - "Delta-Kronecker-vless-2562"
+      - "Delta-Kronecker-ss-2205"
+      - "Delta-Kronecker-trojan-342"
+      - "Delta-Kronecker-vless-1506"
+      - "Delta-Kronecker-vless-043"
+      - "Delta-Kronecker-vless-2632"
+      - "Delta-Kronecker-ss-186"
+      - "Delta-Kronecker-trojan-254"
+      - "Delta-Kronecker-vless-020"
+      - "Delta-Kronecker-ss-2136"
+      - "Delta-Kronecker-vless-367"
+      - "Delta-Kronecker-ss-149"
+      - "Delta-Kronecker-vless-2343"
+      - "Delta-Kronecker-vless-3087"
+      - "Delta-Kronecker-trojan-365"
+      - "Delta-Kronecker-vless-551"
+      - "Delta-Kronecker-vless-459"
+      - "Delta-Kronecker-vless-3069"
+      - "Delta-Kronecker-ss-1449"
+      - "Delta-Kronecker-vless-2872"
+      - "Delta-Kronecker-vless-3018"
+      - "Delta-Kronecker-vless-1154"
+      - "Delta-Kronecker-vless-1427"
+      - "Delta-Kronecker-ss-503"
+      - "Delta-Kronecker-vless-030"
+      - "Delta-Kronecker-vless-2028"
+      - "Delta-Kronecker-ss-1521"
+      - "Delta-Kronecker-trojan-1027"
+      - "Delta-Kronecker-vless-2604"
+      - "Delta-Kronecker-vless-2689"
+      - "Delta-Kronecker-ss-2045"
+      - "Delta-Kronecker-ss-394"
+      - "Delta-Kronecker-vmess-067"
+      - "Delta-Kronecker-vless-2003"
+      - "Delta-Kronecker-vless-2778"
+      - "Delta-Kronecker-vless-1196"
+      - "Delta-Kronecker-trojan-453"
+      - "Delta-Kronecker-vless-309"
+      - "Delta-Kronecker-vmess-085"
+      - "Delta-Kronecker-vless-2788"
+      - "Delta-Kronecker-trojan-547"
+      - "Delta-Kronecker-vless-2065"
+      - "Delta-Kronecker-vless-1886"
+      - "Delta-Kronecker-ss-586"
+      - "Delta-Kronecker-vless-2690"
+      - "Delta-Kronecker-vmess-005"
+      - "Delta-Kronecker-trojan-1100"
+      - "Delta-Kronecker-ss-1016"
+      - "Delta-Kronecker-ss-381"
+      - "Delta-Kronecker-ss-619"
+      - "Delta-Kronecker-vless-1993"
+      - "Delta-Kronecker-trojan-1085"
+      - "Delta-Kronecker-vless-947"
+      - "Delta-Kronecker-vless-1816"
+      - "Delta-Kronecker-vmess-071"
+      - "Delta-Kronecker-hy2-001"
+      - "Delta-Kronecker-vless-1817"
+      - "Delta-Kronecker-ss-1090"
+      - "Delta-Kronecker-ss-126"
+      - "Delta-Kronecker-trojan-156"
+      - "Delta-Kronecker-vless-696"
+      - "Delta-Kronecker-trojan-1101"
+      - "Delta-Kronecker-vless-192"
+      - "Delta-Kronecker-ss-1792"
+      - "Delta-Kronecker-trojan-307"
+      - "Delta-Kronecker-vless-2749"
+      - "Delta-Kronecker-ss-876"
+      - "Delta-Kronecker-trojan-015"
+      - "Delta-Kronecker-ss-117"
+      - "Delta-Kronecker-vless-744"
+      - "Delta-Kronecker-vless-2587"
+      - "Delta-Kronecker-ss-2032"
+      - "Delta-Kronecker-ss-253"
+      - "Delta-Kronecker-trojan-091"
+      - "Delta-Kronecker-vless-2863"
+      - "Delta-Kronecker-ss-1350"
+      - "Delta-Kronecker-trojan-301"
+      - "Delta-Kronecker-vless-1757"
+      - "Delta-Kronecker-trojan-074"
+      - "Delta-Kronecker-vless-488"
+      - "Delta-Kronecker-vless-1056"
+      - "Delta-Kronecker-ss-1742"
+      - "Delta-Kronecker-trojan-070"
+      - "Delta-Kronecker-vless-2897"
+      - "Delta-Kronecker-trojan-033"
+      - "Delta-Kronecker-vless-1340"
+      - "Delta-Kronecker-ss-994"
+      - "Delta-Kronecker-vless-3040"
+      - "Delta-Kronecker-trojan-205"
+      - "Delta-Kronecker-ss-2116"
+      - "Delta-Kronecker-ss-418"
+      - "Delta-Kronecker-ss-660"
+      - "Delta-Kronecker-ss-047"
+      - "Delta-Kronecker-vless-2370"
+      - "Delta-Kronecker-vless-2890"
+      - "Delta-Kronecker-trojan-632"
+      - "Delta-Kronecker-ss-707"
+      - "Delta-Kronecker-vless-237"
+      - "Delta-Kronecker-trojan-1093"
+      - "Delta-Kronecker-vless-647"
+      - "Delta-Kronecker-vless-455"
+      - "Delta-Kronecker-vless-584"
+      - "Delta-Kronecker-trojan-1244"
+      - "Delta-Kronecker-vless-2368"
+      - "Delta-Kronecker-ss-954"
+      - "Delta-Kronecker-ss-2166"
+      - "Delta-Kronecker-vless-2019"
+      - "Delta-Kronecker-trojan-902"
+      - "Delta-Kronecker-ss-2211"
+      - "Delta-Kronecker-vless-2341"
+      - "Delta-Kronecker-vless-2531"
+      - "Delta-Kronecker-vless-1559"
+      - "Delta-Kronecker-ss-517"
+      - "Delta-Kronecker-ss-1236"
+      - "Delta-Kronecker-vless-694"
+      - "Delta-Kronecker-ss-1992"
+      - "Delta-Kronecker-trojan-757"
+      - "Delta-Kronecker-vless-2902"
+      - "Delta-Kronecker-trojan-131"
+      - "Delta-Kronecker-vless-1637"
+      - "Delta-Kronecker-vless-2427"
+      - "Delta-Kronecker-ss-385"
+      - "Delta-Kronecker-vless-299"
+      - "Delta-Kronecker-vless-1745"
+      - "Delta-Kronecker-trojan-212"
+      - "Delta-Kronecker-ss-782"
+      - "Delta-Kronecker-vless-2347"
+      - "Delta-Kronecker-ss-2086"
+      - "Delta-Kronecker-vless-1526"
+      - "Delta-Kronecker-vless-369"
+      - "Delta-Kronecker-vless-1029"
+      - "Delta-Kronecker-ss-784"
+      - "Delta-Kronecker-vless-1917"
+      - "Delta-Kronecker-vless-2740"
+      - "Delta-Kronecker-trojan-1236"
+      - "Delta-Kronecker-ss-2193"
+      - "Delta-Kronecker-vless-2211"
+      - "Delta-Kronecker-trojan-546"
+      - "Delta-Kronecker-ss-961"
+      - "Delta-Kronecker-ss-666"
+      - "Delta-Kronecker-vless-1336"
+      - "Delta-Kronecker-trojan-958"
+      - "Delta-Kronecker-ss-2027"
+      - "Delta-Kronecker-ss-2240"
+      - "Delta-Kronecker-vless-1045"
+      - "Delta-Kronecker-ss-455"
+      - "Delta-Kronecker-vless-734"
+      - "Delta-Kronecker-trojan-1194"
+      - "Delta-Kronecker-ss-1322"
+      - "Delta-Kronecker-vless-2285"
+      - "Delta-Kronecker-vless-957"
+      - "Delta-Kronecker-ss-1640"
+      - "Delta-Kronecker-ss-1264"
+      - "Delta-Kronecker-vless-1187"
+      - "Delta-Kronecker-vless-114"
+      - "Delta-Kronecker-vless-2925"
+      - "Delta-Kronecker-ss-513"
+      - "Delta-Kronecker-vless-1937"
+      - "Delta-Kronecker-vless-2583"
+      - "Delta-Kronecker-vless-492"
+      - "Delta-Kronecker-trojan-1237"
+      - "Delta-Kronecker-vless-2207"
+      - "Delta-Kronecker-ss-1057"
+      - "Delta-Kronecker-vless-2387"
+      - "Delta-Kronecker-trojan-681"
+      - "Delta-Kronecker-ss-2012"
+      - "Delta-Kronecker-vless-2371"
+      - "Delta-Kronecker-ss-665"
+      - "Delta-Kronecker-ss-600"
+      - "Delta-Kronecker-vless-560"
+      - "Delta-Kronecker-ss-333"
+      - "Delta-Kronecker-vless-2694"
+      - "Delta-Kronecker-ss-1590"
+      - "Delta-Kronecker-trojan-032"
+      - "Delta-Kronecker-vless-2276"
+      - "Delta-Kronecker-ss-116"
+      - "Delta-Kronecker-vless-2453"
+      - "Delta-Kronecker-ss-466"
+      - "Delta-Kronecker-vless-412"
+      - "Delta-Kronecker-ss-538"
+      - "Delta-Kronecker-vless-2950"
+      - "Delta-Kronecker-vless-1657"
+      - "Delta-Kronecker-vless-579"
+      - "Delta-Kronecker-vless-3141"
+      - "Delta-Kronecker-vless-2458"
+      - "Delta-Kronecker-ss-611"
+      - "Delta-Kronecker-ss-462"
+      - "Delta-Kronecker-ss-058"
+      - "Delta-Kronecker-vless-850"
+      - "Delta-Kronecker-vless-2255"
+      - "Delta-Kronecker-vless-516"
+      - "Delta-Kronecker-vless-1697"
+      - "Delta-Kronecker-vless-1858"
+      - "Delta-Kronecker-trojan-1083"
+      - "Delta-Kronecker-trojan-312"
+      - "Delta-Kronecker-vless-2647"
+      - "Delta-Kronecker-trojan-1013"
+      - "Delta-Kronecker-ss-1293"
+      - "Delta-Kronecker-vless-156"
+      - "Delta-Kronecker-trojan-895"
+      - "Delta-Kronecker-vless-1323"
+      - "Delta-Kronecker-ss-1317"
+      - "Delta-Kronecker-vless-697"
+      - "Delta-Kronecker-vless-2260"
+      - "Delta-Kronecker-ss-070"
+      - "Delta-Kronecker-vless-2191"
+      - "Delta-Kronecker-vless-2279"
+      - "Delta-Kronecker-vless-845"
+      - "Delta-Kronecker-ss-296"
+      - "Delta-Kronecker-trojan-084"
+      - "Delta-Kronecker-vless-225"
+      - "Delta-Kronecker-vless-2416"
+      - "Delta-Kronecker-trojan-810"
+      - "Delta-Kronecker-vless-1755"
+      - "Delta-Kronecker-vless-190"
+      - "Delta-Kronecker-trojan-340"
+      - "Delta-Kronecker-vless-2953"
+      - "Delta-Kronecker-vless-2567"
+      - "Delta-Kronecker-vmess-036"
+      - "Delta-Kronecker-trojan-271"
+      - "Delta-Kronecker-ss-1471"
+      - "Delta-Kronecker-ss-1000"
+      - "Delta-Kronecker-ss-1873"
+      - "Delta-Kronecker-vless-2090"
+      - "Delta-Kronecker-vless-2757"
+      - "Delta-Kronecker-vless-676"
+      - "Delta-Kronecker-ss-1520"
+      - "Delta-Kronecker-ss-314"
+      - "Delta-Kronecker-vless-2087"
+      - "Delta-Kronecker-trojan-357"
+      - "Delta-Kronecker-vless-2819"
+      - "Delta-Kronecker-vless-1627"
+
+rules:
+  - MATCH,PROXY-BEST
