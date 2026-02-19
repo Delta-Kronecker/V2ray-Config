@@ -3,7 +3,7 @@ socks-port: 7891
 port: 7892
 allow-lan: true
 bind-address: '*'
-mode: rule
+mode: global
 log-level: info
 ipv6: false
 external-controller: 127.0.0.1:9090
@@ -26,37 +26,6 @@ dns:
   enhanced-mode: fake-ip
   fake-ip-range: 198.18.0.1/16
   fake-ip-filter:
-    - '*.ir'
-    - '*.iran'
-    - '*.arvancloud.ir'
-    - '*.parspack.com'
-    - '*.digikala.com'
-    - '*.varzesh3.com'
-    - '*.aparat.com'
-    - '*.torob.com'
-    - '*.snapp.ir'
-    - '*.tapsi.ir'
-    - '*.divar.ir'
-    - '*.bale.ai'
-    - '*.eitaa.com'
-    - '*.rubika.ir'
-    - '*.mci.ir'
-    - '*.irancell.ir'
-    - '*.hamraheawal.com'
-    - '*.sep.ir'
-    - '*.enamad.ir'
-    - '*.shaparak.ir'
-    - '*.filimo.com'
-    - '*.namava.ir'
-    - '*.snappfood.ir'
-    - '*.sheypoor.com'
-    - '*.basalam.com'
-    - '*.alibaba.ir'
-    - '*.telewebion.com'
-    - '*.zoomit.ir'
-    - '*.gap.im'
-    - '*.igap.net'
-    - '*.balad.ir'
     - '*.local'
     - '*.lan'
     - '*.localhost'
@@ -72,11 +41,8 @@ dns:
   default-nameserver:
     - 178.22.122.100
     - 185.51.200.2
-    - 217.218.155.155
-    - 217.218.127.127
     - 223.5.5.5
     - 119.29.29.29
-    - 9.9.9.9
   nameserver:
     - https://dns.google/dns-query
     - tls://8.8.8.8:853
@@ -89,136 +55,72 @@ dns:
     - tls://149.112.112.112:853
     - https://doh.opendns.com/dns-query
     - tls://208.67.222.222:853
-    - tls://208.67.220.220:853
     - https://dns.adguard.com/dns-query
     - tls://94.140.14.14:853
-    - tls://94.140.15.15:853
-    - https://doh.pub/dns-query
-    - https://dns.alidns.com/dns-query
-  nameserver-policy:
-    "geosite:ir":
-      - 178.22.122.100
-      - 185.51.200.2
-      - 217.218.155.155
-      - 217.218.127.127
-      - 185.55.225.25
-      - 185.55.227.22
-      - https://doh.pub/dns-query
-    "geosite:google":
-      - https://dns.google/dns-query
-      - tls://8.8.8.8:853
-    "geosite:youtube":
-      - https://dns.google/dns-query
-      - tls://8.8.8.8:853
-    "geosite:telegram":
-      - https://cloudflare-dns.com/dns-query
-      - tls://1.1.1.1:853
-    "geosite:twitter":
-      - https://cloudflare-dns.com/dns-query
-      - tls://1.1.1.1:853
-    "geosite:facebook":
-      - https://dns.google/dns-query
-      - https://cloudflare-dns.com/dns-query
-    "geosite:instagram":
-      - https://dns.google/dns-query
-      - https://cloudflare-dns.com/dns-query
-    "geosite:netflix":
-      - https://dns.google/dns-query
-      - tls://8.8.8.8:853
-    "geosite:openai":
-      - https://dns.google/dns-query
-      - https://cloudflare-dns.com/dns-query
-    "geosite:github":
-      - https://dns.google/dns-query
-      - tls://8.8.8.8:853
-  fallback:
-    - tls://8.8.8.8:853
-    - tls://8.8.4.4:853
-    - tls://1.1.1.1:853
-    - tls://1.0.0.1:853
-    - tls://9.9.9.9:853
-    - tls://149.112.112.112:853
-    - tls://208.67.222.222:853
-    - tls://94.140.14.14:853
-    - https://dns.google/dns-query
-    - https://cloudflare-dns.com/dns-query
-  fallback-filter:
-    geoip: true
-    geoip-code: IR
-    ipcidr:
-      - 240.0.0.0/4
-      - 10.0.0.0/8
-      - 172.16.0.0/12
-      - 192.168.0.0/16
-      - 127.0.0.0/8
-      - 100.64.0.0/10
-      - 169.254.0.0/16
-    domain:
-      - '+.ir'
 
 proxies:
   - name: "Delta-Kronecker-ss-001"
     type: ss
-    server: "37.19.198.243"
+    server: "64.176.215.70"
     port: 443
-    cipher: "aes-128-gcm"
-    password: "shadowsocks"
+    cipher: "aes-256-gcm"
+    password: "hbhO0xomsJzhO24F"
     udp: true
   - name: "Delta-Kronecker-ss-002"
     type: ss
-    server: "45.77.253.107"
+    server: "216.238.75.111"
     port: 80
     cipher: "aes-256-gcm"
-    password: "zwjlU97tBKtPJPB5"
+    password: "JhB5ado8enBhkaOe"
     udp: true
   - name: "Delta-Kronecker-ss-003"
     type: ss
-    server: "62.133.63.167"
-    port: 61377
-    cipher: "chacha20-ietf-poly1305"
-    password: "E12yZBPC7y8SnmkSYjf0Wl"
-    udp: true
-  - name: "Delta-Kronecker-ss-004"
-    type: ss
-    server: "82.38.31.189"
+    server: "82.38.31.61"
     port: 8080
     cipher: "chacha20-ietf-poly1305"
-    password: "k1dBOmOB4oqi7Ump37a1bQ"
+    password: "oZIoA69Q8yhcQV8ka3Pa3A"
     udp: true
-  - name: "Delta-Kronecker-ss-005"
-    type: ss
-    server: "57.129.140.88"
-    port: 8388
-    cipher: "chacha20-ietf-poly1305"
-    password: "k1v5g9FefdoO"
-    udp: true
-  - name: "Delta-Kronecker-ss-006"
-    type: ss
-    server: "163.171.207.11"
-    port: 29461
-    cipher: "chacha20-ietf-poly1305"
-    password: "cb4258dc1b53613c"
-    udp: true
-  - name: "Delta-Kronecker-ss-007"
+  - name: "Delta-Kronecker-ss-004"
     type: ss
     server: "119.159.245.24"
     port: 29700
     cipher: "chacha20-ietf-poly1305"
     password: "fec4e6f9e954aead"
     udp: true
+  - name: "Delta-Kronecker-ss-005"
+    type: ss
+    server: "backup.fleetfoxi.link"
+    port: 44884
+    cipher: "chacha20-ietf-poly1305"
+    password: "2DGq3jvVRg5n3CcxmysGK2kmrgJeSNof12A76cZvVxqPpetyC1XEciCFufq5xKvRWGGnKVembpThuUSQhbZ7GMsZY4UVxEBw"
+    udp: true
+  - name: "Delta-Kronecker-ss-006"
+    type: ss
+    server: "193.29.139.235"
+    port: 8080
+    cipher: "chacha20-ietf-poly1305"
+    password: "oZIoA69Q8yhcQV8ka3Pa3A"
+    udp: true
+  - name: "Delta-Kronecker-ss-007"
+    type: ss
+    server: "82.38.31.62"
+    port: 8080
+    cipher: "chacha20-ietf-poly1305"
+    password: "oZIoA69Q8yhcQV8ka3Pa3A"
+    udp: true
   - name: "Delta-Kronecker-ss-008"
+    type: ss
+    server: "163.171.207.11"
+    port: 29461
+    cipher: "chacha20-ietf-poly1305"
+    password: "cb4258dc1b53613c"
+    udp: true
+  - name: "Delta-Kronecker-ss-009"
     type: ss
     server: "57.129.95.198"
     port: 11201
     cipher: "chacha20-ietf-poly1305"
     password: "d6b0973401858b29"
-    udp: true
-  - name: "Delta-Kronecker-ss-009"
-    type: ss
-    server: "216.238.75.111"
-    port: 80
-    cipher: "aes-256-gcm"
-    password: "JhB5ado8enBhkaOe"
     udp: true
   - name: "Delta-Kronecker-ss-010"
     type: ss
@@ -229,388 +131,388 @@ proxies:
     udp: true
   - name: "Delta-Kronecker-ss-011"
     type: ss
-    server: "213.156.137.142"
-    port: 43660
+    server: "57.129.140.88"
+    port: 8388
     cipher: "chacha20-ietf-poly1305"
-    password: "cc27a3012d81a44c"
+    password: "k1v5g9FefdoO"
     udp: true
   - name: "Delta-Kronecker-ss-012"
-    type: ss
-    server: "193.29.139.235"
-    port: 8080
-    cipher: "chacha20-ietf-poly1305"
-    password: "oZIoA69Q8yhcQV8ka3Pa3A"
-    udp: true
-  - name: "Delta-Kronecker-ss-013"
-    type: ss
-    server: "193.135.174.135"
-    port: 990
-    cipher: "chacha20-ietf-poly1305"
-    password: "ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44="
-    udp: true
-  - name: "Delta-Kronecker-ss-014"
-    type: ss
-    server: "136.244.100.113"
-    port: 443
-    cipher: "chacha20-ietf-poly1305"
-    password: "yODLXVLz2FWNTFeSSng3Fm"
-    udp: true
-  - name: "Delta-Kronecker-ss-015"
-    type: ss
-    server: "82.38.31.210"
-    port: 8080
-    cipher: "chacha20-ietf-poly1305"
-    password: "k1dBOmOB4oqi7Ump37a1bQ"
-    udp: true
-  - name: "Delta-Kronecker-ss-016"
-    type: ss
-    server: "promo18v.bystrivpn.ru"
-    port: 443
-    cipher: "chacha20-ietf-poly1305"
-    password: "dAHM1pm8ag7KdlrUylQi6t"
-    udp: true
-  - name: "Delta-Kronecker-ss-017"
-    type: ss
-    server: "103.186.155.39"
-    port: 38388
-    cipher: "aes-256-cfb"
-    password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV"
-    udp: true
-  - name: "Delta-Kronecker-ss-018"
-    type: ss
-    server: "163.171.137.76"
-    port: 48436
-    cipher: "chacha20-ietf-poly1305"
-    password: "6d0084c6e4502ab7"
-    udp: true
-  - name: "Delta-Kronecker-ss-019"
-    type: ss
-    server: "154.205.145.37"
-    port: 11201
-    cipher: "chacha20-ietf-poly1305"
-    password: "47509ba3679b9df9"
-    udp: true
-  - name: "Delta-Kronecker-ss-020"
-    type: ss
-    server: "103.186.155.80"
-    port: 38388
-    cipher: "aes-256-cfb"
-    password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV"
-    udp: true
-  - name: "Delta-Kronecker-ss-021"
-    type: ss
-    server: "194.165.59.93"
-    port: 442
-    cipher: "aes-256-gcm"
-    password: "8801339e-8ed3-4389-9d1d-2f211ccf07be"
-    udp: true
-  - name: "Delta-Kronecker-ss-022"
-    type: ss
-    server: "135.125.245.131"
-    port: 20939
-    cipher: "chacha20-ietf-poly1305"
-    password: "85d3d8ccba287d3e"
-    udp: true
-  - name: "Delta-Kronecker-ss-023"
-    type: ss
-    server: "tinkered-pennies-puppies.freesocks.work"
-    port: 443
-    cipher: "chacha20-ietf-poly1305"
-    password: "hbGrpfvNrJsUmKmPbR3iY2"
-    udp: true
-  - name: "Delta-Kronecker-ss-024"
     type: ss
     server: "57.129.95.38"
     port: 11201
     cipher: "chacha20-ietf-poly1305"
     password: "f54cdee10f8b25ce"
     udp: true
-  - name: "Delta-Kronecker-ss-025"
-    type: ss
-    server: "82.38.31.184"
-    port: 8080
-    cipher: "chacha20-ietf-poly1305"
-    password: "k1dBOmOB4oqi7Ump37a1bQ"
-    udp: true
-  - name: "Delta-Kronecker-ss-026"
+  - name: "Delta-Kronecker-ss-013"
     type: ss
     server: "154.38.176.7"
     port: 80
     cipher: "aes-256-gcm"
     password: "nKeE2ZFWVaE4DyjR"
     udp: true
-  - name: "Delta-Kronecker-ss-027"
+  - name: "Delta-Kronecker-ss-014"
+    type: ss
+    server: "45.77.253.107"
+    port: 80
+    cipher: "aes-256-gcm"
+    password: "zwjlU97tBKtPJPB5"
+    udp: true
+  - name: "Delta-Kronecker-ss-015"
+    type: ss
+    server: "82.38.31.189"
+    port: 8080
+    cipher: "chacha20-ietf-poly1305"
+    password: "k1dBOmOB4oqi7Ump37a1bQ"
+    udp: true
+  - name: "Delta-Kronecker-ss-016"
+    type: ss
+    server: "tinkered-pennies-puppies.freesocks.work"
+    port: 443
+    cipher: "chacha20-ietf-poly1305"
+    password: "hbGrpfvNrJsUmKmPbR3iY2"
+    udp: true
+  - name: "Delta-Kronecker-ss-017"
+    type: ss
+    server: "37.19.198.243"
+    port: 443
+    cipher: "aes-128-gcm"
+    password: "shadowsocks"
+    udp: true
+  - name: "Delta-Kronecker-ss-018"
+    type: ss
+    server: "135.125.245.131"
+    port: 20939
+    cipher: "chacha20-ietf-poly1305"
+    password: "85d3d8ccba287d3e"
+    udp: true
+  - name: "Delta-Kronecker-ss-019"
     type: ss
     server: "154.26.132.38"
     port: 16922
     cipher: "chacha20-ietf-poly1305"
     password: "42d2b47181a32de7"
     udp: true
-  - name: "Delta-Kronecker-ss-028"
+  - name: "Delta-Kronecker-ss-020"
     type: ss
-    server: "82.38.31.62"
-    port: 8080
+    server: "163.171.137.76"
+    port: 48436
     cipher: "chacha20-ietf-poly1305"
-    password: "oZIoA69Q8yhcQV8ka3Pa3A"
+    password: "6d0084c6e4502ab7"
     udp: true
-  - name: "Delta-Kronecker-ss-029"
+  - name: "Delta-Kronecker-ss-021"
     type: ss
-    server: "156.244.19.94"
-    port: 11201
+    server: "193.135.174.135"
+    port: 990
     cipher: "chacha20-ietf-poly1305"
-    password: "652e423c559eefd4"
+    password: "ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44="
     udp: true
-  - name: "Delta-Kronecker-ss-030"
+  - name: "Delta-Kronecker-ss-022"
     type: ss
-    server: "149.102.149.207"
-    port: 80
-    cipher: "aes-256-gcm"
-    password: "umWwoQJEJGf74SLe"
-    udp: true
-  - name: "Delta-Kronecker-ss-031"
-    type: ss
-    server: "185.253.116.95"
-    port: 16673
-    cipher: "chacha20-ietf-poly1305"
-    password: "aiXO0FnjYHg6ZKJAPohBVW"
-    udp: true
-  - name: "Delta-Kronecker-ss-032"
-    type: ss
-    server: "185.231.233.112"
-    port: 989
+    server: "103.186.155.80"
+    port: 38388
     cipher: "aes-256-cfb"
-    password: "f8f7aCzcPKbsF8p3"
+    password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV"
     udp: true
-  - name: "Delta-Kronecker-ss-033"
+  - name: "Delta-Kronecker-ss-023"
     type: ss
-    server: "193.29.139.202"
-    port: 8080
+    server: "213.156.137.142"
+    port: 43660
     cipher: "chacha20-ietf-poly1305"
-    password: "oZIoA69Q8yhcQV8ka3Pa3A"
+    password: "cc27a3012d81a44c"
     udp: true
-  - name: "Delta-Kronecker-ss-034"
+  - name: "Delta-Kronecker-ss-024"
     type: ss
-    server: "15.204.247.49"
-    port: 12000
-    cipher: "aes-256-gcm"
-    password: "8JCsPssfgS8tiRwiMlhARg=="
-    udp: true
-  - name: "Delta-Kronecker-ss-035"
-    type: ss
-    server: "141.95.106.127"
+    server: "154.205.145.37"
     port: 11201
     cipher: "chacha20-ietf-poly1305"
-    password: "94aae0510188e8c5"
+    password: "47509ba3679b9df9"
     udp: true
-  - name: "Delta-Kronecker-ss-036"
+  - name: "Delta-Kronecker-ss-025"
+    type: ss
+    server: "103.186.155.39"
+    port: 38388
+    cipher: "aes-256-cfb"
+    password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV"
+    udp: true
+  - name: "Delta-Kronecker-ss-026"
+    type: ss
+    server: "194.165.59.93"
+    port: 442
+    cipher: "aes-256-gcm"
+    password: "8801339e-8ed3-4389-9d1d-2f211ccf07be"
+    udp: true
+  - name: "Delta-Kronecker-ss-027"
     type: ss
     server: "141.98.101.178"
     port: 443
     cipher: "aes-128-gcm"
     password: "shadowsocks"
     udp: true
-  - name: "Delta-Kronecker-ss-037"
+  - name: "Delta-Kronecker-ss-028"
+    type: ss
+    server: "141.95.106.127"
+    port: 11201
+    cipher: "chacha20-ietf-poly1305"
+    password: "94aae0510188e8c5"
+    udp: true
+  - name: "Delta-Kronecker-ss-029"
+    type: ss
+    server: "promo18v.bystrivpn.ru"
+    port: 443
+    cipher: "chacha20-ietf-poly1305"
+    password: "dAHM1pm8ag7KdlrUylQi6t"
+    udp: true
+  - name: "Delta-Kronecker-ss-030"
     type: ss
     server: "149.22.87.241"
     port: 443
     cipher: "aes-128-gcm"
     password: "shadowsocks"
     udp: true
-  - name: "Delta-Kronecker-ss-038"
+  - name: "Delta-Kronecker-ss-031"
     type: ss
     server: "149.22.87.240"
     port: 443
     cipher: "aes-128-gcm"
     password: "shadowsocks"
     udp: true
-  - name: "Delta-Kronecker-ss-039"
-    type: ss
-    server: "f.sdnlv0.cn"
-    port: 15783
-    cipher: "chacha20-ietf-poly1305"
-    password: "13df5feb-756e-4627-bcee-497f3c81bab4"
-    udp: true
-  - name: "Delta-Kronecker-ss-040"
+  - name: "Delta-Kronecker-ss-032"
     type: ss
     server: "103.186.155.128"
     port: 38388
     cipher: "aes-256-cfb"
     password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV"
     udp: true
-  - name: "Delta-Kronecker-ss-041"
+  - name: "Delta-Kronecker-ss-033"
     type: ss
-    server: "82.38.31.124"
+    server: "82.38.31.210"
     port: 8080
     cipher: "chacha20-ietf-poly1305"
-    password: "oZIoA69Q8yhcQV8ka3Pa3A"
+    password: "k1dBOmOB4oqi7Ump37a1bQ"
     udp: true
-  - name: "Delta-Kronecker-ss-042"
-    type: ss
-    server: "103.186.154.45"
-    port: 38388
-    cipher: "aes-256-cfb"
-    password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV"
-    udp: true
-  - name: "Delta-Kronecker-ss-043"
-    type: ss
-    server: "20.108.15.110"
-    port: 443
-    cipher: "chacha20-ietf-poly1305"
-    password: "kaQH3hGdcP80XEDI"
-    udp: true
-  - name: "Delta-Kronecker-ss-044"
+  - name: "Delta-Kronecker-ss-034"
     type: ss
     server: "82.38.31.89"
     port: 8080
     cipher: "chacha20-ietf-poly1305"
     password: "oZIoA69Q8yhcQV8ka3Pa3A"
     udp: true
-  - name: "Delta-Kronecker-ss-045"
+  - name: "Delta-Kronecker-ss-035"
+    type: ss
+    server: "136.244.100.113"
+    port: 443
+    cipher: "chacha20-ietf-poly1305"
+    password: "yODLXVLz2FWNTFeSSng3Fm"
+    udp: true
+  - name: "Delta-Kronecker-ss-036"
+    type: ss
+    server: "20.108.15.110"
+    port: 443
+    cipher: "chacha20-ietf-poly1305"
+    password: "kaQH3hGdcP80XEDI"
+    udp: true
+  - name: "Delta-Kronecker-ss-037"
+    type: ss
+    server: "103.186.154.45"
+    port: 38388
+    cipher: "aes-256-cfb"
+    password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV"
+    udp: true
+  - name: "Delta-Kronecker-ss-038"
+    type: ss
+    server: "f.sdnlv0.cn"
+    port: 15783
+    cipher: "chacha20-ietf-poly1305"
+    password: "13df5feb-756e-4627-bcee-497f3c81bab4"
+    udp: true
+  - name: "Delta-Kronecker-ss-039"
     type: ss
     server: "82.38.31.176"
     port: 8080
     cipher: "chacha20-ietf-poly1305"
     password: "k1dBOmOB4oqi7Ump37a1bQ"
     udp: true
-  - name: "Delta-Kronecker-ss-046"
+  - name: "Delta-Kronecker-ss-040"
     type: ss
-    server: "149.22.87.204"
-    port: 443
-    cipher: "aes-128-gcm"
-    password: "shadowsocks"
+    server: "62.133.63.167"
+    port: 61377
+    cipher: "chacha20-ietf-poly1305"
+    password: "E12yZBPC7y8SnmkSYjf0Wl"
     udp: true
-  - name: "Delta-Kronecker-ss-047"
+  - name: "Delta-Kronecker-ss-041"
     type: ss
-    server: "79.127.227.53"
-    port: 989
-    cipher: "aes-256-cfb"
-    password: "f8f7aCzcPKbsF8p3"
+    server: "82.38.31.184"
+    port: 8080
+    cipher: "chacha20-ietf-poly1305"
+    password: "k1dBOmOB4oqi7Ump37a1bQ"
     udp: true
-  - name: "Delta-Kronecker-ss-048"
+  - name: "Delta-Kronecker-ss-042"
     type: ss
     server: "103.186.155.148"
     port: 38388
     cipher: "aes-256-cfb"
     password: "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV"
     udp: true
-  - name: "Delta-Kronecker-ss-049"
+  - name: "Delta-Kronecker-ss-043"
+    type: ss
+    server: "149.22.87.204"
+    port: 443
+    cipher: "aes-128-gcm"
+    password: "shadowsocks"
+    udp: true
+  - name: "Delta-Kronecker-ss-044"
+    type: ss
+    server: "79.127.227.53"
+    port: 989
+    cipher: "aes-256-cfb"
+    password: "f8f7aCzcPKbsF8p3"
+    udp: true
+  - name: "Delta-Kronecker-ss-045"
     type: ss
     server: "82.38.31.69"
     port: 8080
     cipher: "chacha20-ietf-poly1305"
     password: "oZIoA69Q8yhcQV8ka3Pa3A"
     udp: true
-  - name: "Delta-Kronecker-ss-050"
-    type: ss
-    server: "82.38.31.61"
-    port: 8080
-    cipher: "chacha20-ietf-poly1305"
-    password: "oZIoA69Q8yhcQV8ka3Pa3A"
-    udp: true
-  - name: "Delta-Kronecker-ss-051"
-    type: ss
-    server: "193.29.139.227"
-    port: 8080
-    cipher: "chacha20-ietf-poly1305"
-    password: "QCXDxuDlTTMD7jtgHUjIoj"
-    udp: true
-  - name: "Delta-Kronecker-ss-052"
-    type: ss
-    server: "82.38.31.205"
-    port: 8080
-    cipher: "chacha20-ietf-poly1305"
-    password: "k1dBOmOB4oqi7Ump37a1bQ"
-    udp: true
-  - name: "Delta-Kronecker-ss-053"
+  - name: "Delta-Kronecker-ss-046"
     type: ss
     server: "154.26.156.99"
     port: 47385
     cipher: "chacha20-ietf-poly1305"
     password: "78322e4b934870b6"
     udp: true
-  - name: "Delta-Kronecker-ss-054"
+  - name: "Delta-Kronecker-ss-047"
+    type: ss
+    server: "193.29.139.227"
+    port: 8080
+    cipher: "chacha20-ietf-poly1305"
+    password: "QCXDxuDlTTMD7jtgHUjIoj"
+    udp: true
+  - name: "Delta-Kronecker-ss-048"
+    type: ss
+    server: "185.231.233.112"
+    port: 989
+    cipher: "aes-256-cfb"
+    password: "f8f7aCzcPKbsF8p3"
+    udp: true
+  - name: "Delta-Kronecker-ss-049"
+    type: ss
+    server: "82.38.31.205"
+    port: 8080
+    cipher: "chacha20-ietf-poly1305"
+    password: "k1dBOmOB4oqi7Ump37a1bQ"
+    udp: true
+  - name: "Delta-Kronecker-ss-050"
     type: ss
     server: "89.223.88.33"
     port: 11201
     cipher: "chacha20-ietf-poly1305"
     password: "7c31a67b41b18c26"
     udp: true
-  - name: "Delta-Kronecker-ss-055"
+  - name: "Delta-Kronecker-ss-051"
+    type: ss
+    server: "38.180.216.114"
+    port: 7307
+    cipher: "aes-256-gcm"
+    password: "FoOiGlkAA9yPEGP"
+    udp: true
+  - name: "Delta-Kronecker-ss-052"
+    type: ss
+    server: "156.244.19.94"
+    port: 11201
+    cipher: "chacha20-ietf-poly1305"
+    password: "652e423c559eefd4"
+    udp: true
+  - name: "Delta-Kronecker-ss-053"
+    type: ss
+    server: "149.102.149.207"
+    port: 80
+    cipher: "aes-256-gcm"
+    password: "umWwoQJEJGf74SLe"
+    udp: true
+  - name: "Delta-Kronecker-ss-054"
     type: ss
     server: "212.192.14.234"
     port: 24441
     cipher: "chacha20-ietf-poly1305"
     password: "Ow8iSExQNaobZPY9bJ4EPI"
     udp: true
-  - name: "Delta-Kronecker-ss-056"
+  - name: "Delta-Kronecker-ss-055"
     type: ss
     server: "5.188.4.103"
     port: 11203
     cipher: "chacha20-ietf-poly1305"
     password: "a7c205642b302c20"
     udp: true
-  - name: "Delta-Kronecker-ss-057"
-    type: ss
-    server: "51.75.168.50"
-    port: 13030
-    cipher: "chacha20-ietf-poly1305"
-    password: "6c815bb84c781da5"
-    udp: true
-  - name: "Delta-Kronecker-ss-058"
+  - name: "Delta-Kronecker-ss-056"
     type: ss
     server: "82.180.146.173"
     port: 30607
     cipher: "aes-128-gcm"
     password: "162629d7-cb17-43b1-82c9-f9c7ae6cba70"
     udp: true
-  - name: "Delta-Kronecker-ss-059"
+  - name: "Delta-Kronecker-ss-057"
+    type: ss
+    server: "193.29.139.202"
+    port: 8080
+    cipher: "chacha20-ietf-poly1305"
+    password: "oZIoA69Q8yhcQV8ka3Pa3A"
+    udp: true
+  - name: "Delta-Kronecker-ss-058"
     type: ss
     server: "112.197.26.106"
     port: 45310
     cipher: "chacha20-ietf-poly1305"
     password: "ca5a5efae00a832b"
     udp: true
-  - name: "Delta-Kronecker-ss-060"
+  - name: "Delta-Kronecker-ss-059"
     type: ss
-    server: "admin.c2.havij.co"
-    port: 443
+    server: "51.75.168.50"
+    port: 13030
     cipher: "chacha20-ietf-poly1305"
-    password: "kaQH3hGdcP80XEDI"
+    password: "6c815bb84c781da5"
     udp: true
-  - name: "Delta-Kronecker-ss-061"
+  - name: "Delta-Kronecker-ss-060"
     type: ss
     server: "57.130.28.148"
     port: 11201
     cipher: "chacha20-ietf-poly1305"
     password: "74918bc801d53a4b"
     udp: true
-  - name: "Delta-Kronecker-ss-062"
+  - name: "Delta-Kronecker-ss-061"
     type: ss
     server: "217.30.10.18"
     port: 9011
     cipher: "aes-256-cfb"
     password: "M3t2ZEQcMGRWBjRa"
     udp: true
+  - name: "Delta-Kronecker-ss-062"
+    type: ss
+    server: "admin.c2.havij.co"
+    port: 443
+    cipher: "chacha20-ietf-poly1305"
+    password: "kaQH3hGdcP80XEDI"
+    udp: true
   - name: "Delta-Kronecker-ss-063"
+    type: ss
+    server: "82.38.31.124"
+    port: 8080
+    cipher: "chacha20-ietf-poly1305"
+    password: "oZIoA69Q8yhcQV8ka3Pa3A"
+    udp: true
+  - name: "Delta-Kronecker-ss-064"
     type: ss
     server: "51.104.204.185"
     port: 443
     cipher: "chacha20-ietf-poly1305"
     password: "W74XFALLLuw6m5IA"
     udp: true
-  - name: "Delta-Kronecker-ss-064"
+  - name: "Delta-Kronecker-ss-065"
     type: ss
     server: "141.98.101.182"
     port: 443
     cipher: "aes-128-gcm"
     password: "shadowsocks"
-    udp: true
-  - name: "Delta-Kronecker-ss-065"
-    type: ss
-    server: "82.38.31.199"
-    port: 8080
-    cipher: "chacha20-ietf-poly1305"
-    password: "k1dBOmOB4oqi7Ump37a1bQ"
     udp: true
   - name: "Delta-Kronecker-ss-066"
     type: ss
@@ -635,10 +537,10 @@ proxies:
     udp: true
   - name: "Delta-Kronecker-ss-069"
     type: ss
-    server: "38.180.216.114"
-    port: 7307
-    cipher: "aes-256-gcm"
-    password: "FoOiGlkAA9yPEGP"
+    server: "3.1.195.148"
+    port: 8319
+    cipher: "chacha20-ietf-poly1305"
+    password: "ljqdalu13.."
     udp: true
   - name: "Delta-Kronecker-ss-070"
     type: ss
@@ -650,7 +552,6 @@ proxies:
 
 proxy-groups:
   # ── Top-level selector ────────────────────────────────────────────────────
-  # Only logical groups are shown here — individual proxies are hidden.
   - name: "PROXY-BEST"
     type: select
     proxies:
@@ -663,7 +564,6 @@ proxy-groups:
       - DIRECT
 
   # ── Scenario groups ───────────────────────────────────────────────────────
-  # SCEN-OPEN: best for general open internet (tries load-balance first, falls to fastest)
   - name: "SCEN-OPEN"
     type: fallback
     url: http://www.gstatic.com/generate_204
@@ -673,7 +573,6 @@ proxy-groups:
       - "LB-ALL"
       - "FAST-ALL"
 
-  # SCEN-CDN: best for CDN traffic (tries CDN load-balance first, falls to CDN fastest)
   - name: "SCEN-CDN"
     type: fallback
     url: http://cp.cloudflare.com/generate_204
@@ -684,7 +583,6 @@ proxy-groups:
       - "FAST-CDN"
 
   # ── Load-balance groups ───────────────────────────────────────────────────
-  # LB-ALL: session-aware load balance across all proxies
   - name: "LB-ALL"
     type: load-balance
     strategy: consistent-hashing
@@ -764,7 +662,6 @@ proxy-groups:
       - "Delta-Kronecker-ss-069"
       - "Delta-Kronecker-ss-070"
 
-  # LB-CDN: round-robin load balance (stateless, optimal for CDN)
   - name: "LB-CDN"
     type: load-balance
     strategy: round-robin
@@ -845,7 +742,6 @@ proxy-groups:
       - "Delta-Kronecker-ss-070"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
-  # FAST-ALL: url-test to find the fastest proxy for general use
   - name: "FAST-ALL"
     type: url-test
     url: http://www.gstatic.com/generate_204
@@ -924,7 +820,6 @@ proxy-groups:
       - "Delta-Kronecker-ss-069"
       - "Delta-Kronecker-ss-070"
 
-  # FAST-CDN: url-test via Cloudflare endpoint (ideal for CDN-fronted services)
   - name: "FAST-CDN"
     type: url-test
     url: http://cp.cloudflare.com/generate_204
@@ -1004,7 +899,6 @@ proxy-groups:
       - "Delta-Kronecker-ss-070"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
-  # UDP-BEST: url-test optimized for UDP traffic (Telegram, WhatsApp, Signal, DNS)
   - name: "UDP-BEST"
     type: url-test
     url: http://www.gstatic.com/generate_204
@@ -1084,7 +978,6 @@ proxy-groups:
       - "Delta-Kronecker-ss-070"
 
   # ── Manual selector ───────────────────────────────────────────────────────
-  # MANUAL: full manual proxy selection (all individual proxies listed)
   - name: "MANUAL"
     type: select
     proxies:
@@ -1160,149 +1053,4 @@ proxy-groups:
       - "Delta-Kronecker-ss-070"
 
 rules:
-  # ── UDP overrides (must be first) ─────────────────────────────────────────
-  - DST-PORT,53,UDP-BEST
-  - 'AND,((NETWORK,udp),(DOMAIN-SUFFIX,telegram.org)),UDP-BEST'
-  - 'AND,((NETWORK,udp),(DOMAIN-SUFFIX,t.me)),UDP-BEST'
-  - 'AND,((NETWORK,udp),(DOMAIN-SUFFIX,whatsapp.com)),UDP-BEST'
-  - 'AND,((NETWORK,udp),(DOMAIN-SUFFIX,whatsapp.net)),UDP-BEST'
-  - 'AND,((NETWORK,udp),(DOMAIN-SUFFIX,signal.org)),UDP-BEST'
-
-  # ── Local / private networks → DIRECT ────────────────────────────────────
-  - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
-  - IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
-  - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
-  - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
-  - IP-CIDR,100.64.0.0/10,DIRECT,no-resolve
-  - IP-CIDR,169.254.0.0/16,DIRECT,no-resolve
-  - IP-CIDR,224.0.0.0/4,DIRECT,no-resolve
-  - IP-CIDR,240.0.0.0/4,DIRECT,no-resolve
-  - IP-CIDR6,::1/128,DIRECT,no-resolve
-  - IP-CIDR6,fc00::/7,DIRECT,no-resolve
-  - IP-CIDR6,fe80::/10,DIRECT,no-resolve
-
-  # ── Iran GeoIP + domestic services → DIRECT ──────────────────────────────
-  - GEOIP,IR,DIRECT
-  - DOMAIN-SUFFIX,ir,DIRECT
-  - DOMAIN-SUFFIX,iran,DIRECT
-  - DOMAIN-SUFFIX,digikala.com,DIRECT
-  - DOMAIN-SUFFIX,aparat.com,DIRECT
-  - DOMAIN-SUFFIX,varzesh3.com,DIRECT
-  - DOMAIN-SUFFIX,torob.com,DIRECT
-  - DOMAIN-SUFFIX,filimo.com,DIRECT
-  - DOMAIN-SUFFIX,rubika.ir,DIRECT
-  - DOMAIN-SUFFIX,eitaa.com,DIRECT
-  - DOMAIN-SUFFIX,bale.ai,DIRECT
-  - DOMAIN-SUFFIX,gap.im,DIRECT
-  - DOMAIN-SUFFIX,igap.net,DIRECT
-  - DOMAIN-SUFFIX,snappfood.ir,DIRECT
-  - DOMAIN-SUFFIX,sheypoor.com,DIRECT
-  - DOMAIN-SUFFIX,basalam.com,DIRECT
-  - DOMAIN-SUFFIX,alibaba.ir,DIRECT
-  - DOMAIN-SUFFIX,flightio.com,DIRECT
-  - DOMAIN-SUFFIX,zoomit.ir,DIRECT
-  - DOMAIN-SUFFIX,tasnimnews.com,DIRECT
-  - DOMAIN-SUFFIX,mehrnews.com,DIRECT
-  - DOMAIN-SUFFIX,karafarin.com,DIRECT
-  - DOMAIN-SUFFIX,digipay.ir,DIRECT
-  - DOMAIN-SUFFIX,behpardakht.ir,DIRECT
-
-  # ── Iranian DNS server IPs → DIRECT ──────────────────────────────────────
-  - IP-CIDR,178.22.122.100/32,DIRECT,no-resolve
-  - IP-CIDR,185.51.200.2/32,DIRECT,no-resolve
-  - IP-CIDR,217.218.155.155/32,DIRECT,no-resolve
-  - IP-CIDR,217.218.127.127/32,DIRECT,no-resolve
-  - IP-CIDR,185.55.225.25/32,DIRECT,no-resolve
-  - IP-CIDR,185.55.227.22/32,DIRECT,no-resolve
-
-  # ── Connectivity checks → PROXY-BEST ─────────────────────────────────────
-  - DOMAIN,connectivitycheck.gstatic.com,PROXY-BEST
-  - DOMAIN,cp.cloudflare.com,PROXY-BEST
-  - DOMAIN,detectportal.firefox.com,PROXY-BEST
-  - DOMAIN,captive.apple.com,PROXY-BEST
-  - DOMAIN,www.msftncsi.com,PROXY-BEST
-
-  # ── Messaging → PROXY-BEST ───────────────────────────────────────────────
-  - DOMAIN-SUFFIX,telegram.org,PROXY-BEST
-  - DOMAIN-SUFFIX,t.me,PROXY-BEST
-  - DOMAIN-SUFFIX,tdesktop.com,PROXY-BEST
-  - DOMAIN-SUFFIX,telegra.ph,PROXY-BEST
-  - DOMAIN-SUFFIX,whatsapp.com,PROXY-BEST
-  - DOMAIN-SUFFIX,whatsapp.net,PROXY-BEST
-  - DOMAIN-SUFFIX,signal.org,PROXY-BEST
-
-  # ── Social media → PROXY-BEST ────────────────────────────────────────────
-  - DOMAIN-SUFFIX,instagram.com,PROXY-BEST
-  - DOMAIN-SUFFIX,cdninstagram.com,PROXY-BEST
-  - DOMAIN-SUFFIX,facebook.com,PROXY-BEST
-  - DOMAIN-SUFFIX,fbcdn.net,PROXY-BEST
-  - DOMAIN-SUFFIX,messenger.com,PROXY-BEST
-  - DOMAIN-SUFFIX,twitter.com,PROXY-BEST
-  - DOMAIN-SUFFIX,x.com,PROXY-BEST
-  - DOMAIN-SUFFIX,twimg.com,PROXY-BEST
-  - DOMAIN-SUFFIX,t.co,PROXY-BEST
-  - DOMAIN-SUFFIX,linkedin.com,PROXY-BEST
-  - DOMAIN-SUFFIX,licdn.com,PROXY-BEST
-  - DOMAIN-SUFFIX,reddit.com,PROXY-BEST
-  - DOMAIN-SUFFIX,redd.it,PROXY-BEST
-  - DOMAIN-SUFFIX,tiktok.com,PROXY-BEST
-  - DOMAIN-SUFFIX,tiktokcdn.com,PROXY-BEST
-
-  # ── Video / streaming → PROXY-BEST ───────────────────────────────────────
-  - DOMAIN-SUFFIX,youtube.com,PROXY-BEST
-  - DOMAIN-SUFFIX,youtu.be,PROXY-BEST
-  - DOMAIN-SUFFIX,googlevideo.com,PROXY-BEST
-  - DOMAIN-SUFFIX,ytimg.com,PROXY-BEST
-  - DOMAIN-SUFFIX,netflix.com,PROXY-BEST
-  - DOMAIN-SUFFIX,nflxvideo.net,PROXY-BEST
-  - DOMAIN-SUFFIX,nflximg.net,PROXY-BEST
-  - DOMAIN-SUFFIX,spotify.com,PROXY-BEST
-  - DOMAIN-SUFFIX,scdn.co,PROXY-BEST
-
-  # ── Developer tools → PROXY-BEST ─────────────────────────────────────────
-  - DOMAIN-SUFFIX,github.com,PROXY-BEST
-  - DOMAIN-SUFFIX,githubusercontent.com,PROXY-BEST
-  - DOMAIN-SUFFIX,ghcr.io,PROXY-BEST
-  - DOMAIN-SUFFIX,githubassets.com,PROXY-BEST
-  - DOMAIN-SUFFIX,stackoverflow.com,PROXY-BEST
-  - DOMAIN-SUFFIX,sstatic.net,PROXY-BEST
-  - DOMAIN-SUFFIX,docker.com,PROXY-BEST
-  - DOMAIN-SUFFIX,docker.io,PROXY-BEST
-  - DOMAIN-SUFFIX,npmjs.com,PROXY-BEST
-  - DOMAIN-SUFFIX,pypi.org,PROXY-BEST
-
-  # ── AI services → PROXY-BEST ─────────────────────────────────────────────
-  - DOMAIN-SUFFIX,openai.com,PROXY-BEST
-  - DOMAIN-SUFFIX,oaiusercontent.com,PROXY-BEST
-  - DOMAIN-SUFFIX,anthropic.com,PROXY-BEST
-  - DOMAIN-SUFFIX,claude.ai,PROXY-BEST
-
-  # ── Google → PROXY-BEST ──────────────────────────────────────────────────
-  - DOMAIN-SUFFIX,google.com,PROXY-BEST
-  - DOMAIN-SUFFIX,googleapis.com,PROXY-BEST
-  - DOMAIN-SUFFIX,gstatic.com,PROXY-BEST
-  - DOMAIN-SUFFIX,googlesyndication.com,PROXY-BEST
-  - DOMAIN-SUFFIX,googletagmanager.com,PROXY-BEST
-  - DOMAIN-SUFFIX,gmail.com,PROXY-BEST
-
-  # ── CDN / infrastructure → PROXY-BEST ────────────────────────────────────
-  - DOMAIN-SUFFIX,cloudflare.com,PROXY-BEST
-  - DOMAIN-SUFFIX,cloudflare.net,PROXY-BEST
-  - DOMAIN-SUFFIX,fastly.net,PROXY-BEST
-  - DOMAIN-SUFFIX,jsdelivr.net,PROXY-BEST
-  - DOMAIN-SUFFIX,unpkg.com,PROXY-BEST
-  - DOMAIN-SUFFIX,bootstrapcdn.com,PROXY-BEST
-  - DOMAIN-SUFFIX,amazonaws.com,PROXY-BEST
-  - DOMAIN-SUFFIX,cloudfront.net,PROXY-BEST
-  - DOMAIN-SUFFIX,azure.com,PROXY-BEST
-  - DOMAIN-SUFFIX,azureedge.net,PROXY-BEST
-
-  # ── Knowledge / misc → PROXY-BEST ────────────────────────────────────────
-  - DOMAIN-SUFFIX,wikipedia.org,PROXY-BEST
-  - DOMAIN-SUFFIX,wikimedia.org,PROXY-BEST
-  - DOMAIN-SUFFIX,medium.com,PROXY-BEST
-  - DOMAIN-SUFFIX,apkpure.com,PROXY-BEST
-  - DOMAIN-SUFFIX,apkmirror.com,PROXY-BEST
-
-  # ── Default → PROXY-BEST ─────────────────────────────────────────────────
   - MATCH,PROXY-BEST
