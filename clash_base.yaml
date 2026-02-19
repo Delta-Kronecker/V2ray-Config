@@ -39,29 +39,92 @@ dns:
     - 'www.msftncsi.com'
     - 'cp.cloudflare.com'
   default-nameserver:
-    - 178.22.122.100
-    - 185.51.200.2
-    - 223.5.5.5
-    - 119.29.29.29
+    - 1.1.1.1
+    - 1.0.0.1
+    - 8.8.8.8
+    - 8.8.4.4
+    - 9.9.9.9
+    - 149.112.112.112
+    - 208.67.222.222
+    - 208.67.220.220
+    - 94.140.14.14
+    - 94.140.15.15
+    - 64.6.64.6
+    - 64.6.65.6
+    - 84.200.69.80
+    - 84.200.70.40
+    - 76.76.19.19
+    - 76.223.122.150
+    - 8.26.56.26
+    - 8.20.247.20
   nameserver:
-    - https://dns.google/dns-query
-    - tls://8.8.8.8:853
-    - tls://8.8.4.4:853
     - https://cloudflare-dns.com/dns-query
+    - https://1.1.1.1/dns-query
+    - https://1.0.0.1/dns-query
+    - https://dns.google/dns-query
+    - https://8.8.8.8/dns-query
+    - https://8.8.4.4/dns-query
+    - https://dns.quad9.net/dns-query
+    - https://9.9.9.9/dns-query
+    - https://149.112.112.112/dns-query
+    - https://dns.adguard.com/dns-query
+    - https://94.140.14.14/dns-query
+    - https://94.140.15.15/dns-query
+    - https://doh.opendns.com/dns-query
+    - https://208.67.222.222/dns-query
+    - https://208.67.220.220/dns-query
+    - https://doh.comodo.com/dns-query
+    - https://8.26.56.26/dns-query
+    - https://8.20.247.20/dns-query
+    - https://doh.mullvad.net/dns-query
+    - https://doh.dns.mullvad.net/dns-query
+    - https://freedns.controld.com/p0
+    - https://freedns.controld.com/family
     - tls://1.1.1.1:853
     - tls://1.0.0.1:853
-    - https://dns.quad9.net/dns-query
+    - tls://8.8.8.8:853
+    - tls://8.8.4.4:853
     - tls://9.9.9.9:853
-    - https://doh.opendns.com/dns-query
-    - tls://208.67.222.222:853
-    - https://dns.adguard.com/dns-query
+    - tls://149.112.112.112:853
     - tls://94.140.14.14:853
+    - tls://94.140.15.15:853
+    - tls://208.67.222.222:853
+    - tls://208.67.220.220:853
+    - tls://family-filter-dns.cleanbrowsing.org:853
+    - tls://adult-filter-dns.cleanbrowsing.org:853
+    - tls://security-filter-dns.cleanbrowsing.org:853
+    - h3://cloudflare-dns.com/dns-query
+    - h3://dns.google/dns-query
+    - h3://dns.quad9.net/dns-query
+    - 1.1.1.1
+    - 1.0.0.1
+    - 8.8.8.8
+    - 8.8.4.4
+    - 9.9.9.9
+    - 149.112.112.112
+    - 208.67.222.222
+    - 208.67.220.220
+    - 94.140.14.14
+    - 94.140.15.15
+    - 64.6.64.6
+    - 64.6.65.6
+    - 84.200.69.80
+    - 84.200.70.40
+    - 8.26.56.26
+    - 8.20.247.20
+    - 76.76.19.19
+    - 76.223.122.150
+    - 208.67.222.123
+    - 208.67.220.123
+    - 195.46.39.39
+    - 195.46.39.40
+    - 38.132.106.139
+    - 194.187.251.67
 
 proxies:
 # ---PROXIES---
 
 proxy-groups:
-  # Top-level selector — only logical groups shown here
   - name: "PROXY"
     type: select
     proxies:
