@@ -1773,38 +1773,7 @@ func min500(batchIdx, total int) int {
 }
 
 
-package main
-
-import (
-	"bufio"
-	"fmt"
-	"os"
-	"path/filepath"
-	"strings"
-	"time"
-)
-
-const batchSize = 500
-
-type configResult struct {
-	proto string
-}
-
-var cfg struct {
-	ProtocolOrder []string
-}
-
-var gInputByProto = make(map[string]int)
-
-func countBatchFiles(path string) int {
-	files, err := filepath.Glob(filepath.Join(path, "batch_*"))
-	if err != nil {
-		return 0
-	}
-	return len(files)
-}
-
-func writeSummaryMinimal(results []configResult, failedLinks []string, duration float64, originalTotal int) {
+func writeSummary(results []configResult, failedLinks []string, duration float64, originalTotal int) {
 	byProtoOut := make(map[string]int)
 	for _, r := range results {
 		byProtoOut[r.proto]++
@@ -1850,7 +1819,6 @@ func writeSummaryMinimal(results []configResult, failedLinks []string, duration 
 	fmt.Fprintf(w, "| Processing time | %.2fs |\n\n", duration)
 
 	w.WriteString("---\n\n")
-
 	w.WriteString("## Main Files\n\n")
 
 	w.WriteString("### V2ray — All Configs\n\n")
@@ -1880,7 +1848,6 @@ func writeSummaryMinimal(results []configResult, failedLinks []string, duration 
 	w.WriteString("\n")
 
 	w.WriteString("---\n\n")
-
 	w.WriteString("## Batch Files — Random 500-Config Groups\n\n")
 	w.WriteString("> Each file contains 500 randomly selected configs from all protocols.\n\n")
 
@@ -1890,10 +1857,7 @@ func writeSummaryMinimal(results []configResult, failedLinks []string, duration 
 	w.WriteString("### V2ray Batches\n\n")
 	fmt.Fprintf(w, "| Batch | Count | Link |\n|---|---|---|\n")
 	for i := 1; i <= v2rayBatches; i++ {
-		cnt := batchSize
-		if i*batchSize > len(results) {
-			cnt = len(results) - (i-1)*batchSize
-		}
+		cnt := min500(i, len(results))
 		fmt.Fprintf(w, "| Batch %03d | %d | [batch_%03d.txt](%s/config/batches/v2ray/batch_%03d.txt) |\n",
 			i, cnt, i, repoBase, i)
 	}
