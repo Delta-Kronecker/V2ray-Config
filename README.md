@@ -1,130 +1,202 @@
-# V2Ray Config Aggregator
+# V2ray-Config — Delta-Kronecker
 
-**آخرین بروزرسانی:** 2026-02-19 01:32:19 UTC
+> Last updated: 2026-02-19 09:29 UTC
 
-این پروژه به صورت خودکار کانفیگ‌های V2Ray را از منابع مختلف جمع‌آوری، اعتبارسنجی و دسته‌بندی می‌کند.
+## About
 
----
+Automatically updated every 24 hours. Configs are fetched from multiple sources, validated with sing-box, deduplicated, and published.
 
-## آمار کلی
+**Supported protocols:** VMess · VLess · Trojan · Shadowsocks · Hysteria2 · Hysteria · TUIC
 
-| شاخص | مقدار |
-|------|-------|
-| کل دریافت‌شده (ورودی) | 2248 |
-| کانفیگ‌های معتبر (خروجی) | 368 |
-| کاهش (تکراری + نامعتبر) | 83.6% |
-| زمان پردازش | 31.12 ثانیه |
-| تعداد دسته‌های ۵۰۰تایی | 1 |
-
-## آمار به تفکیک پروتکل
-
-| پروتکل | تعداد ورودی (تخمین) | تعداد خروجی (معتبر) |
-|--------|---------------------|---------------------|
-| VMESS | - | 31 |
-| VLESS | - | 121 |
-| TROJAN | - | 134 |
-| SS | - | 81 |
-| HY2 | - | 1 |
-| **مجموع** | **2248** | **368** |
+Clash configs are Iran-optimized with layered DNS, GeoIP rules, and intelligent proxy groups.
 
 ---
 
-## فایل‌های اصلی
+## Statistics
 
-### V2Ray — همه پروتکل‌ها
+### Per-Protocol Input & Output
 
-| توضیح | لینک دانلود |
-|-------|-------------|
-| همه کانفیگ‌ها (text) | [all_configs.txt](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/all_configs.txt) |
+| Protocol | Input (unique) | Output (valid) | Pass Rate |
+|---|---|---|---|
+| VMESS | 240 | 76 | 31.7% |
+| VLESS | 507 | 101 | 19.9% |
+| TROJAN | 762 | 144 | 18.9% |
+| SS | 207 | 73 | 35.3% |
+| HY2 | 16 | 1 | 6.2% |
+| HY | 0 | 0 | 0.0% |
+| TUIC | 2 | 0 | 0.0% |
+| **Total** | **1734** | **395** | **22.8%** |
 
-### Clash / Mihomo — ساختار معمولی
-
-| توضیح | لینک دانلود |
-|-------|-------------|
-| Clash همه پروتکل‌ها | [clash.yaml](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/clash.yaml) |
-
-### Clash / Mihomo — ساختار پیشرفته (بهینه‌شده برای ایران)
-
-> دارای DNS چندلایه با سرورهای ایرانی (Shecan/TCI/403online)، تشخیص خودکار سناریو فیلترینگ، load-balancing و fallback هوشمند
-
-| توضیح | لینک دانلود |
-|-------|-------------|
-| Clash Advanced همه پروتکل‌ها | [clash_advanced.yaml](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/clash_advanced.yaml) |
-
----
-
-## فایل‌های جداگانه به تفکیک پروتکل
-
-| پروتکل | V2Ray Text | Clash معمولی | Clash پیشرفته |
-|--------|-----------|--------------|----------------|
-| **VMESS** | [vmess.txt](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/protocols/vmess.txt) | [vmess_clash.yaml](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/protocols/vmess_clash.yaml) | [vmess_clash_advanced.yaml](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/protocols/vmess_clash_advanced.yaml) |
-| **VLESS** | [vless.txt](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/protocols/vless.txt) | [vless_clash.yaml](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/protocols/vless_clash.yaml) | [vless_clash_advanced.yaml](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/protocols/vless_clash_advanced.yaml) |
-| **TROJAN** | [trojan.txt](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/protocols/trojan.txt) | [trojan_clash.yaml](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/protocols/trojan_clash.yaml) | [trojan_clash_advanced.yaml](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/protocols/trojan_clash_advanced.yaml) |
-| **SS** | [ss.txt](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/protocols/ss.txt) | [ss_clash.yaml](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/protocols/ss_clash.yaml) | [ss_clash_advanced.yaml](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/protocols/ss_clash_advanced.yaml) |
-| **HY2** | [hy2.txt](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/protocols/hy2.txt) | [hy2_clash.yaml](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/protocols/hy2_clash.yaml) | [hy2_clash_advanced.yaml](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/protocols/hy2_clash_advanced.yaml) |
+| Metric | Value |
+|---|---|
+| Raw fetched lines | 2327 |
+| Unique after dedup | 1734 |
+| Valid configs | 395 |
+| Processing time | 32.03s |
 
 ---
 
-## فایل‌های دسته‌ای — ۵۰۰ کانفیگ تصادفی
+## Main Files
 
-هر دسته شامل ۵۰۰ کانفیگ به صورت تصادفی از میان تمام کانفیگ‌های معتبر انتخاب شده است.
+### V2ray — All Configs
 
-### V2Ray Batches
+| File | Link |
+|---|---|
+| All configs (txt) | [all_configs.txt](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/all_configs.txt) |
 
-| دسته | تعداد | لینک دانلود |
-|------|-------|-------------|
-| دسته 1 | 368 | [batch_001.txt](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/batches/v2ray/batch_001.txt) |
+### V2ray — By Protocol
 
-### Clash Batches — معمولی
+| Protocol | Count | Link |
+|---|---|---|
+| VMESS | 76 | [vmess.txt](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/protocols/vmess.txt) |
+| VLESS | 101 | [vless.txt](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/protocols/vless.txt) |
+| TROJAN | 144 | [trojan.txt](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/protocols/trojan.txt) |
+| SS | 73 | [ss.txt](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/protocols/ss.txt) |
+| HY2 | 1 | [hy2.txt](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/protocols/hy2.txt) |
 
-| دسته | تعداد | لینک دانلود |
-|------|-------|-------------|
-| دسته 1 | 368 | [batch_001.yaml](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/batches/clash/batch_001.yaml) |
+### Clash — Standard Structure
 
-### Clash Batches — پیشرفته
+Groups: **PROXY** (selector) → **Load-Balance** · **Auto** · **Fallback**
 
-| دسته | تعداد | لینک دانلود |
-|------|-------|-------------|
-| دسته 1 | 368 | [batch_001.yaml](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/batches/clash_advanced/batch_001.yaml) |
+| File | Link |
+|---|---|
+| clash.yaml (all protocols) | [clash.yaml](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/clash.yaml) |
+| vmess_clash.yaml | [vmess_clash.yaml](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/protocols/vmess_clash.yaml) |
+| vless_clash.yaml | [vless_clash.yaml](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/protocols/vless_clash.yaml) |
+| trojan_clash.yaml | [trojan_clash.yaml](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/protocols/trojan_clash.yaml) |
+| ss_clash.yaml | [ss_clash.yaml](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/protocols/ss_clash.yaml) |
+| hy2_clash.yaml | [hy2_clash.yaml](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/protocols/hy2_clash.yaml) |
+
+### Clash — Advanced Structure (Recommended)
+
+Groups: **PROXY-BEST** → SCEN-OPEN · SCEN-CDN → LB-ALL · LB-CDN · FAST-ALL · FAST-CDN · UDP-BEST · MANUAL
+
+| File | Link |
+|---|---|
+| clash_advanced.yaml (all protocols) | [clash_advanced.yaml](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/clash_advanced.yaml) |
+| vmess_clash_advanced.yaml | [vmess_clash_advanced.yaml](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/protocols/vmess_clash_advanced.yaml) |
+| vless_clash_advanced.yaml | [vless_clash_advanced.yaml](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/protocols/vless_clash_advanced.yaml) |
+| trojan_clash_advanced.yaml | [trojan_clash_advanced.yaml](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/protocols/trojan_clash_advanced.yaml) |
+| ss_clash_advanced.yaml | [ss_clash_advanced.yaml](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/protocols/ss_clash_advanced.yaml) |
+| hy2_clash_advanced.yaml | [hy2_clash_advanced.yaml](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/protocols/hy2_clash_advanced.yaml) |
 
 ---
 
-## نحوه استفاده
+## Batch Files — Random 500-Config Groups
 
-### V2Ray / Xray / Nekoray / Hiddify
+> Each file contains 500 randomly selected configs from all protocols.
 
-لینک subscription زیر را در اپلیکیشن وارد کنید:
+### V2ray Batches
+
+| Batch | Count | Link |
+|---|---|---|
+| Batch 001 | 395 | [batch_001.txt](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/batches/v2ray/batch_001.txt) |
+
+### Clash Standard Batches
+
+| Batch | Link |
+|---|---|
+| Batch 001 | [batch_001.yaml](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/batches/clash/batch_001.yaml) |
+
+### Clash Advanced Batches
+
+| Batch | Link |
+|---|---|
+
+---
+
+## Usage
+
+### V2ray / Xray / Sing-box
 
 ```
 https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/all_configs.txt
 ```
 
-### Clash / Mihomo — ساختار معمولی
+### Clash / Mihomo — Standard
 
 ```
 https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/clash.yaml
 ```
 
-### Clash / Mihomo — ساختار پیشرفته
-
-این نسخه پیشنهادی برای کاربران ایران است. دارای گروه‌بندی هوشمند:
-
-- **PROXY-BEST**: انتخاب خودکار بهترین مسیر
-- **SCEN-OPEN / SCEN-CDN / SCEN-IRAN-ONLY**: تشخیص سناریو فیلترینگ
-- **LB-OPEN / LB-CDN**: توزیع بار چندمسیره
-- **UDP-BEST**: بهترین پروکسی برای تماس صوتی/تصویری
-- **MANUAL**: انتخاب دستی برای کاربران پیشرفته
+### Clash / Mihomo — Advanced (Recommended)
 
 ```
 https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/clash_advanced.yaml
 ```
 
+### 500-Config Batches
+
+```
+https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/batches/v2ray/batch_001.txt
+https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/batches/clash/batch_001.yaml
+https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/batches/clash_advanced/batch_001.yaml
+```
+
 ---
 
-## منابع ناموفق در آخرین اجرا
+## Advanced Clash Architecture
+
+```
+PROXY-BEST (final fallback)
+├── SCEN-OPEN  → LB-ALL + FAST-ALL   (open internet)
+├── SCEN-CDN   → LB-CDN + FAST-CDN   (CDN whitelist)
+├── FAST-ALL   → url-test all proxies
+└── FAST-CDN   → url-test via Cloudflare endpoint
+
+UDP-BEST  → url-test for UDP traffic
+LB-ALL    → load-balance consistent-hashing (session-aware)
+LB-CDN    → load-balance round-robin (stateless CDN)
+MANUAL    → manual select (all groups + DIRECT)
+```
+
+## Standard Clash Architecture
+
+```
+PROXY (manual selector)
+├── Load-Balance  → consistent-hashing across all proxies
+├── Auto          → url-test (fastest)
+└── Fallback      → automatic failover
+```
+
+---
+
+## Iran-Optimized DNS
+
+| Server | Address |
+|---|---|
+| Shecan (primary) | 178.22.122.100 / 185.51.200.2 |
+| TCI / Zirsakht | 217.218.155.155 / 217.218.127.127 |
+| 403.online | 185.55.225.25 / 185.55.227.22 |
+
+`.ir` domains resolve via Iranian DNS servers directly. Foreign domains use DoH/DoT.
+
+---
+
+## File Structure
+
+```
+config/
+├── all_configs.txt              ← all V2ray configs
+├── clash.yaml                   ← Clash standard
+├── clash_advanced.yaml          ← Clash advanced (recommended)
+├── protocols/
+│   ├── vmess.txt
+│   ├── vmess_clash.yaml
+│   ├── vmess_clash_advanced.yaml
+│   └── (other protocols)
+└── batches/
+    ├── v2ray/batch_001.txt        ← 500 random V2ray configs
+    ├── clash/batch_001.yaml       ← 500 random Clash standard
+    └── clash_advanced/batch_001.yaml
+```
+
+---
+
+## Failed Sources
 
 - https://github.com/Argh94/Proxy-List/raw/refs/heads/main/All_Config.txt (error)
 
 ---
 
-*این فایل به صورت خودکار توسط GitHub Actions تولید می‌شود.*
+*Auto-generated by GitHub Actions.*
