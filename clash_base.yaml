@@ -27,36 +27,6 @@ dns:
   fake-ip-range: 198.18.0.1/16
   fake-ip-filter:
     - '*.ir'
-    - '*.iran'
-    - '*.arvancloud.ir'
-    - '*.parspack.com'
-    - '*.digikala.com'
-    - '*.varzesh3.com'
-    - '*.aparat.com'
-    - '*.torob.com'
-    - '*.snapp.ir'
-    - '*.tapsi.ir'
-    - '*.divar.ir'
-    - '*.bale.ai'
-    - '*.eitaa.com'
-    - '*.rubika.ir'
-    - '*.mci.ir'
-    - '*.irancell.ir'
-    - '*.hamraheawal.com'
-    - '*.sep.ir'
-    - '*.enamad.ir'
-    - '*.shaparak.ir'
-    - '*.filimo.com'
-    - '*.namava.ir'
-    - '*.snappfood.ir'
-    - '*.sheypoor.com'
-    - '*.basalam.com'
-    - '*.alibaba.ir'
-    - '*.telewebion.com'
-    - '*.zoomit.ir'
-    - '*.gap.im'
-    - '*.igap.net'
-    - '*.balad.ir'
     - '*.local'
     - '*.lan'
     - '*.localhost'
@@ -69,6 +39,33 @@ dns:
     - 'captive.apple.com'
     - 'www.msftncsi.com'
     - 'cp.cloudflare.com'
+    - '*.digikala.com'
+    - '*.aparat.com'
+    - '*.varzesh3.com'
+    - '*.snapp.ir'
+    - '*.tapsi.ir'
+    - '*.divar.ir'
+    - '*.bale.ai'
+    - '*.eitaa.com'
+    - '*.rubika.ir'
+    - '*.filimo.com'
+    - '*.namava.ir'
+    - '*.snappfood.ir'
+    - '*.sheypoor.com'
+    - '*.torob.com'
+    - '*.basalam.com'
+    - '*.alibaba.ir'
+    - '*.mci.ir'
+    - '*.irancell.ir'
+    - '*.hamraheawal.com'
+    - '*.sep.ir'
+    - '*.enamad.ir'
+    - '*.shaparak.ir'
+    - '*.balad.ir'
+    - '*.zoomit.ir'
+    - '*.gap.im'
+    - '*.igap.net'
+    - '*.telewebion.com'
   default-nameserver:
     - 178.22.122.100
     - 185.51.200.2
@@ -76,7 +73,6 @@ dns:
     - 217.218.127.127
     - 223.5.5.5
     - 119.29.29.29
-    - 9.9.9.9
   nameserver:
     - https://dns.google/dns-query
     - tls://8.8.8.8:853
@@ -86,17 +82,10 @@ dns:
     - tls://1.0.0.1:853
     - https://dns.quad9.net/dns-query
     - tls://9.9.9.9:853
-    - tls://149.112.112.112:853
     - https://doh.opendns.com/dns-query
     - tls://208.67.222.222:853
-    - tls://208.67.220.220:853
     - https://dns.adguard.com/dns-query
     - tls://94.140.14.14:853
-    - tls://94.140.15.15:853
-    - https://doh.pub/dns-query
-    - https://dns.alidns.com/dns-query
-    - https://dns.digitale-gesellschaft.ch/dns-query
-    - tls://77.88.8.8:853
   nameserver-policy:
     "geosite:ir":
       - 178.22.122.100
@@ -105,43 +94,18 @@ dns:
       - 217.218.127.127
       - 185.55.225.25
       - 185.55.227.22
-      - https://doh.pub/dns-query
     "geosite:google":
-      - https://dns.google/dns-query
-      - tls://8.8.8.8:853
-    "geosite:youtube":
       - https://dns.google/dns-query
       - tls://8.8.8.8:853
     "geosite:telegram":
       - https://cloudflare-dns.com/dns-query
       - tls://1.1.1.1:853
-    "geosite:twitter":
-      - https://cloudflare-dns.com/dns-query
-      - tls://1.1.1.1:853
-    "geosite:facebook":
-      - https://dns.google/dns-query
-      - https://cloudflare-dns.com/dns-query
-    "geosite:instagram":
-      - https://dns.google/dns-query
-      - https://cloudflare-dns.com/dns-query
-    "geosite:netflix":
-      - https://dns.google/dns-query
-      - tls://8.8.8.8:853
-    "geosite:openai":
-      - https://dns.google/dns-query
-      - https://cloudflare-dns.com/dns-query
-    "geosite:github":
-      - https://dns.google/dns-query
-      - tls://8.8.8.8:853
   fallback:
     - tls://8.8.8.8:853
     - tls://8.8.4.4:853
     - tls://1.1.1.1:853
     - tls://1.0.0.1:853
     - tls://9.9.9.9:853
-    - tls://149.112.112.112:853
-    - tls://208.67.222.222:853
-    - tls://94.140.14.14:853
     - https://dns.google/dns-query
     - https://cloudflare-dns.com/dns-query
   fallback-filter:
@@ -158,14 +122,47 @@ dns:
     domain:
       - '+.ir'
 
-# ---RULES---
+proxies:
+# ---PROXIES---
+
+proxy-groups:
+  # Top-level selector — only shows logical groups, not individual proxies
+  - name: "PROXY"
+    type: select
+    proxies:
+      - "Load Balance"
+      - "Auto"
+      - "Fallback"
+      - DIRECT
+
+  - name: "Load Balance"
+    type: load-balance
+    strategy: consistent-hashing
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 150
+    lazy: true
+    proxies:
+# ---PROXY-NAMES---
+
+  - name: "Auto"
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    lazy: true
+    proxies:
+# ---PROXY-NAMES---
+
+  - name: "Fallback"
+    type: fallback
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    lazy: true
+    proxies:
+# ---PROXY-NAMES---
+
 rules:
-  - DST-PORT,53,UDP-BEST
-  - AND,((NETWORK,udp),(DOMAIN-SUFFIX,telegram.org)),UDP-BEST
-  - AND,((NETWORK,udp),(DOMAIN-SUFFIX,t.me)),UDP-BEST
-  - AND,((NETWORK,udp),(DOMAIN-SUFFIX,whatsapp.com)),UDP-BEST
-  - AND,((NETWORK,udp),(DOMAIN-SUFFIX,whatsapp.net)),UDP-BEST
-  - AND,((NETWORK,udp),(DOMAIN-SUFFIX,signal.org)),UDP-BEST
   - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
   - IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
   - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
@@ -258,21 +255,14 @@ rules:
   - DOMAIN-SUFFIX,oaiusercontent.com,PROXY
   - DOMAIN-SUFFIX,anthropic.com,PROXY
   - DOMAIN-SUFFIX,claude.ai,PROXY
-  - DOMAIN-SUFFIX,gemini.google.com,PROXY
   - DOMAIN-SUFFIX,google.com,PROXY
   - DOMAIN-SUFFIX,googleapis.com,PROXY
   - DOMAIN-SUFFIX,gstatic.com,PROXY
-  - DOMAIN-SUFFIX,googlesyndication.com,PROXY
-  - DOMAIN-SUFFIX,googletagmanager.com,PROXY
   - DOMAIN-SUFFIX,gmail.com,PROXY
-  - DOMAIN-SUFFIX,drive.google.com,PROXY
   - DOMAIN-SUFFIX,cloudflare.com,PROXY
-  - DOMAIN-SUFFIX,cloudflare.net,PROXY
   - DOMAIN-SUFFIX,fastly.net,PROXY
   - DOMAIN-SUFFIX,jsdelivr.net,PROXY
   - DOMAIN-SUFFIX,unpkg.com,PROXY
-  - DOMAIN-SUFFIX,bootstrapcdn.com,PROXY
-  - DOMAIN-SUFFIX,cdnjs.cloudflare.com,PROXY
   - DOMAIN-SUFFIX,amazonaws.com,PROXY
   - DOMAIN-SUFFIX,cloudfront.net,PROXY
   - DOMAIN-SUFFIX,azure.com,PROXY
