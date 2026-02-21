@@ -826,6 +826,13 @@ func toSingBoxOutbound(configURL, protocol string) (string, string) {
 }
 
 func sanitizeProxyURL(raw string) string {
+	// Strip spaces and control characters that break URL parsing
+	raw = strings.Map(func(r rune) rune {
+		if r == ' ' || r == '\t' || r == '\r' || r == '\n' {
+			return -1
+		}
+		return r
+	}, raw)
 	schemeIdx := strings.Index(raw, "://")
 	if schemeIdx == -1 {
 		return raw
@@ -1051,6 +1058,20 @@ func parseTrojan(raw string) (string, string) {
 		server, port, password, tls, transport), ""
 }
 
+// singboxSupportedSSCiphers lists ciphers supported by sing-box.
+// Unsupported ciphers (rc4, rc4-md5, chacha20, bf-cfb, etc.) cause SINGBOX_START failures.
+var singboxSupportedSSCiphers = map[string]bool{
+	"aes-128-gcm": true, "aes-192-gcm": true, "aes-256-gcm": true,
+	"aes-128-cfb": true, "aes-192-cfb": true, "aes-256-cfb": true,
+	"aes-128-ctr": true, "aes-192-ctr": true, "aes-256-ctr": true,
+	"chacha20-ietf-poly1305": true, "xchacha20-ietf-poly1305": true,
+	"chacha20-ietf": true,
+	"2022-blake3-aes-128-gcm":       true,
+	"2022-blake3-aes-256-gcm":       true,
+	"2022-blake3-chacha20-poly1305": true,
+	"none": true, "plain": true,
+}
+
 func parseShadowsocks(raw string) (string, string) {
 	trimmed := strings.TrimPrefix(raw, "ss://")
 	if idx := strings.Index(trimmed, "#"); idx != -1 {
@@ -1078,7 +1099,18 @@ func parseShadowsocks(raw string) (string, string) {
 	}
 	decoded, err := decodeBase64([]byte(userInfo))
 	if err != nil {
-		decoded = userInfo
+		// Try URL-decoding first (some SS links use percent-encoded method:password)
+		if unescaped, uerr := url.PathUnescape(userInfo); uerr == nil && unescaped != userInfo {
+			if d, berr := decodeBase64([]byte(unescaped)); berr == nil {
+				decoded = d
+				err = nil
+			} else {
+				decoded = unescaped
+				err = nil
+			}
+		} else {
+			decoded = userInfo
+		}
 	}
 	parts := strings.SplitN(decoded, ":", 2)
 	if len(parts) != 2 {
@@ -1092,6 +1124,11 @@ func parseShadowsocks(raw string) (string, string) {
 	if s := strings.Index(portStr, "/"); s != -1 {
 		portStr = portStr[:s]
 	}
+	// Strip any non-digit characters after the port number (e.g., '\2}', newlines)
+	if s := strings.IndexFunc(portStr, func(r rune) bool { return r < '0' || r > '9' }); s != -1 {
+		portStr = portStr[:s]
+	}
+	portStr = strings.TrimSpace(portStr)
 	server := hostInfo[:lastColon]
 	port, err := toPort(portStr)
 	if err != nil {
@@ -1100,8 +1137,12 @@ func parseShadowsocks(raw string) (string, string) {
 	if server == "" {
 		return "", "missing server"
 	}
+	method := strings.ToLower(parts[0])
+	if !singboxSupportedSSCiphers[method] {
+		return "", fmt.Sprintf("unsupported cipher: %s", method)
+	}
 	return fmt.Sprintf(`{"type":"shadowsocks","tag":"proxy","server":%q,"server_port":%d,"method":%q,"password":%q}`,
-		server, port, parts[0], parts[1]), ""
+		server, port, method, parts[1]), ""
 }
 
 func parseHysteria2(raw string) (string, string) {
@@ -1127,13 +1168,25 @@ func parseHysteria2(raw string) (string, string) {
 		hostPort = hostPort[:i]
 	}
 	lastColon := strings.LastIndex(hostPort, ":")
+	var server string
+	var port int
 	if lastColon == -1 {
-		return "", "missing port"
-	}
-	server := hostPort[:lastColon]
-	port, err := toPort(hostPort[lastColon+1:])
-	if err != nil {
-		return "", "port: " + err.Error()
+		// No port specified - use default 443
+		server = hostPort
+		port = 443
+	} else {
+		portCandidate := hostPort[lastColon+1:]
+		// Verify it's actually a port number (not part of IPv6)
+		if _, perr := toPort(portCandidate); perr == nil {
+			server = hostPort[:lastColon]
+			port, _ = toPort(portCandidate)
+		} else if strings.HasPrefix(hostPort, "[") {
+			// Pure IPv6 without port
+			server = hostPort
+			port = 443
+		} else {
+			return "", "missing port"
+		}
 	}
 	if server == "" {
 		return "", "missing server"
@@ -1883,15 +1936,37 @@ func writeSummary(results []configResult, failedLinks []string, duration float64
 
 
 func decodeBase64(encoded []byte) (string, error) {
-	s := strings.TrimSpace(strings.ReplaceAll(strings.ReplaceAll(string(encoded), "\n", ""), "\r", ""))
-	if r := len(s) % 4; r != 0 {
-		s += strings.Repeat("=", 4-r)
+	// Strip all whitespace variants (space, tab, CR, LF)
+	s := strings.Map(func(r rune) rune {
+		if r == ' ' || r == '\t' || r == '\r' || r == '\n' {
+			return -1
+		}
+		return r
+	}, string(encoded))
+
+	// Normalize: strip existing padding to get clean raw string
+	stripped := strings.TrimRight(s, "=")
+
+	// Build padded version (multiple of 4)
+	padded := stripped
+	if r := len(padded) % 4; r != 0 {
+		padded += strings.Repeat("=", 4-r)
 	}
-	decoded, err := base64.StdEncoding.DecodeString(s)
-	if err != nil {
-		decoded, err = base64.URLEncoding.DecodeString(s)
+
+	// Try with padding: StdEncoding (+/) then URLEncoding (-_)
+	for _, enc := range []*base64.Encoding{base64.StdEncoding, base64.URLEncoding} {
+		if b, err := enc.DecodeString(padded); err == nil {
+			return string(b), nil
+		}
 	}
-	return string(decoded), err
+	// Try without padding: RawStdEncoding (+/) then RawURLEncoding (-_)
+	for _, enc := range []*base64.Encoding{base64.RawStdEncoding, base64.RawURLEncoding} {
+		if b, err := enc.DecodeString(stripped); err == nil {
+			return string(b), nil
+		}
+	}
+	_, err := base64.RawURLEncoding.DecodeString(stripped)
+	return "", err
 }
 
 func toPort(s string) (int, error) {
@@ -1935,14 +2010,24 @@ func extractErr(stderr string) string {
 	var errs []string
 	for _, line := range strings.Split(stderr, "\n") {
 		line = strings.TrimSpace(line)
-		if line == "" || strings.Contains(line, "WARN") || strings.Contains(line, "deprecated") {
+		if line == "" {
 			continue
 		}
-		if strings.Contains(line, "ERROR") || strings.Contains(line, "error") {
-			if len(line) > 100 {
-				line = line[:100] + "..."
-			}
-			errs = append(errs, line)
+		lower := strings.ToLower(line)
+		// Skip warn/info/debug lines
+		if strings.Contains(lower, "warn") || strings.Contains(lower, "deprecated") {
+			continue
+		}
+		if strings.Contains(lower, `"level":"info"`) || strings.Contains(lower, `"level":"debug"`) ||
+			strings.Contains(lower, "level=info") || strings.Contains(lower, "level=debug") {
+			continue
+		}
+		if len(line) > 120 {
+			line = line[:120] + "..."
+		}
+		errs = append(errs, line)
+		if len(errs) >= 3 {
+			break
 		}
 	}
 	return strings.Join(errs, " | ")
