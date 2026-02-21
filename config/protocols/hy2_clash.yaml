@@ -122,18 +122,26 @@ dns:
 proxies:
   - name: "Delta-Kronecker-hy2-001"
     type: hysteria2
-    server: "130.61.50.75"
-    port: 6443
-    password: "zhangyang"
-    sni: "dash.cloudflare.com"
-    skip-cert-verify: true
-    udp: true
-  - name: "Delta-Kronecker-hy2-002"
-    type: hysteria2
     server: "91.132.51.160"
     port: 844
     password: "5046SHWqk6"
     sni: "91.132.51.160"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-hy2-002"
+    type: hysteria2
+    server: "130.61.50.75"
+    port: 6443
+    password: "zhangyang"
+    sni: "130.61.50.75"
+    skip-cert-verify: true
+    udp: true
+  - name: "Delta-Kronecker-hy2-003"
+    type: hysteria2
+    server: "129.151.251.122"
+    port: 35000
+    password: "545fb4e9-5794-4e20-be0c-e6d8689f91ac"
+    sni: "129.151.251.122"
     skip-cert-verify: true
     udp: true
 
@@ -156,6 +164,7 @@ proxy-groups:
     proxies:
       - "Delta-Kronecker-hy2-001"
       - "Delta-Kronecker-hy2-002"
+      - "Delta-Kronecker-hy2-003"
 
   - name: "Auto"
     type: url-test
@@ -166,6 +175,7 @@ proxy-groups:
     proxies:
       - "Delta-Kronecker-hy2-001"
       - "Delta-Kronecker-hy2-002"
+      - "Delta-Kronecker-hy2-003"
 
   - name: "Fallback"
     type: fallback
@@ -175,6 +185,7 @@ proxy-groups:
     proxies:
       - "Delta-Kronecker-hy2-001"
       - "Delta-Kronecker-hy2-002"
+      - "Delta-Kronecker-hy2-003"
 
 rules:
   - MATCH,PROXY
