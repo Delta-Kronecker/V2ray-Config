@@ -1,26 +1,23 @@
 {
   "validation": {
 
-    "num_workers": 1500,
-    "global_timeout_sec": 3500,
-    "xray_start_timeout_ms": 2500,
-    "xray_start_interval_ms": 450,
-    "port_check_timeout_ms": 200,
+    "num_workers": 1000,
+    "global_timeout_sec": 18000,
+    "xray_start_timeout_ms": 6000,
+    "xray_start_interval_ms": 700,
+    "port_check_timeout_ms": 300,
 
+    "http_request_timeout_ms": 13000,
+    "http_dial_timeout_ms": 11000,
+    "http_response_timeout_ms": 11000,
 
-
-
-    "http_request_timeout_ms": 2500,
-    "http_dial_timeout_ms": 2000,
-    "http_response_timeout_ms": 2000,
-
-    "max_retries": 3,
-    "validation_retries": 3,
+    "max_retries": 2,
+    "validation_retries": 2,
 
     "base_port": 10000,
 
     "batch_rest_ms": 1000,
-    "process_kill_wait_ms": 700,
+    "process_kill_wait_ms": 1000,
 
 
     "fetch_retry_count": 1,
@@ -34,9 +31,9 @@
     "tcp_ping_batch_rest_ms": 300,
     
     "test_urls": [
-      "http://cp.cloudflare.com/",
+      "https://www.gstatic.com/generate_204",
       "http://www.gstatic.com/generate_204",
-      "http://1.1.1.1"
+      "http://www.gstatic.com/generate_204"
     ]
   },
   "protocols": ["vless", "trojan", "ss"],
