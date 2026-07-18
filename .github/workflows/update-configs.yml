@@ -15,7 +15,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
       with:
-        fetch-depth: 0  # Fetch all history for proper merging
+        fetch-depth: 0
         token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Setup Go
@@ -24,22 +24,21 @@ jobs:
         go-version: '1.21'
         cache: true
 
-    - name: Download sing-box
+    - name: Download Xray
       run: |
-        SINGBOX_VERSION="1.12.22"
-        echo "Downloading sing-box v${SINGBOX_VERSION}"
-        wget -q "https://github.com/SagerNet/sing-box/releases/download/v${SINGBOX_VERSION}/sing-box-${SINGBOX_VERSION}-linux-amd64.tar.gz"
-        tar -xzf "sing-box-${SINGBOX_VERSION}-linux-amd64.tar.gz"
-        cp "sing-box-${SINGBOX_VERSION}-linux-amd64/sing-box" ./sing-box
-        chmod +x ./sing-box
-        rm -rf "sing-box-${SINGBOX_VERSION}-linux-amd64"*
-        ./sing-box version
+        XRAY_VERSION="26.1.23"
+        echo "Downloading Xray-core v${XRAY_VERSION}"
+        wget -q "https://github.com/XTLS/Xray-core/releases/download/v${XRAY_VERSION}/Xray-linux-64.zip"
+        unzip -o "Xray-linux-64.zip" xray -d .
+        chmod +x ./xray
+        rm -f "Xray-linux-64.zip" LICENSE README.md
+        ./xray version
 
     - name: Build
       run: |
         export GOPROXY=https://goproxy.io,direct
         go mod tidy
-        go build -ldflags="-s -w" -o aggregator .
+        go build -ldflags="-s -w" -o aggregator ./src
 
     - name: Run
       run: |

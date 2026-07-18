@@ -89,21 +89,21 @@ func killGroup(cmd *exec.Cmd) {
 	}
 }
 
-// ── Singbox helpers ───────────────────────────────────────────────────────────
+// ── Xray helpers ─────────────────────────────────────────────────────────────
 
-func singBoxPath() string {
-	for _, p := range []string{"./sing-box", "/usr/local/bin/sing-box"} {
+func xrayPath() string {
+	for _, p := range []string{"./xray", "/usr/local/bin/xray"} {
 		if _, err := os.Stat(p); err == nil {
 			return p
 		}
 	}
-	return "sing-box"
+	return "xray"
 }
 
-func countSingboxProcs() int {
+func countXrayProcs() int {
 	entries, err := os.ReadDir("/proc")
 	if err != nil {
-		out, err2 := exec.Command("pgrep", "-c", "sing-box").Output()
+		out, err2 := exec.Command("pgrep", "-c", "xray").Output()
 		if err2 != nil {
 			return -1
 		}
@@ -131,7 +131,7 @@ func countSingboxProcs() int {
 			continue
 		}
 		comm := strings.ReplaceAll(string(cmdline), "\x00", " ")
-		if strings.Contains(comm, "sing-box") {
+		if strings.Contains(comm, "xray") {
 			count++
 		}
 	}

@@ -88,7 +88,7 @@ func (l *Logger) logResult(idx int64, proto, configURL string, res validationRes
 	} else if strings.HasPrefix(res.failReason, "PARSE:") {
 		st.parseFail++
 		atomic.AddInt64(&l.parseFail, 1)
-	} else if strings.HasPrefix(res.failReason, "SINGBOX_START:") || strings.HasPrefix(res.failReason, "START:") {
+	} else if strings.HasPrefix(res.failReason, "XRAY_START:") || strings.HasPrefix(res.failReason, "START:") {
 		st.startFail++
 		atomic.AddInt64(&l.startFail, 1)
 	} else {

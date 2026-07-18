@@ -48,7 +48,7 @@ func extractHostPort(configURL, protocol string) (string, int) {
 		if parseErr != "" {
 			return "", 0
 		}
-		return extractFromSingBoxJSON(outbound)
+		return extractFromXrayJSON(outbound)
 
 	case "ssr":
 		// SSR: host is parts[0], port is parts[1] of decoded body
@@ -120,8 +120,8 @@ func extractHostPort(configURL, protocol string) (string, int) {
 	}
 }
 
-// extractFromSingBoxJSON extracts server/server_port from a sing-box outbound JSON string.
-func extractFromSingBoxJSON(jsonStr string) (string, int) {
+// extractFromXrayJSON extracts server/server_port from a xray outbound JSON string.
+func extractFromXrayJSON(jsonStr string) (string, int) {
 	// Quick substring extraction — avoid full JSON unmarshal for speed
 	getStr := func(key string) string {
 		needle := `"` + key + `":"`
@@ -340,7 +340,7 @@ func validateAll(lines []string) ([]configResult, []string) {
 				proto, len(protoLines), len(pingPassed), pingTotalFailed, numPingBatches, pingElapsed))
 		}
 
-		// Track lines that passed TCP ping — used later to find sing-box failures
+		// Track lines that passed TCP ping — used later to find xray failures
 		tcpAllFailedMu.Lock()
 		tcpPingPassedAll = append(tcpPingPassedAll, pingPassed...)
 		tcpAllFailedMu.Unlock()
@@ -350,129 +350,168 @@ func validateAll(lines []string) ([]configResult, []string) {
 			continue
 		}
 
-		// ── Phase 2: Full sing-box validation ─────────────────────────────────
+		// ── Phase 2: Full xray validation (with retry) ─────────────────────────
 		protoTotal := len(pingPassed)
-		totalBatches := (protoTotal + batchSize - 1) / batchSize
 		protoStart := time.Now()
-
-		fmt.Printf("🔵 [%s] Full validation — %d configs in %d batches of %d\n",
-			strings.ToUpper(proto), protoTotal, totalBatches, batchSize)
-
-		if gLog != nil {
-			gLog.logProtoStart(proto, protoTotal)
+		var protoPassed int64
+		maxRetries := v.ValidationRetries
+		if maxRetries < 0 {
+			maxRetries = 0
 		}
 
-		var protoPassed int64
+		passedSet := make(map[string]bool)
+		failedSet := make(map[string]bool)
+		currentConfigs := pingPassed
 
-		for batchIdx := 0; batchIdx < totalBatches; batchIdx++ {
-			start := batchIdx * batchSize
-			end := start + batchSize
-			if end > protoTotal {
-				end = protoTotal
+		for attempt := 0; attempt <= maxRetries; attempt++ {
+			if len(currentConfigs) == 0 {
+				break
 			}
-			batch := pingPassed[start:end]
-			actualBatchSize := len(batch)
+			totalBatches := (len(currentConfigs) + batchSize - 1) / batchSize
 
-			localPorts := make(chan int, actualBatchSize)
-			for i := 0; i < actualBatchSize; i++ {
-				localPorts <- v.BasePort + i
+			if attempt == 0 {
+				fmt.Printf("🔵 [%s] Full validation — %d configs in %d batches of %d\n",
+					strings.ToUpper(proto), len(currentConfigs), totalBatches, batchSize)
+			} else {
+				fmt.Printf("🔄 [%s] Retry %d — %d configs in %d batches of %d\n",
+					strings.ToUpper(proto), attempt, len(currentConfigs), totalBatches, batchSize)
 			}
 
-			bt := &batchTracker{}
-
-			type workerResult struct {
-				line string
-				res  validationResult
+			if gLog != nil && attempt == 0 {
+				gLog.logProtoStart(proto, len(currentConfigs))
 			}
-			workerResults := make([]workerResult, actualBatchSize)
 
-			var wg sync.WaitGroup
-			batchStart := time.Now()
+			var nextRetryConfigs []string
+
+			for batchIdx := 0; batchIdx < totalBatches; batchIdx++ {
+				start := batchIdx * batchSize
+				end := start + batchSize
+				if end > len(currentConfigs) {
+					end = len(currentConfigs)
+				}
+				batch := currentConfigs[start:end]
+				actualBatchSize := len(batch)
+
+				localPorts := make(chan int, actualBatchSize)
+				for i := 0; i < actualBatchSize; i++ {
+					localPorts <- v.BasePort + i
+				}
+
+				bt := &batchTracker{}
+
+				type workerResult struct {
+					line string
+					res  validationResult
+				}
+				workerResults := make([]workerResult, actualBatchSize)
+
+				var wg sync.WaitGroup
+				batchStart := time.Now()
 
 			for i, line := range batch {
 				wg.Add(1)
-				go func(idx int, l string) {
+				go func(idx int, l string, urlIdx int) {
 					defer wg.Done()
 					globalIdx := atomic.AddInt64(&testedCount, 1)
-					res := validateWithTracker(l, proto, localPorts, bt)
+					res := validateWithTracker(l, proto, localPorts, bt, urlIdx)
 					if gLog != nil {
 						gLog.logResult(globalIdx, proto, l, res)
 					}
 					workerResults[idx] = workerResult{line: l, res: res}
-				}(i, line)
-			}
-
-			wg.Wait()
-
-			bt.killAll()
-			if v.ProcessKillWaitMs > 0 {
-				time.Sleep(time.Duration(v.ProcessKillWaitMs) * time.Millisecond)
-			}
-
-			procsAfter := countSingboxProcs()
-			occupiedAfter := checkOccupiedPorts(v.BasePort, actualBatchSize)
-
-			if procsAfter > 0 || len(occupiedAfter) > 0 {
-				fmt.Printf("     ⚠️  After kill  — procs:%-3d  ports-busy:%-3d\n",
-					procsAfter, len(occupiedAfter))
-				if len(occupiedAfter) > 0 && len(occupiedAfter) <= 20 {
-					fmt.Printf("     ⚠️  Still-busy ports: %v\n", occupiedAfter)
+				}(i, line, attempt)
 				}
-			}
 
-			var bPassed, bFailed, bParse, bStart, bConn int
+				wg.Wait()
 
-			for _, wr := range workerResults {
-				res := wr.res
-				if res.passed {
-					bPassed++
-					atomic.AddInt64(&passedCount, 1)
-					atomic.AddInt64(&protoPassed, 1)
-					out = append(out, configResult{line: wr.line, proto: proto})
-				} else {
-					bFailed++
-					reason := res.failReason
-					norm := classifyFailReason(reason)
-					fd := protoFails[proto]
-					fd.mu.Lock()
-					fd.reasons[norm]++
-					if len(fd.samples[norm]) < 100 {
-						fd.samples[norm] = append(fd.samples[norm], wr.line)
+				bt.killAll()
+				if v.ProcessKillWaitMs > 0 {
+					time.Sleep(time.Duration(v.ProcessKillWaitMs) * time.Millisecond)
+				}
+
+				procsAfter := countXrayProcs()
+				occupiedAfter := checkOccupiedPorts(v.BasePort, actualBatchSize)
+
+				if procsAfter > 0 || len(occupiedAfter) > 0 {
+					fmt.Printf("     ⚠️  After kill  — procs:%-3d  ports-busy:%-3d\n",
+						procsAfter, len(occupiedAfter))
+					if len(occupiedAfter) > 0 && len(occupiedAfter) <= 20 {
+						fmt.Printf("     ⚠️  Still-busy ports: %v\n", occupiedAfter)
 					}
-					fd.mu.Unlock()
+				}
 
-					if strings.HasPrefix(reason, "PARSE:") {
-						bParse++
-						atomic.AddInt64(&failedParse, 1)
-					} else if strings.HasPrefix(reason, "SINGBOX_START:") || strings.HasPrefix(reason, "START:") {
-						bStart++
-						atomic.AddInt64(&failedStart, 1)
+				var bPassed, bFailed, bParse, bStart, bConn int
+
+				for _, wr := range workerResults {
+					res := wr.res
+					if res.passed {
+						if !passedSet[wr.line] {
+							passedSet[wr.line] = true
+							delete(failedSet, wr.line)
+							atomic.AddInt64(&passedCount, 1)
+							atomic.AddInt64(&protoPassed, 1)
+							out = append(out, configResult{line: wr.line, proto: proto})
+						}
+						bPassed++
 					} else {
-						bConn++
-						atomic.AddInt64(&failedConn, 1)
+						bFailed++
+						if !failedSet[wr.line] {
+							failedSet[wr.line] = true
+							reason := res.failReason
+							norm := classifyFailReason(reason)
+							fd := protoFails[proto]
+							fd.mu.Lock()
+							fd.reasons[norm]++
+							if len(fd.samples[norm]) < 100 {
+								fd.samples[norm] = append(fd.samples[norm], wr.line)
+							}
+							fd.mu.Unlock()
+
+							if strings.HasPrefix(reason, "PARSE:") {
+								atomic.AddInt64(&failedParse, 1)
+							} else if strings.HasPrefix(reason, "XRAY_START:") || strings.HasPrefix(reason, "START:") {
+								atomic.AddInt64(&failedStart, 1)
+							} else {
+								atomic.AddInt64(&failedConn, 1)
+							}
+						}
+						if strings.HasPrefix(res.failReason, "PARSE:") {
+							bParse++
+						} else if strings.HasPrefix(res.failReason, "XRAY_START:") || strings.HasPrefix(res.failReason, "START:") {
+							bStart++
+							if attempt < maxRetries {
+								nextRetryConfigs = append(nextRetryConfigs, wr.line)
+							}
+						} else {
+							bConn++
+							if attempt < maxRetries {
+								nextRetryConfigs = append(nextRetryConfigs, wr.line)
+							}
+						}
 					}
+				}
+
+				batchElapsed := time.Since(batchStart).Seconds()
+				batchPassRate := 0.0
+				if actualBatchSize > 0 {
+					batchPassRate = float64(bPassed) / float64(actualBatchSize) * 100
+				}
+				totalDone := (batchIdx + 1) * batchSize
+				if totalDone > len(currentConfigs) {
+					totalDone = len(currentConfigs)
+				}
+
+				fmt.Printf("  📦 Batch %d/%d [%d configs]  ✅%d ❌%d  Rate:%.1f%%  Time:%.1fs\n",
+					batchIdx+1, totalBatches, actualBatchSize, bPassed, bFailed, batchPassRate, batchElapsed)
+				fmt.Printf("     Parse✗:%-5d  Start✗:%-5d  Conn✗:%-5d  Total:%d/%d\n",
+					bParse, bStart, bConn, totalDone, len(currentConfigs))
+
+				if batchIdx < totalBatches-1 && v.BatchRestMs > 0 {
+					fmt.Printf("     💤 %dms rest...\n", v.BatchRestMs)
+					time.Sleep(time.Duration(v.BatchRestMs) * time.Millisecond)
 				}
 			}
 
-			batchElapsed := time.Since(batchStart).Seconds()
-			batchPassRate := 0.0
-			if actualBatchSize > 0 {
-				batchPassRate = float64(bPassed) / float64(actualBatchSize) * 100
-			}
-			totalDone := (batchIdx + 1) * batchSize
-			if totalDone > protoTotal {
-				totalDone = protoTotal
-			}
-
-			fmt.Printf("  📦 Batch %d/%d [%d configs]  ✅%d ❌%d  Rate:%.1f%%  Time:%.1fs\n",
-				batchIdx+1, totalBatches, actualBatchSize, bPassed, bFailed, batchPassRate, batchElapsed)
-			fmt.Printf("     Parse✗:%-5d  Start✗:%-5d  Conn✗:%-5d  Total:%d/%d\n",
-				bParse, bStart, bConn, totalDone, protoTotal)
-
-			if batchIdx < totalBatches-1 && v.BatchRestMs > 0 {
-				fmt.Printf("     💤 %dms rest...\n", v.BatchRestMs)
-				time.Sleep(time.Duration(v.BatchRestMs) * time.Millisecond)
-			}
+			currentConfigs = nextRetryConfigs
 		}
 
 		protoElapsed := time.Since(protoStart).Seconds()
@@ -496,16 +535,16 @@ func validateAll(lines []string) ([]configResult, []string) {
 		return m
 	}())
 
-	// tcpPass = ALL configs that passed TCP ping (regardless of sing-box result)
+	// tcpPass = ALL configs that passed TCP ping (regardless of xray result)
 	return out, tcpPingPassedAll
 }
 
 // ── validateWithTracker ───────────────────────────────────────────────────────
 
-func validateWithTracker(configURL, protocol string, localPorts chan int, bt *batchTracker) validationResult {
+func validateWithTracker(configURL, protocol string, localPorts chan int, bt *batchTracker, testURLIdx int) validationResult {
 	var result validationResult
 
-	outboundJSON, parseErr := toSingBoxOutbound(configURL, protocol)
+	outboundJSON, parseErr := toXrayOutbound(configURL, protocol)
 	if parseErr != "" {
 		result.failReason = "PARSE: " + parseErr
 		return result
@@ -515,7 +554,7 @@ func validateWithTracker(configURL, protocol string, localPorts chan int, bt *ba
 	defer func() { localPorts <- port }()
 
 	v := cfg.Validation
-	fullConfig := buildSingBoxConfig(outboundJSON, port)
+	fullConfig := buildXrayConfig(outboundJSON, port)
 
 	configFile, err := os.CreateTemp("", "sb-*.json")
 	if err != nil {
@@ -542,7 +581,7 @@ func validateWithTracker(configURL, protocol string, localPorts chan int, bt *ba
 	defer cancel()
 
 	var stderr bytes.Buffer
-	cmd := exec.CommandContext(ctx, singBoxPath(), "run", "-c", configPath)
+	cmd := exec.CommandContext(ctx, xrayPath(), "run", "-c", configPath)
 	cmd.Stderr = &stderr
 	cmd.SysProcAttr = &syscall.SysProcAttr{Setpgid: true}
 
@@ -555,8 +594,8 @@ func validateWithTracker(configURL, protocol string, localPorts chan int, bt *ba
 
 	addr := fmt.Sprintf("127.0.0.1:%d", port)
 	started := waitForPort(addr,
-		time.Duration(v.SingboxStartTimeoutMs)*time.Millisecond,
-		time.Duration(v.SingboxStartIntervalMs)*time.Millisecond,
+		time.Duration(v.XrayStartTimeoutMs)*time.Millisecond,
+		time.Duration(v.XrayStartIntervalMs)*time.Millisecond,
 		time.Duration(v.PortCheckTimeoutMs)*time.Millisecond,
 	)
 
@@ -564,12 +603,32 @@ func validateWithTracker(configURL, protocol string, localPorts chan int, bt *ba
 		killGroup(cmd)
 		sbErr := extractErrVerbose(stderr.String())
 		if sbErr == "" {
-			sbErr = fmt.Sprintf("port not open after %dms", v.SingboxStartTimeoutMs)
+			sbErr = fmt.Sprintf("port not open after %dms", v.XrayStartTimeoutMs)
 		}
-		result.failReason = "SINGBOX_START: " + sbErr
+		result.failReason = "XRAY_START: " + sbErr
 		return result
 	}
 
+	testURL := v.TestURLs[0]
+	if testURLIdx >= 0 && testURLIdx < len(v.TestURLs) {
+		testURL = v.TestURLs[testURLIdx]
+	}
+
+	// First: TCP handshake to proxy port (fast check)
+	handshakeTimeout := time.Duration(v.HTTPDialTimeoutMs) * time.Millisecond
+	conn, dialErr := net.DialTimeout("tcp", addr, handshakeTimeout)
+	if dialErr != nil {
+		killGroup(cmd)
+		sbErr := extractErrVerbose(stderr.String())
+		if sbErr == "" {
+			sbErr = fmt.Sprintf("handshake failed: %s", dialErr.Error())
+		}
+		result.failReason = "CONN: " + sbErr
+		return result
+	}
+	conn.Close()
+
+	// Second: HTTP test through proxy (full validation)
 	httpTimeout := v.HTTPRequestTimeoutMs
 	if protocol == "vless" && v.VlessSpecificTimeoutMs > 0 {
 		httpTimeout = v.VlessSpecificTimeoutMs
@@ -591,7 +650,7 @@ func validateWithTracker(configURL, protocol string, localPorts chan int, bt *ba
 		},
 	}
 
-	success, latency, httpErr := tryHTTP(ctx, client, v.TestURLs, v.MaxRetries)
+	success, latency, httpErr := tryHTTP(ctx, client, []string{testURL}, v.MaxRetries)
 	killGroup(cmd)
 
 	if success {
@@ -682,10 +741,10 @@ func tryHTTP(ctx context.Context, client *http.Client, testURLs []string, maxRet
 	return false, 0, lastErr
 }
 
-// ── buildSingBoxConfig ────────────────────────────────────────────────────────
+// ── buildXrayConfig ──────────────────────────────────────────────────────────
 
-func buildSingBoxConfig(outboundJSON string, port int) string {
-	return fmt.Sprintf(`{"log":{"level":"error","timestamp":false},"dns":{"servers":[{"tag":"dns-direct","address":"8.8.8.8","strategy":"prefer_ipv4","detour":"direct"}],"independent_cache":true},"inbounds":[{"type":"http","tag":"http-in","listen":"127.0.0.1","listen_port":%d}],"outbounds":[%s,{"type":"direct","tag":"direct"},{"type":"block","tag":"block"}]}`,
+func buildXrayConfig(outboundJSON string, port int) string {
+	return fmt.Sprintf(`{"log":{"loglevel":"warning"},"dns":{"servers":["8.8.8.8","localhost"]},"inbounds":[{"port":%d,"listen":"127.0.0.1","protocol":"http","tag":"http-in"}],"outbounds":[%s,{"protocol":"freedom","tag":"direct"},{"protocol":"blackhole","tag":"block"}],"routing":{"rules":[{"type":"field","inboundTag":["http-in"],"outboundTag":"proxy"}]}}`,
 		port, outboundJSON)
 }
 
@@ -748,23 +807,23 @@ func classifyFailReason(reason string) string {
 		}
 		return "PARSE › " + msg
 
-	case strings.HasPrefix(r, "SINGBOX_START:"), strings.HasPrefix(r, "START:"):
+	case strings.HasPrefix(r, "XRAY_START:"), strings.HasPrefix(r, "START:"):
 		body := r
 		if i := strings.Index(body, ": "); i != -1 {
 			body = body[i+2:]
 		}
 		switch {
 		case strings.Contains(body, "port not open"):
-			return "START › port timeout (sing-box didn't listen)"
+			return "START › port timeout (xray didn't listen)"
 		case strings.Contains(body, "decode config"), strings.Contains(body, "outbound"):
 			if strings.Contains(body, "flow") {
 				return "START › invalid flow (requires TLS)"
 			}
-			return "START › invalid config JSON (sing-box rejected)"
+			return "START › invalid config JSON (xray rejected)"
 		case strings.Contains(body, "address already in use"):
 			return "START › port already in use"
 		case strings.Contains(body, "no such file"), strings.Contains(body, "not found"):
-			return "START › sing-box binary not found"
+			return "START › xray binary not found"
 		case strings.Contains(body, "permission denied"):
 			return "START › permission denied"
 		case strings.Contains(body, "method"):
@@ -778,7 +837,7 @@ func classifyFailReason(reason string) string {
 
 	case strings.HasPrefix(r, "CONN:"):
 		body := strings.TrimPrefix(r, "CONN: ")
-		if i := strings.Index(body, " | SINGBOX:"); i != -1 {
+		if i := strings.Index(body, " | XRAY:"); i != -1 {
 			body = body[:i]
 		}
 		if strings.HasPrefix(body, "Get ") {
@@ -902,6 +961,12 @@ func printFailureReport(protoFails map[string]*failDetail, byProto map[string][]
 	for _, row := range rows {
 		passRate := float64(row.passed) / float64(row.total) * 100
 		barLen := int(passRate / 5)
+		if barLen > 20 {
+			barLen = 20
+		}
+		if barLen < 0 {
+			barLen = 0
+		}
 		bar := strings.Repeat("▓", barLen) + strings.Repeat("░", 20-barLen)
 		fmt.Printf("  %-7s %7d %7d %5.1f%%  %9d %9d %9d %8d  %s\n",
 			strings.ToUpper(row.name),
@@ -941,7 +1006,7 @@ func printFailureReport(protoFails map[string]*failDetail, byProto map[string][]
 
 		sections := []struct{ prefix, label string }{
 			{"PARSE", "Parse Failures  (config could not be decoded/interpreted)"},
-			{"START", "Start Failures  (sing-box refused or couldn't start)"},
+			{"START", "Start Failures  (xray refused or couldn't start)"},
 			{"CONN", "Conn Failures   (proxy started but connection failed)"},
 			{"OTHER", "Other / Unknown"},
 		}

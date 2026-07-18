@@ -1,0 +1,45 @@
+{
+  "validation": {
+    "num_workers": 1500,
+    "global_timeout_sec": 3500,
+    "xray_start_timeout_ms": 2500,
+    "xray_start_interval_ms": 450,
+    "port_check_timeout_ms": 200,
+
+    "http_request_timeout_ms": 2500,
+    "http_dial_timeout_ms": 2000,
+    "http_response_timeout_ms": 2000,
+
+    "max_retries": 4,
+    "validation_retries": 4,
+
+    "base_port": 10000,
+    "batch_rest_ms": 2000,
+    "process_kill_wait_ms": 700,
+    
+    "fetch_retry_count": 1,
+    "fetch_retry_delay_ms": 1000,
+    "vless_specific_timeout_ms": 0,
+    
+    "tcp_ping_timeout_ms": 2000,
+    "tcp_ping_retries": 3,
+    "tcp_ping_workers": 4000,
+    "tcp_ping_batch_size": 4000,
+    "tcp_ping_batch_rest_ms": 300,
+    
+    "test_urls": [
+      "http://cp.cloudflare.com/",
+      "http://www.gstatic.com/generate_204",
+      "http://1.1.1.1"
+    ]
+  },
+  "protocols": ["vless", "trojan", "ss"],
+  "protocol_order": ["vless", "trojan", "ss"],
+  "base64_links": [],
+  "text_links": [],
+  "output": {
+    "config_name": "proxy",
+    "main_file": "config/all_configs.txt",
+    "protocols_dir": "config/protocols"
+  }
+}

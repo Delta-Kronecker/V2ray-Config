@@ -13,7 +13,7 @@ import (
 
 // ── Dispatcher ────────────────────────────────────────────────────────────────
 
-func toSingBoxOutbound(configURL, protocol string) (string, string) {
+func toXrayOutbound(configURL, protocol string) (string, string) {
 	switch protocol {
 	case "vmess":
 		return parseVMess(configURL)
@@ -23,14 +23,8 @@ func toSingBoxOutbound(configURL, protocol string) (string, string) {
 		return parseTrojan(configURL)
 	case "ss":
 		return parseShadowsocks(configURL)
-	case "hy2":
-		return parseHysteria2(configURL)
-	case "hy":
-		return parseHysteria(configURL)
-	case "tuic":
-		return parseTUIC(configURL)
-	case "ssr":
-		return parseSSR(configURL)
+	case "hy2", "hy", "tuic", "ssr":
+		return "", "unsupported protocol by xray-core: " + protocol
 	}
 	return "", "unsupported protocol: " + protocol
 }
@@ -145,6 +139,7 @@ func parseVMess(raw string) (string, string) {
 			}
 		}
 	}
+
 	server := strings.TrimSpace(fmt.Sprintf("%v", d["add"]))
 	if server == "" {
 		return "", "missing server"
@@ -178,25 +173,23 @@ func parseVMess(raw string) (string, string) {
 	case "xhttp", "splithttp", "kcp", "mkcp", "quic":
 		return "", "unsupported transport: " + network
 	}
-	tls := ""
-	if tlsVal, _ := d["tls"].(string); tlsVal == "tls" {
-		sni := server
-		if s, _ := d["sni"].(string); s != "" {
-			sni = s
-		} else if h, _ := d["host"].(string); h != "" {
-			sni = h
-		}
-		tls = fmt.Sprintf(`,"tls":{"enabled":true,"insecure":true,"server_name":%q}`, sni)
+	tlsVal := ""
+	if tls, _ := d["tls"].(string); tls == "tls" {
+		tlsVal = "tls"
 	}
-	return fmt.Sprintf(`{"type":"vmess","tag":"proxy","server":%q,"server_port":%d,"uuid":%q,"security":%q,"alter_id":%d%s%s}`,
-		server, port, uuid, security, alterId, tls, vmessTransport(d, network)), ""
-}
+	sni := server
+	if s, _ := d["sni"].(string); s != "" {
+		sni = s
+	} else if h, _ := d["host"].(string); h != "" {
+		sni = h
+	}
+	fp := strDefault(d["fp"], "")
 
-func vmessTransport(d map[string]interface{}, network string) string {
-	path := strDefault(d["path"], "/")
-	host := strDefault(d["host"], "")
-	svcName := strDefault(d["serviceName"], strDefault(d["path"], ""))
-	return buildTransportJSON(network, path, host, svcName)
+	streamSettings := buildXrayStreamSettings(network, strDefault(d["path"], "/"), strDefault(d["host"], ""),
+		strDefault(d["serviceName"], strDefault(d["path"], "")), tlsVal, sni, fp, "", "", "")
+
+	return fmt.Sprintf(`{"protocol":"vmess","settings":{"vnext":[{"address":%q,"port":%d,"users":[{"id":%q,"alterId":%d,"security":%q}]}]}%s,"tag":"proxy"}`,
+		server, port, uuid, alterId, security, streamSettings), ""
 }
 
 // ── VLess ─────────────────────────────────────────────────────────────────────
@@ -239,39 +232,63 @@ func parseVLess(raw string) (string, string) {
 	if !singboxSupportedFlows[flow] {
 		flow = ""
 	}
-	tlsJSON, tlsErr := vlessTLS(security, sni, flow, q)
-	if tlsErr != "" {
-		return "", tlsErr
-	}
-	transport := buildTransportJSON(network, first(q.Get("path"), "/"), q.Get("host"),
-		first(q.Get("serviceName"), q.Get("path")))
-	return fmt.Sprintf(`{"type":"vless","tag":"proxy","server":%q,"server_port":%d,"uuid":%q%s%s}`,
-		server, port, uuid, tlsJSON, transport), ""
-}
+	fp := first(q.Get("fp"), "chrome")
+	alpnStr := q.Get("alpn")
+	path := first(q.Get("path"), "/")
+	host := q.Get("host")
+	grpcService := first(q.Get("serviceName"), q.Get("path"))
 
-func vlessTLS(security, sni, flow string, q url.Values) (string, string) {
-	flowJSON := ""
-	if flow != "" {
-		flowJSON = fmt.Sprintf(`,"flow":%q`, flow)
-	}
+	tlsType := ""
+	realityPubKey := ""
+	realityShortID := ""
 	switch security {
 	case "tls", "xtls":
-		s := fmt.Sprintf(`,"tls":{"enabled":true,"insecure":true,"server_name":%q`, sni)
-		if fp := q.Get("fp"); fp != "" {
-			s += fmt.Sprintf(`,"utls":{"enabled":true,"fingerprint":%q}`, fp)
-		}
-		if alpnStr := q.Get("alpn"); alpnStr != "" {
-			ab, _ := json.Marshal(strings.Split(alpnStr, ","))
-			s += fmt.Sprintf(`,"alpn":%s`, ab)
-		}
-		return flowJSON + s + "}", ""
+		tlsType = "tls"
 	case "reality":
 		pbk := q.Get("pbk")
 		if pbk == "" {
 			return "", "reality: missing public key (pbk)"
 		}
-		return flowJSON + fmt.Sprintf(`,"tls":{"enabled":true,"server_name":%q,"utls":{"enabled":true,"fingerprint":%q},"reality":{"enabled":true,"public_key":%q,"short_id":%q}}`,
-			sni, first(q.Get("fp"), "chrome"), pbk, q.Get("sid")), ""
+		tlsType = "reality"
+		realityPubKey = pbk
+		realityShortID = q.Get("sid")
+	case "none", "":
+	default:
+		return "", "unknown security: " + security
+	}
+
+	streamSettings := buildXrayStreamSettings(network, path, host, grpcService, tlsType, sni, fp, realityPubKey, realityShortID, alpnStr)
+
+	flowJSON := ""
+	if flow != "" {
+		flowJSON = fmt.Sprintf(`,"flow":%q`, flow)
+	}
+
+	return fmt.Sprintf(`{"protocol":"vless","settings":{"vnext":[{"address":%q,"port":%d,"users":[{"id":%q,"encryption":"none"%s}]}]}%s,"tag":"proxy"}`,
+		server, port, uuid, flowJSON, streamSettings), ""
+}
+
+func vlessTLSSettingsUNUSED(security, sni, fp, alpnStr string, q url.Values) (string, string) {
+	switch security {
+	case "tls", "xtls":
+		tlsSettings := fmt.Sprintf(`"security":"tls","tlsSettings":{"serverName":%q,"allowInsecure":true`, sni)
+		if fp != "" {
+			tlsSettings += fmt.Sprintf(`,"fingerprint":%q`, fp)
+		}
+		if alpnStr != "" {
+			alpn, _ := json.Marshal(strings.Split(alpnStr, ","))
+			tlsSettings += fmt.Sprintf(`,"alpn":%s`, alpn)
+		}
+		return "tls", tlsSettings + "}"
+	case "reality":
+		pbk := q.Get("pbk")
+		if pbk == "" {
+			return "", "reality: missing public key (pbk)"
+		}
+		sid := q.Get("sid")
+		realSettings := fmt.Sprintf(`"security":"reality","realitySettings":{"serverName":%q,"fingerprint":%q,"publicKey":%q,"shortId":%q}`,
+			sni, first(fp, "chrome"), pbk, sid)
+		return "reality", realSettings + "}"
 	case "none", "":
 		return "", ""
 	}
@@ -299,20 +316,20 @@ func parseTrojan(raw string) (string, string) {
 	}
 	q := u.Query()
 	sni := first(q.Get("sni"), q.Get("peer"), server)
-	tls := fmt.Sprintf(`,"tls":{"enabled":true,"insecure":true,"server_name":%q`, sni)
-	if fp := q.Get("fp"); fp != "" {
-		tls += fmt.Sprintf(`,"utls":{"enabled":true,"fingerprint":%q}`, fp)
-	}
-	tls += "}"
+	fp := first(q.Get("fp"), "")
 	network := strings.ToLower(q.Get("type"))
 	switch network {
 	case "xhttp", "splithttp", "kcp", "mkcp", "quic":
 		return "", "unsupported transport: " + network
 	}
-	transport := buildTransportJSON(network, first(q.Get("path"), "/"), q.Get("host"),
-		first(q.Get("serviceName"), q.Get("path")))
-	return fmt.Sprintf(`{"type":"trojan","tag":"proxy","server":%q,"server_port":%d,"password":%q%s%s}`,
-		server, port, password, tls, transport), ""
+	path := first(q.Get("path"), "/")
+	host := q.Get("host")
+	grpcService := first(q.Get("serviceName"), q.Get("path"))
+
+	streamSettings := buildXrayStreamSettings(network, path, host, grpcService, "tls", sni, fp, "", "", "")
+
+	return fmt.Sprintf(`{"protocol":"trojan","settings":{"servers":[{"address":%q,"port":%d,"password":%q}]}%s,"tag":"proxy"}`,
+		server, port, password, streamSettings), ""
 }
 
 // ── Shadowsocks ───────────────────────────────────────────────────────────────
@@ -398,8 +415,12 @@ func parseShadowsocks(raw string) (string, string) {
 				if strings.HasPrefix(d, "ss://") {
 					inner := strings.TrimPrefix(d, "ss://")
 					// strip any fragment/query from inner
-					if qi := strings.Index(inner, "?"); qi != -1 { inner = inner[:qi] }
-					if fi := strings.LastIndex(inner, "#"); fi != -1 { inner = inner[:fi] }
+					if qi := strings.Index(inner, "?"); qi != -1 {
+						inner = inner[:qi]
+					}
+					if fi := strings.LastIndex(inner, "#"); fi != -1 {
+						inner = inner[:fi]
+					}
 					// inner may have @host:port or just be base64(method:pass)
 					if atI := strings.LastIndex(inner, "@"); atI != -1 {
 						// decode the user part of the inner URI
@@ -495,7 +516,7 @@ func parseShadowsocks(raw string) (string, string) {
 	if server == "" {
 		return "", "missing server"
 	}
-	return fmt.Sprintf(`{"type":"shadowsocks","tag":"proxy","server":%q,"server_port":%d,"method":%q,"password":%q}`,
+	return fmt.Sprintf(`{"protocol":"shadowsocks","settings":{"servers":[{"address":%q,"port":%d,"method":%q,"password":%q}]},"tag":"proxy"}`,
 		server, port, method, password), ""
 }
 
@@ -571,205 +592,76 @@ func ssParseUserAndHost(userPart, hostPart string) (method, password, server str
 	return method, password, server, p, ""
 }
 
-// ── Hysteria2 ─────────────────────────────────────────────────────────────────
+// ── Transport builder (xray streamSettings) ───────────────────────────────────
 
-func parseHysteria2(raw string) (string, string) {
-	trimmed := strings.TrimPrefix(raw, "hy2://")
-	if i := strings.LastIndex(trimmed, "#"); i != -1 {
-		trimmed = trimmed[:i]
-	}
-	queryStr := ""
-	if i := strings.Index(trimmed, "?"); i != -1 {
-		queryStr = trimmed[i+1:]
-		trimmed = trimmed[:i]
-	}
-	lastAt := strings.LastIndex(trimmed, "@")
-	if lastAt == -1 {
-		return "", "missing @"
-	}
-	password := trimmed[:lastAt]
-	hostPort := trimmed[lastAt+1:]
-	if password == "" {
-		return "", "missing password"
-	}
-	if i := strings.Index(hostPort, "/"); i != -1 {
-		hostPort = hostPort[:i]
-	}
-	lastColon := strings.LastIndex(hostPort, ":")
-	var server string
-	var port int
-	if lastColon == -1 {
-		server = hostPort
-		port = 443
-	} else {
-		portCandidate := hostPort[lastColon+1:]
-		if _, perr := toPort(portCandidate); perr == nil {
-			server = hostPort[:lastColon]
-			port, _ = toPort(portCandidate)
-		} else if strings.HasPrefix(hostPort, "[") {
-			server = hostPort
-			port = 443
-		} else {
-			return "", "missing port"
-		}
-	}
-	if server == "" {
-		return "", "missing server"
-	}
-	q, _ := url.ParseQuery(queryStr)
-	obfsJSON := ""
-	if obfs := q.Get("obfs"); obfs == "salamander" {
-		if obfsPwd := q.Get("obfs-password"); obfsPwd != "" {
-			obfsJSON = fmt.Sprintf(`,"obfs":{"type":"salamander","password":%q}`, obfsPwd)
-		}
-	}
-	return fmt.Sprintf(`{"type":"hysteria2","tag":"proxy","server":%q,"server_port":%d,"password":%q%s,"tls":{"enabled":true,"insecure":true,"server_name":%q}}`,
-		server, port, password, obfsJSON, first(q.Get("sni"), server)), ""
-}
-
-// ── Hysteria (v1) ─────────────────────────────────────────────────────────────
-
-func parseHysteria(raw string) (string, string) {
-	u, err := url.Parse(sanitizeProxyURL(raw))
-	if err != nil {
-		return "", "url parse: " + err.Error()
-	}
-	server := u.Hostname()
-	if server == "" {
-		return "", "missing server"
-	}
-	port, err := toPort(u.Port())
-	if err != nil {
-		return "", "port: " + err.Error()
-	}
-	q := u.Query()
-	auth := first(q.Get("auth"), u.User.Username())
-	if auth == "" {
-		return "", "missing auth"
-	}
-	up, _ := strconv.Atoi(first(q.Get("upmbps"), "10"))
-	down, _ := strconv.Atoi(first(q.Get("downmbps"), "50"))
-	if up <= 0 {
-		up = 10
-	}
-	if down <= 0 {
-		down = 50
-	}
-	obfs := q.Get("obfs")
-	obfsJSON := ""
-	if obfs != "" {
-		obfsJSON = fmt.Sprintf(`,"obfs":%q`, obfs)
-	}
-	return fmt.Sprintf(`{"type":"hysteria","tag":"proxy","server":%q,"server_port":%d,"up_mbps":%d,"down_mbps":%d,"auth_str":%q%s,"tls":{"enabled":true,"insecure":true,"server_name":%q}}`,
-		server, port, up, down, auth, obfsJSON, first(q.Get("peer"), q.Get("sni"), server)), ""
-}
-
-// ── TUIC ──────────────────────────────────────────────────────────────────────
-
-func parseTUIC(raw string) (string, string) {
-	u, err := url.Parse(sanitizeProxyURL(raw))
-	if err != nil {
-		return "", "url parse: " + err.Error()
-	}
-	uuid := u.User.Username()
-	if uuid == "" {
-		return "", "missing uuid"
-	}
-	password, _ := u.User.Password()
-	server := u.Hostname()
-	if server == "" {
-		return "", "missing server"
-	}
-	port, err := toPort(u.Port())
-	if err != nil {
-		return "", "port: " + err.Error()
-	}
-	q := u.Query()
-	sni := first(q.Get("sni"), server)
-	congestion := first(q.Get("congestion_control"), q.Get("congestion-controller"), "bbr")
-	udpRelayMode := q.Get("udp_relay_mode")
-	udpJSON := ""
-	if udpRelayMode != "" {
-		udpJSON = fmt.Sprintf(`,"udp_relay_mode":%q`, udpRelayMode)
-	}
-	return fmt.Sprintf(`{"type":"tuic","tag":"proxy","server":%q,"server_port":%d,"uuid":%q,"password":%q,"congestion_control":%q%s,"tls":{"enabled":true,"insecure":true,"server_name":%q}}`,
-		server, port, uuid, password, congestion, udpJSON, sni), ""
-}
-
-// ── SSR ───────────────────────────────────────────────────────────────────────
-
-func parseSSR(raw string) (string, string) {
-	trimmed := strings.TrimPrefix(raw, "ssr://")
-	if trimmed == "" {
-		return "", "empty ssr url"
-	}
-	decoded, err := decodeBase64([]byte(trimmed))
-	if err != nil {
-		return "", "base64: " + err.Error()
-	}
-	params := ""
-	if i := strings.Index(decoded, "/?"); i != -1 {
-		params = decoded[i+2:]
-		decoded = decoded[:i]
-	} else if i := strings.Index(decoded, "?"); i != -1 {
-		params = decoded[i+1:]
-		decoded = decoded[:i]
-	}
-	parts := strings.SplitN(decoded, ":", 6)
-	if len(parts) < 6 {
-		return "", "invalid ssr format (need host:port:protocol:method:obfs:password)"
-	}
-	host, portStr, protocol, method, obfs, b64pass := parts[0], parts[1], parts[2], parts[3], parts[4], parts[5]
-	_ = protocol
-	_ = obfs
-	passDecoded, err := decodeBase64([]byte(b64pass))
-	if err != nil {
-		return "", "base64 password: " + err.Error()
-	}
-	_, err = toPort(portStr)
-	if err != nil {
-		return "", "port: " + err.Error()
-	}
-	_ = host
-	_ = method
-	_ = params
-	_ = passDecoded
-	return "", "SSR not supported by sing-box (collect-only protocol)"
-}
-
-// ── Transport builder ─────────────────────────────────────────────────────────
-
-func buildTransportJSON(network, path, host, grpcService string) string {
+func buildXrayStreamSettings(network, path, host, grpcService, tlsType, sni, fp string, realityPubKey, realityShortID, alpnStr string) string {
 	if path == "" {
 		path = "/"
 	}
+
+	networkSettings := ""
 	switch network {
 	case "ws":
+		wsSettings := fmt.Sprintf(`"wsSettings":{"path":%q`, path)
 		if host != "" {
-			return fmt.Sprintf(`,"transport":{"type":"ws","path":%q,"headers":{"Host":%q}}`, path, host)
+			wsSettings += fmt.Sprintf(`,"headers":{"Host":%q}`, host)
 		}
-		return fmt.Sprintf(`,"transport":{"type":"ws","path":%q}`, path)
+		wsSettings += "}"
+		networkSettings = fmt.Sprintf(`,"network":"ws",%s`, wsSettings)
 	case "grpc":
-		return fmt.Sprintf(`,"transport":{"type":"grpc","service_name":%q}`, grpcService)
+		networkSettings = fmt.Sprintf(`,"network":"grpc","grpcSettings":{"serviceName":%q}`, grpcService)
 	case "h2", "http":
+		h2Settings := fmt.Sprintf(`"httpSettings":{"path":%q`, path)
 		if host != "" {
-			return fmt.Sprintf(`,"transport":{"type":"http","host":[%q],"path":%q}`, host, path)
+			h2Settings += fmt.Sprintf(`,"host":[%q]`, host)
 		}
-		return fmt.Sprintf(`,"transport":{"type":"http","path":%q}`, path)
-	case "tcp":
-		return ""
+		h2Settings += "}"
+		networkSettings = fmt.Sprintf(`,"network":"h2",%s`, h2Settings)
 	case "httpupgrade":
+		huSettings := fmt.Sprintf(`"httpupgradeSettings":{"path":%q`, path)
 		if host != "" {
-			return fmt.Sprintf(`,"transport":{"type":"httpupgrade","path":%q,"host":%q}`, path, host)
+			huSettings += fmt.Sprintf(`,"host":%q`, host)
 		}
-		return fmt.Sprintf(`,"transport":{"type":"httpupgrade","path":%q}`, path)
+		huSettings += "}"
+		networkSettings = fmt.Sprintf(`,"network":"httpupgrade",%s`, huSettings)
 	case "splithttp", "xhttp":
+		stSettings := fmt.Sprintf(`"splithttpSettings":{"path":%q`, path)
 		if host != "" {
-			return fmt.Sprintf(`,"transport":{"type":"splithttp","path":%q,"host":%q}`, path, host)
+			stSettings += fmt.Sprintf(`,"host":%q`, host)
 		}
-		return fmt.Sprintf(`,"transport":{"type":"splithttp","path":%q}`, path)
+		stSettings += "}"
+		networkSettings = fmt.Sprintf(`,"network":"splithttp",%s`, stSettings)
 	}
-	return ""
+
+	tlsSettings := ""
+	switch tlsType {
+	case "tls":
+		tlsSettings = fmt.Sprintf(`,"security":"tls","tlsSettings":{"serverName":%q,"allowInsecure":true`, sni)
+		if fp != "" {
+			tlsSettings += fmt.Sprintf(`,"fingerprint":%q`, fp)
+		}
+		if alpnStr != "" {
+			alpn, _ := json.Marshal(strings.Split(alpnStr, ","))
+			tlsSettings += fmt.Sprintf(`,"alpn":%s`, alpn)
+		}
+		tlsSettings += "}"
+	case "reality":
+		tlsSettings = fmt.Sprintf(`,"security":"reality","realitySettings":{"serverName":%q,"fingerprint":%q,"publicKey":%q,"shortId":%q}`,
+			sni, first(fp, "chrome"), realityPubKey, realityShortID)
+	}
+
+	if networkSettings == "" && tlsSettings == "" {
+		return ""
+	}
+	// networkSettings starts with ",", tlsSettings starts with ","
+	// Trim leading comma from tlsSettings if networkSettings is empty
+	inner := strings.TrimPrefix(networkSettings, ",")
+	if inner == "" {
+		inner = strings.TrimPrefix(tlsSettings, ",")
+	} else {
+		inner += tlsSettings
+	}
+	return fmt.Sprintf(`,"streamSettings":{%s}`, inner)
 }
 
 // ── URL helpers ───────────────────────────────────────────────────────────────

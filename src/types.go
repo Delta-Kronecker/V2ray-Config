@@ -20,13 +20,14 @@ type Settings struct {
 type ValidationSettings struct {
 	NumWorkers             int      `json:"num_workers"`
 	GlobalTimeoutSec       float64  `json:"global_timeout_sec"`
-	SingboxStartTimeoutMs  int      `json:"singbox_start_timeout_ms"`
-	SingboxStartIntervalMs int      `json:"singbox_start_interval_ms"`
+	XrayStartTimeoutMs    int      `json:"xray_start_timeout_ms"`
+	XrayStartIntervalMs   int      `json:"xray_start_interval_ms"`
 	HTTPRequestTimeoutMs   int      `json:"http_request_timeout_ms"`
 	HTTPDialTimeoutMs      int      `json:"http_dial_timeout_ms"`
 	HTTPResponseTimeoutMs  int      `json:"http_response_timeout_ms"`
 	PortCheckTimeoutMs     int      `json:"port_check_timeout_ms"`
 	MaxRetries             int      `json:"max_retries"`
+	ValidationRetries      int      `json:"validation_retries"`
 	BasePort               int      `json:"base_port"`
 	BatchRestMs            int      `json:"batch_rest_ms"`
 	ProcessKillWaitMs      int      `json:"process_kill_wait_ms"`

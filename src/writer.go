@@ -146,14 +146,11 @@ func writeOutputFiles(results []configResult, tcpFailedLines []string) {
 			byProtoClashNames[r.proto] = append(byProtoClashNames[r.proto], cname)
 		}
 
-		sniLine := toSNIConfig(r.line, r.proto)
-		if sniLine != "" {
-			// v2ray SNI: fixed name
+		if sniLine := toSNIConfig(r.line, r.proto); sniLine != "" && isWSTransport(r.line, r.proto) {
 			sniNamed := renameTo(sniLine, r.proto, v2rayName)
 			allSNI = append(allSNI, sniNamed)
 			bySNIProto[r.proto] = append(bySNIProto[r.proto], sniNamed)
 
-			// clash SNI: numbered
 			sniCname := generateUniqueName(clashBaseN)
 			if sniEntry, ok := configToClashYAML(sniLine, r.proto, sniCname); ok {
 				allSNIClash = append(allSNIClash, sniEntry)
@@ -210,13 +207,59 @@ func writeOutputFiles(results []configResult, tcpFailedLines []string) {
 	writeTCPPassFiles(tcpFailedLines)
 }
 
+func isWSTransport(line, proto string) bool {
+	switch proto {
+	case "vmess":
+		trimmed := strings.TrimPrefix(line, "vmess://")
+		payload := trimmed
+		if decoded, err := base64.RawStdEncoding.DecodeString(trimmed); err == nil {
+			payload = string(decoded)
+		}
+		if !strings.HasPrefix(payload, "{") {
+			if decoded2, err2 := base64.StdEncoding.DecodeString(trimmed); err2 == nil {
+				payload = string(decoded2)
+			}
+		}
+		var d map[string]interface{}
+		if json.Unmarshal([]byte(payload), &d) == nil {
+			if n, ok := d["net"].(string); ok && strings.ToLower(n) == "ws" {
+				return true
+			}
+		}
+	case "vless", "trojan", "ss":
+		u, err := url.Parse(line)
+		if err != nil {
+			return false
+		}
+		if strings.ToLower(u.Query().Get("type")) == "ws" {
+			return true
+		}
+	case "ssr":
+		sanitized := strings.TrimPrefix(line, "ssr://")
+		if decoded, err := base64.RawURLEncoding.DecodeString(sanitized); err == nil {
+			sanitized = string(decoded)
+		}
+		parts := strings.Split(sanitized, ":")
+		if len(parts) >= 7 {
+			params := parts[len(parts)-1]
+			if decoded2, err2 := base64.RawURLEncoding.DecodeString(params); err2 == nil {
+				params = string(decoded2)
+			}
+			if strings.Contains(params, "type=ws") || strings.Contains(params, "obfs=ws") {
+				return true
+			}
+		}
+	}
+	return false
+}
+
 // ── writeBatchFiles ───────────────────────────────────────────────────────────
 
 func writeBatchFiles(
 	allV2ray []string, allClash []string, allClashNames []string,
 	allSNIV2ray []string, allSNIClash []string, allSNIClashNames []string,
 ) {
-	const batchSize = 500
+	const batchSize = 1000
 
 	rng := rand.New(rand.NewSource(time.Now().UnixNano()))
 
@@ -1406,7 +1449,7 @@ func detectProto(line string) string {
 }
 
 // ── writeOnlyTCPPassFiles ────────────────────────────────────────────────────
-// Writes configs that passed TCP ping but failed sing-box validation
+// Writes configs that passed TCP ping but failed xray validation
 // into 10000-line batches under config/tcp-pass/ and config/tcp-pass-sni/
 
 func writeTCPPassFiles(lines []string) {
@@ -1476,126 +1519,95 @@ func writeSummary(results []configResult, failedLinks []string, duration float64
 	gen.WriteString(autoGenMarker)
 	gen.WriteString("\n")
 
+	// ── 1. V2ray ────────────────────────────────────────────────────────────────
 	gen.WriteString("## V2ray\n\n")
-	fmt.Fprintf(&gen, "| Protocol | Count | Link |\n|---|---|---|\n")
-	fmt.Fprintf(&gen, "| All | %d | [all_configs.txt](%s/config/all_configs.txt) |\n", len(results), repoBase)
+	fmt.Fprintf(&gen, "V2ray All (%d config):\n```\n%s/config/all_configs.txt\n```\n\n", len(results), repoBase)
 	for _, p := range cfg.ProtocolOrder {
 		if n := byProtoOut[p]; n > 0 {
-			fmt.Fprintf(&gen, "| %s | %d | [%s.txt](%s/config/protocols/%s.txt) |\n",
-				strings.ToUpper(p), n, p, repoBase, p)
+			fmt.Fprintf(&gen, "V2ray %s (%d config):\n```\n%s/config/protocols/%s.txt\n```\n\n",
+				strings.ToUpper(p), n, repoBase, p)
 		}
 	}
-	gen.WriteString("\n---\n\n")
+	gen.WriteString("WARP All:\n```\nhttps://github.com/Delta-Kronecker/WARP-Config/raw/refs/heads/main/ALL.txt\n```\n\n")
 
-	gen.WriteString("## 127.0.0.1:40443 \n\n")
-	fmt.Fprintf(&gen, "| Protocol | Count | Link |\n|---|---|---|\n")
-	fmt.Fprintf(&gen, "| All | %d | [all_configs_sni.txt](%s/config/sni/all_configs_sni.txt) |\n", len(results), repoBase)
-	for _, p := range cfg.ProtocolOrder {
-		if n := byProtoOut[p]; n > 0 {
-			fmt.Fprintf(&gen, "| %s | %d | [%s_sni.txt](%s/config/sni/protocols/%s_sni.txt) |\n",
-				strings.ToUpper(p), n, p, repoBase, p)
-		}
-	}
-	gen.WriteString("\n---\n\n")
-
+	// ── 2. V2ray Batches ────────────────────────────────────────────────────────
 	v2rayBatches := countBatchFiles("config/batches/v2ray")
 	if v2rayBatches > 0 {
 		gen.WriteString("## V2ray Batches\n\n")
-		fmt.Fprintf(&gen, "| Batch | Count | Link |\n|---|---|---|\n")
 		for i := 1; i <= v2rayBatches; i++ {
 			cnt := min500(i, len(results))
-			fmt.Fprintf(&gen, "| %03d | %d | [batch_%03d.txt](%s/config/batches/v2ray/batch_%03d.txt) |\n",
-				i, cnt, i, repoBase, i)
+			fmt.Fprintf(&gen, "V2ray Batch %03d (%d config):\n```\n%s/config/batches/v2ray/batch_%03d.txt\n```\n\n",
+				i, cnt, repoBase, i)
 		}
-		gen.WriteString("\n")
 	}
 
+	// ── 3. Clash ────────────────────────────────────────────────────────────────
+	gen.WriteString("## Clash\n\n")
+	fmt.Fprintf(&gen, "Clash All (%d config):\n```\n%s/config/clash.yaml\n```\n\n", len(results), repoBase)
+	for _, p := range cfg.ProtocolOrder {
+		if n := byProtoOut[p]; n > 0 {
+			fmt.Fprintf(&gen, "Clash %s (%d config):\n```\n%s/config/protocols/%s_clash.yaml\n```\n\n",
+				strings.ToUpper(p), n, repoBase, p)
+		}
+	}
+	gen.WriteString("WARP All:\n```\nhttps://github.com/Delta-Kronecker/WARP-Config/raw/refs/heads/main/ALL.yaml\n```\n\n")
+
+	// ── 4. Clash Batches ────────────────────────────────────────────────────────
+	clashBatches := countBatchFiles("config/batches/clash")
+	if clashBatches > 0 {
+		gen.WriteString("## Clash Batches\n\n")
+		for i := 1; i <= clashBatches; i++ {
+			cnt := min500(i, len(results))
+			fmt.Fprintf(&gen, "Clash Batch %03d (%d config):\n```\n%s/config/batches/clash/batch_%03d.yaml\n```\n\n",
+				i, cnt, repoBase, i)
+		}
+	}
+
+	// ── 5. 127.0.0.1:40443 ─────────────────────────────────────────────────────
+	gen.WriteString("## 127.0.0.1:40443\n\n")
+	fmt.Fprintf(&gen, "SNI All (%d config):\n```\n%s/config/sni/all_configs_sni.txt\n```\n\n", len(results), repoBase)
+	for _, p := range cfg.ProtocolOrder {
+		if n := byProtoOut[p]; n > 0 {
+			fmt.Fprintf(&gen, "SNI %s (%d config):\n```\n%s/config/sni/protocols/%s_sni.txt\n```\n\n",
+				strings.ToUpper(p), n, repoBase, p)
+		}
+	}
+
+	// ── 6. 127.0.0.1:40443 Batches ─────────────────────────────────────────────
 	sniV2rayBatches := countBatchFiles("config/batches/sni_v2ray")
 	if sniV2rayBatches > 0 {
 		gen.WriteString("## 127.0.0.1:40443 Batches\n\n")
-		fmt.Fprintf(&gen, "| Batch | Count | Link |\n|---|---|---|\n")
 		for i := 1; i <= sniV2rayBatches; i++ {
 			cnt := min500(i, len(results))
-			fmt.Fprintf(&gen, "| %03d | %d | [batch_%03d.txt](%s/config/batches/sni_v2ray/batch_%03d.txt) |\n",
-				i, cnt, i, repoBase, i)
-		}
-		gen.WriteString("\n")
-	}
-
-	gen.WriteString("## Clash\n\n")
-	fmt.Fprintf(&gen, "| Protocol | Count | Link |\n|---|---|---|\n")
-	fmt.Fprintf(&gen, "| All | %d | [clash.yaml](%s/config/clash.yaml) |\n", len(results), repoBase)
-	for _, p := range cfg.ProtocolOrder {
-		if n := byProtoOut[p]; n > 0 {
-			fmt.Fprintf(&gen, "| %s | %d | [%s_clash.yaml](%s/config/protocols/%s_clash.yaml) |\n",
-				strings.ToUpper(p), n, p, repoBase, p)
+			fmt.Fprintf(&gen, "SNI Batch %03d (%d config):\n```\n%s/config/batches/sni_v2ray/batch_%03d.txt\n```\n\n",
+				i, cnt, repoBase, i)
 		}
 	}
-	gen.WriteString("\n---\n\n")
 
-	gen.WriteString("## Clash 127.0.0.1:40443 \n\n")
-	fmt.Fprintf(&gen, "| Protocol | Count | Link |\n|---|---|---|\n")
-	fmt.Fprintf(&gen, "| All | %d | [clash_sni.yaml](%s/config/sni/clash_sni.yaml) |\n", len(results), repoBase)
-	for _, p := range cfg.ProtocolOrder {
-		if n := byProtoOut[p]; n > 0 {
-			fmt.Fprintf(&gen, "| %s | %d | [%s_clash_sni.yaml](%s/config/sni/protocols/%s_clash_sni.yaml) |\n",
-				strings.ToUpper(p), n, p, repoBase, p)
-		}
-	}
-	gen.WriteString("\n---\n\n")
-
-	gen.WriteString("## Clash Batches\n\n")
-	clashBatches := countBatchFiles("config/batches/clash")
-	if clashBatches > 0 {
-		fmt.Fprintf(&gen, "| Batch | Count | Link |\n|---|---|---|\n")
-		for i := 1; i <= clashBatches; i++ {
-			cnt := min500(i, len(results))
-			fmt.Fprintf(&gen, "| %03d | %d | [batch_%03d.yaml](%s/config/batches/clash/batch_%03d.yaml) |\n",
-				i, cnt, i, repoBase, i)
-		}
-		gen.WriteString("\n---\n\n")
-	}
-
-	gen.WriteString("## Clash 127.0.0.1:40443 Batches\n\n")
-	clashSNIBatches := countBatchFiles("config/batches/sni_clash")
-	if clashSNIBatches > 0 {
-		fmt.Fprintf(&gen, "| Batch | Count | Link |\n|---|---|---|\n")
-		for i := 1; i <= clashSNIBatches; i++ {
-			cnt := min500(i, len(results))
-			fmt.Fprintf(&gen, "| %03d | %d | [batch_%03d.yaml](%s/config/batches/sni_clash/batch_%03d.yaml) |\n",
-				i, cnt, i, repoBase, i)
-		}
-		gen.WriteString("\n---\n\n")
-	}
-
-	// Only-TCP-Pass batches section
+	// ── 7. TCP Pass ─────────────────────────────────────────────────────────────
 	onlyTCPBatches := countBatchFiles("config/tcp-pass")
 	if onlyTCPBatches > 0 {
 		gen.WriteString("## TCP Pass (for advanced users)\n\n")
 		fmt.Fprintf(&gen, "> All configs that passed TCP ping. Total: **%d**\n\n", onlyTCPPassCount)
-		fmt.Fprintf(&gen, "| Batch | Link |\n|---|---|\n")
 		for i := 1; i <= onlyTCPBatches; i++ {
-			fmt.Fprintf(&gen, "| %03d | [batch_%03d.txt](%s/config/tcp-pass/batch_%03d.txt) |\n",
-				i, i, repoBase, i)
+			fmt.Fprintf(&gen, "TCP Pass Batch %03d:\n```\n%s/config/tcp-pass/batch_%03d.txt\n```\n\n",
+				i, repoBase, i)
 		}
-		gen.WriteString("\n---\n\n")
 	}
 
-	// Only-TCP-Pass SNI batches section
+	// ── 8. TCP Pass 127.0.0.1:40443 ───────────────────────────────────────────
 	onlyTCPSNIBatches := countBatchFiles("config/tcp-pass-sni")
 	if onlyTCPSNIBatches > 0 {
 		gen.WriteString("## TCP Pass 127.0.0.1:40443 (for advanced users)\n\n")
 		fmt.Fprintf(&gen, "> SNI version of TCP Pass configs. Total: **%d**\n\n", onlyTCPPassCount)
-		fmt.Fprintf(&gen, "| Batch | Link |\n|---|---|\n")
 		for i := 1; i <= onlyTCPSNIBatches; i++ {
-			fmt.Fprintf(&gen, "| %03d | [batch_%03d.txt](%s/config/tcp-pass-sni/batch_%03d.txt) |\n",
-				i, i, repoBase, i)
+			fmt.Fprintf(&gen, "TCP Pass SNI Batch %03d:\n```\n%s/config/tcp-pass-sni/batch_%03d.txt\n```\n\n",
+				i, repoBase, i)
 		}
-		gen.WriteString("\n---\n\n")
 	}
 
 	existingContent := ""
-	if raw, err := os.ReadFile("read.md"); err == nil {
+	if raw, err := os.ReadFile("templates/read.md"); err == nil {
 		existing := string(raw)
 		if idx := strings.Index(existing, autoGenMarker); idx != -1 {
 			existingContent = strings.TrimRight(existing[:idx], "\n\r ")
@@ -1643,11 +1655,11 @@ func countBatchFiles(dir string) int {
 }
 
 func min500(batchIdx, total int) int {
-	start := (batchIdx - 1) * 500
+	start := (batchIdx - 1) * 1000
 	if start >= total {
 		return 0
 	}
-	end := start + 500
+	end := start + 1000
 	if end > total {
 		return total - start
 	}

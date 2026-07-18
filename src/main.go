@@ -20,15 +20,15 @@ func main() {
 	gNameCount = make(map[string]int)
 	gNameCountMu.Unlock()
 
-	if err := loadSettings("settings.json"); err != nil {
+	if err := loadSettings("data/settings.json"); err != nil {
 		fmt.Printf("❌ Failed to load settings.json: %v\n", err)
 		os.Exit(1)
 	}
 
-	if err := loadClashBase("clash_base.yaml"); err != nil {
+	if err := loadClashBase("templates/clash_base.yaml"); err != nil {
 		fmt.Printf("⚠️  clash_base.yaml: %v\n", err)
 	}
-	if err := loadClashBaseAdvanced("clash_base_advanced.yaml"); err != nil {
+	if err := loadClashBaseAdvanced("templates/clash_base_advanced.yaml"); err != nil {
 		fmt.Printf("⚠️  clash_base_advanced.yaml: %v\n", err)
 	}
 
@@ -66,7 +66,7 @@ func main() {
 	fmt.Println("📡 Fetching configurations from sources...")
 	var allConfigs []string
 	var failedLinks []string
-	subURLs := loadSubsFromFile("sub.txt")
+	subURLs := loadSubsFromFile("data/sub.txt")
 	if len(subURLs) > 0 {
 		fmt.Printf("📋 Loaded %d sources from sub.txt\n", len(subURLs))
 		allConfigs, failedLinks = fetchAllFromSubs(subURLs)
