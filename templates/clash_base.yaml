@@ -41,83 +41,26 @@ dns:
     - 'cp.cloudflare.com'
   default-nameserver:
     - 1.1.1.1
-    - 1.0.0.1
     - 8.8.8.8
-    - 8.8.4.4
     - 9.9.9.9
     - 149.112.112.112
     - 208.67.222.222
-    - 208.67.220.220
     - 94.140.14.14
-    - 94.140.15.15
     - 64.6.64.6
-    - 64.6.65.6
     - 84.200.69.80
-    - 84.200.70.40
     - 76.76.19.19
-    - 76.223.122.150
     - 8.26.56.26
-    - 8.20.247.20
   nameserver:
     - https://cloudflare-dns.com/dns-query
-    - https://1.1.1.1/dns-query
-    - https://1.0.0.1/dns-query
     - https://dns.google/dns-query
-    - https://8.8.8.8/dns-query
-    - https://8.8.4.4/dns-query
     - https://dns.quad9.net/dns-query
-    - https://9.9.9.9/dns-query
-    - https://149.112.112.112/dns-query
     - https://dns.adguard.com/dns-query
-    - https://94.140.14.14/dns-query
-    - https://94.140.15.15/dns-query
     - https://doh.opendns.com/dns-query
-    - https://208.67.222.222/dns-query
-    - https://208.67.220.220/dns-query
     - https://doh.comodo.com/dns-query
-    - https://8.26.56.26/dns-query
-    - https://8.20.247.20/dns-query
     - https://doh.mullvad.net/dns-query
     - https://doh.dns.mullvad.net/dns-query
     - https://freedns.controld.com/p0
     - https://freedns.controld.com/family
-    - tls://1.1.1.1:853
-    - tls://1.0.0.1:853
-    - tls://8.8.8.8:853
-    - tls://8.8.4.4:853
-    - tls://9.9.9.9:853
-    - tls://149.112.112.112:853
-    - tls://94.140.14.14:853
-    - tls://94.140.15.15:853
-    - tls://208.67.222.222:853
-    - tls://208.67.220.220:853
-    - tls://family-filter-dns.cleanbrowsing.org:853
-    - tls://adult-filter-dns.cleanbrowsing.org:853
-    - tls://security-filter-dns.cleanbrowsing.org:853
-    - 1.1.1.1
-    - 1.0.0.1
-    - 8.8.8.8
-    - 8.8.4.4
-    - 9.9.9.9
-    - 149.112.112.112
-    - 208.67.222.222
-    - 208.67.220.220
-    - 94.140.14.14
-    - 94.140.15.15
-    - 64.6.64.6
-    - 64.6.65.6
-    - 84.200.69.80
-    - 84.200.70.40
-    - 8.26.56.26
-    - 8.20.247.20
-    - 76.76.19.19
-    - 76.223.122.150
-    - 208.67.222.123
-    - 208.67.220.123
-    - 195.46.39.39
-    - 195.46.39.40
-    - 38.132.106.139
-    - 194.187.251.67
 
 proxies:
 # ---PROXIES---
@@ -126,37 +69,17 @@ proxy-groups:
   - name: "PROXY"
     type: select
     proxies:
-      - "Fallback"
       - "Auto"
-      - "Load Balance"
-    
-
-  - name: "Load Balance"
-    type: load-balance
-    strategy: consistent-hashing
-    url: http://www.gstatic.com/generate_204
-    interval: 60
-    tolerance: 50
-    lazy: true
-    proxies:
-# ---PROXY-NAMES---
 
   - name: "Auto"
     type: url-test
     url: http://www.gstatic.com/generate_204
-    interval: 60
-    tolerance: 50
+    interval: 180
+    tolerance: 30
     lazy: true
     proxies:
 # ---PROXY-NAMES---
 
-  - name: "Fallback"
-    type: fallback
-    url: http://www.gstatic.com/generate_204
-    interval: 60
-    lazy: true
-    proxies:
-# ---PROXY-NAMES---
 
 rules:
   - MATCH,PROXY
