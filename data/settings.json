@@ -1,23 +1,23 @@
 {
   "validation": {
 
-    "num_workers": 350,
-    "global_timeout_sec": 18000,
-    "xray_start_timeout_ms": 6000,
-    "xray_start_interval_ms": 700,
-    "port_check_timeout_ms": 300,
+    "num_workers": 600,
+    "global_timeout_sec": 20000,
+    "xray_start_timeout_ms": 8000,
+    "xray_start_interval_ms": 1200,
+    "port_check_timeout_ms": 500,
 
-    "http_request_timeout_ms": 13000,
-    "http_dial_timeout_ms": 11000,
-    "http_response_timeout_ms": 11000,
+    "http_request_timeout_ms": 16000,
+    "http_dial_timeout_ms": 14000,
+    "http_response_timeout_ms": 14000,
 
-    "max_retries": 1,
-    "validation_retries": 1,
+    "max_retries": 2,
+    "validation_retries": 2,
 
     "base_port": 10000,
 
-    "batch_rest_ms": 1000,
-    "process_kill_wait_ms": 1000,
+    "batch_rest_ms": 1500,
+    "process_kill_wait_ms": 1500,
 
 
     "fetch_retry_count": 1,
@@ -31,9 +31,9 @@
     "tcp_ping_batch_rest_ms": 300,
     
     "test_urls": [
-      "https://www.gstatic.com/generate_204",
       "http://www.gstatic.com/generate_204",
-      "http://www.gstatic.com/generate_204"
+      "http://cp.cloudflare.com",
+      "http://captive.apple.com/hotspot-detect.html"
     ]
   },
   "protocols": ["vless", "trojan", "ss", "vmess"],
