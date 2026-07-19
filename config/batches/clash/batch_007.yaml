@@ -1,0 +1,5830 @@
+name: "Standard"
+mixed-port: 7890
+socks-port: 7891
+port: 7892
+allow-lan: true
+bind-address: '*'
+mode: global
+log-level: info
+ipv6: false
+external-controller: 127.0.0.1:9090
+external-ui: ui
+secret: ""
+unified-delay: true
+tcp-concurrent: true
+global-client-fingerprint: chrome
+find-process-mode: strict
+keep-alive-interval: 15
+
+profile:
+  store-selected: true
+  store-fake-ip: false
+
+dns:
+  enable: true
+  ipv6: false
+  listen: 0.0.0.0:5353
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+    - '*.local'
+    - '*.lan'
+    - '*.localhost'
+    - '+.stun.*.*'
+    - '+.stun.*.*.*'
+    - 'time.*'
+    - 'time.*.com'
+    - 'connectivitycheck.gstatic.com'
+    - 'detectportal.firefox.com'
+    - 'captive.apple.com'
+    - 'www.msftncsi.com'
+    - 'cp.cloudflare.com'
+  default-nameserver:
+    - 1.1.1.1
+    - 1.0.0.1
+    - 8.8.8.8
+    - 8.8.4.4
+    - 9.9.9.9
+    - 149.112.112.112
+    - 208.67.222.222
+    - 208.67.220.220
+    - 94.140.14.14
+    - 94.140.15.15
+    - 64.6.64.6
+    - 64.6.65.6
+    - 84.200.69.80
+    - 84.200.70.40
+    - 76.76.19.19
+    - 76.223.122.150
+    - 8.26.56.26
+    - 8.20.247.20
+  nameserver:
+    - https://cloudflare-dns.com/dns-query
+    - https://1.1.1.1/dns-query
+    - https://1.0.0.1/dns-query
+    - https://dns.google/dns-query
+    - https://8.8.8.8/dns-query
+    - https://8.8.4.4/dns-query
+    - https://dns.quad9.net/dns-query
+    - https://9.9.9.9/dns-query
+    - https://149.112.112.112/dns-query
+    - https://dns.adguard.com/dns-query
+    - https://94.140.14.14/dns-query
+    - https://94.140.15.15/dns-query
+    - https://doh.opendns.com/dns-query
+    - https://208.67.222.222/dns-query
+    - https://208.67.220.220/dns-query
+    - https://doh.comodo.com/dns-query
+    - https://8.26.56.26/dns-query
+    - https://8.20.247.20/dns-query
+    - https://doh.mullvad.net/dns-query
+    - https://doh.dns.mullvad.net/dns-query
+    - https://freedns.controld.com/p0
+    - https://freedns.controld.com/family
+    - tls://1.1.1.1:853
+    - tls://1.0.0.1:853
+    - tls://8.8.8.8:853
+    - tls://8.8.4.4:853
+    - tls://9.9.9.9:853
+    - tls://149.112.112.112:853
+    - tls://94.140.14.14:853
+    - tls://94.140.15.15:853
+    - tls://208.67.222.222:853
+    - tls://208.67.220.220:853
+    - tls://family-filter-dns.cleanbrowsing.org:853
+    - tls://adult-filter-dns.cleanbrowsing.org:853
+    - tls://security-filter-dns.cleanbrowsing.org:853
+    - 1.1.1.1
+    - 1.0.0.1
+    - 8.8.8.8
+    - 8.8.4.4
+    - 9.9.9.9
+    - 149.112.112.112
+    - 208.67.222.222
+    - 208.67.220.220
+    - 94.140.14.14
+    - 94.140.15.15
+    - 64.6.64.6
+    - 64.6.65.6
+    - 84.200.69.80
+    - 84.200.70.40
+    - 8.26.56.26
+    - 8.20.247.20
+    - 76.76.19.19
+    - 76.223.122.150
+    - 208.67.222.123
+    - 208.67.220.123
+    - 195.46.39.39
+    - 195.46.39.40
+    - 38.132.106.139
+    - 194.187.251.67
+
+proxies:
+  - name: "@DeltaKroneckerGithub_Clash_4741"
+    type: vless
+    server: "45.131.7.215"
+    port: 443
+    uuid: "14b59caf-a196-4ec2-8c70-c7b388062f5b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vangoghhh.info"
+    network: ws
+    ws-opts:
+      path: "/rdfgtws"
+      headers:
+        Host: "vangoghhh.info"
+  - name: "@DeltaKroneckerGithub_Clash_8771"
+    type: trojan
+    server: "61.228.74.76"
+    port: 3462
+    password: "6e1b9a65-884f-3aa9-9469-bf6ec0f08610"
+    sni: "a03.taipeicitygovernment.cn.ua"
+    skip-cert-verify: true
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_6219"
+    type: vless
+    server: "92.113.124.204"
+    port: 18443
+    uuid: "a387ea59-4d6e-400a-8e75-a4c7a2b79b37"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "8n9qi6t-owl.gevc9s4n60cc3wzcmwhjyezydpmbchocxp.workers.dev"
+    network: ws
+    ws-opts:
+      path: "/@Marisa_kristi"
+      headers:
+        Host: "8n9qi6t-owl.gevc9s4n60cc3wzcmwhjyezydpmbchocxp.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_5220"
+    type: vless
+    server: "8.39.125.46"
+    port: 2053
+    uuid: "663cf772-829c-4bc6-893d-b7d021d42f5b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp7.cc.cd"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vp7.cc.cd"
+  - name: "@DeltaKroneckerGithub_Clash_4992"
+    type: vless
+    server: "172.67.152.71"
+    port: 8880
+    uuid: "7ed93ccf-6a54-4b19-a9b4-aedfc79bab7d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/pyip=ProxyIP.KR.CMLiussss.net"
+      headers:
+        Host: "muddy-sky-4767.344-7a7.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_3216"
+    type: vless
+    server: "170.114.46.6"
+    port: 8080
+    uuid: "2d056ea3-52bf-472e-c9cb-abe48d6f0048"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/movpn"
+      headers:
+        Host: "tmvh.co.mvip5.mvpn5g.com"
+  - name: "@DeltaKroneckerGithub_Clash_6170"
+    type: vless
+    server: "104.17.113.173"
+    port: 2087
+    uuid: "7b102311-43fd-4e8f-877e-8090623c101d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp16.cc.cd"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vp16.cc.cd"
+  - name: "@DeltaKroneckerGithub_Clash_4244"
+    type: vless
+    server: "172.64.50.36"
+    port: 443
+    uuid: "5b9fa73b-b549-480b-add9-c45e650d236f"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "gddy.hhlfy.de5.net"
+    client-fingerprint: "firefox"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "gddy.hhlfy.de5.net"
+  - name: "@DeltaKroneckerGithub_Clash_2025"
+    type: vless
+    server: "91.193.59.215"
+    port: 443
+    uuid: "7612dd26-d0ce-4fe0-be7c-d093bb8645da"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "cf11.evan00.dpdns.org"
+    network: ws
+    ws-opts:
+      path: "Telegram🇨🇳 @WangCai2"
+      headers:
+        Host: "cf11.evan00.dpdns.org"
+  - name: "@DeltaKroneckerGithub_Clash_5961"
+    type: vless
+    server: "2.26.100.228"
+    port: 443
+    uuid: "8bba3194-4856-46d1-8319-075817d87eb1"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "fi3.cyphervpn.pro"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "USffNprEM08MHiuVy5bj6-kvxugxycuZcgQDFJyz2Wc"
+      short-id: "8f9d033ad6d2cebf"
+    flow: "xtls-rprx-vision"
+  - name: "@DeltaKroneckerGithub_Clash_6223"
+    type: vless
+    server: "162.159.46.18"
+    port: 2096
+    uuid: "2f095924-e965-ff4a-7c18-dee4f9454084"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "a.v2boxerfree4.workers.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/v2"
+      headers:
+        Host: "a.v2boxerfree4.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_8052"
+    type: trojan
+    server: "38.180.173.150"
+    port: 443
+    password: "af4b064a9c39472fb34ad8b113acdc6b"
+    sni: "38.180.173.150"
+    skip-cert-verify: true
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_4041"
+    type: vless
+    server: "45.8.211.217"
+    port: 443
+    uuid: "14b59caf-a196-4ec2-8c70-c7b388062f5b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vangoghhh.info"
+    network: ws
+    ws-opts:
+      path: "/rdfgtws"
+      headers:
+        Host: "vangoghhh.info"
+  - name: "@DeltaKroneckerGithub_Clash_10006"
+    type: ss
+    server: "141.98.101.178"
+    port: 443
+    cipher: "aes-128-gcm"
+    password: "shadowsocks"
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_1757"
+    type: vless
+    server: "185.176.24.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vms.lifetime05.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_6566"
+    type: vless
+    server: "173.245.49.27"
+    port: 443
+    uuid: "eeb6823c-b926-4ea2-866a-5542edd26e59"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "t1s1.rittbo.kdns.fr"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "t1s1.rittbo.kdns.fr"
+  - name: "@DeltaKroneckerGithub_Clash_3824"
+    type: vless
+    server: "104.16.149.122"
+    port: 2096
+    uuid: "7b102311-43fd-4e8f-877e-8090623c101d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp31.cc.cd"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vp31.cc.cd"
+  - name: "@DeltaKroneckerGithub_Clash_8104"
+    type: trojan
+    server: "103.224.182.210"
+    port: 443
+    password: "8008b06e-2d1d-421c-9cdc-20af1f59093a"
+    sni: "swejs.stablize.top"
+    skip-cert-verify: true
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_4240"
+    type: vless
+    server: "167.179.110.68"
+    port: 8443
+    uuid: "1d16c6e0-1bbe-435b-b661-90043fee999c"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "notls.lukongtou.eu.org"
+    network: ws
+    ws-opts:
+      path: "Telegram-WangCai2🇨🇳"
+      headers:
+        Host: "notls.lukongtou.eu.org"
+  - name: "@DeltaKroneckerGithub_Clash_1855"
+    type: vless
+    server: "104.26.5.186"
+    port: 443
+    uuid: "663cf772-829c-4bc6-893d-b7d021d42f5b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp6.cc.cd"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vp6.cc.cd"
+  - name: "@DeltaKroneckerGithub_Clash_2105"
+    type: vless
+    server: "162.159.46.67"
+    port: 443
+    uuid: "eeb6823c-b926-4ea2-866a-5542edd26e59"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "t1s1.rittbo.kdns.fr"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "t1s1.rittbo.kdns.fr"
+  - name: "@DeltaKroneckerGithub_Clash_2158"
+    type: vless
+    server: "162.159.40.1"
+    port: 443
+    uuid: "663cf772-829c-4bc6-893d-b7d021d42f5b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp1.cc.cd"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vp1.cc.cd"
+  - name: "@DeltaKroneckerGithub_Clash_8768"
+    type: trojan
+    server: "61.228.66.155"
+    port: 3462
+    password: "6e1b9a65-884f-3aa9-9469-bf6ec0f08610"
+    sni: "a03.taipeicitygovernment.cn.ua"
+    skip-cert-verify: true
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_5769"
+    type: vless
+    server: "45.130.125.209"
+    port: 80
+    uuid: "dc8eccdb-ecfa-435f-9ac1-5dc4882e7b51"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/http"
+      headers:
+        Host: "de.vpnbase.net"
+  - name: "@DeltaKroneckerGithub_Clash_8770"
+    type: trojan
+    server: "51.38.65.155"
+    port: 443
+    password: "fad2ba40-1233-11f0-87bc-1239d0255272"
+    sni: "uk1.test3.net"
+    skip-cert-verify: true
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_4172"
+    type: vless
+    server: "91.110.209.100"
+    port: 443
+    uuid: "7b102311-43fd-4e8f-877e-8090623c101d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp10.pages.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vp10.pages.dev"
+  - name: "@DeltaKroneckerGithub_Clash_10155"
+    type: ss
+    server: "50.62.90.16"
+    port: 443
+    cipher: "none"
+    password: "14b02e2a-8930-4afb-8412-ea4a4954ca5b"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "/14b02e2a-8930-4afb-8412-ea4a4954ca5b/?ed\\=2560"
+      host: "ylnhh.us.ci"
+      tls: true
+  - name: "@DeltaKroneckerGithub_Clash_663"
+    type: vless
+    server: "88.216.66.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vms.lifetime04.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_167"
+    type: vless
+    server: "104.17.182.193"
+    port: 2053
+    uuid: "7b102311-43fd-4e8f-877e-8090623c101d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp16.cc.cd"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vp16.cc.cd"
+  - name: "@DeltaKroneckerGithub_Clash_7375"
+    type: vless
+    server: "172.237.84.250"
+    port: 443
+    uuid: "f4e91fac-25eb-4d26-a14c-c82c3778a0e4"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "s5gydl.936.us.ci"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/proxyip=tw.william.us.ci?uuid=f4e91fac-25eb-4d26-a14c-c82c3778a0e4"
+      headers:
+        Host: "s5gydl.936.us.ci"
+  - name: "@DeltaKroneckerGithub_Clash_1588"
+    type: vless
+    server: "188.114.96.7"
+    port: 443
+    uuid: "ba49d874-fe02-465d-82d3-ed981dc7694f"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "o94yv7lIF0-AnXiSd9EFeHVVS7mxn6Bh.z-ULe-IKA-d-e-Ne-k-E.WORKERs.DEv"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "o94yv7lif0-anxisd9efehvvs7mxn6bh.z-ule-ika-d-e-ne-k-e.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_5915"
+    type: vless
+    server: "172.64.147.183"
+    port: 443
+    uuid: "14b02e2a-8930-4afb-8412-ea4a4954ca5b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "tianshu13.pages.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/pyip=proxyip.sg.cmliussss.net"
+      headers:
+        Host: "tianshu13.pages.dev"
+  - name: "@DeltaKroneckerGithub_Clash_2220"
+    type: vless
+    server: "176.109.85.48"
+    port: 14443
+    uuid: "8f0560ec-ba22-4431-a6a7-318dc59d5233"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "media.kinodrozd.com"
+    client-fingerprint: "safari"
+    network: ws
+    ws-opts:
+      path: "/"
+  - name: "@DeltaKroneckerGithub_Clash_7103"
+    type: vless
+    server: "47.239.4.246"
+    port: 443
+    uuid: "eeb6823c-b926-4ea2-866a-5542edd26e59"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "t1s1.rittbo.kdns.fr"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "t1s1.rittbo.kdns.fr"
+  - name: "@DeltaKroneckerGithub_Clash_7698"
+    type: vless
+    server: "172.67.207.26"
+    port: 8880
+    uuid: "472e0fb5-3a6b-48be-8060-cfffc6335624"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/pyip=ProxyIP.KR.CMLiussss.net"
+      headers:
+        Host: "broken-grass-24c4.288-005.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_1274"
+    type: vless
+    server: "188.164.248.64"
+    port: 2096
+    uuid: "7b102311-43fd-4e8f-877e-8090623c101d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp40.cc.cd"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vp40.cc.cd"
+  - name: "@DeltaKroneckerGithub_Clash_345"
+    type: vless
+    server: "104.19.35.239"
+    port: 2087
+    uuid: "7b102311-43fd-4e8f-877e-8090623c101d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp31.cc.cd"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vp31.cc.cd"
+  - name: "@DeltaKroneckerGithub_Clash_531"
+    type: vless
+    server: "146.56.180.103"
+    port: 443
+    uuid: "eeb6823c-b926-4ea2-866a-5542edd26e59"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "t1s1.rittbo.kdns.fr"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "t1s1.rittbo.kdns.fr"
+  - name: "@DeltaKroneckerGithub_Clash_7834"
+    type: vless
+    server: "91.193.59.112"
+    port: 443
+    uuid: "7612dd26-d0ce-4fe0-be7c-d093bb8645da"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "cf11.evan00.dpdns.org"
+    network: ws
+    ws-opts:
+      path: "Telegram🇨🇳 @WangCai2"
+      headers:
+        Host: "cf11.evan00.dpdns.org"
+  - name: "@DeltaKroneckerGithub_Clash_3473"
+    type: vless
+    server: "104.17.215.79"
+    port: 2053
+    uuid: "7b102311-43fd-4e8f-877e-8090623c101d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp43.cc.cd"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vp43.cc.cd"
+  - name: "@DeltaKroneckerGithub_Clash_10181"
+    type: ss
+    server: "190.93.246.16"
+    port: 443
+    cipher: "none"
+    password: "14b02e2a-8930-4afb-8412-ea4a4954ca5b"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "/14b02e2a-8930-4afb-8412-ea4a4954ca5b/?ed\\=2560"
+      host: "ylnhh.us.ci"
+  - name: "@DeltaKroneckerGithub_Clash_1979"
+    type: vless
+    server: "130.17.2.37"
+    port: 2200
+    uuid: "9501f3d6-483f-45c1-ab2c-33266520cd5c"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/v1"
+      headers:
+        Host: "rzd.ru"
+  - name: "@DeltaKroneckerGithub_Clash_7264"
+    type: vless
+    server: "172.66.132.196"
+    port: 8880
+    uuid: "31f345f3-b8eb-4ca6-8b14-bb555ae2c1f9"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/pyip=ProxyIP.KR.CMLiussss.net"
+      headers:
+        Host: "tiny-feather-4c41.227.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_171"
+    type: vless
+    server: "172.67.215.44"
+    port: 2052
+    uuid: "86442a2b-417d-426d-9b42-955573b5c6e4"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/eyJqdW5rIjoiaUhoWE5FbWloZWY1MGxobSIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbIjg5LjE2OS4zNC45OSJdfQ=="
+      headers:
+        Host: "ez-bfa272.ezaccess1d90628.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_8250"
+    type: trojan
+    server: "next-jaybird.rooster465.autos"
+    port: 443
+    password: "XG59623478"
+    sni: "next-jaybird.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_9287"
+    type: trojan
+    server: "enormous-whippet.rooster465.autos"
+    port: 443
+    password: "CF68213490"
+    sni: "enormous-whippet.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_8612"
+    type: trojan
+    server: "64.176.75.215"
+    port: 443
+    password: "nsKBtW4V7LPHG5.iSySU8_pNM88Gkxz7eE"
+    sni: "64.176.75.215"
+    skip-cert-verify: true
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_8282"
+    type: trojan
+    server: "51.38.65.155"
+    port: 443
+    password: "d06a14d0-ceb9-11ef-a13e-1239d0255272"
+    sni: "uk1.test3.net"
+    skip-cert-verify: true
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_7668"
+    type: vless
+    server: "91.110.209.46"
+    port: 443
+    uuid: "7b102311-43fd-4e8f-877e-8090623c101d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp10.pages.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vp10.pages.dev"
+  - name: "@DeltaKroneckerGithub_Clash_1224"
+    type: vless
+    server: "89.116.250.135"
+    port: 443
+    uuid: "14b59caf-a196-4ec2-8c70-c7b388062f5b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vangoghhh.info"
+    network: ws
+    ws-opts:
+      path: "/rdfgtws"
+      headers:
+        Host: "vangoghhh.info"
+  - name: "@DeltaKroneckerGithub_Clash_7772"
+    type: vless
+    server: "172.64.153.175"
+    port: 443
+    uuid: "07c87117-8472-41f6-bea8-ddcb012b9b41"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "edge-267487d0.pages.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/?ed=2048fp=chrome"
+      headers:
+        Host: "edge-267487d0.pages.dev"
+  - name: "@DeltaKroneckerGithub_Clash_4752"
+    type: vless
+    server: "135.84.75.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vms.lifetime08.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_5304"
+    type: vless
+    server: "162.159.14.252"
+    port: 443
+    uuid: "eeb6823c-b926-4ea2-866a-5542edd26e59"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "t1s1.rittbo.kdns.fr"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "t1s1.rittbo.kdns.fr"
+  - name: "@DeltaKroneckerGithub_Clash_7584"
+    type: vless
+    server: "51.91.103.130"
+    port: 8443
+    uuid: "f4e91fac-25eb-4d26-a14c-c82c3778a0e4"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "s5gydl.936.us.ci"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/proxyip=tw.william.us.ci?uuid=f4e91fac-25eb-4d26-a14c-c82c3778a0e4"
+      headers:
+        Host: "s5gydl.936.us.ci"
+  - name: "@DeltaKroneckerGithub_Clash_1170"
+    type: vless
+    server: "207.148.119.176"
+    port: 8443
+    uuid: "eeb6823c-b926-4ea2-866a-5542edd26e59"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "t1s1.rittbo.kdns.fr"
+    network: ws
+    ws-opts:
+      path: "/fp=chrome"
+      headers:
+        Host: "t1s1.rittbo.kdns.fr"
+  - name: "@DeltaKroneckerGithub_Clash_8132"
+    type: trojan
+    server: "uk1.test3.net"
+    port: 443
+    password: "2f986b10-b7ac-11ee-bb9f-1239d0255272"
+    sni: "chatbuzzteambhm.chatbuzzt7150.workers.dev"
+    skip-cert-verify: true
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_3237"
+    type: vless
+    server: "114.129.43.123"
+    port: 443
+    uuid: "1d16c6e0-1bbe-435b-b661-90043fee999c"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "notls.lukongtou.eu.org"
+    network: ws
+    ws-opts:
+      path: "Telegram-WangCai2"
+      headers:
+        Host: "notls.lukongtou.eu.org"
+  - name: "@DeltaKroneckerGithub_Clash_5254"
+    type: vless
+    server: "31.172.67.215"
+    port: 2200
+    uuid: "d4aad26f-70b6-4411-8517-17f7b4281886"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/v1"
+      headers:
+        Host: "rzd.ru"
+  - name: "@DeltaKroneckerGithub_Clash_8578"
+    type: trojan
+    server: "51.38.65.155"
+    port: 443
+    password: "32691370-fd1f-11ef-b261-1239d0255272"
+    sni: "uk1.test3.net"
+    skip-cert-verify: true
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_8202"
+    type: trojan
+    server: "uk1.test3.net"
+    port: 443
+    password: "9518fb90-f389-11ef-bc5a-1239d0255272"
+    sni: "uk1.test3.net"
+    skip-cert-verify: true
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_869"
+    type: vless
+    server: "63.141.128.22"
+    port: 443
+    uuid: "b8b01773-36b1-4b49-9bd0-6249f52345b4"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "MiSty-tooth-78cA.FoboGAH414-e7B.WoRKERs.DEv"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/eyJqdW5rIjoiTkNUaFg0ZnJNUjhhcyIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0="
+      headers:
+        Host: "misty-tooth-78ca.fobogah414-e7b.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_7341"
+    type: vless
+    server: "104.21.56.202"
+    port: 8880
+    uuid: "b2c879ed-08a2-4a79-9c57-37c7db614e96"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/pyip=ProxyIP.KR.CMLiussss.net"
+      headers:
+        Host: "sweet-cake-1340.474-288.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_9112"
+    type: trojan
+    server: "44.249.231.131"
+    port: 443
+    password: "CF68213490"
+    sni: "fast-bunny.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_4284"
+    type: vless
+    server: "198.41.209.116"
+    port: 443
+    uuid: "7b102311-43fd-4e8f-877e-8090623c101d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp38.cc.cd"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vp38.cc.cd"
+  - name: "@DeltaKroneckerGithub_Clash_5832"
+    type: vless
+    server: "45.131.6.5"
+    port: 443
+    uuid: "14b59caf-a196-4ec2-8c70-c7b388062f5b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vangoghhh.info"
+    network: ws
+    ws-opts:
+      path: "/rdfgtws"
+      headers:
+        Host: "vangoghhh.info"
+  - name: "@DeltaKroneckerGithub_Clash_3438"
+    type: vless
+    server: "104.19.46.187"
+    port: 443
+    uuid: "eeb6823c-b926-4ea2-866a-5542edd26e59"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "t1s1.rittbo.kdns.fr"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/fp"
+      headers:
+        Host: "t1s1.rittbo.kdns.fr"
+  - name: "@DeltaKroneckerGithub_Clash_778"
+    type: vless
+    server: "188.164.248.219"
+    port: 443
+    uuid: "7b102311-43fd-4e8f-877e-8090623c101d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp29.cc.cd"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vp29.cc.cd"
+  - name: "@DeltaKroneckerGithub_Clash_2150"
+    type: vless
+    server: "104.18.153.10"
+    port: 443
+    uuid: "14b59caf-a196-4ec2-8c70-c7b388062f5b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vangoghhh.info"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/rdfgtws"
+      headers:
+        Host: "vangoghhh.info"
+  - name: "@DeltaKroneckerGithub_Clash_1442"
+    type: vless
+    server: "202.182.118.182"
+    port: 443
+    uuid: "eeb6823c-b926-4ea2-866a-5542edd26e59"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "t1s1.rittbo.kdns.fr"
+    network: ws
+    ws-opts:
+      path: "/fp=chrome"
+      headers:
+        Host: "t1s1.rittbo.kdns.fr"
+  - name: "@DeltaKroneckerGithub_Clash_1898"
+    type: vless
+    server: "15.204.97.198"
+    port: 23576
+    uuid: "48ff2b70-e180-582f-8866-d9a2edeed5f5"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "fuck.rkn"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s"
+      short-id: "01"
+    flow: "xtls-rprx-vision"
+  - name: "@DeltaKroneckerGithub_Clash_7445"
+    type: vless
+    server: "172.67.209.127"
+    port: 8880
+    uuid: "4e81922a-1c2e-41ee-bb4c-9095a0a363fe"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/pyip=ProxyIP.SG.CMLiussss.net"
+      headers:
+        Host: "gentle-cell-501a.273-d6b.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_10329"
+    type: vmess
+    server: "103.172.134.162"
+    port: 25532
+    uuid: "5b26f68b-9f7f-41e5-b35f-ed1aded831d5"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_5796"
+    type: vless
+    server: "104.24.51.228"
+    port: 2087
+    uuid: "3193066d-6f38-4466-80b6-40ce3bcd4b54"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "late-leaf-f4d0.java00code.workers.dev"
+    client-fingerprint: "random"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "late-leaf-f4d0.java00code.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_3444"
+    type: vless
+    server: "104.16.75.207"
+    port: 443
+    uuid: "b26ec0f4-6c92-45f7-b287-2a664abf1963"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "main-2.ariyuz.org"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+  - name: "@DeltaKroneckerGithub_Clash_7890"
+    type: vless
+    server: "104.21.12.116"
+    port: 8880
+    uuid: "d6d0ba7b-fa88-4b2c-9915-530ae4a81035"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/pyip=ProxyIP.JP.CMLiussss.net"
+      headers:
+        Host: "aged-mud-9b4c.202-2dc.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_3247"
+    type: vless
+    server: "172.67.222.41"
+    port: 443
+    uuid: "7ba17ba6-8d1d-4968-882b-f5a3b43eb51d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "icy-morning-df86.alisooltaniiii2024ali.workers.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "icy-morning-df86.alisooltaniiii2024ali.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_2687"
+    type: vless
+    server: "162.159.39.62"
+    port: 2096
+    uuid: "663cf772-829c-4bc6-893d-b7d021d42f5b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp3.cc.cd"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vp3.cc.cd"
+  - name: "@DeltaKroneckerGithub_Clash_4316"
+    type: vless
+    server: "193.168.46.180"
+    port: 443
+    uuid: "7b0671a7-7c4b-4996-916e-39c33337f1f7"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "rruu.persik.host"
+    client-fingerprint: "qq"
+    reality-opts:
+      public-key: "D0FqzTuVSzCF8IcFo64SFIpMsaGV47LW3el2GCCVoFY"
+      short-id: "c1a7e9b4711d5f60"
+    flow: "xtls-rprx-vision"
+  - name: "@DeltaKroneckerGithub_Clash_231"
+    type: vless
+    server: "147.182.212.232"
+    port: 56565
+    uuid: "7b188eea-b08f-42c2-bac7-d3b0e74218b8"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.paypal.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "Td03Ae-cuYLq4xg7MSps58c_yRUcbbwtZLXm0ywabjY"
+      short-id: ""
+    flow: "xtls-rprx-vision"
+  - name: "@DeltaKroneckerGithub_Clash_6271"
+    type: vless
+    server: "8.6.112.0"
+    port: 443
+    uuid: "427d85cd-a2a8-4668-8118-0d43d2d57f77"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "asmaos.uk"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "asmaos.uk"
+  - name: "@DeltaKroneckerGithub_Clash_314"
+    type: vless
+    server: "47.251.95.178"
+    port: 443
+    uuid: "93f0761d-4393-4b43-a523-e812fa0b7e83"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "cf.cfvip.lol"
+    network: ws
+    ws-opts:
+      path: "/pyip"
+      headers:
+        Host: "cf.cfvip.lol"
+  - name: "@DeltaKroneckerGithub_Clash_7191"
+    type: vless
+    server: "195.74.93.254"
+    port: 443
+    uuid: "db2b7549-a616-4d83-a4bf-51eda70ff82c"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "web.max.ru"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "7ReQIe2kMtP4rCrptgH5glkOM-JGcSAPzHNxOED-Z0s"
+      short-id: "247fd6dab1a34a48"
+    flow: "xtls-rprx-vision"
+  - name: "@DeltaKroneckerGithub_Clash_9082"
+    type: trojan
+    server: "star-hagfish.rooster465.autos"
+    port: 443
+    password: "CF68213490"
+    sni: "star-hagfish.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_1011"
+    type: vless
+    server: "64.83.46.62"
+    port: 443
+    uuid: "31be1b6b-a2e4-44f5-9998-80569545a717"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.icloud.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "lqdXPtmlK9emOPzmvYD6XoWrT6laiRRXglFz0VMVCFc"
+      short-id: ""
+    flow: "xtls-rprx-vision"
+  - name: "@DeltaKroneckerGithub_Clash_3013"
+    type: vless
+    server: "104.16.243.242"
+    port: 443
+    uuid: "663cf772-829c-4bc6-893d-b7d021d42f5b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp7.cc.cd"
+    client-fingerprint: "firefox"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vp7.cc.cd"
+  - name: "@DeltaKroneckerGithub_Clash_9454"
+    type: trojan
+    server: "uk1.test3.net"
+    port: 443
+    password: "4cc9bb80-1234-11f0-94b6-1239d0255272"
+    sni: "uk1.test3.net"
+    skip-cert-verify: true
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_10201"
+    type: ss
+    server: "82.38.31.15"
+    port: 443
+    cipher: "chacha20-ietf-poly1305"
+    password: "oZIoA69Q8yhcQV8ka3Pa3A"
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_10267"
+    type: ss
+    server: "193.29.139.144"
+    port: 8080
+    cipher: "chacha20-ietf-poly1305"
+    password: "oZIoA69Q8yhcQV8ka3Pa3A"
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_8613"
+    type: trojan
+    server: "58.152.110.104"
+    port: 443
+    password: "44e660b0ee21cf3ac66aee2c08af85d2"
+    sni: "www.nintendogames.net"
+    skip-cert-verify: true
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_905"
+    type: vless
+    server: "104.129.165.20"
+    port: 443
+    uuid: "7612dd26-d0ce-4fe0-be7c-d093bb8645da"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "cf11.evan00.dpdns.org"
+    network: ws
+    ws-opts:
+      path: "Telegram🇨🇳 @WangCai2"
+      headers:
+        Host: "cf11.evan00.dpdns.org"
+  - name: "@DeltaKroneckerGithub_Clash_5369"
+    type: vless
+    server: "104.16.251.197"
+    port: 443
+    uuid: "663cf772-829c-4bc6-893d-b7d021d42f5b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp6.cc.cd"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vp6.cc.cd"
+  - name: "@DeltaKroneckerGithub_Clash_5089"
+    type: vless
+    server: "210.203.195.52"
+    port: 33890
+    uuid: "1d16c6e0-1bbe-435b-b661-90043fee999c"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "notls.lukongtou.eu.org"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/Telegram-WangCai2🇨🇳"
+      headers:
+        Host: "notls.lukongtou.eu.org"
+  - name: "@DeltaKroneckerGithub_Clash_5431"
+    type: vless
+    server: "172.64.32.6"
+    port: 443
+    uuid: "dd321f25-8f90-4e7c-a1fa-01883a8988a7"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "soucuovls.pages.dev"
+    network: ws
+    ws-opts:
+      path: "pyip=proxyip.cmliussss.net"
+      headers:
+        Host: "soucuovls.pages.dev"
+  - name: "@DeltaKroneckerGithub_Clash_9004"
+    type: trojan
+    server: "uk1.test3.net"
+    port: 443
+    password: "573bf780-4684-11f0-bda5-1239d0255272"
+    sni: "uk1.test3.net"
+    skip-cert-verify: true
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_9726"
+    type: ss
+    server: "82.38.31.202"
+    port: 8080
+    cipher: "chacha20-ietf-poly1305"
+    password: "k1dBOmOB4oqi7Ump37a1bQ"
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_7760"
+    type: vless
+    server: "185.229.9.31"
+    port: 49007
+    uuid: "fdc1bf52-65b5-4ee1-99db-9190e2ab4153"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ads.x5.ru"
+    client-fingerprint: "qq"
+    reality-opts:
+      public-key: "t192lvTN6ZtCch9LSAkLOKnKuyYdLLaTJx8tn3VRHz0"
+      short-id: "dfdee30a27b11f0f"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "grpc"
+  - name: "@DeltaKroneckerGithub_Clash_3027"
+    type: vless
+    server: "104.18.40.152"
+    port: 443
+    uuid: "5b9fa73b-b549-480b-add9-c45e650d236f"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "gddy.hhlfy.de5.net"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "gddy.hhlfy.de5.net"
+  - name: "@DeltaKroneckerGithub_Clash_2203"
+    type: vless
+    server: "2.26.91.98"
+    port: 1443
+    uuid: "f6ec5f55-3d2a-4289-a2b1-d419976cd43e"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "o-85ley6knn8ut.6nvkygqh144t7xtdyvh0y3o4gzo3ujhnk8n.workers.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/@Marisa_kristi"
+      headers:
+        Host: "o-85ley6knn8ut.6nvkygqh144t7xtdyvh0y3o4gzo3ujhnk8n.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_7198"
+    type: vless
+    server: "144.31.129.42"
+    port: 443
+    uuid: "7b81d175-d180-4ec8-bbc5-dfe80e8d3b68"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "morphbinerkkw.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "CxMPFpwhcR9Ocp-Xy_1J08mo-atdHKUf58WLOy_XlgM"
+      short-id: "d9662905"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "nexusGrpc"
+  - name: "@DeltaKroneckerGithub_Clash_7167"
+    type: vless
+    server: "45.12.30.248"
+    port: 443
+    uuid: "14b59caf-a196-4ec2-8c70-c7b388062f5b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vangoghhh.info"
+    network: ws
+    ws-opts:
+      path: "/rdfgtws"
+      headers:
+        Host: "vangoghhh.info"
+  - name: "@DeltaKroneckerGithub_Clash_9208"
+    type: trojan
+    server: "62.112.222.46"
+    port: 443
+    password: "KV63147582"
+    sni: "legible-possum.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_8451"
+    type: trojan
+    server: "104.18.32.47"
+    port: 443
+    password: "A4u^p(_UR*F6"
+    sni: "027.eLECTROcelLCO-cf-027.WorKerS.Dev"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/eyJqdW5rIjoidDJ0UDljR2ZIaVBQakg2byIsInByb3RvY29sIjoidHIiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0="
+      headers:
+        Host: "027.electrocellco-cf-027.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_5646"
+    type: vless
+    server: "31.58.76.95"
+    port: 8443
+    uuid: "7dc3461c-630f-4547-82a9-08042b0daba5"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "tradingview.com"
+    reality-opts:
+      public-key: "HN1XHrqmB_-gDnVeXgmyPZFWAZEo4aTqlU-cIWh6hm0"
+      short-id: ""
+    flow: "xtls-rprx-vision"
+  - name: "@DeltaKroneckerGithub_Clash_1710"
+    type: vless
+    server: "104.16.159.45"
+    port: 8443
+    uuid: "7b102311-43fd-4e8f-877e-8090623c101d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp36.cc.cd"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vp36.cc.cd"
+  - name: "@DeltaKroneckerGithub_Clash_6423"
+    type: vless
+    server: "62.72.166.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vms.lifetime40.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_7351"
+    type: vless
+    server: "104.16.106.213"
+    port: 8880
+    uuid: "bd3eb105-b048-47fa-9a1d-63a66f9830a2"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/pyip=ProxyIP.KR.CMLiussss.net"
+      headers:
+        Host: "misty-flower-4d15.372-912.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_6598"
+    type: vless
+    server: "ul-mexico1.09vpn.com"
+    port: 8443
+    uuid: "a6d20e79-d326-42c1-bc20-f4cecc6dc42d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ul-mexico1.09vpn.com"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/vless/"
+      headers:
+        Host: "ul-mexico1.09vpn.com"
+  - name: "@DeltaKroneckerGithub_Clash_2521"
+    type: vless
+    server: "8.39.125.130"
+    port: 2053
+    uuid: "7b102311-43fd-4e8f-877e-8090623c101d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp22.cc.cd"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vp22.cc.cd"
+  - name: "@DeltaKroneckerGithub_Clash_8359"
+    type: trojan
+    server: "43.156.253.94"
+    port: 443
+    password: "Aimer"
+    sni: "ngepx.ambercc.filegear-sg.me"
+    skip-cert-verify: true
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_1268"
+    type: vless
+    server: "104.17.161.9"
+    port: 2087
+    uuid: "663cf772-829c-4bc6-893d-b7d021d42f5b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp7.cc.cd"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vp7.cc.cd"
+  - name: "@DeltaKroneckerGithub_Clash_9752"
+    type: ss
+    server: "82.38.31.15"
+    port: 443
+    cipher: "chacha20-ietf-poly1305"
+    password: "oZIoA69Q8yhcQV8ka3Pa3A"
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_6302"
+    type: vless
+    server: "193.168.46.180"
+    port: 443
+    uuid: "b33fb4ae-0139-4eeb-9af6-5b06591cee7b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "rruu.persik.host"
+    client-fingerprint: "qq"
+    reality-opts:
+      public-key: "D0FqzTuVSzCF8IcFo64SFIpMsaGV47LW3el2GCCVoFY"
+      short-id: "c1a7e9b4711d5f60"
+    flow: "xtls-rprx-vision"
+  - name: "@DeltaKroneckerGithub_Clash_10239"
+    type: ss
+    server: "37.19.198.243"
+    port: 443
+    cipher: "aes-128-gcm"
+    password: "shadowsocks"
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_6150"
+    type: vless
+    server: "64.186.234.50"
+    port: 443
+    uuid: "eeb6823c-b926-4ea2-866a-5542edd26e59"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "t1s1.rittbo.kdns.fr"
+    network: ws
+    ws-opts:
+      path: "/fp=chrome"
+      headers:
+        Host: "t1s1.rittbo.kdns.fr"
+  - name: "@DeltaKroneckerGithub_Clash_2750"
+    type: vless
+    server: "45.130.125.126"
+    port: 443
+    uuid: "b26ec0f4-6c92-45f7-b287-2a664abf1963"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "server-ir-2.ariyuz.org"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+  - name: "@DeltaKroneckerGithub_Clash_3315"
+    type: vless
+    server: "104.18.33.77"
+    port: 2053
+    uuid: "663cf772-829c-4bc6-893d-b7d021d42f5b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp7.cc.cd"
+    client-fingerprint: "firefox"
+    network: ws
+    ws-opts:
+      path: "/"
+  - name: "@DeltaKroneckerGithub_Clash_7881"
+    type: vless
+    server: "91.193.59.161"
+    port: 443
+    uuid: "7612dd26-d0ce-4fe0-be7c-d093bb8645da"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "cf11.evan00.dpdns.org"
+    network: ws
+    ws-opts:
+      path: "Telegram🇨🇳 @WangCai2"
+      headers:
+        Host: "cf11.evan00.dpdns.org"
+  - name: "@DeltaKroneckerGithub_Clash_4750"
+    type: vless
+    server: "91.193.58.13"
+    port: 80
+    uuid: "f2d55510-fa3c-4e3b-adfc-2d96fa399c19"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/pyip=Telegram🇨🇳 @WangCai2"
+      headers:
+        Host: "plain-darkness-90ea.259.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_2486"
+    type: vless
+    server: "108.162.198.125"
+    port: 443
+    uuid: "663cf772-829c-4bc6-893d-b7d021d42f5b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp4.cc.cd"
+    client-fingerprint: "firefox"
+    network: ws
+    ws-opts:
+      path: "/"
+  - name: "@DeltaKroneckerGithub_Clash_7754"
+    type: vless
+    server: "162.159.44.22"
+    port: 443
+    uuid: "07c87117-8472-41f6-bea8-ddcb012b9b41"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "edge-267487d0.pages.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/?ed=2048"
+      headers:
+        Host: "edge-267487d0.pages.dev"
+  - name: "@DeltaKroneckerGithub_Clash_7372"
+    type: vless
+    server: "104.21.88.129"
+    port: 8880
+    uuid: "4212034d-c18b-4060-b218-4f8372e5473a"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/pyip=ProxyIP.JP.CMLiussss.net"
+      headers:
+        Host: "summer-hill-7f65.275-521.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_9149"
+    type: trojan
+    server: "172.64.150.28"
+    port: 443
+    password: "humanity"
+    sni: "www.calmlunch.com"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/assignment"
+  - name: "@DeltaKroneckerGithub_Clash_8892"
+    type: trojan
+    server: "104.17.25.173"
+    port: 443
+    password: "humanity"
+    sni: "www.multiplydose.com"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/assignment"
+  - name: "@DeltaKroneckerGithub_Clash_2352"
+    type: vless
+    server: "45.76.87.125"
+    port: 14750
+    uuid: "c2c94230-7075-4558-89f4-ddf74d7de107"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "jln31qtswdkut5.60kohcognywybguuq3ouc818oofnxfvn35daott.workers.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/@Marisa_kristi"
+      headers:
+        Host: "jln31qtswdkut5.60kohcognywybguuq3ouc818oofnxfvn35daott.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_10099"
+    type: ss
+    server: "172.105.39.124"
+    port: 7002
+    cipher: "aes-256-gcm"
+    password: "RexnBgU7EV5ADxG"
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_10303"
+    type: vmess
+    server: "107.172.75.141"
+    port: 10086
+    uuid: "e02c67a8-d769-4d73-833a-ab6acdb86e6e"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_6688"
+    type: vless
+    server: "173.245.59.61"
+    port: 443
+    uuid: "7b102311-43fd-4e8f-877e-8090623c101d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp23.cc.cd"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vp23.cc.cd"
+  - name: "@DeltaKroneckerGithub_Clash_321"
+    type: vless
+    server: "80.93.202.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vms.lifetime02.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_6193"
+    type: vless
+    server: "91.193.59.114"
+    port: 443
+    uuid: "7612dd26-d0ce-4fe0-be7c-d093bb8645da"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "cf11.evan00.dpdns.org"
+    network: ws
+    ws-opts:
+      path: "Telegram🇨🇳 @WangCai2"
+      headers:
+        Host: "cf11.evan00.dpdns.org"
+  - name: "@DeltaKroneckerGithub_Clash_7718"
+    type: vless
+    server: "deepl.com"
+    port: 8880
+    uuid: "b1b99d33-8df1-4c74-b140-28941b43a4d2"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/pyip=ProxyIP.KR.CMLiussss.net"
+      headers:
+        Host: "nameless-poetry-cc33.268-910.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_4522"
+    type: vless
+    server: "185.135.9.50"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vms.lifetime50.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_89"
+    type: vless
+    server: "64.186.250.98"
+    port: 443
+    uuid: "eeb6823c-b926-4ea2-866a-5542edd26e59"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "t1s1.rittbo.kdns.fr"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "t1s1.rittbo.kdns.fr"
+  - name: "@DeltaKroneckerGithub_Clash_9807"
+    type: ss
+    server: "57.129.47.47"
+    port: 2053
+    cipher: "none"
+    password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "/59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
+  - name: "@DeltaKroneckerGithub_Clash_2088"
+    type: vless
+    server: "91.224.75.127"
+    port: 2053
+    uuid: "42e2dd45-2323-4929-9ab7-98f43591416e"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "yykir7al.ndaiwcu.workers.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "yykir7al.ndaiwcu.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_7129"
+    type: vless
+    server: "195.85.59.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vms.lifetime58.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_3154"
+    type: vless
+    server: "104.18.38.47"
+    port: 443
+    uuid: "eeb6823c-b926-4ea2-866a-5542edd26e59"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "t1s1.rittbo.kdns.fr"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "t1s1.rittbo.kdns.fr"
+  - name: "@DeltaKroneckerGithub_Clash_8152"
+    type: trojan
+    server: "gentle-raptor.rooster465.autos"
+    port: 443
+    password: "CF68213490"
+    sni: "gentle-raptor.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_3994"
+    type: vless
+    server: "172.64.155.209"
+    port: 443
+    uuid: "93f0761d-4393-4b43-a523-e812fa0b7e83"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "cf.cfvip.lol"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/pyip=47.251.95.178"
+      headers:
+        Host: "cf.cfvip.lol"
+  - name: "@DeltaKroneckerGithub_Clash_8963"
+    type: trojan
+    server: "uk1.test3.net"
+    port: 443
+    password: "fad2ba40-1233-11f0-87bc-1239d0255272"
+    sni: "uk1.test3.net"
+    skip-cert-verify: true
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_4331"
+    type: vless
+    server: "38.54.84.46"
+    port: 445
+    uuid: "2b1fb18c-65c4-4154-9d66-2e0c8c7fc729"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "klingenappentwicklung.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "OigElWLoU6f5iw1SyTt06B2jCxx8-_cU5mY-RxHhejw"
+      short-id: "6a"
+  - name: "@DeltaKroneckerGithub_Clash_8273"
+    type: trojan
+    server: "uk1.test3.net"
+    port: 443
+    password: "0d1506e0-1af4-11f0-b5d5-1239d0255272"
+    sni: "uk1.test3.net"
+    skip-cert-verify: true
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_2316"
+    type: vless
+    server: "162.159.198.1"
+    port: 443
+    uuid: "7b102311-43fd-4e8f-877e-8090623c101d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp14.cc.cd"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vp14.cc.cd"
+  - name: "@DeltaKroneckerGithub_Clash_3544"
+    type: vless
+    server: "104.19.32.233"
+    port: 443
+    uuid: "7b102311-43fd-4e8f-877e-8090623c101d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp13.cc.cd"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vp13.cc.cd"
+  - name: "@DeltaKroneckerGithub_Clash_2995"
+    type: vless
+    server: "104.17.57.219"
+    port: 2053
+    uuid: "663cf772-829c-4bc6-893d-b7d021d42f5b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp8.cc.cd"
+    client-fingerprint: "firefox"
+    network: ws
+    ws-opts:
+      path: "/"
+  - name: "@DeltaKroneckerGithub_Clash_9155"
+    type: trojan
+    server: "uk1.test3.net"
+    port: 443
+    password: "b4c712a0-0a7d-11f0-808d-1239d0255272"
+    sni: "uk1.test3.net"
+    skip-cert-verify: true
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_3346"
+    type: vless
+    server: "104.17.112.147"
+    port: 2083
+    uuid: "663cf772-829c-4bc6-893d-b7d021d42f5b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp3.cc.cd"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vp3.cc.cd"
+  - name: "@DeltaKroneckerGithub_Clash_4152"
+    type: vless
+    server: "3.114.220.22"
+    port: 19645
+    uuid: "814bd064-544d-4255-a070-5705c03f6da9"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.apple.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "k2hPp0tTW0Da-HK94wYpSCLbuK44LfGqC2MSJIM1Ti0"
+      short-id: "48050fab"
+    flow: "xtls-rprx-vision"
+  - name: "@DeltaKroneckerGithub_Clash_9602"
+    type: trojan
+    server: "104.21.48.168"
+    port: 2053
+    password: "MiTiVPN"
+    sni: "iri-282-38-38-2.MaqRoR.iR"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/---@MiTiVPN/---@MiTiVPN/---@MiTiVPN/---@MiTiVPN/---@MiTiVPN=fl-ss"
+  - name: "@DeltaKroneckerGithub_Clash_6355"
+    type: vless
+    server: "198.41.223.233"
+    port: 2096
+    uuid: "7b102311-43fd-4e8f-877e-8090623c101d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp11.cc.cd"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vp11.cc.cd"
+  - name: "@DeltaKroneckerGithub_Clash_2860"
+    type: vless
+    server: "205.233.181.117"
+    port: 443
+    uuid: "14b59caf-a196-4ec2-8c70-c7b388062f5b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vangoghhh.info"
+    network: ws
+    ws-opts:
+      path: "/rdfgtws"
+      headers:
+        Host: "vangoghhh.info"
+  - name: "@DeltaKroneckerGithub_Clash_7790"
+    type: vless
+    server: "194.152.44.20"
+    port: 443
+    uuid: "7612dd26-d0ce-4fe0-be7c-d093bb8645da"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "cf11.evan00.dpdns.org"
+    network: ws
+    ws-opts:
+      path: "Telegram🇨🇳 @WangCai2"
+      headers:
+        Host: "cf11.evan00.dpdns.org"
+  - name: "@DeltaKroneckerGithub_Clash_9945"
+    type: ss
+    server: "82.38.31.198"
+    port: 8080
+    cipher: "chacha20-ietf-poly1305"
+    password: "k1dBOmOB4oqi7Ump37a1bQ"
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_8775"
+    type: trojan
+    server: "51.38.65.155"
+    port: 443
+    password: "4aca21d0-e787-11ef-9708-1239d0255272"
+    sni: "uk1.test3.net"
+    skip-cert-verify: true
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_9189"
+    type: trojan
+    server: "popular-meerkat.rooster465.autos"
+    port: 443
+    password: "CF68213490"
+    sni: "popular-meerkat.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_8183"
+    type: trojan
+    server: "15.204.237.31"
+    port: 2083
+    password: "2ggAcGC8hJ"
+    sni: "USa-vp-31.MeTiKapps.Com"
+    skip-cert-verify: true
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_5767"
+    type: vless
+    server: "51.77.141.117"
+    port: 8443
+    uuid: "f4e91fac-25eb-4d26-a14c-c82c3778a0e4"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "s5gydl.936.us.ci"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/proxyip=tw.william.us.ci?uuid=f4e91fac-25eb-4d26-a14c-c82c3778a0e4"
+      headers:
+        Host: "s5gydl.936.us.ci"
+  - name: "@DeltaKroneckerGithub_Clash_3287"
+    type: vless
+    server: "83.147.216.66"
+    port: 50000
+    uuid: "8df35d77-d3ea-4dc6-83a0-0dadc9a39eb7"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "kqjifhg9rw.tradsc8p9xp7wxyqmc1wy0ah.workers.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/@Marisa_kristi"
+      headers:
+        Host: "kqjifhg9rw.tradsc8p9xp7wxyqmc1wy0ah.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_9398"
+    type: trojan
+    server: "154.31.115.31"
+    port: 443
+    password: "TOZA9E6pyq4z3pFYeIeOC3ApaSDjR2wFueaO8uNDx0czDF3YCSwa3xjZ3qZAyB4YCKCZS"
+    sni: "swiftly.meijireform.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_6493"
+    type: vless
+    server: "104.25.213.215"
+    port: 443
+    uuid: "eeb6823c-b926-4ea2-866a-5542edd26e59"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "t1s1.rittbo.kdns.fr"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/fp"
+      headers:
+        Host: "t1s1.rittbo.kdns.fr"
+  - name: "@DeltaKroneckerGithub_Clash_4514"
+    type: vless
+    server: "172.67.185.65"
+    port: 443
+    uuid: "d682c8f4-e719-577e-cbe9-2e5b00000000"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "0406.infinityconfig7.workers.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/sync"
+      headers:
+        Host: "0406.infinityconfig7.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_9196"
+    type: trojan
+    server: "irancell.buzzmuzzpanel.online"
+    port: 443
+    password: "A4u^p(_UR*F6"
+    sni: "027.eLECTROcelLCO-cf-027.WorKerS.Dev"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/eyJqdW5rIjoidDJ0UDljR2ZIaVBQakg2byIsInByb3RvY29sIjoidHIiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0="
+      headers:
+        Host: "027.electrocellco-cf-027.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_4196"
+    type: vless
+    server: "198.41.223.241"
+    port: 2096
+    uuid: "663cf772-829c-4bc6-893d-b7d021d42f5b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp7.cc.cd"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vp7.cc.cd"
+  - name: "@DeltaKroneckerGithub_Clash_7505"
+    type: vless
+    server: "104.16.106.213"
+    port: 8880
+    uuid: "d829cf8d-0a32-4e60-bcc3-a03fb4658ea4"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/pyip=ProxyIP.KR.CMLiussss.net"
+      headers:
+        Host: "shy-wind-a26f.182-104.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_7463"
+    type: vless
+    server: "139.162.23.48"
+    port: 443
+    uuid: "f4e91fac-25eb-4d26-a14c-c82c3778a0e4"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "s5gydl.936.us.ci"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/proxyip=tw.william.us.ci?uuid=f4e91fac-25eb-4d26-a14c-c82c3778a0e4"
+      headers:
+        Host: "s5gydl.936.us.ci"
+  - name: "@DeltaKroneckerGithub_Clash_9757"
+    type: ss
+    server: "91.98.92.244"
+    port: 2053
+    cipher: "none"
+    password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "/59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
+  - name: "@DeltaKroneckerGithub_Clash_5086"
+    type: vless
+    server: "193.168.46.180"
+    port: 443
+    uuid: "69212088-1265-4dd7-951e-b57fc3cf2fae"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "rruu.persik.host"
+    client-fingerprint: "qq"
+    reality-opts:
+      public-key: "D0FqzTuVSzCF8IcFo64SFIpMsaGV47LW3el2GCCVoFY"
+      short-id: "c1a7e9b4711d5f60"
+    flow: "xtls-rprx-vision"
+  - name: "@DeltaKroneckerGithub_Clash_3697"
+    type: vless
+    server: "104.19.149.141"
+    port: 2087
+    uuid: "663cf772-829c-4bc6-893d-b7d021d42f5b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp9.cc.cd"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vp9.cc.cd"
+  - name: "@DeltaKroneckerGithub_Clash_10203"
+    type: ss
+    server: "37.19.198.244"
+    port: 443
+    cipher: "aes-128-gcm"
+    password: "shadowsocks"
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_5248"
+    type: vless
+    server: "198.41.223.167"
+    port: 8443
+    uuid: "663cf772-829c-4bc6-893d-b7d021d42f5b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp3.cc.cd"
+    client-fingerprint: "firefox"
+    network: ws
+    ws-opts:
+      path: "/"
+  - name: "@DeltaKroneckerGithub_Clash_827"
+    type: vless
+    server: "www.whatismyip.net"
+    port: 2095
+    uuid: "86c50e3a-5b87-49dd-bd20-03c7f2735e40"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/fp=randomized"
+      headers:
+        Host: "cnmfangbinxing.fangbinxingnmsl-fuckyou.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_7099"
+    type: vless
+    server: "8.35.211.101"
+    port: 2083
+    uuid: "56e4896e-90a9-4fe0-8480-90d3d68b9928"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "go.iranfree.de5.net"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "go.iranfree.de5.net"
+  - name: "@DeltaKroneckerGithub_Clash_8481"
+    type: trojan
+    server: "20.255.249.111"
+    port: 443
+    password: "459d23f4-dcfd-4fef-9ba3-ef0ad10fc336"
+    sni: "jp.mjt001.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_7155"
+    type: vless
+    server: "104.19.51.173"
+    port: 443
+    uuid: "7b102311-43fd-4e8f-877e-8090623c101d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp13.cc.cd"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vp13.cc.cd"
+  - name: "@DeltaKroneckerGithub_Clash_9296"
+    type: trojan
+    server: "104.16.250.22"
+    port: 443
+    password: "humanity"
+    sni: "www.gossipglove.com"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/assignment"
+  - name: "@DeltaKroneckerGithub_Clash_1147"
+    type: vless
+    server: "173.245.58.75"
+    port: 443
+    uuid: "b2f6aa3a-2550-4a1c-b2c0-1c94b1207217"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "terazhediii.info"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/hdgrbws"
+      headers:
+        Host: "terazhediii.info"
+  - name: "@DeltaKroneckerGithub_Clash_1472"
+    type: vless
+    server: "104.17.118.74"
+    port: 2053
+    uuid: "663cf772-829c-4bc6-893d-b7d021d42f5b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp6.cc.cd"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vp6.cc.cd"
+  - name: "@DeltaKroneckerGithub_Clash_3382"
+    type: vless
+    server: "162.159.0.2"
+    port: 443
+    uuid: "663cf772-829c-4bc6-893d-b7d021d42f5b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp1.cc.cd"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vp1.cc.cd"
+  - name: "@DeltaKroneckerGithub_Clash_5121"
+    type: vless
+    server: "89.127.217.127"
+    port: 2200
+    uuid: "d4aad26f-70b6-4411-8517-17f7b4281886"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/v1"
+  - name: "@DeltaKroneckerGithub_Clash_5760"
+    type: vless
+    server: "172.64.153.159"
+    port: 443
+    uuid: "eeb6823c-b926-4ea2-866a-5542edd26e59"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "t1s1.rittbo.kdns.fr"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "t1s1.rittbo.kdns.fr"
+  - name: "@DeltaKroneckerGithub_Clash_7262"
+    type: vless
+    server: "162.19.228.119"
+    port: 80
+    uuid: "dc8eccdb-ecfa-435f-9ac1-5dc4882e7b51"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/http"
+      headers:
+        Host: "de.vpnbase.net"
+  - name: "@DeltaKroneckerGithub_Clash_6898"
+    type: vless
+    server: "8.39.125.171"
+    port: 2053
+    uuid: "663cf772-829c-4bc6-893d-b7d021d42f5b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp8.cc.cd"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vp8.cc.cd"
+  - name: "@DeltaKroneckerGithub_Clash_10171"
+    type: ss
+    server: "110.45.77.109"
+    port: 32768
+    cipher: "none"
+    password: "https://t.me/WangCai2🇨🇳"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
+  - name: "@DeltaKroneckerGithub_Clash_5716"
+    type: vless
+    server: "172.67.74.2"
+    port: 443
+    uuid: "7e544a9d-7667-413b-bbb0-b3bb1aac6d77"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "shegeftihaaa.net"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/rsedgws"
+      headers:
+        Host: "shegeftihaaa.net"
+  - name: "@DeltaKroneckerGithub_Clash_3156"
+    type: vless
+    server: "162.159.4.2"
+    port: 8443
+    uuid: "eeb6823c-b926-4ea2-866a-5542edd26e59"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "t1s1.rittbo.kdns.fr"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "t1s1.rittbo.kdns.fr"
+  - name: "@DeltaKroneckerGithub_Clash_9334"
+    type: trojan
+    server: "massive-ocelot.rooster465.autos"
+    port: 443
+    password: "NQ26071394"
+    sni: "massive-ocelot.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_4789"
+    type: vless
+    server: "141.101.113.83"
+    port: 443
+    uuid: "7b102311-43fd-4e8f-877e-8090623c101d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp29.cc.cd"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vp29.cc.cd"
+  - name: "@DeltaKroneckerGithub_Clash_4520"
+    type: vless
+    server: "104.16.148.125"
+    port: 8443
+    uuid: "663cf772-829c-4bc6-893d-b7d021d42f5b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp4.cc.cd"
+    client-fingerprint: "firefox"
+    network: ws
+    ws-opts:
+      path: "/"
+  - name: "@DeltaKroneckerGithub_Clash_6382"
+    type: vless
+    server: "108.162.198.19"
+    port: 443
+    uuid: "7b102311-43fd-4e8f-877e-8090623c101d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp39.cc.cd"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vp39.cc.cd"
+  - name: "@DeltaKroneckerGithub_Clash_8815"
+    type: trojan
+    server: "60.250.152.229"
+    port: 3462
+    password: "6e1b9a65-884f-3aa9-9469-bf6ec0f08610"
+    sni: "a03.taipeicitygovernment.cn.ua"
+    skip-cert-verify: true
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_3887"
+    type: vless
+    server: "185.193.30.94"
+    port: 443
+    uuid: "12cb0a24-0438-4980-8617-9c93205895fa"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "kakoolnews.whattodowhatnottodo.workers.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "kakoolnews.whattodowhatnottodo.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_4178"
+    type: vless
+    server: "49.12.102.241"
+    port: 443
+    uuid: "8742ef5a-20a5-403f-8f6e-99a9cd0f3efb"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "orpheous.ru"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "lHCkAu_DOVFtE-iL2JGrPt44QeTCFijXuRfuGaSni3Q"
+      short-id: "9e4eced6e98ed4d4"
+    flow: "xtls-rprx-vision"
+  - name: "@DeltaKroneckerGithub_Clash_5813"
+    type: vless
+    server: "104.21.80.1"
+    port: 443
+    uuid: "0836463b-214f-4af6-aa85-85a56a62388e"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "d2127a49-flat-wood-c4b5.milia-akbarpoor.workers.dev"
+    client-fingerprint: "randomized"
+    network: ws
+    ws-opts:
+      path: "/sd5fvgnaejylipcc?ed=2560"
+      headers:
+        Host: "d2127a49-flat-wood-c4b5.milia-akbarpoor.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_407"
+    type: vless
+    server: "5.180.98.146"
+    port: 22827
+    uuid: "7b102311-43fd-4e8f-877e-8090623c101d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp26.cc.cd"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vp26.cc.cd"
+  - name: "@DeltaKroneckerGithub_Clash_1107"
+    type: vless
+    server: "89.127.217.210"
+    port: 2200
+    uuid: "9b44bfb4-9d28-4870-9fc3-5154d6d462ff"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/v1"
+  - name: "@DeltaKroneckerGithub_Clash_2572"
+    type: vless
+    server: "104.18.35.15"
+    port: 443
+    uuid: "b08562b0-dbc0-47d1-860d-9435133b25c9"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "cfoo-146.pages.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "cfoo-146.pages.dev"
+  - name: "@DeltaKroneckerGithub_Clash_1166"
+    type: vless
+    server: "172.64.32.75"
+    port: 443
+    uuid: "72d1797c-cef8-410a-b8fd-db9104dc3cb0"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "amooaliii.net"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/jdhfyws"
+      headers:
+        Host: "amooaliii.net"
+  - name: "@DeltaKroneckerGithub_Clash_8300"
+    type: trojan
+    server: "91.199.84.185"
+    port: 443
+    password: "JA96378052"
+    sni: "WangCai.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_903"
+    type: vless
+    server: "172.64.147.2"
+    port: 443
+    uuid: "14b02e2a-8930-4afb-8412-ea4a4954ca5b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "tianshu13.pages.dev"
+    network: ws
+    ws-opts:
+      path: "/pyip=proxyip.sg.cmliussss.net"
+      headers:
+        Host: "tianshu13.pages.dev"
+  - name: "@DeltaKroneckerGithub_Clash_5188"
+    type: vless
+    server: "166.62.110.123"
+    port: 443
+    uuid: "1d16c6e0-1bbe-435b-b661-90043fee999c"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "notls.lukongtou.eu.org"
+    network: ws
+    ws-opts:
+      path: "Telegram-WangCai2🇨🇳"
+      headers:
+        Host: "notls.lukongtou.eu.org"
+  - name: "@DeltaKroneckerGithub_Clash_8187"
+    type: trojan
+    server: "quality-sheepdog.rooster465.autos"
+    port: 443
+    password: "PD07395842"
+    sni: "quality-sheepdog.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_636"
+    type: vless
+    server: "8.35.211.96"
+    port: 2087
+    uuid: "663cf772-829c-4bc6-893d-b7d021d42f5b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp3.cc.cd"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vp3.cc.cd"
+  - name: "@DeltaKroneckerGithub_Clash_4302"
+    type: vless
+    server: "104.16.159.175"
+    port: 2053
+    uuid: "7b102311-43fd-4e8f-877e-8090623c101d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp22.cc.cd"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vp22.cc.cd"
+  - name: "@DeltaKroneckerGithub_Clash_5243"
+    type: vless
+    server: "103.119.18.192"
+    port: 443
+    uuid: "a77cedab-f429-40bb-b6d4-fd9dd681e675"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "amd.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "OrLSHSvLuAgKZqxfnPszRZdZvYVTPNozRP6-NX3JGDI"
+      short-id: "5c83ae5368d1f1b5"
+    flow: "xtls-rprx-vision"
+  - name: "@DeltaKroneckerGithub_Clash_2308"
+    type: vless
+    server: "154.17.9.119"
+    port: 16378
+    uuid: "2979e3b4-38db-4157-be6c-fd8473d69632"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "bapj1qapjk4.0sds0li1bwcz0i76it0gjxv1.workers.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/@Marisa_kristi"
+      headers:
+        Host: "bapj1qapjk4.0sds0li1bwcz0i76it0gjxv1.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_8041"
+    type: trojan
+    server: "capable-dory.rooster465.autos"
+    port: 443
+    password: "NQ26071394"
+    sni: "capable-dory.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_3057"
+    type: vless
+    server: "173.245.59.95"
+    port: 443
+    uuid: "7b102311-43fd-4e8f-877e-8090623c101d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp36.cc.cd"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vp36.cc.cd"
+  - name: "@DeltaKroneckerGithub_Clash_5792"
+    type: vless
+    server: "43.160.246.223"
+    port: 8443
+    uuid: "f4e91fac-25eb-4d26-a14c-c82c3778a0e4"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "s5gydl.936.us.ci"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "s5gydl.936.us.ci"
+  - name: "@DeltaKroneckerGithub_Clash_10112"
+    type: ss
+    server: "195.133.23.27"
+    port: 20111
+    cipher: "aes-256-gcm"
+    password: "1a87017d0bf57f34"
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_7616"
+    type: vless
+    server: "www.gov.ua"
+    port: 8880
+    uuid: "7121d0be-40f5-4eda-b3d1-1556e71ea4fa"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/pyip=ProxyIP.JP.CMLiussss.net"
+      headers:
+        Host: "shrill-recipe-0c1d.404-a1d.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_9482"
+    type: trojan
+    server: "51.38.65.155"
+    port: 443
+    password: "ee3eeb70-c85c-11ef-a0ab-1239d0255272"
+    sni: "uk1.test3.net"
+    skip-cert-verify: true
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_6241"
+    type: vless
+    server: "172.67.64.28"
+    port: 2087
+    uuid: "7b102311-43fd-4e8f-877e-8090623c101d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp13.cc.cd"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vp13.cc.cd"
+  - name: "@DeltaKroneckerGithub_Clash_6648"
+    type: vless
+    server: "www.speedtest.net"
+    port: 443
+    uuid: "9b9dcb33-96df-4ce8-9429-d64b00000000"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "netlivpn0004.svsv2626.workers.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN"
+      headers:
+        Host: "netlivpn0004.svsv2626.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_9489"
+    type: trojan
+    server: "sacred-treefrog.rooster465.autos"
+    port: 443
+    password: "CF68213490"
+    sni: "sacred-treefrog.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_9067"
+    type: trojan
+    server: "v3us9.stableq.top"
+    port: 24421
+    password: "e4c50c81-ee4e-4d2d-aa5c-9555a460b2af"
+    sni: "v3us9.stableq.top"
+    skip-cert-verify: true
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_17"
+    type: vless
+    server: "104.17.111.27"
+    port: 8443
+    uuid: "7b102311-43fd-4e8f-877e-8090623c101d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "round-art-52ee.eadfgv.workers.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "round-art-52ee.eadfgv.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_9974"
+    type: ss
+    server: "82.38.31.7"
+    port: 8080
+    cipher: "chacha20-ietf-poly1305"
+    password: "oZIoA69Q8yhcQV8ka3Pa3A"
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_5674"
+    type: vless
+    server: "198.13.60.163"
+    port: 443
+    uuid: "eeb6823c-b926-4ea2-866a-5542edd26e59"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "t1s1.rittbo.kdns.fr"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/fp=chrome"
+      headers:
+        Host: "t1s1.rittbo.kdns.fr"
+  - name: "@DeltaKroneckerGithub_Clash_6412"
+    type: vless
+    server: "78.40.194.108"
+    port: 443
+    uuid: "861fd825-3828-4bc6-a48e-8295f357b6c7"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "rezerv27.yunus.guru"
+    reality-opts:
+      public-key: "5f6adBpAj7t6LDM9aEI4LMqkVfkh_6nMcNGgWFNnsm8"
+      short-id: "6a5ae6670f71187d"
+    flow: "xtls-rprx-vision"
+  - name: "@DeltaKroneckerGithub_Clash_6830"
+    type: vless
+    server: "8.35.211.26"
+    port: 2083
+    uuid: "663cf772-829c-4bc6-893d-b7d021d42f5b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp3.cc.cd"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vp3.cc.cd"
+  - name: "@DeltaKroneckerGithub_Clash_10134"
+    type: ss
+    server: "119.195.0.158"
+    port: 28017
+    cipher: "none"
+    password: "https://t.me/WangCai2🇨🇳"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
+  - name: "@DeltaKroneckerGithub_Clash_3425"
+    type: vless
+    server: "172.67.195.229"
+    port: 443
+    uuid: "00e94078-bb1e-49aa-8567-e1b3b2843150"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "rapid-hat-441d.platovpn.workers.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "rapid-hat-441d.platovpn.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_8662"
+    type: trojan
+    server: "172.64.147.85"
+    port: 443
+    password: "humanity"
+    sni: "www.gossipglove.com"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/assignment"
+      headers:
+        Host: "www.gossipglove.com"
+  - name: "@DeltaKroneckerGithub_Clash_9463"
+    type: trojan
+    server: "15.204.56.75"
+    port: 443
+    password: "d30ab83dbde4480082048fb315bedebd"
+    sni: "15.204.56.75"
+    skip-cert-verify: true
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_9295"
+    type: trojan
+    server: "64.176.36.61"
+    port: 443
+    password: "8r<[9'l6hAO#8ZQi"
+    sni: "64.176.36.61"
+    skip-cert-verify: true
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_5359"
+    type: vless
+    server: "104.21.45.213"
+    port: 443
+    uuid: "a5b1d1ec-327c-f1c5-5856-b34600000000"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ez-541f9d.ezaccess1d3db24.workers.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/sync"
+      headers:
+        Host: "ez-541f9d.ezaccess1d3db24.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_3802"
+    type: vless
+    server: "173.245.58.153"
+    port: 2053
+    uuid: "eeb6823c-b926-4ea2-866a-5542edd26e59"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "t1s1.rittbo.kdns.fr"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "t1s1.rittbo.kdns.fr"
+  - name: "@DeltaKroneckerGithub_Clash_6176"
+    type: vless
+    server: "www.speedtest.net"
+    port: 443
+    uuid: "a7c801a1-3eb8-424e-bfcd-652000000000"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "netlivpn0004.svsv2626.workers.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN"
+      headers:
+        Host: "netlivpn0004.svsv2626.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_5773"
+    type: vless
+    server: "8.35.211.65"
+    port: 2087
+    uuid: "fb978279-0a28-4045-8258-e9ab97deaf2b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "wefast.ccwu.cc"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "wefast.ccwu.cc"
+  - name: "@DeltaKroneckerGithub_Clash_3090"
+    type: vless
+    server: "172.67.164.152"
+    port: 443
+    uuid: "36a857e4-f3d4-43aa-8b90-d7da849da989"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "002.Inc-ElectROcElL-001-002.WoRKERS.DEV"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/eyJqdW5rIjoib0RnakxTZUZvOSIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0="
+      headers:
+        Host: "002.inc-electrocell-001-002.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_8139"
+    type: trojan
+    server: "uk1.test3.net"
+    port: 443
+    password: "3b1c8870-0a7d-11f0-944c-1239d0255272"
+    sni: "uk1.test3.net"
+    skip-cert-verify: true
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_5401"
+    type: vless
+    server: "108.162.198.103"
+    port: 2096
+    uuid: "663cf772-829c-4bc6-893d-b7d021d42f5b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp3.cc.cd"
+    client-fingerprint: "firefox"
+    network: ws
+    ws-opts:
+      path: "/"
+  - name: "@DeltaKroneckerGithub_Clash_4627"
+    type: vless
+    server: "184.168.47.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vms.lifetime40.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_858"
+    type: vless
+    server: "130.250.137.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vms.lifetime05.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_8609"
+    type: trojan
+    server: "51.38.65.155"
+    port: 443
+    password: "688c4390-ceb9-11ef-beb0-1239d0255272"
+    sni: "uk1.test3.net"
+    skip-cert-verify: true
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_8914"
+    type: trojan
+    server: "172.238.19.11"
+    port: 443
+    password: "E_hUHrn0+6VeZO=v9=fLgoPDXZWGfcrejg"
+    sni: "172.238.19.11"
+    skip-cert-verify: true
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_7776"
+    type: vless
+    server: "162.159.39.42"
+    port: 443
+    uuid: "4feb7818-dc02-46cd-b985-abf3fdd0cdc5"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "edge-4cb23bf6.pages.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/@https://t.me/QiangLieTuiJian"
+      headers:
+        Host: "edge-4cb23bf6.pages.dev"
+  - name: "@DeltaKroneckerGithub_Clash_5595"
+    type: vless
+    server: "103.133.1.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vms.lifetime36.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_9651"
+    type: ss
+    server: "38.65.93.241"
+    port: 17525
+    cipher: "aes-256-gcm"
+    password: "9992b78c6a1122b3aa364721af799807"
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_6182"
+    type: vless
+    server: "186.190.211.188"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "186.190.211.188"
+  - name: "@DeltaKroneckerGithub_Clash_10062"
+    type: ss
+    server: "82.38.31.191"
+    port: 8080
+    cipher: "chacha20-ietf-poly1305"
+    password: "k1dBOmOB4oqi7Ump37a1bQ"
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_9166"
+    type: trojan
+    server: "104.26.4.11"
+    port: 443
+    password: "humanity"
+    sni: "www.gossipglove.com"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/assignment"
+  - name: "@DeltaKroneckerGithub_Clash_8230"
+    type: trojan
+    server: "51.38.65.155"
+    port: 443
+    password: "4c923d20-fd1f-11ef-ad3e-1239d0255272"
+    sni: "uk1.test3.net"
+    skip-cert-verify: true
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_4674"
+    type: vless
+    server: "77.37.33.20"
+    port: 443
+    uuid: "7612dd26-d0ce-4fe0-be7c-d093bb8645da"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "cf11.evan00.dpdns.org"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "Telegram🇨🇳 @WangCai2"
+      headers:
+        Host: "cf11.evan00.dpdns.org"
+  - name: "@DeltaKroneckerGithub_Clash_721"
+    type: vless
+    server: "116.204.164.5"
+    port: 7443
+    uuid: "8a7f35a6-6aad-4f42-80ab-86d06f32e0a7"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ke859ch2gse1iery3hiz.e3q4a5mjld11kpj0zj8dq.workers.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/@Marisa_kristi"
+      headers:
+        Host: "ke859ch2gse1iery3hiz.e3q4a5mjld11kpj0zj8dq.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_7070"
+    type: vless
+    server: "cf8.466688.xyz"
+    port: 2095
+    uuid: "86c50e3a-5b87-49dd-bd20-03c7f2735e40"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/@https://t.me/QiangLieTuiJian"
+      headers:
+        Host: "cnmfangbinxingnmsl.cnm--fangbinxing.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_9339"
+    type: trojan
+    server: "43.201.146.77"
+    port: 443
+    password: "CF68213490"
+    sni: "aware-puma.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_1393"
+    type: vless
+    server: "188.114.97.6"
+    port: 80
+    uuid: "e51453d3-7972-44d7-a657-ed89520f48b6"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/au-do"
+      headers:
+        Host: "web.whatsapp.com.r3xxe.eu.cc"
+  - name: "@DeltaKroneckerGithub_Clash_2312"
+    type: vless
+    server: "166.62.108.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vms.lifetime17.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_5651"
+    type: vless
+    server: "162.159.45.54"
+    port: 443
+    uuid: "eeb6823c-b926-4ea2-866a-5542edd26e59"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "t1s1.rittbo.kdns.fr"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "t1s1.rittbo.kdns.fr"
+  - name: "@DeltaKroneckerGithub_Clash_6882"
+    type: vless
+    server: "173.245.58.247"
+    port: 2053
+    uuid: "eeb6823c-b926-4ea2-866a-5542edd26e59"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "t1s1.rittbo.kdns.fr"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "t1s1.rittbo.kdns.fr"
+  - name: "@DeltaKroneckerGithub_Clash_4163"
+    type: vless
+    server: "130.17.2.49"
+    port: 4100
+    uuid: "9b44bfb4-9d28-4870-9fc3-5154d6d462ff"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/v1"
+      headers:
+        Host: "live.ok.ru"
+  - name: "@DeltaKroneckerGithub_Clash_5321"
+    type: vless
+    server: "72.56.36.96"
+    port: 40443
+    uuid: "598b823c-d3fc-4013-aae5-837f10080f7a"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "deepl.com"
+    client-fingerprint: "random"
+    reality-opts:
+      public-key: "cZF84xUCciKRXxTA39vNnh0U8CjUZiUSjLzuNTMOzV8"
+      short-id: "33e48a03db900ff3"
+    flow: "xtls-rprx-vision"
+  - name: "@DeltaKroneckerGithub_Clash_8307"
+    type: trojan
+    server: "149.104.104.58"
+    port: 443
+    password: "S.ibYdZshHTF-ne.M+.Fznp_-hyFFnCSix"
+    sni: "149.104.104.58"
+    skip-cert-verify: true
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_8952"
+    type: trojan
+    server: "3.35.176.217"
+    port: 443
+    password: "NQ26071394"
+    sni: "accurate-cat.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_7270"
+    type: vless
+    server: "www.whatismyip.com"
+    port: 8880
+    uuid: "d33cc776-9c57-4ea3-8c5a-6d85043029d7"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/pyip=ProxyIP.KR.CMLiussss.net"
+      headers:
+        Host: "shiny-flower-c72d.105-161.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_5203"
+    type: vless
+    server: "162.159.38.42"
+    port: 443
+    uuid: "7b102311-43fd-4e8f-877e-8090623c101d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp20.cc.cd"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vp20.cc.cd"
+  - name: "@DeltaKroneckerGithub_Clash_881"
+    type: vless
+    server: "104.16.150.158"
+    port: 443
+    uuid: "7b102311-43fd-4e8f-877e-8090623c101d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp24.cc.cd"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vp24.cc.cd"
+  - name: "@DeltaKroneckerGithub_Clash_1137"
+    type: vless
+    server: "172.67.128.81"
+    port: 443
+    uuid: "7b102311-43fd-4e8f-877e-8090623c101d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp12.cc.cd"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vp12.cc.cd"
+  - name: "@DeltaKroneckerGithub_Clash_10191"
+    type: ss
+    server: "173.244.56.6"
+    port: 443
+    cipher: "aes-128-gcm"
+    password: "shadowsocks"
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_1772"
+    type: vless
+    server: "185.229.9.178"
+    port: 443
+    uuid: "83cd3888-2ebe-4cb0-a012-d3c572358ac9"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "api-maps.yandex.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "zMyJW8uYeZwurz4xCcnnPjYlCVP0nI5BDHp_0ZrxPjk"
+      short-id: ""
+    flow: "xtls-rprx-vision"
+  - name: "@DeltaKroneckerGithub_Clash_3371"
+    type: vless
+    server: "130.17.2.27"
+    port: 4100
+    uuid: "155e8dd4-a559-407a-9ea8-13a5e829f066"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/v1"
+      headers:
+        Host: "live.ok.ru"
+  - name: "@DeltaKroneckerGithub_Clash_6555"
+    type: vless
+    server: "104.18.33.60"
+    port: 2096
+    uuid: "663cf772-829c-4bc6-893d-b7d021d42f5b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp2.cc.cd"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vp2.cc.cd"
+  - name: "@DeltaKroneckerGithub_Clash_15"
+    type: vless
+    server: "139.180.192.147"
+    port: 443
+    uuid: "eeb6823c-b926-4ea2-866a-5542edd26e59"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "t1s1.rittbo.kdns.fr"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "t1s1.rittbo.kdns.fr"
+  - name: "@DeltaKroneckerGithub_Clash_5155"
+    type: vless
+    server: "154.26.189.70"
+    port: 443
+    uuid: "f4e91fac-25eb-4d26-a14c-c82c3778a0e4"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "s5gydl.936.us.ci"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/proxyip=tw.william.us.ci?uuid=f4e91fac-25eb-4d26-a14c-c82c3778a0e4"
+      headers:
+        Host: "s5gydl.936.us.ci"
+  - name: "@DeltaKroneckerGithub_Clash_6146"
+    type: vless
+    server: "104.17.214.228"
+    port: 443
+    uuid: "663cf772-829c-4bc6-893d-b7d021d42f5b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp8.cc.cd"
+    client-fingerprint: "firefox"
+    network: ws
+    ws-opts:
+      path: "/"
+  - name: "@DeltaKroneckerGithub_Clash_1043"
+    type: vless
+    server: "104.18.12.229"
+    port: 8880
+    uuid: "380de97f-1d87-4394-acb8-f9ad7a422ac1"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/pyip=ProxyIP.SG.CMLiussss.net"
+      headers:
+        Host: "proud-recipe-239d.305-0da.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_8256"
+    type: trojan
+    server: "uk1.test3.net"
+    port: 443
+    password: "11258980-1234-11f0-a2b3-1239d0255272"
+    sni: "uk1.test3.net"
+    skip-cert-verify: true
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_8698"
+    type: trojan
+    server: "198.41.201.36"
+    port: 443
+    password: "humanity"
+    sni: "www.gossipglove.com"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/assignment"
+      headers:
+        Host: "www.gossipglove.com"
+  - name: "@DeltaKroneckerGithub_Clash_7449"
+    type: vless
+    server: "www.gov.ua"
+    port: 8880
+    uuid: "1f06dae9-e4cc-4aae-b026-07f7fc81fb56"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/pyip=ProxyIP.JP.CMLiussss.net"
+      headers:
+        Host: "spring-fire-a493.251-67d.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_7806"
+    type: vless
+    server: "162.159.45.232"
+    port: 443
+    uuid: "4feb7818-dc02-46cd-b985-abf3fdd0cdc5"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "edge-4cb23bf6.pages.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/@https://t.me/QiangLieTuiJian"
+      headers:
+        Host: "edge-4cb23bf6.pages.dev"
+  - name: "@DeltaKroneckerGithub_Clash_9174"
+    type: trojan
+    server: "tw2.microsoft-orgwly.vip"
+    port: 443
+    password: "de94b5f4-3d29-4246-a28c-98cea7f813ad"
+    sni: "tls.microsoft-orgwly.vip"
+    skip-cert-verify: true
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_1790"
+    type: vless
+    server: "188.164.248.178"
+    port: 2096
+    uuid: "7b102311-43fd-4e8f-877e-8090623c101d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp12.cc.cd"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vp12.cc.cd"
+  - name: "@DeltaKroneckerGithub_Clash_4404"
+    type: vless
+    server: "162.159.38.230"
+    port: 8443
+    uuid: "7b102311-43fd-4e8f-877e-8090623c101d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp14.cc.cd"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vp14.cc.cd"
+  - name: "@DeltaKroneckerGithub_Clash_10301"
+    type: vmess
+    server: "family.bucket.x9.kfc-520.com"
+    port: 10047
+    uuid: "1dc73529-f030-3ac5-ad64-f7666b9a51bc"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_2967"
+    type: vless
+    server: "108.162.196.40"
+    port: 443
+    uuid: "eeb6823c-b926-4ea2-866a-5542edd26e59"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "t1s1.rittbo.kdns.fr"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "t1s1.rittbo.kdns.fr"
+  - name: "@DeltaKroneckerGithub_Clash_339"
+    type: vless
+    server: "172.64.146.127"
+    port: 443
+    uuid: "14b02e2a-8930-4afb-8412-ea4a4954ca5b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "tianshu13.pages.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/pyip=proxyip.sg.cmliussss.net"
+      headers:
+        Host: "tianshu13.pages.dev"
+  - name: "@DeltaKroneckerGithub_Clash_6243"
+    type: vless
+    server: "104.19.34.88"
+    port: 2083
+    uuid: "7b102311-43fd-4e8f-877e-8090623c101d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp18.cc.cd"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vp18.cc.cd"
+  - name: "@DeltaKroneckerGithub_Clash_4304"
+    type: vless
+    server: "server.slavkiti.monster"
+    port: 443
+    uuid: "d84c13b2-c2b9-4a7c-838f-05ac09ee422e"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.mozilla.org"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "J-dv-HrWfQ_IOoyutv0Kg-rO8QwoRwc02dS1dS_tblk"
+      short-id: "2a2ce9e42980"
+    flow: "xtls-rprx-vision"
+  - name: "@DeltaKroneckerGithub_Clash_6951"
+    type: vless
+    server: "172.64.147.15"
+    port: 443
+    uuid: "14b02e2a-8930-4afb-8412-ea4a4954ca5b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "tianshu13.pages.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/pyip=proxyip.sg.cmliussss.net"
+      headers:
+        Host: "tianshu13.pages.dev"
+  - name: "@DeltaKroneckerGithub_Clash_1375"
+    type: vless
+    server: "172.67.67.96"
+    port: 2096
+    uuid: "663cf772-829c-4bc6-893d-b7d021d42f5b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp9.cc.cd"
+    client-fingerprint: "firefox"
+    network: ws
+    ws-opts:
+      path: "/"
+  - name: "@DeltaKroneckerGithub_Clash_9076"
+    type: trojan
+    server: "104.18.6.147"
+    port: 443
+    password: "humanity"
+    sni: "www.creationlong.org"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/assignment"
+  - name: "@DeltaKroneckerGithub_Clash_3728"
+    type: vless
+    server: "cf.090227.xyz"
+    port: 80
+    uuid: "fe273991-0514-4a16-8ec4-b15ae861c000"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/?ed=2048"
+      headers:
+        Host: "zyzzzoao.xn--fiqv8j.eu.org"
+  - name: "@DeltaKroneckerGithub_Clash_3461"
+    type: vless
+    server: "188.114.97.3"
+    port: 443
+    uuid: "a73b8135-ec7a-4f70-bac6-81fbccad4515"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "labeller.neonime83.workers.dev"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "labeller.neonime83.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_254"
+    type: vless
+    server: "104.21.46.101"
+    port: 2086
+    uuid: "4a956dfd-b65a-4846-b6da-c85fc79918a5"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/eyJqdW5rIjoibW81VDZwNXg5S2IiLCJwcm90b2NvbCI6InZsIiwibW9kZSI6InByZWZpeCIsInBhbmVsSVBzIjpbIlsyNjAyOmZjNTk6YjA6NjQ6Ol0iXX0=?ed=2560"
+      headers:
+        Host: "green-scene-32df.atalastchance.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_9745"
+    type: ss
+    server: "125.134.6.129"
+    port: 27017
+    cipher: "none"
+    password: "https://t.me/WangCai2🇨🇳"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
+  - name: "@DeltaKroneckerGithub_Clash_9098"
+    type: trojan
+    server: "104.16.174.71"
+    port: 443
+    password: "humanity"
+    sni: "www.ignitelimit.com"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/assignment"
+      headers:
+        Host: "www.ignitelimit.com"
+  - name: "@DeltaKroneckerGithub_Clash_10210"
+    type: ss
+    server: "82.38.31.185"
+    port: 8080
+    cipher: "chacha20-ietf-poly1305"
+    password: "k1dBOmOB4oqi7Ump37a1bQ"
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_1555"
+    type: vless
+    server: "104.21.88.77"
+    port: 443
+    uuid: "2bcfbfba-b446-4ad5-93ad-72af9e008f61"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "blackshadow.dpdns.org"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/44.209.52.7-443"
+  - name: "@DeltaKroneckerGithub_Clash_10102"
+    type: ss
+    server: "172.64.147.104"
+    port: 443
+    cipher: "none"
+    password: "79960b0b-7d31-4263-8915-6511b0e137a8"
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_10248"
+    type: ss
+    server: "188.239.21.47"
+    port: 8443
+    cipher: "none"
+    password: "14b02e2a-8930-4afb-8412-ea4a4954ca5b"
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_9248"
+    type: trojan
+    server: "51.38.65.155"
+    port: 443
+    password: "f7023960-1af3-11f0-9463-1239d0255272"
+    sni: "uk1.test3.net"
+    skip-cert-verify: true
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_856"
+    type: vless
+    server: "57.129.130.200"
+    port: 52014
+    uuid: "b1ecd06b-a931-47a2-8f48-d1d133d2b4f3"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "3tmj2egtm-fno.49bnithzk8vphybv36d1z1xkzfvogt2m6.workers.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/@Marisa_kristi"
+      headers:
+        Host: "3tmj2egtm-fno.49bnithzk8vphybv36d1z1xkzfvogt2m6.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_8176"
+    type: trojan
+    server: "203.69.207.175"
+    port: 3462
+    password: "6e1b9a65-884f-3aa9-9469-bf6ec0f08610"
+    sni: "a03.taipeicitygovernment.cn.ua"
+    skip-cert-verify: true
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_2805"
+    type: vless
+    server: "172.64.152.91"
+    port: 443
+    uuid: "eeb6823c-b926-4ea2-866a-5542edd26e59"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "t1s1.rittbo.kdns.fr"
+    network: ws
+    ws-opts:
+      path: "/fp"
+      headers:
+        Host: "t1s1.rittbo.kdns.fr"
+  - name: "@DeltaKroneckerGithub_Clash_3899"
+    type: vless
+    server: "77.222.46.162"
+    port: 2200
+    uuid: "2aa7f4b1-e859-46d0-b8ac-8587811ab7b1"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/v1"
+  - name: "@DeltaKroneckerGithub_Clash_5403"
+    type: vless
+    server: "162.159.16.154"
+    port: 443
+    uuid: "eeb6823c-b926-4ea2-866a-5542edd26e59"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "t1s1.rittbo.kdns.fr"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "t1s1.rittbo.kdns.fr"
+  - name: "@DeltaKroneckerGithub_Clash_7922"
+    type: vless
+    server: "91.193.59.89"
+    port: 80
+    uuid: "f4e91fac-25eb-4d26-a14c-c82c3778a0e4"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "Telegram🇨🇳 @WangCai2"
+      headers:
+        Host: "s5gydl.936.us.ci"
+  - name: "@DeltaKroneckerGithub_Clash_8579"
+    type: trojan
+    server: "104.17.121.9"
+    port: 443
+    password: "humanity"
+    sni: "www.calmlunch.com"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/assignment"
+      headers:
+        Host: "www.calmlunch.com"
+  - name: "@DeltaKroneckerGithub_Clash_5757"
+    type: vless
+    server: "89.116.161.40"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "vms.lifetime08.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_6415"
+    type: vless
+    server: "download.yunzhongzhuan.com"
+    port: 8880
+    uuid: "20f21d96-3700-46d9-9f63-5933403c0c18"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/pyip=ProxyIP.JP.CMLiussss.net"
+      headers:
+        Host: "restless-math-7bde.299-75c.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_6425"
+    type: vless
+    server: "172.67.165.117"
+    port: 443
+    uuid: "7b102311-43fd-4e8f-877e-8090623c101d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp30.cc.cd"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vp30.cc.cd"
+  - name: "@DeltaKroneckerGithub_Clash_4749"
+    type: vless
+    server: "168.222.244.66"
+    port: 10277
+    uuid: "c95f6104-6b19-4f3e-aaa6-a74fec3ee258"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "play.google.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "5WM9qJQUXyEnE2xaJHvXai6IV7HrBLnuy5s39fcqCAA"
+      short-id: "7a"
+  - name: "@DeltaKroneckerGithub_Clash_3100"
+    type: vless
+    server: "162.159.4.13"
+    port: 443
+    uuid: "4a1441b0-7bc8-4906-85cf-6b59c256b480"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "edt2.yfqh08811.ccwu.cc"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "edt2.yfqh08811.ccwu.cc"
+  - name: "@DeltaKroneckerGithub_Clash_7424"
+    type: vless
+    server: "172.67.148.26"
+    port: 80
+    uuid: "95de071f-747c-dc07-36ac-5c0854a9e50e"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/sync"
+      headers:
+        Host: "restless-boat-ebf2.moha102030.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_4220"
+    type: vless
+    server: "8.35.211.16"
+    port: 2053
+    uuid: "663cf772-829c-4bc6-893d-b7d021d42f5b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp2.cc.cd"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vp2.cc.cd"
+  - name: "@DeltaKroneckerGithub_Clash_6135"
+    type: vless
+    server: "2.27.13.17"
+    port: 443
+    uuid: "3ef170be-05d0-479c-9753-aa2f860964ea"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "cloudflare.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "C1hW1bTA9WOacIK-fHHg-HLkDZ3FY7FhEhAyldMSUEA"
+      short-id: "a1b2c3d4e5f6"
+    flow: "xtls-rprx-vision"
+  - name: "@DeltaKroneckerGithub_Clash_1059"
+    type: vless
+    server: "64.186.239.202"
+    port: 443
+    uuid: "eeb6823c-b926-4ea2-866a-5542edd26e59"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "t1s1.rittbo.kdns.fr"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "t1s1.rittbo.kdns.fr"
+  - name: "@DeltaKroneckerGithub_Clash_2778"
+    type: vless
+    server: "www.speedtest.net"
+    port: 443
+    uuid: "073d1d50-8478-47bf-a828-7a1b381931d5"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "octopusss.net"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/odiyfws"
+      headers:
+        Host: "octopusss.net"
+  - name: "@DeltaKroneckerGithub_Clash_10028"
+    type: ss
+    server: "172.245.235.84"
+    port: 2375
+    cipher: "aes-256-gcm"
+    password: "faBAoD54k87UJG7"
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_8869"
+    type: trojan
+    server: "172.67.200.219"
+    port: 443
+    password: "humanity"
+    sni: "www.calmlunch.com"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/assignment"
+  - name: "@DeltaKroneckerGithub_Clash_3086"
+    type: vless
+    server: "172.67.209.127"
+    port: 8880
+    uuid: "3e553ebf-db9d-4858-b608-03d6ff615a41"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/pyip=ProxyIP.JP.CMLiussss.net"
+      headers:
+        Host: "rapid-waterfall-7270.255-22b.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_3065"
+    type: vless
+    server: "162.159.21.235"
+    port: 8443
+    uuid: "eeb6823c-b926-4ea2-866a-5542edd26e59"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "t1s1.rittbo.kdns.fr"
+    network: ws
+    ws-opts:
+      path: "/fp"
+      headers:
+        Host: "t1s1.rittbo.kdns.fr"
+  - name: "@DeltaKroneckerGithub_Clash_3311"
+    type: vless
+    server: "104.17.114.45"
+    port: 443
+    uuid: "663cf772-829c-4bc6-893d-b7d021d42f5b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp4.cc.cd"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vp4.cc.cd"
+  - name: "@DeltaKroneckerGithub_Clash_7477"
+    type: vless
+    server: "104.16.72.41"
+    port: 8880
+    uuid: "74705348-bb9c-47c6-9e91-057c6407bb20"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/pyip"
+      headers:
+        Host: "small-glitter-aa35.76-21d.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_7664"
+    type: vless
+    server: "188.114.96.83"
+    port: 443
+    uuid: "7968c546-02dc-4f8c-b791-934591a94cb2"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "hhvl.hhapp.kdns.fr"
+    network: ws
+    ws-opts:
+      path: "/cbasur"
+      headers:
+        Host: "hhvl.hhapp.kdns.fr"
+  - name: "@DeltaKroneckerGithub_Clash_2479"
+    type: vless
+    server: "45.80.108.20"
+    port: 443
+    uuid: "7612dd26-d0ce-4fe0-be7c-d093bb8645da"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "cf11.evan00.dpdns.org"
+    network: ws
+    ws-opts:
+      path: "Telegram🇨🇳 @WangCai2"
+      headers:
+        Host: "cf11.evan00.dpdns.org"
+  - name: "@DeltaKroneckerGithub_Clash_8510"
+    type: trojan
+    server: "139.162.61.193"
+    port: 443
+    password: "16877c70-e7b8-11ec-99f2-1239d0255272"
+    sni: "w13.udpgw.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_8193"
+    type: trojan
+    server: "nearby-muskrat.rooster465.autos"
+    port: 443
+    password: "WF42809561"
+    sni: "nearby-muskrat.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_6388"
+    type: vless
+    server: "104.18.0.4"
+    port: 443
+    uuid: "663cf772-829c-4bc6-893d-b7d021d42f5b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp1.cc.cd"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vp1.cc.cd"
+  - name: "@DeltaKroneckerGithub_Clash_9124"
+    type: trojan
+    server: "172.64.147.52"
+    port: 443
+    password: "humanity"
+    sni: "www.multiplydose.com"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/assignment"
+  - name: "@DeltaKroneckerGithub_Clash_3974"
+    type: vless
+    server: "172.67.215.201"
+    port: 2096
+    uuid: "f8fff57f-224a-4ae3-80c1-a9299796ad7c"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "11.EZ-70eF02.wOrkeRS.DeV"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/eyJqdW5rIjoicmc2S3lEeXFMV3Y3UHkiLCJwcm90b2NvbCI6InZsIiwibW9kZSI6InByb3h5aXAiLCJwYW5lbElQcyI6WyI1Ny4xMjkuNDcuNTIiXX0=?ed=2560"
+      headers:
+        Host: "11.ez-70ef02.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_1890"
+    type: vless
+    server: "104.16.72.20"
+    port: 443
+    uuid: "eeb6823c-b926-4ea2-866a-5542edd26e59"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "t1s1.rittbo.kdns.fr"
+    network: ws
+    ws-opts:
+      path: "/fp"
+      headers:
+        Host: "t1s1.rittbo.kdns.fr"
+  - name: "@DeltaKroneckerGithub_Clash_7610"
+    type: vless
+    server: "172.66.132.196"
+    port: 8880
+    uuid: "2efeba50-78fe-4729-9821-1fb9819ed9e8"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/pyip=ProxyIP.KR.CMLiussss.net"
+      headers:
+        Host: "dark-dew-c3ed.48-97c.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_9753"
+    type: ss
+    server: "172.64.150.130"
+    port: 443
+    cipher: "none"
+    password: "79960b0b-7d31-4263-8915-6511b0e137a8"
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_6690"
+    type: vless
+    server: "104.18.33.187"
+    port: 8443
+    uuid: "fb978279-0a28-4045-8258-e9ab97deaf2b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "3da0360c.myblog-2hd.pages.dev"
+    client-fingerprint: "firefox"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "3da0360c.myblog-2hd.pages.dev"
+  - name: "@DeltaKroneckerGithub_Clash_8641"
+    type: trojan
+    server: "172.64.146.1"
+    port: 443
+    password: "humanity"
+    sni: "www.gossipglove.com"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/assignment"
+  - name: "@DeltaKroneckerGithub_Clash_5053"
+    type: vless
+    server: "64.176.36.17"
+    port: 443
+    uuid: "eeb6823c-b926-4ea2-866a-5542edd26e59"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "t1s1.rittbo.kdns.fr"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "t1s1.rittbo.kdns.fr"
+  - name: "@DeltaKroneckerGithub_Clash_8557"
+    type: trojan
+    server: "104.18.152.149"
+    port: 443
+    password: "humanity"
+    sni: "www.ignitelimit.com"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/assignment"
+      headers:
+        Host: "www.ignitelimit.com"
+  - name: "@DeltaKroneckerGithub_Clash_6972"
+    type: vless
+    server: "172.67.64.64"
+    port: 2096
+    uuid: "663cf772-829c-4bc6-893d-b7d021d42f5b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp6.cc.cd"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vp6.cc.cd"
+  - name: "@DeltaKroneckerGithub_Clash_6209"
+    type: vless
+    server: "104.17.182.182"
+    port: 2096
+    uuid: "663cf772-829c-4bc6-893d-b7d021d42f5b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp4.cc.cd"
+    client-fingerprint: "firefox"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vp4.cc.cd"
+  - name: "@DeltaKroneckerGithub_Clash_8479"
+    type: trojan
+    server: "uk1.test3.net"
+    port: 443
+    password: "0e17b420-48a2-11f0-8c4d-1239d0255272"
+    sni: "uk1.test3.net"
+    skip-cert-verify: true
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_1570"
+    type: vless
+    server: "104.18.1.1"
+    port: 443
+    uuid: "8ad6f598-cd8d-4fca-848e-05fc9be15ff3"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "deicl.redstone-vex.sbs"
+    client-fingerprint: "ios"
+    network: ws
+    ws-opts:
+      path: "/sea"
+      headers:
+        Host: "deicl.redstone-vex.sbs"
+  - name: "@DeltaKroneckerGithub_Clash_6763"
+    type: vless
+    server: "108.162.198.175"
+    port: 443
+    uuid: "7b102311-43fd-4e8f-877e-8090623c101d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp37.cc.cd"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vp37.cc.cd"
+  - name: "@DeltaKroneckerGithub_Clash_8308"
+    type: trojan
+    server: "official.taipeicitygovernment.com.ua"
+    port: 8443
+    password: "96983eb4-c8f1-316e-ab00-500014ed3d8b"
+    sni: "official.taipeicitygovernment.com.ua"
+    skip-cert-verify: true
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_9865"
+    type: ss
+    server: "193.29.139.144"
+    port: 8080
+    cipher: "chacha20-ietf-poly1305"
+    password: "oZIoA69Q8yhcQV8ka3Pa3A"
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_7289"
+    type: vless
+    server: "172.67.190.141"
+    port: 8880
+    uuid: "b2c879ed-08a2-4a79-9c57-37c7db614e96"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/pyip=ProxyIP.KR.CMLiussss.net"
+      headers:
+        Host: "sweet-cake-1340.474-288.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_3557"
+    type: vless
+    server: "172.64.147.224"
+    port: 443
+    uuid: "b08562b0-dbc0-47d1-860d-9435133b25c9"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "cfoo-146.pages.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/QiangLieTuiJian?ed"
+      headers:
+        Host: "cfoo-146.pages.dev"
+  - name: "@DeltaKroneckerGithub_Clash_10264"
+    type: ss
+    server: "R3MRCG00129437X.cybervena.com"
+    port: 50099
+    cipher: "chacha20-ietf-poly1305"
+    password: "b1ae0fce-9340-4f2e-882d-fdb2218e2e2b"
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_5055"
+    type: vless
+    server: "168.138.166.89"
+    port: 8899
+    uuid: "0c9839aa-c64f-4791-9137-420432605987"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.lovelive-anime.jp"
+    client-fingerprint: "ios"
+    reality-opts:
+      public-key: "4ciiQdZe4F8wyoRKpNzW5xwmQzGyIJnlPHrK70iU6DQ"
+      short-id: "f0cce996"
+    flow: "xtls-rprx-vision"
+  - name: "@DeltaKroneckerGithub_Clash_3966"
+    type: vless
+    server: "104.19.50.8"
+    port: 8443
+    uuid: "7b102311-43fd-4e8f-877e-8090623c101d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp34.cc.cd"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vp34.cc.cd"
+  - name: "@DeltaKroneckerGithub_Clash_1431"
+    type: vless
+    server: "91.110.209.112"
+    port: 443
+    uuid: "7b102311-43fd-4e8f-877e-8090623c101d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp10.pages.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vp10.pages.dev"
+  - name: "@DeltaKroneckerGithub_Clash_1014"
+    type: vless
+    server: "45.11.1.118"
+    port: 44004
+    uuid: "1d16c6e0-1bbe-435b-b661-90043fee999c"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "notls.lukongtou.eu.org"
+    network: ws
+    ws-opts:
+      path: "Telegram-WangCai2🇨🇳"
+      headers:
+        Host: "notls.lukongtou.eu.org"
+  - name: "@DeltaKroneckerGithub_Clash_6826"
+    type: vless
+    server: "45.130.125.158"
+    port: 443
+    uuid: "14b59caf-a196-4ec2-8c70-c7b388062f5b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vangoghhh.info"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/rdfgtws"
+      headers:
+        Host: "vangoghhh.info"
+  - name: "@DeltaKroneckerGithub_Clash_9446"
+    type: trojan
+    server: "renewed-phoenix.rooster465.autos"
+    port: 443
+    password: "NQ26071394"
+    sni: "renewed-phoenix.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_3098"
+    type: vless
+    server: "104.17.171.218"
+    port: 443
+    uuid: "663cf772-829c-4bc6-893d-b7d021d42f5b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp8.cc.cd"
+    client-fingerprint: "firefox"
+    network: ws
+    ws-opts:
+      path: "/"
+  - name: "@DeltaKroneckerGithub_Clash_7040"
+    type: vless
+    server: "89.23.108.92"
+    port: 2443
+    uuid: "8bba3194-4856-46d1-8319-075817d87eb1"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ge3.cyphervpn.pro"
+    reality-opts:
+      public-key: "USffNprEM08MHiuVy5bj6-kvxugxycuZcgQDFJyz2Wc"
+      short-id: "8f9d033ad6d2cebf"
+    flow: "xtls-rprx-vision"
+  - name: "@DeltaKroneckerGithub_Clash_2007"
+    type: vless
+    server: "104.16.247.247"
+    port: 2083
+    uuid: "663cf772-829c-4bc6-893d-b7d021d42f5b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp7.cc.cd"
+    client-fingerprint: "firefox"
+    network: ws
+    ws-opts:
+      path: "/"
+  - name: "@DeltaKroneckerGithub_Clash_734"
+    type: vless
+    server: "104.16.145.120"
+    port: 2083
+    uuid: "663cf772-829c-4bc6-893d-b7d021d42f5b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp7.cc.cd"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vp7.cc.cd"
+  - name: "@DeltaKroneckerGithub_Clash_8647"
+    type: trojan
+    server: "172.232.250.160"
+    port: 443
+    password: "788f2b96-47e2-4302-a417-511b6fd7d09c"
+    sni: "172.232.250.160"
+    skip-cert-verify: true
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_7694"
+    type: vless
+    server: "91.110.182.10"
+    port: 443
+    uuid: "7b102311-43fd-4e8f-877e-8090623c101d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp10.pages.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vp10.pages.dev"
+  - name: "@DeltaKroneckerGithub_Clash_9382"
+    type: trojan
+    server: "172.64.147.143"
+    port: 443
+    password: "humanity"
+    sni: "www.gossipglove.com"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/assignment"
+      headers:
+        Host: "www.gossipglove.com"
+  - name: "@DeltaKroneckerGithub_Clash_3479"
+    type: vless
+    server: "77.73.232.61"
+    port: 19747
+    uuid: "2a9ed01e-5455-44b4-a66a-76ee8165f0ac"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "yahoo.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "ZO9dTeg1slvTXgVsBsaJ1BDvz_YUImTLJjbHs-GdVyM"
+      short-id: "2001"
+  - name: "@DeltaKroneckerGithub_Clash_8508"
+    type: trojan
+    server: "104.18.152.50"
+    port: 443
+    password: "humanity"
+    sni: "www.ignitelimit.com"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/assignment"
+      headers:
+        Host: "www.ignitelimit.com"
+  - name: "@DeltaKroneckerGithub_Clash_3207"
+    type: vless
+    server: "162.159.46.0"
+    port: 8880
+    uuid: "ddef628e-e3a8-43c4-85eb-bd767a5f3b13"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/pyip=ProxyIP.KR.CMLiussss.net"
+      headers:
+        Host: "autumn-forest-3479.121-488.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_5462"
+    type: vless
+    server: "219.76.13.177"
+    port: 443
+    uuid: "eeb6823c-b926-4ea2-866a-5542edd26e59"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "t1s1.rittbo.kdns.fr"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "t1s1.rittbo.kdns.fr"
+  - name: "@DeltaKroneckerGithub_Clash_5667"
+    type: vless
+    server: "188.114.96.1"
+    port: 2086
+    uuid: "335035e6-65f1-4a51-a8a7-10fb0a89b8e7"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/eyJqdW5rIjoiMXZIM3QxQUU3VlV3TFdSIiwicHJvdG9jb2wiOiJ2bCIsIm1vZGUiOiJwcmVmaXgiLCJwYW5lbElQcyI6WyJbMjYwMjpmYzU5OmIwOjY0OjpdIl19?ed=2560"
+      headers:
+        Host: "shrill-lake-231c.jachhitachi69.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_3386"
+    type: vless
+    server: "64.186.227.87"
+    port: 443
+    uuid: "eeb6823c-b926-4ea2-866a-5542edd26e59"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "t1s1.rittbo.kdns.fr"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "t1s1.rittbo.kdns.fr"
+  - name: "@DeltaKroneckerGithub_Clash_8796"
+    type: trojan
+    server: "uk1.test3.net"
+    port: 443
+    password: "4aca21d0-e787-11ef-9708-1239d0255272"
+    sni: "uk1.test3.net"
+    skip-cert-verify: true
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_6781"
+    type: vless
+    server: "172.64.41.202"
+    port: 443
+    uuid: "eeb6823c-b926-4ea2-866a-5542edd26e59"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "t1s1.rittbo.kdns.fr"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "t1s1.rittbo.kdns.fr"
+  - name: "@DeltaKroneckerGithub_Clash_1623"
+    type: vless
+    server: "104.16.242.33"
+    port: 2096
+    uuid: "663cf772-829c-4bc6-893d-b7d021d42f5b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp8.cc.cd"
+    client-fingerprint: "firefox"
+    network: ws
+    ws-opts:
+      path: "/"
+  - name: "@DeltaKroneckerGithub_Clash_1977"
+    type: vless
+    server: "80.240.18.227"
+    port: 10051
+    uuid: "f4d859eb-abc6-4c57-9eee-8fe9e2ef0f94"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "d-l28t5-65-b.pbe40wmcujaw726h7cpqernzmawz4stwtrnqve0n1s5reht.workers.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/@Marisa_kristi"
+      headers:
+        Host: "d-l28t5-65-b.pbe40wmcujaw726h7cpqernzmawz4stwtrnqve0n1s5reht.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_1172"
+    type: vless
+    server: "158.101.132.216"
+    port: 8443
+    uuid: "eeb6823c-b926-4ea2-866a-5542edd26e59"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "t1s1.rittbo.kdns.fr"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "t1s1.rittbo.kdns.fr"
+  - name: "@DeltaKroneckerGithub_Clash_10090"
+    type: ss
+    server: "38.180.113.194"
+    port: 8119
+    cipher: "aes-256-gcm"
+    password: "cdBIDV42DCwnfIN"
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_4965"
+    type: vless
+    server: "152.53.200.69"
+    port: 8443
+    uuid: "8a4a1c56-4edb-4c00-9a54-52131884f8aa"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "rwn4vu3r.45l91qj82wsx2uqlih6z.workers.dev"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "rwn4vu3r.45l91qj82wsx2uqlih6z.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_8062"
+    type: trojan
+    server: "82.117.225.123"
+    port: 443
+    password: "OD90375861"
+    sni: "big-bonefish.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "@DeltaKroneckerGithub_Clash_4815"
+    type: vless
+    server: "104.18.33.132"
+    port: 8443
+    uuid: "7b102311-43fd-4e8f-877e-8090623c101d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp33.cc.cd"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vp33.cc.cd"
+  - name: "@DeltaKroneckerGithub_Clash_2580"
+    type: vless
+    server: "193.168.46.180"
+    port: 443
+    uuid: "946dc71d-c301-4b24-abe9-2c40c410a291"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "rruu.persik.host"
+    client-fingerprint: "qq"
+    reality-opts:
+      public-key: "D0FqzTuVSzCF8IcFo64SFIpMsaGV47LW3el2GCCVoFY"
+      short-id: "c1a7e9b4711d5f60"
+    flow: "xtls-rprx-vision"
+  - name: "@DeltaKroneckerGithub_Clash_4337"
+    type: vless
+    server: "104.26.1.164"
+    port: 2083
+    uuid: "3bad1d20-8601-49be-86a2-2141d21dec99"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "gentle-dream-6aa3.soh8khan13.workers.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "gentle-dream-6aa3.soh8khan13.workers.dev"
+  - name: "@DeltaKroneckerGithub_Clash_4198"
+    type: vless
+    server: "104.17.173.215"
+    port: 2087
+    uuid: "663cf772-829c-4bc6-893d-b7d021d42f5b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vp8.cc.cd"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vp8.cc.cd"
+  - name: "@DeltaKroneckerGithub_Clash_8179"
+    type: trojan
+    server: "w13.udpgw.com"
+    port: 443
+    password: "16877c70-e7b8-11ec-99f2-1239d0255272"
+    sni: "w13.udpgw.com"
+    skip-cert-verify: true
+    udp: true
+
+proxy-groups:
+  - name: "PROXY"
+    type: select
+    proxies:
+      - "Fallback"
+      - "Auto"
+      - "Load Balance"
+    
+
+  - name: "Load Balance"
+    type: load-balance
+    strategy: consistent-hashing
+    url: http://www.gstatic.com/generate_204
+    interval: 60
+    tolerance: 50
+    lazy: true
+    proxies:
+      - "@DeltaKroneckerGithub_Clash_4741"
+      - "@DeltaKroneckerGithub_Clash_8771"
+      - "@DeltaKroneckerGithub_Clash_6219"
+      - "@DeltaKroneckerGithub_Clash_5220"
+      - "@DeltaKroneckerGithub_Clash_4992"
+      - "@DeltaKroneckerGithub_Clash_3216"
+      - "@DeltaKroneckerGithub_Clash_6170"
+      - "@DeltaKroneckerGithub_Clash_4244"
+      - "@DeltaKroneckerGithub_Clash_2025"
+      - "@DeltaKroneckerGithub_Clash_5961"
+      - "@DeltaKroneckerGithub_Clash_6223"
+      - "@DeltaKroneckerGithub_Clash_8052"
+      - "@DeltaKroneckerGithub_Clash_4041"
+      - "@DeltaKroneckerGithub_Clash_10006"
+      - "@DeltaKroneckerGithub_Clash_1757"
+      - "@DeltaKroneckerGithub_Clash_6566"
+      - "@DeltaKroneckerGithub_Clash_3824"
+      - "@DeltaKroneckerGithub_Clash_8104"
+      - "@DeltaKroneckerGithub_Clash_4240"
+      - "@DeltaKroneckerGithub_Clash_1855"
+      - "@DeltaKroneckerGithub_Clash_2105"
+      - "@DeltaKroneckerGithub_Clash_2158"
+      - "@DeltaKroneckerGithub_Clash_8768"
+      - "@DeltaKroneckerGithub_Clash_5769"
+      - "@DeltaKroneckerGithub_Clash_8770"
+      - "@DeltaKroneckerGithub_Clash_4172"
+      - "@DeltaKroneckerGithub_Clash_10155"
+      - "@DeltaKroneckerGithub_Clash_663"
+      - "@DeltaKroneckerGithub_Clash_167"
+      - "@DeltaKroneckerGithub_Clash_7375"
+      - "@DeltaKroneckerGithub_Clash_1588"
+      - "@DeltaKroneckerGithub_Clash_5915"
+      - "@DeltaKroneckerGithub_Clash_2220"
+      - "@DeltaKroneckerGithub_Clash_7103"
+      - "@DeltaKroneckerGithub_Clash_7698"
+      - "@DeltaKroneckerGithub_Clash_1274"
+      - "@DeltaKroneckerGithub_Clash_345"
+      - "@DeltaKroneckerGithub_Clash_531"
+      - "@DeltaKroneckerGithub_Clash_7834"
+      - "@DeltaKroneckerGithub_Clash_3473"
+      - "@DeltaKroneckerGithub_Clash_10181"
+      - "@DeltaKroneckerGithub_Clash_1979"
+      - "@DeltaKroneckerGithub_Clash_7264"
+      - "@DeltaKroneckerGithub_Clash_171"
+      - "@DeltaKroneckerGithub_Clash_8250"
+      - "@DeltaKroneckerGithub_Clash_9287"
+      - "@DeltaKroneckerGithub_Clash_8612"
+      - "@DeltaKroneckerGithub_Clash_8282"
+      - "@DeltaKroneckerGithub_Clash_7668"
+      - "@DeltaKroneckerGithub_Clash_1224"
+      - "@DeltaKroneckerGithub_Clash_7772"
+      - "@DeltaKroneckerGithub_Clash_4752"
+      - "@DeltaKroneckerGithub_Clash_5304"
+      - "@DeltaKroneckerGithub_Clash_7584"
+      - "@DeltaKroneckerGithub_Clash_1170"
+      - "@DeltaKroneckerGithub_Clash_8132"
+      - "@DeltaKroneckerGithub_Clash_3237"
+      - "@DeltaKroneckerGithub_Clash_5254"
+      - "@DeltaKroneckerGithub_Clash_8578"
+      - "@DeltaKroneckerGithub_Clash_8202"
+      - "@DeltaKroneckerGithub_Clash_869"
+      - "@DeltaKroneckerGithub_Clash_7341"
+      - "@DeltaKroneckerGithub_Clash_9112"
+      - "@DeltaKroneckerGithub_Clash_4284"
+      - "@DeltaKroneckerGithub_Clash_5832"
+      - "@DeltaKroneckerGithub_Clash_3438"
+      - "@DeltaKroneckerGithub_Clash_778"
+      - "@DeltaKroneckerGithub_Clash_2150"
+      - "@DeltaKroneckerGithub_Clash_1442"
+      - "@DeltaKroneckerGithub_Clash_1898"
+      - "@DeltaKroneckerGithub_Clash_7445"
+      - "@DeltaKroneckerGithub_Clash_10329"
+      - "@DeltaKroneckerGithub_Clash_5796"
+      - "@DeltaKroneckerGithub_Clash_3444"
+      - "@DeltaKroneckerGithub_Clash_7890"
+      - "@DeltaKroneckerGithub_Clash_3247"
+      - "@DeltaKroneckerGithub_Clash_2687"
+      - "@DeltaKroneckerGithub_Clash_4316"
+      - "@DeltaKroneckerGithub_Clash_231"
+      - "@DeltaKroneckerGithub_Clash_6271"
+      - "@DeltaKroneckerGithub_Clash_314"
+      - "@DeltaKroneckerGithub_Clash_7191"
+      - "@DeltaKroneckerGithub_Clash_9082"
+      - "@DeltaKroneckerGithub_Clash_1011"
+      - "@DeltaKroneckerGithub_Clash_3013"
+      - "@DeltaKroneckerGithub_Clash_9454"
+      - "@DeltaKroneckerGithub_Clash_10201"
+      - "@DeltaKroneckerGithub_Clash_10267"
+      - "@DeltaKroneckerGithub_Clash_8613"
+      - "@DeltaKroneckerGithub_Clash_905"
+      - "@DeltaKroneckerGithub_Clash_5369"
+      - "@DeltaKroneckerGithub_Clash_5089"
+      - "@DeltaKroneckerGithub_Clash_5431"
+      - "@DeltaKroneckerGithub_Clash_9004"
+      - "@DeltaKroneckerGithub_Clash_9726"
+      - "@DeltaKroneckerGithub_Clash_7760"
+      - "@DeltaKroneckerGithub_Clash_3027"
+      - "@DeltaKroneckerGithub_Clash_2203"
+      - "@DeltaKroneckerGithub_Clash_7198"
+      - "@DeltaKroneckerGithub_Clash_7167"
+      - "@DeltaKroneckerGithub_Clash_9208"
+      - "@DeltaKroneckerGithub_Clash_8451"
+      - "@DeltaKroneckerGithub_Clash_5646"
+      - "@DeltaKroneckerGithub_Clash_1710"
+      - "@DeltaKroneckerGithub_Clash_6423"
+      - "@DeltaKroneckerGithub_Clash_7351"
+      - "@DeltaKroneckerGithub_Clash_6598"
+      - "@DeltaKroneckerGithub_Clash_2521"
+      - "@DeltaKroneckerGithub_Clash_8359"
+      - "@DeltaKroneckerGithub_Clash_1268"
+      - "@DeltaKroneckerGithub_Clash_9752"
+      - "@DeltaKroneckerGithub_Clash_6302"
+      - "@DeltaKroneckerGithub_Clash_10239"
+      - "@DeltaKroneckerGithub_Clash_6150"
+      - "@DeltaKroneckerGithub_Clash_2750"
+      - "@DeltaKroneckerGithub_Clash_3315"
+      - "@DeltaKroneckerGithub_Clash_7881"
+      - "@DeltaKroneckerGithub_Clash_4750"
+      - "@DeltaKroneckerGithub_Clash_2486"
+      - "@DeltaKroneckerGithub_Clash_7754"
+      - "@DeltaKroneckerGithub_Clash_7372"
+      - "@DeltaKroneckerGithub_Clash_9149"
+      - "@DeltaKroneckerGithub_Clash_8892"
+      - "@DeltaKroneckerGithub_Clash_2352"
+      - "@DeltaKroneckerGithub_Clash_10099"
+      - "@DeltaKroneckerGithub_Clash_10303"
+      - "@DeltaKroneckerGithub_Clash_6688"
+      - "@DeltaKroneckerGithub_Clash_321"
+      - "@DeltaKroneckerGithub_Clash_6193"
+      - "@DeltaKroneckerGithub_Clash_7718"
+      - "@DeltaKroneckerGithub_Clash_4522"
+      - "@DeltaKroneckerGithub_Clash_89"
+      - "@DeltaKroneckerGithub_Clash_9807"
+      - "@DeltaKroneckerGithub_Clash_2088"
+      - "@DeltaKroneckerGithub_Clash_7129"
+      - "@DeltaKroneckerGithub_Clash_3154"
+      - "@DeltaKroneckerGithub_Clash_8152"
+      - "@DeltaKroneckerGithub_Clash_3994"
+      - "@DeltaKroneckerGithub_Clash_8963"
+      - "@DeltaKroneckerGithub_Clash_4331"
+      - "@DeltaKroneckerGithub_Clash_8273"
+      - "@DeltaKroneckerGithub_Clash_2316"
+      - "@DeltaKroneckerGithub_Clash_3544"
+      - "@DeltaKroneckerGithub_Clash_2995"
+      - "@DeltaKroneckerGithub_Clash_9155"
+      - "@DeltaKroneckerGithub_Clash_3346"
+      - "@DeltaKroneckerGithub_Clash_4152"
+      - "@DeltaKroneckerGithub_Clash_9602"
+      - "@DeltaKroneckerGithub_Clash_6355"
+      - "@DeltaKroneckerGithub_Clash_2860"
+      - "@DeltaKroneckerGithub_Clash_7790"
+      - "@DeltaKroneckerGithub_Clash_9945"
+      - "@DeltaKroneckerGithub_Clash_8775"
+      - "@DeltaKroneckerGithub_Clash_9189"
+      - "@DeltaKroneckerGithub_Clash_8183"
+      - "@DeltaKroneckerGithub_Clash_5767"
+      - "@DeltaKroneckerGithub_Clash_3287"
+      - "@DeltaKroneckerGithub_Clash_9398"
+      - "@DeltaKroneckerGithub_Clash_6493"
+      - "@DeltaKroneckerGithub_Clash_4514"
+      - "@DeltaKroneckerGithub_Clash_9196"
+      - "@DeltaKroneckerGithub_Clash_4196"
+      - "@DeltaKroneckerGithub_Clash_7505"
+      - "@DeltaKroneckerGithub_Clash_7463"
+      - "@DeltaKroneckerGithub_Clash_9757"
+      - "@DeltaKroneckerGithub_Clash_5086"
+      - "@DeltaKroneckerGithub_Clash_3697"
+      - "@DeltaKroneckerGithub_Clash_10203"
+      - "@DeltaKroneckerGithub_Clash_5248"
+      - "@DeltaKroneckerGithub_Clash_827"
+      - "@DeltaKroneckerGithub_Clash_7099"
+      - "@DeltaKroneckerGithub_Clash_8481"
+      - "@DeltaKroneckerGithub_Clash_7155"
+      - "@DeltaKroneckerGithub_Clash_9296"
+      - "@DeltaKroneckerGithub_Clash_1147"
+      - "@DeltaKroneckerGithub_Clash_1472"
+      - "@DeltaKroneckerGithub_Clash_3382"
+      - "@DeltaKroneckerGithub_Clash_5121"
+      - "@DeltaKroneckerGithub_Clash_5760"
+      - "@DeltaKroneckerGithub_Clash_7262"
+      - "@DeltaKroneckerGithub_Clash_6898"
+      - "@DeltaKroneckerGithub_Clash_10171"
+      - "@DeltaKroneckerGithub_Clash_5716"
+      - "@DeltaKroneckerGithub_Clash_3156"
+      - "@DeltaKroneckerGithub_Clash_9334"
+      - "@DeltaKroneckerGithub_Clash_4789"
+      - "@DeltaKroneckerGithub_Clash_4520"
+      - "@DeltaKroneckerGithub_Clash_6382"
+      - "@DeltaKroneckerGithub_Clash_8815"
+      - "@DeltaKroneckerGithub_Clash_3887"
+      - "@DeltaKroneckerGithub_Clash_4178"
+      - "@DeltaKroneckerGithub_Clash_5813"
+      - "@DeltaKroneckerGithub_Clash_407"
+      - "@DeltaKroneckerGithub_Clash_1107"
+      - "@DeltaKroneckerGithub_Clash_2572"
+      - "@DeltaKroneckerGithub_Clash_1166"
+      - "@DeltaKroneckerGithub_Clash_8300"
+      - "@DeltaKroneckerGithub_Clash_903"
+      - "@DeltaKroneckerGithub_Clash_5188"
+      - "@DeltaKroneckerGithub_Clash_8187"
+      - "@DeltaKroneckerGithub_Clash_636"
+      - "@DeltaKroneckerGithub_Clash_4302"
+      - "@DeltaKroneckerGithub_Clash_5243"
+      - "@DeltaKroneckerGithub_Clash_2308"
+      - "@DeltaKroneckerGithub_Clash_8041"
+      - "@DeltaKroneckerGithub_Clash_3057"
+      - "@DeltaKroneckerGithub_Clash_5792"
+      - "@DeltaKroneckerGithub_Clash_10112"
+      - "@DeltaKroneckerGithub_Clash_7616"
+      - "@DeltaKroneckerGithub_Clash_9482"
+      - "@DeltaKroneckerGithub_Clash_6241"
+      - "@DeltaKroneckerGithub_Clash_6648"
+      - "@DeltaKroneckerGithub_Clash_9489"
+      - "@DeltaKroneckerGithub_Clash_9067"
+      - "@DeltaKroneckerGithub_Clash_17"
+      - "@DeltaKroneckerGithub_Clash_9974"
+      - "@DeltaKroneckerGithub_Clash_5674"
+      - "@DeltaKroneckerGithub_Clash_6412"
+      - "@DeltaKroneckerGithub_Clash_6830"
+      - "@DeltaKroneckerGithub_Clash_10134"
+      - "@DeltaKroneckerGithub_Clash_3425"
+      - "@DeltaKroneckerGithub_Clash_8662"
+      - "@DeltaKroneckerGithub_Clash_9463"
+      - "@DeltaKroneckerGithub_Clash_9295"
+      - "@DeltaKroneckerGithub_Clash_5359"
+      - "@DeltaKroneckerGithub_Clash_3802"
+      - "@DeltaKroneckerGithub_Clash_6176"
+      - "@DeltaKroneckerGithub_Clash_5773"
+      - "@DeltaKroneckerGithub_Clash_3090"
+      - "@DeltaKroneckerGithub_Clash_8139"
+      - "@DeltaKroneckerGithub_Clash_5401"
+      - "@DeltaKroneckerGithub_Clash_4627"
+      - "@DeltaKroneckerGithub_Clash_858"
+      - "@DeltaKroneckerGithub_Clash_8609"
+      - "@DeltaKroneckerGithub_Clash_8914"
+      - "@DeltaKroneckerGithub_Clash_7776"
+      - "@DeltaKroneckerGithub_Clash_5595"
+      - "@DeltaKroneckerGithub_Clash_9651"
+      - "@DeltaKroneckerGithub_Clash_6182"
+      - "@DeltaKroneckerGithub_Clash_10062"
+      - "@DeltaKroneckerGithub_Clash_9166"
+      - "@DeltaKroneckerGithub_Clash_8230"
+      - "@DeltaKroneckerGithub_Clash_4674"
+      - "@DeltaKroneckerGithub_Clash_721"
+      - "@DeltaKroneckerGithub_Clash_7070"
+      - "@DeltaKroneckerGithub_Clash_9339"
+      - "@DeltaKroneckerGithub_Clash_1393"
+      - "@DeltaKroneckerGithub_Clash_2312"
+      - "@DeltaKroneckerGithub_Clash_5651"
+      - "@DeltaKroneckerGithub_Clash_6882"
+      - "@DeltaKroneckerGithub_Clash_4163"
+      - "@DeltaKroneckerGithub_Clash_5321"
+      - "@DeltaKroneckerGithub_Clash_8307"
+      - "@DeltaKroneckerGithub_Clash_8952"
+      - "@DeltaKroneckerGithub_Clash_7270"
+      - "@DeltaKroneckerGithub_Clash_5203"
+      - "@DeltaKroneckerGithub_Clash_881"
+      - "@DeltaKroneckerGithub_Clash_1137"
+      - "@DeltaKroneckerGithub_Clash_10191"
+      - "@DeltaKroneckerGithub_Clash_1772"
+      - "@DeltaKroneckerGithub_Clash_3371"
+      - "@DeltaKroneckerGithub_Clash_6555"
+      - "@DeltaKroneckerGithub_Clash_15"
+      - "@DeltaKroneckerGithub_Clash_5155"
+      - "@DeltaKroneckerGithub_Clash_6146"
+      - "@DeltaKroneckerGithub_Clash_1043"
+      - "@DeltaKroneckerGithub_Clash_8256"
+      - "@DeltaKroneckerGithub_Clash_8698"
+      - "@DeltaKroneckerGithub_Clash_7449"
+      - "@DeltaKroneckerGithub_Clash_7806"
+      - "@DeltaKroneckerGithub_Clash_9174"
+      - "@DeltaKroneckerGithub_Clash_1790"
+      - "@DeltaKroneckerGithub_Clash_4404"
+      - "@DeltaKroneckerGithub_Clash_10301"
+      - "@DeltaKroneckerGithub_Clash_2967"
+      - "@DeltaKroneckerGithub_Clash_339"
+      - "@DeltaKroneckerGithub_Clash_6243"
+      - "@DeltaKroneckerGithub_Clash_4304"
+      - "@DeltaKroneckerGithub_Clash_6951"
+      - "@DeltaKroneckerGithub_Clash_1375"
+      - "@DeltaKroneckerGithub_Clash_9076"
+      - "@DeltaKroneckerGithub_Clash_3728"
+      - "@DeltaKroneckerGithub_Clash_3461"
+      - "@DeltaKroneckerGithub_Clash_254"
+      - "@DeltaKroneckerGithub_Clash_9745"
+      - "@DeltaKroneckerGithub_Clash_9098"
+      - "@DeltaKroneckerGithub_Clash_10210"
+      - "@DeltaKroneckerGithub_Clash_1555"
+      - "@DeltaKroneckerGithub_Clash_10102"
+      - "@DeltaKroneckerGithub_Clash_10248"
+      - "@DeltaKroneckerGithub_Clash_9248"
+      - "@DeltaKroneckerGithub_Clash_856"
+      - "@DeltaKroneckerGithub_Clash_8176"
+      - "@DeltaKroneckerGithub_Clash_2805"
+      - "@DeltaKroneckerGithub_Clash_3899"
+      - "@DeltaKroneckerGithub_Clash_5403"
+      - "@DeltaKroneckerGithub_Clash_7922"
+      - "@DeltaKroneckerGithub_Clash_8579"
+      - "@DeltaKroneckerGithub_Clash_5757"
+      - "@DeltaKroneckerGithub_Clash_6415"
+      - "@DeltaKroneckerGithub_Clash_6425"
+      - "@DeltaKroneckerGithub_Clash_4749"
+      - "@DeltaKroneckerGithub_Clash_3100"
+      - "@DeltaKroneckerGithub_Clash_7424"
+      - "@DeltaKroneckerGithub_Clash_4220"
+      - "@DeltaKroneckerGithub_Clash_6135"
+      - "@DeltaKroneckerGithub_Clash_1059"
+      - "@DeltaKroneckerGithub_Clash_2778"
+      - "@DeltaKroneckerGithub_Clash_10028"
+      - "@DeltaKroneckerGithub_Clash_8869"
+      - "@DeltaKroneckerGithub_Clash_3086"
+      - "@DeltaKroneckerGithub_Clash_3065"
+      - "@DeltaKroneckerGithub_Clash_3311"
+      - "@DeltaKroneckerGithub_Clash_7477"
+      - "@DeltaKroneckerGithub_Clash_7664"
+      - "@DeltaKroneckerGithub_Clash_2479"
+      - "@DeltaKroneckerGithub_Clash_8510"
+      - "@DeltaKroneckerGithub_Clash_8193"
+      - "@DeltaKroneckerGithub_Clash_6388"
+      - "@DeltaKroneckerGithub_Clash_9124"
+      - "@DeltaKroneckerGithub_Clash_3974"
+      - "@DeltaKroneckerGithub_Clash_1890"
+      - "@DeltaKroneckerGithub_Clash_7610"
+      - "@DeltaKroneckerGithub_Clash_9753"
+      - "@DeltaKroneckerGithub_Clash_6690"
+      - "@DeltaKroneckerGithub_Clash_8641"
+      - "@DeltaKroneckerGithub_Clash_5053"
+      - "@DeltaKroneckerGithub_Clash_8557"
+      - "@DeltaKroneckerGithub_Clash_6972"
+      - "@DeltaKroneckerGithub_Clash_6209"
+      - "@DeltaKroneckerGithub_Clash_8479"
+      - "@DeltaKroneckerGithub_Clash_1570"
+      - "@DeltaKroneckerGithub_Clash_6763"
+      - "@DeltaKroneckerGithub_Clash_8308"
+      - "@DeltaKroneckerGithub_Clash_9865"
+      - "@DeltaKroneckerGithub_Clash_7289"
+      - "@DeltaKroneckerGithub_Clash_3557"
+      - "@DeltaKroneckerGithub_Clash_10264"
+      - "@DeltaKroneckerGithub_Clash_5055"
+      - "@DeltaKroneckerGithub_Clash_3966"
+      - "@DeltaKroneckerGithub_Clash_1431"
+      - "@DeltaKroneckerGithub_Clash_1014"
+      - "@DeltaKroneckerGithub_Clash_6826"
+      - "@DeltaKroneckerGithub_Clash_9446"
+      - "@DeltaKroneckerGithub_Clash_3098"
+      - "@DeltaKroneckerGithub_Clash_7040"
+      - "@DeltaKroneckerGithub_Clash_2007"
+      - "@DeltaKroneckerGithub_Clash_734"
+      - "@DeltaKroneckerGithub_Clash_8647"
+      - "@DeltaKroneckerGithub_Clash_7694"
+      - "@DeltaKroneckerGithub_Clash_9382"
+      - "@DeltaKroneckerGithub_Clash_3479"
+      - "@DeltaKroneckerGithub_Clash_8508"
+      - "@DeltaKroneckerGithub_Clash_3207"
+      - "@DeltaKroneckerGithub_Clash_5462"
+      - "@DeltaKroneckerGithub_Clash_5667"
+      - "@DeltaKroneckerGithub_Clash_3386"
+      - "@DeltaKroneckerGithub_Clash_8796"
+      - "@DeltaKroneckerGithub_Clash_6781"
+      - "@DeltaKroneckerGithub_Clash_1623"
+      - "@DeltaKroneckerGithub_Clash_1977"
+      - "@DeltaKroneckerGithub_Clash_1172"
+      - "@DeltaKroneckerGithub_Clash_10090"
+      - "@DeltaKroneckerGithub_Clash_4965"
+      - "@DeltaKroneckerGithub_Clash_8062"
+      - "@DeltaKroneckerGithub_Clash_4815"
+      - "@DeltaKroneckerGithub_Clash_2580"
+      - "@DeltaKroneckerGithub_Clash_4337"
+      - "@DeltaKroneckerGithub_Clash_4198"
+      - "@DeltaKroneckerGithub_Clash_8179"
+
+  - name: "Auto"
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 60
+    tolerance: 50
+    lazy: true
+    proxies:
+      - "@DeltaKroneckerGithub_Clash_4741"
+      - "@DeltaKroneckerGithub_Clash_8771"
+      - "@DeltaKroneckerGithub_Clash_6219"
+      - "@DeltaKroneckerGithub_Clash_5220"
+      - "@DeltaKroneckerGithub_Clash_4992"
+      - "@DeltaKroneckerGithub_Clash_3216"
+      - "@DeltaKroneckerGithub_Clash_6170"
+      - "@DeltaKroneckerGithub_Clash_4244"
+      - "@DeltaKroneckerGithub_Clash_2025"
+      - "@DeltaKroneckerGithub_Clash_5961"
+      - "@DeltaKroneckerGithub_Clash_6223"
+      - "@DeltaKroneckerGithub_Clash_8052"
+      - "@DeltaKroneckerGithub_Clash_4041"
+      - "@DeltaKroneckerGithub_Clash_10006"
+      - "@DeltaKroneckerGithub_Clash_1757"
+      - "@DeltaKroneckerGithub_Clash_6566"
+      - "@DeltaKroneckerGithub_Clash_3824"
+      - "@DeltaKroneckerGithub_Clash_8104"
+      - "@DeltaKroneckerGithub_Clash_4240"
+      - "@DeltaKroneckerGithub_Clash_1855"
+      - "@DeltaKroneckerGithub_Clash_2105"
+      - "@DeltaKroneckerGithub_Clash_2158"
+      - "@DeltaKroneckerGithub_Clash_8768"
+      - "@DeltaKroneckerGithub_Clash_5769"
+      - "@DeltaKroneckerGithub_Clash_8770"
+      - "@DeltaKroneckerGithub_Clash_4172"
+      - "@DeltaKroneckerGithub_Clash_10155"
+      - "@DeltaKroneckerGithub_Clash_663"
+      - "@DeltaKroneckerGithub_Clash_167"
+      - "@DeltaKroneckerGithub_Clash_7375"
+      - "@DeltaKroneckerGithub_Clash_1588"
+      - "@DeltaKroneckerGithub_Clash_5915"
+      - "@DeltaKroneckerGithub_Clash_2220"
+      - "@DeltaKroneckerGithub_Clash_7103"
+      - "@DeltaKroneckerGithub_Clash_7698"
+      - "@DeltaKroneckerGithub_Clash_1274"
+      - "@DeltaKroneckerGithub_Clash_345"
+      - "@DeltaKroneckerGithub_Clash_531"
+      - "@DeltaKroneckerGithub_Clash_7834"
+      - "@DeltaKroneckerGithub_Clash_3473"
+      - "@DeltaKroneckerGithub_Clash_10181"
+      - "@DeltaKroneckerGithub_Clash_1979"
+      - "@DeltaKroneckerGithub_Clash_7264"
+      - "@DeltaKroneckerGithub_Clash_171"
+      - "@DeltaKroneckerGithub_Clash_8250"
+      - "@DeltaKroneckerGithub_Clash_9287"
+      - "@DeltaKroneckerGithub_Clash_8612"
+      - "@DeltaKroneckerGithub_Clash_8282"
+      - "@DeltaKroneckerGithub_Clash_7668"
+      - "@DeltaKroneckerGithub_Clash_1224"
+      - "@DeltaKroneckerGithub_Clash_7772"
+      - "@DeltaKroneckerGithub_Clash_4752"
+      - "@DeltaKroneckerGithub_Clash_5304"
+      - "@DeltaKroneckerGithub_Clash_7584"
+      - "@DeltaKroneckerGithub_Clash_1170"
+      - "@DeltaKroneckerGithub_Clash_8132"
+      - "@DeltaKroneckerGithub_Clash_3237"
+      - "@DeltaKroneckerGithub_Clash_5254"
+      - "@DeltaKroneckerGithub_Clash_8578"
+      - "@DeltaKroneckerGithub_Clash_8202"
+      - "@DeltaKroneckerGithub_Clash_869"
+      - "@DeltaKroneckerGithub_Clash_7341"
+      - "@DeltaKroneckerGithub_Clash_9112"
+      - "@DeltaKroneckerGithub_Clash_4284"
+      - "@DeltaKroneckerGithub_Clash_5832"
+      - "@DeltaKroneckerGithub_Clash_3438"
+      - "@DeltaKroneckerGithub_Clash_778"
+      - "@DeltaKroneckerGithub_Clash_2150"
+      - "@DeltaKroneckerGithub_Clash_1442"
+      - "@DeltaKroneckerGithub_Clash_1898"
+      - "@DeltaKroneckerGithub_Clash_7445"
+      - "@DeltaKroneckerGithub_Clash_10329"
+      - "@DeltaKroneckerGithub_Clash_5796"
+      - "@DeltaKroneckerGithub_Clash_3444"
+      - "@DeltaKroneckerGithub_Clash_7890"
+      - "@DeltaKroneckerGithub_Clash_3247"
+      - "@DeltaKroneckerGithub_Clash_2687"
+      - "@DeltaKroneckerGithub_Clash_4316"
+      - "@DeltaKroneckerGithub_Clash_231"
+      - "@DeltaKroneckerGithub_Clash_6271"
+      - "@DeltaKroneckerGithub_Clash_314"
+      - "@DeltaKroneckerGithub_Clash_7191"
+      - "@DeltaKroneckerGithub_Clash_9082"
+      - "@DeltaKroneckerGithub_Clash_1011"
+      - "@DeltaKroneckerGithub_Clash_3013"
+      - "@DeltaKroneckerGithub_Clash_9454"
+      - "@DeltaKroneckerGithub_Clash_10201"
+      - "@DeltaKroneckerGithub_Clash_10267"
+      - "@DeltaKroneckerGithub_Clash_8613"
+      - "@DeltaKroneckerGithub_Clash_905"
+      - "@DeltaKroneckerGithub_Clash_5369"
+      - "@DeltaKroneckerGithub_Clash_5089"
+      - "@DeltaKroneckerGithub_Clash_5431"
+      - "@DeltaKroneckerGithub_Clash_9004"
+      - "@DeltaKroneckerGithub_Clash_9726"
+      - "@DeltaKroneckerGithub_Clash_7760"
+      - "@DeltaKroneckerGithub_Clash_3027"
+      - "@DeltaKroneckerGithub_Clash_2203"
+      - "@DeltaKroneckerGithub_Clash_7198"
+      - "@DeltaKroneckerGithub_Clash_7167"
+      - "@DeltaKroneckerGithub_Clash_9208"
+      - "@DeltaKroneckerGithub_Clash_8451"
+      - "@DeltaKroneckerGithub_Clash_5646"
+      - "@DeltaKroneckerGithub_Clash_1710"
+      - "@DeltaKroneckerGithub_Clash_6423"
+      - "@DeltaKroneckerGithub_Clash_7351"
+      - "@DeltaKroneckerGithub_Clash_6598"
+      - "@DeltaKroneckerGithub_Clash_2521"
+      - "@DeltaKroneckerGithub_Clash_8359"
+      - "@DeltaKroneckerGithub_Clash_1268"
+      - "@DeltaKroneckerGithub_Clash_9752"
+      - "@DeltaKroneckerGithub_Clash_6302"
+      - "@DeltaKroneckerGithub_Clash_10239"
+      - "@DeltaKroneckerGithub_Clash_6150"
+      - "@DeltaKroneckerGithub_Clash_2750"
+      - "@DeltaKroneckerGithub_Clash_3315"
+      - "@DeltaKroneckerGithub_Clash_7881"
+      - "@DeltaKroneckerGithub_Clash_4750"
+      - "@DeltaKroneckerGithub_Clash_2486"
+      - "@DeltaKroneckerGithub_Clash_7754"
+      - "@DeltaKroneckerGithub_Clash_7372"
+      - "@DeltaKroneckerGithub_Clash_9149"
+      - "@DeltaKroneckerGithub_Clash_8892"
+      - "@DeltaKroneckerGithub_Clash_2352"
+      - "@DeltaKroneckerGithub_Clash_10099"
+      - "@DeltaKroneckerGithub_Clash_10303"
+      - "@DeltaKroneckerGithub_Clash_6688"
+      - "@DeltaKroneckerGithub_Clash_321"
+      - "@DeltaKroneckerGithub_Clash_6193"
+      - "@DeltaKroneckerGithub_Clash_7718"
+      - "@DeltaKroneckerGithub_Clash_4522"
+      - "@DeltaKroneckerGithub_Clash_89"
+      - "@DeltaKroneckerGithub_Clash_9807"
+      - "@DeltaKroneckerGithub_Clash_2088"
+      - "@DeltaKroneckerGithub_Clash_7129"
+      - "@DeltaKroneckerGithub_Clash_3154"
+      - "@DeltaKroneckerGithub_Clash_8152"
+      - "@DeltaKroneckerGithub_Clash_3994"
+      - "@DeltaKroneckerGithub_Clash_8963"
+      - "@DeltaKroneckerGithub_Clash_4331"
+      - "@DeltaKroneckerGithub_Clash_8273"
+      - "@DeltaKroneckerGithub_Clash_2316"
+      - "@DeltaKroneckerGithub_Clash_3544"
+      - "@DeltaKroneckerGithub_Clash_2995"
+      - "@DeltaKroneckerGithub_Clash_9155"
+      - "@DeltaKroneckerGithub_Clash_3346"
+      - "@DeltaKroneckerGithub_Clash_4152"
+      - "@DeltaKroneckerGithub_Clash_9602"
+      - "@DeltaKroneckerGithub_Clash_6355"
+      - "@DeltaKroneckerGithub_Clash_2860"
+      - "@DeltaKroneckerGithub_Clash_7790"
+      - "@DeltaKroneckerGithub_Clash_9945"
+      - "@DeltaKroneckerGithub_Clash_8775"
+      - "@DeltaKroneckerGithub_Clash_9189"
+      - "@DeltaKroneckerGithub_Clash_8183"
+      - "@DeltaKroneckerGithub_Clash_5767"
+      - "@DeltaKroneckerGithub_Clash_3287"
+      - "@DeltaKroneckerGithub_Clash_9398"
+      - "@DeltaKroneckerGithub_Clash_6493"
+      - "@DeltaKroneckerGithub_Clash_4514"
+      - "@DeltaKroneckerGithub_Clash_9196"
+      - "@DeltaKroneckerGithub_Clash_4196"
+      - "@DeltaKroneckerGithub_Clash_7505"
+      - "@DeltaKroneckerGithub_Clash_7463"
+      - "@DeltaKroneckerGithub_Clash_9757"
+      - "@DeltaKroneckerGithub_Clash_5086"
+      - "@DeltaKroneckerGithub_Clash_3697"
+      - "@DeltaKroneckerGithub_Clash_10203"
+      - "@DeltaKroneckerGithub_Clash_5248"
+      - "@DeltaKroneckerGithub_Clash_827"
+      - "@DeltaKroneckerGithub_Clash_7099"
+      - "@DeltaKroneckerGithub_Clash_8481"
+      - "@DeltaKroneckerGithub_Clash_7155"
+      - "@DeltaKroneckerGithub_Clash_9296"
+      - "@DeltaKroneckerGithub_Clash_1147"
+      - "@DeltaKroneckerGithub_Clash_1472"
+      - "@DeltaKroneckerGithub_Clash_3382"
+      - "@DeltaKroneckerGithub_Clash_5121"
+      - "@DeltaKroneckerGithub_Clash_5760"
+      - "@DeltaKroneckerGithub_Clash_7262"
+      - "@DeltaKroneckerGithub_Clash_6898"
+      - "@DeltaKroneckerGithub_Clash_10171"
+      - "@DeltaKroneckerGithub_Clash_5716"
+      - "@DeltaKroneckerGithub_Clash_3156"
+      - "@DeltaKroneckerGithub_Clash_9334"
+      - "@DeltaKroneckerGithub_Clash_4789"
+      - "@DeltaKroneckerGithub_Clash_4520"
+      - "@DeltaKroneckerGithub_Clash_6382"
+      - "@DeltaKroneckerGithub_Clash_8815"
+      - "@DeltaKroneckerGithub_Clash_3887"
+      - "@DeltaKroneckerGithub_Clash_4178"
+      - "@DeltaKroneckerGithub_Clash_5813"
+      - "@DeltaKroneckerGithub_Clash_407"
+      - "@DeltaKroneckerGithub_Clash_1107"
+      - "@DeltaKroneckerGithub_Clash_2572"
+      - "@DeltaKroneckerGithub_Clash_1166"
+      - "@DeltaKroneckerGithub_Clash_8300"
+      - "@DeltaKroneckerGithub_Clash_903"
+      - "@DeltaKroneckerGithub_Clash_5188"
+      - "@DeltaKroneckerGithub_Clash_8187"
+      - "@DeltaKroneckerGithub_Clash_636"
+      - "@DeltaKroneckerGithub_Clash_4302"
+      - "@DeltaKroneckerGithub_Clash_5243"
+      - "@DeltaKroneckerGithub_Clash_2308"
+      - "@DeltaKroneckerGithub_Clash_8041"
+      - "@DeltaKroneckerGithub_Clash_3057"
+      - "@DeltaKroneckerGithub_Clash_5792"
+      - "@DeltaKroneckerGithub_Clash_10112"
+      - "@DeltaKroneckerGithub_Clash_7616"
+      - "@DeltaKroneckerGithub_Clash_9482"
+      - "@DeltaKroneckerGithub_Clash_6241"
+      - "@DeltaKroneckerGithub_Clash_6648"
+      - "@DeltaKroneckerGithub_Clash_9489"
+      - "@DeltaKroneckerGithub_Clash_9067"
+      - "@DeltaKroneckerGithub_Clash_17"
+      - "@DeltaKroneckerGithub_Clash_9974"
+      - "@DeltaKroneckerGithub_Clash_5674"
+      - "@DeltaKroneckerGithub_Clash_6412"
+      - "@DeltaKroneckerGithub_Clash_6830"
+      - "@DeltaKroneckerGithub_Clash_10134"
+      - "@DeltaKroneckerGithub_Clash_3425"
+      - "@DeltaKroneckerGithub_Clash_8662"
+      - "@DeltaKroneckerGithub_Clash_9463"
+      - "@DeltaKroneckerGithub_Clash_9295"
+      - "@DeltaKroneckerGithub_Clash_5359"
+      - "@DeltaKroneckerGithub_Clash_3802"
+      - "@DeltaKroneckerGithub_Clash_6176"
+      - "@DeltaKroneckerGithub_Clash_5773"
+      - "@DeltaKroneckerGithub_Clash_3090"
+      - "@DeltaKroneckerGithub_Clash_8139"
+      - "@DeltaKroneckerGithub_Clash_5401"
+      - "@DeltaKroneckerGithub_Clash_4627"
+      - "@DeltaKroneckerGithub_Clash_858"
+      - "@DeltaKroneckerGithub_Clash_8609"
+      - "@DeltaKroneckerGithub_Clash_8914"
+      - "@DeltaKroneckerGithub_Clash_7776"
+      - "@DeltaKroneckerGithub_Clash_5595"
+      - "@DeltaKroneckerGithub_Clash_9651"
+      - "@DeltaKroneckerGithub_Clash_6182"
+      - "@DeltaKroneckerGithub_Clash_10062"
+      - "@DeltaKroneckerGithub_Clash_9166"
+      - "@DeltaKroneckerGithub_Clash_8230"
+      - "@DeltaKroneckerGithub_Clash_4674"
+      - "@DeltaKroneckerGithub_Clash_721"
+      - "@DeltaKroneckerGithub_Clash_7070"
+      - "@DeltaKroneckerGithub_Clash_9339"
+      - "@DeltaKroneckerGithub_Clash_1393"
+      - "@DeltaKroneckerGithub_Clash_2312"
+      - "@DeltaKroneckerGithub_Clash_5651"
+      - "@DeltaKroneckerGithub_Clash_6882"
+      - "@DeltaKroneckerGithub_Clash_4163"
+      - "@DeltaKroneckerGithub_Clash_5321"
+      - "@DeltaKroneckerGithub_Clash_8307"
+      - "@DeltaKroneckerGithub_Clash_8952"
+      - "@DeltaKroneckerGithub_Clash_7270"
+      - "@DeltaKroneckerGithub_Clash_5203"
+      - "@DeltaKroneckerGithub_Clash_881"
+      - "@DeltaKroneckerGithub_Clash_1137"
+      - "@DeltaKroneckerGithub_Clash_10191"
+      - "@DeltaKroneckerGithub_Clash_1772"
+      - "@DeltaKroneckerGithub_Clash_3371"
+      - "@DeltaKroneckerGithub_Clash_6555"
+      - "@DeltaKroneckerGithub_Clash_15"
+      - "@DeltaKroneckerGithub_Clash_5155"
+      - "@DeltaKroneckerGithub_Clash_6146"
+      - "@DeltaKroneckerGithub_Clash_1043"
+      - "@DeltaKroneckerGithub_Clash_8256"
+      - "@DeltaKroneckerGithub_Clash_8698"
+      - "@DeltaKroneckerGithub_Clash_7449"
+      - "@DeltaKroneckerGithub_Clash_7806"
+      - "@DeltaKroneckerGithub_Clash_9174"
+      - "@DeltaKroneckerGithub_Clash_1790"
+      - "@DeltaKroneckerGithub_Clash_4404"
+      - "@DeltaKroneckerGithub_Clash_10301"
+      - "@DeltaKroneckerGithub_Clash_2967"
+      - "@DeltaKroneckerGithub_Clash_339"
+      - "@DeltaKroneckerGithub_Clash_6243"
+      - "@DeltaKroneckerGithub_Clash_4304"
+      - "@DeltaKroneckerGithub_Clash_6951"
+      - "@DeltaKroneckerGithub_Clash_1375"
+      - "@DeltaKroneckerGithub_Clash_9076"
+      - "@DeltaKroneckerGithub_Clash_3728"
+      - "@DeltaKroneckerGithub_Clash_3461"
+      - "@DeltaKroneckerGithub_Clash_254"
+      - "@DeltaKroneckerGithub_Clash_9745"
+      - "@DeltaKroneckerGithub_Clash_9098"
+      - "@DeltaKroneckerGithub_Clash_10210"
+      - "@DeltaKroneckerGithub_Clash_1555"
+      - "@DeltaKroneckerGithub_Clash_10102"
+      - "@DeltaKroneckerGithub_Clash_10248"
+      - "@DeltaKroneckerGithub_Clash_9248"
+      - "@DeltaKroneckerGithub_Clash_856"
+      - "@DeltaKroneckerGithub_Clash_8176"
+      - "@DeltaKroneckerGithub_Clash_2805"
+      - "@DeltaKroneckerGithub_Clash_3899"
+      - "@DeltaKroneckerGithub_Clash_5403"
+      - "@DeltaKroneckerGithub_Clash_7922"
+      - "@DeltaKroneckerGithub_Clash_8579"
+      - "@DeltaKroneckerGithub_Clash_5757"
+      - "@DeltaKroneckerGithub_Clash_6415"
+      - "@DeltaKroneckerGithub_Clash_6425"
+      - "@DeltaKroneckerGithub_Clash_4749"
+      - "@DeltaKroneckerGithub_Clash_3100"
+      - "@DeltaKroneckerGithub_Clash_7424"
+      - "@DeltaKroneckerGithub_Clash_4220"
+      - "@DeltaKroneckerGithub_Clash_6135"
+      - "@DeltaKroneckerGithub_Clash_1059"
+      - "@DeltaKroneckerGithub_Clash_2778"
+      - "@DeltaKroneckerGithub_Clash_10028"
+      - "@DeltaKroneckerGithub_Clash_8869"
+      - "@DeltaKroneckerGithub_Clash_3086"
+      - "@DeltaKroneckerGithub_Clash_3065"
+      - "@DeltaKroneckerGithub_Clash_3311"
+      - "@DeltaKroneckerGithub_Clash_7477"
+      - "@DeltaKroneckerGithub_Clash_7664"
+      - "@DeltaKroneckerGithub_Clash_2479"
+      - "@DeltaKroneckerGithub_Clash_8510"
+      - "@DeltaKroneckerGithub_Clash_8193"
+      - "@DeltaKroneckerGithub_Clash_6388"
+      - "@DeltaKroneckerGithub_Clash_9124"
+      - "@DeltaKroneckerGithub_Clash_3974"
+      - "@DeltaKroneckerGithub_Clash_1890"
+      - "@DeltaKroneckerGithub_Clash_7610"
+      - "@DeltaKroneckerGithub_Clash_9753"
+      - "@DeltaKroneckerGithub_Clash_6690"
+      - "@DeltaKroneckerGithub_Clash_8641"
+      - "@DeltaKroneckerGithub_Clash_5053"
+      - "@DeltaKroneckerGithub_Clash_8557"
+      - "@DeltaKroneckerGithub_Clash_6972"
+      - "@DeltaKroneckerGithub_Clash_6209"
+      - "@DeltaKroneckerGithub_Clash_8479"
+      - "@DeltaKroneckerGithub_Clash_1570"
+      - "@DeltaKroneckerGithub_Clash_6763"
+      - "@DeltaKroneckerGithub_Clash_8308"
+      - "@DeltaKroneckerGithub_Clash_9865"
+      - "@DeltaKroneckerGithub_Clash_7289"
+      - "@DeltaKroneckerGithub_Clash_3557"
+      - "@DeltaKroneckerGithub_Clash_10264"
+      - "@DeltaKroneckerGithub_Clash_5055"
+      - "@DeltaKroneckerGithub_Clash_3966"
+      - "@DeltaKroneckerGithub_Clash_1431"
+      - "@DeltaKroneckerGithub_Clash_1014"
+      - "@DeltaKroneckerGithub_Clash_6826"
+      - "@DeltaKroneckerGithub_Clash_9446"
+      - "@DeltaKroneckerGithub_Clash_3098"
+      - "@DeltaKroneckerGithub_Clash_7040"
+      - "@DeltaKroneckerGithub_Clash_2007"
+      - "@DeltaKroneckerGithub_Clash_734"
+      - "@DeltaKroneckerGithub_Clash_8647"
+      - "@DeltaKroneckerGithub_Clash_7694"
+      - "@DeltaKroneckerGithub_Clash_9382"
+      - "@DeltaKroneckerGithub_Clash_3479"
+      - "@DeltaKroneckerGithub_Clash_8508"
+      - "@DeltaKroneckerGithub_Clash_3207"
+      - "@DeltaKroneckerGithub_Clash_5462"
+      - "@DeltaKroneckerGithub_Clash_5667"
+      - "@DeltaKroneckerGithub_Clash_3386"
+      - "@DeltaKroneckerGithub_Clash_8796"
+      - "@DeltaKroneckerGithub_Clash_6781"
+      - "@DeltaKroneckerGithub_Clash_1623"
+      - "@DeltaKroneckerGithub_Clash_1977"
+      - "@DeltaKroneckerGithub_Clash_1172"
+      - "@DeltaKroneckerGithub_Clash_10090"
+      - "@DeltaKroneckerGithub_Clash_4965"
+      - "@DeltaKroneckerGithub_Clash_8062"
+      - "@DeltaKroneckerGithub_Clash_4815"
+      - "@DeltaKroneckerGithub_Clash_2580"
+      - "@DeltaKroneckerGithub_Clash_4337"
+      - "@DeltaKroneckerGithub_Clash_4198"
+      - "@DeltaKroneckerGithub_Clash_8179"
+
+  - name: "Fallback"
+    type: fallback
+    url: http://www.gstatic.com/generate_204
+    interval: 60
+    lazy: true
+    proxies:
+      - "@DeltaKroneckerGithub_Clash_4741"
+      - "@DeltaKroneckerGithub_Clash_8771"
+      - "@DeltaKroneckerGithub_Clash_6219"
+      - "@DeltaKroneckerGithub_Clash_5220"
+      - "@DeltaKroneckerGithub_Clash_4992"
+      - "@DeltaKroneckerGithub_Clash_3216"
+      - "@DeltaKroneckerGithub_Clash_6170"
+      - "@DeltaKroneckerGithub_Clash_4244"
+      - "@DeltaKroneckerGithub_Clash_2025"
+      - "@DeltaKroneckerGithub_Clash_5961"
+      - "@DeltaKroneckerGithub_Clash_6223"
+      - "@DeltaKroneckerGithub_Clash_8052"
+      - "@DeltaKroneckerGithub_Clash_4041"
+      - "@DeltaKroneckerGithub_Clash_10006"
+      - "@DeltaKroneckerGithub_Clash_1757"
+      - "@DeltaKroneckerGithub_Clash_6566"
+      - "@DeltaKroneckerGithub_Clash_3824"
+      - "@DeltaKroneckerGithub_Clash_8104"
+      - "@DeltaKroneckerGithub_Clash_4240"
+      - "@DeltaKroneckerGithub_Clash_1855"
+      - "@DeltaKroneckerGithub_Clash_2105"
+      - "@DeltaKroneckerGithub_Clash_2158"
+      - "@DeltaKroneckerGithub_Clash_8768"
+      - "@DeltaKroneckerGithub_Clash_5769"
+      - "@DeltaKroneckerGithub_Clash_8770"
+      - "@DeltaKroneckerGithub_Clash_4172"
+      - "@DeltaKroneckerGithub_Clash_10155"
+      - "@DeltaKroneckerGithub_Clash_663"
+      - "@DeltaKroneckerGithub_Clash_167"
+      - "@DeltaKroneckerGithub_Clash_7375"
+      - "@DeltaKroneckerGithub_Clash_1588"
+      - "@DeltaKroneckerGithub_Clash_5915"
+      - "@DeltaKroneckerGithub_Clash_2220"
+      - "@DeltaKroneckerGithub_Clash_7103"
+      - "@DeltaKroneckerGithub_Clash_7698"
+      - "@DeltaKroneckerGithub_Clash_1274"
+      - "@DeltaKroneckerGithub_Clash_345"
+      - "@DeltaKroneckerGithub_Clash_531"
+      - "@DeltaKroneckerGithub_Clash_7834"
+      - "@DeltaKroneckerGithub_Clash_3473"
+      - "@DeltaKroneckerGithub_Clash_10181"
+      - "@DeltaKroneckerGithub_Clash_1979"
+      - "@DeltaKroneckerGithub_Clash_7264"
+      - "@DeltaKroneckerGithub_Clash_171"
+      - "@DeltaKroneckerGithub_Clash_8250"
+      - "@DeltaKroneckerGithub_Clash_9287"
+      - "@DeltaKroneckerGithub_Clash_8612"
+      - "@DeltaKroneckerGithub_Clash_8282"
+      - "@DeltaKroneckerGithub_Clash_7668"
+      - "@DeltaKroneckerGithub_Clash_1224"
+      - "@DeltaKroneckerGithub_Clash_7772"
+      - "@DeltaKroneckerGithub_Clash_4752"
+      - "@DeltaKroneckerGithub_Clash_5304"
+      - "@DeltaKroneckerGithub_Clash_7584"
+      - "@DeltaKroneckerGithub_Clash_1170"
+      - "@DeltaKroneckerGithub_Clash_8132"
+      - "@DeltaKroneckerGithub_Clash_3237"
+      - "@DeltaKroneckerGithub_Clash_5254"
+      - "@DeltaKroneckerGithub_Clash_8578"
+      - "@DeltaKroneckerGithub_Clash_8202"
+      - "@DeltaKroneckerGithub_Clash_869"
+      - "@DeltaKroneckerGithub_Clash_7341"
+      - "@DeltaKroneckerGithub_Clash_9112"
+      - "@DeltaKroneckerGithub_Clash_4284"
+      - "@DeltaKroneckerGithub_Clash_5832"
+      - "@DeltaKroneckerGithub_Clash_3438"
+      - "@DeltaKroneckerGithub_Clash_778"
+      - "@DeltaKroneckerGithub_Clash_2150"
+      - "@DeltaKroneckerGithub_Clash_1442"
+      - "@DeltaKroneckerGithub_Clash_1898"
+      - "@DeltaKroneckerGithub_Clash_7445"
+      - "@DeltaKroneckerGithub_Clash_10329"
+      - "@DeltaKroneckerGithub_Clash_5796"
+      - "@DeltaKroneckerGithub_Clash_3444"
+      - "@DeltaKroneckerGithub_Clash_7890"
+      - "@DeltaKroneckerGithub_Clash_3247"
+      - "@DeltaKroneckerGithub_Clash_2687"
+      - "@DeltaKroneckerGithub_Clash_4316"
+      - "@DeltaKroneckerGithub_Clash_231"
+      - "@DeltaKroneckerGithub_Clash_6271"
+      - "@DeltaKroneckerGithub_Clash_314"
+      - "@DeltaKroneckerGithub_Clash_7191"
+      - "@DeltaKroneckerGithub_Clash_9082"
+      - "@DeltaKroneckerGithub_Clash_1011"
+      - "@DeltaKroneckerGithub_Clash_3013"
+      - "@DeltaKroneckerGithub_Clash_9454"
+      - "@DeltaKroneckerGithub_Clash_10201"
+      - "@DeltaKroneckerGithub_Clash_10267"
+      - "@DeltaKroneckerGithub_Clash_8613"
+      - "@DeltaKroneckerGithub_Clash_905"
+      - "@DeltaKroneckerGithub_Clash_5369"
+      - "@DeltaKroneckerGithub_Clash_5089"
+      - "@DeltaKroneckerGithub_Clash_5431"
+      - "@DeltaKroneckerGithub_Clash_9004"
+      - "@DeltaKroneckerGithub_Clash_9726"
+      - "@DeltaKroneckerGithub_Clash_7760"
+      - "@DeltaKroneckerGithub_Clash_3027"
+      - "@DeltaKroneckerGithub_Clash_2203"
+      - "@DeltaKroneckerGithub_Clash_7198"
+      - "@DeltaKroneckerGithub_Clash_7167"
+      - "@DeltaKroneckerGithub_Clash_9208"
+      - "@DeltaKroneckerGithub_Clash_8451"
+      - "@DeltaKroneckerGithub_Clash_5646"
+      - "@DeltaKroneckerGithub_Clash_1710"
+      - "@DeltaKroneckerGithub_Clash_6423"
+      - "@DeltaKroneckerGithub_Clash_7351"
+      - "@DeltaKroneckerGithub_Clash_6598"
+      - "@DeltaKroneckerGithub_Clash_2521"
+      - "@DeltaKroneckerGithub_Clash_8359"
+      - "@DeltaKroneckerGithub_Clash_1268"
+      - "@DeltaKroneckerGithub_Clash_9752"
+      - "@DeltaKroneckerGithub_Clash_6302"
+      - "@DeltaKroneckerGithub_Clash_10239"
+      - "@DeltaKroneckerGithub_Clash_6150"
+      - "@DeltaKroneckerGithub_Clash_2750"
+      - "@DeltaKroneckerGithub_Clash_3315"
+      - "@DeltaKroneckerGithub_Clash_7881"
+      - "@DeltaKroneckerGithub_Clash_4750"
+      - "@DeltaKroneckerGithub_Clash_2486"
+      - "@DeltaKroneckerGithub_Clash_7754"
+      - "@DeltaKroneckerGithub_Clash_7372"
+      - "@DeltaKroneckerGithub_Clash_9149"
+      - "@DeltaKroneckerGithub_Clash_8892"
+      - "@DeltaKroneckerGithub_Clash_2352"
+      - "@DeltaKroneckerGithub_Clash_10099"
+      - "@DeltaKroneckerGithub_Clash_10303"
+      - "@DeltaKroneckerGithub_Clash_6688"
+      - "@DeltaKroneckerGithub_Clash_321"
+      - "@DeltaKroneckerGithub_Clash_6193"
+      - "@DeltaKroneckerGithub_Clash_7718"
+      - "@DeltaKroneckerGithub_Clash_4522"
+      - "@DeltaKroneckerGithub_Clash_89"
+      - "@DeltaKroneckerGithub_Clash_9807"
+      - "@DeltaKroneckerGithub_Clash_2088"
+      - "@DeltaKroneckerGithub_Clash_7129"
+      - "@DeltaKroneckerGithub_Clash_3154"
+      - "@DeltaKroneckerGithub_Clash_8152"
+      - "@DeltaKroneckerGithub_Clash_3994"
+      - "@DeltaKroneckerGithub_Clash_8963"
+      - "@DeltaKroneckerGithub_Clash_4331"
+      - "@DeltaKroneckerGithub_Clash_8273"
+      - "@DeltaKroneckerGithub_Clash_2316"
+      - "@DeltaKroneckerGithub_Clash_3544"
+      - "@DeltaKroneckerGithub_Clash_2995"
+      - "@DeltaKroneckerGithub_Clash_9155"
+      - "@DeltaKroneckerGithub_Clash_3346"
+      - "@DeltaKroneckerGithub_Clash_4152"
+      - "@DeltaKroneckerGithub_Clash_9602"
+      - "@DeltaKroneckerGithub_Clash_6355"
+      - "@DeltaKroneckerGithub_Clash_2860"
+      - "@DeltaKroneckerGithub_Clash_7790"
+      - "@DeltaKroneckerGithub_Clash_9945"
+      - "@DeltaKroneckerGithub_Clash_8775"
+      - "@DeltaKroneckerGithub_Clash_9189"
+      - "@DeltaKroneckerGithub_Clash_8183"
+      - "@DeltaKroneckerGithub_Clash_5767"
+      - "@DeltaKroneckerGithub_Clash_3287"
+      - "@DeltaKroneckerGithub_Clash_9398"
+      - "@DeltaKroneckerGithub_Clash_6493"
+      - "@DeltaKroneckerGithub_Clash_4514"
+      - "@DeltaKroneckerGithub_Clash_9196"
+      - "@DeltaKroneckerGithub_Clash_4196"
+      - "@DeltaKroneckerGithub_Clash_7505"
+      - "@DeltaKroneckerGithub_Clash_7463"
+      - "@DeltaKroneckerGithub_Clash_9757"
+      - "@DeltaKroneckerGithub_Clash_5086"
+      - "@DeltaKroneckerGithub_Clash_3697"
+      - "@DeltaKroneckerGithub_Clash_10203"
+      - "@DeltaKroneckerGithub_Clash_5248"
+      - "@DeltaKroneckerGithub_Clash_827"
+      - "@DeltaKroneckerGithub_Clash_7099"
+      - "@DeltaKroneckerGithub_Clash_8481"
+      - "@DeltaKroneckerGithub_Clash_7155"
+      - "@DeltaKroneckerGithub_Clash_9296"
+      - "@DeltaKroneckerGithub_Clash_1147"
+      - "@DeltaKroneckerGithub_Clash_1472"
+      - "@DeltaKroneckerGithub_Clash_3382"
+      - "@DeltaKroneckerGithub_Clash_5121"
+      - "@DeltaKroneckerGithub_Clash_5760"
+      - "@DeltaKroneckerGithub_Clash_7262"
+      - "@DeltaKroneckerGithub_Clash_6898"
+      - "@DeltaKroneckerGithub_Clash_10171"
+      - "@DeltaKroneckerGithub_Clash_5716"
+      - "@DeltaKroneckerGithub_Clash_3156"
+      - "@DeltaKroneckerGithub_Clash_9334"
+      - "@DeltaKroneckerGithub_Clash_4789"
+      - "@DeltaKroneckerGithub_Clash_4520"
+      - "@DeltaKroneckerGithub_Clash_6382"
+      - "@DeltaKroneckerGithub_Clash_8815"
+      - "@DeltaKroneckerGithub_Clash_3887"
+      - "@DeltaKroneckerGithub_Clash_4178"
+      - "@DeltaKroneckerGithub_Clash_5813"
+      - "@DeltaKroneckerGithub_Clash_407"
+      - "@DeltaKroneckerGithub_Clash_1107"
+      - "@DeltaKroneckerGithub_Clash_2572"
+      - "@DeltaKroneckerGithub_Clash_1166"
+      - "@DeltaKroneckerGithub_Clash_8300"
+      - "@DeltaKroneckerGithub_Clash_903"
+      - "@DeltaKroneckerGithub_Clash_5188"
+      - "@DeltaKroneckerGithub_Clash_8187"
+      - "@DeltaKroneckerGithub_Clash_636"
+      - "@DeltaKroneckerGithub_Clash_4302"
+      - "@DeltaKroneckerGithub_Clash_5243"
+      - "@DeltaKroneckerGithub_Clash_2308"
+      - "@DeltaKroneckerGithub_Clash_8041"
+      - "@DeltaKroneckerGithub_Clash_3057"
+      - "@DeltaKroneckerGithub_Clash_5792"
+      - "@DeltaKroneckerGithub_Clash_10112"
+      - "@DeltaKroneckerGithub_Clash_7616"
+      - "@DeltaKroneckerGithub_Clash_9482"
+      - "@DeltaKroneckerGithub_Clash_6241"
+      - "@DeltaKroneckerGithub_Clash_6648"
+      - "@DeltaKroneckerGithub_Clash_9489"
+      - "@DeltaKroneckerGithub_Clash_9067"
+      - "@DeltaKroneckerGithub_Clash_17"
+      - "@DeltaKroneckerGithub_Clash_9974"
+      - "@DeltaKroneckerGithub_Clash_5674"
+      - "@DeltaKroneckerGithub_Clash_6412"
+      - "@DeltaKroneckerGithub_Clash_6830"
+      - "@DeltaKroneckerGithub_Clash_10134"
+      - "@DeltaKroneckerGithub_Clash_3425"
+      - "@DeltaKroneckerGithub_Clash_8662"
+      - "@DeltaKroneckerGithub_Clash_9463"
+      - "@DeltaKroneckerGithub_Clash_9295"
+      - "@DeltaKroneckerGithub_Clash_5359"
+      - "@DeltaKroneckerGithub_Clash_3802"
+      - "@DeltaKroneckerGithub_Clash_6176"
+      - "@DeltaKroneckerGithub_Clash_5773"
+      - "@DeltaKroneckerGithub_Clash_3090"
+      - "@DeltaKroneckerGithub_Clash_8139"
+      - "@DeltaKroneckerGithub_Clash_5401"
+      - "@DeltaKroneckerGithub_Clash_4627"
+      - "@DeltaKroneckerGithub_Clash_858"
+      - "@DeltaKroneckerGithub_Clash_8609"
+      - "@DeltaKroneckerGithub_Clash_8914"
+      - "@DeltaKroneckerGithub_Clash_7776"
+      - "@DeltaKroneckerGithub_Clash_5595"
+      - "@DeltaKroneckerGithub_Clash_9651"
+      - "@DeltaKroneckerGithub_Clash_6182"
+      - "@DeltaKroneckerGithub_Clash_10062"
+      - "@DeltaKroneckerGithub_Clash_9166"
+      - "@DeltaKroneckerGithub_Clash_8230"
+      - "@DeltaKroneckerGithub_Clash_4674"
+      - "@DeltaKroneckerGithub_Clash_721"
+      - "@DeltaKroneckerGithub_Clash_7070"
+      - "@DeltaKroneckerGithub_Clash_9339"
+      - "@DeltaKroneckerGithub_Clash_1393"
+      - "@DeltaKroneckerGithub_Clash_2312"
+      - "@DeltaKroneckerGithub_Clash_5651"
+      - "@DeltaKroneckerGithub_Clash_6882"
+      - "@DeltaKroneckerGithub_Clash_4163"
+      - "@DeltaKroneckerGithub_Clash_5321"
+      - "@DeltaKroneckerGithub_Clash_8307"
+      - "@DeltaKroneckerGithub_Clash_8952"
+      - "@DeltaKroneckerGithub_Clash_7270"
+      - "@DeltaKroneckerGithub_Clash_5203"
+      - "@DeltaKroneckerGithub_Clash_881"
+      - "@DeltaKroneckerGithub_Clash_1137"
+      - "@DeltaKroneckerGithub_Clash_10191"
+      - "@DeltaKroneckerGithub_Clash_1772"
+      - "@DeltaKroneckerGithub_Clash_3371"
+      - "@DeltaKroneckerGithub_Clash_6555"
+      - "@DeltaKroneckerGithub_Clash_15"
+      - "@DeltaKroneckerGithub_Clash_5155"
+      - "@DeltaKroneckerGithub_Clash_6146"
+      - "@DeltaKroneckerGithub_Clash_1043"
+      - "@DeltaKroneckerGithub_Clash_8256"
+      - "@DeltaKroneckerGithub_Clash_8698"
+      - "@DeltaKroneckerGithub_Clash_7449"
+      - "@DeltaKroneckerGithub_Clash_7806"
+      - "@DeltaKroneckerGithub_Clash_9174"
+      - "@DeltaKroneckerGithub_Clash_1790"
+      - "@DeltaKroneckerGithub_Clash_4404"
+      - "@DeltaKroneckerGithub_Clash_10301"
+      - "@DeltaKroneckerGithub_Clash_2967"
+      - "@DeltaKroneckerGithub_Clash_339"
+      - "@DeltaKroneckerGithub_Clash_6243"
+      - "@DeltaKroneckerGithub_Clash_4304"
+      - "@DeltaKroneckerGithub_Clash_6951"
+      - "@DeltaKroneckerGithub_Clash_1375"
+      - "@DeltaKroneckerGithub_Clash_9076"
+      - "@DeltaKroneckerGithub_Clash_3728"
+      - "@DeltaKroneckerGithub_Clash_3461"
+      - "@DeltaKroneckerGithub_Clash_254"
+      - "@DeltaKroneckerGithub_Clash_9745"
+      - "@DeltaKroneckerGithub_Clash_9098"
+      - "@DeltaKroneckerGithub_Clash_10210"
+      - "@DeltaKroneckerGithub_Clash_1555"
+      - "@DeltaKroneckerGithub_Clash_10102"
+      - "@DeltaKroneckerGithub_Clash_10248"
+      - "@DeltaKroneckerGithub_Clash_9248"
+      - "@DeltaKroneckerGithub_Clash_856"
+      - "@DeltaKroneckerGithub_Clash_8176"
+      - "@DeltaKroneckerGithub_Clash_2805"
+      - "@DeltaKroneckerGithub_Clash_3899"
+      - "@DeltaKroneckerGithub_Clash_5403"
+      - "@DeltaKroneckerGithub_Clash_7922"
+      - "@DeltaKroneckerGithub_Clash_8579"
+      - "@DeltaKroneckerGithub_Clash_5757"
+      - "@DeltaKroneckerGithub_Clash_6415"
+      - "@DeltaKroneckerGithub_Clash_6425"
+      - "@DeltaKroneckerGithub_Clash_4749"
+      - "@DeltaKroneckerGithub_Clash_3100"
+      - "@DeltaKroneckerGithub_Clash_7424"
+      - "@DeltaKroneckerGithub_Clash_4220"
+      - "@DeltaKroneckerGithub_Clash_6135"
+      - "@DeltaKroneckerGithub_Clash_1059"
+      - "@DeltaKroneckerGithub_Clash_2778"
+      - "@DeltaKroneckerGithub_Clash_10028"
+      - "@DeltaKroneckerGithub_Clash_8869"
+      - "@DeltaKroneckerGithub_Clash_3086"
+      - "@DeltaKroneckerGithub_Clash_3065"
+      - "@DeltaKroneckerGithub_Clash_3311"
+      - "@DeltaKroneckerGithub_Clash_7477"
+      - "@DeltaKroneckerGithub_Clash_7664"
+      - "@DeltaKroneckerGithub_Clash_2479"
+      - "@DeltaKroneckerGithub_Clash_8510"
+      - "@DeltaKroneckerGithub_Clash_8193"
+      - "@DeltaKroneckerGithub_Clash_6388"
+      - "@DeltaKroneckerGithub_Clash_9124"
+      - "@DeltaKroneckerGithub_Clash_3974"
+      - "@DeltaKroneckerGithub_Clash_1890"
+      - "@DeltaKroneckerGithub_Clash_7610"
+      - "@DeltaKroneckerGithub_Clash_9753"
+      - "@DeltaKroneckerGithub_Clash_6690"
+      - "@DeltaKroneckerGithub_Clash_8641"
+      - "@DeltaKroneckerGithub_Clash_5053"
+      - "@DeltaKroneckerGithub_Clash_8557"
+      - "@DeltaKroneckerGithub_Clash_6972"
+      - "@DeltaKroneckerGithub_Clash_6209"
+      - "@DeltaKroneckerGithub_Clash_8479"
+      - "@DeltaKroneckerGithub_Clash_1570"
+      - "@DeltaKroneckerGithub_Clash_6763"
+      - "@DeltaKroneckerGithub_Clash_8308"
+      - "@DeltaKroneckerGithub_Clash_9865"
+      - "@DeltaKroneckerGithub_Clash_7289"
+      - "@DeltaKroneckerGithub_Clash_3557"
+      - "@DeltaKroneckerGithub_Clash_10264"
+      - "@DeltaKroneckerGithub_Clash_5055"
+      - "@DeltaKroneckerGithub_Clash_3966"
+      - "@DeltaKroneckerGithub_Clash_1431"
+      - "@DeltaKroneckerGithub_Clash_1014"
+      - "@DeltaKroneckerGithub_Clash_6826"
+      - "@DeltaKroneckerGithub_Clash_9446"
+      - "@DeltaKroneckerGithub_Clash_3098"
+      - "@DeltaKroneckerGithub_Clash_7040"
+      - "@DeltaKroneckerGithub_Clash_2007"
+      - "@DeltaKroneckerGithub_Clash_734"
+      - "@DeltaKroneckerGithub_Clash_8647"
+      - "@DeltaKroneckerGithub_Clash_7694"
+      - "@DeltaKroneckerGithub_Clash_9382"
+      - "@DeltaKroneckerGithub_Clash_3479"
+      - "@DeltaKroneckerGithub_Clash_8508"
+      - "@DeltaKroneckerGithub_Clash_3207"
+      - "@DeltaKroneckerGithub_Clash_5462"
+      - "@DeltaKroneckerGithub_Clash_5667"
+      - "@DeltaKroneckerGithub_Clash_3386"
+      - "@DeltaKroneckerGithub_Clash_8796"
+      - "@DeltaKroneckerGithub_Clash_6781"
+      - "@DeltaKroneckerGithub_Clash_1623"
+      - "@DeltaKroneckerGithub_Clash_1977"
+      - "@DeltaKroneckerGithub_Clash_1172"
+      - "@DeltaKroneckerGithub_Clash_10090"
+      - "@DeltaKroneckerGithub_Clash_4965"
+      - "@DeltaKroneckerGithub_Clash_8062"
+      - "@DeltaKroneckerGithub_Clash_4815"
+      - "@DeltaKroneckerGithub_Clash_2580"
+      - "@DeltaKroneckerGithub_Clash_4337"
+      - "@DeltaKroneckerGithub_Clash_4198"
+      - "@DeltaKroneckerGithub_Clash_8179"
+
+rules:
+  - MATCH,PROXY
