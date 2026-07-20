@@ -2,29 +2,24 @@
 
 ## V2ray
 
-V2ray All (6389 config):
+V2ray All (6115 config):
 ```
 https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/all_configs.txt
 ```
 
-V2ray VLESS (4281 config):
+V2ray VLESS (4337 config):
 ```
 https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/protocols/vless.txt
 ```
 
-V2ray TROJAN (1384 config):
+V2ray TROJAN (1144 config):
 ```
 https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/protocols/trojan.txt
 ```
 
-V2ray SS (628 config):
+V2ray SS (634 config):
 ```
 https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/protocols/ss.txt
-```
-
-V2ray VMESS (96 config):
-```
-https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/protocols/vmess.txt
 ```
 
 WARP All:
@@ -64,36 +59,31 @@ V2ray Batch 006 (1000 config):
 https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/batches/v2ray/batch_006.txt
 ```
 
-V2ray Batch 007 (389 config):
+V2ray Batch 007 (115 config):
 ```
 https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/batches/v2ray/batch_007.txt
 ```
 
 ## Clash
 
-Clash All (6389 config):
+Clash All (6115 config):
 ```
 https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/clash.yaml
 ```
 
-Clash VLESS (4281 config):
+Clash VLESS (4337 config):
 ```
 https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/protocols/vless_clash.yaml
 ```
 
-Clash TROJAN (1384 config):
+Clash TROJAN (1144 config):
 ```
 https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/protocols/trojan_clash.yaml
 ```
 
-Clash SS (628 config):
+Clash SS (634 config):
 ```
 https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/protocols/ss_clash.yaml
-```
-
-Clash VMESS (96 config):
-```
-https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/protocols/vmess_clash.yaml
 ```
 
 WARP All:
@@ -133,36 +123,31 @@ Clash Batch 006 (1000 config):
 https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/batches/clash/batch_006.yaml
 ```
 
-Clash Batch 007 (389 config):
+Clash Batch 007 (115 config):
 ```
 https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/batches/clash/batch_007.yaml
 ```
 
 ## 127.0.0.1:40443
 
-SNI All (6389 config):
+SNI All (6115 config):
 ```
 https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/sni/all_configs_sni.txt
 ```
 
-SNI VLESS (4281 config):
+SNI VLESS (4337 config):
 ```
 https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/sni/protocols/vless_sni.txt
 ```
 
-SNI TROJAN (1384 config):
+SNI TROJAN (1144 config):
 ```
 https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/sni/protocols/trojan_sni.txt
 ```
 
-SNI SS (628 config):
+SNI SS (634 config):
 ```
 https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/sni/protocols/ss_sni.txt
-```
-
-SNI VMESS (96 config):
-```
-https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/sni/protocols/vmess_sni.txt
 ```
 
 ## 127.0.0.1:40443 Batches
@@ -187,14 +172,9 @@ SNI Batch 004 (1000 config):
 https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/batches/sni_v2ray/batch_004.txt
 ```
 
-SNI Batch 005 (1000 config):
-```
-https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/batches/sni_v2ray/batch_005.txt
-```
-
 ## TCP Pass (for advanced users)
 
-> All configs that passed TCP ping. Total: **211409**
+> All configs that passed TCP ping. Total: **168220**
 
 TCP Pass Batch 001:
 ```
@@ -281,34 +261,9 @@ TCP Pass Batch 017:
 https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/tcp-pass/batch_017.txt
 ```
 
-TCP Pass Batch 018:
-```
-https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/tcp-pass/batch_018.txt
-```
-
-TCP Pass Batch 019:
-```
-https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/tcp-pass/batch_019.txt
-```
-
-TCP Pass Batch 020:
-```
-https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/tcp-pass/batch_020.txt
-```
-
-TCP Pass Batch 021:
-```
-https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/tcp-pass/batch_021.txt
-```
-
-TCP Pass Batch 022:
-```
-https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/tcp-pass/batch_022.txt
-```
-
 ## TCP Pass 127.0.0.1:40443 (for advanced users)
 
-> SNI version of TCP Pass configs. Total: **211409**
+> SNI version of TCP Pass configs. Total: **168220**
 
 TCP Pass SNI Batch 001:
 ```
@@ -393,25 +348,5 @@ https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/tcp-p
 TCP Pass SNI Batch 017:
 ```
 https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/tcp-pass-sni/batch_017.txt
-```
-
-TCP Pass SNI Batch 018:
-```
-https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/tcp-pass-sni/batch_018.txt
-```
-
-TCP Pass SNI Batch 019:
-```
-https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/tcp-pass-sni/batch_019.txt
-```
-
-TCP Pass SNI Batch 020:
-```
-https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/tcp-pass-sni/batch_020.txt
-```
-
-TCP Pass SNI Batch 021:
-```
-https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/tcp-pass-sni/batch_021.txt
 ```
 
