@@ -91,6 +91,9 @@ func main() {
 		gLog.logSummary(elapsed, results, failedLinks)
 	}
 
+	fmt.Println("🌍 Detecting server countries...")
+	results = enrichResultsWithGeoIP(results, cfg.Geo)
+
 	writeOutputFiles(results, onlyTCPPass)
 	writeSummary(results, failedLinks, elapsed, len(allConfigs), len(onlyTCPPass))
 	fmt.Println("✅ Done!")

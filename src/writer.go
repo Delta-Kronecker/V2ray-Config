@@ -102,6 +102,7 @@ func prepareOutputDirs() error {
 		"config/batches/sni_clash_advanced",
 		"config/tcp-pass",
 		"config/tcp-pass-sni",
+		"config/countries",
 	}
 	for _, dir := range dirs {
 		if err := os.MkdirAll(dir, 0755); err != nil {
@@ -128,30 +129,55 @@ func writeOutputFiles(results []configResult, tcpFailedLines []string) {
 	var allSNIClash []string
 	var allSNIClashNames []string
 
-	const v2rayName = "@DeltaKroneckerGithub"
+	// Per-country tracking
+	byCountryV2ray := make(map[string][]string)
+	byCountryClash := make(map[string][]string)
+	byCountryClashNames := make(map[string][]string)
+	countryCounts := make(map[string]int)
+
+	const fallbackName = "@DeltaKroneckerGithub"
 	const clashBaseN = "@DeltaKroneckerGithub_Clash"
 
 	for i, r := range results {
-		// v2ray: fixed name (no counter)
-		named := renameTo(r.line, r.proto, v2rayName)
+		// Determine remark: flag emoji if available, else fallback
+		remark := r.flagEmoji
+		if remark == "" {
+			remark = fallbackName
+		}
+		clashRemark := remark
+
+		// v2ray: use flag emoji as remark
+		named := renameTo(r.line, r.proto, remark)
 		all = append(all, named)
 		byProto[r.proto] = append(byProto[r.proto], named)
 
-		// clash: numbered name
-		cname := generateUniqueName(clashBaseN)
+		// Per-country v2ray
+		if r.country != "" {
+			byCountryV2ray[r.country] = append(byCountryV2ray[r.country], named)
+			countryCounts[r.country]++
+		}
+
+		// clash: numbered name with flag prefix
+		cname := generateUniqueName(clashRemark)
 		if entry, ok := configToClashYAML(r.line, r.proto, cname); ok {
 			allClash = append(allClash, entry)
 			allClashNames = append(allClashNames, cname)
 			byProtoClash[r.proto] = append(byProtoClash[r.proto], entry)
 			byProtoClashNames[r.proto] = append(byProtoClashNames[r.proto], cname)
+
+			// Per-country clash
+			if r.country != "" {
+				byCountryClash[r.country] = append(byCountryClash[r.country], entry)
+				byCountryClashNames[r.country] = append(byCountryClashNames[r.country], cname)
+			}
 		}
 
 		if sniLine := toSNIConfig(r.line, r.proto); sniLine != "" && isWSTransport(r.line, r.proto) {
-			sniNamed := renameTo(sniLine, r.proto, v2rayName)
+			sniNamed := renameTo(sniLine, r.proto, remark)
 			allSNI = append(allSNI, sniNamed)
 			bySNIProto[r.proto] = append(bySNIProto[r.proto], sniNamed)
 
-			sniCname := generateUniqueName(clashBaseN)
+			sniCname := generateUniqueName(clashRemark)
 			if sniEntry, ok := configToClashYAML(sniLine, r.proto, sniCname); ok {
 				allSNIClash = append(allSNIClash, sniEntry)
 				allSNIClashNames = append(allSNIClashNames, sniCname)
@@ -205,6 +231,9 @@ func writeOutputFiles(results []configResult, tcpFailedLines []string) {
 
 	writeBatchFiles(all, allClash, allClashNames, allSNI, allSNIClash, allSNIClashNames)
 	writeTCPPassFiles(tcpFailedLines)
+
+	// ── Per-country output files ───────────────────────────────────────────────
+	writeCountryFiles(byCountryV2ray, byCountryClash, byCountryClashNames, countryCounts)
 }
 
 func isWSTransport(line, proto string) bool {
@@ -350,6 +379,68 @@ func writeBatchFiles(
 				writeClashConfigAdvanced(fmt.Sprintf("config/batches/sni_clash_advanced/batch_%03d.yaml", batchIdx+1), entries, names)
 			}
 		}
+	}
+}
+
+// ── writeCountryFiles ────────────────────────────────────────────────────────
+
+func writeCountryFiles(
+	byCountryV2ray map[string][]string,
+	byCountryClash map[string][]string,
+	byCountryClashNames map[string][]string,
+	countryCounts map[string]int,
+) {
+	if len(countryCounts) == 0 {
+		return
+	}
+
+	fmt.Printf("📁 Writing per-country files for %d countries...\n", len(countryCounts))
+
+	// Sort countries by count desc
+	type countryEntry struct {
+		code  string
+		flag  string
+		count int
+	}
+	var sorted []countryEntry
+	for cc, count := range countryCounts {
+		sorted = append(sorted, countryEntry{cc, countryCodeToFlag(cc), count})
+	}
+	for i := 0; i < len(sorted); i++ {
+		for j := i + 1; j < len(sorted); j++ {
+			if sorted[j].count > sorted[i].count {
+				sorted[i], sorted[j] = sorted[j], sorted[i]
+			}
+		}
+	}
+
+	for _, entry := range sorted {
+		cc := entry.code
+		flag := entry.flag
+		safeCC := strings.ToLower(cc)
+
+		// V2ray per-country
+		if lines, ok := byCountryV2ray[cc]; ok && len(lines) > 0 {
+			writeFile(fmt.Sprintf("config/countries/%s.txt", safeCC), lines)
+		}
+
+		// Clash per-country (simple)
+		if gClash.simple != "" {
+			if entries, ok := byCountryClash[cc]; ok && len(entries) > 0 {
+				names := byCountryClashNames[cc]
+				writeClashConfigSimple(fmt.Sprintf("config/countries/%s_clash.yaml", safeCC), entries, names)
+			}
+		}
+
+		// Clash per-country (advanced)
+		if gClash.advanced != "" {
+			if entries, ok := byCountryClash[cc]; ok && len(entries) > 0 {
+				names := byCountryClashNames[cc]
+				writeClashConfigAdvanced(fmt.Sprintf("config/countries/%s_clash_advanced.yaml", safeCC), entries, names)
+			}
+		}
+
+		fmt.Printf("   %s %s: %d configs\n", flag, cc, entry.count)
 	}
 }
 
@@ -1529,6 +1620,75 @@ func writeSummary(results []configResult, failedLinks []string, duration float64
 		}
 	}
 	gen.WriteString("WARP All:\n```\nhttps://github.com/Delta-Kronecker/WARP-Config/raw/refs/heads/main/ALL.txt\n```\n\n")
+
+	// ── By Country ─────────────────────────────────────────────────────────────
+	countryCount := make(map[string]int)
+	for _, r := range results {
+		if r.country != "" {
+			countryCount[r.country]++
+		}
+	}
+	if len(countryCount) > 0 {
+		gen.WriteString("## By Country\n\n")
+
+		type ccEntry struct {
+			code  string
+			count int
+		}
+		var sorted []ccEntry
+		for cc, count := range countryCount {
+			sorted = append(sorted, ccEntry{cc, count})
+		}
+		for i := 0; i < len(sorted); i++ {
+			for j := i + 1; j < len(sorted); j++ {
+				if sorted[j].count > sorted[i].count {
+					sorted[i], sorted[j] = sorted[j], sorted[i]
+				}
+			}
+		}
+
+		// Build cell rows: each cell is "| Country | V2ray | Clash |"
+		type cell struct {
+			cc      string
+			v2rayN  int
+			v2rayF  string
+			clashN  int
+			clashF  string
+		}
+		var cells []cell
+		for _, entry := range sorted {
+			cc := entry.code
+			safeCC := strings.ToLower(cc)
+			cells = append(cells, cell{
+				cc:     cc,
+				v2rayN: entry.count,
+				v2rayF: fmt.Sprintf("%s/config/countries/%s.txt", repoBase, safeCC),
+				clashN: entry.count,
+				clashF: fmt.Sprintf("%s/config/countries/%s_clash.yaml", repoBase, safeCC),
+			})
+		}
+
+		const cols = 3
+		// Header
+		gen.WriteString("| Country | V2ray | Clash | Country | V2ray | Clash | Country | V2ray | Clash |\n")
+		gen.WriteString("|---------|-------|-------|---------|-------|-------|---------|-------|-------|\n")
+
+		numRows := (len(cells) + cols - 1) / cols
+		for row := 0; row < numRows; row++ {
+			for c := 0; c < cols; c++ {
+				idx := row*cols + c
+				if idx < len(cells) {
+					cl := cells[idx]
+					gen.WriteString(fmt.Sprintf("| %s | [%d](%s) | [%d](%s) |",
+						cl.cc, cl.v2rayN, cl.v2rayF, cl.clashN, cl.clashF))
+				} else {
+					gen.WriteString("|  |  |  |")
+				}
+			}
+			gen.WriteString("\n")
+		}
+		gen.WriteString("\n")
+	}
 
 	// ── 2. V2ray Batches ────────────────────────────────────────────────────────
 	v2rayBatches := countBatchFiles("config/batches/v2ray")

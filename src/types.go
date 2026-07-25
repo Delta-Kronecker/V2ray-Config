@@ -15,6 +15,15 @@ type Settings struct {
 	Base64Links   []string           `json:"base64_links"`
 	TextLinks     []string           `json:"text_links"`
 	Output        OutputSettings     `json:"output"`
+	Geo           GeoSettings        `json:"geo"`
+}
+
+type GeoSettings struct {
+	APIURL         string `json:"api_url"`
+	TimeoutMs      int    `json:"timeout_ms"`
+	MaxRetries     int    `json:"max_retries"`
+	BatchSize      int    `json:"batch_size"`
+	BatchDelayMs   int    `json:"batch_delay_ms"`
 }
 
 type ValidationSettings struct {
@@ -159,8 +168,10 @@ type validationResult struct {
 }
 
 type configResult struct {
-	line  string
-	proto string
+	line      string
+	proto     string
+	country   string
+	flagEmoji string
 }
 
 // ── Protocol stats ────────────────────────────────────────────────────────────
