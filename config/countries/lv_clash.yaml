@@ -1,0 +1,325 @@
+name: "Standard"
+mixed-port: 7890
+socks-port: 7891
+port: 7892
+allow-lan: true
+bind-address: '*'
+mode: global
+log-level: info
+ipv6: false
+external-controller: 127.0.0.1:9090
+external-ui: ui
+secret: ""
+unified-delay: true
+tcp-concurrent: true
+global-client-fingerprint: chrome
+find-process-mode: strict
+keep-alive-interval: 15
+
+profile:
+  store-selected: true
+  store-fake-ip: false
+
+dns:
+  enable: true
+  ipv6: false
+  listen: 0.0.0.0:5353
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+    - '*.local'
+    - '*.lan'
+    - '*.localhost'
+    - '+.stun.*.*'
+    - '+.stun.*.*.*'
+    - 'time.*'
+    - 'time.*.com'
+    - 'connectivitycheck.gstatic.com'
+    - 'detectportal.firefox.com'
+    - 'captive.apple.com'
+    - 'www.msftncsi.com'
+    - 'cp.cloudflare.com'
+  default-nameserver:
+    - 1.1.1.1
+    - 8.8.8.8
+    - 9.9.9.9
+    - 149.112.112.112
+    - 208.67.222.222
+    - 94.140.14.14
+    - 64.6.64.6
+    - 84.200.69.80
+    - 76.76.19.19
+    - 8.26.56.26
+  nameserver:
+    - https://cloudflare-dns.com/dns-query
+    - https://dns.google/dns-query
+    - https://dns.quad9.net/dns-query
+    - https://dns.adguard.com/dns-query
+    - https://doh.opendns.com/dns-query
+    - https://doh.comodo.com/dns-query
+    - https://doh.mullvad.net/dns-query
+    - https://doh.dns.mullvad.net/dns-query
+    - https://freedns.controld.com/p0
+    - https://freedns.controld.com/family
+
+proxies:
+  - name: "🇱🇻_1"
+    type: vless
+    server: "31.57.106.241"
+    port: 2090
+    uuid: "eab915bc-d2df-73d1-47d0-6eb240497055"
+    udp: true
+  - name: "🇱🇻_2"
+    type: vless
+    server: "31.57.62.191"
+    port: 2090
+    uuid: "eab915bc-d2df-73d1-47d0-6eb240497055"
+    udp: true
+  - name: "🇱🇻_3"
+    type: vless
+    server: "45.130.214.192"
+    port: 53231
+    uuid: "4b8d8d7f-a8b4-4e44-80a9-6f13c3149b52"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "yahoo.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "3mRweaWR6pK4HsbEtu874rNG9qBgdOMmSsKE4RkWSmk"
+      short-id: "4ffbd0f3117c6f"
+  - name: "🇱🇻_4"
+    type: vless
+    server: "31.56.205.78"
+    port: 2090
+    uuid: "eab915bc-d2df-73d1-47d0-6eb240497055"
+    udp: true
+  - name: "🇱🇻_5"
+    type: vless
+    server: "91.218.143.194"
+    port: 43798
+    uuid: "b7725d23-840a-4f8e-993c-69b40424cfc0"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "yahoo.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "W3aiFnhZRvZuZP0Zyfy7888t-NbHc0RmMEyFa7fYShU"
+      short-id: "f71c22"
+  - name: "🇱🇻_6"
+    type: vless
+    server: "188.215.31.230"
+    port: 2090
+    uuid: "eab915bc-d2df-73d1-47d0-6eb240497055"
+    udp: true
+  - name: "🇱🇻_7"
+    type: vless
+    server: "31.56.113.69"
+    port: 2090
+    uuid: "eab915bc-d2df-73d1-47d0-6eb240497055"
+    udp: true
+  - name: "🇱🇻_8"
+    type: vless
+    server: "45.145.163.115"
+    port: 39771
+    uuid: "e5bd3d75-06b3-490e-9651-930b1dc29cdb"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "yahoo.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "GMnXK7wz7qTo_IFmPy--pQcODPhYJG_CLaY2Sh4fTCI"
+      short-id: "33f2"
+  - name: "🇱🇻_9"
+    type: vless
+    server: "45.158.169.96"
+    port: 2090
+    uuid: "eab915bc-d2df-73d1-47d0-6eb240497055"
+    udp: true
+  - name: "🇱🇻_10"
+    type: vless
+    server: "46.8.228.239"
+    port: 2090
+    uuid: "eab915bc-d2df-73d1-47d0-6eb240497055"
+    udp: true
+  - name: "🇱🇻_11"
+    type: vless
+    server: "109.248.163.103"
+    port: 2090
+    uuid: "eab915bc-d2df-73d1-47d0-6eb240497055"
+    udp: true
+  - name: "🇱🇻_12"
+    type: vless
+    server: "90.156.255.198"
+    port: 51114
+    uuid: "8b575b35-3c7c-42b0-ac80-2aa6b0d7717c"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "yahoo.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "lf7NJGZAcj3b-YdbsmD6oEISr0dZRjp_gM8ZhLHwb0U"
+      short-id: "772e"
+  - name: "🇱🇻_13"
+    type: vless
+    server: "37.233.82.140"
+    port: 40478
+    uuid: "e977d854-33f3-4345-abee-bf3fa9a6d880"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "yahoo.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "lcJ0LSh015XRfz5-7wB_hln3-bq5ZatFgPugSUCrdR0"
+      short-id: "3c"
+  - name: "🇱🇻_14"
+    type: vless
+    server: "85.159.228.250"
+    port: 25703
+    uuid: "7e5964d0-36b8-43ff-885b-86c4d3bfd466"
+    udp: true
+  - name: "🇱🇻_15"
+    type: vless
+    server: "45.145.6.247"
+    port: 443
+    uuid: "be2bcd98-0ecc-000a-aa1a-b453a1878393"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "s3-fi-1.rucdn777.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "sYDQC1RUZKqtJau7wrl-i5yAYy613d9e72FRGAwvYUM"
+      short-id: ""
+    flow: "xtls-rprx-vision"
+  - name: "🇱🇻_16"
+    type: vless
+    server: "188.215.31.224"
+    port: 2090
+    uuid: "eab915bc-d2df-73d1-47d0-6eb240497055"
+    udp: true
+  - name: "🇱🇻_17"
+    type: vless
+    server: "90.156.254.164"
+    port: 19562
+    uuid: "5b96be74-656d-4bb7-85c2-d2d8a3b7c2f3"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "yahoo.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "T66pm2f_PN4Hya_A_5K0X1HQb717SUCODyoUO7Gk3Ws"
+      short-id: "9e"
+  - name: "🇱🇻_18"
+    type: vless
+    server: "185.242.105.92"
+    port: 443
+    uuid: "15e0833c-08ad-47f3-bf80-60c2a47a6774"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "deepl.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "KEZ93Y9VgoirI18wIpcfS3z8I9GiaiFe-GKqGdEPMmg"
+      short-id: "e29c9c180c62"
+    flow: "xtls-rprx-vision"
+  - name: "🇱🇻_19"
+    type: vless
+    server: "83.222.20.64"
+    port: 17910
+    uuid: "079c1b04-7ef9-4c49-8a7a-849a18ba7b9b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "yahoo.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "KUhrhiJBplVCVCrAKP2KjIA_asOgkkvEEAxUJVofjgc"
+      short-id: "8c09fb78b12f"
+  - name: "🇱🇻_20"
+    type: vless
+    server: "90.156.255.166"
+    port: 36100
+    uuid: "7e5e2a1d-6234-4ad0-ab9a-4d918368cbd8"
+    udp: true
+  - name: "🇱🇻_21"
+    type: vless
+    server: "31.57.106.87"
+    port: 2090
+    uuid: "eab915bc-d2df-73d1-47d0-6eb240497055"
+    udp: true
+  - name: "🇱🇻_22"
+    type: vless
+    server: "77.73.238.191"
+    port: 16622
+    uuid: "f2e9df1b-e0ba-4b37-a301-6aab8662c926"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "yahoo.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "E5N_ckakvqgTOjiQ6Rmuwz1fchiT1-J3tH4cbzcH_GQ"
+      short-id: "1c01d60ea915"
+  - name: "🇱🇻_23"
+    type: vless
+    server: "5.178.96.232"
+    port: 2090
+    uuid: "eab915bc-d2df-73d1-47d0-6eb240497055"
+    udp: true
+  - name: "🇱🇻_24"
+    type: trojan
+    server: "31.57.61.76"
+    port: 2053
+    password: "8r<[9'l6hAO#8ZQi"
+    sni: "Koma-YT.PAGeS.Dev"
+    skip-cert-verify: true
+    udp: true
+
+proxy-groups:
+  - name: "PROXY"
+    type: select
+    proxies:
+      - "Auto"
+
+  - name: "Auto"
+    type: url-test
+    url: https://www.gstatic.com/generate_204
+    interval: 180
+    tolerance: 30
+    lazy: true
+    proxies:
+      - "🇱🇻_1"
+      - "🇱🇻_2"
+      - "🇱🇻_3"
+      - "🇱🇻_4"
+      - "🇱🇻_5"
+      - "🇱🇻_6"
+      - "🇱🇻_7"
+      - "🇱🇻_8"
+      - "🇱🇻_9"
+      - "🇱🇻_10"
+      - "🇱🇻_11"
+      - "🇱🇻_12"
+      - "🇱🇻_13"
+      - "🇱🇻_14"
+      - "🇱🇻_15"
+      - "🇱🇻_16"
+      - "🇱🇻_17"
+      - "🇱🇻_18"
+      - "🇱🇻_19"
+      - "🇱🇻_20"
+      - "🇱🇻_21"
+      - "🇱🇻_22"
+      - "🇱🇻_23"
+      - "🇱🇻_24"
+
+
+rules:
+  - MATCH,PROXY

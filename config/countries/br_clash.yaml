@@ -1,0 +1,169 @@
+name: "Standard"
+mixed-port: 7890
+socks-port: 7891
+port: 7892
+allow-lan: true
+bind-address: '*'
+mode: global
+log-level: info
+ipv6: false
+external-controller: 127.0.0.1:9090
+external-ui: ui
+secret: ""
+unified-delay: true
+tcp-concurrent: true
+global-client-fingerprint: chrome
+find-process-mode: strict
+keep-alive-interval: 15
+
+profile:
+  store-selected: true
+  store-fake-ip: false
+
+dns:
+  enable: true
+  ipv6: false
+  listen: 0.0.0.0:5353
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+    - '*.local'
+    - '*.lan'
+    - '*.localhost'
+    - '+.stun.*.*'
+    - '+.stun.*.*.*'
+    - 'time.*'
+    - 'time.*.com'
+    - 'connectivitycheck.gstatic.com'
+    - 'detectportal.firefox.com'
+    - 'captive.apple.com'
+    - 'www.msftncsi.com'
+    - 'cp.cloudflare.com'
+  default-nameserver:
+    - 1.1.1.1
+    - 8.8.8.8
+    - 9.9.9.9
+    - 149.112.112.112
+    - 208.67.222.222
+    - 94.140.14.14
+    - 64.6.64.6
+    - 84.200.69.80
+    - 76.76.19.19
+    - 8.26.56.26
+  nameserver:
+    - https://cloudflare-dns.com/dns-query
+    - https://dns.google/dns-query
+    - https://dns.quad9.net/dns-query
+    - https://dns.adguard.com/dns-query
+    - https://doh.opendns.com/dns-query
+    - https://doh.comodo.com/dns-query
+    - https://doh.mullvad.net/dns-query
+    - https://doh.dns.mullvad.net/dns-query
+    - https://freedns.controld.com/p0
+    - https://freedns.controld.com/family
+
+proxies:
+  - name: "🇧🇷_1"
+    type: vless
+    server: "45.192.2.157"
+    port: 443
+    uuid: "5098e189-3462-4ff7-8ddd-4aaecfd060ea"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "yandex.net"
+    reality-opts:
+      public-key: "1oUeBtHH4DskTM_jCh-6enWRkFMDX9l1OU5kWYl4kxA"
+      short-id: "f34818a561dfd1fe"
+    flow: "xtls-rprx-vision"
+  - name: "🇧🇷_2"
+    type: vless
+    server: "201.79.2.141"
+    port: 443
+    uuid: "64466fd7-00d0-4e7f-ae47-1749932601da"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "play.google.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "OqBAjoEHKMfHz1bsj1nlRmehz_h_RnnYjHlWdQmK0T8"
+      short-id: "5218bfb83fb5b9b8"
+    flow: "xtls-rprx-vision"
+  - name: "🇧🇷_3"
+    type: vless
+    server: "45.194.53.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "vms.lifetime19.workers.dev"
+  - name: "🇧🇷_5"
+    type: vless
+    server: "45.192.2.173"
+    port: 443
+    uuid: "1478d83f-3e0b-4d96-99cc-b514495e53c6"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "yandex.net"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "1oUeBtHH4DskTM_jCh-6enWRkFMDX9l1OU5kWYl4kxA"
+      short-id: "364994a6f61fc955"
+    flow: "xtls-rprx-vision"
+  - name: "🇧🇷_6"
+    type: vless
+    server: "38.180.78.255"
+    port: 443
+    uuid: "1843009d-b663-de7c-3841-ac9a00000005"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "nahan-core.alirezaalbo083.workers.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/nahan"
+      headers:
+        Host: "nahan-core.alirezaalbo083.workers.dev"
+  - name: "🇧🇷_8"
+    type: vless
+    server: "45.192.2.115"
+    port: 443
+    uuid: "0b8dfc50-9e2d-4b3c-85cd-870b478312a0"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "yandex.net"
+    reality-opts:
+      public-key: "1oUeBtHH4DskTM_jCh-6enWRkFMDX9l1OU5kWYl4kxA"
+      short-id: "f34818a561dfd1fe"
+    flow: "xtls-rprx-vision"
+
+proxy-groups:
+  - name: "PROXY"
+    type: select
+    proxies:
+      - "Auto"
+
+  - name: "Auto"
+    type: url-test
+    url: https://www.gstatic.com/generate_204
+    interval: 180
+    tolerance: 30
+    lazy: true
+    proxies:
+      - "🇧🇷_1"
+      - "🇧🇷_2"
+      - "🇧🇷_3"
+      - "🇧🇷_5"
+      - "🇧🇷_6"
+      - "🇧🇷_8"
+
+
+rules:
+  - MATCH,PROXY

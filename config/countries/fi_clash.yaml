@@ -1,0 +1,1133 @@
+name: "Standard"
+mixed-port: 7890
+socks-port: 7891
+port: 7892
+allow-lan: true
+bind-address: '*'
+mode: global
+log-level: info
+ipv6: false
+external-controller: 127.0.0.1:9090
+external-ui: ui
+secret: ""
+unified-delay: true
+tcp-concurrent: true
+global-client-fingerprint: chrome
+find-process-mode: strict
+keep-alive-interval: 15
+
+profile:
+  store-selected: true
+  store-fake-ip: false
+
+dns:
+  enable: true
+  ipv6: false
+  listen: 0.0.0.0:5353
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+    - '*.local'
+    - '*.lan'
+    - '*.localhost'
+    - '+.stun.*.*'
+    - '+.stun.*.*.*'
+    - 'time.*'
+    - 'time.*.com'
+    - 'connectivitycheck.gstatic.com'
+    - 'detectportal.firefox.com'
+    - 'captive.apple.com'
+    - 'www.msftncsi.com'
+    - 'cp.cloudflare.com'
+  default-nameserver:
+    - 1.1.1.1
+    - 8.8.8.8
+    - 9.9.9.9
+    - 149.112.112.112
+    - 208.67.222.222
+    - 94.140.14.14
+    - 64.6.64.6
+    - 84.200.69.80
+    - 76.76.19.19
+    - 8.26.56.26
+  nameserver:
+    - https://cloudflare-dns.com/dns-query
+    - https://dns.google/dns-query
+    - https://dns.quad9.net/dns-query
+    - https://dns.adguard.com/dns-query
+    - https://doh.opendns.com/dns-query
+    - https://doh.comodo.com/dns-query
+    - https://doh.mullvad.net/dns-query
+    - https://doh.dns.mullvad.net/dns-query
+    - https://freedns.controld.com/p0
+    - https://freedns.controld.com/family
+
+proxies:
+  - name: "🇫🇮_1"
+    type: vless
+    server: "2.26.91.98"
+    port: 1443
+    uuid: "fd30c61d-82bf-449c-aa9e-565d0ab64b75"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sxyyvihkektlx4rjxsdj.pkc73phpweu4rbxbatm444.workers.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/@Marisa_kristi"
+      headers:
+        Host: "sxyyvihkektlx4rjxsdj.pkc73phpweu4rbxbatm444.workers.dev"
+  - name: "🇫🇮_3"
+    type: vless
+    server: "31.76.80.205"
+    port: 443
+    uuid: "b6f29f8d-016e-4f30-b57f-c0cdafab2a40"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ads.x5.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "nPcUKydxoRI66O3tT9O4QCZpLjOBvkGsiXG7pDX1BBw"
+      short-id: "6ba85179e30d4fc2"
+    flow: "xtls-rprx-vision"
+  - name: "🇫🇮_4"
+    type: vless
+    server: "fl.musicperec.ru"
+    port: 443
+    uuid: "f5a3bf49-07ca-0021-a96b-9606781e3600"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.amd.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "b4n1pcO8ST3JkGtj8YymXVrW17LEe2EHec5wY7hMMR4"
+      short-id: "6e3f0a5b"
+    flow: "xtls-rprx-vision"
+  - name: "🇫🇮_5"
+    type: vless
+    server: "62.238.48.23"
+    port: 24206
+    uuid: "b90bc52c-d95b-49d2-8061-598ddb44e288"
+    udp: true
+    network: httpupgrade
+    httpupgrade-opts:
+      path: "/?ed=2048?@soskeynets----@soskeynets----@soskeynets----@soskeynets----@soskeynets----@soskeynets----@soskeynets"
+  - name: "🇫🇮_6"
+    type: vless
+    server: "5.181.21.234"
+    port: 443
+    uuid: "d7fc372d-c057-43ce-8070-9b96abbc60f3"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "fl4.raketa-balance.com"
+    reality-opts:
+      public-key: "JaP4bhvIMW-l7T0_RkLra59DeBYI6W9XemKa8MyRPSY"
+      short-id: "6c6082a2223c1d03"
+    flow: "xtls-rprx-vision"
+  - name: "🇫🇮_7"
+    type: vless
+    server: "fl.musicperec.ru"
+    port: 443
+    uuid: "31216f81-3139-0021-bac4-646680314264"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.amd.com"
+    client-fingerprint: "edge"
+    reality-opts:
+      public-key: "b4n1pcO8ST3JkGtj8YymXVrW17LEe2EHec5wY7hMMR4"
+      short-id: "e1f8a3b6"
+    flow: "xtls-rprx-vision"
+  - name: "🇫🇮_8"
+    type: vless
+    server: "2.26.100.228"
+    port: 443
+    uuid: "8bba3194-4856-46d1-8319-075817d87eb1"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "fi3.cyphervpn.pro"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "USffNprEM08MHiuVy5bj6-kvxugxycuZcgQDFJyz2Wc"
+      short-id: "8f9d033ad6d2cebf"
+    flow: "xtls-rprx-vision"
+  - name: "🇫🇮_9"
+    type: vless
+    server: "193.233.136.85"
+    port: 2053
+    uuid: "f7e0e597-636e-4550-9f54-6ab1c0e8cf49"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.nvidia.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "Xx3r5KsSKa1I8O3avmwMbgXOWj_-MqiqzTO_7BzBxyU"
+      short-id: "58c5b3ee013bdc8f"
+    flow: "xtls-rprx-vision"
+  - name: "🇫🇮_10"
+    type: vless
+    server: "45.14.247.146"
+    port: 443
+    uuid: "d7fc372d-c057-43ce-8070-9b96abbc60f3"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "fl4.raketa-balance.com"
+    reality-opts:
+      public-key: "JaP4bhvIMW-l7T0_RkLra59DeBYI6W9XemKa8MyRPSY"
+      short-id: "6c6082a2223c1d03"
+    flow: "xtls-rprx-vision"
+  - name: "🇫🇮_11"
+    type: vless
+    server: "84.22.150.39"
+    port: 7443
+    uuid: "5cc814de-2bbb-4409-ad8c-ee841ca7bad1"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sxyyvihkektlx4rjxsdj.pkc73phpweu4rbxbatm444.workers.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/@Marisa_kristi"
+      headers:
+        Host: "sxyyvihkektlx4rjxsdj.pkc73phpweu4rbxbatm444.workers.dev"
+  - name: "🇫🇮_13"
+    type: vless
+    server: "45.144.53.99"
+    port: 443
+    uuid: "c01c2da7-6977-4b53-a493-cda17fa61b4f"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "gitea.voidmoor.com"
+    reality-opts:
+      public-key: "p8VariNOxqulB45KBqfYb2_zNGfGtKHxCF8BwDbgNQc"
+      short-id: "58a08ac3a078cab0"
+    flow: "xtls-rprx-vision"
+  - name: "🇫🇮_14"
+    type: vless
+    server: "193.29.225.249"
+    port: 4443
+    uuid: "573bd634-8fad-46bd-9d76-7828df6dd05f"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "o-85ley6knn8ut.6nvkygqh144t7xtdyvh0y3o4gzo3ujhnk8n.workers.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/@Marisa_kristi"
+      headers:
+        Host: "o-85ley6knn8ut.6nvkygqh144t7xtdyvh0y3o4gzo3ujhnk8n.workers.dev"
+  - name: "🇫🇮_16"
+    type: vless
+    server: "144.31.27.179"
+    port: 443
+    uuid: "94878fe1-5e8b-4676-9ee0-a90267a596e5"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "site.rumedia-cdn.com"
+    reality-opts:
+      public-key: "8jwT95mGT7dW1VkMVt8vtwbWLgHN39tnhnt6PN1FTmU"
+      short-id: "b08c5eb124a5877e"
+    flow: "xtls-rprx-vision"
+  - name: "🇫🇮_17"
+    type: vless
+    server: "65.109.211.253"
+    port: 5039
+    uuid: "b6749f13-cd63-4bc4-b165-5d120b7a1ff4"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.yahoo.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "fv-InxuZSzLlHc83OANs4U2windIUSwPilOpJkMgtW0"
+      short-id: "2e8424a2696cb606"
+  - name: "🇫🇮_18"
+    type: vless
+    server: "2.26.91.98"
+    port: 1443
+    uuid: "f6ec5f55-3d2a-4289-a2b1-d419976cd43e"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "o-85ley6knn8ut.6nvkygqh144t7xtdyvh0y3o4gzo3ujhnk8n.workers.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/@Marisa_kristi"
+      headers:
+        Host: "o-85ley6knn8ut.6nvkygqh144t7xtdyvh0y3o4gzo3ujhnk8n.workers.dev"
+  - name: "🇫🇮_20"
+    type: vless
+    server: "107.181.151.39"
+    port: 443
+    uuid: "4d017db2-7655-4276-9557-e2ec25b04ee7"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.tradingview.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "J-dv-HrWfQ_IOoyutv0Kg-rO8QwoRwc02dS1dS_tblk"
+      short-id: "ee1716767f9b"
+    flow: "xtls-rprx-vision"
+  - name: "🇫🇮_21"
+    type: vless
+    server: "83.147.216.148"
+    port: 4351
+    uuid: "0c5853e1-a606-4aa2-bbfa-86a7b58d43b1"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "add.my.yahoo.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "QrVSmgP6M6A9Yk93u3lx_HPf4HxW820ke-EDTzM2_XI"
+      short-id: "5c8be5ca708cc90a"
+  - name: "🇫🇮_22"
+    type: vless
+    server: "193.29.225.249"
+    port: 4443
+    uuid: "d0dd16f2-81b4-4892-933e-040856457242"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "c6dbx99g6stb418qeo.t3jmlj0r152zji4htdkm9.workers.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/@Marisa_kristi"
+      headers:
+        Host: "c6dbx99g6stb418qeo.t3jmlj0r152zji4htdkm9.workers.dev"
+  - name: "🇫🇮_24"
+    type: vless
+    server: "2.26.52.21"
+    port: 443
+    uuid: "8bba3194-4856-46d1-8319-075817d87eb1"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "fi4.cyphervpn.pro"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "USffNprEM08MHiuVy5bj6-kvxugxycuZcgQDFJyz2Wc"
+      short-id: "8f9d033ad6d2cebf"
+    flow: "xtls-rprx-vision"
+  - name: "🇫🇮_25"
+    type: vless
+    server: "87.239.249.137"
+    port: 443
+    uuid: "67eb6b17-7797-4ded-bf52-423c4c5f6cbd"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.foxsports.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "G7bpUPFSW28-oE6ff8qZac1_apU6PiJ-GHmi7tAPDSY"
+      short-id: "91af08b1ce1f"
+    flow: "xtls-rprx-vision"
+  - name: "🇫🇮_26"
+    type: vless
+    server: "83.147.216.223"
+    port: 4433
+    uuid: "55889b09-e315-4640-9404-e10834e7728e"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "kqjifhg9rw.tradsc8p9xp7wxyqmc1wy0ah.workers.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/@Marisa_kristi"
+      headers:
+        Host: "kqjifhg9rw.tradsc8p9xp7wxyqmc1wy0ah.workers.dev"
+  - name: "🇫🇮_28"
+    type: vless
+    server: "2.26.91.98"
+    port: 1443
+    uuid: "487273f5-4aeb-4631-b197-2e169dffc285"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "8n9qi6t-owl.gevc9s4n60cc3wzcmwhjyezydpmbchocxp.workers.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/@Marisa_kristi"
+      headers:
+        Host: "8n9qi6t-owl.gevc9s4n60cc3wzcmwhjyezydpmbchocxp.workers.dev"
+  - name: "🇫🇮_30"
+    type: vless
+    server: "107.181.151.39"
+    port: 443
+    uuid: "1896c6c9-a941-4688-a865-29027bf7f8e6"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.microsoft.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "J-dv-HrWfQ_IOoyutv0Kg-rO8QwoRwc02dS1dS_tblk"
+      short-id: "6c825bc79850"
+    flow: "xtls-rprx-vision"
+  - name: "🇫🇮_31"
+    type: vless
+    server: "2.26.91.98"
+    port: 1443
+    uuid: "902ec216-e0c4-46fd-a2de-0351f2e28b3a"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "3tmj2egtm-fno.49bnithzk8vphybv36d1z1xkzfvogt2m6.workers.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/@Marisa_kristi"
+      headers:
+        Host: "3tmj2egtm-fno.49bnithzk8vphybv36d1z1xkzfvogt2m6.workers.dev"
+  - name: "🇫🇮_33"
+    type: vless
+    server: "95.181.167.193"
+    port: 7443
+    uuid: "3bf4300c-b3fa-420e-bb49-7c62162e3159"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "mw5qisav.wjwqvie0wb1eqhb8e83clqdoq3m5p9a4on.workers.dev"
+    network: ws
+    ws-opts:
+      path: "/@Marisa_kristi"
+      headers:
+        Host: "mw5qisav.wjwqvie0wb1eqhb8e83clqdoq3m5p9a4on.workers.dev"
+  - name: "🇫🇮_35"
+    type: vless
+    server: "5.144.181.63"
+    port: 443
+    uuid: "d7fc372d-c057-43ce-8070-9b96abbc60f3"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "fl4.raketa-balance.com"
+    reality-opts:
+      public-key: "JaP4bhvIMW-l7T0_RkLra59DeBYI6W9XemKa8MyRPSY"
+      short-id: "6c6082a2223c1d03"
+    flow: "xtls-rprx-vision"
+  - name: "🇫🇮_36"
+    type: vless
+    server: "server.slavkiti.monster"
+    port: 443
+    uuid: "68cf8d29-5aa0-44b3-88a9-f1a576b6e84c"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.microsoft.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "J-dv-HrWfQ_IOoyutv0Kg-rO8QwoRwc02dS1dS_tblk"
+      short-id: "73a9e631a09b"
+    flow: "xtls-rprx-vision"
+  - name: "🇫🇮_37"
+    type: vless
+    server: "138.124.112.197"
+    port: 443
+    uuid: "564082ff-cf3c-48db-9e10-8ad2312847b4"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "node6.mxvpn.dev"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "TlpXTLz1Y-v8B6q9MX55U6eypjfL0LCSNE5zQP4yRHw"
+      short-id: "bbc68cec8bb8d2e3"
+    flow: "xtls-rprx-vision"
+  - name: "🇫🇮_38"
+    type: vless
+    server: "83.147.216.66"
+    port: 50000
+    uuid: "57b64254-5191-4c37-9d2e-bf5406c23e8a"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "o-85ley6knn8ut.6nvkygqh144t7xtdyvh0y3o4gzo3ujhnk8n.workers.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/@Marisa_kristi"
+      headers:
+        Host: "o-85ley6knn8ut.6nvkygqh144t7xtdyvh0y3o4gzo3ujhnk8n.workers.dev"
+  - name: "🇫🇮_40"
+    type: vless
+    server: "83.147.216.223"
+    port: 4433
+    uuid: "660174a2-d32d-4521-840d-d1853bfc80b8"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "3t1yvbyla-rj740g.28m7r63dttya6gazmhoo.workers.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/@Marisa_kristi"
+      headers:
+        Host: "3t1yvbyla-rj740g.28m7r63dttya6gazmhoo.workers.dev"
+  - name: "🇫🇮_42"
+    type: vless
+    server: "62.60.229.255"
+    port: 443
+    uuid: "d9f20a29-239e-46ab-82bb-fa0d69e480f9"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "billowing-scene-fd36.amirmohammad13860008.workers.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/proxyip=13.192.18.59"
+      headers:
+        Host: "billowing-scene-fd36.amirmohammad13860008.workers.dev"
+  - name: "🇫🇮_44"
+    type: vless
+    server: "2.26.91.98"
+    port: 1443
+    uuid: "d4c6b1ad-9ec4-4273-854a-f0bbf0448ab6"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "woc0zvrf11w2endu.dphdlc1u77bs3y4kvussbuap4p576f1ws7igthq8zbf3.workers.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/@Marisa_kristi"
+      headers:
+        Host: "woc0zvrf11w2endu.dphdlc1u77bs3y4kvussbuap4p576f1ws7igthq8zbf3.workers.dev"
+  - name: "🇫🇮_46"
+    type: vless
+    server: "107.181.151.241"
+    port: 443
+    uuid: "317bc783-340f-453c-afb5-b6bf637c0b23"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.tradingview.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "FjcEZNQ8t5E4R04_11T6ghsOutdqwKKrelkuadakoQg"
+      short-id: "fc994ae7eb10"
+    flow: "xtls-rprx-vision"
+  - name: "🇫🇮_47"
+    type: vless
+    server: "138.124.244.36"
+    port: 443
+    uuid: "8bba3194-4856-46d1-8319-075817d87eb1"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "fi2.cyphervpn.pro"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "USffNprEM08MHiuVy5bj6-kvxugxycuZcgQDFJyz2Wc"
+      short-id: "8f9d033ad6d2cebf"
+    flow: "xtls-rprx-vision"
+  - name: "🇫🇮_48"
+    type: vless
+    server: "83.147.216.66"
+    port: 50000
+    uuid: "03c9c227-13df-4b23-b20d-710357bc2dd3"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "c6dbx99g6stb418qeo.t3jmlj0r152zji4htdkm9.workers.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/@Marisa_kristi"
+      headers:
+        Host: "c6dbx99g6stb418qeo.t3jmlj0r152zji4htdkm9.workers.dev"
+  - name: "🇫🇮_50"
+    type: vless
+    server: "vip.fnland---de.loriq.site"
+    port: 1443
+    uuid: "b67fa9f6-e7e5-4689-bcf9-9c933578552c"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "play.google.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "LWCVgdNXR8wqFvQQnXI-W48c9dqpodXAlOKUkyPNr0w"
+      short-id: "ab602b391c60cfa9"
+    flow: "xtls-rprx-vision"
+  - name: "🇫🇮_51"
+    type: vless
+    server: "2.26.97.216"
+    port: 443
+    uuid: "ad790e5f-3e31-43c6-b047-336577a3b3de"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "dowload.max.ru"
+    client-fingerprint: "qq"
+    reality-opts:
+      public-key: "inkvLvTWXaBAAubrTpivxrJAWPYldv2rBG25zzCd6k0"
+      short-id: ""
+    flow: "xtls-rprx-vision"
+  - name: "🇫🇮_52"
+    type: vless
+    server: "fin1.panel11.ru"
+    port: 443
+    uuid: "f165affe-ffb4-4f13-a081-f14434e51152"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "fin1.panel11.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "lQ8pnlOU0kqS77TA7Fftl8nSzktXLzFpOLGqCZEAhjg"
+      short-id: "aaec521b22bbe6cb"
+    flow: "xtls-rprx-vision"
+  - name: "🇫🇮_53"
+    type: vless
+    server: "83.147.216.66"
+    port: 50000
+    uuid: "8df35d77-d3ea-4dc6-83a0-0dadc9a39eb7"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "kqjifhg9rw.tradsc8p9xp7wxyqmc1wy0ah.workers.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/@Marisa_kristi"
+      headers:
+        Host: "kqjifhg9rw.tradsc8p9xp7wxyqmc1wy0ah.workers.dev"
+  - name: "🇫🇮_55"
+    type: vless
+    server: "2.26.91.98"
+    port: 1443
+    uuid: "e75feb84-1638-4817-9c31-53eacb147362"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ke859ch2gse1iery3hiz.e3q4a5mjld11kpj0zj8dq.workers.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/@Marisa_kristi"
+      headers:
+        Host: "ke859ch2gse1iery3hiz.e3q4a5mjld11kpj0zj8dq.workers.dev"
+  - name: "🇫🇮_57"
+    type: vless
+    server: "107.181.151.241"
+    port: 443
+    uuid: "106d20f6-d70a-40e2-b69b-8e82baf8d117"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.microsoft.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "FjcEZNQ8t5E4R04_11T6ghsOutdqwKKrelkuadakoQg"
+      short-id: "60500a63ad12"
+    flow: "xtls-rprx-vision"
+  - name: "🇫🇮_58"
+    type: vless
+    server: "2.26.91.98"
+    port: 1443
+    uuid: "9ba09caf-da90-48ef-9dac-1a4611bc88d1"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "c6dbx99g6stb418qeo.t3jmlj0r152zji4htdkm9.workers.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/@Marisa_kristi"
+      headers:
+        Host: "c6dbx99g6stb418qeo.t3jmlj0r152zji4htdkm9.workers.dev"
+  - name: "🇫🇮_60"
+    type: vless
+    server: "193.29.225.249"
+    port: 4443
+    uuid: "8b2075d9-ddf0-428c-bcc6-5bd93cec18e6"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ke859ch2gse1iery3hiz.e3q4a5mjld11kpj0zj8dq.workers.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/@Marisa_kristi"
+      headers:
+        Host: "ke859ch2gse1iery3hiz.e3q4a5mjld11kpj0zj8dq.workers.dev"
+  - name: "🇫🇮_62"
+    type: vless
+    server: "83.147.216.223"
+    port: 4433
+    uuid: "b491331e-3be5-4097-8bc1-fa86de978c29"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "bapj1qapjk4.0sds0li1bwcz0i76it0gjxv1.workers.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/@Marisa_kristi"
+      headers:
+        Host: "bapj1qapjk4.0sds0li1bwcz0i76it0gjxv1.workers.dev"
+  - name: "🇫🇮_64"
+    type: vless
+    server: "5.181.21.249"
+    port: 443
+    uuid: "d7fc372d-c057-43ce-8070-9b96abbc60f3"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "fl4.raketa-balance.com"
+    reality-opts:
+      public-key: "JaP4bhvIMW-l7T0_RkLra59DeBYI6W9XemKa8MyRPSY"
+      short-id: "6c6082a2223c1d03"
+    flow: "xtls-rprx-vision"
+  - name: "🇫🇮_65"
+    type: vless
+    server: "91.211.114.194"
+    port: 443
+    uuid: "d7fc372d-c057-43ce-8070-9b96abbc60f3"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "fl4.raketa-balance.com"
+    reality-opts:
+      public-key: "JaP4bhvIMW-l7T0_RkLra59DeBYI6W9XemKa8MyRPSY"
+      short-id: "6c6082a2223c1d03"
+    flow: "xtls-rprx-vision"
+  - name: "🇫🇮_66"
+    type: vless
+    server: "84.22.150.239"
+    port: 444
+    uuid: "4054ad5f-e7db-4cad-bb5c-91108323c169"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "bapj1qapjk4.0sds0li1bwcz0i76it0gjxv1.workers.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/@Marisa_kristi"
+      headers:
+        Host: "bapj1qapjk4.0sds0li1bwcz0i76it0gjxv1.workers.dev"
+  - name: "🇫🇮_68"
+    type: vless
+    server: "107.181.151.39"
+    port: 443
+    uuid: "ff40696b-06d6-443b-9481-8d01eddd13e1"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.foxsports.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "J-dv-HrWfQ_IOoyutv0Kg-rO8QwoRwc02dS1dS_tblk"
+      short-id: "d659da01fb94"
+    flow: "xtls-rprx-vision"
+  - name: "🇫🇮_69"
+    type: vless
+    server: "163.5.153.153"
+    port: 443
+    uuid: "0a76a766-d141-44b8-944e-dff757d7116f"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.samsung.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "aB_2Tcf0A5LoiIEZHztR_l-ZOFeJKxYRH67s_OVQ9C0"
+      short-id: "a91045bc"
+    flow: "xtls-rprx-vision"
+  - name: "🇫🇮_70"
+    type: vless
+    server: "95.181.167.171"
+    port: 9090
+    uuid: "d3aebc17-a731-40fb-a755-aac1a4cf80f2"
+    udp: true
+  - name: "🇫🇮_71"
+    type: vless
+    server: "65.109.211.253"
+    port: 42268
+    uuid: "b6749f13-cd63-4bc4-b165-5d120b7a1ff4"
+    udp: true
+    network: httpupgrade
+    httpupgrade-opts:
+      path: "/"
+      host: "play.google.com"
+  - name: "🇫🇮_72"
+    type: vless
+    server: "45.38.143.244"
+    port: 2090
+    uuid: "eab915bc-d2df-73d1-47d0-6eb240497055"
+    udp: true
+  - name: "🇫🇮_73"
+    type: vless
+    server: "45.14.247.83"
+    port: 443
+    uuid: "d7fc372d-c057-43ce-8070-9b96abbc60f3"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "fl4.raketa-balance.com"
+    reality-opts:
+      public-key: "JaP4bhvIMW-l7T0_RkLra59DeBYI6W9XemKa8MyRPSY"
+      short-id: "6c6082a2223c1d03"
+    flow: "xtls-rprx-vision"
+  - name: "🇫🇮_74"
+    type: vless
+    server: "107.181.151.241"
+    port: 443
+    uuid: "ee39fb11-56a3-4ee7-9e7c-35a4235bd30e"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.tradingview.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "FjcEZNQ8t5E4R04_11T6ghsOutdqwKKrelkuadakoQg"
+      short-id: "b27ba098687b"
+    flow: "xtls-rprx-vision"
+  - name: "🇫🇮_75"
+    type: vless
+    server: "84.22.150.39"
+    port: 7443
+    uuid: "9d5cbb90-876b-448d-9874-27ab35bae6e7"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "woc0zvrf11w2endu.dphdlc1u77bs3y4kvussbuap4p576f1ws7igthq8zbf3.workers.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/@Marisa_kristi"
+      headers:
+        Host: "woc0zvrf11w2endu.dphdlc1u77bs3y4kvussbuap4p576f1ws7igthq8zbf3.workers.dev"
+  - name: "🇫🇮_77"
+    type: vless
+    server: "2.26.97.130"
+    port: 443
+    uuid: "6fa1b8eb-56f4-4f41-97dc-e0185bcfc575"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "fl.unlimitedteam.space"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "CH9W2oh_iX9lNVegNBYJ3Z6Ht2PMS5xFaq7gZ_S-3AY"
+      short-id: "7c069b4738e25acd"
+    flow: "xtls-rprx-vision"
+  - name: "🇫🇮_78"
+    type: vless
+    server: "193.233.199.59"
+    port: 443
+    uuid: "ff0b6ba8-bed0-4c4d-bbc9-23af47582615"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "193.233.199.59"
+    network: ws
+    ws-opts:
+      path: "/api/connect"
+      headers:
+        Host: "wstg.datasynctrue.online"
+  - name: "🇫🇮_80"
+    type: vless
+    server: "2.27.13.17"
+    port: 443
+    uuid: "3ef170be-05d0-479c-9753-aa2f860964ea"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "cloudflare.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "C1hW1bTA9WOacIK-fHHg-HLkDZ3FY7FhEhAyldMSUEA"
+      short-id: "a1b2c3d4e5f6"
+    flow: "xtls-rprx-vision"
+  - name: "🇫🇮_81"
+    type: vless
+    server: "84.22.150.239"
+    port: 444
+    uuid: "dc83276f-268a-4b18-9f63-63c73e11ffd8"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "8n9qi6t-owl.gevc9s4n60cc3wzcmwhjyezydpmbchocxp.workers.dev"
+    network: ws
+    ws-opts:
+      path: "/@Marisa_kristi"
+      headers:
+        Host: "8n9qi6t-owl.gevc9s4n60cc3wzcmwhjyezydpmbchocxp.workers.dev"
+  - name: "🇫🇮_83"
+    type: vless
+    server: "45.14.247.176"
+    port: 443
+    uuid: "d7fc372d-c057-43ce-8070-9b96abbc60f3"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "fl4.raketa-balance.com"
+    reality-opts:
+      public-key: "JaP4bhvIMW-l7T0_RkLra59DeBYI6W9XemKa8MyRPSY"
+      short-id: "6c6082a2223c1d03"
+    flow: "xtls-rprx-vision"
+  - name: "🇫🇮_84"
+    type: vless
+    server: "staging.lastilhame.monster"
+    port: 443
+    uuid: "2ba7f500-017b-4891-87a0-e4e62a4ad52d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.microsoft.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "FjcEZNQ8t5E4R04_11T6ghsOutdqwKKrelkuadakoQg"
+      short-id: "9409f73c2fd7"
+    flow: "xtls-rprx-vision"
+  - name: "🇫🇮_85"
+    type: vless
+    server: "83.147.216.66"
+    port: 50000
+    uuid: "0c0c93b7-ed2d-485f-93bb-017dd4485323"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ke859ch2gse1iery3hiz.e3q4a5mjld11kpj0zj8dq.workers.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/@Marisa_kristi"
+      headers:
+        Host: "ke859ch2gse1iery3hiz.e3q4a5mjld11kpj0zj8dq.workers.dev"
+  - name: "🇫🇮_87"
+    type: vless
+    server: "31.76.80.205"
+    port: 443
+    uuid: "6422cd50-ebf9-49d9-a9f3-ff21fa1a2325"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ads.x5.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "nPcUKydxoRI66O3tT9O4QCZpLjOBvkGsiXG7pDX1BBw"
+      short-id: "6ba85179e30d4fc2"
+    flow: "xtls-rprx-vision"
+  - name: "🇫🇮_88"
+    type: vless
+    server: "83.147.216.66"
+    port: 50000
+    uuid: "9f1c9f8a-3b89-460b-aaa2-c70bc934cebf"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ke859ch2gse1iery3hiz.e3q4a5mjld11kpj0zj8dq.workers.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/@Marisa_kristi"
+      headers:
+        Host: "ke859ch2gse1iery3hiz.e3q4a5mjld11kpj0zj8dq.workers.dev"
+  - name: "🇫🇮_90"
+    type: vless
+    server: "83.147.216.66"
+    port: 50000
+    uuid: "9bf6bddd-59f1-481d-ad77-bd880595f5fe"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "8n9qi6t-owl.gevc9s4n60cc3wzcmwhjyezydpmbchocxp.workers.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/@Marisa_kristi"
+      headers:
+        Host: "8n9qi6t-owl.gevc9s4n60cc3wzcmwhjyezydpmbchocxp.workers.dev"
+  - name: "🇫🇮_92"
+    type: vless
+    server: "107.181.151.241"
+    port: 443
+    uuid: "455cfdc6-9abf-4e40-863f-5ff6cc63457c"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.microsoft.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "FjcEZNQ8t5E4R04_11T6ghsOutdqwKKrelkuadakoQg"
+      short-id: "18e4d2d21241"
+    flow: "xtls-rprx-vision"
+  - name: "🇫🇮_93"
+    type: vless
+    server: "144.31.177.29"
+    port: 443
+    uuid: "ab6a5359-0edf-41c3-8dfd-e4b005e80820"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "f5.steptofsvo.com"
+    client-fingerprint: "randomized"
+    reality-opts:
+      public-key: "ivgTfLR13A6xBsicIA28OPoav2tXlsstTTmGuETfnSk"
+      short-id: "6d6f13013d3e1d0c"
+    flow: "xtls-rprx-vision"
+  - name: "🇫🇮_94"
+    type: trojan
+    server: "65.108.205.61"
+    port: 443
+    password: "88939272-790a-441f-b12b-8ce531aca810"
+    sni: "polo01.kctr2038.icu"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇫🇮_95"
+    type: trojan
+    server: "65.108.205.61"
+    port: 443
+    password: "62b78c9b-16cb-4ee6-824b-a4f856cf18f3"
+    sni: "65.108.205.61"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇫🇮_96"
+    type: ss
+    server: "31.76.80.205"
+    port: 8388
+    cipher: "chacha20-ietf-poly1305"
+    password: "cAqbBYBB0f9CAmpU_mc_7FyvvLCcwzt0"
+    udp: true
+  - name: "🇫🇮_97"
+    type: ss
+    server: "31.76.80.205"
+    port: 8388
+    cipher: "chacha20-ietf-poly1305"
+    password: "cAqbBYBB0f9CAmpU_mc_7FyvvLCcwzt0"
+    udp: true
+  - name: "🇫🇮_98"
+    type: ss
+    server: "31.76.80.205"
+    port: 8388
+    cipher: "chacha20-ietf-poly1305"
+    password: "UZQY9hNjVNWwamajrXAf1vt8u63nj0fF"
+    udp: true
+  - name: "🇫🇮_99"
+    type: ss
+    server: "31.76.80.205"
+    port: 8388
+    cipher: "chacha20-ietf-poly1305"
+    password: "UZQY9hNjVNWwamajrXAf1vt8u63nj0fF"
+    udp: true
+  - name: "🇫🇮_100"
+    type: ss
+    server: "82.38.31.204"
+    port: 8080
+    cipher: "chacha20-ietf-poly1305"
+    password: "k1dBOmOB4oqi7Ump37a1bQ"
+    udp: true
+
+proxy-groups:
+  - name: "PROXY"
+    type: select
+    proxies:
+      - "Auto"
+
+  - name: "Auto"
+    type: url-test
+    url: https://www.gstatic.com/generate_204
+    interval: 180
+    tolerance: 30
+    lazy: true
+    proxies:
+      - "🇫🇮_1"
+      - "🇫🇮_3"
+      - "🇫🇮_4"
+      - "🇫🇮_5"
+      - "🇫🇮_6"
+      - "🇫🇮_7"
+      - "🇫🇮_8"
+      - "🇫🇮_9"
+      - "🇫🇮_10"
+      - "🇫🇮_11"
+      - "🇫🇮_13"
+      - "🇫🇮_14"
+      - "🇫🇮_16"
+      - "🇫🇮_17"
+      - "🇫🇮_18"
+      - "🇫🇮_20"
+      - "🇫🇮_21"
+      - "🇫🇮_22"
+      - "🇫🇮_24"
+      - "🇫🇮_25"
+      - "🇫🇮_26"
+      - "🇫🇮_28"
+      - "🇫🇮_30"
+      - "🇫🇮_31"
+      - "🇫🇮_33"
+      - "🇫🇮_35"
+      - "🇫🇮_36"
+      - "🇫🇮_37"
+      - "🇫🇮_38"
+      - "🇫🇮_40"
+      - "🇫🇮_42"
+      - "🇫🇮_44"
+      - "🇫🇮_46"
+      - "🇫🇮_47"
+      - "🇫🇮_48"
+      - "🇫🇮_50"
+      - "🇫🇮_51"
+      - "🇫🇮_52"
+      - "🇫🇮_53"
+      - "🇫🇮_55"
+      - "🇫🇮_57"
+      - "🇫🇮_58"
+      - "🇫🇮_60"
+      - "🇫🇮_62"
+      - "🇫🇮_64"
+      - "🇫🇮_65"
+      - "🇫🇮_66"
+      - "🇫🇮_68"
+      - "🇫🇮_69"
+      - "🇫🇮_70"
+      - "🇫🇮_71"
+      - "🇫🇮_72"
+      - "🇫🇮_73"
+      - "🇫🇮_74"
+      - "🇫🇮_75"
+      - "🇫🇮_77"
+      - "🇫🇮_78"
+      - "🇫🇮_80"
+      - "🇫🇮_81"
+      - "🇫🇮_83"
+      - "🇫🇮_84"
+      - "🇫🇮_85"
+      - "🇫🇮_87"
+      - "🇫🇮_88"
+      - "🇫🇮_90"
+      - "🇫🇮_92"
+      - "🇫🇮_93"
+      - "🇫🇮_94"
+      - "🇫🇮_95"
+      - "🇫🇮_96"
+      - "🇫🇮_97"
+      - "🇫🇮_98"
+      - "🇫🇮_99"
+      - "🇫🇮_100"
+
+
+rules:
+  - MATCH,PROXY
