@@ -68,7 +68,6 @@ proxies:
     tls: true
     skip-cert-verify: true
     servername: "deepl.com"
-    client-fingerprint: "chrome"
     reality-opts:
       public-key: "6AOnobBShzL_N96JRBNMfbL84_3myz8ZbKfZUEqRXiY"
       short-id: ""
@@ -86,13 +85,6 @@ proxies:
     reality-opts:
       public-key: "OZVjfQBboTDTBw0baMFqzVPsVUI4FNQmspTEb0b0zW4"
       short-id: "a1b2c3d4"
-  - name: "🇷🇴_3"
-    type: ss
-    server: "154.46.31.106"
-    port: 443
-    cipher: "chacha20-ietf-poly1305"
-    password: "QFWzCw2uX9B9i6qAYeFBIE"
-    udp: true
 
 proxy-groups:
   # ── Top-level selector ────────────────────────────────────────────────────
@@ -137,7 +129,6 @@ proxy-groups:
     proxies:
       - "🇷🇴_1"
       - "🇷🇴_2"
-      - "🇷🇴_3"
 
   - name: "LB-CDN"
     type: load-balance
@@ -149,7 +140,6 @@ proxy-groups:
     proxies:
       - "🇷🇴_1"
       - "🇷🇴_2"
-      - "🇷🇴_3"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -161,7 +151,6 @@ proxy-groups:
     proxies:
       - "🇷🇴_1"
       - "🇷🇴_2"
-      - "🇷🇴_3"
 
   - name: "FAST-CDN"
     type: url-test
@@ -172,7 +161,6 @@ proxy-groups:
     proxies:
       - "🇷🇴_1"
       - "🇷🇴_2"
-      - "🇷🇴_3"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -184,7 +172,6 @@ proxy-groups:
     proxies:
       - "🇷🇴_1"
       - "🇷🇴_2"
-      - "🇷🇴_3"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
@@ -192,7 +179,6 @@ proxy-groups:
     proxies:
       - "🇷🇴_1"
       - "🇷🇴_2"
-      - "🇷🇴_3"
 
 rules:
   - MATCH,PROXY-BEST

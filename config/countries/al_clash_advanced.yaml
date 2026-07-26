@@ -75,27 +75,6 @@ proxies:
     network: grpc
     grpc-opts:
       grpc-service-name: "nexusGrpc"
-  - name: "🇦🇱_2"
-    type: ss
-    server: "130.49.189.158"
-    port: 10792
-    cipher: "chacha20-ietf-poly1305"
-    password: "WR5Ho8vVqnDaH49WLh98Nc"
-    udp: true
-  - name: "🇦🇱_3"
-    type: ss
-    server: "157.22.240.141"
-    port: 57925
-    cipher: "chacha20-ietf-poly1305"
-    password: "FXpDf7WV6lfD6n9hpz7HF2"
-    udp: true
-  - name: "🇦🇱_4"
-    type: ss
-    server: "157.22.240.141"
-    port: 57925
-    cipher: "chacha20-ietf-poly1305"
-    password: "gN4mwZLXd1bJte9JaXKPWT"
-    udp: true
 
 proxy-groups:
   # ── Top-level selector ────────────────────────────────────────────────────
@@ -139,9 +118,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇦🇱_1"
-      - "🇦🇱_2"
-      - "🇦🇱_3"
-      - "🇦🇱_4"
 
   - name: "LB-CDN"
     type: load-balance
@@ -152,9 +128,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇦🇱_1"
-      - "🇦🇱_2"
-      - "🇦🇱_3"
-      - "🇦🇱_4"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -165,9 +138,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇦🇱_1"
-      - "🇦🇱_2"
-      - "🇦🇱_3"
-      - "🇦🇱_4"
 
   - name: "FAST-CDN"
     type: url-test
@@ -177,9 +147,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇦🇱_1"
-      - "🇦🇱_2"
-      - "🇦🇱_3"
-      - "🇦🇱_4"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -190,18 +157,12 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇦🇱_1"
-      - "🇦🇱_2"
-      - "🇦🇱_3"
-      - "🇦🇱_4"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
       - "🇦🇱_1"
-      - "🇦🇱_2"
-      - "🇦🇱_3"
-      - "🇦🇱_4"
 
 rules:
   - MATCH,PROXY-BEST

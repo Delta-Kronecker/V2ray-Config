@@ -61,21 +61,6 @@ dns:
 proxies:
   - name: "🇧🇪_1"
     type: vless
-    server: "104.155.124.198"
-    port: 443
-    uuid: "29ca503d-e6b8-4509-b666-48133f450857"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "learn00.evany.de5.net"
-    client-fingerprint: "random"
-    network: ws
-    ws-opts:
-      path: "/fdip=tw.william.us.ci!txt"
-      headers:
-        Host: "learn00.evany.de5.net"
-  - name: "🇧🇪_3"
-    type: vless
     server: "35.241.172.224"
     port: 443
     uuid: "29ca503d-e6b8-4509-b666-48133f450857"
@@ -89,25 +74,35 @@ proxies:
       path: "/fdip=tw.william.us.ci!txt"
       headers:
         Host: "learn00.evany.de5.net"
-  - name: "🇧🇪_5"
-    type: trojan
-    server: "hl-freedom-2.undef.network"
+  - name: "🇧🇪_3"
+    type: vless
+    server: "104.155.124.198"
     port: 443
-    password: "jJT7gd5O9vwJzL6RiXpxxXIAL"
-    sni: "hl-freedom-2.undef.network"
-    skip-cert-verify: true
+    uuid: "29ca503d-e6b8-4509-b666-48133f450857"
     udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "learn00.evany.de5.net"
+    client-fingerprint: "random"
     network: ws
     ws-opts:
-      path: "/f2fc2a1f"
+      path: "/fdip=tw.william.us.ci!txt"
       headers:
-        Host: "hl-freedom-2.undef.network"
-  - name: "🇧🇪_7"
+        Host: "learn00.evany.de5.net"
+  - name: "🇧🇪_5"
     type: trojan
-    server: "hl-freedom-2.undef.network"
+    server: "hl-freedom-1.undef.network"
     port: 443
-    password: "Tn2Bf0iRwJkJQgDk6gX6x81RB"
-    sni: "hl-freedom-2.undef.network"
+    password: "JaFKnqNcvnBT63t3rquidGsln"
+    sni: "hl-freedom-1.undef.network"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇧🇪_6"
+    type: trojan
+    server: "94.126.225.96"
+    port: 443
+    password: "JaFKnqNcvnBT63t3rquidGsln"
+    sni: "hl-freedom-1.undef.network"
     skip-cert-verify: true
     udp: true
 
@@ -155,7 +150,7 @@ proxy-groups:
       - "🇧🇪_1"
       - "🇧🇪_3"
       - "🇧🇪_5"
-      - "🇧🇪_7"
+      - "🇧🇪_6"
 
   - name: "LB-CDN"
     type: load-balance
@@ -168,7 +163,7 @@ proxy-groups:
       - "🇧🇪_1"
       - "🇧🇪_3"
       - "🇧🇪_5"
-      - "🇧🇪_7"
+      - "🇧🇪_6"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -181,7 +176,7 @@ proxy-groups:
       - "🇧🇪_1"
       - "🇧🇪_3"
       - "🇧🇪_5"
-      - "🇧🇪_7"
+      - "🇧🇪_6"
 
   - name: "FAST-CDN"
     type: url-test
@@ -193,7 +188,7 @@ proxy-groups:
       - "🇧🇪_1"
       - "🇧🇪_3"
       - "🇧🇪_5"
-      - "🇧🇪_7"
+      - "🇧🇪_6"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -206,7 +201,7 @@ proxy-groups:
       - "🇧🇪_1"
       - "🇧🇪_3"
       - "🇧🇪_5"
-      - "🇧🇪_7"
+      - "🇧🇪_6"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
@@ -215,7 +210,7 @@ proxy-groups:
       - "🇧🇪_1"
       - "🇧🇪_3"
       - "🇧🇪_5"
-      - "🇧🇪_7"
+      - "🇧🇪_6"
 
 rules:
   - MATCH,PROXY-BEST

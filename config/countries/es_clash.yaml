@@ -65,23 +65,18 @@ dns:
 proxies:
   - name: "🇪🇸_1"
     type: vless
-    server: "85.90.217.42"
-    port: 443
-    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    server: "143.20.129.113"
+    port: 30166
+    uuid: "41897fef-2225-4d08-b83b-a59a27895cb2"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "85.90.217.42"
+    servername: "www.samsung.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "nh1aMHEJOA7E6TTogiQ7Bow7vgeps5ZZkpgxcztaZC8"
+      short-id: "5e6a"
   - name: "🇪🇸_2"
-    type: vless
-    server: "5.180.173.248"
-    port: 25198
-    uuid: "deb9c015-1ffe-4e41-9d21-310eb0422a4c"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/xray"
-  - name: "🇪🇸_4"
     type: vless
     server: "2.27.26.51"
     port: 443
@@ -96,67 +91,25 @@ proxies:
     network: grpc
     grpc-opts:
       grpc-service-name: "nexusGrpc"
+  - name: "🇪🇸_3"
+    type: vless
+    server: "5.180.173.248"
+    port: 25198
+    uuid: "deb9c015-1ffe-4e41-9d21-310eb0422a4c"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/xray"
   - name: "🇪🇸_5"
     type: vless
-    server: "185.18.250.245"
+    server: "85.90.217.42"
     port: 443
-    uuid: "f77299ea-e13d-417d-8cdc-ce5566dfc94b"
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "edu.ruangguru.com.r3xxe.eu.cc"
-    client-fingerprint: "chrome"
-    network: ws
-    ws-opts:
-      path: "/nl-tw"
-      headers:
-        Host: "edu.ruangguru.com.r3xxe.eu.cc"
-  - name: "🇪🇸_7"
-    type: vless
-    server: "185.18.250.30"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "vms.lifetime47.workers.dev"
-  - name: "🇪🇸_9"
-    type: vless
-    server: "185.18.250.50"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/?ed=2560"
-      headers:
-        Host: "vms.lifetime47.workers.dev"
-  - name: "🇪🇸_11"
-    type: vless
-    server: "185.18.250.252"
-    port: 443
-    uuid: "f77299ea-e13d-417d-8cdc-ce5566dfc94b"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "edu.ruangguru.com.r3xxe.eu.cc"
-    client-fingerprint: "chrome"
-    network: ws
-    ws-opts:
-      path: "/nl-tw"
-      headers:
-        Host: "edu.ruangguru.com.r3xxe.eu.cc"
-  - name: "🇪🇸_13"
-    type: trojan
-    server: "193.148.19.213"
-    port: 52794
-    password: "2eutknankxtbgkwcajzt"
-    sni: "193.148.19.213"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇪🇸_14"
+    servername: "85.90.217.42"
+  - name: "🇪🇸_6"
     type: trojan
     server: "193.148.19.210"
     port: 52794
@@ -164,20 +117,15 @@ proxies:
     sni: "www.vk.com"
     skip-cert-verify: true
     udp: true
-  - name: "🇪🇸_15"
+  - name: "🇪🇸_7"
     type: trojan
-    server: "185.18.250.252"
+    server: "65.20.102.54"
     port: 443
-    password: "humanity"
-    sni: "www.calmlunch.com"
+    password: "842b5f9dd11e458d8613c907c4cc5723"
+    sni: "www.gpt123.one"
     skip-cert-verify: true
     udp: true
-    network: ws
-    ws-opts:
-      path: "/assignment"
-      headers:
-        Host: "www.calmlunch.com"
-  - name: "🇪🇸_17"
+  - name: "🇪🇸_8"
     type: trojan
     server: "185.18.250.245"
     port: 443
@@ -190,42 +138,56 @@ proxies:
       path: "/assignment"
       headers:
         Host: "www.calmlunch.com"
-  - name: "🇪🇸_19"
-    type: ss
-    server: "140.174.184.5"
-    port: 8388
-    cipher: "chacha20-ietf-poly1305"
-    password: "qItG8SueYQcP"
+  - name: "🇪🇸_10"
+    type: trojan
+    server: "193.148.19.213"
+    port: 52794
+    password: "2eutknankxtbgkwcajzt"
+    sni: "193.148.19.213"
+    skip-cert-verify: true
     udp: true
-  - name: "🇪🇸_20"
-    type: ss
-    server: "82.38.31.155"
-    port: 8080
-    cipher: "chacha20-ietf-poly1305"
-    password: "oZIoA69Q8yhcQV8ka3Pa3A"
+  - name: "🇪🇸_11"
+    type: trojan
+    server: "185.18.250.252"
+    port: 443
+    password: "humanity"
+    sni: "www.calmlunch.com"
+    skip-cert-verify: true
     udp: true
-  - name: "🇪🇸_21"
-    type: ss
-    server: "82.38.31.35"
-    port: 8080
-    cipher: "chacha20-ietf-poly1305"
-    password: "oZIoA69Q8yhcQV8ka3Pa3A"
-    udp: true
-  - name: "🇪🇸_22"
-    type: ss
-    server: "140.174.184.5"
-    port: 8388
-    cipher: "chacha20-ietf-poly1305"
-    password: "qItG8SueYQcP"
-    udp: true
-  - name: "🇪🇸_23"
+    network: ws
+    ws-opts:
+      path: "/assignment"
+      headers:
+        Host: "www.calmlunch.com"
+  - name: "🇪🇸_13"
     type: ss
     server: "108.181.121.226"
     port: 8388
     cipher: "chacha20-ietf-poly1305"
     password: "WSyL4XTwNsdv"
     udp: true
-  - name: "🇪🇸_24"
+  - name: "🇪🇸_14"
+    type: ss
+    server: "82.38.31.35"
+    port: 8080
+    cipher: "chacha20-ietf-poly1305"
+    password: "oZIoA69Q8yhcQV8ka3Pa3A"
+    udp: true
+  - name: "🇪🇸_15"
+    type: ss
+    server: "140.174.184.5"
+    port: 8388
+    cipher: "chacha20-ietf-poly1305"
+    password: "qItG8SueYQcP"
+    udp: true
+  - name: "🇪🇸_16"
+    type: ss
+    server: "140.174.184.5"
+    port: 8388
+    cipher: "chacha20-ietf-poly1305"
+    password: "qItG8SueYQcP"
+    udp: true
+  - name: "🇪🇸_17"
     type: ss
     server: "108.181.121.226"
     port: 8388
@@ -248,21 +210,18 @@ proxy-groups:
     proxies:
       - "🇪🇸_1"
       - "🇪🇸_2"
-      - "🇪🇸_4"
+      - "🇪🇸_3"
       - "🇪🇸_5"
+      - "🇪🇸_6"
       - "🇪🇸_7"
-      - "🇪🇸_9"
+      - "🇪🇸_8"
+      - "🇪🇸_10"
       - "🇪🇸_11"
       - "🇪🇸_13"
       - "🇪🇸_14"
       - "🇪🇸_15"
+      - "🇪🇸_16"
       - "🇪🇸_17"
-      - "🇪🇸_19"
-      - "🇪🇸_20"
-      - "🇪🇸_21"
-      - "🇪🇸_22"
-      - "🇪🇸_23"
-      - "🇪🇸_24"
 
 
 rules:

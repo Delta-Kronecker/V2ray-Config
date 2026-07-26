@@ -61,58 +61,6 @@ dns:
 proxies:
   - name: "🇧🇷_1"
     type: vless
-    server: "45.192.2.157"
-    port: 443
-    uuid: "5098e189-3462-4ff7-8ddd-4aaecfd060ea"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "yandex.net"
-    reality-opts:
-      public-key: "1oUeBtHH4DskTM_jCh-6enWRkFMDX9l1OU5kWYl4kxA"
-      short-id: "f34818a561dfd1fe"
-    flow: "xtls-rprx-vision"
-  - name: "🇧🇷_2"
-    type: vless
-    server: "201.79.2.141"
-    port: 443
-    uuid: "64466fd7-00d0-4e7f-ae47-1749932601da"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "play.google.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "OqBAjoEHKMfHz1bsj1nlRmehz_h_RnnYjHlWdQmK0T8"
-      short-id: "5218bfb83fb5b9b8"
-    flow: "xtls-rprx-vision"
-  - name: "🇧🇷_3"
-    type: vless
-    server: "45.194.53.30"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/?ed=2560"
-      headers:
-        Host: "vms.lifetime19.workers.dev"
-  - name: "🇧🇷_5"
-    type: vless
-    server: "45.192.2.173"
-    port: 443
-    uuid: "1478d83f-3e0b-4d96-99cc-b514495e53c6"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "yandex.net"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "1oUeBtHH4DskTM_jCh-6enWRkFMDX9l1OU5kWYl4kxA"
-      short-id: "364994a6f61fc955"
-    flow: "xtls-rprx-vision"
-  - name: "🇧🇷_6"
-    type: vless
     server: "38.180.78.255"
     port: 443
     uuid: "1843009d-b663-de7c-3841-ac9a00000005"
@@ -126,7 +74,21 @@ proxies:
       path: "/nahan"
       headers:
         Host: "nahan-core.alirezaalbo083.workers.dev"
-  - name: "🇧🇷_8"
+  - name: "🇧🇷_3"
+    type: vless
+    server: "45.192.2.173"
+    port: 443
+    uuid: "1478d83f-3e0b-4d96-99cc-b514495e53c6"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "yandex.net"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "1oUeBtHH4DskTM_jCh-6enWRkFMDX9l1OU5kWYl4kxA"
+      short-id: "364994a6f61fc955"
+    flow: "xtls-rprx-vision"
+  - name: "🇧🇷_4"
     type: vless
     server: "45.192.2.115"
     port: 443
@@ -135,6 +97,31 @@ proxies:
     tls: true
     skip-cert-verify: true
     servername: "yandex.net"
+    reality-opts:
+      public-key: "1oUeBtHH4DskTM_jCh-6enWRkFMDX9l1OU5kWYl4kxA"
+      short-id: "f34818a561dfd1fe"
+    flow: "xtls-rprx-vision"
+  - name: "🇧🇷_5"
+    type: vless
+    server: "45.194.53.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "vms.lifetime19.workers.dev"
+  - name: "🇧🇷_7"
+    type: vless
+    server: "45.192.2.157"
+    port: 443
+    uuid: "5098e189-3462-4ff7-8ddd-4aaecfd060ea"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "yandex.net"
+    client-fingerprint: "qq"
     reality-opts:
       public-key: "1oUeBtHH4DskTM_jCh-6enWRkFMDX9l1OU5kWYl4kxA"
       short-id: "f34818a561dfd1fe"
@@ -182,11 +169,10 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇧🇷_1"
-      - "🇧🇷_2"
       - "🇧🇷_3"
+      - "🇧🇷_4"
       - "🇧🇷_5"
-      - "🇧🇷_6"
-      - "🇧🇷_8"
+      - "🇧🇷_7"
 
   - name: "LB-CDN"
     type: load-balance
@@ -197,11 +183,10 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇧🇷_1"
-      - "🇧🇷_2"
       - "🇧🇷_3"
+      - "🇧🇷_4"
       - "🇧🇷_5"
-      - "🇧🇷_6"
-      - "🇧🇷_8"
+      - "🇧🇷_7"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -212,11 +197,10 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇧🇷_1"
-      - "🇧🇷_2"
       - "🇧🇷_3"
+      - "🇧🇷_4"
       - "🇧🇷_5"
-      - "🇧🇷_6"
-      - "🇧🇷_8"
+      - "🇧🇷_7"
 
   - name: "FAST-CDN"
     type: url-test
@@ -226,11 +210,10 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇧🇷_1"
-      - "🇧🇷_2"
       - "🇧🇷_3"
+      - "🇧🇷_4"
       - "🇧🇷_5"
-      - "🇧🇷_6"
-      - "🇧🇷_8"
+      - "🇧🇷_7"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -241,22 +224,20 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇧🇷_1"
-      - "🇧🇷_2"
       - "🇧🇷_3"
+      - "🇧🇷_4"
       - "🇧🇷_5"
-      - "🇧🇷_6"
-      - "🇧🇷_8"
+      - "🇧🇷_7"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
       - "🇧🇷_1"
-      - "🇧🇷_2"
       - "🇧🇷_3"
+      - "🇧🇷_4"
       - "🇧🇷_5"
-      - "🇧🇷_6"
-      - "🇧🇷_8"
+      - "🇧🇷_7"
 
 rules:
   - MATCH,PROXY-BEST

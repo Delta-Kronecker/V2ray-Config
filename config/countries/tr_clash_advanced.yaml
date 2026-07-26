@@ -61,54 +61,6 @@ dns:
 proxies:
   - name: "🇹🇷_1"
     type: vless
-    server: "130.185.123.27"
-    port: 443
-    uuid: "eda6b321-aa59-4b1e-b823-3616af020b4a"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "play.google.com"
-    reality-opts:
-      public-key: "8Cho6K3KB6Aoty9x_TCAbY3yv7m-ToCHqaKkZTxR3jM"
-      short-id: "d6c3c9"
-  - name: "🇹🇷_2"
-    type: vless
-    server: "107.181.155.167"
-    port: 22010
-    uuid: "4886e233-f065-49e8-b2d3-ea221667fbb9"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "login.yahoo.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "tPJyCBqGbs1ehngAU77tazO3hT83jPlS-Z2B6_pnqCE"
-      short-id: "aa603d3c2603c9f2"
-    flow: "xtls-rprx-vision"
-  - name: "🇹🇷_3"
-    type: vless
-    server: "213.156.152.224"
-    port: 42268
-    uuid: "b6749f13-cd63-4bc4-b165-5d120b7a1ff4"
-    udp: true
-    network: httpupgrade
-    httpupgrade-opts:
-      path: "/"
-      host: "play.google.com"
-  - name: "🇹🇷_4"
-    type: vless
-    server: "abqwe.gfdcty.ir"
-    port: 443
-    uuid: "eeb75ded-02ad-4e8f-9bb1-ccc5cd96e7cc"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "abqwe.gfdcty.ir"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "graphql-grpc-t7XyZ"
-  - name: "🇹🇷_5"
-    type: vless
     server: "91.124.63.229"
     port: 443
     uuid: "acc50200-7f21-4f90-9cca-0057efcbf042"
@@ -121,22 +73,44 @@ proxies:
       public-key: "rNBFVzV18kAj_ei4AqsgZywzmvD36WK9hcRdVnpHPAM"
       short-id: "c0573c8280a0c019"
     flow: "xtls-rprx-vision"
-  - name: "🇹🇷_6"
+  - name: "🇹🇷_2"
     type: vless
-    server: "194.135.34.121"
+    server: "tur02.myxasecure.space"
     port: 443
-    uuid: "547c0d9e-9bb5-4e83-b6e7-09953bc6004b"
+    uuid: "06d44c57-8e1a-41f4-b9c4-65d35869e078"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "cloudflare.vhub.pro"
-    client-fingerprint: "ios"
+    servername: "tur02.myxasecure.space"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "OCLtjVdRxsou3429LRfjkDYgiAPs24TSgSeFZpChCEw"
+      short-id: "d67ec5a8fc40ebea"
+    flow: "xtls-rprx-vision"
+  - name: "🇹🇷_3"
+    type: vless
+    server: "2.56.127.137"
+    port: 443
+    uuid: "mahanvpn-mahanvpn"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "mAhaNrEaliteAm.MaHkHan.iR"
+    client-fingerprint: "chrome"
     network: ws
     ws-opts:
-      path: "/websocket?ed=2560"
+      path: "/?ed=2560"
       headers:
-        Host: "cloudflare.vhub.pro"
-  - name: "🇹🇷_8"
+        Host: "mAhaNrEaliteAm.MaHkHan.iR"
+  - name: "🇹🇷_5"
+    type: trojan
+    server: "195.162.69.238"
+    port: 9443
+    password: "ac8ae2c29cd149eb85cae990572f0d59"
+    sni: "apple.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇹🇷_6"
     type: trojan
     server: "dem.yariresanbot.ir"
     port: 39594
@@ -144,19 +118,37 @@ proxies:
     sni: "dem.yariresanbot.ir"
     skip-cert-verify: true
     udp: true
+  - name: "🇹🇷_7"
+    type: trojan
+    server: "107.161.174.99"
+    port: 443
+    password: "521314"
+    sni: "tjplay.lxdxo.kdns.fr"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
   - name: "🇹🇷_9"
+    type: ss
+    server: "185.123.101.64"
+    port: 2376
+    cipher: "aes-256-gcm"
+    password: "faBAoD54k87UJG7"
+    udp: true
+  - name: "🇹🇷_10"
     type: ss
     server: "38.180.113.194"
     port: 8119
     cipher: "aes-256-gcm"
     password: "cdBIDV42DCwnfIN"
     udp: true
-  - name: "🇹🇷_10"
+  - name: "🇹🇷_11"
     type: ss
-    server: "185.123.101.64"
-    port: 2376
-    cipher: "aes-256-gcm"
-    password: "faBAoD54k87UJG7"
+    server: "188.41.249.20"
+    port: 1080
+    cipher: "chacha20-ietf-poly1305"
+    password: "XFPpyuqk3H0Y8JVpVGqSJw"
     udp: true
 
 proxy-groups:
@@ -203,12 +195,12 @@ proxy-groups:
       - "🇹🇷_1"
       - "🇹🇷_2"
       - "🇹🇷_3"
-      - "🇹🇷_4"
       - "🇹🇷_5"
       - "🇹🇷_6"
-      - "🇹🇷_8"
+      - "🇹🇷_7"
       - "🇹🇷_9"
       - "🇹🇷_10"
+      - "🇹🇷_11"
 
   - name: "LB-CDN"
     type: load-balance
@@ -221,12 +213,12 @@ proxy-groups:
       - "🇹🇷_1"
       - "🇹🇷_2"
       - "🇹🇷_3"
-      - "🇹🇷_4"
       - "🇹🇷_5"
       - "🇹🇷_6"
-      - "🇹🇷_8"
+      - "🇹🇷_7"
       - "🇹🇷_9"
       - "🇹🇷_10"
+      - "🇹🇷_11"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -239,12 +231,12 @@ proxy-groups:
       - "🇹🇷_1"
       - "🇹🇷_2"
       - "🇹🇷_3"
-      - "🇹🇷_4"
       - "🇹🇷_5"
       - "🇹🇷_6"
-      - "🇹🇷_8"
+      - "🇹🇷_7"
       - "🇹🇷_9"
       - "🇹🇷_10"
+      - "🇹🇷_11"
 
   - name: "FAST-CDN"
     type: url-test
@@ -256,12 +248,12 @@ proxy-groups:
       - "🇹🇷_1"
       - "🇹🇷_2"
       - "🇹🇷_3"
-      - "🇹🇷_4"
       - "🇹🇷_5"
       - "🇹🇷_6"
-      - "🇹🇷_8"
+      - "🇹🇷_7"
       - "🇹🇷_9"
       - "🇹🇷_10"
+      - "🇹🇷_11"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -274,12 +266,12 @@ proxy-groups:
       - "🇹🇷_1"
       - "🇹🇷_2"
       - "🇹🇷_3"
-      - "🇹🇷_4"
       - "🇹🇷_5"
       - "🇹🇷_6"
-      - "🇹🇷_8"
+      - "🇹🇷_7"
       - "🇹🇷_9"
       - "🇹🇷_10"
+      - "🇹🇷_11"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
@@ -288,12 +280,12 @@ proxy-groups:
       - "🇹🇷_1"
       - "🇹🇷_2"
       - "🇹🇷_3"
-      - "🇹🇷_4"
       - "🇹🇷_5"
       - "🇹🇷_6"
-      - "🇹🇷_8"
+      - "🇹🇷_7"
       - "🇹🇷_9"
       - "🇹🇷_10"
+      - "🇹🇷_11"
 
 rules:
   - MATCH,PROXY-BEST

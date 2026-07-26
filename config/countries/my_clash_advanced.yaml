@@ -60,17 +60,14 @@ dns:
 
 proxies:
   - name: "🇲🇾_1"
-    type: vless
-    server: "208.84.103.60"
+    type: trojan
+    server: "202.43.102.57"
     port: 443
-    uuid: "SoonTeam"
+    password: "6e1b9a65-884f-3aa9-9469-bf6ec0f08610"
+    sni: "45.32.28.232"
+    skip-cert-verify: true
     udp: true
-    network: ws
-    ws-opts:
-      path: "/telegram@SoonTeam"
-      headers:
-        Host: "anten.ir"
-  - name: "🇲🇾_3"
+  - name: "🇲🇾_2"
     type: ss
     server: "96.126.190.196"
     port: 443
@@ -83,14 +80,14 @@ proxies:
       path: "/59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
       host: "woshinidie-et3.pages.dev"
       tls: true
-  - name: "🇲🇾_4"
+  - name: "🇲🇾_3"
     type: ss
     server: "47.250.212.59"
     port: 2053
     cipher: "none"
     password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
     udp: true
-  - name: "🇲🇾_5"
+  - name: "🇲🇾_4"
     type: ss
     server: "47.250.212.59"
     port: 2053
@@ -140,9 +137,9 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇲🇾_1"
+      - "🇲🇾_2"
       - "🇲🇾_3"
       - "🇲🇾_4"
-      - "🇲🇾_5"
 
   - name: "LB-CDN"
     type: load-balance
@@ -153,9 +150,9 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇲🇾_1"
+      - "🇲🇾_2"
       - "🇲🇾_3"
       - "🇲🇾_4"
-      - "🇲🇾_5"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -166,9 +163,9 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇲🇾_1"
+      - "🇲🇾_2"
       - "🇲🇾_3"
       - "🇲🇾_4"
-      - "🇲🇾_5"
 
   - name: "FAST-CDN"
     type: url-test
@@ -178,9 +175,9 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇲🇾_1"
+      - "🇲🇾_2"
       - "🇲🇾_3"
       - "🇲🇾_4"
-      - "🇲🇾_5"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -191,18 +188,18 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇲🇾_1"
+      - "🇲🇾_2"
       - "🇲🇾_3"
       - "🇲🇾_4"
-      - "🇲🇾_5"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
       - "🇲🇾_1"
+      - "🇲🇾_2"
       - "🇲🇾_3"
       - "🇲🇾_4"
-      - "🇲🇾_5"
 
 rules:
   - MATCH,PROXY-BEST

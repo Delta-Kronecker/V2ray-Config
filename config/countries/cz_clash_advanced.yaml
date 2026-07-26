@@ -74,12 +74,6 @@ proxies:
     flow: "xtls-rprx-vision"
   - name: "🇨🇿_2"
     type: vless
-    server: "141.133.172.222"
-    port: 20342
-    uuid: "5eecb34f-c905-4c77-b7fb-d830b451cd11"
-    udp: true
-  - name: "🇨🇿_3"
-    type: vless
     server: "46.8.113.190"
     port: 443
     uuid: "fc1b3bda-b226-452a-8c5c-b0e36a1f8f88"
@@ -92,9 +86,15 @@ proxies:
       public-key: "b-Cm9hX-3UHsS1L_lnUB6AMjuKhlN1IDdBbZ506itjI"
       short-id: "00bca5982f82d083"
     flow: "xtls-rprx-vision"
-  - name: "🇨🇿_4"
+  - name: "🇨🇿_3"
     type: vless
     server: "193.124.57.208"
+    port: 20342
+    uuid: "5eecb34f-c905-4c77-b7fb-d830b451cd11"
+    udp: true
+  - name: "🇨🇿_4"
+    type: vless
+    server: "141.133.172.222"
     port: 20342
     uuid: "5eecb34f-c905-4c77-b7fb-d830b451cd11"
     udp: true
@@ -106,6 +106,19 @@ proxies:
     sni: "ch-2.bexum.fun"
     skip-cert-verify: true
     udp: true
+  - name: "🇨🇿_6"
+    type: trojan
+    server: "14.102.228.27"
+    port: 443
+    password: "521314"
+    sni: "hhtj.hhllfly.kdns.fr"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/pyip=Telegram-WangCai2🇨🇳"
+      headers:
+        Host: "hhtj.hhllfly.kdns.fr"
 
 proxy-groups:
   # ── Top-level selector ────────────────────────────────────────────────────
@@ -153,6 +166,7 @@ proxy-groups:
       - "🇨🇿_3"
       - "🇨🇿_4"
       - "🇨🇿_5"
+      - "🇨🇿_6"
 
   - name: "LB-CDN"
     type: load-balance
@@ -167,6 +181,7 @@ proxy-groups:
       - "🇨🇿_3"
       - "🇨🇿_4"
       - "🇨🇿_5"
+      - "🇨🇿_6"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -181,6 +196,7 @@ proxy-groups:
       - "🇨🇿_3"
       - "🇨🇿_4"
       - "🇨🇿_5"
+      - "🇨🇿_6"
 
   - name: "FAST-CDN"
     type: url-test
@@ -194,6 +210,7 @@ proxy-groups:
       - "🇨🇿_3"
       - "🇨🇿_4"
       - "🇨🇿_5"
+      - "🇨🇿_6"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -208,6 +225,7 @@ proxy-groups:
       - "🇨🇿_3"
       - "🇨🇿_4"
       - "🇨🇿_5"
+      - "🇨🇿_6"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
@@ -218,6 +236,7 @@ proxy-groups:
       - "🇨🇿_3"
       - "🇨🇿_4"
       - "🇨🇿_5"
+      - "🇨🇿_6"
 
 rules:
   - MATCH,PROXY-BEST

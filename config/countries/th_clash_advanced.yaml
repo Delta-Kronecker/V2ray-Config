@@ -61,39 +61,28 @@ dns:
 proxies:
   - name: "🇹🇭_1"
     type: vless
-    server: "154.83.2.50"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/?ed=2560"
-      headers:
-        Host: "vms.lifetime28.workers.dev"
-  - name: "🇹🇭_3"
-    type: vless
-    server: "154.83.2.30"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    server: "18.239.134.69"
+    port: 80
+    uuid: "f55ce6cc-3f6b-40fc-9e3b-abe26db17009"
     udp: true
     network: ws
     ws-opts:
       path: "/"
       headers:
-        Host: "vms.lifetime28.workers.dev"
-  - name: "🇹🇭_5"
+        Host: "d2e1v87ko56lyw.cloudfront.net:assets.opensignal.com"
+  - name: "🇹🇭_3"
     type: vless
-    server: "43.164.1.152"
+    server: "43.164.0.59"
     port: 666
     uuid: "8d5e7f2a-3c1b-4d9e-a6f8-2b5c0e7d4a19"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "43.164.1.152"
+    servername: "43.164.0.59"
     network: ws
     ws-opts:
       path: "/proxy"
-  - name: "🇹🇭_7"
+  - name: "🇹🇭_5"
     type: vless
     server: "154.83.2.24"
     port: 443
@@ -107,40 +96,26 @@ proxies:
       path: "/rdfgtws"
       headers:
         Host: "vangoghhh.info"
-  - name: "🇹🇭_9"
+  - name: "🇹🇭_7"
     type: vless
-    server: "18.239.134.69"
-    port: 80
-    uuid: "f55ce6cc-3f6b-40fc-9e3b-abe26db17009"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "d2e1v87ko56lyw.cloudfront.net:assets.opensignal.com"
-  - name: "🇹🇭_11"
-    type: vless
-    server: "43.164.0.59"
+    server: "43.164.1.152"
     port: 666
     uuid: "8d5e7f2a-3c1b-4d9e-a6f8-2b5c0e7d4a19"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "43.164.0.59"
-    client-fingerprint: "chrome"
+    servername: "43.164.1.152"
     network: ws
     ws-opts:
       path: "/proxy"
-      headers:
-        Host: "43.164.0.59"
-  - name: "🇹🇭_13"
+  - name: "🇹🇭_9"
     type: ss
     server: "102.129.229.85"
     port: 31700
     cipher: "chacha20-ietf-poly1305"
     password: "d7zh2lMrXNH5+8+8pKzlxiCU9NN022ih+uAyxj5d4qo="
     udp: true
-  - name: "🇹🇭_14"
+  - name: "🇹🇭_10"
     type: ss
     server: "102.129.229.85"
     port: 31700
@@ -194,9 +169,7 @@ proxy-groups:
       - "🇹🇭_5"
       - "🇹🇭_7"
       - "🇹🇭_9"
-      - "🇹🇭_11"
-      - "🇹🇭_13"
-      - "🇹🇭_14"
+      - "🇹🇭_10"
 
   - name: "LB-CDN"
     type: load-balance
@@ -211,9 +184,7 @@ proxy-groups:
       - "🇹🇭_5"
       - "🇹🇭_7"
       - "🇹🇭_9"
-      - "🇹🇭_11"
-      - "🇹🇭_13"
-      - "🇹🇭_14"
+      - "🇹🇭_10"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -228,9 +199,7 @@ proxy-groups:
       - "🇹🇭_5"
       - "🇹🇭_7"
       - "🇹🇭_9"
-      - "🇹🇭_11"
-      - "🇹🇭_13"
-      - "🇹🇭_14"
+      - "🇹🇭_10"
 
   - name: "FAST-CDN"
     type: url-test
@@ -244,9 +213,7 @@ proxy-groups:
       - "🇹🇭_5"
       - "🇹🇭_7"
       - "🇹🇭_9"
-      - "🇹🇭_11"
-      - "🇹🇭_13"
-      - "🇹🇭_14"
+      - "🇹🇭_10"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -261,9 +228,7 @@ proxy-groups:
       - "🇹🇭_5"
       - "🇹🇭_7"
       - "🇹🇭_9"
-      - "🇹🇭_11"
-      - "🇹🇭_13"
-      - "🇹🇭_14"
+      - "🇹🇭_10"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
@@ -274,9 +239,7 @@ proxy-groups:
       - "🇹🇭_5"
       - "🇹🇭_7"
       - "🇹🇭_9"
-      - "🇹🇭_11"
-      - "🇹🇭_13"
-      - "🇹🇭_14"
+      - "🇹🇭_10"
 
 rules:
   - MATCH,PROXY-BEST

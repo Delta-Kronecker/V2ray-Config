@@ -61,6 +61,21 @@ dns:
 proxies:
   - name: "🇮🇩_1"
     type: vless
+    server: "45.196.29.77"
+    port: 443
+    uuid: "218b4b35-e826-49d4-b5dc-558fc7eb9923"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "polshaov.ochmaybrooooo.online"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "polshaov.ochmaybrooooo.online"
+  - name: "🇮🇩_3"
+    type: vless
     server: "45.198.96.153"
     port: 443
     uuid: "83ab4443-ec22-4b3d-a587-53090be7beb2"
@@ -73,22 +88,6 @@ proxies:
       public-key: "9Y-_jCI3Z1x6SXK2tHdZ6V1CN9IJPNPnoxSW0cbXxD8"
       short-id: "764f497dda21c4fc"
     flow: "xtls-rprx-vision"
-  - name: "🇮🇩_2"
-    type: trojan
-    server: "34.101.126.150"
-    port: 443
-    password: "M7v%w11Se*"
-    sni: "qfdfsg.wsone.icu"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇮🇩_3"
-    type: trojan
-    server: "qfdfsg.wsone.icu"
-    port: 443
-    password: "M7v%w11Se*"
-    sni: "qfdfsg.wsone.icu"
-    skip-cert-verify: true
-    udp: true
   - name: "🇮🇩_4"
     type: trojan
     server: "172.232.250.160"
@@ -140,7 +139,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇮🇩_1"
-      - "🇮🇩_2"
       - "🇮🇩_3"
       - "🇮🇩_4"
 
@@ -153,7 +151,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇮🇩_1"
-      - "🇮🇩_2"
       - "🇮🇩_3"
       - "🇮🇩_4"
 
@@ -166,7 +163,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇮🇩_1"
-      - "🇮🇩_2"
       - "🇮🇩_3"
       - "🇮🇩_4"
 
@@ -178,7 +174,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇮🇩_1"
-      - "🇮🇩_2"
       - "🇮🇩_3"
       - "🇮🇩_4"
 
@@ -191,7 +186,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇮🇩_1"
-      - "🇮🇩_2"
       - "🇮🇩_3"
       - "🇮🇩_4"
 
@@ -200,7 +194,6 @@ proxy-groups:
     type: select
     proxies:
       - "🇮🇩_1"
-      - "🇮🇩_2"
       - "🇮🇩_3"
       - "🇮🇩_4"
 
