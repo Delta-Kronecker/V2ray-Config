@@ -1679,13 +1679,13 @@ func writeSummary(results []configResult, failedLinks []string, duration float64
 				idx := row*cols + c
 				if idx < len(cells) {
 					cl := cells[idx]
-					gen.WriteString(fmt.Sprintf("| %s | [%d](%s) | [%d](%s) |",
+					gen.WriteString(fmt.Sprintf("| %s | [%d](%s) | [%d](%s) ",
 						cl.cc, cl.v2rayN, cl.v2rayF, cl.clashN, cl.clashF))
 				} else {
-					gen.WriteString("|  |  |  |")
+					gen.WriteString("|  |  |  ")
 				}
 			}
-			gen.WriteString("\n")
+			gen.WriteString("|\n")
 		}
 		gen.WriteString("\n")
 	}
