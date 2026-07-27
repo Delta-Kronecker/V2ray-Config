@@ -65,6 +65,48 @@ dns:
 proxies:
   - name: "🇹🇷_1"
     type: vless
+    server: "pro-tr.emrata.top"
+    port: 443
+    uuid: "ecedc1d3-6853-4cfd-b65c-1753c9ad57b2"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "pro-tr.emrata.top"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "da5UVhoC5QOCDm84AxB-RRxf0z2nySZ3lOemgqizLS4"
+      short-id: ""
+    flow: "xtls-rprx-vision"
+  - name: "🇹🇷_2"
+    type: vless
+    server: "212.115.103.200"
+    port: 443
+    uuid: "0217ae6b-bdeb-49fe-b10d-692a2adcc94b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "kookas.fi"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "qB_eMu3ZO_wGITnyIqJ7Kt39-h9oHFnHlQQEqA-r3VA"
+      short-id: "43dcff52289b81e6"
+    flow: "xtls-rprx-vision"
+  - name: "🇹🇷_3"
+    type: vless
+    server: "pro-tr.emrata.top"
+    port: 443
+    uuid: "f81b1299-f813-46ef-aed1-63afa5e61c91"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "pro-tr.emrata.top"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "da5UVhoC5QOCDm84AxB-RRxf0z2nySZ3lOemgqizLS4"
+      short-id: ""
+    flow: "xtls-rprx-vision"
+  - name: "🇹🇷_4"
+    type: vless
     server: "91.124.63.229"
     port: 443
     uuid: "acc50200-7f21-4f90-9cca-0057efcbf042"
@@ -77,44 +119,7 @@ proxies:
       public-key: "rNBFVzV18kAj_ei4AqsgZywzmvD36WK9hcRdVnpHPAM"
       short-id: "c0573c8280a0c019"
     flow: "xtls-rprx-vision"
-  - name: "🇹🇷_2"
-    type: vless
-    server: "tur02.myxasecure.space"
-    port: 443
-    uuid: "06d44c57-8e1a-41f4-b9c4-65d35869e078"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "tur02.myxasecure.space"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "OCLtjVdRxsou3429LRfjkDYgiAPs24TSgSeFZpChCEw"
-      short-id: "d67ec5a8fc40ebea"
-    flow: "xtls-rprx-vision"
-  - name: "🇹🇷_3"
-    type: vless
-    server: "2.56.127.137"
-    port: 443
-    uuid: "mahanvpn-mahanvpn"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "mAhaNrEaliteAm.MaHkHan.iR"
-    client-fingerprint: "chrome"
-    network: ws
-    ws-opts:
-      path: "/?ed=2560"
-      headers:
-        Host: "mAhaNrEaliteAm.MaHkHan.iR"
   - name: "🇹🇷_5"
-    type: trojan
-    server: "195.162.69.238"
-    port: 9443
-    password: "ac8ae2c29cd149eb85cae990572f0d59"
-    sni: "apple.com"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇹🇷_6"
     type: trojan
     server: "dem.yariresanbot.ir"
     port: 39594
@@ -122,37 +127,27 @@ proxies:
     sni: "dem.yariresanbot.ir"
     skip-cert-verify: true
     udp: true
-  - name: "🇹🇷_7"
+  - name: "🇹🇷_6"
     type: trojan
-    server: "107.161.174.99"
-    port: 443
-    password: "521314"
-    sni: "tjplay.lxdxo.kdns.fr"
+    server: "193.111.125.82"
+    port: 39594
+    password: "77a4056f31f24ea592bb7aa1e88aced4"
+    sni: "dem.yariresanbot.ir"
     skip-cert-verify: true
     udp: true
-    network: ws
-    ws-opts:
-      path: "/"
-  - name: "🇹🇷_9"
+  - name: "🇹🇷_7"
     type: ss
     server: "185.123.101.64"
     port: 2376
     cipher: "aes-256-gcm"
     password: "faBAoD54k87UJG7"
     udp: true
-  - name: "🇹🇷_10"
+  - name: "🇹🇷_8"
     type: ss
     server: "38.180.113.194"
     port: 8119
     cipher: "aes-256-gcm"
     password: "cdBIDV42DCwnfIN"
-    udp: true
-  - name: "🇹🇷_11"
-    type: ss
-    server: "188.41.249.20"
-    port: 1080
-    cipher: "chacha20-ietf-poly1305"
-    password: "XFPpyuqk3H0Y8JVpVGqSJw"
     udp: true
 
 proxy-groups:
@@ -171,12 +166,11 @@ proxy-groups:
       - "🇹🇷_1"
       - "🇹🇷_2"
       - "🇹🇷_3"
+      - "🇹🇷_4"
       - "🇹🇷_5"
       - "🇹🇷_6"
       - "🇹🇷_7"
-      - "🇹🇷_9"
-      - "🇹🇷_10"
-      - "🇹🇷_11"
+      - "🇹🇷_8"
 
 
 rules:

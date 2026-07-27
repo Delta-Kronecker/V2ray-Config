@@ -65,10 +65,17 @@ dns:
 proxies:
   - name: "🇹🇼_1"
     type: vless
-    server: "60.249.101.13"
-    port: 10000
-    uuid: "431fe973-a43a-4fac-bf83-2a772e0d0625"
+    server: "166.0.198.193"
+    port: 443
+    uuid: "e4824193-4f54-453b-d037-88368e85ef0e"
     udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sca12.afterdomain.shop"
+    client-fingerprint: "firefox"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: ""
   - name: "🇹🇼_2"
     type: vless
     server: "59.125.69.19"
@@ -86,9 +93,9 @@ proxies:
         Host: "ty986gfazs.cainiaohub.xyz"
   - name: "🇹🇼_4"
     type: vless
-    server: "60.248.219.76"
+    server: "59.125.69.20"
     port: 443
-    uuid: "e5ce79f9-fdac-4e80-8286-a15b96fded72"
+    uuid: "c1c04450-bf71-4049-ad0c-9cf6d94d9f1f"
     udp: true
     tls: true
     skip-cert-verify: true
@@ -100,9 +107,9 @@ proxies:
         Host: "ty986gfazs.cainiaohub.xyz"
   - name: "🇹🇼_6"
     type: vless
-    server: "60.248.219.78"
+    server: "60.248.219.76"
     port: 443
-    uuid: "c1c04450-bf71-4049-ad0c-9cf6d94d9f1f"
+    uuid: "e5ce79f9-fdac-4e80-8286-a15b96fded72"
     udp: true
     tls: true
     skip-cert-verify: true
@@ -120,7 +127,13 @@ proxies:
     udp: true
   - name: "🇹🇼_9"
     type: vless
-    server: "59.125.69.20"
+    server: "60.249.101.13"
+    port: 10000
+    uuid: "431fe973-a43a-4fac-bf83-2a772e0d0625"
+    udp: true
+  - name: "🇹🇼_10"
+    type: vless
+    server: "60.248.219.78"
     port: 443
     uuid: "c1c04450-bf71-4049-ad0c-9cf6d94d9f1f"
     udp: true
@@ -132,25 +145,12 @@ proxies:
       path: "/81574b6b-c9d7-44a0-b83d-dad56e8cb530"
       headers:
         Host: "ty986gfazs.cainiaohub.xyz"
-  - name: "🇹🇼_11"
-    type: vless
-    server: "166.0.198.193"
-    port: 443
-    uuid: "e4824193-4f54-453b-d037-88368e85ef0e"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "sca12.afterdomain.shop"
-    client-fingerprint: "firefox"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: ""
   - name: "🇹🇼_12"
     type: trojan
-    server: "twnode11.oportal.cc"
-    port: 443
-    password: "981db44e-9f07-49eb-9ba0-6ab4939919a2"
-    sni: "twnode11.oportal.cc"
+    server: "a03.taipeicitygovernment.cn.ua"
+    port: 3462
+    password: "6e1b9a65-884f-3aa9-9469-bf6ec0f08610"
+    sni: "a03.taipeicitygovernment.cn.ua"
     skip-cert-verify: true
     udp: true
   - name: "🇹🇼_13"
@@ -163,7 +163,7 @@ proxies:
     udp: true
   - name: "🇹🇼_14"
     type: trojan
-    server: "61.228.66.155"
+    server: "61.222.160.199"
     port: 3462
     password: "6e1b9a65-884f-3aa9-9469-bf6ec0f08610"
     sni: "a03.taipeicitygovernment.cn.ua"
@@ -171,7 +171,7 @@ proxies:
     udp: true
   - name: "🇹🇼_15"
     type: trojan
-    server: "203.69.207.175"
+    server: "60.250.152.230"
     port: 3462
     password: "6e1b9a65-884f-3aa9-9469-bf6ec0f08610"
     sni: "a03.taipeicitygovernment.cn.ua"
@@ -179,29 +179,13 @@ proxies:
     udp: true
   - name: "🇹🇼_16"
     type: trojan
-    server: "official.taipeicitygovernment.dp.ua"
-    port: 8443
-    password: "96983eb4-c8f1-316e-ab00-500014ed3d8b"
-    sni: "official.taipeicitygovernment.dp.ua"
+    server: "a03.taipeicitygovernment.cn.ua"
+    port: 3462
+    password: "736cd94d-7b94-3e44-8106-3419f64eaf09"
+    sni: "45.32.28.232"
     skip-cert-verify: true
     udp: true
   - name: "🇹🇼_17"
-    type: trojan
-    server: "official.taipeicitygovernment.net.ua"
-    port: 8443
-    password: "96983eb4-c8f1-316e-ab00-500014ed3d8b"
-    sni: "official.taipeicitygovernment.net.ua"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇹🇼_18"
-    type: trojan
-    server: "official.taipeicitygovernment.com.ua"
-    port: 8443
-    password: "96983eb4-c8f1-316e-ab00-500014ed3d8b"
-    sni: "official.taipeicitygovernment.com.ua"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇹🇼_19"
     type: trojan
     server: "60.250.152.229"
     port: 8443
@@ -209,9 +193,25 @@ proxies:
     sni: "official.taipeicitygovernment.chernovtsy.ua"
     skip-cert-verify: true
     udp: true
+  - name: "🇹🇼_18"
+    type: trojan
+    server: "60.250.152.209"
+    port: 8443
+    password: "96983eb4-c8f1-316e-ab00-500014ed3d8b"
+    sni: "official.taipeicitygovernment.net.ua"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇹🇼_19"
+    type: trojan
+    server: "official.taipeicitygovernment.chernovtsy.ua"
+    port: 8443
+    password: "96983eb4-c8f1-316e-ab00-500014ed3d8b"
+    sni: "official.taipeicitygovernment.chernovtsy.ua"
+    skip-cert-verify: true
+    udp: true
   - name: "🇹🇼_20"
     type: trojan
-    server: "61.228.79.205"
+    server: "125.227.152.109"
     port: 3462
     password: "6e1b9a65-884f-3aa9-9469-bf6ec0f08610"
     sni: "a03.taipeicitygovernment.cn.ua"
@@ -219,42 +219,42 @@ proxies:
     udp: true
   - name: "🇹🇼_21"
     type: trojan
-    server: "118.232.199.29"
+    server: "tw2.microsoft-orgwly.vip"
     port: 443
-    password: "681e1608-5a5f-48fd-add5-1bc17ebf56b2"
-    sni: "node2.yuntongclouds.com"
+    password: "de94b5f4-3d29-4246-a28c-98cea7f813ad"
+    sni: "tls.microsoft-orgwly.vip"
     skip-cert-verify: true
     udp: true
   - name: "🇹🇼_22"
     type: trojan
-    server: "official.taipeicitygovernment.org.ua"
-    port: 8443
-    password: "96983eb4-c8f1-316e-ab00-500014ed3d8b"
-    sni: "official.taipeicitygovernment.org.ua"
+    server: "tw2.microsoft-orgwly.vip"
+    port: 443
+    password: "9229374b-8ed5-4e78-aba9-eb572c8a5f27"
+    sni: "tls.microsoft-orgwly.vip"
     skip-cert-verify: true
     udp: true
   - name: "🇹🇼_23"
     type: trojan
-    server: "tw2.microsoft-orgwly.vip"
-    port: 443
-    password: "43679727-548c-41b4-b13d-a8aaace7bf13"
-    sni: "tls.microsoft-orgwly.vip"
+    server: "61.228.79.205"
+    port: 3462
+    password: "6e1b9a65-884f-3aa9-9469-bf6ec0f08610"
+    sni: "a03.taipeicitygovernment.cn.ua"
     skip-cert-verify: true
     udp: true
   - name: "🇹🇼_24"
     type: trojan
-    server: "211.22.180.227"
-    port: 443
-    password: "2613bb74-d727-4b4b-8e61-29bada971316"
-    sni: "tls.microsoft-orgwly.vip"
+    server: "official.taipeicitygovernment.ivano-frankivsk.ua"
+    port: 8443
+    password: "18d443f9-ad28-3c96-b13d-9127c46e06b7"
+    sni: "45.32.28.232"
     skip-cert-verify: true
     udp: true
   - name: "🇹🇼_25"
     type: trojan
-    server: "60.250.152.208"
+    server: "61.228.67.106"
     port: 3462
-    password: "736cd94d-7b94-3e44-8106-3419f64eaf09"
-    sni: "45.32.28.232"
+    password: "6e1b9a65-884f-3aa9-9469-bf6ec0f08610"
+    sni: "a03.taipeicitygovernment.cn.ua"
     skip-cert-verify: true
     udp: true
   - name: "🇹🇼_26"
@@ -267,7 +267,7 @@ proxies:
     udp: true
   - name: "🇹🇼_27"
     type: trojan
-    server: "125.227.152.109"
+    server: "60.250.152.229"
     port: 3462
     password: "6e1b9a65-884f-3aa9-9469-bf6ec0f08610"
     sni: "a03.taipeicitygovernment.cn.ua"
@@ -275,181 +275,21 @@ proxies:
     udp: true
   - name: "🇹🇼_28"
     type: trojan
-    server: "60.250.152.209"
-    port: 3462
-    password: "6e1b9a65-884f-3aa9-9469-bf6ec0f08610"
-    sni: "a03.taipeicitygovernment.cn.ua"
+    server: "118.232.199.29"
+    port: 443
+    password: "681e1608-5a5f-48fd-add5-1bc17ebf56b2"
+    sni: "node2.yuntongclouds.com"
     skip-cert-verify: true
     udp: true
   - name: "🇹🇼_29"
     type: trojan
-    server: "official.taipeicitygovernment.cn.ua"
-    port: 8443
-    password: "96983eb4-c8f1-316e-ab00-500014ed3d8b"
-    sni: "official.taipeicitygovernment.cn.ua"
+    server: "60.250.152.208"
+    port: 3462
+    password: "736cd94d-7b94-3e44-8106-3419f64eaf09"
+    sni: "45.32.28.232"
     skip-cert-verify: true
     udp: true
   - name: "🇹🇼_30"
-    type: trojan
-    server: "85.237.207.189"
-    port: 443
-    password: "3ac6a6ca99f74941b1eaf892818e2ddb"
-    sni: "85.237.207.189"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇹🇼_31"
-    type: trojan
-    server: "60.250.152.208"
-    port: 3462
-    password: "6e1b9a65-884f-3aa9-9469-bf6ec0f08610"
-    sni: "a03.taipeicitygovernment.cn.ua"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇹🇼_32"
-    type: trojan
-    server: "official.taipeicitygovernment.chernovtsy.ua"
-    port: 8443
-    password: "96983eb4-c8f1-316e-ab00-500014ed3d8b"
-    sni: "official.taipeicitygovernment.chernovtsy.ua"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇹🇼_33"
-    type: trojan
-    server: "60.250.152.229"
-    port: 3462
-    password: "6e1b9a65-884f-3aa9-9469-bf6ec0f08610"
-    sni: "a03.taipeicitygovernment.cn.ua"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇹🇼_34"
-    type: trojan
-    server: "official.taipeicitygovernment.biz.ua"
-    port: 8443
-    password: "96983eb4-c8f1-316e-ab00-500014ed3d8b"
-    sni: "official.taipeicitygovernment.biz.ua"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇹🇼_35"
-    type: trojan
-    server: "official.taipeicitygovernment.kiev.ua"
-    port: 8443
-    password: "5505f6ba-cd37-30ce-8f92-be4120c83d7f"
-    sni: "66.42.40.132"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇹🇼_36"
-    type: trojan
-    server: "210.203.60.190"
-    port: 443
-    password: "6e1b9a65-884f-3aa9-9469-bf6ec0f08610"
-    sni: "45.32.28.232"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇹🇼_37"
-    type: trojan
-    server: "official.taipeicitygovernment.ivano-frankivsk.ua"
-    port: 8443
-    password: "18d443f9-ad28-3c96-b13d-9127c46e06b7"
-    sni: "45.32.28.232"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇹🇼_38"
-    type: trojan
-    server: "60.250.152.229"
-    port: 3462
-    password: "736cd94d-7b94-3e44-8106-3419f64eaf09"
-    sni: "a12.taipeicitygovernment.org.ua"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇹🇼_39"
-    type: trojan
-    server: "tw2.microsoft-orgwly.vip"
-    port: 443
-    password: "e863739f-a240-4eb5-9abd-780a8ad8ac10"
-    sni: "tls.microsoft-orgwly.vip"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇹🇼_40"
-    type: trojan
-    server: "61.228.67.106"
-    port: 3462
-    password: "6e1b9a65-884f-3aa9-9469-bf6ec0f08610"
-    sni: "a03.taipeicitygovernment.cn.ua"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇹🇼_41"
-    type: trojan
-    server: "60.250.152.230"
-    port: 3462
-    password: "6e1b9a65-884f-3aa9-9469-bf6ec0f08610"
-    sni: "a03.taipeicitygovernment.cn.ua"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇹🇼_42"
-    type: trojan
-    server: "60.250.152.209"
-    port: 8443
-    password: "96983eb4-c8f1-316e-ab00-500014ed3d8b"
-    sni: "official.taipeicitygovernment.net.ua"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇹🇼_43"
-    type: trojan
-    server: "a03.taipeicitygovernment.cn.ua"
-    port: 3462
-    password: "736cd94d-7b94-3e44-8106-3419f64eaf09"
-    sni: "45.32.28.232"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇹🇼_44"
-    type: trojan
-    server: "85.237.206.249"
-    port: 443
-    password: "3ac6a6ca99f74941b1eaf892818e2ddb"
-    sni: "85.237.206.249"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇹🇼_45"
-    type: trojan
-    server: "a03.taipeicitygovernment.cn.ua"
-    port: 3462
-    password: "6e1b9a65-884f-3aa9-9469-bf6ec0f08610"
-    sni: "a03.taipeicitygovernment.cn.ua"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇹🇼_46"
-    type: trojan
-    server: "60.250.152.209"
-    port: 8443
-    password: "96983eb4-cr8f1-316e-ab00-500014ed3d8b"
-    sni: "official.taipeicitygovernment.cn.ua"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇹🇼_47"
-    type: trojan
-    server: "60.250.152.209"
-    port: 3462
-    password: "736cd94d-7b94-3e44-8106-3419f64eaf09"
-    sni: "a12.taipeicitygovernment.org.ua"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇹🇼_48"
-    type: trojan
-    server: "61.222.160.199"
-    port: 3462
-    password: "6e1b9a65-884f-3aa9-9469-bf6ec0f08610"
-    sni: "a03.taipeicitygovernment.cn.ua"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇹🇼_49"
-    type: trojan
-    server: "official.taipeicitygovernment.cn.ua"
-    port: 8443
-    password: "96983eb4-cr8f1-316e-ab00-500014ed3d8b"
-    sni: "official.taipeicitygovernment.cn.ua"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇹🇼_50"
     type: trojan
     server: "60.250.152.234"
     port: 3462
@@ -457,7 +297,47 @@ proxies:
     sni: "a03.taipeicitygovernment.cn.ua"
     skip-cert-verify: true
     udp: true
-  - name: "🇹🇼_51"
+  - name: "🇹🇼_31"
+    type: trojan
+    server: "tw2.microsoft-orgwly.vip"
+    port: 443
+    password: "e863739f-a240-4eb5-9abd-780a8ad8ac10"
+    sni: "tls.microsoft-orgwly.vip"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇹🇼_32"
+    type: trojan
+    server: "a10.taipeicitygovernment.kyiv.ua"
+    port: 3462
+    password: "6e1b9a65-884f-3aa9-9469-bf6ec0f08610"
+    sni: "45.32.28.232"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇹🇼_33"
+    type: trojan
+    server: "60.250.152.208"
+    port: 3462
+    password: "6e1b9a65-884f-3aa9-9469-bf6ec0f08610"
+    sni: "a03.taipeicitygovernment.cn.ua"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇹🇼_34"
+    type: trojan
+    server: "tw2.microsoft-orgwly.vip"
+    port: 443
+    password: "50d6b42e-d5ae-443c-9742-5101479f4563"
+    sni: "tls.microsoft-orgwly.vip"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇹🇼_35"
+    type: trojan
+    server: "tw2.microsoft-orgwly.vip"
+    port: 443
+    password: "b5a21d2a-6208-4e23-91ab-c2423c2ae362"
+    sni: "tls.microsoft-orgwly.vip"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇹🇼_36"
     type: trojan
     server: "60.250.152.230"
     port: 8443
@@ -465,23 +345,63 @@ proxies:
     sni: "official.taipeicitygovernment.ivano-frankivsk.ua"
     skip-cert-verify: true
     udp: true
-  - name: "🇹🇼_52"
+  - name: "🇹🇼_37"
+    type: trojan
+    server: "60.250.152.209"
+    port: 8443
+    password: "96983eb4-cr8f1-316e-ab00-500014ed3d8b"
+    sni: "official.taipeicitygovernment.cn.ua"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇹🇼_38"
+    type: trojan
+    server: "official.taipeicitygovernment.cn.ua"
+    port: 8443
+    password: "96983eb4-c8f1-316e-ab00-500014ed3d8b"
+    sni: "official.taipeicitygovernment.cn.ua"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇹🇼_39"
+    type: trojan
+    server: "60.250.152.209"
+    port: 3462
+    password: "6e1b9a65-884f-3aa9-9469-bf6ec0f08610"
+    sni: "a03.taipeicitygovernment.cn.ua"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇹🇼_40"
+    type: trojan
+    server: "60.250.152.229"
+    port: 3462
+    password: "736cd94d-7b94-3e44-8106-3419f64eaf09"
+    sni: "a12.taipeicitygovernment.org.ua"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇹🇼_41"
+    type: trojan
+    server: "60.250.152.209"
+    port: 3462
+    password: "736cd94d-7b94-3e44-8106-3419f64eaf09"
+    sni: "a12.taipeicitygovernment.org.ua"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇹🇼_42"
     type: trojan
     server: "tw2.microsoft-orgwly.vip"
     port: 443
-    password: "157dc6df-0f2a-4dd7-a312-8410f3d41e03"
+    password: "43679727-548c-41b4-b13d-a8aaace7bf13"
     sni: "tls.microsoft-orgwly.vip"
     skip-cert-verify: true
     udp: true
-  - name: "🇹🇼_53"
+  - name: "🇹🇼_43"
     type: trojan
-    server: "61.220.126.180"
+    server: "85.237.207.189"
     port: 443
-    password: "981db44e-9f07-49eb-9ba0-6ab4939919a2"
-    sni: "twnode11.oportal.cc"
+    password: "3ac6a6ca99f74941b1eaf892818e2ddb"
+    sni: "85.237.207.189"
     skip-cert-verify: true
     udp: true
-  - name: "🇹🇼_54"
+  - name: "🇹🇼_44"
     type: trojan
     server: "60.250.152.208"
     port: 8443
@@ -489,115 +409,76 @@ proxies:
     sni: "official.taipeicitygovernment.chernovtsy.ua"
     skip-cert-verify: true
     udp: true
-  - name: "🇹🇼_55"
+  - name: "🇹🇼_45"
     type: trojan
-    server: "tw2.microsoft-orgwly.vip"
+    server: "61.220.126.180"
     port: 443
-    password: "9229374b-8ed5-4e78-aba9-eb572c8a5f27"
+    password: "981db44e-9f07-49eb-9ba0-6ab4939919a2"
+    sni: "twnode11.oportal.cc"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇹🇼_46"
+    type: trojan
+    server: "61.228.66.155"
+    port: 3462
+    password: "6e1b9a65-884f-3aa9-9469-bf6ec0f08610"
+    sni: "a03.taipeicitygovernment.cn.ua"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇹🇼_47"
+    type: trojan
+    server: "203.69.207.175"
+    port: 3462
+    password: "6e1b9a65-884f-3aa9-9469-bf6ec0f08610"
+    sni: "a03.taipeicitygovernment.cn.ua"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇹🇼_48"
+    type: trojan
+    server: "211.22.180.227"
+    port: 443
+    password: "2613bb74-d727-4b4b-8e61-29bada971316"
     sni: "tls.microsoft-orgwly.vip"
     skip-cert-verify: true
     udp: true
-  - name: "🇹🇼_56"
-    type: ss
-    server: "125.224.227.94"
-    port: 50099
-    cipher: "chacha20-ietf-poly1305"
-    password: "a9a0d092-6f0e-4701-81ee-454643d6d506"
-    udp: true
-  - name: "🇹🇼_57"
-    type: ss
-    server: "R3MRCG00129437X.cybervena.com"
-    port: 50099
-    cipher: "chacha20-ietf-poly1305"
-    password: "b1ae0fce-9340-4f2e-882d-fdb2218e2e2b"
-    udp: true
-  - name: "🇹🇼_58"
-    type: ss
-    server: "r3mrcg001286ek2.cybervena.com"
-    port: 50099
-    cipher: "chacha20-ietf-poly1305"
-    password: "7e731ec3-f8e1-43f6-92cf-3978d14705c4"
-    udp: true
-  - name: "🇹🇼_59"
-    type: ss
-    server: "namrcg001640lrm.cybervena.com"
-    port: 50099
-    cipher: "chacha20-ietf-poly1305"
-    password: "a9a0d092-6f0e-4701-81ee-454643d6d506"
-    udp: true
-  - name: "🇹🇼_60"
+  - name: "🇹🇼_49"
     type: ss
     server: "36.224.182.144"
     port: 50099
     cipher: "chacha20-ietf-poly1305"
     password: "7e731ec3-f8e1-43f6-92cf-3978d14705c4"
     udp: true
-  - name: "🇹🇼_61"
+  - name: "🇹🇼_50"
     type: ss
-    server: "125.224.227.94"
-    port: 50099
-    cipher: "chacha20-ietf-poly1305"
-    password: "7b56aeaa-8e2d-4bdf-b1d7-233ecca15f56"
-    udp: true
-  - name: "🇹🇼_62"
-    type: ss
-    server: "namrcg001640lrm.cybervena.com"
-    port: 50099
-    cipher: "chacha20-ietf-poly1305"
-    password: "a9a0d092-6f0e-4701-81ee-454643d6d506"
-    udp: true
-  - name: "🇹🇼_63"
-    type: ss
-    server: "36.224.171.252"
+    server: "36.224.182.144"
     port: 50099
     cipher: "chacha20-ietf-poly1305"
     password: "7e731ec3-f8e1-43f6-92cf-3978d14705c4"
     udp: true
-  - name: "🇹🇼_64"
+  - name: "🇹🇼_51"
     type: ss
     server: "36.224.184.245"
     port: 50099
     cipher: "chacha20-ietf-poly1305"
     password: "7e731ec3-f8e1-43f6-92cf-3978d14705c4"
     udp: true
-  - name: "🇹🇼_65"
+  - name: "🇹🇼_52"
     type: ss
-    server: "125.224.227.94"
+    server: "r3mrcg001286ek2.cybervena.com"
     port: 50099
     cipher: "chacha20-ietf-poly1305"
-    password: "a9a0d092-6f0e-4701-81ee-454643d6d506"
+    password: "7e731ec3-f8e1-43f6-92cf-3978d14705c4"
     udp: true
-  - name: "🇹🇼_66"
+  - name: "🇹🇼_53"
     type: ss
-    server: "namrcg001640lrm.cybervena.com"
-    port: 50099
-    cipher: "chacha20-ietf-poly1305"
-    password: "7b56aeaa-8e2d-4bdf-b1d7-233ecca15f56"
-    udp: true
-  - name: "🇹🇼_67"
-    type: ss
-    server: "36.224.171.252"
+    server: "r3mrcg00129437x.cybervena.com"
     port: 50099
     cipher: "chacha20-ietf-poly1305"
     password: "b1ae0fce-9340-4f2e-882d-fdb2218e2e2b"
     udp: true
-  - name: "🇹🇼_68"
+  - name: "🇹🇼_54"
     type: ss
-    server: "namrcg001640lrm.cybervena.com"
-    port: 50099
-    cipher: "chacha20-ietf-poly1305"
-    password: "7b56aeaa-8e2d-4bdf-b1d7-233ecca15f56"
-    udp: true
-  - name: "🇹🇼_69"
-    type: ss
-    server: "36.224.171.252"
-    port: 50099
-    cipher: "chacha20-ietf-poly1305"
-    password: "b1ae0fce-9340-4f2e-882d-fdb2218e2e2b"
-    udp: true
-  - name: "🇹🇼_70"
-    type: ss
-    server: "36.224.182.144"
+    server: "36.224.184.245"
     port: 50099
     cipher: "chacha20-ietf-poly1305"
     password: "7e731ec3-f8e1-43f6-92cf-3978d14705c4"
@@ -622,7 +503,7 @@ proxy-groups:
       - "🇹🇼_6"
       - "🇹🇼_8"
       - "🇹🇼_9"
-      - "🇹🇼_11"
+      - "🇹🇼_10"
       - "🇹🇼_12"
       - "🇹🇼_13"
       - "🇹🇼_14"
@@ -666,22 +547,6 @@ proxy-groups:
       - "🇹🇼_52"
       - "🇹🇼_53"
       - "🇹🇼_54"
-      - "🇹🇼_55"
-      - "🇹🇼_56"
-      - "🇹🇼_57"
-      - "🇹🇼_58"
-      - "🇹🇼_59"
-      - "🇹🇼_60"
-      - "🇹🇼_61"
-      - "🇹🇼_62"
-      - "🇹🇼_63"
-      - "🇹🇼_64"
-      - "🇹🇼_65"
-      - "🇹🇼_66"
-      - "🇹🇼_67"
-      - "🇹🇼_68"
-      - "🇹🇼_69"
-      - "🇹🇼_70"
 
 
 rules:

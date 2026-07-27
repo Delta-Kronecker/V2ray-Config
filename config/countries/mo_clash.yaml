@@ -63,19 +63,15 @@ dns:
     - https://freedns.controld.com/family
 
 proxies:
-  - name: "🇬🇪_1"
+  - name: "🇲🇴_1"
     type: vless
-    server: "217.11.164.87"
-    port: 44217
-    uuid: "0c5853e1-a606-4aa2-bbfa-86a7b58d43b1"
+    server: "45.207.34.239"
+    port: 10086
+    uuid: "11e5e68c-355a-415c-8024-3bf12637e220"
     udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.cloudflare.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "a1VvM3k8ETY4UZVL_eUbKwFwpVveNqD0ObMZ1dtwLj0"
-      short-id: "2adcb0c184d15c1a"
+    network: ws
+    ws-opts:
+      path: "/vless"
 
 proxy-groups:
   - name: "PROXY"
@@ -90,7 +86,7 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇬🇪_1"
+      - "🇲🇴_1"
 
 
 rules:

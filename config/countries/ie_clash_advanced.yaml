@@ -60,18 +60,52 @@ dns:
 
 proxies:
   - name: "🇮🇪_1"
-    type: ss
-    server: "20.107.187.192"
+    type: vless
+    server: "85.159.229.77"
     port: 443
-    cipher: "chacha20-ietf-poly1305"
-    password: "vWcimUSiT1rfVM1v"
+    uuid: "ac5313ae-803b-4104-a047-94c97ecb621e"
     udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ie.orpheous.ru"
+    reality-opts:
+      public-key: "lHCkAu_DOVFtE-iL2JGrPt44QeTCFijXuRfuGaSni3Q"
+      short-id: "9e4eced6e98ed4d4"
+    flow: "xtls-rprx-vision"
   - name: "🇮🇪_2"
+    type: vless
+    server: "ie.orpheous.ru"
+    port: 443
+    uuid: "ac5313ae-803b-4104-a047-94c97ecb621e"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ie.orpheous.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "lHCkAu_DOVFtE-iL2JGrPt44QeTCFijXuRfuGaSni3Q"
+      short-id: "9e4eced6e98ed4d4"
+    flow: "xtls-rprx-vision"
+  - name: "🇮🇪_3"
     type: ss
-    server: "20.107.187.192"
+    server: "23.100.56.187"
     port: 443
     cipher: "chacha20-ietf-poly1305"
-    password: "nHCcsXK2rEcs9lRi"
+    password: "TWsFN18unQegUKnX"
+    udp: true
+  - name: "🇮🇪_4"
+    type: ss
+    server: "23.100.56.187"
+    port: 443
+    cipher: "chacha20-ietf-poly1305"
+    password: "9XGmyTJC8DDd0lFR"
+    udp: true
+  - name: "🇮🇪_5"
+    type: ss
+    server: "23.100.56.187"
+    port: 443
+    cipher: "chacha20-ietf-poly1305"
+    password: "m9Qdbt9Iu35IxyqN"
     udp: true
 
 proxy-groups:
@@ -117,6 +151,9 @@ proxy-groups:
     proxies:
       - "🇮🇪_1"
       - "🇮🇪_2"
+      - "🇮🇪_3"
+      - "🇮🇪_4"
+      - "🇮🇪_5"
 
   - name: "LB-CDN"
     type: load-balance
@@ -128,6 +165,9 @@ proxy-groups:
     proxies:
       - "🇮🇪_1"
       - "🇮🇪_2"
+      - "🇮🇪_3"
+      - "🇮🇪_4"
+      - "🇮🇪_5"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -139,6 +179,9 @@ proxy-groups:
     proxies:
       - "🇮🇪_1"
       - "🇮🇪_2"
+      - "🇮🇪_3"
+      - "🇮🇪_4"
+      - "🇮🇪_5"
 
   - name: "FAST-CDN"
     type: url-test
@@ -149,6 +192,9 @@ proxy-groups:
     proxies:
       - "🇮🇪_1"
       - "🇮🇪_2"
+      - "🇮🇪_3"
+      - "🇮🇪_4"
+      - "🇮🇪_5"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -160,6 +206,9 @@ proxy-groups:
     proxies:
       - "🇮🇪_1"
       - "🇮🇪_2"
+      - "🇮🇪_3"
+      - "🇮🇪_4"
+      - "🇮🇪_5"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
@@ -167,6 +216,9 @@ proxy-groups:
     proxies:
       - "🇮🇪_1"
       - "🇮🇪_2"
+      - "🇮🇪_3"
+      - "🇮🇪_4"
+      - "🇮🇪_5"
 
 rules:
   - MATCH,PROXY-BEST

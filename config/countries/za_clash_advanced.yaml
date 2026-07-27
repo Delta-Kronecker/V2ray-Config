@@ -81,10 +81,10 @@ proxies:
     udp: true
   - name: "🇿🇦_3"
     type: ss
-    server: "102.133.165.160"
-    port: 16233
+    server: "20.164.210.215"
+    port: 443
     cipher: "chacha20-ietf-poly1305"
-    password: "Xsy8Ox4yOV3xLlpxtjzs3X"
+    password: "pUYJnwYMpalrqy9L"
     udp: true
   - name: "🇿🇦_4"
     type: ss
@@ -92,6 +92,13 @@ proxies:
     port: 443
     cipher: "chacha20-ietf-poly1305"
     password: "aduB9HGxQHjA2SBMRjkHX6"
+    udp: true
+  - name: "🇿🇦_5"
+    type: ss
+    server: "102.133.165.160"
+    port: 16233
+    cipher: "chacha20-ietf-poly1305"
+    password: "Xsy8Ox4yOV3xLlpxtjzs3X"
     udp: true
 
 proxy-groups:
@@ -139,6 +146,7 @@ proxy-groups:
       - "🇿🇦_2"
       - "🇿🇦_3"
       - "🇿🇦_4"
+      - "🇿🇦_5"
 
   - name: "LB-CDN"
     type: load-balance
@@ -152,6 +160,7 @@ proxy-groups:
       - "🇿🇦_2"
       - "🇿🇦_3"
       - "🇿🇦_4"
+      - "🇿🇦_5"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -165,6 +174,7 @@ proxy-groups:
       - "🇿🇦_2"
       - "🇿🇦_3"
       - "🇿🇦_4"
+      - "🇿🇦_5"
 
   - name: "FAST-CDN"
     type: url-test
@@ -177,6 +187,7 @@ proxy-groups:
       - "🇿🇦_2"
       - "🇿🇦_3"
       - "🇿🇦_4"
+      - "🇿🇦_5"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -190,6 +201,7 @@ proxy-groups:
       - "🇿🇦_2"
       - "🇿🇦_3"
       - "🇿🇦_4"
+      - "🇿🇦_5"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
@@ -199,6 +211,7 @@ proxy-groups:
       - "🇿🇦_2"
       - "🇿🇦_3"
       - "🇿🇦_4"
+      - "🇿🇦_5"
 
 rules:
   - MATCH,PROXY-BEST

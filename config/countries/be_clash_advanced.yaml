@@ -89,22 +89,6 @@ proxies:
       path: "/fdip=tw.william.us.ci!txt"
       headers:
         Host: "learn00.evany.de5.net"
-  - name: "🇧🇪_5"
-    type: trojan
-    server: "hl-freedom-1.undef.network"
-    port: 443
-    password: "JaFKnqNcvnBT63t3rquidGsln"
-    sni: "hl-freedom-1.undef.network"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇧🇪_6"
-    type: trojan
-    server: "94.126.225.96"
-    port: 443
-    password: "JaFKnqNcvnBT63t3rquidGsln"
-    sni: "hl-freedom-1.undef.network"
-    skip-cert-verify: true
-    udp: true
 
 proxy-groups:
   # ── Top-level selector ────────────────────────────────────────────────────
@@ -149,8 +133,6 @@ proxy-groups:
     proxies:
       - "🇧🇪_1"
       - "🇧🇪_3"
-      - "🇧🇪_5"
-      - "🇧🇪_6"
 
   - name: "LB-CDN"
     type: load-balance
@@ -162,8 +144,6 @@ proxy-groups:
     proxies:
       - "🇧🇪_1"
       - "🇧🇪_3"
-      - "🇧🇪_5"
-      - "🇧🇪_6"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -175,8 +155,6 @@ proxy-groups:
     proxies:
       - "🇧🇪_1"
       - "🇧🇪_3"
-      - "🇧🇪_5"
-      - "🇧🇪_6"
 
   - name: "FAST-CDN"
     type: url-test
@@ -187,8 +165,6 @@ proxy-groups:
     proxies:
       - "🇧🇪_1"
       - "🇧🇪_3"
-      - "🇧🇪_5"
-      - "🇧🇪_6"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -200,8 +176,6 @@ proxy-groups:
     proxies:
       - "🇧🇪_1"
       - "🇧🇪_3"
-      - "🇧🇪_5"
-      - "🇧🇪_6"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
@@ -209,8 +183,6 @@ proxy-groups:
     proxies:
       - "🇧🇪_1"
       - "🇧🇪_3"
-      - "🇧🇪_5"
-      - "🇧🇪_6"
 
 rules:
   - MATCH,PROXY-BEST

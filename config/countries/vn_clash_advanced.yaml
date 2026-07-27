@@ -69,14 +69,6 @@ proxies:
     udp: true
   - name: "🇻🇳_2"
     type: trojan
-    server: "103.72.96.55"
-    port: 443
-    password: "c95357eb-2869-4511-8940-f0dc5e1ec9b1"
-    sni: "hanoiidc2.5gsieutocdo.com"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇻🇳_3"
-    type: trojan
     server: "36.50.134.29"
     port: 443
     password: "94d219c9-1afc-4d42-b090-8b3794764380"
@@ -127,7 +119,6 @@ proxy-groups:
     proxies:
       - "🇻🇳_1"
       - "🇻🇳_2"
-      - "🇻🇳_3"
 
   - name: "LB-CDN"
     type: load-balance
@@ -139,7 +130,6 @@ proxy-groups:
     proxies:
       - "🇻🇳_1"
       - "🇻🇳_2"
-      - "🇻🇳_3"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -151,7 +141,6 @@ proxy-groups:
     proxies:
       - "🇻🇳_1"
       - "🇻🇳_2"
-      - "🇻🇳_3"
 
   - name: "FAST-CDN"
     type: url-test
@@ -162,7 +151,6 @@ proxy-groups:
     proxies:
       - "🇻🇳_1"
       - "🇻🇳_2"
-      - "🇻🇳_3"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -174,7 +162,6 @@ proxy-groups:
     proxies:
       - "🇻🇳_1"
       - "🇻🇳_2"
-      - "🇻🇳_3"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
@@ -182,7 +169,6 @@ proxy-groups:
     proxies:
       - "🇻🇳_1"
       - "🇻🇳_2"
-      - "🇻🇳_3"
 
 rules:
   - MATCH,PROXY-BEST
