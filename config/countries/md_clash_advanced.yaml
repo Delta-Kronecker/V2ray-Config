@@ -61,17 +61,17 @@ dns:
 proxies:
   - name: "🇲🇩_1"
     type: vless
-    server: "94.103.2.219"
-    port: 29445
-    uuid: "0d7d959f-5498-457e-aee7-fd16b1f3e77d"
+    server: "131.123.37.79"
+    port: 443
+    uuid: "f165affe-ffb4-4f13-a081-f14434e51152"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "www.twitch.tv"
-    client-fingerprint: "chrome"
+    servername: "bolg1.panel11.ru"
+    client-fingerprint: "firefox"
     reality-opts:
-      public-key: "QKx8d10LphfYzOh4S6LAXTFrwVVRaliQ0V7A1_TA6gc"
-      short-id: "da31c35785b3978b"
+      public-key: "Ffbj8WzPUpY_qNYoIusH8c5kuYmZD8599nZxFxxKtlY"
+      short-id: "67ef08f70e8ae1bb"
     flow: "xtls-rprx-vision"
   - name: "🇲🇩_2"
     type: vless
@@ -86,20 +86,6 @@ proxies:
     reality-opts:
       public-key: "X9h6n_nJPxp3vy7b0c1A5qRhtCRejgsDRqKbSAYWGEI"
       short-id: "7f33a911e2964345"
-    flow: "xtls-rprx-vision"
-  - name: "🇲🇩_3"
-    type: vless
-    server: "94.103.2.219"
-    port: 29446
-    uuid: "0d7d959f-5498-457e-aee7-fd16b1f3e77d"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.twitch.tv"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "pk41DLgF-uMU46On9iqmFFNO5ejtzCpYATAAOaEU90Q"
-      short-id: "098114ff3f7d0898"
     flow: "xtls-rprx-vision"
 
 proxy-groups:
@@ -145,7 +131,6 @@ proxy-groups:
     proxies:
       - "🇲🇩_1"
       - "🇲🇩_2"
-      - "🇲🇩_3"
 
   - name: "LB-CDN"
     type: load-balance
@@ -157,7 +142,6 @@ proxy-groups:
     proxies:
       - "🇲🇩_1"
       - "🇲🇩_2"
-      - "🇲🇩_3"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -169,7 +153,6 @@ proxy-groups:
     proxies:
       - "🇲🇩_1"
       - "🇲🇩_2"
-      - "🇲🇩_3"
 
   - name: "FAST-CDN"
     type: url-test
@@ -180,7 +163,6 @@ proxy-groups:
     proxies:
       - "🇲🇩_1"
       - "🇲🇩_2"
-      - "🇲🇩_3"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -192,7 +174,6 @@ proxy-groups:
     proxies:
       - "🇲🇩_1"
       - "🇲🇩_2"
-      - "🇲🇩_3"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
@@ -200,7 +181,6 @@ proxy-groups:
     proxies:
       - "🇲🇩_1"
       - "🇲🇩_2"
-      - "🇲🇩_3"
 
 rules:
   - MATCH,PROXY-BEST

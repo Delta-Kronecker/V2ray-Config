@@ -73,21 +73,6 @@ proxies:
       short-id: "764f497dda21c4fc"
     flow: "xtls-rprx-vision"
   - name: "🇮🇩_2"
-    type: vless
-    server: "45.196.29.77"
-    port: 443
-    uuid: "218b4b35-e826-49d4-b5dc-558fc7eb9923"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "polshaov.ochmaybrooooo.online"
-    client-fingerprint: "chrome"
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "polshaov.ochmaybrooooo.online"
-  - name: "🇮🇩_4"
     type: trojan
     server: "172.232.250.160"
     port: 443
@@ -139,7 +124,6 @@ proxy-groups:
     proxies:
       - "🇮🇩_1"
       - "🇮🇩_2"
-      - "🇮🇩_4"
 
   - name: "LB-CDN"
     type: load-balance
@@ -151,7 +135,6 @@ proxy-groups:
     proxies:
       - "🇮🇩_1"
       - "🇮🇩_2"
-      - "🇮🇩_4"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -163,7 +146,6 @@ proxy-groups:
     proxies:
       - "🇮🇩_1"
       - "🇮🇩_2"
-      - "🇮🇩_4"
 
   - name: "FAST-CDN"
     type: url-test
@@ -174,7 +156,6 @@ proxy-groups:
     proxies:
       - "🇮🇩_1"
       - "🇮🇩_2"
-      - "🇮🇩_4"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -186,7 +167,6 @@ proxy-groups:
     proxies:
       - "🇮🇩_1"
       - "🇮🇩_2"
-      - "🇮🇩_4"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
@@ -194,7 +174,6 @@ proxy-groups:
     proxies:
       - "🇮🇩_1"
       - "🇮🇩_2"
-      - "🇮🇩_4"
 
 rules:
   - MATCH,PROXY-BEST

@@ -72,18 +72,11 @@ proxies:
     tls: true
     skip-cert-verify: true
     servername: "site.rumedia-cdn.com"
-    client-fingerprint: "chrome"
     reality-opts:
       public-key: "dgrcO3r5wkEjcsWdEsNtgtWCe9vER6mgADXYclWXVxg"
       short-id: "8de54d32a8d3fdf9"
     flow: "xtls-rprx-vision"
   - name: "🇨🇿_2"
-    type: vless
-    server: "141.133.172.222"
-    port: 20342
-    uuid: "5eecb34f-c905-4c77-b7fb-d830b451cd11"
-    udp: true
-  - name: "🇨🇿_3"
     type: vless
     server: "46.8.113.190"
     port: 443
@@ -92,11 +85,16 @@ proxies:
     tls: true
     skip-cert-verify: true
     servername: "eu-central.cendora.ru"
-    client-fingerprint: "qq"
     reality-opts:
       public-key: "b-Cm9hX-3UHsS1L_lnUB6AMjuKhlN1IDdBbZ506itjI"
       short-id: "00bca5982f82d083"
     flow: "xtls-rprx-vision"
+  - name: "🇨🇿_3"
+    type: vless
+    server: "141.133.172.222"
+    port: 20342
+    uuid: "5eecb34f-c905-4c77-b7fb-d830b451cd11"
+    udp: true
   - name: "🇨🇿_4"
     type: vless
     server: "193.124.57.208"
@@ -105,15 +103,35 @@ proxies:
     udp: true
   - name: "🇨🇿_5"
     type: trojan
+    server: "195.85.23.27"
+    port: 443
+    password: "521314"
+    sni: "hhtj.hhllfly.kdns.fr"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/pyip=Telegram-WangCai2"
+      headers:
+        Host: "hhtj.hhllfly.kdns.fr"
+  - name: "🇨🇿_7"
+    type: trojan
     server: "46.8.113.142"
     port: 443
     password: "LYaEYwjN8LjWTRJdCCTzW7V6gK7atJVu"
     sni: "46.8.113.142"
     skip-cert-verify: true
     udp: true
-  - name: "🇨🇿_6"
+  - name: "🇨🇿_8"
     type: ss
     server: "146.70.222.126"
+    port: 1080
+    cipher: "chacha20-ietf-poly1305"
+    password: "XF0klw7870vXn3uQIxe19Q"
+    udp: true
+  - name: "🇨🇿_9"
+    type: ss
+    server: "185.156.174.106"
     port: 1080
     cipher: "chacha20-ietf-poly1305"
     password: "XF0klw7870vXn3uQIxe19Q"
@@ -137,7 +155,9 @@ proxy-groups:
       - "🇨🇿_3"
       - "🇨🇿_4"
       - "🇨🇿_5"
-      - "🇨🇿_6"
+      - "🇨🇿_7"
+      - "🇨🇿_8"
+      - "🇨🇿_9"
 
 
 rules:

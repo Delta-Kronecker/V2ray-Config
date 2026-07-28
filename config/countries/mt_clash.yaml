@@ -63,15 +63,19 @@ dns:
     - https://freedns.controld.com/family
 
 proxies:
-  - name: "🇲🇴_1"
-    type: vless
-    server: "45.207.34.239"
-    port: 10086
-    uuid: "11e5e68c-355a-415c-8024-3bf12637e220"
+  - name: "🇲🇹_1"
+    type: trojan
+    server: "46.202.30.27"
+    port: 443
+    password: "521314"
+    sni: "hhtj.hhllfly.kdns.fr"
+    skip-cert-verify: true
     udp: true
     network: ws
     ws-opts:
-      path: "/vless"
+      path: "/pyip=Telegram-WangCai2🇨🇳"
+      headers:
+        Host: "hhtj.hhllfly.kdns.fr"
 
 proxy-groups:
   - name: "PROXY"
@@ -86,7 +90,7 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇲🇴_1"
+      - "🇲🇹_1"
 
 
 rules:

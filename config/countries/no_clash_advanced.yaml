@@ -61,20 +61,6 @@ dns:
 proxies:
   - name: "🇳🇴_1"
     type: vless
-    server: "suno.kupivodku.top"
-    port: 1443
-    uuid: "f9922bed-4524-4a6a-8709-9c2e26dedee9"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "suno.kupivodku.top"
-    client-fingerprint: "edge"
-    reality-opts:
-      public-key: "EspGR3C-10emgNP4qil4Sk77pDYHOyxPpV3r6EkbEV8"
-      short-id: "13a7f33d0731e53c"
-    flow: "xtls-rprx-vision"
-  - name: "🇳🇴_2"
-    type: vless
     server: "89.185.81.252"
     port: 8443
     uuid: "1f29762d-3f23-4207-9e39-f774de5d49ba"
@@ -82,6 +68,13 @@ proxies:
     network: grpc
     grpc-opts:
       grpc-service-name: "grpc"
+  - name: "🇳🇴_2"
+    type: ss
+    server: "185.253.97.206"
+    port: 1080
+    cipher: "chacha20-ietf-poly1305"
+    password: "XF0klw7870vXn3uQIxe19Q"
+    udp: true
   - name: "🇳🇴_3"
     type: ss
     server: "185.213.23.63"

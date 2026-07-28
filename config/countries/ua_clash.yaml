@@ -65,52 +65,33 @@ dns:
 proxies:
   - name: "🇺🇦_1"
     type: vless
-    server: "45.135.235.123"
-    port: 443
-    uuid: "1d16c6e0-1bbe-435b-b661-90043fee999c"
+    server: "78.159.240.31"
+    port: 27443
+    uuid: "a2738d8d-ed26-4b13-a4a2-b89c7238cd10"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "notls.lukongtou.eu.org"
-    network: ws
-    ws-opts:
-      path: "Telegram-WangCai2"
-      headers:
-        Host: "notls.lukongtou.eu.org"
+    servername: "api.acquisition-gwe.plus.yandex.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "jOBo4R259-p0H2EcHMPO_R1uPZ8hyM_Yj1K5Nejch2U"
+      short-id: "d681ac08"
+    flow: "xtls-rprx-vision"
+  - name: "🇺🇦_2"
+    type: vless
+    server: "78.159.240.31"
+    port: 26443
+    uuid: "a2738d8d-ed26-4b13-a4a2-b89c7238cd10"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "shopping-api-gateway.cdek.shopping"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "jOBo4R259-p0H2EcHMPO_R1uPZ8hyM_Yj1K5Nejch2U"
+      short-id: "d681ac08"
+    flow: "xtls-rprx-vision"
   - name: "🇺🇦_3"
-    type: vless
-    server: "89.116.180.40"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/?ed=2560"
-      headers:
-        Host: "vms.lifetime09.workers.dev"
-  - name: "🇺🇦_5"
-    type: vless
-    server: "89.116.180.30"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "vms.lifetime09.workers.dev"
-  - name: "🇺🇦_7"
-    type: vless
-    server: "45.135.235.30"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/?ed=2560"
-      headers:
-        Host: "vms.lifetime07.workers.dev"
-  - name: "🇺🇦_9"
     type: trojan
     server: "130.0.236.88"
     port: 443
@@ -118,20 +99,7 @@ proxies:
     sni: "ua.freeguard.org"
     skip-cert-verify: true
     udp: true
-  - name: "🇺🇦_10"
-    type: trojan
-    server: "89.116.180.49"
-    port: 443
-    password: "f18d6149-e214-8554-e737-f7523c8b2eea"
-    sni: "0403.infinityconfig4.workers.dev"
-    skip-cert-verify: true
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/sync"
-      headers:
-        Host: "0403.infinityconfig4.workers.dev"
-  - name: "🇺🇦_12"
+  - name: "🇺🇦_4"
     type: ss
     server: "194.54.80.37"
     port: 1080
@@ -153,12 +121,9 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇺🇦_1"
+      - "🇺🇦_2"
       - "🇺🇦_3"
-      - "🇺🇦_5"
-      - "🇺🇦_7"
-      - "🇺🇦_9"
-      - "🇺🇦_10"
-      - "🇺🇦_12"
+      - "🇺🇦_4"
 
 
 rules:

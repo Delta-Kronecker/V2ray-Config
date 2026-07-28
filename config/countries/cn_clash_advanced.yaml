@@ -61,36 +61,26 @@ dns:
 proxies:
   - name: "🇨🇳_1"
     type: vless
-    server: "120.227.1.43"
-    port: 12528
-    uuid: "f0169b08-43fd-4dc3-8195-18f6ad2fe39d"
+    server: "77.105.163.46"
+    port: 443
+    uuid: "7c61a2a5-c7e4-4d52-baf7-a9406ad89b4c"
     udp: true
-  - name: "🇨🇳_2"
-    type: vless
-    server: "176.124.223.30"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ov186.ochmaybrooooo.online"
+    client-fingerprint: "chrome"
     network: ws
     ws-opts:
       path: "/"
       headers:
-        Host: "vms.lifetime38.workers.dev"
-  - name: "🇨🇳_4"
+        Host: "ov186.ochmaybrooooo.online"
+  - name: "🇨🇳_3"
     type: vless
-    server: "176.124.223.16"
-    port: 2087
-    uuid: "38a43f18-b4d9-443f-9ff1-4cf9de3d666e"
+    server: "120.227.1.43"
+    port: 12528
+    uuid: "f0169b08-43fd-4dc3-8195-18f6ad2fe39d"
     udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "valid22.validbv9501.ir"
-    network: ws
-    ws-opts:
-      path: "/eyJqdW5rIjoiS0ZJaGhSaG14Z0NMeCIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbIjE0Ni4xMDMuMTE0LjEzNCJdfQ=="
-      headers:
-        Host: "valid22.validbv9501.ir"
-  - name: "🇨🇳_6"
+  - name: "🇨🇳_4"
     type: trojan
     server: "43.169.18.179"
     port: 443
@@ -103,7 +93,7 @@ proxies:
       path: "/assignment"
       headers:
         Host: "www.creationlong.org"
-  - name: "🇨🇳_8"
+  - name: "🇨🇳_6"
     type: trojan
     server: "117.149.198.190"
     port: 10051
@@ -154,10 +144,9 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇨🇳_1"
-      - "🇨🇳_2"
+      - "🇨🇳_3"
       - "🇨🇳_4"
       - "🇨🇳_6"
-      - "🇨🇳_8"
 
   - name: "LB-CDN"
     type: load-balance
@@ -168,10 +157,9 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇨🇳_1"
-      - "🇨🇳_2"
+      - "🇨🇳_3"
       - "🇨🇳_4"
       - "🇨🇳_6"
-      - "🇨🇳_8"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -182,10 +170,9 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇨🇳_1"
-      - "🇨🇳_2"
+      - "🇨🇳_3"
       - "🇨🇳_4"
       - "🇨🇳_6"
-      - "🇨🇳_8"
 
   - name: "FAST-CDN"
     type: url-test
@@ -195,10 +182,9 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇨🇳_1"
-      - "🇨🇳_2"
+      - "🇨🇳_3"
       - "🇨🇳_4"
       - "🇨🇳_6"
-      - "🇨🇳_8"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -209,20 +195,18 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇨🇳_1"
-      - "🇨🇳_2"
+      - "🇨🇳_3"
       - "🇨🇳_4"
       - "🇨🇳_6"
-      - "🇨🇳_8"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
       - "🇨🇳_1"
-      - "🇨🇳_2"
+      - "🇨🇳_3"
       - "🇨🇳_4"
       - "🇨🇳_6"
-      - "🇨🇳_8"
 
 rules:
   - MATCH,PROXY-BEST

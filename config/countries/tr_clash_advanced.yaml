@@ -75,20 +75,6 @@ proxies:
     flow: "xtls-rprx-vision"
   - name: "🇹🇷_2"
     type: vless
-    server: "try.north-1winter.cv"
-    port: 443
-    uuid: "acc50200-7f21-4f90-9cca-0057efcbf042"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.ya.ru"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "rNBFVzV18kAj_ei4AqsgZywzmvD36WK9hcRdVnpHPAM"
-      short-id: "c0573c8280a0c019"
-    flow: "xtls-rprx-vision"
-  - name: "🇹🇷_3"
-    type: vless
     server: "185.39.204.155"
     port: 8443
     uuid: "1f29762d-3f23-4207-9e39-f774de5d49ba"
@@ -96,7 +82,7 @@ proxies:
     network: grpc
     grpc-opts:
       grpc-service-name: "grpc"
-  - name: "🇹🇷_4"
+  - name: "🇹🇷_3"
     type: vless
     server: "dp-tr-01.live"
     port: 443
@@ -110,15 +96,7 @@ proxies:
       public-key: "zii4nGNapnFKL6SN8GzWNqFlElBvUCUFUThEP0kFH04"
       short-id: "c6ef72e4635d15a5"
     flow: "xtls-rprx-vision"
-  - name: "🇹🇷_5"
-    type: trojan
-    server: "193.111.125.82"
-    port: 39594
-    password: "77a4056f31f24ea592bb7aa1e88aced4"
-    sni: "dem.yariresanbot.ir"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇹🇷_6"
+  - name: "🇹🇷_4"
     type: trojan
     server: "195.162.69.238"
     port: 9443
@@ -126,24 +104,42 @@ proxies:
     sni: "apple.com"
     skip-cert-verify: true
     udp: true
-  - name: "🇹🇷_7"
-    type: trojan
-    server: "86.38.214.205"
-    port: 443
-    password: "humanity"
-    sni: "www.ignitelimit.com"
-    skip-cert-verify: true
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/assignment"
-  - name: "🇹🇷_9"
+  - name: "🇹🇷_5"
     type: trojan
     server: "dem.yariresanbot.ir"
     port: 39594
     password: "77a4056f31f24ea592bb7aa1e88aced4"
     sni: "dem.yariresanbot.ir"
     skip-cert-verify: true
+    udp: true
+  - name: "🇹🇷_6"
+    type: trojan
+    server: "193.111.125.82"
+    port: 39594
+    password: "77a4056f31f24ea592bb7aa1e88aced4"
+    sni: "dem.yariresanbot.ir"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇹🇷_7"
+    type: ss
+    server: "31.210.78.66"
+    port: 1080
+    cipher: "chacha20-ietf-poly1305"
+    password: "XF0klw7870vXn3uQIxe19Q"
+    udp: true
+  - name: "🇹🇷_8"
+    type: ss
+    server: "Vpna.Poorifast.ir"
+    port: 1080
+    cipher: "chacha20-ietf-poly1305"
+    password: "rYfi4cQ3z7zts7BO4-Y9_A"
+    udp: true
+  - name: "🇹🇷_9"
+    type: ss
+    server: "38.180.113.194"
+    port: 8119
+    cipher: "aes-256-gcm"
+    password: "cdBIDV42DCwnfIN"
     udp: true
   - name: "🇹🇷_10"
     type: ss
@@ -201,6 +197,7 @@ proxy-groups:
       - "🇹🇷_5"
       - "🇹🇷_6"
       - "🇹🇷_7"
+      - "🇹🇷_8"
       - "🇹🇷_9"
       - "🇹🇷_10"
 
@@ -219,6 +216,7 @@ proxy-groups:
       - "🇹🇷_5"
       - "🇹🇷_6"
       - "🇹🇷_7"
+      - "🇹🇷_8"
       - "🇹🇷_9"
       - "🇹🇷_10"
 
@@ -237,6 +235,7 @@ proxy-groups:
       - "🇹🇷_5"
       - "🇹🇷_6"
       - "🇹🇷_7"
+      - "🇹🇷_8"
       - "🇹🇷_9"
       - "🇹🇷_10"
 
@@ -254,6 +253,7 @@ proxy-groups:
       - "🇹🇷_5"
       - "🇹🇷_6"
       - "🇹🇷_7"
+      - "🇹🇷_8"
       - "🇹🇷_9"
       - "🇹🇷_10"
 
@@ -272,6 +272,7 @@ proxy-groups:
       - "🇹🇷_5"
       - "🇹🇷_6"
       - "🇹🇷_7"
+      - "🇹🇷_8"
       - "🇹🇷_9"
       - "🇹🇷_10"
 
@@ -286,6 +287,7 @@ proxy-groups:
       - "🇹🇷_5"
       - "🇹🇷_6"
       - "🇹🇷_7"
+      - "🇹🇷_8"
       - "🇹🇷_9"
       - "🇹🇷_10"
 

@@ -59,15 +59,19 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇲🇴_1"
+  - name: "🇬🇪_1"
     type: vless
-    server: "45.207.34.239"
-    port: 10086
-    uuid: "11e5e68c-355a-415c-8024-3bf12637e220"
+    server: "217.11.164.184"
+    port: 1080
+    uuid: "1b73f053-2709-4698-bbec-cb20e8a5f288"
     udp: true
-    network: ws
-    ws-opts:
-      path: "/vless"
+    tls: true
+    skip-cert-verify: true
+    servername: "play.google.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "jDj_1a2AOXOZ_bRkgqvb0tMXjTier75usgndNVdOHTU"
+      short-id: "2926c493071e7380"
 
 proxy-groups:
   # ── Top-level selector ────────────────────────────────────────────────────
@@ -110,7 +114,7 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇲🇴_1"
+      - "🇬🇪_1"
 
   - name: "LB-CDN"
     type: load-balance
@@ -120,7 +124,7 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇲🇴_1"
+      - "🇬🇪_1"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -130,7 +134,7 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇲🇴_1"
+      - "🇬🇪_1"
 
   - name: "FAST-CDN"
     type: url-test
@@ -139,7 +143,7 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇲🇴_1"
+      - "🇬🇪_1"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -149,13 +153,13 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇲🇴_1"
+      - "🇬🇪_1"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
-      - "🇲🇴_1"
+      - "🇬🇪_1"
 
 rules:
   - MATCH,PROXY-BEST
