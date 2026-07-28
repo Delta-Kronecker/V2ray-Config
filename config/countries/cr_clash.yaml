@@ -64,6 +64,14 @@ dns:
 
 proxies:
   - name: "🇨🇷_1"
+    type: trojan
+    server: "190.93.247.7"
+    port: 443
+    password: "NISHIKUITAN111"
+    sni: "190.93.247.7"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇨🇷_2"
     type: ss
     server: "190.93.246.16"
     port: 443
@@ -90,6 +98,7 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇨🇷_1"
+      - "🇨🇷_2"
 
 
 rules:

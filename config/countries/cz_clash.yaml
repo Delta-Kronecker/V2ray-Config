@@ -65,12 +65,6 @@ dns:
 proxies:
   - name: "🇨🇿_1"
     type: vless
-    server: "141.133.172.222"
-    port: 20342
-    uuid: "5eecb34f-c905-4c77-b7fb-d830b451cd11"
-    udp: true
-  - name: "🇨🇿_2"
-    type: vless
     server: "193.93.194.120"
     port: 443
     uuid: "cfb5b3d3-c094-4222-99e8-53faa787c857"
@@ -83,6 +77,12 @@ proxies:
       public-key: "dgrcO3r5wkEjcsWdEsNtgtWCe9vER6mgADXYclWXVxg"
       short-id: "8de54d32a8d3fdf9"
     flow: "xtls-rprx-vision"
+  - name: "🇨🇿_2"
+    type: vless
+    server: "141.133.172.222"
+    port: 20342
+    uuid: "5eecb34f-c905-4c77-b7fb-d830b451cd11"
+    udp: true
   - name: "🇨🇿_3"
     type: vless
     server: "46.8.113.190"
@@ -108,8 +108,15 @@ proxies:
     server: "46.8.113.142"
     port: 443
     password: "LYaEYwjN8LjWTRJdCCTzW7V6gK7atJVu"
-    sni: "ch-2.bexum.fun"
+    sni: "46.8.113.142"
     skip-cert-verify: true
+    udp: true
+  - name: "🇨🇿_6"
+    type: ss
+    server: "146.70.222.126"
+    port: 1080
+    cipher: "chacha20-ietf-poly1305"
+    password: "XF0klw7870vXn3uQIxe19Q"
     udp: true
 
 proxy-groups:
@@ -130,6 +137,7 @@ proxy-groups:
       - "🇨🇿_3"
       - "🇨🇿_4"
       - "🇨🇿_5"
+      - "🇨🇿_6"
 
 
 rules:

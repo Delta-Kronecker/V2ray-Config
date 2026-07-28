@@ -63,7 +63,7 @@ proxies:
     type: vless
     server: "81.208.170.142"
     port: 1500
-    uuid: "sGLzG6kUwBpZd73sW0nq"
+    uuid: "e332f028-d343-5b44-8016-b3130f39e133"
     udp: true
     tls: true
     skip-cert-verify: true
@@ -79,7 +79,7 @@ proxies:
     type: vless
     server: "81.208.170.142"
     port: 1500
-    uuid: "e332f028-d343-5b44-8016-b3130f39e133"
+    uuid: "sGLzG6kUwBpZd73sW0nq"
     udp: true
     tls: true
     skip-cert-verify: true
@@ -91,14 +91,6 @@ proxies:
     network: grpc
     grpc-opts:
       grpc-service-name: ""
-  - name: "🇸🇦_3"
-    type: trojan
-    server: "149.104.104.58"
-    port: 443
-    password: "S.ibYdZshHTF-ne.M+.Fznp_-hyFFnCSix"
-    sni: "149.104.104.58"
-    skip-cert-verify: true
-    udp: true
 
 proxy-groups:
   # ── Top-level selector ────────────────────────────────────────────────────
@@ -143,7 +135,6 @@ proxy-groups:
     proxies:
       - "🇸🇦_1"
       - "🇸🇦_2"
-      - "🇸🇦_3"
 
   - name: "LB-CDN"
     type: load-balance
@@ -155,7 +146,6 @@ proxy-groups:
     proxies:
       - "🇸🇦_1"
       - "🇸🇦_2"
-      - "🇸🇦_3"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -167,7 +157,6 @@ proxy-groups:
     proxies:
       - "🇸🇦_1"
       - "🇸🇦_2"
-      - "🇸🇦_3"
 
   - name: "FAST-CDN"
     type: url-test
@@ -178,7 +167,6 @@ proxy-groups:
     proxies:
       - "🇸🇦_1"
       - "🇸🇦_2"
-      - "🇸🇦_3"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -190,7 +178,6 @@ proxy-groups:
     proxies:
       - "🇸🇦_1"
       - "🇸🇦_2"
-      - "🇸🇦_3"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
@@ -198,7 +185,6 @@ proxy-groups:
     proxies:
       - "🇸🇦_1"
       - "🇸🇦_2"
-      - "🇸🇦_3"
 
 rules:
   - MATCH,PROXY-BEST

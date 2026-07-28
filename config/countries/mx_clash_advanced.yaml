@@ -71,6 +71,33 @@ proxies:
     network: ws
     ws-opts:
       path: "/vless/"
+  - name: "🇲🇽_3"
+    type: vless
+    server: "ul-mexico1.09vpn.com"
+    port: 8443
+    uuid: "a6d20e79-d326-42c1-bc20-f4cecc6dc42d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ul-mexico1.09vpn.com"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/vless/"
+      headers:
+        Host: "ul-mexico1.09vpn.com"
+  - name: "🇲🇽_5"
+    type: vless
+    server: "UL-Mexico1.09vpn.com"
+    port: 8443
+    uuid: "a6d20e79-d326-42c1-bc20-f4cecc6dc42d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "UL-Mexico1.09vpn.com"
+    network: ws
+    ws-opts:
+      path: "/vless/"
 
 proxy-groups:
   # ── Top-level selector ────────────────────────────────────────────────────
@@ -114,6 +141,8 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇲🇽_1"
+      - "🇲🇽_3"
+      - "🇲🇽_5"
 
   - name: "LB-CDN"
     type: load-balance
@@ -124,6 +153,8 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇲🇽_1"
+      - "🇲🇽_3"
+      - "🇲🇽_5"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -134,6 +165,8 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇲🇽_1"
+      - "🇲🇽_3"
+      - "🇲🇽_5"
 
   - name: "FAST-CDN"
     type: url-test
@@ -143,6 +176,8 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇲🇽_1"
+      - "🇲🇽_3"
+      - "🇲🇽_5"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -153,12 +188,16 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇲🇽_1"
+      - "🇲🇽_3"
+      - "🇲🇽_5"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
       - "🇲🇽_1"
+      - "🇲🇽_3"
+      - "🇲🇽_5"
 
 rules:
   - MATCH,PROXY-BEST

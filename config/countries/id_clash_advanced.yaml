@@ -68,7 +68,6 @@ proxies:
     tls: true
     skip-cert-verify: true
     servername: "storage.yandex.net"
-    client-fingerprint: "chrome"
     reality-opts:
       public-key: "9Y-_jCI3Z1x6SXK2tHdZ6V1CN9IJPNPnoxSW0cbXxD8"
       short-id: "764f497dda21c4fc"
@@ -89,14 +88,6 @@ proxies:
       headers:
         Host: "polshaov.ochmaybrooooo.online"
   - name: "🇮🇩_4"
-    type: trojan
-    server: "qfdfsg.wsone.icu"
-    port: 443
-    password: "M7v%w11Se*"
-    sni: "qfdfsg.wsone.icu"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇮🇩_5"
     type: trojan
     server: "172.232.250.160"
     port: 443
@@ -149,7 +140,6 @@ proxy-groups:
       - "🇮🇩_1"
       - "🇮🇩_2"
       - "🇮🇩_4"
-      - "🇮🇩_5"
 
   - name: "LB-CDN"
     type: load-balance
@@ -162,7 +152,6 @@ proxy-groups:
       - "🇮🇩_1"
       - "🇮🇩_2"
       - "🇮🇩_4"
-      - "🇮🇩_5"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -175,7 +164,6 @@ proxy-groups:
       - "🇮🇩_1"
       - "🇮🇩_2"
       - "🇮🇩_4"
-      - "🇮🇩_5"
 
   - name: "FAST-CDN"
     type: url-test
@@ -187,7 +175,6 @@ proxy-groups:
       - "🇮🇩_1"
       - "🇮🇩_2"
       - "🇮🇩_4"
-      - "🇮🇩_5"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -200,7 +187,6 @@ proxy-groups:
       - "🇮🇩_1"
       - "🇮🇩_2"
       - "🇮🇩_4"
-      - "🇮🇩_5"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
@@ -209,7 +195,6 @@ proxy-groups:
       - "🇮🇩_1"
       - "🇮🇩_2"
       - "🇮🇩_4"
-      - "🇮🇩_5"
 
 rules:
   - MATCH,PROXY-BEST

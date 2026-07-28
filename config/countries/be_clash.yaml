@@ -72,7 +72,7 @@ proxies:
     tls: true
     skip-cert-verify: true
     servername: "learn00.evany.de5.net"
-    client-fingerprint: "chrome"
+    client-fingerprint: "random"
     network: ws
     ws-opts:
       path: "/fdip=tw.william.us.ci!txt"
@@ -93,6 +93,68 @@ proxies:
       path: "/fdip=tw.william.us.ci!txt"
       headers:
         Host: "learn00.evany.de5.net"
+  - name: "🇧🇪_5"
+    type: vless
+    server: "109.69.218.164"
+    port: 443
+    uuid: "c28ee61d-0d43-4e69-8e6a-6397ed0ffc03"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "zealous-vortex.cdn.cachefleet.com"
+    client-fingerprint: "random"
+    reality-opts:
+      public-key: "cv_KJnMzQUZruACPbH-BCgLWrYqPm2dbUymg-gW_sVc"
+      short-id: ""
+    flow: "xtls-rprx-vision"
+  - name: "🇧🇪_6"
+    type: vless
+    server: "109.69.218.168"
+    port: 443
+    uuid: "c28ee61d-0d43-4e69-8e6a-6397ed0ffc03"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "agile-raptor.cdn.cachefleet.com"
+    client-fingerprint: "random"
+    reality-opts:
+      public-key: "cv_KJnMzQUZruACPbH-BCgLWrYqPm2dbUymg-gW_sVc"
+      short-id: ""
+    flow: "xtls-rprx-vision"
+  - name: "🇧🇪_7"
+    type: trojan
+    server: "hl-freedom-1.undef.network"
+    port: 443
+    password: "GZOof2R1ej4yML1NxajR2frGQ"
+    sni: "HL-FREEDOM-1.UNDEF.NETWORK"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/f2fc2a1f"
+      headers:
+        Host: "hl-freedom-1.undef.network"
+  - name: "🇧🇪_9"
+    type: trojan
+    server: "94.126.225.96"
+    port: 443
+    password: "JaFKnqNcvnBT63t3rquidGsln"
+    sni: "hl-freedom-1.undef.network"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇧🇪_10"
+    type: trojan
+    server: "hl-freedom-1.undef.network"
+    port: 443
+    password: "7LBbob9IutFObLxLf9Svc1HaV"
+    sni: "hl-freedom-1.undef.network"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/f2fc2a1f"
+      headers:
+        Host: "hl-freedom-1.undef.network"
 
 proxy-groups:
   - name: "PROXY"
@@ -109,6 +171,11 @@ proxy-groups:
     proxies:
       - "🇧🇪_1"
       - "🇧🇪_3"
+      - "🇧🇪_5"
+      - "🇧🇪_6"
+      - "🇧🇪_7"
+      - "🇧🇪_9"
+      - "🇧🇪_10"
 
 
 rules:

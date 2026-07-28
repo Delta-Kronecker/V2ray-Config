@@ -72,13 +72,20 @@ proxies:
     tls: true
     skip-cert-verify: true
     servername: "morphbinerkkw.ru"
-    client-fingerprint: "firefox"
+    client-fingerprint: "chrome"
     reality-opts:
       public-key: "CxMPFpwhcR9Ocp-Xy_1J08mo-atdHKUf58WLOy_XlgM"
       short-id: "d9662905"
     network: grpc
     grpc-opts:
       grpc-service-name: "nexusGrpc"
+  - name: "🇦🇱_2"
+    type: ss
+    server: "130.49.189.158"
+    port: 10792
+    cipher: "chacha20-ietf-poly1305"
+    password: "0vfHPbQyL9D6RMwVLHfXyE"
+    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -94,6 +101,7 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇦🇱_1"
+      - "🇦🇱_2"
 
 
 rules:

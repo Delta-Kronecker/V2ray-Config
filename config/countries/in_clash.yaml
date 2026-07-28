@@ -65,16 +65,19 @@ dns:
 proxies:
   - name: "🇮🇳_1"
     type: vless
-    server: "108.165.152.30"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    server: "45.89.105.74"
+    port: 40443
+    uuid: "511c1563-2cb6-4064-abc6-a59ee49818a8"
     udp: true
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "vms.lifetime61.workers.dev"
-  - name: "🇮🇳_3"
+    tls: true
+    skip-cert-verify: true
+    servername: "deepl.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "cwmcqsfS7klQlkcoUNuATEk0NiPY-NnRb9z8rCJDQw0"
+      short-id: "88b6"
+    flow: "xtls-rprx-vision"
+  - name: "🇮🇳_2"
     type: vless
     server: "94.183.255.19"
     port: 443
@@ -88,53 +91,53 @@ proxies:
       public-key: "m6RDw1b8R4lCaRUIzhHpy6TtX2Dhk6nyby8dWzeQqA0"
       short-id: "dd3ff38418d29d22"
     flow: "xtls-rprx-vision"
-  - name: "🇮🇳_4"
+  - name: "🇮🇳_3"
     type: vless
-    server: "45.89.105.74"
-    port: 40443
-    uuid: "511c1563-2cb6-4064-abc6-a59ee49818a8"
+    server: "194.61.31.126"
+    port: 2053
+    uuid: "9c9f29d5-cf0d-49be-97fd-643e866752da"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "deepl.com"
+    servername: "www.apple.com"
     client-fingerprint: "chrome"
     reality-opts:
-      public-key: "cwmcqsfS7klQlkcoUNuATEk0NiPY-NnRb9z8rCJDQw0"
-      short-id: "88b6"
+      public-key: "f5Z_ywk2z0Yuj7ksyjawYC36qgxQngD8yGXEIPFNVGM"
+      short-id: "30ed89c317118330"
+  - name: "🇮🇳_4"
+    type: vless
+    server: "45.89.105.125"
+    port: 443
+    uuid: "fc1b3bda-b226-452a-8c5c-b0e36a1f8f88"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "asia.cendora.ru"
+    client-fingerprint: "qq"
+    reality-opts:
+      public-key: "eaRNeC8fccrx0nBNvBpAXZgK4m4FxfnQ-t0W7NOM7mU"
+      short-id: "e53048e82bb20077"
     flow: "xtls-rprx-vision"
   - name: "🇮🇳_5"
-    type: trojan
-    server: "hyfuuf6.wsone.icu"
-    port: 443
-    password: "M7v%w11Se*"
-    sni: "hyfuuf6.wsone.icu"
-    skip-cert-verify: true
+    type: vless
+    server: "108.165.152.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
     udp: true
-  - name: "🇮🇳_6"
-    type: trojan
-    server: "185.67.125.119"
-    port: 443
-    password: "3747000103274291200"
-    sni: "oriented-pug.adder289.quest"
-    skip-cert-verify: true
-    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vms.lifetime61.workers.dev"
   - name: "🇮🇳_7"
     type: trojan
-    server: "143.110.246.228"
-    port: 443
-    password: "3bcd9e33-8377-4b32-af33-217158577ff3"
-    sni: "kdlsupport.zendesk.com"
+    server: "v1in2.stableq.top"
+    port: 24407
+    password: "14a8cc9b-4ab0-4b42-b05e-b93ccff61430"
+    sni: "v1in2.stableq.top"
     skip-cert-verify: true
     udp: true
   - name: "🇮🇳_8"
-    type: trojan
-    server: "185.67.125.160"
-    port: 443
-    password: "3763495982449565696"
-    sni: "topical-gibbon.goat627.mom"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇮🇳_9"
     type: trojan
     server: "34.131.228.210"
     port: 443
@@ -142,7 +145,47 @@ proxies:
     sni: "hyfuuf6.wsone.icu"
     skip-cert-verify: true
     udp: true
+  - name: "🇮🇳_9"
+    type: trojan
+    server: "143.110.246.228"
+    port: 443
+    password: "3bcd9e33-8377-4b32-af33-217158577ff3"
+    sni: "kdlsupport.zendesk.com"
+    skip-cert-verify: true
+    udp: true
   - name: "🇮🇳_10"
+    type: trojan
+    server: "185.67.125.147"
+    port: 443
+    password: "3747000103274291200"
+    sni: "polished-collie.adder289.quest"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇮🇳_11"
+    type: trojan
+    server: "64.227.131.19"
+    port: 443
+    password: "21c6c7cb-332b-4a0c-9ad7-dff9c3111442"
+    sni: "us02web.zoom.us"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇮🇳_12"
+    type: trojan
+    server: "hyfuuf6.wsone.icu"
+    port: 443
+    password: "M7v%w11Se*"
+    sni: "hyfuuf6.wsone.icu"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇮🇳_13"
+    type: trojan
+    server: "185.67.125.147"
+    port: 443
+    password: "3763495894587285504"
+    sni: "optimal-owl.goat627.mom"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇮🇳_14"
     type: trojan
     server: "65.20.82.177"
     port: 443
@@ -150,49 +193,51 @@ proxies:
     sni: "ash.d50f6225-23b4-3a7b-9f15-a0fb2fc16803.kailib.com"
     skip-cert-verify: true
     udp: true
-  - name: "🇮🇳_11"
-    type: ss
-    server: "103.111.114.61"
-    port: 28061
-    cipher: "chacha20-ietf-poly1305"
-    password: "WOir3lXBhMHDcLFPQdEZXPu37_pTQDCXfm"
-    udp: true
-  - name: "🇮🇳_12"
-    type: ss
-    server: "172.105.39.124"
-    port: 7002
-    cipher: "aes-256-gcm"
-    password: "RexnBgU7EV5ADxG"
-    udp: true
-  - name: "🇮🇳_13"
-    type: ss
-    server: "103.111.114.55"
-    port: 28061
-    cipher: "chacha20-ietf-poly1305"
-    password: "WOir3lXBhMHDcLFPQdEZXPu37_pTQDCXfm"
-    udp: true
-  - name: "🇮🇳_14"
-    type: ss
-    server: "103.111.114.71"
-    port: 28061
-    cipher: "chacha20-ietf-poly1305"
-    password: "WOir3lXBhMHDcLFPQdEZXPu37_pTQDCXfm"
-    udp: true
   - name: "🇮🇳_15"
-    type: ss
-    server: "103.111.114.80"
-    port: 28061
-    cipher: "chacha20-ietf-poly1305"
-    password: "WOir3lXBhMHDcLFPQdEZXPu37_pTQDCXfm"
+    type: trojan
+    server: "185.67.125.119"
+    port: 443
+    password: "3747000103274291200"
+    sni: "oriented-pug.adder289.quest"
+    skip-cert-verify: true
     udp: true
   - name: "🇮🇳_16"
+    type: trojan
+    server: "185.67.125.160"
+    port: 443
+    password: "3763495982449565696"
+    sni: "topical-gibbon.goat627.mom"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇮🇳_17"
     type: ss
     server: "103.120.178.193"
     port: 31348
     cipher: "chacha20-ietf-poly1305"
     password: "EBDRo9THx4CqiFU7h5gfov76oNwzZURAh0ZwbWjBKddtUhvz"
     udp: true
-  - name: "🇮🇳_17"
+  - name: "🇮🇳_18"
+    type: ss
+    server: "103.120.178.193"
+    port: 31348
+    cipher: "chacha20-ietf-poly1305"
+    password: "EBDRo9THx4CqiFU7h5gfov76oNwzZURAh0ZwbWjBKddtUhvz"
+    udp: true
+  - name: "🇮🇳_19"
+    type: ss
+    server: "103.111.114.55"
+    port: 28061
+    cipher: "chacha20-ietf-poly1305"
+    password: "WOir3lXBhMHDcLFPQdEZXPu37_pTQDCXfm"
+    udp: true
+  - name: "🇮🇳_20"
+    type: ss
+    server: "103.111.114.80"
+    port: 28061
+    cipher: "chacha20-ietf-poly1305"
+    password: "WOir3lXBhMHDcLFPQdEZXPu37_pTQDCXfm"
+    udp: true
+  - name: "🇮🇳_21"
     type: ss
     server: "103.181.177.88"
     port: 443
@@ -204,27 +249,14 @@ proxies:
       mode: "websocket"
       path: "14b02e2a-8930-4afb-8412-ea4a4954ca5b/?ed\\=2560"
       host: "ylnhh.us.ci"
-  - name: "🇮🇳_18"
+  - name: "🇮🇳_22"
     type: ss
-    server: "45.89.105.65"
-    port: 2053
-    cipher: "none"
-    password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
+    server: "172.105.39.124"
+    port: 7002
+    cipher: "aes-256-gcm"
+    password: "RexnBgU7EV5ADxG"
     udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "/59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
-  - name: "🇮🇳_19"
-    type: ss
-    server: "103.120.178.193"
-    port: 31348
-    cipher: "chacha20-ietf-poly1305"
-    password: "EBDRo9THx4CqiFU7h5gfov76oNwzZURAh0ZwbWjBKddtUhvz"
-    udp: true
-  - name: "🇮🇳_20"
+  - name: "🇮🇳_23"
     type: ss
     server: "103.111.114.82"
     port: 28061
@@ -246,10 +278,10 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇮🇳_1"
+      - "🇮🇳_2"
       - "🇮🇳_3"
       - "🇮🇳_4"
       - "🇮🇳_5"
-      - "🇮🇳_6"
       - "🇮🇳_7"
       - "🇮🇳_8"
       - "🇮🇳_9"
@@ -264,6 +296,9 @@ proxy-groups:
       - "🇮🇳_18"
       - "🇮🇳_19"
       - "🇮🇳_20"
+      - "🇮🇳_21"
+      - "🇮🇳_22"
+      - "🇮🇳_23"
 
 
 rules:

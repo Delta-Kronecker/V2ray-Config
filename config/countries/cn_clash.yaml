@@ -65,20 +65,22 @@ dns:
 proxies:
   - name: "🇨🇳_1"
     type: vless
-    server: "77.105.163.46"
-    port: 443
-    uuid: "218b4b35-e826-49d4-b5dc-558fc7eb9923"
+    server: "120.227.1.43"
+    port: 12528
+    uuid: "f0169b08-43fd-4dc3-8195-18f6ad2fe39d"
     udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "ov186.ochmaybrooooo.online"
-    client-fingerprint: "chrome"
+  - name: "🇨🇳_2"
+    type: vless
+    server: "176.124.223.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
     network: ws
     ws-opts:
       path: "/"
       headers:
-        Host: "ov186.ochmaybrooooo.online"
-  - name: "🇨🇳_3"
+        Host: "vms.lifetime38.workers.dev"
+  - name: "🇨🇳_4"
     type: vless
     server: "176.124.223.16"
     port: 2087
@@ -92,22 +94,26 @@ proxies:
       path: "/eyJqdW5rIjoiS0ZJaGhSaG14Z0NMeCIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbIjE0Ni4xMDMuMTE0LjEzNCJdfQ=="
       headers:
         Host: "valid22.validbv9501.ir"
-  - name: "🇨🇳_5"
-    type: vless
-    server: "176.124.223.30"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+  - name: "🇨🇳_6"
+    type: trojan
+    server: "43.169.18.179"
+    port: 443
+    password: "humanity"
+    sni: "www.creationlong.org"
+    skip-cert-verify: true
     udp: true
     network: ws
     ws-opts:
-      path: "/"
+      path: "/assignment"
       headers:
-        Host: "vms.lifetime38.workers.dev"
-  - name: "🇨🇳_7"
-    type: vless
-    server: "120.227.1.43"
-    port: 12528
-    uuid: "f0169b08-43fd-4dc3-8195-18f6ad2fe39d"
+        Host: "www.creationlong.org"
+  - name: "🇨🇳_8"
+    type: trojan
+    server: "117.149.198.190"
+    port: 10051
+    password: "a13820c547fa34c5c45515c12f0cd576"
+    sni: "zz6.91js.pw"
+    skip-cert-verify: true
     udp: true
 
 proxy-groups:
@@ -124,9 +130,10 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇨🇳_1"
-      - "🇨🇳_3"
-      - "🇨🇳_5"
-      - "🇨🇳_7"
+      - "🇨🇳_2"
+      - "🇨🇳_4"
+      - "🇨🇳_6"
+      - "🇨🇳_8"
 
 
 rules:

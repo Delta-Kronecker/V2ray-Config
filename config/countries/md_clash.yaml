@@ -63,19 +63,47 @@ dns:
     - https://freedns.controld.com/family
 
 proxies:
-  - name: "🇮🇱_1"
+  - name: "🇲🇩_1"
     type: vless
-    server: "185.159.73.247"
-    port: 443
-    uuid: "fc1b3bda-b226-452a-8c5c-b0e36a1f8f88"
+    server: "94.103.2.219"
+    port: 29445
+    uuid: "0d7d959f-5498-457e-aee7-fd16b1f3e77d"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "asia.cendora.ru"
-    client-fingerprint: "qq"
+    servername: "www.twitch.tv"
+    client-fingerprint: "chrome"
     reality-opts:
-      public-key: "eaRNeC8fccrx0nBNvBpAXZgK4m4FxfnQ-t0W7NOM7mU"
-      short-id: "e53048e82bb20077"
+      public-key: "QKx8d10LphfYzOh4S6LAXTFrwVVRaliQ0V7A1_TA6gc"
+      short-id: "da31c35785b3978b"
+    flow: "xtls-rprx-vision"
+  - name: "🇲🇩_2"
+    type: vless
+    server: "94.103.2.219"
+    port: 29447
+    uuid: "0d7d959f-5498-457e-aee7-fd16b1f3e77d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.twitch.tv"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "X9h6n_nJPxp3vy7b0c1A5qRhtCRejgsDRqKbSAYWGEI"
+      short-id: "7f33a911e2964345"
+    flow: "xtls-rprx-vision"
+  - name: "🇲🇩_3"
+    type: vless
+    server: "94.103.2.219"
+    port: 29446
+    uuid: "0d7d959f-5498-457e-aee7-fd16b1f3e77d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.twitch.tv"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "pk41DLgF-uMU46On9iqmFFNO5ejtzCpYATAAOaEU90Q"
+      short-id: "098114ff3f7d0898"
     flow: "xtls-rprx-vision"
 
 proxy-groups:
@@ -91,7 +119,9 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇮🇱_1"
+      - "🇲🇩_1"
+      - "🇲🇩_2"
+      - "🇲🇩_3"
 
 
 rules:
