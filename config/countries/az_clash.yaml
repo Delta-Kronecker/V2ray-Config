@@ -63,13 +63,34 @@ dns:
     - https://freedns.controld.com/family
 
 proxies:
-  - name: "🇮🇪_1"
-    type: ss
-    server: "84.247.48.78"
-    port: 1080
-    cipher: "chacha20-ietf-poly1305"
-    password: "XF0klw7870vXn3uQIxe19Q"
+  - name: "🇦🇿_1"
+    type: vless
+    server: "31.43.191.99"
+    port: 443
+    uuid: "c28ee61d-0d43-4e69-8e6a-6397ed0ffc03"
     udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "luminous-vortex.cdn.cachefleet.com"
+    client-fingerprint: "random"
+    reality-opts:
+      public-key: "SHDdd617KLHHb0qlQFOHepeHFl_Ch2i-K7o891uyo2M"
+      short-id: ""
+    flow: "xtls-rprx-vision"
+  - name: "🇦🇿_2"
+    type: vless
+    server: "31.43.191.39"
+    port: 443
+    uuid: "c28ee61d-0d43-4e69-8e6a-6397ed0ffc03"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "luminous-vortex.cdn.cachefleet.com"
+    client-fingerprint: "qq"
+    reality-opts:
+      public-key: "SHDdd617KLHHb0qlQFOHepeHFl_Ch2i-K7o891uyo2M"
+      short-id: ""
+    flow: "xtls-rprx-vision"
 
 proxy-groups:
   - name: "PROXY"
@@ -84,7 +105,8 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇮🇪_1"
+      - "🇦🇿_1"
+      - "🇦🇿_2"
 
 
 rules:

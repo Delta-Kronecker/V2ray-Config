@@ -61,19 +61,15 @@ dns:
 proxies:
   - name: "🇨🇳_1"
     type: vless
-    server: "77.105.163.46"
-    port: 443
-    uuid: "7c61a2a5-c7e4-4d52-baf7-a9406ad89b4c"
+    server: "176.124.223.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
     udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "ov186.ochmaybrooooo.online"
-    client-fingerprint: "chrome"
     network: ws
     ws-opts:
       path: "/"
       headers:
-        Host: "ov186.ochmaybrooooo.online"
+        Host: "vms.lifetime38.workers.dev"
   - name: "🇨🇳_3"
     type: vless
     server: "120.227.1.43"
@@ -81,6 +77,14 @@ proxies:
     uuid: "f0169b08-43fd-4dc3-8195-18f6ad2fe39d"
     udp: true
   - name: "🇨🇳_4"
+    type: trojan
+    server: "117.149.198.190"
+    port: 10051
+    password: "a13820c547fa34c5c45515c12f0cd576"
+    sni: "zz6.91js.pw"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇨🇳_5"
     type: trojan
     server: "43.169.18.179"
     port: 443
@@ -93,14 +97,6 @@ proxies:
       path: "/assignment"
       headers:
         Host: "www.creationlong.org"
-  - name: "🇨🇳_6"
-    type: trojan
-    server: "117.149.198.190"
-    port: 10051
-    password: "a13820c547fa34c5c45515c12f0cd576"
-    sni: "zz6.91js.pw"
-    skip-cert-verify: true
-    udp: true
 
 proxy-groups:
   # ── Top-level selector ────────────────────────────────────────────────────
@@ -146,7 +142,7 @@ proxy-groups:
       - "🇨🇳_1"
       - "🇨🇳_3"
       - "🇨🇳_4"
-      - "🇨🇳_6"
+      - "🇨🇳_5"
 
   - name: "LB-CDN"
     type: load-balance
@@ -159,7 +155,7 @@ proxy-groups:
       - "🇨🇳_1"
       - "🇨🇳_3"
       - "🇨🇳_4"
-      - "🇨🇳_6"
+      - "🇨🇳_5"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -172,7 +168,7 @@ proxy-groups:
       - "🇨🇳_1"
       - "🇨🇳_3"
       - "🇨🇳_4"
-      - "🇨🇳_6"
+      - "🇨🇳_5"
 
   - name: "FAST-CDN"
     type: url-test
@@ -184,7 +180,7 @@ proxy-groups:
       - "🇨🇳_1"
       - "🇨🇳_3"
       - "🇨🇳_4"
-      - "🇨🇳_6"
+      - "🇨🇳_5"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -197,7 +193,7 @@ proxy-groups:
       - "🇨🇳_1"
       - "🇨🇳_3"
       - "🇨🇳_4"
-      - "🇨🇳_6"
+      - "🇨🇳_5"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
@@ -206,7 +202,7 @@ proxy-groups:
       - "🇨🇳_1"
       - "🇨🇳_3"
       - "🇨🇳_4"
-      - "🇨🇳_6"
+      - "🇨🇳_5"
 
 rules:
   - MATCH,PROXY-BEST

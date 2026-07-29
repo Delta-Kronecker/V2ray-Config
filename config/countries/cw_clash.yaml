@@ -64,18 +64,41 @@ dns:
 
 proxies:
   - name: "🇨🇼_1"
-    type: trojan
-    server: "88.216.67.27"
-    port: 443
-    password: "521314"
-    sni: "hhtj.hhllfly.kdns.fr"
-    skip-cert-verify: true
+    type: vless
+    server: "88.216.66.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
     udp: true
     network: ws
     ws-opts:
-      path: "/pyip=Telegram-WangCai2🇨🇳"
+      path: "/"
       headers:
-        Host: "hhtj.hhllfly.kdns.fr"
+        Host: "vms.lifetime04.workers.dev"
+  - name: "🇨🇼_3"
+    type: vless
+    server: "92.60.74.123"
+    port: 443
+    uuid: "1d16c6e0-1bbe-435b-b661-90043fee999c"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "notls.lukongtou.eu.org"
+    network: ws
+    ws-opts:
+      path: "Telegram-WangCai2"
+      headers:
+        Host: "notls.lukongtou.eu.org"
+  - name: "🇨🇼_5"
+    type: vless
+    server: "62.72.166.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vms.lifetime40.workers.dev"
 
 proxy-groups:
   - name: "PROXY"
@@ -91,6 +114,8 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇨🇼_1"
+      - "🇨🇼_3"
+      - "🇨🇼_5"
 
 
 rules:

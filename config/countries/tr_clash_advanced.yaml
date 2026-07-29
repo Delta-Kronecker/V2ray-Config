@@ -61,6 +61,33 @@ dns:
 proxies:
   - name: "🇹🇷_1"
     type: vless
+    server: "vip.persiadesign.tr"
+    port: 17462
+    uuid: "0b5fc7a9-8316-444f-b715-54a4250c6177"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.yahoo.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "Yl6ip7DyV1H-HWAg5mAGcHHq1cX6yEqC_Avf7B0txXc"
+      short-id: "e97a9e58192b0f"
+  - name: "🇹🇷_2"
+    type: vless
+    server: "194.135.34.229"
+    port: 8443
+    uuid: "9b08bee0-2615-46c6-8939-54b575517a26"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "cloudflare.vhub.pro"
+    network: ws
+    ws-opts:
+      path: "/websocket?ed"
+      headers:
+        Host: "cloudflare.vhub.pro"
+  - name: "🇹🇷_4"
+    type: vless
     server: "91.124.63.229"
     port: 443
     uuid: "acc50200-7f21-4f90-9cca-0057efcbf042"
@@ -68,12 +95,11 @@ proxies:
     tls: true
     skip-cert-verify: true
     servername: "www.ya.ru"
-    client-fingerprint: "chrome"
     reality-opts:
       public-key: "rNBFVzV18kAj_ei4AqsgZywzmvD36WK9hcRdVnpHPAM"
       short-id: "c0573c8280a0c019"
     flow: "xtls-rprx-vision"
-  - name: "🇹🇷_2"
+  - name: "🇹🇷_5"
     type: vless
     server: "185.39.204.155"
     port: 8443
@@ -82,21 +108,18 @@ proxies:
     network: grpc
     grpc-opts:
       grpc-service-name: "grpc"
-  - name: "🇹🇷_3"
-    type: vless
-    server: "dp-tr-01.live"
+  - name: "🇹🇷_6"
+    type: trojan
+    server: "86.38.214.205"
     port: 443
-    uuid: "b1787456-cc54-4191-99e9-c609bf7c2853"
-    udp: true
-    tls: true
+    password: "humanity"
+    sni: "www.ignitelimit.com"
     skip-cert-verify: true
-    servername: "storage.yandex.net"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "zii4nGNapnFKL6SN8GzWNqFlElBvUCUFUThEP0kFH04"
-      short-id: "c6ef72e4635d15a5"
-    flow: "xtls-rprx-vision"
-  - name: "🇹🇷_4"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/assignment"
+  - name: "🇹🇷_8"
     type: trojan
     server: "195.162.69.238"
     port: 9443
@@ -104,15 +127,7 @@ proxies:
     sni: "apple.com"
     skip-cert-verify: true
     udp: true
-  - name: "🇹🇷_5"
-    type: trojan
-    server: "dem.yariresanbot.ir"
-    port: 39594
-    password: "77a4056f31f24ea592bb7aa1e88aced4"
-    sni: "dem.yariresanbot.ir"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇹🇷_6"
+  - name: "🇹🇷_9"
     type: trojan
     server: "193.111.125.82"
     port: 39594
@@ -120,33 +135,12 @@ proxies:
     sni: "dem.yariresanbot.ir"
     skip-cert-verify: true
     udp: true
-  - name: "🇹🇷_7"
-    type: ss
-    server: "31.210.78.66"
-    port: 1080
-    cipher: "chacha20-ietf-poly1305"
-    password: "XF0klw7870vXn3uQIxe19Q"
-    udp: true
-  - name: "🇹🇷_8"
-    type: ss
-    server: "Vpna.Poorifast.ir"
-    port: 1080
-    cipher: "chacha20-ietf-poly1305"
-    password: "rYfi4cQ3z7zts7BO4-Y9_A"
-    udp: true
-  - name: "🇹🇷_9"
+  - name: "🇹🇷_10"
     type: ss
     server: "38.180.113.194"
     port: 8119
     cipher: "aes-256-gcm"
     password: "cdBIDV42DCwnfIN"
-    udp: true
-  - name: "🇹🇷_10"
-    type: ss
-    server: "185.123.101.64"
-    port: 2376
-    cipher: "aes-256-gcm"
-    password: "faBAoD54k87UJG7"
     udp: true
 
 proxy-groups:
@@ -192,11 +186,9 @@ proxy-groups:
     proxies:
       - "🇹🇷_1"
       - "🇹🇷_2"
-      - "🇹🇷_3"
       - "🇹🇷_4"
       - "🇹🇷_5"
       - "🇹🇷_6"
-      - "🇹🇷_7"
       - "🇹🇷_8"
       - "🇹🇷_9"
       - "🇹🇷_10"
@@ -211,11 +203,9 @@ proxy-groups:
     proxies:
       - "🇹🇷_1"
       - "🇹🇷_2"
-      - "🇹🇷_3"
       - "🇹🇷_4"
       - "🇹🇷_5"
       - "🇹🇷_6"
-      - "🇹🇷_7"
       - "🇹🇷_8"
       - "🇹🇷_9"
       - "🇹🇷_10"
@@ -230,11 +220,9 @@ proxy-groups:
     proxies:
       - "🇹🇷_1"
       - "🇹🇷_2"
-      - "🇹🇷_3"
       - "🇹🇷_4"
       - "🇹🇷_5"
       - "🇹🇷_6"
-      - "🇹🇷_7"
       - "🇹🇷_8"
       - "🇹🇷_9"
       - "🇹🇷_10"
@@ -248,11 +236,9 @@ proxy-groups:
     proxies:
       - "🇹🇷_1"
       - "🇹🇷_2"
-      - "🇹🇷_3"
       - "🇹🇷_4"
       - "🇹🇷_5"
       - "🇹🇷_6"
-      - "🇹🇷_7"
       - "🇹🇷_8"
       - "🇹🇷_9"
       - "🇹🇷_10"
@@ -267,11 +253,9 @@ proxy-groups:
     proxies:
       - "🇹🇷_1"
       - "🇹🇷_2"
-      - "🇹🇷_3"
       - "🇹🇷_4"
       - "🇹🇷_5"
       - "🇹🇷_6"
-      - "🇹🇷_7"
       - "🇹🇷_8"
       - "🇹🇷_9"
       - "🇹🇷_10"
@@ -282,11 +266,9 @@ proxy-groups:
     proxies:
       - "🇹🇷_1"
       - "🇹🇷_2"
-      - "🇹🇷_3"
       - "🇹🇷_4"
       - "🇹🇷_5"
       - "🇹🇷_6"
-      - "🇹🇷_7"
       - "🇹🇷_8"
       - "🇹🇷_9"
       - "🇹🇷_10"

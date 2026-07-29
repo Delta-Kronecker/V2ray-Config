@@ -65,47 +65,46 @@ dns:
 proxies:
   - name: "🇭🇺_1"
     type: vless
-    server: "155.117.137.201"
+    server: "141.11.202.123"
     port: 443
-    uuid: "7d6d3391-7bf8-46bf-bd2e-01e82a790017"
+    uuid: "1d16c6e0-1bbe-435b-b661-90043fee999c"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "cdn9-40.yahoo.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "CMkW1axrhEXoiJ6anMz9XEjlfqlAtEZya7L0b5ZPMyw"
-      short-id: "69da7557f168a46a"
-    flow: "xtls-rprx-vision"
-  - name: "🇭🇺_2"
-    type: vless
-    server: "37.221.210.188"
-    port: 443
-    uuid: "fc64e874-656e-402e-a303-e0d161f907fb"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "hu888.bearbeer.digital"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "z-TKWOWgZLfzQ-wNdwXQqVwaUgCmbchM2Xtrk1NGynU"
-      short-id: ""
-    flow: "xtls-rprx-vision"
+    servername: "notls.lukongtou.eu.org"
+    network: ws
+    ws-opts:
+      path: "Telegram-WangCai2"
+      headers:
+        Host: "notls.lukongtou.eu.org"
   - name: "🇭🇺_3"
     type: vless
-    server: "155.117.137.81"
+    server: "155.117.137.201"
     port: 443
-    uuid: "7d6d3391-7bf8-46bf-bd2e-01e82a790017"
+    uuid: "5c2a674b-bf9d-4461-b56d-a9c2bc299d9a"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "cdn4-65.yahoo.com"
+    servername: "cdn9-33.yahoo.com"
     client-fingerprint: "firefox"
     reality-opts:
       public-key: "CMkW1axrhEXoiJ6anMz9XEjlfqlAtEZya7L0b5ZPMyw"
       short-id: "3c9c5d01c6f824dd"
     flow: "xtls-rprx-vision"
   - name: "🇭🇺_4"
+    type: vless
+    server: "155.117.137.201"
+    port: 443
+    uuid: "7d6d3391-7bf8-46bf-bd2e-01e82a790017"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "cdn2-07.yahoo.com"
+    reality-opts:
+      public-key: "CMkW1axrhEXoiJ6anMz9XEjlfqlAtEZya7L0b5ZPMyw"
+      short-id: "d6816b10d545df54"
+    flow: "xtls-rprx-vision"
+  - name: "🇭🇺_5"
     type: vless
     server: "155.117.137.55"
     port: 443
@@ -119,7 +118,35 @@ proxies:
       public-key: "CMkW1axrhEXoiJ6anMz9XEjlfqlAtEZya7L0b5ZPMyw"
       short-id: "7de40c5c4663409d"
     flow: "xtls-rprx-vision"
-  - name: "🇭🇺_5"
+  - name: "🇭🇺_6"
+    type: vless
+    server: "155.117.137.81"
+    port: 443
+    uuid: "7d6d3391-7bf8-46bf-bd2e-01e82a790017"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "cdn8-63.yahoo.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "CMkW1axrhEXoiJ6anMz9XEjlfqlAtEZya7L0b5ZPMyw"
+      short-id: "cd5d72100116f1c3"
+    flow: "xtls-rprx-vision"
+  - name: "🇭🇺_7"
+    type: vless
+    server: "155.117.137.169"
+    port: 443
+    uuid: "5c2a674b-bf9d-4461-b56d-a9c2bc299d9a"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "cdn6-24.yahoo.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "CMkW1axrhEXoiJ6anMz9XEjlfqlAtEZya7L0b5ZPMyw"
+      short-id: "cd5d72100116f1c3"
+    flow: "xtls-rprx-vision"
+  - name: "🇭🇺_8"
     type: ss
     server: "146.70.203.254"
     port: 1080
@@ -141,10 +168,12 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇭🇺_1"
-      - "🇭🇺_2"
       - "🇭🇺_3"
       - "🇭🇺_4"
       - "🇭🇺_5"
+      - "🇭🇺_6"
+      - "🇭🇺_7"
+      - "🇭🇺_8"
 
 
 rules:

@@ -65,54 +65,16 @@ dns:
 proxies:
   - name: "🇪🇪_1"
     type: vless
-    server: "185.255.178.131"
-    port: 443
-    uuid: "e4824193-4f54-453b-d037-88368e85ef0e"
+    server: "185.159.247.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
     udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "sca12.afterdomain.shop"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: ""
-  - name: "🇪🇪_2"
-    type: vless
-    server: "est.vrsvpn.com"
-    port: 443
-    uuid: "0b9bcbc1-b289-4a64-86fa-a5b731b65384"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "web.max.ru"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "SJkDT_L0eziQR2afDGrkN7-uRxjYu6bZxIGXlKeCvX4"
-      short-id: "15aa18f971da1f81"
-    flow: "xtls-rprx-vision"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vms.lifetime59.workers.dev"
   - name: "🇪🇪_3"
-    type: vless
-    server: "95.85.224.3"
-    port: 8443
-    uuid: "1f29762d-3f23-4207-9e39-f774de5d49ba"
-    udp: true
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "grpc"
-  - name: "🇪🇪_4"
-    type: vless
-    server: "185.155.97.58"
-    port: 45176
-    uuid: "dc7940e0-6bff-45e3-853d-4007561803c3"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.googletagmanager.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "A1Qf_rMG4KDfLzfCK-M5R9qW_0uThfeSosQnv6LBL1M"
-      short-id: "8433cb66b6c3ab6d"
-    flow: "xtls-rprx-vision"
-  - name: "🇪🇪_5"
     type: vless
     server: "185.155.97.241"
     port: 443
@@ -126,7 +88,93 @@ proxies:
       public-key: "SJkDT_L0eziQR2afDGrkN7-uRxjYu6bZxIGXlKeCvX4"
       short-id: "15aa18f971da1f81"
     flow: "xtls-rprx-vision"
-  - name: "🇪🇪_6"
+  - name: "🇪🇪_4"
+    type: vless
+    server: "185.255.178.131"
+    port: 443
+    uuid: "e4824193-4f54-453b-d037-88368e85ef0e"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sca12.afterdomain.shop"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: ""
+  - name: "🇪🇪_5"
+    type: vless
+    server: "45.80.110.50"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "vms.lifetime51.workers.dev"
+  - name: "🇪🇪_7"
+    type: vless
+    server: "95.85.224.3"
+    port: 8443
+    uuid: "1f29762d-3f23-4207-9e39-f774de5d49ba"
+    udp: true
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "grpc"
+  - name: "🇪🇪_8"
+    type: vless
+    server: "185.155.97.58"
+    port: 45176
+    uuid: "dc7940e0-6bff-45e3-853d-4007561803c3"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.googletagmanager.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "A1Qf_rMG4KDfLzfCK-M5R9qW_0uThfeSosQnv6LBL1M"
+      short-id: "8433cb66b6c3ab6d"
+    flow: "xtls-rprx-vision"
+  - name: "🇪🇪_9"
+    type: vless
+    server: "45.80.108.123"
+    port: 443
+    uuid: "1d16c6e0-1bbe-435b-b661-90043fee999c"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "notls.lukongtou.eu.org"
+    network: ws
+    ws-opts:
+      path: "Telegram-WangCai2"
+      headers:
+        Host: "notls.lukongtou.eu.org"
+  - name: "🇪🇪_11"
+    type: vless
+    server: "45.80.110.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vms.lifetime51.workers.dev"
+  - name: "🇪🇪_13"
+    type: vless
+    server: "45.80.108.236"
+    port: 443
+    uuid: "ef9d2063-0140-472b-8b17-ba02ba4b4435"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "lively-resonance-4e12.electrocellco-cf-059.workers.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/proxyip=167.71.48.187"
+      headers:
+        Host: "lively-resonance-4e12.electrocellco-cf-059.workers.dev"
+  - name: "🇪🇪_15"
     type: trojan
     server: "23.230.179.152"
     port: 443
@@ -137,13 +185,6 @@ proxies:
     network: ws
     ws-opts:
       path: "/assignment"
-  - name: "🇪🇪_8"
-    type: ss
-    server: "77.83.198.104"
-    port: 1080
-    cipher: "chacha20-ietf-poly1305"
-    password: "XF0klw7870vXn3uQIxe19Q"
-    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -159,12 +200,15 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇪🇪_1"
-      - "🇪🇪_2"
       - "🇪🇪_3"
       - "🇪🇪_4"
       - "🇪🇪_5"
-      - "🇪🇪_6"
+      - "🇪🇪_7"
       - "🇪🇪_8"
+      - "🇪🇪_9"
+      - "🇪🇪_11"
+      - "🇪🇪_13"
+      - "🇪🇪_15"
 
 
 rules:

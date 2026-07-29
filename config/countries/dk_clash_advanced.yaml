@@ -66,6 +66,13 @@ proxies:
     cipher: "chacha20-ietf-poly1305"
     password: "XF0klw7870vXn3uQIxe19Q"
     udp: true
+  - name: "🇩🇰_2"
+    type: ss
+    server: "135.136.33.134"
+    port: 1080
+    cipher: "chacha20-ietf-poly1305"
+    password: "XF0klw7870vXn3uQIxe19Q"
+    udp: true
 
 proxy-groups:
   # ── Top-level selector ────────────────────────────────────────────────────
@@ -109,6 +116,7 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇩🇰_1"
+      - "🇩🇰_2"
 
   - name: "LB-CDN"
     type: load-balance
@@ -119,6 +127,7 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇩🇰_1"
+      - "🇩🇰_2"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -129,6 +138,7 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇩🇰_1"
+      - "🇩🇰_2"
 
   - name: "FAST-CDN"
     type: url-test
@@ -138,6 +148,7 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇩🇰_1"
+      - "🇩🇰_2"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -148,12 +159,14 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇩🇰_1"
+      - "🇩🇰_2"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
       - "🇩🇰_1"
+      - "🇩🇰_2"
 
 rules:
   - MATCH,PROXY-BEST

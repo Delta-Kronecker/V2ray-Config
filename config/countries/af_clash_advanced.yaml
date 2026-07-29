@@ -59,19 +59,21 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇲🇹_1"
-    type: trojan
-    server: "46.202.30.27"
+  - name: "🇦🇫_1"
+    type: vless
+    server: "103.161.237.54"
     port: 443
-    password: "521314"
-    sni: "hhtj.hhllfly.kdns.fr"
-    skip-cert-verify: true
+    uuid: "e911c552-3a98-41e0-b5fb-0dd3879887b7"
     udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vod.ensf.top"
+    client-fingerprint: "chrome"
     network: ws
     ws-opts:
-      path: "/pyip=Telegram-WangCai2🇨🇳"
+      path: "/api/v1/irc"
       headers:
-        Host: "hhtj.hhllfly.kdns.fr"
+        Host: "vod.ensf.top"
 
 proxy-groups:
   # ── Top-level selector ────────────────────────────────────────────────────
@@ -114,7 +116,7 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇲🇹_1"
+      - "🇦🇫_1"
 
   - name: "LB-CDN"
     type: load-balance
@@ -124,7 +126,7 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇲🇹_1"
+      - "🇦🇫_1"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -134,7 +136,7 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇲🇹_1"
+      - "🇦🇫_1"
 
   - name: "FAST-CDN"
     type: url-test
@@ -143,7 +145,7 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇲🇹_1"
+      - "🇦🇫_1"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -153,13 +155,13 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇲🇹_1"
+      - "🇦🇫_1"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
-      - "🇲🇹_1"
+      - "🇦🇫_1"
 
 rules:
   - MATCH,PROXY-BEST
