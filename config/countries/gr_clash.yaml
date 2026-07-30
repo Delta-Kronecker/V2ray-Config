@@ -65,6 +65,20 @@ dns:
 proxies:
   - name: "🇬🇷_1"
     type: vless
+    server: "gr.tunnelpoint.space"
+    port: 443
+    uuid: "c04bf2df-2b7f-44da-a893-3792d3910fd8"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "gr.tunnelpoint.space"
+    client-fingerprint: "qq"
+    reality-opts:
+      public-key: "aBNWkd8CVkuimbtzgsDNsIUIENI-PQuKkpUInLncz2o"
+      short-id: "fdda9806fe5d8584"
+    flow: "xtls-rprx-vision"
+  - name: "🇬🇷_2"
+    type: vless
     server: "217.12.194.249"
     port: 443
     uuid: "fc1b3bda-b226-452a-8c5c-b0e36a1f8f88"
@@ -92,6 +106,7 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇬🇷_1"
+      - "🇬🇷_2"
 
 
 rules:

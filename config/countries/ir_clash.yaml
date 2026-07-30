@@ -65,6 +65,17 @@ dns:
 proxies:
   - name: "🇮🇷_1"
     type: vless
+    server: "45.131.4.115"
+    port: 80
+    uuid: "a7b22989-6c1f-4b59-b0f3-0605401813c4"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/eyJqdW5rIjoiQXoydFJwaWM0WSIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0="
+      headers:
+        Host: "worker3.gigak25604.workers.dev"
+  - name: "🇮🇷_3"
+    type: vless
     server: "45.131.4.192"
     port: 80
     uuid: "5f4845b4-11dc-41d6-9508-4ff6a02e36c1"
@@ -74,7 +85,7 @@ proxies:
       path: "/"
       headers:
         Host: "silent-paper-fa57.fipiyag989.workers.dev"
-  - name: "🇮🇷_3"
+  - name: "🇮🇷_5"
     type: vless
     server: "45.131.4.30"
     port: 8880
@@ -85,40 +96,13 @@ proxies:
       path: "/"
       headers:
         Host: "vms.lifetime59.workers.dev"
-  - name: "🇮🇷_5"
+  - name: "🇮🇷_7"
     type: vless
     server: "185.128.139.11"
     port: 18244
     uuid: "0d543aed-4e30-4553-b5ac-211419bb0961"
     udp: true
-  - name: "🇮🇷_6"
-    type: trojan
-    server: "ir1.iobase.ir"
-    port: 443
-    password: "a6xjq4UD2t"
-    sni: "ir1.iobase.ir"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇮🇷_7"
-    type: trojan
-    server: "193.151.134.182"
-    port: 443
-    password: "diCyRX1d"
-    sni: "iprostable.enterprises"
-    skip-cert-verify: true
-    udp: true
   - name: "🇮🇷_8"
-    type: trojan
-    server: "45.131.4.118"
-    port: 443
-    password: "f18d6149-e214-8554-e737-f7523c8b2eea"
-    sni: "0403.infinityconfig4.workers.dev"
-    skip-cert-verify: true
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/sync"
-  - name: "🇮🇷_10"
     type: trojan
     server: "2.144.21.112"
     port: 40443
@@ -131,33 +115,45 @@ proxies:
       path: "/assignment"
       headers:
         Host: "www.ignitelimit.com"
-  - name: "🇮🇷_12"
-    type: ss
-    server: "185.188.107.10"
+  - name: "🇮🇷_10"
+    type: trojan
+    server: "193.151.134.182"
     port: 443
-    cipher: "none"
-    password: "RSzEIkk2EsHEAVj15N5E/A=="
+    password: "diCyRX1d"
+    sni: "iprostable.enterprises"
+    skip-cert-verify: true
     udp: true
+  - name: "🇮🇷_11"
+    type: trojan
+    server: "45.131.4.118"
+    port: 443
+    password: "f18d6149-e214-8554-e737-f7523c8b2eea"
+    sni: "0403.infinityconfig4.workers.dev"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/sync"
   - name: "🇮🇷_13"
-    type: ss
-    server: "185.188.105.11"
-    port: 443
-    cipher: "none"
-    password: "RSzEIkk2EsHEAVj15N5E/A=="
+    type: trojan
+    server: "2.144.21.150"
+    port: 2000
+    password: "humanity"
+    sni: "www.ignitelimit.com"
+    skip-cert-verify: true
     udp: true
-  - name: "🇮🇷_14"
-    type: ss
-    server: "185.188.105.10"
-    port: 443
-    cipher: "none"
-    password: "RSzEIkk2EsHEAVj15N5E/A=="
-    udp: true
+    network: ws
+    ws-opts:
+      path: "/assignment"
+      headers:
+        Host: "www.ignitelimit.com"
   - name: "🇮🇷_15"
-    type: ss
-    server: "185.188.105.10"
+    type: trojan
+    server: "ir1.iobase.ir"
     port: 443
-    cipher: "none"
-    password: "RSzEIkk2EsHEAVj15N5E/A=="
+    password: "a6xjq4UD2t"
+    sni: "ir1.iobase.ir"
+    skip-cert-verify: true
     udp: true
   - name: "🇮🇷_16"
     type: ss
@@ -168,24 +164,24 @@ proxies:
     udp: true
   - name: "🇮🇷_17"
     type: ss
-    server: "185.188.107.10"
+    server: "185.188.104.12"
     port: 443
     cipher: "none"
     password: "RSzEIkk2EsHEAVj15N5E/A=="
     udp: true
   - name: "🇮🇷_18"
     type: ss
-    server: "n3.cover20.ir"
-    port: 55129
-    cipher: "chacha20-ietf-poly1305"
-    password: "OVlHEMLx3ZBjznj/RJ6p8jAIcLdRyzojPMqIjPI215U="
+    server: "185.188.105.11"
+    port: 443
+    cipher: "none"
+    password: "RSzEIkk2EsHEAVj15N5E/A=="
     udp: true
   - name: "🇮🇷_19"
     type: ss
-    server: "e3.cover20.ir"
-    port: 56985
-    cipher: "chacha20-ietf-poly1305"
-    password: "nPyE8V1H7+3HxpeTRXmFDZba1loveHpHu3uA06oecuo="
+    server: "185.188.104.12"
+    port: 443
+    cipher: "none"
+    password: "RSzEIkk2EsHEAVj15N5E/A=="
     udp: true
 
 proxy-groups:
@@ -204,13 +200,11 @@ proxy-groups:
       - "🇮🇷_1"
       - "🇮🇷_3"
       - "🇮🇷_5"
-      - "🇮🇷_6"
       - "🇮🇷_7"
       - "🇮🇷_8"
       - "🇮🇷_10"
-      - "🇮🇷_12"
+      - "🇮🇷_11"
       - "🇮🇷_13"
-      - "🇮🇷_14"
       - "🇮🇷_15"
       - "🇮🇷_16"
       - "🇮🇷_17"

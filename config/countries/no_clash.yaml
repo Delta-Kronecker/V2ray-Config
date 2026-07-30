@@ -64,14 +64,19 @@ dns:
 
 proxies:
   - name: "🇳🇴_1"
-    type: vless
-    server: "89.185.81.252"
-    port: 8443
-    uuid: "1f29762d-3f23-4207-9e39-f774de5d49ba"
+    type: ss
+    server: "185.213.23.63"
+    port: 990
+    cipher: "chacha20-ietf-poly1305"
+    password: "ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44="
     udp: true
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "grpc"
+  - name: "🇳🇴_2"
+    type: ss
+    server: "185.213.23.63"
+    port: 990
+    cipher: "chacha20-ietf-poly1305"
+    password: "ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44="
+    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -87,6 +92,7 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇳🇴_1"
+      - "🇳🇴_2"
 
 
 rules:

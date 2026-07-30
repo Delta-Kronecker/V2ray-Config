@@ -63,20 +63,13 @@ dns:
     - https://freedns.controld.com/family
 
 proxies:
-  - name: "🇿🇦_1"
-    type: vless
-    server: "34.35.11.97"
-    port: 24822
-    uuid: "9c3f61dc-ab33-48d3-b829-bc1cad0f31f7"
+  - name: "🇮🇪_1"
+    type: ss
+    server: "4.231.225.39"
+    port: 443
+    cipher: "chacha20-ietf-poly1305"
+    password: "IYJ5IS2oSAs93kGT"
     udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.icloud.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "tZ1ioVafOFT_0m30INlvEDNFSj6tcNnG21aJQRy3zVo"
-      short-id: "32a8bfa2939125"
-    flow: "xtls-rprx-vision"
 
 proxy-groups:
   - name: "PROXY"
@@ -91,7 +84,7 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇿🇦_1"
+      - "🇮🇪_1"
 
 
 rules:

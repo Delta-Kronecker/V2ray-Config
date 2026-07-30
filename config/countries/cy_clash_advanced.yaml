@@ -61,17 +61,6 @@ dns:
 proxies:
   - name: "🇨🇾_1"
     type: vless
-    server: "77.75.199.30"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "vms.lifetime59.workers.dev"
-  - name: "🇨🇾_3"
-    type: vless
     server: "195.85.59.30"
     port: 8880
     uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
@@ -81,18 +70,18 @@ proxies:
       path: "/"
       headers:
         Host: "vms.lifetime58.workers.dev"
-  - name: "🇨🇾_5"
+  - name: "🇨🇾_3"
     type: vless
-    server: "195.85.59.187"
-    port: 2095
-    uuid: "86c50e3a-5b87-49dd-bd20-03c7f2735e40"
+    server: "77.75.199.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
     udp: true
     network: ws
     ws-opts:
       path: "/"
       headers:
-        Host: "cnmfangbinxingnmsl.cnm--fangbinxing.workers.dev"
-  - name: "🇨🇾_7"
+        Host: "vms.lifetime59.workers.dev"
+  - name: "🇨🇾_5"
     type: vless
     server: "195.85.59.50"
     port: 8880
@@ -103,7 +92,7 @@ proxies:
       path: "/?ed=2560"
       headers:
         Host: "vms.lifetime58.workers.dev"
-  - name: "🇨🇾_9"
+  - name: "🇨🇾_7"
     type: trojan
     server: "195.133.93.81"
     port: 443
@@ -157,7 +146,6 @@ proxy-groups:
       - "🇨🇾_3"
       - "🇨🇾_5"
       - "🇨🇾_7"
-      - "🇨🇾_9"
 
   - name: "LB-CDN"
     type: load-balance
@@ -171,7 +159,6 @@ proxy-groups:
       - "🇨🇾_3"
       - "🇨🇾_5"
       - "🇨🇾_7"
-      - "🇨🇾_9"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -185,7 +172,6 @@ proxy-groups:
       - "🇨🇾_3"
       - "🇨🇾_5"
       - "🇨🇾_7"
-      - "🇨🇾_9"
 
   - name: "FAST-CDN"
     type: url-test
@@ -198,7 +184,6 @@ proxy-groups:
       - "🇨🇾_3"
       - "🇨🇾_5"
       - "🇨🇾_7"
-      - "🇨🇾_9"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -212,7 +197,6 @@ proxy-groups:
       - "🇨🇾_3"
       - "🇨🇾_5"
       - "🇨🇾_7"
-      - "🇨🇾_9"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
@@ -222,7 +206,6 @@ proxy-groups:
       - "🇨🇾_3"
       - "🇨🇾_5"
       - "🇨🇾_7"
-      - "🇨🇾_9"
 
 rules:
   - MATCH,PROXY-BEST

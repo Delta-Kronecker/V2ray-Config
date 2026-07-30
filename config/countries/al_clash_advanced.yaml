@@ -75,13 +75,6 @@ proxies:
     network: grpc
     grpc-opts:
       grpc-service-name: "nexusGrpc"
-  - name: "🇦🇱_2"
-    type: ss
-    server: "130.49.189.158"
-    port: 10792
-    cipher: "chacha20-ietf-poly1305"
-    password: "0vfHPbQyL9D6RMwVLHfXyE"
-    udp: true
 
 proxy-groups:
   # ── Top-level selector ────────────────────────────────────────────────────
@@ -125,7 +118,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇦🇱_1"
-      - "🇦🇱_2"
 
   - name: "LB-CDN"
     type: load-balance
@@ -136,7 +128,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇦🇱_1"
-      - "🇦🇱_2"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -147,7 +138,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇦🇱_1"
-      - "🇦🇱_2"
 
   - name: "FAST-CDN"
     type: url-test
@@ -157,7 +147,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇦🇱_1"
-      - "🇦🇱_2"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -168,14 +157,12 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇦🇱_1"
-      - "🇦🇱_2"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
       - "🇦🇱_1"
-      - "🇦🇱_2"
 
 rules:
   - MATCH,PROXY-BEST
