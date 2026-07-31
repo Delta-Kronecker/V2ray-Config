@@ -59,13 +59,21 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇮🇪_1"
-    type: ss
-    server: "4.231.225.39"
-    port: 443
-    cipher: "chacha20-ietf-poly1305"
-    password: "IYJ5IS2oSAs93kGT"
+  - name: "🇧🇾_1"
+    type: vless
+    server: "93.85.88.60"
+    port: 2053
+    uuid: "c7e9c591-2764-423a-afca-efbd010fd396"
     udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "forfreeuse.sub-flow.online"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "forfreeuse.sub-flow.online"
 
 proxy-groups:
   # ── Top-level selector ────────────────────────────────────────────────────
@@ -108,7 +116,7 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇮🇪_1"
+      - "🇧🇾_1"
 
   - name: "LB-CDN"
     type: load-balance
@@ -118,7 +126,7 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇮🇪_1"
+      - "🇧🇾_1"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -128,7 +136,7 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇮🇪_1"
+      - "🇧🇾_1"
 
   - name: "FAST-CDN"
     type: url-test
@@ -137,7 +145,7 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇮🇪_1"
+      - "🇧🇾_1"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -147,13 +155,13 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇮🇪_1"
+      - "🇧🇾_1"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
-      - "🇮🇪_1"
+      - "🇧🇾_1"
 
 rules:
   - MATCH,PROXY-BEST

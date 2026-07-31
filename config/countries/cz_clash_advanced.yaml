@@ -74,45 +74,23 @@ proxies:
     flow: "xtls-rprx-vision"
   - name: "🇨🇿_2"
     type: vless
-    server: "141.133.172.222"
+    server: "193.124.57.208"
     port: 20342
     uuid: "5eecb34f-c905-4c77-b7fb-d830b451cd11"
     udp: true
   - name: "🇨🇿_3"
     type: vless
-    server: "193.124.57.208"
+    server: "141.133.172.222"
     port: 20342
     uuid: "5eecb34f-c905-4c77-b7fb-d830b451cd11"
     udp: true
   - name: "🇨🇿_4"
-    type: trojan
-    server: "ch-2.bexum.fun"
-    port: 443
-    password: "LYaEYwjN8LjWTRJdCCTzW7V6gK7atJVu"
-    sni: "ch-2.bexum.fun"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇨🇿_5"
     type: trojan
     server: "46.8.113.142"
     port: 443
     password: "LYaEYwjN8LjWTRJdCCTzW7V6gK7atJVu"
     sni: "ch-2.bexum.fun"
     skip-cert-verify: true
-    udp: true
-  - name: "🇨🇿_6"
-    type: ss
-    server: "146.70.222.126"
-    port: 1080
-    cipher: "chacha20-ietf-poly1305"
-    password: "XF0klw7870vXn3uQIxe19Q"
-    udp: true
-  - name: "🇨🇿_7"
-    type: ss
-    server: "146.70.222.126"
-    port: 1080
-    cipher: "chacha20-ietf-poly1305"
-    password: "XF0klw7870vXn3uQIxe19Q"
     udp: true
 
 proxy-groups:
@@ -160,9 +138,6 @@ proxy-groups:
       - "🇨🇿_2"
       - "🇨🇿_3"
       - "🇨🇿_4"
-      - "🇨🇿_5"
-      - "🇨🇿_6"
-      - "🇨🇿_7"
 
   - name: "LB-CDN"
     type: load-balance
@@ -176,9 +151,6 @@ proxy-groups:
       - "🇨🇿_2"
       - "🇨🇿_3"
       - "🇨🇿_4"
-      - "🇨🇿_5"
-      - "🇨🇿_6"
-      - "🇨🇿_7"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -192,9 +164,6 @@ proxy-groups:
       - "🇨🇿_2"
       - "🇨🇿_3"
       - "🇨🇿_4"
-      - "🇨🇿_5"
-      - "🇨🇿_6"
-      - "🇨🇿_7"
 
   - name: "FAST-CDN"
     type: url-test
@@ -207,9 +176,6 @@ proxy-groups:
       - "🇨🇿_2"
       - "🇨🇿_3"
       - "🇨🇿_4"
-      - "🇨🇿_5"
-      - "🇨🇿_6"
-      - "🇨🇿_7"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -223,9 +189,6 @@ proxy-groups:
       - "🇨🇿_2"
       - "🇨🇿_3"
       - "🇨🇿_4"
-      - "🇨🇿_5"
-      - "🇨🇿_6"
-      - "🇨🇿_7"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
@@ -235,9 +198,6 @@ proxy-groups:
       - "🇨🇿_2"
       - "🇨🇿_3"
       - "🇨🇿_4"
-      - "🇨🇿_5"
-      - "🇨🇿_6"
-      - "🇨🇿_7"
 
 rules:
   - MATCH,PROXY-BEST

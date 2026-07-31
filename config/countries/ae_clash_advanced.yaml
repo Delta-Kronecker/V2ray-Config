@@ -61,50 +61,6 @@ dns:
 proxies:
   - name: "🇦🇪_1"
     type: vless
-    server: "84.235.244.108"
-    port: 22573
-    uuid: "39947382-3212-41c9-bc3a-589574ac8b23"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "uae.unixzone.us"
-  - name: "🇦🇪_3"
-    type: vless
-    server: "94.140.0.100"
-    port: 8880
-    uuid: "78e6619e-e82a-cd8d-b482-0973d8498305"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/sync"
-      headers:
-        Host: "silent-pine-a674.jfadwkglaugul.workers.dev"
-  - name: "🇦🇪_5"
-    type: vless
-    server: "77.232.140.30"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/?ed=2560"
-      headers:
-        Host: "vms.lifetime61.workers.dev"
-  - name: "🇦🇪_7"
-    type: vless
-    server: "185.225.195.30"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "vms.lifetime18.workers.dev"
-  - name: "🇦🇪_9"
-    type: vless
     server: "94.140.0.100"
     port: 443
     uuid: "c9d1b8e6-f28a-419f-2581-97ad3258c320"
@@ -118,7 +74,40 @@ proxies:
       path: "/kbapqjwhbsjwoqjhskso"
       headers:
         Host: "withered-cake-d636.asfvgsrhtrzdbvcgfn.workers.dev"
-  - name: "🇦🇪_11"
+  - name: "🇦🇪_3"
+    type: vless
+    server: "77.232.140.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "vms.lifetime61.workers.dev"
+  - name: "🇦🇪_5"
+    type: vless
+    server: "185.225.195.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vms.lifetime18.workers.dev"
+  - name: "🇦🇪_7"
+    type: vless
+    server: "84.235.244.108"
+    port: 22573
+    uuid: "39947382-3212-41c9-bc3a-589574ac8b23"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "uae.unixzone.us"
+  - name: "🇦🇪_8"
     type: vless
     server: "77.232.140.40"
     port: 8880
@@ -129,7 +118,7 @@ proxies:
       path: "/?ed"
       headers:
         Host: "vms.lifetime61.workers.dev"
-  - name: "🇦🇪_13"
+  - name: "🇦🇪_10"
     type: trojan
     server: "94.140.0.100"
     port: 443
@@ -186,9 +175,8 @@ proxy-groups:
       - "🇦🇪_3"
       - "🇦🇪_5"
       - "🇦🇪_7"
-      - "🇦🇪_9"
-      - "🇦🇪_11"
-      - "🇦🇪_13"
+      - "🇦🇪_8"
+      - "🇦🇪_10"
 
   - name: "LB-CDN"
     type: load-balance
@@ -202,9 +190,8 @@ proxy-groups:
       - "🇦🇪_3"
       - "🇦🇪_5"
       - "🇦🇪_7"
-      - "🇦🇪_9"
-      - "🇦🇪_11"
-      - "🇦🇪_13"
+      - "🇦🇪_8"
+      - "🇦🇪_10"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -218,9 +205,8 @@ proxy-groups:
       - "🇦🇪_3"
       - "🇦🇪_5"
       - "🇦🇪_7"
-      - "🇦🇪_9"
-      - "🇦🇪_11"
-      - "🇦🇪_13"
+      - "🇦🇪_8"
+      - "🇦🇪_10"
 
   - name: "FAST-CDN"
     type: url-test
@@ -233,9 +219,8 @@ proxy-groups:
       - "🇦🇪_3"
       - "🇦🇪_5"
       - "🇦🇪_7"
-      - "🇦🇪_9"
-      - "🇦🇪_11"
-      - "🇦🇪_13"
+      - "🇦🇪_8"
+      - "🇦🇪_10"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -249,9 +234,8 @@ proxy-groups:
       - "🇦🇪_3"
       - "🇦🇪_5"
       - "🇦🇪_7"
-      - "🇦🇪_9"
-      - "🇦🇪_11"
-      - "🇦🇪_13"
+      - "🇦🇪_8"
+      - "🇦🇪_10"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
@@ -261,9 +245,8 @@ proxy-groups:
       - "🇦🇪_3"
       - "🇦🇪_5"
       - "🇦🇪_7"
-      - "🇦🇪_9"
-      - "🇦🇪_11"
-      - "🇦🇪_13"
+      - "🇦🇪_8"
+      - "🇦🇪_10"
 
 rules:
   - MATCH,PROXY-BEST

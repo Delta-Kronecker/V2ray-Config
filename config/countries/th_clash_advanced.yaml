@@ -61,51 +61,6 @@ dns:
 proxies:
   - name: "🇹🇭_1"
     type: vless
-    server: "18.239.134.69"
-    port: 80
-    uuid: "f55ce6cc-3f6b-40fc-9e3b-abe26db17009"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "d2e1v87ko56lyw.cloudfront.net:assets.opensignal.com"
-  - name: "🇹🇭_3"
-    type: vless
-    server: "43.164.1.152"
-    port: 666
-    uuid: "8d5e7f2a-3c1b-4d9e-a6f8-2b5c0e7d4a19"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "43.164.1.152"
-    network: ws
-    ws-opts:
-      path: "/proxy"
-  - name: "🇹🇭_5"
-    type: vless
-    server: "143.14.11.236"
-    port: 80
-    uuid: "f55ce6cc-3f6b-40fc-9e3b-abe26db17009"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "d2e1v87ko56lyw.cloudfront.net:assets.opensignal.com"
-  - name: "🇹🇭_7"
-    type: vless
-    server: "154.83.2.50"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/?ed=2560"
-      headers:
-        Host: "vms.lifetime28.workers.dev"
-  - name: "🇹🇭_9"
-    type: vless
     server: "154.83.2.30"
     port: 8880
     uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
@@ -115,7 +70,24 @@ proxies:
       path: "/"
       headers:
         Host: "vms.lifetime28.workers.dev"
-  - name: "🇹🇭_11"
+  - name: "🇹🇭_3"
+    type: vless
+    server: "18.239.134.69"
+    port: 80
+    uuid: "f55ce6cc-3f6b-40fc-9e3b-abe26db17009"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "d2e1v87ko56lyw.cloudfront.net:assets.opensignal.com"
+  - name: "🇹🇭_5"
+    type: vless
+    server: "157.85.96.11"
+    port: 8443
+    uuid: "9abf5e0c-e98a-44a3-bd0b-1a6dd065eb0f"
+    udp: true
+  - name: "🇹🇭_6"
     type: vless
     server: "43.164.0.59"
     port: 666
@@ -127,6 +99,76 @@ proxies:
     network: ws
     ws-opts:
       path: "/proxy"
+  - name: "🇹🇭_8"
+    type: vless
+    server: "154.83.2.50"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "vms.lifetime28.workers.dev"
+  - name: "🇹🇭_10"
+    type: vless
+    server: "dtac.exp.dog"
+    port: 80
+    uuid: "19668b6f-e215-41e6-8102-b8d29fb5b8ae"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/fnet50"
+      headers:
+        Host: "duatoup3wk8q2.cloudfront.net"
+  - name: "🇹🇭_12"
+    type: vless
+    server: "143.14.11.236"
+    port: 80
+    uuid: "f55ce6cc-3f6b-40fc-9e3b-abe26db17009"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "d2e1v87ko56lyw.cloudfront.net:assets.opensignal.com"
+  - name: "🇹🇭_14"
+    type: vless
+    server: "157.85.105.179"
+    port: 80
+    uuid: "89c3b66f-c849-4602-a5a8-84b6f06af478"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "d2pwbkmfr5lxa4.cloudfront.net"
+  - name: "🇹🇭_16"
+    type: vless
+    server: "43.164.1.152"
+    port: 666
+    uuid: "8d5e7f2a-3c1b-4d9e-a6f8-2b5c0e7d4a19"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "43.164.1.152"
+    network: ws
+    ws-opts:
+      path: "/proxy"
+  - name: "🇹🇭_18"
+    type: ss
+    server: "47.81.56.202"
+    port: 44617
+    cipher: "chacha20-ietf-poly1305"
+    password: "lhuULRwO4slM6k262pAC4cbq5A1H6z8eaOHV27vi7Yw="
+    udp: true
+  - name: "🇹🇭_19"
+    type: ss
+    server: "47.81.56.202"
+    port: 44617
+    cipher: "chacha20-ietf-poly1305"
+    password: "lhuULRwO4slM6k262pAC4cbq5A1H6z8eaOHV27vi7Yw="
+    udp: true
 
 proxy-groups:
   # ── Top-level selector ────────────────────────────────────────────────────
@@ -172,9 +214,14 @@ proxy-groups:
       - "🇹🇭_1"
       - "🇹🇭_3"
       - "🇹🇭_5"
-      - "🇹🇭_7"
-      - "🇹🇭_9"
-      - "🇹🇭_11"
+      - "🇹🇭_6"
+      - "🇹🇭_8"
+      - "🇹🇭_10"
+      - "🇹🇭_12"
+      - "🇹🇭_14"
+      - "🇹🇭_16"
+      - "🇹🇭_18"
+      - "🇹🇭_19"
 
   - name: "LB-CDN"
     type: load-balance
@@ -187,9 +234,14 @@ proxy-groups:
       - "🇹🇭_1"
       - "🇹🇭_3"
       - "🇹🇭_5"
-      - "🇹🇭_7"
-      - "🇹🇭_9"
-      - "🇹🇭_11"
+      - "🇹🇭_6"
+      - "🇹🇭_8"
+      - "🇹🇭_10"
+      - "🇹🇭_12"
+      - "🇹🇭_14"
+      - "🇹🇭_16"
+      - "🇹🇭_18"
+      - "🇹🇭_19"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -202,9 +254,14 @@ proxy-groups:
       - "🇹🇭_1"
       - "🇹🇭_3"
       - "🇹🇭_5"
-      - "🇹🇭_7"
-      - "🇹🇭_9"
-      - "🇹🇭_11"
+      - "🇹🇭_6"
+      - "🇹🇭_8"
+      - "🇹🇭_10"
+      - "🇹🇭_12"
+      - "🇹🇭_14"
+      - "🇹🇭_16"
+      - "🇹🇭_18"
+      - "🇹🇭_19"
 
   - name: "FAST-CDN"
     type: url-test
@@ -216,9 +273,14 @@ proxy-groups:
       - "🇹🇭_1"
       - "🇹🇭_3"
       - "🇹🇭_5"
-      - "🇹🇭_7"
-      - "🇹🇭_9"
-      - "🇹🇭_11"
+      - "🇹🇭_6"
+      - "🇹🇭_8"
+      - "🇹🇭_10"
+      - "🇹🇭_12"
+      - "🇹🇭_14"
+      - "🇹🇭_16"
+      - "🇹🇭_18"
+      - "🇹🇭_19"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -231,9 +293,14 @@ proxy-groups:
       - "🇹🇭_1"
       - "🇹🇭_3"
       - "🇹🇭_5"
-      - "🇹🇭_7"
-      - "🇹🇭_9"
-      - "🇹🇭_11"
+      - "🇹🇭_6"
+      - "🇹🇭_8"
+      - "🇹🇭_10"
+      - "🇹🇭_12"
+      - "🇹🇭_14"
+      - "🇹🇭_16"
+      - "🇹🇭_18"
+      - "🇹🇭_19"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
@@ -242,9 +309,14 @@ proxy-groups:
       - "🇹🇭_1"
       - "🇹🇭_3"
       - "🇹🇭_5"
-      - "🇹🇭_7"
-      - "🇹🇭_9"
-      - "🇹🇭_11"
+      - "🇹🇭_6"
+      - "🇹🇭_8"
+      - "🇹🇭_10"
+      - "🇹🇭_12"
+      - "🇹🇭_14"
+      - "🇹🇭_16"
+      - "🇹🇭_18"
+      - "🇹🇭_19"
 
 rules:
   - MATCH,PROXY-BEST

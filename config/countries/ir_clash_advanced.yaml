@@ -61,15 +61,15 @@ dns:
 proxies:
   - name: "🇮🇷_1"
     type: vless
-    server: "45.131.4.115"
-    port: 80
-    uuid: "a7b22989-6c1f-4b59-b0f3-0605401813c4"
+    server: "45.131.4.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
     udp: true
     network: ws
     ws-opts:
-      path: "/eyJqdW5rIjoiQXoydFJwaWM0WSIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0="
+      path: "/"
       headers:
-        Host: "worker3.gigak25604.workers.dev"
+        Host: "vms.lifetime59.workers.dev"
   - name: "🇮🇷_3"
     type: vless
     server: "45.131.4.192"
@@ -83,22 +83,16 @@ proxies:
         Host: "silent-paper-fa57.fipiyag989.workers.dev"
   - name: "🇮🇷_5"
     type: vless
-    server: "45.131.4.30"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    server: "45.131.4.115"
+    port: 80
+    uuid: "a7b22989-6c1f-4b59-b0f3-0605401813c4"
     udp: true
     network: ws
     ws-opts:
-      path: "/"
+      path: "/eyJqdW5rIjoiQXoydFJwaWM0WSIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0="
       headers:
-        Host: "vms.lifetime59.workers.dev"
+        Host: "worker3.gigak25604.workers.dev"
   - name: "🇮🇷_7"
-    type: vless
-    server: "185.128.139.11"
-    port: 18244
-    uuid: "0d543aed-4e30-4553-b5ac-211419bb0961"
-    udp: true
-  - name: "🇮🇷_8"
     type: trojan
     server: "2.144.21.112"
     port: 40443
@@ -111,14 +105,19 @@ proxies:
       path: "/assignment"
       headers:
         Host: "www.ignitelimit.com"
-  - name: "🇮🇷_10"
+  - name: "🇮🇷_9"
     type: trojan
-    server: "193.151.134.182"
-    port: 443
-    password: "diCyRX1d"
-    sni: "iprostable.enterprises"
+    server: "2.144.21.150"
+    port: 2000
+    password: "humanity"
+    sni: "www.ignitelimit.com"
     skip-cert-verify: true
     udp: true
+    network: ws
+    ws-opts:
+      path: "/assignment"
+      headers:
+        Host: "www.ignitelimit.com"
   - name: "🇮🇷_11"
     type: trojan
     server: "45.131.4.118"
@@ -132,49 +131,78 @@ proxies:
       path: "/sync"
   - name: "🇮🇷_13"
     type: trojan
-    server: "2.144.21.150"
-    port: 2000
-    password: "humanity"
-    sni: "www.ignitelimit.com"
-    skip-cert-verify: true
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/assignment"
-      headers:
-        Host: "www.ignitelimit.com"
-  - name: "🇮🇷_15"
-    type: trojan
-    server: "ir1.iobase.ir"
+    server: "193.151.134.182"
     port: 443
-    password: "a6xjq4UD2t"
-    sni: "ir1.iobase.ir"
+    password: "diCyRX1d"
+    sni: "iprostable.enterprises"
     skip-cert-verify: true
     udp: true
-  - name: "🇮🇷_16"
+  - name: "🇮🇷_14"
     type: ss
-    server: "185.188.105.11"
+    server: "82.38.31.57"
+    port: 443
+    cipher: "chacha20-ietf-poly1305"
+    password: "oZIoA69Q8yhcQV8ka3Pa3A"
+    udp: true
+  - name: "🇮🇷_15"
+    type: ss
+    server: "185.188.104.12"
     port: 443
     cipher: "none"
     password: "RSzEIkk2EsHEAVj15N5E/A=="
     udp: true
+  - name: "🇮🇷_16"
+    type: ss
+    server: "82.38.31.57"
+    port: 443
+    cipher: "chacha20-ietf-poly1305"
+    password: "oZIoA69Q8yhcQV8ka3Pa3A"
+    udp: true
   - name: "🇮🇷_17"
     type: ss
-    server: "185.188.104.12"
+    server: "185.188.106.10"
     port: 443
     cipher: "none"
     password: "RSzEIkk2EsHEAVj15N5E/A=="
     udp: true
   - name: "🇮🇷_18"
     type: ss
-    server: "185.188.105.11"
+    server: "185.188.104.12"
     port: 443
     cipher: "none"
     password: "RSzEIkk2EsHEAVj15N5E/A=="
     udp: true
   - name: "🇮🇷_19"
     type: ss
-    server: "185.188.104.12"
+    server: "185.188.104.11"
+    port: 443
+    cipher: "none"
+    password: "RSzEIkk2EsHEAVj15N5E/A=="
+    udp: true
+  - name: "🇮🇷_20"
+    type: ss
+    server: "185.188.105.10"
+    port: 443
+    cipher: "none"
+    password: "RSzEIkk2EsHEAVj15N5E/A=="
+    udp: true
+  - name: "🇮🇷_21"
+    type: ss
+    server: "185.188.106.10"
+    port: 443
+    cipher: "none"
+    password: "RSzEIkk2EsHEAVj15N5E/A=="
+    udp: true
+  - name: "🇮🇷_22"
+    type: ss
+    server: "185.188.105.10"
+    port: 443
+    cipher: "none"
+    password: "RSzEIkk2EsHEAVj15N5E/A=="
+    udp: true
+  - name: "🇮🇷_23"
+    type: ss
+    server: "185.188.104.11"
     port: 443
     cipher: "none"
     password: "RSzEIkk2EsHEAVj15N5E/A=="
@@ -225,15 +253,19 @@ proxy-groups:
       - "🇮🇷_3"
       - "🇮🇷_5"
       - "🇮🇷_7"
-      - "🇮🇷_8"
-      - "🇮🇷_10"
+      - "🇮🇷_9"
       - "🇮🇷_11"
       - "🇮🇷_13"
+      - "🇮🇷_14"
       - "🇮🇷_15"
       - "🇮🇷_16"
       - "🇮🇷_17"
       - "🇮🇷_18"
       - "🇮🇷_19"
+      - "🇮🇷_20"
+      - "🇮🇷_21"
+      - "🇮🇷_22"
+      - "🇮🇷_23"
 
   - name: "LB-CDN"
     type: load-balance
@@ -247,15 +279,19 @@ proxy-groups:
       - "🇮🇷_3"
       - "🇮🇷_5"
       - "🇮🇷_7"
-      - "🇮🇷_8"
-      - "🇮🇷_10"
+      - "🇮🇷_9"
       - "🇮🇷_11"
       - "🇮🇷_13"
+      - "🇮🇷_14"
       - "🇮🇷_15"
       - "🇮🇷_16"
       - "🇮🇷_17"
       - "🇮🇷_18"
       - "🇮🇷_19"
+      - "🇮🇷_20"
+      - "🇮🇷_21"
+      - "🇮🇷_22"
+      - "🇮🇷_23"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -269,15 +305,19 @@ proxy-groups:
       - "🇮🇷_3"
       - "🇮🇷_5"
       - "🇮🇷_7"
-      - "🇮🇷_8"
-      - "🇮🇷_10"
+      - "🇮🇷_9"
       - "🇮🇷_11"
       - "🇮🇷_13"
+      - "🇮🇷_14"
       - "🇮🇷_15"
       - "🇮🇷_16"
       - "🇮🇷_17"
       - "🇮🇷_18"
       - "🇮🇷_19"
+      - "🇮🇷_20"
+      - "🇮🇷_21"
+      - "🇮🇷_22"
+      - "🇮🇷_23"
 
   - name: "FAST-CDN"
     type: url-test
@@ -290,15 +330,19 @@ proxy-groups:
       - "🇮🇷_3"
       - "🇮🇷_5"
       - "🇮🇷_7"
-      - "🇮🇷_8"
-      - "🇮🇷_10"
+      - "🇮🇷_9"
       - "🇮🇷_11"
       - "🇮🇷_13"
+      - "🇮🇷_14"
       - "🇮🇷_15"
       - "🇮🇷_16"
       - "🇮🇷_17"
       - "🇮🇷_18"
       - "🇮🇷_19"
+      - "🇮🇷_20"
+      - "🇮🇷_21"
+      - "🇮🇷_22"
+      - "🇮🇷_23"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -312,15 +356,19 @@ proxy-groups:
       - "🇮🇷_3"
       - "🇮🇷_5"
       - "🇮🇷_7"
-      - "🇮🇷_8"
-      - "🇮🇷_10"
+      - "🇮🇷_9"
       - "🇮🇷_11"
       - "🇮🇷_13"
+      - "🇮🇷_14"
       - "🇮🇷_15"
       - "🇮🇷_16"
       - "🇮🇷_17"
       - "🇮🇷_18"
       - "🇮🇷_19"
+      - "🇮🇷_20"
+      - "🇮🇷_21"
+      - "🇮🇷_22"
+      - "🇮🇷_23"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
@@ -330,15 +378,19 @@ proxy-groups:
       - "🇮🇷_3"
       - "🇮🇷_5"
       - "🇮🇷_7"
-      - "🇮🇷_8"
-      - "🇮🇷_10"
+      - "🇮🇷_9"
       - "🇮🇷_11"
       - "🇮🇷_13"
+      - "🇮🇷_14"
       - "🇮🇷_15"
       - "🇮🇷_16"
       - "🇮🇷_17"
       - "🇮🇷_18"
       - "🇮🇷_19"
+      - "🇮🇷_20"
+      - "🇮🇷_21"
+      - "🇮🇷_22"
+      - "🇮🇷_23"
 
 rules:
   - MATCH,PROXY-BEST

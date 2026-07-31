@@ -63,38 +63,20 @@ dns:
     - https://freedns.controld.com/family
 
 proxies:
-  - name: "🇸🇦_1"
+  - name: "🇩🇰_1"
     type: vless
-    server: "81.208.170.142"
-    port: 1500
-    uuid: "e332f028-d343-5b44-8016-b3130f39e133"
+    server: "45.88.13.3"
+    port: 993
+    uuid: "5e243126-4a2a-84b6-782a-73b14797fb5f"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "www.ebay.com"
+    servername: "download.nvidia.com"
     client-fingerprint: "chrome"
     reality-opts:
-      public-key: "VQxVgczORkbSNdDrkNOYs6zMBINpViztTKDuWCeQsVE"
-      short-id: "775eb6408888248e"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: ""
-  - name: "🇸🇦_2"
-    type: vless
-    server: "81.208.170.142"
-    port: 1500
-    uuid: "sGLzG6kUwBpZd73sW0nq"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.ebay.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "VQxVgczORkbSNdDrkNOYs6zMBINpViztTKDuWCeQsVE"
-      short-id: "775eb6408888248e"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: ""
+      public-key: "FOQzn10eHqu4F5xOxiXW2bTDG8lH4TdOXP6A5rDqKFk"
+      short-id: ""
+    flow: "xtls-rprx-vision"
 
 proxy-groups:
   - name: "PROXY"
@@ -109,8 +91,7 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇸🇦_1"
-      - "🇸🇦_2"
+      - "🇩🇰_1"
 
 
 rules:

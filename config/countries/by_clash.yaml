@@ -63,13 +63,21 @@ dns:
     - https://freedns.controld.com/family
 
 proxies:
-  - name: "🇮🇪_1"
-    type: ss
-    server: "4.231.225.39"
-    port: 443
-    cipher: "chacha20-ietf-poly1305"
-    password: "IYJ5IS2oSAs93kGT"
+  - name: "🇧🇾_1"
+    type: vless
+    server: "93.85.88.60"
+    port: 2053
+    uuid: "c7e9c591-2764-423a-afca-efbd010fd396"
     udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "forfreeuse.sub-flow.online"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "forfreeuse.sub-flow.online"
 
 proxy-groups:
   - name: "PROXY"
@@ -84,7 +92,7 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇮🇪_1"
+      - "🇧🇾_1"
 
 
 rules:

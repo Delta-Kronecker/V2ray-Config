@@ -72,6 +72,19 @@ proxies:
     reality-opts:
       public-key: "jDj_1a2AOXOZ_bRkgqvb0tMXjTier75usgndNVdOHTU"
       short-id: "2926c493071e7380"
+  - name: "🇬🇪_2"
+    type: vless
+    server: "n2.zynovax.ir"
+    port: 1080
+    uuid: "1b73f053-2709-4698-bbec-cb20e8a5f288"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "play.google.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "jDj_1a2AOXOZ_bRkgqvb0tMXjTier75usgndNVdOHTU"
+      short-id: "2926c493071e7380"
 
 proxy-groups:
   # ── Top-level selector ────────────────────────────────────────────────────
@@ -115,6 +128,7 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇬🇪_1"
+      - "🇬🇪_2"
 
   - name: "LB-CDN"
     type: load-balance
@@ -125,6 +139,7 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇬🇪_1"
+      - "🇬🇪_2"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -135,6 +150,7 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇬🇪_1"
+      - "🇬🇪_2"
 
   - name: "FAST-CDN"
     type: url-test
@@ -144,6 +160,7 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇬🇪_1"
+      - "🇬🇪_2"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -154,12 +171,14 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇬🇪_1"
+      - "🇬🇪_2"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
       - "🇬🇪_1"
+      - "🇬🇪_2"
 
 rules:
   - MATCH,PROXY-BEST

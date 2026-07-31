@@ -61,28 +61,15 @@ dns:
 proxies:
   - name: "🇨🇴_1"
     type: vless
-    server: "149.130.170.123"
+    server: "158.247.123.162"
     port: 62145
     uuid: "8fb65472-5957-4f64-ba2d-b5812b2f155a"
     udp: true
   - name: "🇨🇴_2"
     type: vless
-    server: "157.137.234.139"
+    server: "149.130.191.146"
     port: 62145
     uuid: "8fb65472-5957-4f64-ba2d-b5812b2f155a"
-    udp: true
-  - name: "🇨🇴_3"
-    type: vless
-    server: "157.137.230.78"
-    port: 62145
-    uuid: "8fb65472-5957-4f64-ba2d-b5812b2f155a"
-    udp: true
-  - name: "🇨🇴_4"
-    type: ss
-    server: "154.223.16.96"
-    port: 6697
-    cipher: "aes-256-gcm"
-    password: "TEzjfAYq2IjtuoS"
     udp: true
 
 proxy-groups:
@@ -128,8 +115,6 @@ proxy-groups:
     proxies:
       - "🇨🇴_1"
       - "🇨🇴_2"
-      - "🇨🇴_3"
-      - "🇨🇴_4"
 
   - name: "LB-CDN"
     type: load-balance
@@ -141,8 +126,6 @@ proxy-groups:
     proxies:
       - "🇨🇴_1"
       - "🇨🇴_2"
-      - "🇨🇴_3"
-      - "🇨🇴_4"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -154,8 +137,6 @@ proxy-groups:
     proxies:
       - "🇨🇴_1"
       - "🇨🇴_2"
-      - "🇨🇴_3"
-      - "🇨🇴_4"
 
   - name: "FAST-CDN"
     type: url-test
@@ -166,8 +147,6 @@ proxy-groups:
     proxies:
       - "🇨🇴_1"
       - "🇨🇴_2"
-      - "🇨🇴_3"
-      - "🇨🇴_4"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -179,8 +158,6 @@ proxy-groups:
     proxies:
       - "🇨🇴_1"
       - "🇨🇴_2"
-      - "🇨🇴_3"
-      - "🇨🇴_4"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
@@ -188,8 +165,6 @@ proxy-groups:
     proxies:
       - "🇨🇴_1"
       - "🇨🇴_2"
-      - "🇨🇴_3"
-      - "🇨🇴_4"
 
 rules:
   - MATCH,PROXY-BEST

@@ -61,42 +61,23 @@ dns:
 proxies:
   - name: "🇹🇷_1"
     type: vless
-    server: "93.114.98.129"
+    server: "45.198.88.247"
     port: 443
-    uuid: "855f8f52-d22a-4278-84ad-1dc968677626"
-    udp: true
-    network: httpupgrade
-    httpupgrade-opts:
-      path: "/hostiranrespina"
-      host: "iranshomalhostserver.ir"
-  - name: "🇹🇷_2"
-    type: vless
-    server: "185.39.204.155"
-    port: 8443
-    uuid: "7e8f7489-e65f-4be6-93ed-867a74ec6759"
-    udp: true
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "grpc"
-  - name: "🇹🇷_3"
-    type: vless
-    server: "194.135.34.229"
-    port: 8443
-    uuid: "9b08bee0-2615-46c6-8939-54b575517a26"
+    uuid: "b1787456-cc54-4191-99e9-c609bf7c2853"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "cloudflare.vhub.pro"
-    network: ws
-    ws-opts:
-      path: "/websocket?ed"
-      headers:
-        Host: "cloudflare.vhub.pro"
-  - name: "🇹🇷_5"
+    servername: "storage.yandex.net"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "zii4nGNapnFKL6SN8GzWNqFlElBvUCUFUThEP0kFH04"
+      short-id: "c6ef72e4635d15a5"
+    flow: "xtls-rprx-vision"
+  - name: "🇹🇷_2"
     type: vless
     server: "pro-tr.emrata.top"
     port: 443
-    uuid: "3c6275a3-9d27-4f19-8f87-f9da04db78e8"
+    uuid: "8586ba96-1d58-42d8-9e66-68714425fcd8"
     udp: true
     tls: true
     skip-cert-verify: true
@@ -106,59 +87,29 @@ proxies:
       public-key: "da5UVhoC5QOCDm84AxB-RRxf0z2nySZ3lOemgqizLS4"
       short-id: ""
     flow: "xtls-rprx-vision"
+  - name: "🇹🇷_3"
+    type: vless
+    server: "shopcar.rafeaftabsokhtegi.com"
+    port: 9443
+    uuid: "7dfe2f33-54c5-43cf-a654-7c8919a266be"
+    udp: true
+  - name: "🇹🇷_4"
+    type: trojan
+    server: "193.111.125.82"
+    port: 39594
+    password: "77a4056f31f24ea592bb7aa1e88aced4"
+    sni: "dem.yariresanbot.ir"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇹🇷_5"
+    type: trojan
+    server: "45.67.202.101"
+    port: 8443
+    password: "8r<[9'l6hAO#8ZQi"
+    sni: "Koma-YT.PAGeS.Dev"
+    skip-cert-verify: true
+    udp: true
   - name: "🇹🇷_6"
-    type: vless
-    server: "tr2.fastcodz.ir"
-    port: 52077
-    uuid: "a6d7e54f-3600-4f9d-bac0-a421f4360d2e"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "yahoo.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "9TjYilelwbIgUs6du2chsTvUyv_TemHoAJuVbsdYRUY"
-      short-id: "c1fcab160b4c8bed"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: ""
-  - name: "🇹🇷_7"
-    type: vless
-    server: "87.120.106.226"
-    port: 14610
-    uuid: "9c32f85f-6e9c-429f-b7dc-3eeb8901259e"
-    udp: true
-  - name: "🇹🇷_8"
-    type: vless
-    server: "87.120.106.162"
-    port: 52077
-    uuid: "a6d7e54f-3600-4f9d-bac0-a421f4360d2e"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "yahoo.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "9TjYilelwbIgUs6du2chsTvUyv_TemHoAJuVbsdYRUY"
-      short-id: "c1fcab160b4c8bed"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: ""
-  - name: "🇹🇷_9"
-    type: vless
-    server: "146.103.26.87"
-    port: 443
-    uuid: "acc50200-7f21-4f90-9cca-0057efcbf042"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.ya.ru"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "rNBFVzV18kAj_ei4AqsgZywzmvD36WK9hcRdVnpHPAM"
-      short-id: "c0573c8280a0c019"
-    flow: "xtls-rprx-vision"
-  - name: "🇹🇷_10"
     type: trojan
     server: "195.162.69.238"
     port: 9443
@@ -166,7 +117,7 @@ proxies:
     sni: "apple.com"
     skip-cert-verify: true
     udp: true
-  - name: "🇹🇷_11"
+  - name: "🇹🇷_7"
     type: trojan
     server: "86.38.214.205"
     port: 443
@@ -177,27 +128,12 @@ proxies:
     network: ws
     ws-opts:
       path: "/assignment"
-  - name: "🇹🇷_13"
-    type: trojan
-    server: "193.111.125.82"
-    port: 39594
-    password: "77a4056f31f24ea592bb7aa1e88aced4"
-    sni: "dem.yariresanbot.ir"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇹🇷_14"
+  - name: "🇹🇷_9"
     type: ss
     server: "38.180.113.194"
     port: 8119
     cipher: "aes-256-gcm"
     password: "cdBIDV42DCwnfIN"
-    udp: true
-  - name: "🇹🇷_15"
-    type: ss
-    server: "31.210.78.66"
-    port: 1080
-    cipher: "chacha20-ietf-poly1305"
-    password: "XF0klw7870vXn3uQIxe19Q"
     udp: true
 
 proxy-groups:
@@ -244,16 +180,11 @@ proxy-groups:
       - "🇹🇷_1"
       - "🇹🇷_2"
       - "🇹🇷_3"
+      - "🇹🇷_4"
       - "🇹🇷_5"
       - "🇹🇷_6"
       - "🇹🇷_7"
-      - "🇹🇷_8"
       - "🇹🇷_9"
-      - "🇹🇷_10"
-      - "🇹🇷_11"
-      - "🇹🇷_13"
-      - "🇹🇷_14"
-      - "🇹🇷_15"
 
   - name: "LB-CDN"
     type: load-balance
@@ -266,16 +197,11 @@ proxy-groups:
       - "🇹🇷_1"
       - "🇹🇷_2"
       - "🇹🇷_3"
+      - "🇹🇷_4"
       - "🇹🇷_5"
       - "🇹🇷_6"
       - "🇹🇷_7"
-      - "🇹🇷_8"
       - "🇹🇷_9"
-      - "🇹🇷_10"
-      - "🇹🇷_11"
-      - "🇹🇷_13"
-      - "🇹🇷_14"
-      - "🇹🇷_15"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -288,16 +214,11 @@ proxy-groups:
       - "🇹🇷_1"
       - "🇹🇷_2"
       - "🇹🇷_3"
+      - "🇹🇷_4"
       - "🇹🇷_5"
       - "🇹🇷_6"
       - "🇹🇷_7"
-      - "🇹🇷_8"
       - "🇹🇷_9"
-      - "🇹🇷_10"
-      - "🇹🇷_11"
-      - "🇹🇷_13"
-      - "🇹🇷_14"
-      - "🇹🇷_15"
 
   - name: "FAST-CDN"
     type: url-test
@@ -309,16 +230,11 @@ proxy-groups:
       - "🇹🇷_1"
       - "🇹🇷_2"
       - "🇹🇷_3"
+      - "🇹🇷_4"
       - "🇹🇷_5"
       - "🇹🇷_6"
       - "🇹🇷_7"
-      - "🇹🇷_8"
       - "🇹🇷_9"
-      - "🇹🇷_10"
-      - "🇹🇷_11"
-      - "🇹🇷_13"
-      - "🇹🇷_14"
-      - "🇹🇷_15"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -331,16 +247,11 @@ proxy-groups:
       - "🇹🇷_1"
       - "🇹🇷_2"
       - "🇹🇷_3"
+      - "🇹🇷_4"
       - "🇹🇷_5"
       - "🇹🇷_6"
       - "🇹🇷_7"
-      - "🇹🇷_8"
       - "🇹🇷_9"
-      - "🇹🇷_10"
-      - "🇹🇷_11"
-      - "🇹🇷_13"
-      - "🇹🇷_14"
-      - "🇹🇷_15"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
@@ -349,16 +260,11 @@ proxy-groups:
       - "🇹🇷_1"
       - "🇹🇷_2"
       - "🇹🇷_3"
+      - "🇹🇷_4"
       - "🇹🇷_5"
       - "🇹🇷_6"
       - "🇹🇷_7"
-      - "🇹🇷_8"
       - "🇹🇷_9"
-      - "🇹🇷_10"
-      - "🇹🇷_11"
-      - "🇹🇷_13"
-      - "🇹🇷_14"
-      - "🇹🇷_15"
 
 rules:
   - MATCH,PROXY-BEST
