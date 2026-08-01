@@ -1621,75 +1621,6 @@ func writeSummary(results []configResult, failedLinks []string, duration float64
 	}
 	gen.WriteString("WARP All:\n```\nhttps://github.com/Delta-Kronecker/WARP-Config/raw/refs/heads/main/ALL.txt\n```\n\n")
 
-	// ── By Country ─────────────────────────────────────────────────────────────
-	countryCount := make(map[string]int)
-	for _, r := range results {
-		if r.country != "" {
-			countryCount[r.country]++
-		}
-	}
-	if len(countryCount) > 0 {
-		gen.WriteString("## By Country\n\n")
-
-		type ccEntry struct {
-			code  string
-			count int
-		}
-		var sorted []ccEntry
-		for cc, count := range countryCount {
-			sorted = append(sorted, ccEntry{cc, count})
-		}
-		for i := 0; i < len(sorted); i++ {
-			for j := i + 1; j < len(sorted); j++ {
-				if sorted[j].count > sorted[i].count {
-					sorted[i], sorted[j] = sorted[j], sorted[i]
-				}
-			}
-		}
-
-		// Build cell rows: each cell is "| Country | V2ray | Clash |"
-		type cell struct {
-			cc      string
-			v2rayN  int
-			v2rayF  string
-			clashN  int
-			clashF  string
-		}
-		var cells []cell
-		for _, entry := range sorted {
-			cc := entry.code
-			safeCC := strings.ToLower(cc)
-			cells = append(cells, cell{
-				cc:     cc,
-				v2rayN: entry.count,
-				v2rayF: fmt.Sprintf("%s/config/countries/%s.txt", repoBase, safeCC),
-				clashN: entry.count,
-				clashF: fmt.Sprintf("%s/config/countries/%s_clash.yaml", repoBase, safeCC),
-			})
-		}
-
-		const cols = 3
-		// Header
-		gen.WriteString("| Country | V2ray | Clash | Country | V2ray | Clash | Country | V2ray | Clash |\n")
-		gen.WriteString("|---------|-------|-------|---------|-------|-------|---------|-------|-------|\n")
-
-		numRows := (len(cells) + cols - 1) / cols
-		for row := 0; row < numRows; row++ {
-			for c := 0; c < cols; c++ {
-				idx := row*cols + c
-				if idx < len(cells) {
-					cl := cells[idx]
-					gen.WriteString(fmt.Sprintf("| %s | [%d](%s) | [%d](%s) ",
-						cl.cc, cl.v2rayN, cl.v2rayF, cl.clashN, cl.clashF))
-				} else {
-					gen.WriteString("|  |  |  ")
-				}
-			}
-			gen.WriteString("|\n")
-		}
-		gen.WriteString("\n")
-	}
-
 	// ── 2. V2ray Batches ────────────────────────────────────────────────────────
 	v2rayBatches := countBatchFiles("config/batches/v2ray")
 	if v2rayBatches > 0 {
@@ -1764,6 +1695,75 @@ func writeSummary(results []configResult, failedLinks []string, duration float64
 			fmt.Fprintf(&gen, "TCP Pass SNI Batch %03d:\n```\n%s/config/tcp-pass-sni/batch_%03d.txt\n```\n\n",
 				i, repoBase, i)
 		}
+	}
+
+	// ── 9. By Country ────────────────────────────────────────────────────────────
+	countryCount := make(map[string]int)
+	for _, r := range results {
+		if r.country != "" {
+			countryCount[r.country]++
+		}
+	}
+	if len(countryCount) > 0 {
+		gen.WriteString("## By Country\n\n")
+
+		type ccEntry struct {
+			code  string
+			count int
+		}
+		var sorted []ccEntry
+		for cc, count := range countryCount {
+			sorted = append(sorted, ccEntry{cc, count})
+		}
+		for i := 0; i < len(sorted); i++ {
+			for j := i + 1; j < len(sorted); j++ {
+				if sorted[j].count > sorted[i].count {
+					sorted[i], sorted[j] = sorted[j], sorted[i]
+				}
+			}
+		}
+
+		// Build cell rows: each cell is "| Country | V2ray | Clash |"
+		type cell struct {
+			cc      string
+			v2rayN  int
+			v2rayF  string
+			clashN  int
+			clashF  string
+		}
+		var cells []cell
+		for _, entry := range sorted {
+			cc := entry.code
+			safeCC := strings.ToLower(cc)
+			cells = append(cells, cell{
+				cc:     cc,
+				v2rayN: entry.count,
+				v2rayF: fmt.Sprintf("%s/config/countries/%s.txt", repoBase, safeCC),
+				clashN: entry.count,
+				clashF: fmt.Sprintf("%s/config/countries/%s_clash.yaml", repoBase, safeCC),
+			})
+		}
+
+		const cols = 3
+		// Header
+		gen.WriteString("| Country | V2ray | Clash | Country | V2ray | Clash | Country | V2ray | Clash |\n")
+		gen.WriteString("|---------|-------|-------|---------|-------|-------|---------|-------|-------|\n")
+
+		numRows := (len(cells) + cols - 1) / cols
+		for row := 0; row < numRows; row++ {
+			for c := 0; c < cols; c++ {
+				idx := row*cols + c
+				if idx < len(cells) {
+					cl := cells[idx]
+					gen.WriteString(fmt.Sprintf("| %s | [%d](%s) | [%d](%s) ",
+						cl.cc, cl.v2rayN, cl.v2rayF, cl.clashN, cl.clashF))
+				} else {
+					gen.WriteString("|  |  |  ")
+				}
+			}
+			gen.WriteString("|\n")
+		}
+		gen.WriteString("\n")
 	}
 
 	existingContent := ""
