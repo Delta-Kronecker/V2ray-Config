@@ -61,20 +61,6 @@ dns:
 proxies:
   - name: "🇷🇴_1"
     type: vless
-    server: "79.108.161.101"
-    port: 443
-    uuid: "fc1b3bda-b226-452a-8c5c-b0e36a1f8f88"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "eu-central.cendora.ru"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "b-Cm9hX-3UHsS1L_lnUB6AMjuKhlN1IDdBbZ506itjI"
-      short-id: "00bca5982f82d083"
-    flow: "xtls-rprx-vision"
-  - name: "🇷🇴_2"
-    type: vless
     server: "151.242.191.161"
     port: 443
     uuid: "301d514e-4aa0-47b0-ba44-a0cb891cd52f"
@@ -86,7 +72,7 @@ proxies:
     reality-opts:
       public-key: "OZVjfQBboTDTBw0baMFqzVPsVUI4FNQmspTEb0b0zW4"
       short-id: "a1b2c3d4"
-  - name: "🇷🇴_3"
+  - name: "🇷🇴_2"
     type: ss
     server: "154.46.31.106"
     port: 443
@@ -137,7 +123,6 @@ proxy-groups:
     proxies:
       - "🇷🇴_1"
       - "🇷🇴_2"
-      - "🇷🇴_3"
 
   - name: "LB-CDN"
     type: load-balance
@@ -149,7 +134,6 @@ proxy-groups:
     proxies:
       - "🇷🇴_1"
       - "🇷🇴_2"
-      - "🇷🇴_3"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -161,7 +145,6 @@ proxy-groups:
     proxies:
       - "🇷🇴_1"
       - "🇷🇴_2"
-      - "🇷🇴_3"
 
   - name: "FAST-CDN"
     type: url-test
@@ -172,7 +155,6 @@ proxy-groups:
     proxies:
       - "🇷🇴_1"
       - "🇷🇴_2"
-      - "🇷🇴_3"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -184,7 +166,6 @@ proxy-groups:
     proxies:
       - "🇷🇴_1"
       - "🇷🇴_2"
-      - "🇷🇴_3"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
@@ -192,7 +173,6 @@ proxy-groups:
     proxies:
       - "🇷🇴_1"
       - "🇷🇴_2"
-      - "🇷🇴_3"
 
 rules:
   - MATCH,PROXY-BEST

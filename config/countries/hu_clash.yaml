@@ -65,6 +65,20 @@ dns:
 proxies:
   - name: "🇭🇺_1"
     type: vless
+    server: "155.117.137.10"
+    port: 443
+    uuid: "55f7d143-a594-4a91-b030-f227039f85ef"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "cdn7-09.yahoo.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "CMkW1axrhEXoiJ6anMz9XEjlfqlAtEZya7L0b5ZPMyw"
+      short-id: "df5f7ec1de636bbb"
+    flow: "xtls-rprx-vision"
+  - name: "🇭🇺_2"
+    type: vless
     server: "141.11.202.123"
     port: 443
     uuid: "1d16c6e0-1bbe-435b-b661-90043fee999c"
@@ -77,22 +91,48 @@ proxies:
       path: "Telegram-WangCai2"
       headers:
         Host: "notls.lukongtou.eu.org"
-  - name: "🇭🇺_3"
+  - name: "🇭🇺_4"
     type: vless
-    server: "152.233.41.31"
-    port: 16923
-    uuid: "b8e74de0-42c6-4b84-8889-bf348f32730c"
+    server: "155.117.137.65"
+    port: 443
+    uuid: "55f7d143-a594-4a91-b030-f227039f85ef"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "mail.yandex.ru"
-    client-fingerprint: "firefox"
+    servername: "cdn4-23.yahoo.com"
+    client-fingerprint: "chrome"
     reality-opts:
-      public-key: "_QeslG3rHGM7DoM99pYC8-jpc16pM2MbNZ6NRMoxmHA"
-      short-id: "10ffb85da1c2d986"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "neurex"
+      public-key: "CMkW1axrhEXoiJ6anMz9XEjlfqlAtEZya7L0b5ZPMyw"
+      short-id: "04c9b77ed330452d"
+    flow: "xtls-rprx-vision"
+  - name: "🇭🇺_5"
+    type: vless
+    server: "45.195.111.15"
+    port: 443
+    uuid: "45459159-1536-4e98-95b3-aa1dbbfb4172"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "storage.yandex.net"
+    client-fingerprint: "qq"
+    reality-opts:
+      public-key: "7zd9mJilgjOrg_ohtw23Vmio-pdnYqeP_r-kiWt87Cg"
+      short-id: "2715592069f36fe7"
+    flow: "xtls-rprx-vision"
+  - name: "🇭🇺_6"
+    type: vless
+    server: "45.195.111.15"
+    port: 443
+    uuid: "82e209b2-97a6-4d67-a10b-72627b9f6702"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "storage.yandex.net"
+    client-fingerprint: "qq"
+    reality-opts:
+      public-key: "7zd9mJilgjOrg_ohtw23Vmio-pdnYqeP_r-kiWt87Cg"
+      short-id: "f4b4a6365558ea2e"
+    flow: "xtls-rprx-vision"
 
 proxy-groups:
   - name: "PROXY"
@@ -108,7 +148,10 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇭🇺_1"
-      - "🇭🇺_3"
+      - "🇭🇺_2"
+      - "🇭🇺_4"
+      - "🇭🇺_5"
+      - "🇭🇺_6"
 
 
 rules:

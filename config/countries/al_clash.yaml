@@ -64,27 +64,31 @@ dns:
 
 proxies:
   - name: "🇦🇱_1"
-    type: vless
-    server: "144.31.129.42"
+    type: trojan
+    server: "185.75.243.102"
     port: 443
-    uuid: "7b81d175-d180-4ec8-bbc5-dfe80e8d3b68"
-    udp: true
-    tls: true
+    password: "humanity"
+    sni: "www.ignitelimit.com"
     skip-cert-verify: true
-    servername: "morphbinerkkw.ru"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "CxMPFpwhcR9Ocp-Xy_1J08mo-atdHKUf58WLOy_XlgM"
-      short-id: "d9662905"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "nexusGrpc"
-  - name: "🇦🇱_2"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/assignment"
+      headers:
+        Host: "www.ignitelimit.com"
+  - name: "🇦🇱_3"
     type: ss
     server: "130.49.189.158"
     port: 10792
     cipher: "chacha20-ietf-poly1305"
     password: "CsSYOhlDUy7Hz1yQCXSnxj"
+    udp: true
+  - name: "🇦🇱_4"
+    type: ss
+    server: "157.22.240.141"
+    port: 57925
+    cipher: "chacha20-ietf-poly1305"
+    password: "hnqVn0IJxrCBYK1xzCE9Yd"
     udp: true
 
 proxy-groups:
@@ -101,7 +105,8 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇦🇱_1"
-      - "🇦🇱_2"
+      - "🇦🇱_3"
+      - "🇦🇱_4"
 
 
 rules:

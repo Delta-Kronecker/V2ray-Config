@@ -65,33 +65,19 @@ dns:
 proxies:
   - name: "🇧🇪_1"
     type: vless
-    server: "109.69.218.168"
+    server: "109.69.218.164"
     port: 443
     uuid: "c28ee61d-0d43-4e69-8e6a-6397ed0ffc03"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "agile-raptor.cdn.cachefleet.com"
+    servername: "zealous-vortex.cdn.cachefleet.com"
     client-fingerprint: "random"
     reality-opts:
       public-key: "cv_KJnMzQUZruACPbH-BCgLWrYqPm2dbUymg-gW_sVc"
       short-id: ""
     flow: "xtls-rprx-vision"
   - name: "🇧🇪_2"
-    type: vless
-    server: "109.69.218.160"
-    port: 443
-    uuid: "5117ad77-cd9a-46e9-995b-b601b0b5e435"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "zealous-vortex.cdn.cachefleet.com"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "cv_KJnMzQUZruACPbH-BCgLWrYqPm2dbUymg-gW_sVc"
-      short-id: ""
-    flow: "xtls-rprx-vision"
-  - name: "🇧🇪_3"
     type: vless
     server: "104.155.124.198"
     port: 443
@@ -106,35 +92,7 @@ proxies:
       path: "/fdip=tw.william.us.ci!txt"
       headers:
         Host: "learn00.evany.de5.net"
-  - name: "🇧🇪_5"
-    type: vless
-    server: "109.69.218.163"
-    port: 443
-    uuid: "5117ad77-cd9a-46e9-995b-b601b0b5e435"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "zealous-vortex.cdn.cachefleet.com"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "cv_KJnMzQUZruACPbH-BCgLWrYqPm2dbUymg-gW_sVc"
-      short-id: ""
-    flow: "xtls-rprx-vision"
-  - name: "🇧🇪_6"
-    type: vless
-    server: "109.69.218.164"
-    port: 443
-    uuid: "c28ee61d-0d43-4e69-8e6a-6397ed0ffc03"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "zealous-vortex.cdn.cachefleet.com"
-    client-fingerprint: "random"
-    reality-opts:
-      public-key: "cv_KJnMzQUZruACPbH-BCgLWrYqPm2dbUymg-gW_sVc"
-      short-id: ""
-    flow: "xtls-rprx-vision"
-  - name: "🇧🇪_7"
+  - name: "🇧🇪_4"
     type: vless
     server: "35.241.172.224"
     port: 443
@@ -149,7 +107,7 @@ proxies:
       path: "/fdip=tw.william.us.ci!txt"
       headers:
         Host: "learn00.evany.de5.net"
-  - name: "🇧🇪_9"
+  - name: "🇧🇪_6"
     type: trojan
     server: "94.126.225.96"
     port: 443
@@ -157,7 +115,15 @@ proxies:
     sni: "hl-freedom-1.undef.network"
     skip-cert-verify: true
     udp: true
-  - name: "🇧🇪_10"
+  - name: "🇧🇪_7"
+    type: trojan
+    server: "hl-freedom-1.undef.network"
+    port: 443
+    password: "JaFKnqNcvnBT63t3rquidGsln"
+    sni: "hl-freedom-1.undef.network"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇧🇪_8"
     type: trojan
     server: "hl-freedom-1.undef.network"
     port: 443
@@ -170,19 +136,14 @@ proxies:
       path: "/f2fc2a1f"
       headers:
         Host: "hl-freedom-1.undef.network"
-  - name: "🇧🇪_12"
+  - name: "🇧🇪_10"
     type: trojan
-    server: "hl-freedom-0.undef.network"
+    server: "hl-freedom-2.undef.network"
     port: 443
-    password: "76yTlnTIsjCTlmqnUJ5Tzc1rM"
-    sni: "hl-freedom-0.undef.network"
+    password: "Tn2Bf0iRwJkJQgDk6gX6x81RB"
+    sni: "hl-freedom-2.undef.network"
     skip-cert-verify: true
     udp: true
-    network: ws
-    ws-opts:
-      path: "/f2fc2a1f"
-      headers:
-        Host: "hl-freedom-0.undef.network"
 
 proxy-groups:
   - name: "PROXY"
@@ -199,13 +160,11 @@ proxy-groups:
     proxies:
       - "🇧🇪_1"
       - "🇧🇪_2"
-      - "🇧🇪_3"
-      - "🇧🇪_5"
+      - "🇧🇪_4"
       - "🇧🇪_6"
       - "🇧🇪_7"
-      - "🇧🇪_9"
+      - "🇧🇪_8"
       - "🇧🇪_10"
-      - "🇧🇪_12"
 
 
 rules:

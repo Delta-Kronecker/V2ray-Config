@@ -67,27 +67,6 @@ proxies:
     sni: "45.32.28.232"
     skip-cert-verify: true
     udp: true
-  - name: "🇲🇾_2"
-    type: trojan
-    server: "my.singaporenodeserverone.kyiv.ua"
-    port: 443
-    password: "6e1b9a65-884f-3aa9-9469-bf6ec0f08610"
-    sni: "45.32.28.232"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇲🇾_3"
-    type: ss
-    server: "96.126.190.196"
-    port: 443
-    cipher: "none"
-    password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "/59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
 
 proxy-groups:
   # ── Top-level selector ────────────────────────────────────────────────────
@@ -131,8 +110,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇲🇾_1"
-      - "🇲🇾_2"
-      - "🇲🇾_3"
 
   - name: "LB-CDN"
     type: load-balance
@@ -143,8 +120,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇲🇾_1"
-      - "🇲🇾_2"
-      - "🇲🇾_3"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -155,8 +130,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇲🇾_1"
-      - "🇲🇾_2"
-      - "🇲🇾_3"
 
   - name: "FAST-CDN"
     type: url-test
@@ -166,8 +139,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇲🇾_1"
-      - "🇲🇾_2"
-      - "🇲🇾_3"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -178,16 +149,12 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇲🇾_1"
-      - "🇲🇾_2"
-      - "🇲🇾_3"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
       - "🇲🇾_1"
-      - "🇲🇾_2"
-      - "🇲🇾_3"
 
 rules:
   - MATCH,PROXY-BEST

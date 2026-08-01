@@ -72,40 +72,47 @@ proxies:
     tls: true
     skip-cert-verify: true
     servername: "storage.yandex.net"
-    client-fingerprint: "firefox"
     reality-opts:
       public-key: "zii4nGNapnFKL6SN8GzWNqFlElBvUCUFUThEP0kFH04"
       short-id: "c6ef72e4635d15a5"
     flow: "xtls-rprx-vision"
   - name: "🇹🇷_2"
     type: vless
-    server: "pro-tr.emrata.top"
-    port: 443
-    uuid: "8586ba96-1d58-42d8-9e66-68714425fcd8"
+    server: "yfqvqhaq5920.contigolibre.com"
+    port: 5039
+    uuid: "a5bea439-6176-4b5d-a891-bd31fc3530c9"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "pro-tr.emrata.top"
-    client-fingerprint: "firefox"
+    servername: "www.yahoo.com"
+    client-fingerprint: "chrome"
     reality-opts:
-      public-key: "da5UVhoC5QOCDm84AxB-RRxf0z2nySZ3lOemgqizLS4"
-      short-id: ""
-    flow: "xtls-rprx-vision"
+      public-key: "fv-InxuZSzLlHc83OANs4U2windIUSwPilOpJkMgtW0"
+      short-id: "2e8424a2696cb606"
   - name: "🇹🇷_3"
     type: vless
-    server: "shopcar.rafeaftabsokhtegi.com"
-    port: 9443
-    uuid: "7dfe2f33-54c5-43cf-a654-7c8919a266be"
+    server: "38.180.112.246"
+    port: 52315
+    uuid: "29498268-55f3-4b51-ba1a-1eba23f4ab63"
     udp: true
-  - name: "🇹🇷_4"
-    type: trojan
-    server: "193.111.125.82"
-    port: 39594
-    password: "77a4056f31f24ea592bb7aa1e88aced4"
-    sni: "dem.yariresanbot.ir"
-    skip-cert-verify: true
-    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
   - name: "🇹🇷_5"
+    type: vless
+    server: "201.50.115.23"
+    port: 443
+    uuid: "fc1b3bda-b226-452a-8c5c-b0e36a1f8f88"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "eu-central.cendora.ru"
+    client-fingerprint: "qq"
+    reality-opts:
+      public-key: "b-Cm9hX-3UHsS1L_lnUB6AMjuKhlN1IDdBbZ506itjI"
+      short-id: "00bca5982f82d083"
+    flow: "xtls-rprx-vision"
+  - name: "🇹🇷_6"
     type: trojan
     server: "45.67.202.101"
     port: 8443
@@ -113,7 +120,15 @@ proxies:
     sni: "Koma-YT.PAGeS.Dev"
     skip-cert-verify: true
     udp: true
-  - name: "🇹🇷_6"
+  - name: "🇹🇷_7"
+    type: trojan
+    server: "193.111.125.82"
+    port: 39594
+    password: "77a4056f31f24ea592bb7aa1e88aced4"
+    sni: "dem.yariresanbot.ir"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇹🇷_8"
     type: trojan
     server: "195.162.69.238"
     port: 9443
@@ -121,7 +136,7 @@ proxies:
     sni: "apple.com"
     skip-cert-verify: true
     udp: true
-  - name: "🇹🇷_7"
+  - name: "🇹🇷_9"
     type: trojan
     server: "86.38.214.205"
     port: 443
@@ -132,7 +147,7 @@ proxies:
     network: ws
     ws-opts:
       path: "/assignment"
-  - name: "🇹🇷_9"
+  - name: "🇹🇷_11"
     type: ss
     server: "38.180.113.194"
     port: 8119
@@ -156,11 +171,12 @@ proxy-groups:
       - "🇹🇷_1"
       - "🇹🇷_2"
       - "🇹🇷_3"
-      - "🇹🇷_4"
       - "🇹🇷_5"
       - "🇹🇷_6"
       - "🇹🇷_7"
+      - "🇹🇷_8"
       - "🇹🇷_9"
+      - "🇹🇷_11"
 
 
 rules:

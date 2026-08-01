@@ -61,6 +61,16 @@ dns:
 proxies:
   - name: "🇱🇹_1"
     type: vless
+    server: "93.115.25.139"
+    port: 443
+    uuid: "3ad1d277-5715-4ca1-84db-5baea72f822d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ddc-chr2.astralweb.tech"
+    client-fingerprint: "firefox"
+  - name: "🇱🇹_2"
+    type: vless
     server: "88.216.69.30"
     port: 8880
     uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
@@ -70,7 +80,7 @@ proxies:
       path: "/"
       headers:
         Host: "vms.lifetime06.workers.dev"
-  - name: "🇱🇹_3"
+  - name: "🇱🇹_4"
     type: vless
     server: "5.199.170.105"
     port: 443
@@ -83,46 +93,6 @@ proxies:
     reality-opts:
       public-key: "xFUmqmEPEKyv-5ReppEM1oTkc04HQcBUfySH-EwPBlE"
       short-id: "6ba85179e30d4fc2"
-    flow: "xtls-rprx-vision"
-  - name: "🇱🇹_4"
-    type: vless
-    server: "46.29.234.210"
-    port: 443
-    uuid: "218fd696-e3a2-4c33-b397-a5f13a82969e"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.tradingview.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "II9Tn-HPL7xcENiybDfQ_bSw31rSzQbIGYn-hCxdb2w"
-      short-id: "ccda00cc"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "grpc"
-  - name: "🇱🇹_5"
-    type: vless
-    server: "93.115.25.139"
-    port: 443
-    uuid: "3ad1d277-5715-4ca1-84db-5baea72f822d"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "ddc-chr2.astralweb.tech"
-    client-fingerprint: "firefox"
-  - name: "🇱🇹_6"
-    type: vless
-    server: "144.31.243.195"
-    port: 443
-    uuid: "575739e8-6069-45c4-9581-4cc67cfd012e"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "dl.google.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "CMTA5uuaIVIeqHslZMT3CbFwP8F5ysMLii72ybsTlyY"
-      short-id: "e2a4c6b8"
     flow: "xtls-rprx-vision"
 
 proxy-groups:
@@ -167,10 +137,8 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇱🇹_1"
-      - "🇱🇹_3"
+      - "🇱🇹_2"
       - "🇱🇹_4"
-      - "🇱🇹_5"
-      - "🇱🇹_6"
 
   - name: "LB-CDN"
     type: load-balance
@@ -181,10 +149,8 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇱🇹_1"
-      - "🇱🇹_3"
+      - "🇱🇹_2"
       - "🇱🇹_4"
-      - "🇱🇹_5"
-      - "🇱🇹_6"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -195,10 +161,8 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇱🇹_1"
-      - "🇱🇹_3"
+      - "🇱🇹_2"
       - "🇱🇹_4"
-      - "🇱🇹_5"
-      - "🇱🇹_6"
 
   - name: "FAST-CDN"
     type: url-test
@@ -208,10 +172,8 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇱🇹_1"
-      - "🇱🇹_3"
+      - "🇱🇹_2"
       - "🇱🇹_4"
-      - "🇱🇹_5"
-      - "🇱🇹_6"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -222,20 +184,16 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇱🇹_1"
-      - "🇱🇹_3"
+      - "🇱🇹_2"
       - "🇱🇹_4"
-      - "🇱🇹_5"
-      - "🇱🇹_6"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
       - "🇱🇹_1"
-      - "🇱🇹_3"
+      - "🇱🇹_2"
       - "🇱🇹_4"
-      - "🇱🇹_5"
-      - "🇱🇹_6"
 
 rules:
   - MATCH,PROXY-BEST

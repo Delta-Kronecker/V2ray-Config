@@ -76,6 +76,15 @@ proxies:
         Host: "vms.lifetime47.workers.dev"
   - name: "🇪🇸_3"
     type: vless
+    server: "85.90.217.42"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "85.90.217.42"
+  - name: "🇪🇸_4"
+    type: vless
     server: "185.18.250.30"
     port: 8880
     uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
@@ -85,58 +94,7 @@ proxies:
       path: "/"
       headers:
         Host: "vms.lifetime47.workers.dev"
-  - name: "🇪🇸_5"
-    type: vless
-    server: "2.27.26.51"
-    port: 443
-    uuid: "7b81d175-d180-4ec8-bbc5-dfe80e8d3b68"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "draftnest-rrew.ru"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "CxMPFpwhcR9Ocp-Xy_1J08mo-atdHKUf58WLOy_XlgM"
-      short-id: "d9662905"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "nexusGrpc"
   - name: "🇪🇸_6"
-    type: vless
-    server: "170.168.97.3"
-    port: 8443
-    uuid: "5e243126-4a2a-84b6-782a-73b14797fb5f"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "download.nvidia.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "D2SXHZRRYM0WcFChGWd57XB-U73aIsGfMpe2-Gq5XSs"
-      short-id: ""
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "TunService"
-  - name: "🇪🇸_7"
-    type: trojan
-    server: "185.18.250.252"
-    port: 443
-    password: "humanity"
-    sni: "www.multiplydose.com"
-    skip-cert-verify: true
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/assignment"
-  - name: "🇪🇸_9"
-    type: trojan
-    server: "193.148.19.210"
-    port: 52794
-    password: "2eutknankxtbgkwcajzt"
-    sni: "www.vk.com"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇪🇸_10"
     type: trojan
     server: "65.20.102.54"
     port: 443
@@ -144,15 +102,7 @@ proxies:
     sni: "www.gpt123.one"
     skip-cert-verify: true
     udp: true
-  - name: "🇪🇸_11"
-    type: trojan
-    server: "193.148.19.213"
-    port: 52794
-    password: "2eutknankxtbgkwcajzt"
-    sni: "193.148.19.213"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇪🇸_12"
+  - name: "🇪🇸_7"
     type: trojan
     server: "185.18.250.245"
     port: 443
@@ -165,47 +115,21 @@ proxies:
       path: "/assignment"
       headers:
         Host: "www.calmlunch.com"
-  - name: "🇪🇸_14"
-    type: ss
-    server: "108.181.121.226"
-    port: 8388
-    cipher: "chacha20-ietf-poly1305"
-    password: "WSyL4XTwNsdv"
+  - name: "🇪🇸_9"
+    type: trojan
+    server: "193.148.19.210"
+    port: 52794
+    password: "2eutknankxtbgkwcajzt"
+    sni: "www.vk.com"
+    skip-cert-verify: true
     udp: true
-  - name: "🇪🇸_15"
-    type: ss
-    server: "108.181.121.226"
-    port: 8388
-    cipher: "chacha20-ietf-poly1305"
-    password: "WSyL4XTwNsdv"
-    udp: true
-  - name: "🇪🇸_16"
-    type: ss
-    server: "140.174.184.5"
-    port: 8388
-    cipher: "chacha20-ietf-poly1305"
-    password: "qItG8SueYQcP"
-    udp: true
-  - name: "🇪🇸_17"
-    type: ss
-    server: "140.174.184.5"
-    port: 8388
-    cipher: "chacha20-ietf-poly1305"
-    password: "qItG8SueYQcP"
-    udp: true
-  - name: "🇪🇸_18"
-    type: ss
-    server: "82.38.31.35"
-    port: 8080
-    cipher: "chacha20-ietf-poly1305"
-    password: "oZIoA69Q8yhcQV8ka3Pa3A"
-    udp: true
-  - name: "🇪🇸_19"
-    type: ss
-    server: "82.38.31.155"
-    port: 8080
-    cipher: "chacha20-ietf-poly1305"
-    password: "oZIoA69Q8yhcQV8ka3Pa3A"
+  - name: "🇪🇸_10"
+    type: trojan
+    server: "193.148.19.213"
+    port: 52794
+    password: "2eutknankxtbgkwcajzt"
+    sni: "193.148.19.213"
+    skip-cert-verify: true
     udp: true
 
 proxy-groups:
@@ -223,19 +147,11 @@ proxy-groups:
     proxies:
       - "🇪🇸_1"
       - "🇪🇸_3"
-      - "🇪🇸_5"
+      - "🇪🇸_4"
       - "🇪🇸_6"
       - "🇪🇸_7"
       - "🇪🇸_9"
       - "🇪🇸_10"
-      - "🇪🇸_11"
-      - "🇪🇸_12"
-      - "🇪🇸_14"
-      - "🇪🇸_15"
-      - "🇪🇸_16"
-      - "🇪🇸_17"
-      - "🇪🇸_18"
-      - "🇪🇸_19"
 
 
 rules:

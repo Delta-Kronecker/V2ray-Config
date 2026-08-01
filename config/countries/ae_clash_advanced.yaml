@@ -61,6 +61,17 @@ dns:
 proxies:
   - name: "🇦🇪_1"
     type: vless
+    server: "77.232.140.40"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/?ed"
+      headers:
+        Host: "vms.lifetime61.workers.dev"
+  - name: "🇦🇪_3"
+    type: vless
     server: "94.140.0.100"
     port: 443
     uuid: "c9d1b8e6-f28a-419f-2581-97ad3258c320"
@@ -74,17 +85,6 @@ proxies:
       path: "/kbapqjwhbsjwoqjhskso"
       headers:
         Host: "withered-cake-d636.asfvgsrhtrzdbvcgfn.workers.dev"
-  - name: "🇦🇪_3"
-    type: vless
-    server: "77.232.140.30"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/?ed=2560"
-      headers:
-        Host: "vms.lifetime61.workers.dev"
   - name: "🇦🇪_5"
     type: vless
     server: "185.225.195.30"
@@ -98,6 +98,30 @@ proxies:
         Host: "vms.lifetime18.workers.dev"
   - name: "🇦🇪_7"
     type: vless
+    server: "iwtvatesf68f.dopweed.com"
+    port: 5039
+    uuid: "a5bea439-6176-4b5d-a891-bd31fc3530c9"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.yahoo.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "fv-InxuZSzLlHc83OANs4U2windIUSwPilOpJkMgtW0"
+      short-id: "2e8424a2696cb606"
+  - name: "🇦🇪_8"
+    type: vless
+    server: "77.232.140.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "vms.lifetime61.workers.dev"
+  - name: "🇦🇪_10"
+    type: vless
     server: "84.235.244.108"
     port: 22573
     uuid: "39947382-3212-41c9-bc3a-589574ac8b23"
@@ -107,28 +131,17 @@ proxies:
       path: "/"
       headers:
         Host: "uae.unixzone.us"
-  - name: "🇦🇪_8"
+  - name: "🇦🇪_12"
     type: vless
-    server: "77.232.140.40"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/?ed"
-      headers:
-        Host: "vms.lifetime61.workers.dev"
-  - name: "🇦🇪_10"
-    type: trojan
     server: "94.140.0.100"
-    port: 443
-    password: "humanity"
-    sni: "www.calmloud.com"
-    skip-cert-verify: true
+    port: 8880
+    uuid: "78e6619e-e82a-cd8d-b482-0973d8498305"
     udp: true
     network: ws
     ws-opts:
-      path: "/assignment"
+      path: "/sync"
+      headers:
+        Host: "silent-pine-a674.jfadwkglaugul.workers.dev"
 
 proxy-groups:
   # ── Top-level selector ────────────────────────────────────────────────────
@@ -177,6 +190,7 @@ proxy-groups:
       - "🇦🇪_7"
       - "🇦🇪_8"
       - "🇦🇪_10"
+      - "🇦🇪_12"
 
   - name: "LB-CDN"
     type: load-balance
@@ -192,6 +206,7 @@ proxy-groups:
       - "🇦🇪_7"
       - "🇦🇪_8"
       - "🇦🇪_10"
+      - "🇦🇪_12"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -207,6 +222,7 @@ proxy-groups:
       - "🇦🇪_7"
       - "🇦🇪_8"
       - "🇦🇪_10"
+      - "🇦🇪_12"
 
   - name: "FAST-CDN"
     type: url-test
@@ -221,6 +237,7 @@ proxy-groups:
       - "🇦🇪_7"
       - "🇦🇪_8"
       - "🇦🇪_10"
+      - "🇦🇪_12"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -236,6 +253,7 @@ proxy-groups:
       - "🇦🇪_7"
       - "🇦🇪_8"
       - "🇦🇪_10"
+      - "🇦🇪_12"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
@@ -247,6 +265,7 @@ proxy-groups:
       - "🇦🇪_7"
       - "🇦🇪_8"
       - "🇦🇪_10"
+      - "🇦🇪_12"
 
 rules:
   - MATCH,PROXY-BEST

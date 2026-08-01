@@ -65,6 +65,12 @@ dns:
 proxies:
   - name: "🇨🇳_1"
     type: vless
+    server: "120.227.1.43"
+    port: 12528
+    uuid: "f0169b08-43fd-4dc3-8195-18f6ad2fe39d"
+    udp: true
+  - name: "🇨🇳_2"
+    type: vless
     server: "176.124.223.30"
     port: 8880
     uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
@@ -74,17 +80,11 @@ proxies:
       path: "/"
       headers:
         Host: "vms.lifetime38.workers.dev"
-  - name: "🇨🇳_3"
-    type: vless
-    server: "120.227.1.43"
-    port: 12528
-    uuid: "f0169b08-43fd-4dc3-8195-18f6ad2fe39d"
-    udp: true
   - name: "🇨🇳_4"
     type: vless
     server: "77.105.163.46"
     port: 443
-    uuid: "0e192bd1-8f19-4184-9fff-6d67e4f738bd"
+    uuid: "c7908ef2-1189-4d97-9e1d-181e34d49374"
     udp: true
     tls: true
     skip-cert-verify: true
@@ -103,19 +103,6 @@ proxies:
     sni: "zz6.91js.pw"
     skip-cert-verify: true
     udp: true
-  - name: "🇨🇳_7"
-    type: trojan
-    server: "43.169.18.179"
-    port: 443
-    password: "humanity"
-    sni: "www.creationlong.org"
-    skip-cert-verify: true
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/assignment"
-      headers:
-        Host: "www.creationlong.org"
 
 proxy-groups:
   - name: "PROXY"
@@ -131,10 +118,9 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇨🇳_1"
-      - "🇨🇳_3"
+      - "🇨🇳_2"
       - "🇨🇳_4"
       - "🇨🇳_6"
-      - "🇨🇳_7"
 
 
 rules:

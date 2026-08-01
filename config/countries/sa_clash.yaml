@@ -63,12 +63,52 @@ dns:
     - https://freedns.controld.com/family
 
 proxies:
-  - name: "🇿🇦_1"
+  - name: "🇸🇦_1"
+    type: vless
+    server: "81.208.170.142"
+    port: 1500
+    uuid: "e332f028-d343-5b44-8016-b3130f39e133"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.ebay.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "VQxVgczORkbSNdDrkNOYs6zMBINpViztTKDuWCeQsVE"
+      short-id: "775eb6408888248e"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: ""
+  - name: "🇸🇦_2"
+    type: vless
+    server: "81.208.170.142"
+    port: 1500
+    uuid: "sGLzG6kUwBpZd73sW0nq"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.ebay.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "VQxVgczORkbSNdDrkNOYs6zMBINpViztTKDuWCeQsVE"
+      short-id: "775eb6408888248e"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: ""
+  - name: "🇸🇦_3"
+    type: trojan
+    server: "149.104.104.58"
+    port: 443
+    password: "S.ibYdZshHTF-ne.M+.Fznp_-hyFFnCSix"
+    sni: "149.104.104.58"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇸🇦_4"
     type: ss
-    server: "102.133.165.160"
-    port: 16233
-    cipher: "chacha20-ietf-poly1305"
-    password: "Xsy8Ox4yOV3xLlpxtjzs3X"
+    server: "156.244.8.155"
+    port: 5004
+    cipher: "aes-256-gcm"
+    password: "g5MeD6Ft3CWlJId"
     udp: true
 
 proxy-groups:
@@ -84,7 +124,10 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇿🇦_1"
+      - "🇸🇦_1"
+      - "🇸🇦_2"
+      - "🇸🇦_3"
+      - "🇸🇦_4"
 
 
 rules:

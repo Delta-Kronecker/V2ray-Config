@@ -65,19 +65,6 @@ dns:
 proxies:
   - name: "🇮🇳_1"
     type: vless
-    server: "194.61.31.126"
-    port: 2053
-    uuid: "9c9f29d5-cf0d-49be-97fd-643e866752da"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.apple.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "f5Z_ywk2z0Yuj7ksyjawYC36qgxQngD8yGXEIPFNVGM"
-      short-id: "30ed89c317118330"
-  - name: "🇮🇳_2"
-    type: vless
     server: "108.165.152.30"
     port: 8880
     uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
@@ -87,31 +74,7 @@ proxies:
       path: "/"
       headers:
         Host: "vms.lifetime61.workers.dev"
-  - name: "🇮🇳_4"
-    type: trojan
-    server: "185.67.125.160"
-    port: 443
-    password: "3763495982449565696"
-    sni: "topical-gibbon.goat627.mom"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇮🇳_5"
-    type: trojan
-    server: "64.227.131.19"
-    port: 443
-    password: "21c6c7cb-332b-4a0c-9ad7-dff9c3111442"
-    sni: "us02web.zoom.us"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇮🇳_6"
-    type: trojan
-    server: "185.67.125.147"
-    port: 443
-    password: "3747000103274291200"
-    sni: "polished-collie.adder289.quest"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇮🇳_7"
+  - name: "🇮🇳_3"
     type: trojan
     server: "185.67.125.119"
     port: 443
@@ -119,15 +82,15 @@ proxies:
     sni: "oriented-pug.adder289.quest"
     skip-cert-verify: true
     udp: true
-  - name: "🇮🇳_8"
+  - name: "🇮🇳_4"
     type: trojan
     server: "185.67.125.147"
     port: 443
-    password: "3763495894587285504"
-    sni: "optimal-owl.goat627.mom"
+    password: "3747000103274291200"
+    sni: "polished-collie.adder289.quest"
     skip-cert-verify: true
     udp: true
-  - name: "🇮🇳_9"
+  - name: "🇮🇳_5"
     type: trojan
     server: "65.20.82.177"
     port: 443
@@ -135,7 +98,15 @@ proxies:
     sni: "ash.d50f6225-23b4-3a7b-9f15-a0fb2fc16803.kailib.com"
     skip-cert-verify: true
     udp: true
-  - name: "🇮🇳_10"
+  - name: "🇮🇳_6"
+    type: trojan
+    server: "64.227.131.19"
+    port: 443
+    password: "21c6c7cb-332b-4a0c-9ad7-dff9c3111442"
+    sni: "us02web.zoom.us"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇮🇳_7"
     type: trojan
     server: "143.110.246.228"
     port: 443
@@ -143,15 +114,7 @@ proxies:
     sni: "kdlsupport.zendesk.com"
     skip-cert-verify: true
     udp: true
-  - name: "🇮🇳_11"
-    type: trojan
-    server: "tttyder.wsone.icu"
-    port: 443
-    password: "M7v%w11Se*"
-    sni: "tttyder.wsone.icu"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇮🇳_12"
+  - name: "🇮🇳_8"
     type: trojan
     server: "139.84.133.199"
     port: 443
@@ -159,15 +122,27 @@ proxies:
     sni: "139.84.133.199"
     skip-cert-verify: true
     udp: true
-  - name: "🇮🇳_13"
+  - name: "🇮🇳_9"
     type: trojan
-    server: "34.131.228.210"
+    server: "185.67.125.147"
     port: 443
-    password: "M7v%w11Se*"
-    sni: "hyfuuf6.wsone.icu"
+    password: "3763495894587285504"
+    sni: "optimal-owl.goat627.mom"
     skip-cert-verify: true
     udp: true
-  - name: "🇮🇳_14"
+  - name: "🇮🇳_10"
+    type: ss
+    server: "103.181.177.88"
+    port: 443
+    cipher: "none"
+    password: "14b02e2a-8930-4afb-8412-ea4a4954ca5b"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "14b02e2a-8930-4afb-8412-ea4a4954ca5b/?ed\\=2560"
+      host: "ylnhh.us.ci"
+  - name: "🇮🇳_11"
     type: ss
     server: "172.105.39.124"
     port: 7002
@@ -189,7 +164,7 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇮🇳_1"
-      - "🇮🇳_2"
+      - "🇮🇳_3"
       - "🇮🇳_4"
       - "🇮🇳_5"
       - "🇮🇳_6"
@@ -198,9 +173,6 @@ proxy-groups:
       - "🇮🇳_9"
       - "🇮🇳_10"
       - "🇮🇳_11"
-      - "🇮🇳_12"
-      - "🇮🇳_13"
-      - "🇮🇳_14"
 
 
 rules:

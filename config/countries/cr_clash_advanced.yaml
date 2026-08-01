@@ -75,6 +75,21 @@ proxies:
       headers:
         Host: "support.zoom.us.yxls.eu.cc"
   - name: "🇨🇷_3"
+    type: vless
+    server: "190.93.246.79"
+    port: 8443
+    uuid: "29ca503d-e6b8-4509-b666-48133f450857"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "learn00.evany.de5.net"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/fdip"
+      headers:
+        Host: "learn00.evany.de5.net"
+  - name: "🇨🇷_5"
     type: trojan
     server: "190.93.247.7"
     port: 443
@@ -82,6 +97,18 @@ proxies:
     sni: "190.93.247.7"
     skip-cert-verify: true
     udp: true
+  - name: "🇨🇷_6"
+    type: ss
+    server: "190.93.246.16"
+    port: 443
+    cipher: "none"
+    password: "14b02e2a-8930-4afb-8412-ea4a4954ca5b"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "/14b02e2a-8930-4afb-8412-ea4a4954ca5b/?ed\\=2560"
+      host: "ylnhh.us.ci"
 
 proxy-groups:
   # ── Top-level selector ────────────────────────────────────────────────────
@@ -126,6 +153,8 @@ proxy-groups:
     proxies:
       - "🇨🇷_1"
       - "🇨🇷_3"
+      - "🇨🇷_5"
+      - "🇨🇷_6"
 
   - name: "LB-CDN"
     type: load-balance
@@ -137,6 +166,8 @@ proxy-groups:
     proxies:
       - "🇨🇷_1"
       - "🇨🇷_3"
+      - "🇨🇷_5"
+      - "🇨🇷_6"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -148,6 +179,8 @@ proxy-groups:
     proxies:
       - "🇨🇷_1"
       - "🇨🇷_3"
+      - "🇨🇷_5"
+      - "🇨🇷_6"
 
   - name: "FAST-CDN"
     type: url-test
@@ -158,6 +191,8 @@ proxy-groups:
     proxies:
       - "🇨🇷_1"
       - "🇨🇷_3"
+      - "🇨🇷_5"
+      - "🇨🇷_6"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -169,6 +204,8 @@ proxy-groups:
     proxies:
       - "🇨🇷_1"
       - "🇨🇷_3"
+      - "🇨🇷_5"
+      - "🇨🇷_6"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
@@ -176,6 +213,8 @@ proxy-groups:
     proxies:
       - "🇨🇷_1"
       - "🇨🇷_3"
+      - "🇨🇷_5"
+      - "🇨🇷_6"
 
 rules:
   - MATCH,PROXY-BEST
