@@ -59,7 +59,7 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇮🇷_16"
+  - name: "🇮🇷_18"
     type: vless
     server: "185.143.234.238"
     port: 2086
@@ -70,7 +70,7 @@ proxies:
       path: "/"
       headers:
         Host: "parsi.parsi.sbs"
-  - name: "🇮🇷_17"
+  - name: "🇮🇷_19"
     type: vless
     server: "45.131.4.115"
     port: 80
@@ -81,7 +81,7 @@ proxies:
       path: "/eyJqdW5rIjoiQXoydFJwaWM0WSIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0="
       headers:
         Host: "worker3.gigak25604.workers.dev"
-  - name: "🇮🇷_18"
+  - name: "🇮🇷_20"
     type: vless
     server: "45.131.4.30"
     port: 8880
@@ -92,30 +92,6 @@ proxies:
       path: "/"
       headers:
         Host: "vms.lifetime59.workers.dev"
-  - name: "🇮🇷_19"
-    type: vless
-    server: "45.131.4.192"
-    port: 80
-    uuid: "5f4845b4-11dc-41d6-9508-4ff6a02e36c1"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "silent-paper-fa57.fipiyag989.workers.dev"
-  - name: "🇮🇷_20"
-    type: trojan
-    server: "2.144.21.150"
-    port: 2000
-    password: "humanity"
-    sni: "www.ignitelimit.com"
-    skip-cert-verify: true
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/assignment"
-      headers:
-        Host: "www.ignitelimit.com"
   - name: "🇮🇷_21"
     type: trojan
     server: "193.151.134.182"
@@ -136,29 +112,35 @@ proxies:
     ws-opts:
       path: "/sync"
   - name: "🇮🇷_23"
-    type: ss
-    server: "dkstatics-public.digikala.com"
-    port: 443
-    cipher: "none"
-    password: "RSzEIkk2EsHEAVj15N5E/A=="
+    type: trojan
+    server: "2.144.21.150"
+    port: 2000
+    password: "humanity"
+    sni: "www.ignitelimit.com"
+    skip-cert-verify: true
     udp: true
+    network: ws
+    ws-opts:
+      path: "/assignment"
+      headers:
+        Host: "www.ignitelimit.com"
   - name: "🇮🇷_24"
     type: ss
-    server: "185.188.104.12"
+    server: "82.38.31.57"
     port: 443
-    cipher: "none"
-    password: "RSzEIkk2EsHEAVj15N5E/A=="
+    cipher: "chacha20-ietf-poly1305"
+    password: "oZIoA69Q8yhcQV8ka3Pa3A"
     udp: true
   - name: "🇮🇷_25"
     type: ss
-    server: "e2.cover20.ir"
-    port: 30874
-    cipher: "chacha20-ietf-poly1305"
-    password: "0n+/wQ6toyLATgouegJ4cWWpxg7dcvYuUlrdjpNypo0="
+    server: "185.188.104.11"
+    port: 443
+    cipher: "none"
+    password: "RSzEIkk2EsHEAVj15N5E/A=="
     udp: true
   - name: "🇮🇷_26"
     type: ss
-    server: "185.188.104.10"
+    server: "185.188.105.11"
     port: 443
     cipher: "none"
     password: "RSzEIkk2EsHEAVj15N5E/A=="
@@ -172,7 +154,7 @@ proxies:
     udp: true
   - name: "🇮🇷_28"
     type: ss
-    server: "185.188.104.10"
+    server: "185.188.105.10"
     port: 443
     cipher: "none"
     password: "RSzEIkk2EsHEAVj15N5E/A=="
@@ -186,10 +168,38 @@ proxies:
     udp: true
   - name: "🇮🇷_30"
     type: ss
-    server: "e3.cover20.ir"
-    port: 56985
+    server: "185.188.105.10"
+    port: 443
+    cipher: "none"
+    password: "RSzEIkk2EsHEAVj15N5E/A=="
+    udp: true
+  - name: "🇮🇷_31"
+    type: ss
+    server: "82.38.31.57"
+    port: 443
     cipher: "chacha20-ietf-poly1305"
-    password: "1mflFfFVs6qz+QZGLQAWv5ipFJxHacCVZQ+LmBtqQH0="
+    password: "oZIoA69Q8yhcQV8ka3Pa3A"
+    udp: true
+  - name: "🇮🇷_32"
+    type: ss
+    server: "185.188.104.12"
+    port: 443
+    cipher: "none"
+    password: "RSzEIkk2EsHEAVj15N5E/A=="
+    udp: true
+  - name: "🇮🇷_33"
+    type: ss
+    server: "185.188.104.11"
+    port: 443
+    cipher: "none"
+    password: "RSzEIkk2EsHEAVj15N5E/A=="
+    udp: true
+  - name: "🇮🇷_34"
+    type: ss
+    server: "185.188.105.11"
+    port: 443
+    cipher: "none"
+    password: "RSzEIkk2EsHEAVj15N5E/A=="
     udp: true
 
 proxy-groups:
@@ -233,8 +243,6 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇮🇷_16"
-      - "🇮🇷_17"
       - "🇮🇷_18"
       - "🇮🇷_19"
       - "🇮🇷_20"
@@ -248,6 +256,10 @@ proxy-groups:
       - "🇮🇷_28"
       - "🇮🇷_29"
       - "🇮🇷_30"
+      - "🇮🇷_31"
+      - "🇮🇷_32"
+      - "🇮🇷_33"
+      - "🇮🇷_34"
 
   - name: "LB-CDN"
     type: load-balance
@@ -257,8 +269,6 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇮🇷_16"
-      - "🇮🇷_17"
       - "🇮🇷_18"
       - "🇮🇷_19"
       - "🇮🇷_20"
@@ -272,6 +282,10 @@ proxy-groups:
       - "🇮🇷_28"
       - "🇮🇷_29"
       - "🇮🇷_30"
+      - "🇮🇷_31"
+      - "🇮🇷_32"
+      - "🇮🇷_33"
+      - "🇮🇷_34"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -281,8 +295,6 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇮🇷_16"
-      - "🇮🇷_17"
       - "🇮🇷_18"
       - "🇮🇷_19"
       - "🇮🇷_20"
@@ -296,6 +308,10 @@ proxy-groups:
       - "🇮🇷_28"
       - "🇮🇷_29"
       - "🇮🇷_30"
+      - "🇮🇷_31"
+      - "🇮🇷_32"
+      - "🇮🇷_33"
+      - "🇮🇷_34"
 
   - name: "FAST-CDN"
     type: url-test
@@ -304,8 +320,6 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇮🇷_16"
-      - "🇮🇷_17"
       - "🇮🇷_18"
       - "🇮🇷_19"
       - "🇮🇷_20"
@@ -319,6 +333,10 @@ proxy-groups:
       - "🇮🇷_28"
       - "🇮🇷_29"
       - "🇮🇷_30"
+      - "🇮🇷_31"
+      - "🇮🇷_32"
+      - "🇮🇷_33"
+      - "🇮🇷_34"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -328,8 +346,6 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇮🇷_16"
-      - "🇮🇷_17"
       - "🇮🇷_18"
       - "🇮🇷_19"
       - "🇮🇷_20"
@@ -343,13 +359,15 @@ proxy-groups:
       - "🇮🇷_28"
       - "🇮🇷_29"
       - "🇮🇷_30"
+      - "🇮🇷_31"
+      - "🇮🇷_32"
+      - "🇮🇷_33"
+      - "🇮🇷_34"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
-      - "🇮🇷_16"
-      - "🇮🇷_17"
       - "🇮🇷_18"
       - "🇮🇷_19"
       - "🇮🇷_20"
@@ -363,6 +381,10 @@ proxy-groups:
       - "🇮🇷_28"
       - "🇮🇷_29"
       - "🇮🇷_30"
+      - "🇮🇷_31"
+      - "🇮🇷_32"
+      - "🇮🇷_33"
+      - "🇮🇷_34"
 
 rules:
   - MATCH,PROXY-BEST

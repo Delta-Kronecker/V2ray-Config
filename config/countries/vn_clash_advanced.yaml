@@ -61,6 +61,20 @@ dns:
 proxies:
   - name: "🇻🇳_6"
     type: vless
+    server: "163.61.74.121"
+    port: 443
+    uuid: "ef6c9625-62de-4b9d-b7e2-0d4a9f67a9b2"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sni.ehb.cc.cd"
+    network: ws
+    ws-opts:
+      path: "/proxyip=ProxyIP.CMLiussss.net?uuid=ef6c9625-62de-4b9d-b7e2-0d4a9f67a9b2"
+      headers:
+        Host: "sni.ehb.cc.cd"
+  - name: "🇻🇳_7"
+    type: vless
     server: "161.248.31.198"
     port: 443
     uuid: "ef6c9625-62de-4b9d-b7e2-0d4a9f67a9b2"
@@ -69,20 +83,6 @@ proxies:
     skip-cert-verify: true
     servername: "sni.ehb.cc.cd"
     client-fingerprint: "chrome"
-    network: ws
-    ws-opts:
-      path: "/proxyip=ProxyIP.CMLiussss.net?uuid=ef6c9625-62de-4b9d-b7e2-0d4a9f67a9b2"
-      headers:
-        Host: "sni.ehb.cc.cd"
-  - name: "🇻🇳_7"
-    type: vless
-    server: "163.61.74.121"
-    port: 443
-    uuid: "ef6c9625-62de-4b9d-b7e2-0d4a9f67a9b2"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "sni.ehb.cc.cd"
     network: ws
     ws-opts:
       path: "/proxyip=ProxyIP.CMLiussss.net?uuid=ef6c9625-62de-4b9d-b7e2-0d4a9f67a9b2"
@@ -98,18 +98,18 @@ proxies:
     udp: true
   - name: "🇻🇳_9"
     type: trojan
-    server: "160.30.160.134"
-    port: 443
-    password: "25a0ffa0-725c-4d6f-b0d5-c74579753075"
-    sni: "cmc5.5gsieuvip.vn"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇻🇳_10"
-    type: trojan
     server: "36.50.134.29"
     port: 443
     password: "94d219c9-1afc-4d42-b090-8b3794764380"
     sni: "36.50.134.29"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇻🇳_10"
+    type: trojan
+    server: "160.30.160.134"
+    port: 443
+    password: "25a0ffa0-725c-4d6f-b0d5-c74579753075"
+    sni: "cmc5.5gsieuvip.vn"
     skip-cert-verify: true
     udp: true
 

@@ -65,6 +65,19 @@ dns:
 proxies:
   - name: "🇪🇪_1"
     type: vless
+    server: "185.215.187.143"
+    port: 443
+    uuid: "5083f498-4894-4c81-8648-40a2faf4b545"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "cloudflare.vhub.pro"
+    client-fingerprint: "firefox"
+    network: ws
+    ws-opts:
+      path: "/websocket?ed=2560"
+  - name: "🇪🇪_2"
+    type: vless
     server: "185.155.97.241"
     port: 443
     uuid: "0b9bcbc1-b289-4a64-86fa-a5b731b65384"
@@ -77,7 +90,20 @@ proxies:
       public-key: "SJkDT_L0eziQR2afDGrkN7-uRxjYu6bZxIGXlKeCvX4"
       short-id: "15aa18f971da1f81"
     flow: "xtls-rprx-vision"
-  - name: "🇪🇪_2"
+  - name: "🇪🇪_3"
+    type: vless
+    server: "144.31.170.30"
+    port: 443
+    uuid: "5083f498-4894-4c81-8648-40a2faf4b545"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "cloudflare.vhub.pro"
+    client-fingerprint: "firefox"
+    network: ws
+    ws-opts:
+      path: "/websocket?ed=2560"
+  - name: "🇪🇪_4"
     type: vless
     server: "31.76.55.172"
     port: 443
@@ -93,86 +119,21 @@ proxies:
     network: grpc
     grpc-opts:
       grpc-service-name: "didado-grpc"
-  - name: "🇪🇪_3"
-    type: vless
-    server: "45.80.108.236"
-    port: 443
-    uuid: "ef9d2063-0140-472b-8b17-ba02ba4b4435"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "lively-resonance-4e12.electrocellco-cf-059.workers.dev"
-    client-fingerprint: "chrome"
-    network: ws
-    ws-opts:
-      path: "/proxyip=167.71.48.187"
-      headers:
-        Host: "lively-resonance-4e12.electrocellco-cf-059.workers.dev"
-  - name: "🇪🇪_4"
-    type: vless
-    server: "45.80.110.30"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "vms.lifetime51.workers.dev"
   - name: "🇪🇪_5"
     type: vless
-    server: "87.121.86.131.tyr-agentstvo.tech"
+    server: "5.181.202.167"
     port: 443
-    uuid: "5083f498-4894-4c81-8648-40a2faf4b545"
+    uuid: "b6f3b292-00c9-430e-bc4c-b1294bd895c0"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "87.121.86.131.tyr-agentstvo.tech"
+    servername: "cdn-ee.ai-apiroute.cc"
     client-fingerprint: "firefox"
-    network: ws
-    ws-opts:
-      path: "/websocket?ed=2560"
-      headers:
-        Host: "87.121.86.131.tyr-agentstvo.tech"
+    reality-opts:
+      public-key: "kSQNzpTkFEKdWVONCkvTGmaHrHOiiBSfmGhwPK52iEo"
+      short-id: "b512d49930874a31"
+    flow: "xtls-rprx-vision"
   - name: "🇪🇪_6"
-    type: vless
-    server: "eston3.o4ka-internet.com"
-    port: 443
-    uuid: "a03df445-0666-4d61-acde-9705009e409c"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "eston3.o4ka-internet.com"
-    reality-opts:
-      public-key: "V2JprbR_aJkS7uX6anyU3nrswGxdvDQT2HpY4WnzuC8"
-      short-id: "5629431325884ff0"
-    flow: "xtls-rprx-vision"
-  - name: "🇪🇪_7"
-    type: vless
-    server: "5.181.202.15"
-    port: 443
-    uuid: "a03df445-0666-4d61-acde-9705009e409c"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "eston3.o4ka-internet.com"
-    client-fingerprint: "random"
-    reality-opts:
-      public-key: "V2JprbR_aJkS7uX6anyU3nrswGxdvDQT2HpY4WnzuC8"
-      short-id: "5629431325884ff0"
-    flow: "xtls-rprx-vision"
-  - name: "🇪🇪_8"
-    type: vless
-    server: "185.159.247.30"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "vms.lifetime59.workers.dev"
-  - name: "🇪🇪_9"
     type: vless
     server: "185.155.97.58"
     port: 45176
@@ -186,22 +147,54 @@ proxies:
       public-key: "A1Qf_rMG4KDfLzfCK-M5R9qW_0uThfeSosQnv6LBL1M"
       short-id: "8433cb66b6c3ab6d"
     flow: "xtls-rprx-vision"
-  - name: "🇪🇪_10"
+  - name: "🇪🇪_7"
     type: vless
-    server: "est1.fastfive.ru"
-    port: 443
-    uuid: "7309d92c-cb36-4c19-8a29-40beb14f6bf1"
+    server: "185.159.247.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vms.lifetime59.workers.dev"
+  - name: "🇪🇪_8"
+    type: vless
+    server: "144.31.170.231"
+    port: 8443
+    uuid: "5083f498-4894-4c81-8648-40a2faf4b545"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "sun1-94.userapi.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "Xo6EF4DabK-Y7Y4qyFCTf29gavktWDemBfgBuaQt-Ak"
-      short-id: "e9e346dccb28e652"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "tothego"
+    servername: "cloudflare.vhub.pro"
+    client-fingerprint: "firefox"
+    network: ws
+    ws-opts:
+      path: "/websocket?ed=2560"
+  - name: "🇪🇪_9"
+    type: vless
+    server: "45.80.110.50"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "vms.lifetime51.workers.dev"
+  - name: "🇪🇪_10"
+    type: vless
+    server: "185.215.184.10"
+    port: 443
+    uuid: "5083f498-4894-4c81-8648-40a2faf4b545"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "cloudflare.vhub.pro"
+    client-fingerprint: "firefox"
+    network: ws
+    ws-opts:
+      path: "/websocket?ed=2560"
   - name: "🇪🇪_11"
     type: vless
     server: "31.56.187.47"
@@ -218,30 +211,18 @@ proxies:
     flow: "xtls-rprx-vision"
   - name: "🇪🇪_12"
     type: vless
-    server: "45.80.108.123"
-    port: 443
-    uuid: "1d16c6e0-1bbe-435b-b661-90043fee999c"
+    server: "95.85.243.171"
+    port: 8443
+    uuid: "5083f498-4894-4c81-8648-40a2faf4b545"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "notls.lukongtou.eu.org"
+    servername: "cloudflare.vhub.pro"
+    client-fingerprint: "firefox"
     network: ws
     ws-opts:
-      path: "Telegram-WangCai2"
-      headers:
-        Host: "notls.lukongtou.eu.org"
+      path: "/websocket?ed=2560"
   - name: "🇪🇪_13"
-    type: vless
-    server: "45.80.110.50"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/?ed=2560"
-      headers:
-        Host: "vms.lifetime51.workers.dev"
-  - name: "🇪🇪_14"
     type: vless
     server: "98.142.251.31"
     port: 8443
@@ -257,7 +238,47 @@ proxies:
     network: grpc
     grpc-opts:
       grpc-service-name: "api.v1.telemetry.EventStream"
+  - name: "🇪🇪_14"
+    type: vless
+    server: "5.181.202.15"
+    port: 443
+    uuid: "a03df445-0666-4d61-acde-9705009e409c"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "eston3.o4ka-internet.com"
+    client-fingerprint: "random"
+    reality-opts:
+      public-key: "V2JprbR_aJkS7uX6anyU3nrswGxdvDQT2HpY4WnzuC8"
+      short-id: "5629431325884ff0"
+    flow: "xtls-rprx-vision"
   - name: "🇪🇪_15"
+    type: vless
+    server: "95.85.249.255"
+    port: 443
+    uuid: "5083f498-4894-4c81-8648-40a2faf4b545"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "cloudflare.vhub.pro"
+    client-fingerprint: "firefox"
+    network: ws
+    ws-opts:
+      path: "/websocket?ed=2560"
+  - name: "🇪🇪_16"
+    type: vless
+    server: "213.111.181.239"
+    port: 443
+    uuid: "5083f498-4894-4c81-8648-40a2faf4b545"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "cloudflare.vhub.pro"
+    client-fingerprint: "firefox"
+    network: ws
+    ws-opts:
+      path: "/websocket?ed=2560"
+  - name: "🇪🇪_17"
     type: vless
     server: "31.56.187.47"
     port: 8443
@@ -271,36 +292,9 @@ proxies:
       public-key: "pjTH9_lDnyhcoqZolps8Rr7Q_81IDTEjy1aq7UTguhk"
       short-id: "3351daa81250d627"
     flow: "xtls-rprx-vision"
-  - name: "🇪🇪_16"
-    type: vless
-    server: "5.181.202.167"
-    port: 443
-    uuid: "b6f3b292-00c9-430e-bc4c-b1294bd895c0"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "cdn-ee.ai-apiroute.cc"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "kSQNzpTkFEKdWVONCkvTGmaHrHOiiBSfmGhwPK52iEo"
-      short-id: "b512d49930874a31"
-    flow: "xtls-rprx-vision"
-  - name: "🇪🇪_17"
-    type: vless
-    server: "213.111.181.239"
-    port: 443
-    uuid: "5083f498-4894-4c81-8648-40a2faf4b545"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "cloudflare.vhub.pro"
-    client-fingerprint: "firefox"
-    network: ws
-    ws-opts:
-      path: "/websocket?ed=2560"
   - name: "🇪🇪_18"
     type: vless
-    server: "185.215.187.143"
+    server: "95.85.245.165"
     port: 443
     uuid: "5083f498-4894-4c81-8648-40a2faf4b545"
     udp: true
@@ -311,6 +305,21 @@ proxies:
     network: ws
     ws-opts:
       path: "/websocket?ed=2560"
+  - name: "🇪🇪_19"
+    type: vless
+    server: "45.80.108.182"
+    port: 443
+    uuid: "926bc4cd-709e-4e90-8aa7-78db75fbe86b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ii--6---6--MiTiVPN---MiTiVPN-o.KinGNetWork.iR"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/fl---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN"
+      headers:
+        Host: "Fls1-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.KinGNetWork.iR"
 
 proxy-groups:
   - name: "PROXY"
@@ -343,6 +352,7 @@ proxy-groups:
       - "🇪🇪_16"
       - "🇪🇪_17"
       - "🇪🇪_18"
+      - "🇪🇪_19"
 
 
 rules:

@@ -59,16 +59,7 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇪🇸_18"
-    type: vless
-    server: "82.22.47.50"
-    port: 25129
-    uuid: "2a088d58-eb38-47bd-b74d-ac392ee12ccd"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/xray"
-  - name: "🇪🇸_19"
+  - name: "🇪🇸_17"
     type: vless
     server: "170.168.97.3"
     port: 8443
@@ -84,18 +75,7 @@ proxies:
     network: grpc
     grpc-opts:
       grpc-service-name: "TunService"
-  - name: "🇪🇸_20"
-    type: vless
-    server: "185.18.250.50"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/?ed=2560"
-      headers:
-        Host: "vms.lifetime47.workers.dev"
-  - name: "🇪🇸_21"
+  - name: "🇪🇸_18"
     type: vless
     server: "89.38.129.238"
     port: 443
@@ -109,22 +89,25 @@ proxies:
       public-key: "aBNWkd8CVkuimbtzgsDNsIUIENI-PQuKkpUInLncz2o"
       short-id: "fdda9806fe5d8584"
     flow: "xtls-rprx-vision"
-  - name: "🇪🇸_22"
+  - name: "🇪🇸_19"
     type: vless
-    server: "185.18.250.245"
+    server: "82.22.47.50"
+    port: 25129
+    uuid: "2a088d58-eb38-47bd-b74d-ac392ee12ccd"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/xray"
+  - name: "🇪🇸_20"
+    type: vless
+    server: "85.90.217.42"
     port: 443
-    uuid: "f77299ea-e13d-417d-8cdc-ce5566dfc94b"
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "edu.ruangguru.com.r3xxe.eu.cc"
-    client-fingerprint: "chrome"
-    network: ws
-    ws-opts:
-      path: "/nl-tw"
-      headers:
-        Host: "edu.ruangguru.com.r3xxe.eu.cc"
-  - name: "🇪🇸_23"
+    servername: "85.90.217.42"
+  - name: "🇪🇸_21"
     type: vless
     server: "46.28.71.104"
     port: 2053
@@ -137,7 +120,7 @@ proxies:
     reality-opts:
       public-key: "aFsY-EZjSNTomlAFShKwQIQMJ5pHiZQXXJpWvcz8WkQ"
       short-id: "0858af97f4e7324d"
-  - name: "🇪🇸_24"
+  - name: "🇪🇸_22"
     type: vless
     server: "185.18.250.30"
     port: 8880
@@ -148,7 +131,18 @@ proxies:
       path: "/"
       headers:
         Host: "vms.lifetime47.workers.dev"
-  - name: "🇪🇸_25"
+  - name: "🇪🇸_23"
+    type: vless
+    server: "185.18.250.50"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "vms.lifetime47.workers.dev"
+  - name: "🇪🇸_24"
     type: vless
     server: "162.248.162.83"
     port: 443
@@ -162,29 +156,30 @@ proxies:
       public-key: "N-ELdH_KBkeqUT4I7PknCV9hFvlSFjN-52fDLwIzbRs"
       short-id: "4e9b0c2d1a3f5768"
     flow: "xtls-rprx-vision"
+  - name: "🇪🇸_25"
+    type: trojan
+    server: "193.148.19.213"
+    port: 52794
+    password: "2eutknankxtbgkwcajzt"
+    sni: "193.148.19.213"
+    skip-cert-verify: true
+    udp: true
   - name: "🇪🇸_26"
-    type: vless
-    server: "85.90.217.42"
+    type: trojan
+    server: "65.20.102.54"
     port: 443
-    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
-    udp: true
-    tls: true
+    password: "842b5f9dd11e458d8613c907c4cc5723"
+    sni: "www.gpt123.one"
     skip-cert-verify: true
-    servername: "85.90.217.42"
+    udp: true
   - name: "🇪🇸_27"
-    type: vless
-    server: "es.tunnelx.space"
-    port: 443
-    uuid: "ab7d5ea9-6eca-47c3-b14b-67378fc2d7c2"
-    udp: true
-    tls: true
+    type: trojan
+    server: "193.148.19.210"
+    port: 52794
+    password: "2eutknankxtbgkwcajzt"
+    sni: "www.vk.com"
     skip-cert-verify: true
-    servername: "es.tunnelx.space"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "N-ELdH_KBkeqUT4I7PknCV9hFvlSFjN-52fDLwIzbRs"
-      short-id: "4e9b0c2d1a3f5768"
-    flow: "xtls-rprx-vision"
+    udp: true
   - name: "🇪🇸_28"
     type: trojan
     server: "185.18.250.245"
@@ -197,55 +192,32 @@ proxies:
     ws-opts:
       path: "/assignment"
   - name: "🇪🇸_29"
-    type: trojan
-    server: "193.148.19.210"
-    port: 52794
-    password: "2eutknankxtbgkwcajzt"
-    sni: "www.vk.com"
-    skip-cert-verify: true
+    type: ss
+    server: "140.174.184.5"
+    port: 8388
+    cipher: "chacha20-ietf-poly1305"
+    password: "qItG8SueYQcP"
     udp: true
   - name: "🇪🇸_30"
-    type: trojan
-    server: "65.20.102.54"
-    port: 443
-    password: "842b5f9dd11e458d8613c907c4cc5723"
-    sni: "www.gpt123.one"
-    skip-cert-verify: true
+    type: ss
+    server: "108.181.121.226"
+    port: 8388
+    cipher: "chacha20-ietf-poly1305"
+    password: "WSyL4XTwNsdv"
     udp: true
   - name: "🇪🇸_31"
-    type: trojan
-    server: "193.148.19.213"
-    port: 52794
-    password: "2eutknankxtbgkwcajzt"
-    sni: "193.148.19.213"
-    skip-cert-verify: true
+    type: ss
+    server: "108.181.121.226"
+    port: 8388
+    cipher: "chacha20-ietf-poly1305"
+    password: "WSyL4XTwNsdv"
     udp: true
   - name: "🇪🇸_32"
-    type: trojan
-    server: "185.18.250.252"
-    port: 443
-    password: "74480619-b6a8-4ab8-94e1-1132fc18b2fa"
-    sni: "unnes.ac.id.r3xxe.eu.cc"
-    skip-cert-verify: true
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/au-mt"
-      headers:
-        Host: "unnes.ac.id.r3xxe.eu.cc"
-  - name: "🇪🇸_33"
     type: ss
-    server: "108.181.121.226"
+    server: "140.174.184.5"
     port: 8388
     cipher: "chacha20-ietf-poly1305"
-    password: "WSyL4XTwNsdv"
-    udp: true
-  - name: "🇪🇸_34"
-    type: ss
-    server: "108.181.121.226"
-    port: 8388
-    cipher: "chacha20-ietf-poly1305"
-    password: "WSyL4XTwNsdv"
+    password: "qItG8SueYQcP"
     udp: true
 
 proxy-groups:
@@ -289,6 +261,7 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
+      - "🇪🇸_17"
       - "🇪🇸_18"
       - "🇪🇸_19"
       - "🇪🇸_20"
@@ -304,8 +277,6 @@ proxy-groups:
       - "🇪🇸_30"
       - "🇪🇸_31"
       - "🇪🇸_32"
-      - "🇪🇸_33"
-      - "🇪🇸_34"
 
   - name: "LB-CDN"
     type: load-balance
@@ -315,6 +286,7 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
+      - "🇪🇸_17"
       - "🇪🇸_18"
       - "🇪🇸_19"
       - "🇪🇸_20"
@@ -330,8 +302,6 @@ proxy-groups:
       - "🇪🇸_30"
       - "🇪🇸_31"
       - "🇪🇸_32"
-      - "🇪🇸_33"
-      - "🇪🇸_34"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -341,6 +311,7 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
+      - "🇪🇸_17"
       - "🇪🇸_18"
       - "🇪🇸_19"
       - "🇪🇸_20"
@@ -356,8 +327,6 @@ proxy-groups:
       - "🇪🇸_30"
       - "🇪🇸_31"
       - "🇪🇸_32"
-      - "🇪🇸_33"
-      - "🇪🇸_34"
 
   - name: "FAST-CDN"
     type: url-test
@@ -366,6 +335,7 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
+      - "🇪🇸_17"
       - "🇪🇸_18"
       - "🇪🇸_19"
       - "🇪🇸_20"
@@ -381,8 +351,6 @@ proxy-groups:
       - "🇪🇸_30"
       - "🇪🇸_31"
       - "🇪🇸_32"
-      - "🇪🇸_33"
-      - "🇪🇸_34"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -392,6 +360,7 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
+      - "🇪🇸_17"
       - "🇪🇸_18"
       - "🇪🇸_19"
       - "🇪🇸_20"
@@ -407,13 +376,12 @@ proxy-groups:
       - "🇪🇸_30"
       - "🇪🇸_31"
       - "🇪🇸_32"
-      - "🇪🇸_33"
-      - "🇪🇸_34"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
+      - "🇪🇸_17"
       - "🇪🇸_18"
       - "🇪🇸_19"
       - "🇪🇸_20"
@@ -429,8 +397,6 @@ proxy-groups:
       - "🇪🇸_30"
       - "🇪🇸_31"
       - "🇪🇸_32"
-      - "🇪🇸_33"
-      - "🇪🇸_34"
 
 rules:
   - MATCH,PROXY-BEST

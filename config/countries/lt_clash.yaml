@@ -65,51 +65,6 @@ dns:
 proxies:
   - name: "🇱🇹_1"
     type: vless
-    server: "88.216.69.30"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "vms.lifetime06.workers.dev"
-  - name: "🇱🇹_2"
-    type: vless
-    server: "93.115.25.139"
-    port: 443
-    uuid: "3ad1d277-5715-4ca1-84db-5baea72f822d"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "ddc-chr2.astralweb.tech"
-    client-fingerprint: "firefox"
-  - name: "🇱🇹_3"
-    type: vless
-    server: "93.115.25.139"
-    port: 443
-    uuid: "04b9e828-43ed-4faf-8952-41069ec08355"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "ddc-chr2.astralweb.tech"
-    client-fingerprint: "firefox"
-  - name: "🇱🇹_4"
-    type: vless
-    server: "ltu-01.node.lumixnet.com"
-    port: 443
-    uuid: "56ae4ec4-6705-43d0-bf3a-bc36ab3b3545"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "ltu-01.node.lumixnet.com"
-    client-fingerprint: "hellochrome_120"
-    reality-opts:
-      public-key: "vEXgvoW9iQo6iiKT71cNt1CC3cAB4IWswAn-cScDz1A"
-      short-id: "bd8a588cebc3395a"
-    flow: "xtls-rprx-vision"
-  - name: "🇱🇹_5"
-    type: vless
     server: "93.115.25.139"
     port: 443
     uuid: "5c192fd7-ef98-4112-a20c-129108fcd7e9"
@@ -118,7 +73,7 @@ proxies:
     skip-cert-verify: true
     servername: "ddc-chr2.astralweb.tech"
     client-fingerprint: "firefox"
-  - name: "🇱🇹_6"
+  - name: "🇱🇹_2"
     type: vless
     server: "5.199.170.105"
     port: 443
@@ -132,20 +87,50 @@ proxies:
       public-key: "xFUmqmEPEKyv-5ReppEM1oTkc04HQcBUfySH-EwPBlE"
       short-id: "6ba85179e30d4fc2"
     flow: "xtls-rprx-vision"
-  - name: "🇱🇹_7"
+  - name: "🇱🇹_3"
     type: vless
-    server: "ltu-02.node.lumixnet.com"
+    server: "93.115.25.139"
     port: 443
-    uuid: "8645697d-51c1-4e90-aca5-ba63a0392f11"
+    uuid: "04b9e828-43ed-4faf-8952-41069ec08355"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "ltu-02.node.lumixnet.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "vEXgvoW9iQo6iiKT71cNt1CC3cAB4IWswAn-cScDz1A"
-      short-id: "bd8a588cebc3395a"
-    flow: "xtls-rprx-vision"
+    servername: "ddc-chr2.astralweb.tech"
+    client-fingerprint: "firefox"
+  - name: "🇱🇹_4"
+    type: vless
+    server: "93.115.25.139"
+    port: 443
+    uuid: "3ad1d277-5715-4ca1-84db-5baea72f822d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ddc-chr2.astralweb.tech"
+    client-fingerprint: "firefox"
+  - name: "🇱🇹_5"
+    type: vless
+    server: "144.31.243.69"
+    port: 443
+    uuid: "5083f498-4894-4c81-8648-40a2faf4b545"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "cloudflare.vhub.pro"
+    client-fingerprint: "firefox"
+    network: ws
+    ws-opts:
+      path: "/websocket?ed=2560"
+  - name: "🇱🇹_6"
+    type: vless
+    server: "88.216.69.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vms.lifetime06.workers.dev"
 
 proxy-groups:
   - name: "PROXY"
@@ -166,7 +151,6 @@ proxy-groups:
       - "🇱🇹_4"
       - "🇱🇹_5"
       - "🇱🇹_6"
-      - "🇱🇹_7"
 
 
 rules:

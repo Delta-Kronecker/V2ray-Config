@@ -59,6 +59,31 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
+  - name: "🇦🇪_7"
+    type: vless
+    server: "185.253.116.38"
+    port: 8443
+    uuid: "f50822b7-02ec-4611-83bd-ff29411e0e10"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "duckduckgo.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "A2_2LyDmeLGGBqdtl7Zu2vRKghhewpmsMq8NmG9RqDw"
+      short-id: "b9cd333706f5"
+    flow: "xtls-rprx-vision"
+  - name: "🇦🇪_8"
+    type: vless
+    server: "84.235.244.108"
+    port: 22573
+    uuid: "39947382-3212-41c9-bc3a-589574ac8b23"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "uae.unixzone.us"
   - name: "🇦🇪_9"
     type: vless
     server: "94.140.0.100"
@@ -76,61 +101,6 @@ proxies:
         Host: "withered-cake-d636.asfvgsrhtrzdbvcgfn.workers.dev"
   - name: "🇦🇪_10"
     type: vless
-    server: "77.232.140.30"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/?ed=2560"
-      headers:
-        Host: "vms.lifetime61.workers.dev"
-  - name: "🇦🇪_11"
-    type: vless
-    server: "84.235.244.108"
-    port: 22573
-    uuid: "39947382-3212-41c9-bc3a-589574ac8b23"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "uae.unixzone.us"
-  - name: "🇦🇪_12"
-    type: vless
-    server: "185.225.195.30"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "vms.lifetime18.workers.dev"
-  - name: "🇦🇪_13"
-    type: vless
-    server: "94.140.0.100"
-    port: 8880
-    uuid: "78e6619e-e82a-cd8d-b482-0973d8498305"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/sync"
-      headers:
-        Host: "silent-pine-a674.jfadwkglaugul.workers.dev"
-  - name: "🇦🇪_14"
-    type: vless
-    server: "77.232.140.40"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/?ed"
-      headers:
-        Host: "vms.lifetime61.workers.dev"
-  - name: "🇦🇪_15"
-    type: vless
     server: "81.85.92.246"
     port: 443
     uuid: "c46e2605-be24-4555-b7db-0fc6773ad004"
@@ -143,20 +113,20 @@ proxies:
       public-key: "CC8vVe5trg8COtHkcR-cC3rl7hJh-Tr0RI5KmzzBNWo"
       short-id: ""
     flow: "xtls-rprx-vision"
-  - name: "🇦🇪_16"
-    type: vless
-    server: "185.253.116.38"
-    port: 8443
-    uuid: "f50822b7-02ec-4611-83bd-ff29411e0e10"
+  - name: "🇦🇪_11"
+    type: ss
+    server: "38.54.9.181"
+    port: 3306
+    cipher: "aes-256-gcm"
+    password: "Y6R9pAtvxxzmGC"
     udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "duckduckgo.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "A2_2LyDmeLGGBqdtl7Zu2vRKghhewpmsMq8NmG9RqDw"
-      short-id: "b9cd333706f5"
-    flow: "xtls-rprx-vision"
+  - name: "🇦🇪_12"
+    type: ss
+    server: "38.54.9.181"
+    port: 3306
+    cipher: "aes-256-gcm"
+    password: "Y6R9pAtvxxzmGC"
+    udp: true
 
 proxy-groups:
   # ── Top-level selector ────────────────────────────────────────────────────
@@ -199,14 +169,12 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
+      - "🇦🇪_7"
+      - "🇦🇪_8"
       - "🇦🇪_9"
       - "🇦🇪_10"
       - "🇦🇪_11"
       - "🇦🇪_12"
-      - "🇦🇪_13"
-      - "🇦🇪_14"
-      - "🇦🇪_15"
-      - "🇦🇪_16"
 
   - name: "LB-CDN"
     type: load-balance
@@ -216,14 +184,12 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
+      - "🇦🇪_7"
+      - "🇦🇪_8"
       - "🇦🇪_9"
       - "🇦🇪_10"
       - "🇦🇪_11"
       - "🇦🇪_12"
-      - "🇦🇪_13"
-      - "🇦🇪_14"
-      - "🇦🇪_15"
-      - "🇦🇪_16"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -233,14 +199,12 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
+      - "🇦🇪_7"
+      - "🇦🇪_8"
       - "🇦🇪_9"
       - "🇦🇪_10"
       - "🇦🇪_11"
       - "🇦🇪_12"
-      - "🇦🇪_13"
-      - "🇦🇪_14"
-      - "🇦🇪_15"
-      - "🇦🇪_16"
 
   - name: "FAST-CDN"
     type: url-test
@@ -249,14 +213,12 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
+      - "🇦🇪_7"
+      - "🇦🇪_8"
       - "🇦🇪_9"
       - "🇦🇪_10"
       - "🇦🇪_11"
       - "🇦🇪_12"
-      - "🇦🇪_13"
-      - "🇦🇪_14"
-      - "🇦🇪_15"
-      - "🇦🇪_16"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -266,27 +228,23 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
+      - "🇦🇪_7"
+      - "🇦🇪_8"
       - "🇦🇪_9"
       - "🇦🇪_10"
       - "🇦🇪_11"
       - "🇦🇪_12"
-      - "🇦🇪_13"
-      - "🇦🇪_14"
-      - "🇦🇪_15"
-      - "🇦🇪_16"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
+      - "🇦🇪_7"
+      - "🇦🇪_8"
       - "🇦🇪_9"
       - "🇦🇪_10"
       - "🇦🇪_11"
       - "🇦🇪_12"
-      - "🇦🇪_13"
-      - "🇦🇪_14"
-      - "🇦🇪_15"
-      - "🇦🇪_16"
 
 rules:
   - MATCH,PROXY-BEST

@@ -65,7 +65,7 @@ dns:
 proxies:
   - name: "🇧🇿_1"
     type: vless
-    server: "45.131.210.30"
+    server: "45.131.209.30"
     port: 8880
     uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
     udp: true
@@ -73,8 +73,19 @@ proxies:
     ws-opts:
       path: "/"
       headers:
-        Host: "vms.lifetime05.workers.dev"
+        Host: "vms.lifetime04.workers.dev"
   - name: "🇧🇿_2"
+    type: vless
+    server: "45.131.211.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "vms.lifetime06.workers.dev"
+  - name: "🇧🇿_3"
     type: vless
     server: "45.131.6.123"
     port: 443
@@ -88,20 +99,9 @@ proxies:
       path: "Telegram-WangCai2"
       headers:
         Host: "notls.lukongtou.eu.org"
-  - name: "🇧🇿_3"
-    type: vless
-    server: "45.131.209.30"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "vms.lifetime04.workers.dev"
   - name: "🇧🇿_4"
     type: vless
-    server: "45.131.7.30"
+    server: "45.131.210.30"
     port: 8880
     uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
     udp: true
@@ -109,29 +109,20 @@ proxies:
     ws-opts:
       path: "/"
       headers:
-        Host: "vms.lifetime02.workers.dev"
+        Host: "vms.lifetime05.workers.dev"
   - name: "🇧🇿_5"
-    type: vless
-    server: "45.131.211.30"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    type: trojan
+    server: "45.131.5.9"
+    port: 443
+    password: "521314"
+    sni: "tjplay.lxdxo.kdns.fr"
+    skip-cert-verify: true
     udp: true
     network: ws
     ws-opts:
-      path: "/?ed=2560"
+      path: "/Telegram🇨🇳 @WangCai2"
       headers:
-        Host: "vms.lifetime06.workers.dev"
-  - name: "🇧🇿_6"
-    type: vless
-    server: "45.131.6.30"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "vms.lifetime61.workers.dev"
+        Host: "tjplay.lxdxo.kdns.fr"
 
 proxy-groups:
   - name: "PROXY"
@@ -151,7 +142,6 @@ proxy-groups:
       - "🇧🇿_3"
       - "🇧🇿_4"
       - "🇧🇿_5"
-      - "🇧🇿_6"
 
 
 rules:

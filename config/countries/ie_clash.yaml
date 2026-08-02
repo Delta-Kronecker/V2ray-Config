@@ -65,6 +65,20 @@ dns:
 proxies:
   - name: "🇮🇪_1"
     type: vless
+    server: "193.24.234.34"
+    port: 443
+    uuid: "06d44c57-8e1a-41f4-b9c4-65d35869e078"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "dev-ops-notes.blog"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "5qYuPXdx_1i6bBOUJRKCSv2vBxdWxSZcct_Cxd-W0hc"
+      short-id: "65c55164c5e88da1"
+    flow: "xtls-rprx-vision"
+  - name: "🇮🇪_2"
+    type: vless
     server: "52.19.138.237"
     port: 2053
     uuid: "c7e9c591-2764-423a-afca-efbd010fd396"
@@ -78,45 +92,15 @@ proxies:
       path: "/"
       headers:
         Host: "forfreeuse.sub-flow.online"
-  - name: "🇮🇪_2"
-    type: vless
-    server: "193.24.234.34"
-    port: 443
-    uuid: "06d44c57-8e1a-41f4-b9c4-65d35869e078"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "dev-ops-notes.blog"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "5qYuPXdx_1i6bBOUJRKCSv2vBxdWxSZcct_Cxd-W0hc"
-      short-id: "65c55164c5e88da1"
-    flow: "xtls-rprx-vision"
   - name: "🇮🇪_3"
     type: trojan
-    server: "eternal-kingfish.rooster465.autos"
+    server: "kind-stork.rooster465.autos"
     port: 443
-    password: "CF68213490"
-    sni: "eternal-kingfish.rooster465.autos"
+    password: "PD07395842"
+    sni: "kind-stork.rooster465.autos"
     skip-cert-verify: true
     udp: true
   - name: "🇮🇪_4"
-    type: trojan
-    server: "cunning-grub.rooster465.autos"
-    port: 443
-    password: "HW85960347"
-    sni: "cunning-grub.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇮🇪_5"
-    type: trojan
-    server: "flowing-eagle.rooster465.autos"
-    port: 443
-    password: "CF68213490"
-    sni: "flowing-eagle.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇮🇪_6"
     type: trojan
     server: "concise-bass.rooster465.autos"
     port: 443
@@ -124,21 +108,51 @@ proxies:
     sni: "concise-bass.rooster465.autos"
     skip-cert-verify: true
     udp: true
-  - name: "🇮🇪_7"
+  - name: "🇮🇪_5"
     type: trojan
-    server: "worthy-labrador.rooster465.autos"
+    server: "eternal-kingfish.rooster465.autos"
     port: 443
-    password: "NQ26071394"
-    sni: "worthy-labrador.rooster465.autos"
+    password: "PD07395842"
+    sni: "eternal-kingfish.rooster465.autos"
     skip-cert-verify: true
     udp: true
-  - name: "🇮🇪_8"
+  - name: "🇮🇪_6"
     type: trojan
     server: "summary-firefly.rooster465.autos"
     port: 443
     password: "CF68213490"
     sni: "summary-firefly.rooster465.autos"
     skip-cert-verify: true
+    udp: true
+  - name: "🇮🇪_7"
+    type: trojan
+    server: "splendid-grizzly.rooster465.autos"
+    port: 443
+    password: "PD07395842"
+    sni: "splendid-grizzly.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇮🇪_8"
+    type: trojan
+    server: "equipped-moth.rooster465.autos"
+    port: 443
+    password: "XG59623478"
+    sni: "equipped-moth.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇮🇪_9"
+    type: ss
+    server: "20.223.136.145"
+    port: 443
+    cipher: "chacha20-ietf-poly1305"
+    password: "qDCSwJiKm1gYt7Au"
+    udp: true
+  - name: "🇮🇪_10"
+    type: ss
+    server: "20.223.136.145"
+    port: 443
+    cipher: "chacha20-ietf-poly1305"
+    password: "ARrBg9S9kosSo3tG"
     udp: true
 
 proxy-groups:
@@ -162,6 +176,8 @@ proxy-groups:
       - "🇮🇪_6"
       - "🇮🇪_7"
       - "🇮🇪_8"
+      - "🇮🇪_9"
+      - "🇮🇪_10"
 
 
 rules:

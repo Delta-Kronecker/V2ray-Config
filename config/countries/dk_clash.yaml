@@ -63,20 +63,20 @@ dns:
     - https://freedns.controld.com/family
 
 proxies:
-  - name: "🇳🇴_1"
-    type: ss
-    server: "185.213.23.63"
-    port: 990
-    cipher: "chacha20-ietf-poly1305"
-    password: "ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44="
+  - name: "🇩🇰_1"
+    type: vless
+    server: "45.88.13.3"
+    port: 993
+    uuid: "5e243126-4a2a-84b6-782a-73b14797fb5f"
     udp: true
-  - name: "🇳🇴_2"
-    type: ss
-    server: "185.213.23.63"
-    port: 990
-    cipher: "chacha20-ietf-poly1305"
-    password: "ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44="
-    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "download.nvidia.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "FOQzn10eHqu4F5xOxiXW2bTDG8lH4TdOXP6A5rDqKFk"
+      short-id: ""
+    flow: "xtls-rprx-vision"
 
 proxy-groups:
   - name: "PROXY"
@@ -91,8 +91,7 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇳🇴_1"
-      - "🇳🇴_2"
+      - "🇩🇰_1"
 
 
 rules:

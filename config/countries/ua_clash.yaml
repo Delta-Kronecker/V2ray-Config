@@ -65,7 +65,7 @@ dns:
 proxies:
   - name: "🇺🇦_1"
     type: vless
-    server: "78.159.240.215"
+    server: "78.159.240.69"
     port: 8443
     uuid: "c2948c84-748f-47f6-bc7a-b949ef279f85"
     udp: true
@@ -78,7 +78,29 @@ proxies:
       path: "/websocket?ed=2560"
   - name: "🇺🇦_2"
     type: vless
-    server: "78.159.240.69"
+    server: "45.135.235.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "vms.lifetime07.workers.dev"
+  - name: "🇺🇦_3"
+    type: vless
+    server: "89.116.180.40"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "vms.lifetime09.workers.dev"
+  - name: "🇺🇦_4"
+    type: vless
+    server: "78.159.240.215"
     port: 8443
     uuid: "c2948c84-748f-47f6-bc7a-b949ef279f85"
     udp: true
@@ -89,7 +111,7 @@ proxies:
     network: ws
     ws-opts:
       path: "/websocket?ed=2560"
-  - name: "🇺🇦_3"
+  - name: "🇺🇦_5"
     type: vless
     server: "89.116.180.30"
     port: 8880
@@ -100,7 +122,7 @@ proxies:
       path: "/"
       headers:
         Host: "vms.lifetime09.workers.dev"
-  - name: "🇺🇦_4"
+  - name: "🇺🇦_6"
     type: vless
     server: "45.135.235.123"
     port: 443
@@ -114,18 +136,7 @@ proxies:
       path: "Telegram-WangCai2"
       headers:
         Host: "notls.lukongtou.eu.org"
-  - name: "🇺🇦_5"
-    type: vless
-    server: "89.116.180.40"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/?ed=2560"
-      headers:
-        Host: "vms.lifetime09.workers.dev"
-  - name: "🇺🇦_6"
+  - name: "🇺🇦_7"
     type: vless
     server: "193.41.5.187"
     port: 443
@@ -138,31 +149,7 @@ proxies:
     reality-opts:
       public-key: "aFsY-EZjSNTomlAFShKwQIQMJ5pHiZQXXJpWvcz8WkQ"
       short-id: "0858af97f4e7324d"
-  - name: "🇺🇦_7"
-    type: vless
-    server: "45.135.235.30"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/?ed=2560"
-      headers:
-        Host: "vms.lifetime07.workers.dev"
   - name: "🇺🇦_8"
-    type: vless
-    server: "91.236.248.20"
-    port: 20071
-    uuid: "65c56e1f-5c41-40bc-b0b5-9346772476ca"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.lamer.com"
-    reality-opts:
-      public-key: "zX5dT9fA8VRXb3XSB8olbacIR1Dq69juoC7US2paR08"
-      short-id: "a02bf9"
-    flow: "xtls-rprx-vision"
-  - name: "🇺🇦_9"
     type: trojan
     server: "130.0.236.88"
     port: 443
@@ -170,7 +157,7 @@ proxies:
     sni: "ua.freeguard.org"
     skip-cert-verify: true
     udp: true
-  - name: "🇺🇦_10"
+  - name: "🇺🇦_9"
     type: trojan
     server: "89.116.180.49"
     port: 443
@@ -204,7 +191,6 @@ proxy-groups:
       - "🇺🇦_7"
       - "🇺🇦_8"
       - "🇺🇦_9"
-      - "🇺🇦_10"
 
 
 rules:

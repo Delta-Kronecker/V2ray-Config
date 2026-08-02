@@ -59,18 +59,35 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇮🇳_13"
+  - name: "🇮🇳_16"
     type: vless
-    server: "108.165.152.30"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    server: "185.67.126.178"
+    port: 443
+    uuid: "ab7d5ea9-6eca-47c3-b14b-67378fc2d7c2"
     udp: true
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "vms.lifetime61.workers.dev"
-  - name: "🇮🇳_14"
+    tls: true
+    skip-cert-verify: true
+    servername: "ind.tunnelx.space"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "loAFNSTbdM9g-9dyps76y996jHPfBNJBq5F5Vd0Sekw"
+      short-id: "4e9b5c2d1a3f5748"
+    flow: "xtls-rprx-vision"
+  - name: "🇮🇳_17"
+    type: vless
+    server: "ind.tunnelx.space"
+    port: 443
+    uuid: "ab7d5ea9-6eca-47c3-b14b-67378fc2d7c2"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ind.tunnelx.space"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "loAFNSTbdM9g-9dyps76y996jHPfBNJBq5F5Vd0Sekw"
+      short-id: "4e9b5c2d1a3f5748"
+    flow: "xtls-rprx-vision"
+  - name: "🇮🇳_18"
     type: vless
     server: "4.240.110.47"
     port: 443
@@ -85,59 +102,7 @@ proxies:
       path: "/"
       headers:
         Host: "sni.ehb.cc.cd"
-  - name: "🇮🇳_15"
-    type: vless
-    server: "185.67.126.178"
-    port: 443
-    uuid: "ab7d5ea9-6eca-47c3-b14b-67378fc2d7c2"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "ind.tunnelx.space"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "loAFNSTbdM9g-9dyps76y996jHPfBNJBq5F5Vd0Sekw"
-      short-id: "4e9b5c2d1a3f5748"
-    flow: "xtls-rprx-vision"
-  - name: "🇮🇳_16"
-    type: vless
-    server: "ind.tunnelx.space"
-    port: 443
-    uuid: "ab7d5ea9-6eca-47c3-b14b-67378fc2d7c2"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "ind.tunnelx.space"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "loAFNSTbdM9g-9dyps76y996jHPfBNJBq5F5Vd0Sekw"
-      short-id: "4e9b5c2d1a3f5748"
-    flow: "xtls-rprx-vision"
-  - name: "🇮🇳_17"
-    type: trojan
-    server: "185.67.125.119"
-    port: 443
-    password: "3747000103274291200"
-    sni: "oriented-pug.adder289.quest"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇮🇳_18"
-    type: trojan
-    server: "64.227.131.19"
-    port: 443
-    password: "21c6c7cb-332b-4a0c-9ad7-dff9c3111442"
-    sni: "us02web.zoom.us"
-    skip-cert-verify: true
-    udp: true
   - name: "🇮🇳_19"
-    type: trojan
-    server: "139.84.133.199"
-    port: 443
-    password: "af4b064a9c39472fb34ad8b113acdc6b"
-    sni: "139.84.133.199"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇮🇳_20"
     type: trojan
     server: "185.67.125.147"
     port: 443
@@ -145,20 +110,28 @@ proxies:
     sni: "polished-collie.adder289.quest"
     skip-cert-verify: true
     udp: true
-  - name: "🇮🇳_21"
-    type: trojan
-    server: "185.67.125.147"
-    port: 443
-    password: "3763495894587285504"
-    sni: "optimal-owl.goat627.mom"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇮🇳_22"
+  - name: "🇮🇳_20"
     type: trojan
     server: "143.110.246.228"
     port: 443
     password: "3bcd9e33-8377-4b32-af33-217158577ff3"
     sni: "kdlsupport.zendesk.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇮🇳_21"
+    type: trojan
+    server: "34.131.228.210"
+    port: 443
+    password: "M7v%w11Se*"
+    sni: "hyfuuf6.wsone.icu"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇮🇳_22"
+    type: trojan
+    server: "64.227.131.19"
+    port: 443
+    password: "21c6c7cb-332b-4a0c-9ad7-dff9c3111442"
+    sni: "us02web.zoom.us"
     skip-cert-verify: true
     udp: true
   - name: "🇮🇳_23"
@@ -170,11 +143,66 @@ proxies:
     skip-cert-verify: true
     udp: true
   - name: "🇮🇳_24"
+    type: trojan
+    server: "185.67.125.119"
+    port: 443
+    password: "3747000103274291200"
+    sni: "oriented-pug.adder289.quest"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇮🇳_25"
+    type: trojan
+    server: "139.84.133.199"
+    port: 443
+    password: "af4b064a9c39472fb34ad8b113acdc6b"
+    sni: "139.84.133.199"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇮🇳_26"
+    type: trojan
+    server: "185.67.125.147"
+    port: 443
+    password: "3763495894587285504"
+    sni: "optimal-owl.goat627.mom"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇮🇳_27"
     type: ss
-    server: "172.105.39.124"
-    port: 7002
-    cipher: "aes-256-gcm"
-    password: "RexnBgU7EV5ADxG"
+    server: "103.181.177.88"
+    port: 443
+    cipher: "none"
+    password: "14b02e2a-8930-4afb-8412-ea4a4954ca5b"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "14b02e2a-8930-4afb-8412-ea4a4954ca5b/?ed\\=2560"
+      host: "ylnhh.us.ci"
+  - name: "🇮🇳_28"
+    type: ss
+    server: "103.120.178.193"
+    port: 31348
+    cipher: "chacha20-ietf-poly1305"
+    password: "EBDRo9THx4CqiFU7h5gfov76oNwzZURAh0ZwbWjBKddtUhvz"
+    udp: true
+  - name: "🇮🇳_29"
+    type: ss
+    server: "103.181.177.88"
+    port: 443
+    cipher: "none"
+    password: "14b02e2a-8930-4afb-8412-ea4a4954ca5b"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "14b02e2a-8930-4afb-8412-ea4a4954ca5b/?ed\\=2560"
+      host: "ylnhh.us.ci"
+  - name: "🇮🇳_30"
+    type: ss
+    server: "103.120.178.193"
+    port: 31348
+    cipher: "chacha20-ietf-poly1305"
+    password: "EBDRo9THx4CqiFU7h5gfov76oNwzZURAh0ZwbWjBKddtUhvz"
     udp: true
 
 proxy-groups:
@@ -218,9 +246,6 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇮🇳_13"
-      - "🇮🇳_14"
-      - "🇮🇳_15"
       - "🇮🇳_16"
       - "🇮🇳_17"
       - "🇮🇳_18"
@@ -230,6 +255,12 @@ proxy-groups:
       - "🇮🇳_22"
       - "🇮🇳_23"
       - "🇮🇳_24"
+      - "🇮🇳_25"
+      - "🇮🇳_26"
+      - "🇮🇳_27"
+      - "🇮🇳_28"
+      - "🇮🇳_29"
+      - "🇮🇳_30"
 
   - name: "LB-CDN"
     type: load-balance
@@ -239,9 +270,6 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇮🇳_13"
-      - "🇮🇳_14"
-      - "🇮🇳_15"
       - "🇮🇳_16"
       - "🇮🇳_17"
       - "🇮🇳_18"
@@ -251,6 +279,12 @@ proxy-groups:
       - "🇮🇳_22"
       - "🇮🇳_23"
       - "🇮🇳_24"
+      - "🇮🇳_25"
+      - "🇮🇳_26"
+      - "🇮🇳_27"
+      - "🇮🇳_28"
+      - "🇮🇳_29"
+      - "🇮🇳_30"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -260,9 +294,6 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇮🇳_13"
-      - "🇮🇳_14"
-      - "🇮🇳_15"
       - "🇮🇳_16"
       - "🇮🇳_17"
       - "🇮🇳_18"
@@ -272,6 +303,12 @@ proxy-groups:
       - "🇮🇳_22"
       - "🇮🇳_23"
       - "🇮🇳_24"
+      - "🇮🇳_25"
+      - "🇮🇳_26"
+      - "🇮🇳_27"
+      - "🇮🇳_28"
+      - "🇮🇳_29"
+      - "🇮🇳_30"
 
   - name: "FAST-CDN"
     type: url-test
@@ -280,9 +317,6 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇮🇳_13"
-      - "🇮🇳_14"
-      - "🇮🇳_15"
       - "🇮🇳_16"
       - "🇮🇳_17"
       - "🇮🇳_18"
@@ -292,6 +326,12 @@ proxy-groups:
       - "🇮🇳_22"
       - "🇮🇳_23"
       - "🇮🇳_24"
+      - "🇮🇳_25"
+      - "🇮🇳_26"
+      - "🇮🇳_27"
+      - "🇮🇳_28"
+      - "🇮🇳_29"
+      - "🇮🇳_30"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -301,9 +341,6 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇮🇳_13"
-      - "🇮🇳_14"
-      - "🇮🇳_15"
       - "🇮🇳_16"
       - "🇮🇳_17"
       - "🇮🇳_18"
@@ -313,14 +350,17 @@ proxy-groups:
       - "🇮🇳_22"
       - "🇮🇳_23"
       - "🇮🇳_24"
+      - "🇮🇳_25"
+      - "🇮🇳_26"
+      - "🇮🇳_27"
+      - "🇮🇳_28"
+      - "🇮🇳_29"
+      - "🇮🇳_30"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
-      - "🇮🇳_13"
-      - "🇮🇳_14"
-      - "🇮🇳_15"
       - "🇮🇳_16"
       - "🇮🇳_17"
       - "🇮🇳_18"
@@ -330,6 +370,12 @@ proxy-groups:
       - "🇮🇳_22"
       - "🇮🇳_23"
       - "🇮🇳_24"
+      - "🇮🇳_25"
+      - "🇮🇳_26"
+      - "🇮🇳_27"
+      - "🇮🇳_28"
+      - "🇮🇳_29"
+      - "🇮🇳_30"
 
 rules:
   - MATCH,PROXY-BEST
