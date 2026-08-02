@@ -59,7 +59,20 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇦🇹_1"
+  - name: "🇦🇹_8"
+    type: vless
+    server: "77.73.131.154"
+    port: 443
+    uuid: "1f4c983e-382c-d2fa-b2dc-7981f02b34de"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vindobona.org"
+    reality-opts:
+      public-key: "5GhMSJXQv1wXHVD999YHRRj83m-7VKH8qb_vTxBGbng"
+      short-id: "08"
+    flow: "xtls-rprx-vision"
+  - name: "🇦🇹_9"
     type: vless
     server: "152.53.46.27"
     port: 443
@@ -73,22 +86,7 @@ proxies:
       public-key: "LaGTRJ1CJnnYV7FnyqQnU28I0xFTPFKI8xmUFwig5ic"
       short-id: "c410508e9721512b"
     flow: "xtls-rprx-vision"
-  - name: "🇦🇹_2"
-    type: vless
-    server: "77.110.110.214"
-    port: 6443
-    uuid: "29a77cbc-bd97-4b8c-af20-c3c6341da10f"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "woc0zvrf11w2endu.dphdlc1u77bs3y4kvussbuap4p576f1ws7igthq8zbf3.workers.dev"
-    client-fingerprint: "chrome"
-    network: ws
-    ws-opts:
-      path: "/@Marisa_kristi"
-      headers:
-        Host: "woc0zvrf11w2endu.dphdlc1u77bs3y4kvussbuap4p576f1ws7igthq8zbf3.workers.dev"
-  - name: "🇦🇹_4"
+  - name: "🇦🇹_10"
     type: vless
     server: "46.102.156.144"
     port: 2053
@@ -103,30 +101,36 @@ proxies:
       path: "/"
       headers:
         Host: "forfreeuse.sub-flow.online"
-  - name: "🇦🇹_6"
+  - name: "🇦🇹_11"
     type: vless
-    server: "77.73.131.154"
+    server: "152.53.114.186"
     port: 443
-    uuid: "1f4c983e-382c-d2fa-b2dc-7981f02b34de"
+    uuid: "ab7d5ea9-6eca-47c3-b14b-67378fc2d7c2"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "vindobona.org"
-    client-fingerprint: "chrome"
+    servername: "as.tunnelx.space"
+    client-fingerprint: "firefox"
     reality-opts:
-      public-key: "5GhMSJXQv1wXHVD999YHRRj83m-7VKH8qb_vTxBGbng"
-      short-id: "08"
+      public-key: "UO3EObgU3xUrhIGEE0gfCn5ZOz8YxNcwwW6ZaYzD3SA"
+      short-id: "4e9b0c2d1a3f5768"
     flow: "xtls-rprx-vision"
-  - name: "🇦🇹_7"
+  - name: "🇦🇹_12"
     type: vless
-    server: "45.131.215.61"
-    port: 52315
-    uuid: "29498268-55f3-4b51-ba1a-1eba23f4ab63"
+    server: "77.110.110.214"
+    port: 6443
+    uuid: "29a77cbc-bd97-4b8c-af20-c3c6341da10f"
     udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "woc0zvrf11w2endu.dphdlc1u77bs3y4kvussbuap4p576f1ws7igthq8zbf3.workers.dev"
+    client-fingerprint: "chrome"
     network: ws
     ws-opts:
-      path: "/"
-  - name: "🇦🇹_9"
+      path: "/@Marisa_kristi"
+      headers:
+        Host: "woc0zvrf11w2endu.dphdlc1u77bs3y4kvussbuap4p576f1ws7igthq8zbf3.workers.dev"
+  - name: "🇦🇹_13"
     type: vless
     server: "212.183.88.30"
     port: 8880
@@ -137,7 +141,7 @@ proxies:
       path: "/?ed=2560"
       headers:
         Host: "vms.lifetime23.workers.dev"
-  - name: "🇦🇹_11"
+  - name: "🇦🇹_14"
     type: trojan
     server: "212.183.88.136"
     port: 443
@@ -192,13 +196,13 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇦🇹_1"
-      - "🇦🇹_2"
-      - "🇦🇹_4"
-      - "🇦🇹_6"
-      - "🇦🇹_7"
+      - "🇦🇹_8"
       - "🇦🇹_9"
+      - "🇦🇹_10"
       - "🇦🇹_11"
+      - "🇦🇹_12"
+      - "🇦🇹_13"
+      - "🇦🇹_14"
 
   - name: "LB-CDN"
     type: load-balance
@@ -208,13 +212,13 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇦🇹_1"
-      - "🇦🇹_2"
-      - "🇦🇹_4"
-      - "🇦🇹_6"
-      - "🇦🇹_7"
+      - "🇦🇹_8"
       - "🇦🇹_9"
+      - "🇦🇹_10"
       - "🇦🇹_11"
+      - "🇦🇹_12"
+      - "🇦🇹_13"
+      - "🇦🇹_14"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -224,13 +228,13 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇦🇹_1"
-      - "🇦🇹_2"
-      - "🇦🇹_4"
-      - "🇦🇹_6"
-      - "🇦🇹_7"
+      - "🇦🇹_8"
       - "🇦🇹_9"
+      - "🇦🇹_10"
       - "🇦🇹_11"
+      - "🇦🇹_12"
+      - "🇦🇹_13"
+      - "🇦🇹_14"
 
   - name: "FAST-CDN"
     type: url-test
@@ -239,13 +243,13 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇦🇹_1"
-      - "🇦🇹_2"
-      - "🇦🇹_4"
-      - "🇦🇹_6"
-      - "🇦🇹_7"
+      - "🇦🇹_8"
       - "🇦🇹_9"
+      - "🇦🇹_10"
       - "🇦🇹_11"
+      - "🇦🇹_12"
+      - "🇦🇹_13"
+      - "🇦🇹_14"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -255,25 +259,25 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇦🇹_1"
-      - "🇦🇹_2"
-      - "🇦🇹_4"
-      - "🇦🇹_6"
-      - "🇦🇹_7"
+      - "🇦🇹_8"
       - "🇦🇹_9"
+      - "🇦🇹_10"
       - "🇦🇹_11"
+      - "🇦🇹_12"
+      - "🇦🇹_13"
+      - "🇦🇹_14"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
-      - "🇦🇹_1"
-      - "🇦🇹_2"
-      - "🇦🇹_4"
-      - "🇦🇹_6"
-      - "🇦🇹_7"
+      - "🇦🇹_8"
       - "🇦🇹_9"
+      - "🇦🇹_10"
       - "🇦🇹_11"
+      - "🇦🇹_12"
+      - "🇦🇹_13"
+      - "🇦🇹_14"
 
 rules:
   - MATCH,PROXY-BEST

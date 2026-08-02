@@ -59,9 +59,17 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇲🇾_1"
+  - name: "🇲🇾_3"
     type: trojan
     server: "202.43.102.57"
+    port: 443
+    password: "6e1b9a65-884f-3aa9-9469-bf6ec0f08610"
+    sni: "45.32.28.232"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇲🇾_4"
+    type: trojan
+    server: "my.singaporenodeserverone.kyiv.ua"
     port: 443
     password: "6e1b9a65-884f-3aa9-9469-bf6ec0f08610"
     sni: "45.32.28.232"
@@ -109,7 +117,8 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇲🇾_1"
+      - "🇲🇾_3"
+      - "🇲🇾_4"
 
   - name: "LB-CDN"
     type: load-balance
@@ -119,7 +128,8 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇲🇾_1"
+      - "🇲🇾_3"
+      - "🇲🇾_4"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -129,7 +139,8 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇲🇾_1"
+      - "🇲🇾_3"
+      - "🇲🇾_4"
 
   - name: "FAST-CDN"
     type: url-test
@@ -138,7 +149,8 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇲🇾_1"
+      - "🇲🇾_3"
+      - "🇲🇾_4"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -148,13 +160,15 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇲🇾_1"
+      - "🇲🇾_3"
+      - "🇲🇾_4"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
-      - "🇲🇾_1"
+      - "🇲🇾_3"
+      - "🇲🇾_4"
 
 rules:
   - MATCH,PROXY-BEST

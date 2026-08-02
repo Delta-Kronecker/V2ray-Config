@@ -59,7 +59,7 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇮🇸_1"
+  - name: "🇮🇸_2"
     type: vless
     server: "82.22.53.30"
     port: 448
@@ -68,6 +68,7 @@ proxies:
     tls: true
     skip-cert-verify: true
     servername: "www.googletagmanager.com"
+    client-fingerprint: "firefox"
     reality-opts:
       public-key: "0B7XMJC-mBqvUkf_on0wPZeW1iVmZIbEPVyvz-V_jRI"
       short-id: "60d7a9bbacadc0fb"
@@ -114,7 +115,7 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇮🇸_1"
+      - "🇮🇸_2"
 
   - name: "LB-CDN"
     type: load-balance
@@ -124,7 +125,7 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇮🇸_1"
+      - "🇮🇸_2"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -134,7 +135,7 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇮🇸_1"
+      - "🇮🇸_2"
 
   - name: "FAST-CDN"
     type: url-test
@@ -143,7 +144,7 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇮🇸_1"
+      - "🇮🇸_2"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -153,13 +154,13 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇮🇸_1"
+      - "🇮🇸_2"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
-      - "🇮🇸_1"
+      - "🇮🇸_2"
 
 rules:
   - MATCH,PROXY-BEST

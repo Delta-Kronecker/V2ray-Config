@@ -65,6 +65,20 @@ dns:
 proxies:
   - name: "🇳🇿_1"
     type: vless
+    server: "114.129.43.123"
+    port: 443
+    uuid: "1d16c6e0-1bbe-435b-b661-90043fee999c"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "notls.lukongtou.eu.org"
+    network: ws
+    ws-opts:
+      path: "Telegram-WangCai2"
+      headers:
+        Host: "notls.lukongtou.eu.org"
+  - name: "🇳🇿_2"
+    type: vless
     server: "114.129.43.30"
     port: 8880
     uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
@@ -89,6 +103,7 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇳🇿_1"
+      - "🇳🇿_2"
 
 
 rules:

@@ -64,6 +64,20 @@ dns:
 
 proxies:
   - name: "🇦🇱_1"
+    type: vless
+    server: "85.155.228.162"
+    port: 443
+    uuid: "b6f3b292-00c9-430e-bc4c-b1294bd895c0"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "cdn-al.ai-apiroute.cc"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "PCF6GYA_TCdb28mM6zsxJ38MAtmnSrJJEygkXvrt1AE"
+      short-id: "b512d49930874a31"
+    flow: "xtls-rprx-vision"
+  - name: "🇦🇱_2"
     type: trojan
     server: "185.75.243.102"
     port: 443
@@ -76,20 +90,6 @@ proxies:
       path: "/assignment"
       headers:
         Host: "www.ignitelimit.com"
-  - name: "🇦🇱_3"
-    type: ss
-    server: "130.49.189.158"
-    port: 10792
-    cipher: "chacha20-ietf-poly1305"
-    password: "CsSYOhlDUy7Hz1yQCXSnxj"
-    udp: true
-  - name: "🇦🇱_4"
-    type: ss
-    server: "157.22.240.141"
-    port: 57925
-    cipher: "chacha20-ietf-poly1305"
-    password: "hnqVn0IJxrCBYK1xzCE9Yd"
-    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -105,8 +105,7 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇦🇱_1"
-      - "🇦🇱_3"
-      - "🇦🇱_4"
+      - "🇦🇱_2"
 
 
 rules:

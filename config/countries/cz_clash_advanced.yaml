@@ -59,32 +59,46 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇨🇿_1"
+  - name: "🇨🇿_6"
+    type: vless
+    server: "cze-02.node.lumixnet.com"
+    port: 443
+    uuid: "56ae4ec4-6705-43d0-bf3a-bc36ab3b3545"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "cze-02.node.lumixnet.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "vEXgvoW9iQo6iiKT71cNt1CC3cAB4IWswAn-cScDz1A"
+      short-id: "bd8a588cebc3395a"
+    flow: "xtls-rprx-vision"
+  - name: "🇨🇿_7"
     type: vless
     server: "141.133.172.222"
     port: 20342
     uuid: "5eecb34f-c905-4c77-b7fb-d830b451cd11"
     udp: true
-  - name: "🇨🇿_2"
+  - name: "🇨🇿_8"
     type: vless
     server: "193.124.57.208"
     port: 20342
     uuid: "5eecb34f-c905-4c77-b7fb-d830b451cd11"
     udp: true
-  - name: "🇨🇿_3"
+  - name: "🇨🇿_9"
     type: vless
-    server: "193.93.194.120"
-    port: 443
-    uuid: "cfb5b3d3-c094-4222-99e8-53faa787c857"
+    server: "103.200.28.187"
+    port: 2053
+    uuid: "504d0b6e-400d-45ec-b2d0-1c79006ebc16"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "site.rumedia-cdn.com"
+    servername: "web.mayluck.ru"
+    client-fingerprint: "firefox"
     reality-opts:
-      public-key: "dgrcO3r5wkEjcsWdEsNtgtWCe9vER6mgADXYclWXVxg"
-      short-id: "8de54d32a8d3fdf9"
-    flow: "xtls-rprx-vision"
-  - name: "🇨🇿_4"
+      public-key: "aFsY-EZjSNTomlAFShKwQIQMJ5pHiZQXXJpWvcz8WkQ"
+      short-id: "0858af97f4e7324d"
+  - name: "🇨🇿_10"
     type: trojan
     server: "46.8.113.142"
     port: 443
@@ -134,10 +148,11 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇨🇿_1"
-      - "🇨🇿_2"
-      - "🇨🇿_3"
-      - "🇨🇿_4"
+      - "🇨🇿_6"
+      - "🇨🇿_7"
+      - "🇨🇿_8"
+      - "🇨🇿_9"
+      - "🇨🇿_10"
 
   - name: "LB-CDN"
     type: load-balance
@@ -147,10 +162,11 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇨🇿_1"
-      - "🇨🇿_2"
-      - "🇨🇿_3"
-      - "🇨🇿_4"
+      - "🇨🇿_6"
+      - "🇨🇿_7"
+      - "🇨🇿_8"
+      - "🇨🇿_9"
+      - "🇨🇿_10"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -160,10 +176,11 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇨🇿_1"
-      - "🇨🇿_2"
-      - "🇨🇿_3"
-      - "🇨🇿_4"
+      - "🇨🇿_6"
+      - "🇨🇿_7"
+      - "🇨🇿_8"
+      - "🇨🇿_9"
+      - "🇨🇿_10"
 
   - name: "FAST-CDN"
     type: url-test
@@ -172,10 +189,11 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇨🇿_1"
-      - "🇨🇿_2"
-      - "🇨🇿_3"
-      - "🇨🇿_4"
+      - "🇨🇿_6"
+      - "🇨🇿_7"
+      - "🇨🇿_8"
+      - "🇨🇿_9"
+      - "🇨🇿_10"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -185,19 +203,21 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇨🇿_1"
-      - "🇨🇿_2"
-      - "🇨🇿_3"
-      - "🇨🇿_4"
+      - "🇨🇿_6"
+      - "🇨🇿_7"
+      - "🇨🇿_8"
+      - "🇨🇿_9"
+      - "🇨🇿_10"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
-      - "🇨🇿_1"
-      - "🇨🇿_2"
-      - "🇨🇿_3"
-      - "🇨🇿_4"
+      - "🇨🇿_6"
+      - "🇨🇿_7"
+      - "🇨🇿_8"
+      - "🇨🇿_9"
+      - "🇨🇿_10"
 
 rules:
   - MATCH,PROXY-BEST

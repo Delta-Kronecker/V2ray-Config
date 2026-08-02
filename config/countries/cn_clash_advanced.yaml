@@ -59,13 +59,7 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇨🇳_1"
-    type: vless
-    server: "120.227.1.43"
-    port: 12528
-    uuid: "f0169b08-43fd-4dc3-8195-18f6ad2fe39d"
-    udp: true
-  - name: "🇨🇳_2"
+  - name: "🇨🇳_4"
     type: vless
     server: "176.124.223.30"
     port: 8880
@@ -76,21 +70,12 @@ proxies:
       path: "/"
       headers:
         Host: "vms.lifetime38.workers.dev"
-  - name: "🇨🇳_4"
+  - name: "🇨🇳_5"
     type: vless
-    server: "77.105.163.46"
-    port: 443
-    uuid: "c7908ef2-1189-4d97-9e1d-181e34d49374"
+    server: "120.227.1.43"
+    port: 12528
+    uuid: "f0169b08-43fd-4dc3-8195-18f6ad2fe39d"
     udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "ov186.ochmaybrooooo.online"
-    client-fingerprint: "chrome"
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "ov186.ochmaybrooooo.online"
   - name: "🇨🇳_6"
     type: trojan
     server: "117.149.198.190"
@@ -141,9 +126,8 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇨🇳_1"
-      - "🇨🇳_2"
       - "🇨🇳_4"
+      - "🇨🇳_5"
       - "🇨🇳_6"
 
   - name: "LB-CDN"
@@ -154,9 +138,8 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇨🇳_1"
-      - "🇨🇳_2"
       - "🇨🇳_4"
+      - "🇨🇳_5"
       - "🇨🇳_6"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
@@ -167,9 +150,8 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇨🇳_1"
-      - "🇨🇳_2"
       - "🇨🇳_4"
+      - "🇨🇳_5"
       - "🇨🇳_6"
 
   - name: "FAST-CDN"
@@ -179,9 +161,8 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇨🇳_1"
-      - "🇨🇳_2"
       - "🇨🇳_4"
+      - "🇨🇳_5"
       - "🇨🇳_6"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
@@ -192,18 +173,16 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇨🇳_1"
-      - "🇨🇳_2"
       - "🇨🇳_4"
+      - "🇨🇳_5"
       - "🇨🇳_6"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
-      - "🇨🇳_1"
-      - "🇨🇳_2"
       - "🇨🇳_4"
+      - "🇨🇳_5"
       - "🇨🇳_6"
 
 rules:

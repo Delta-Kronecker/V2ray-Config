@@ -79,6 +79,21 @@ proxies:
     flow: "xtls-rprx-vision"
   - name: "🇧🇪_2"
     type: vless
+    server: "35.241.172.224"
+    port: 443
+    uuid: "29ca503d-e6b8-4509-b666-48133f450857"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "learn00.evany.de5.net"
+    client-fingerprint: "random"
+    network: ws
+    ws-opts:
+      path: "/fdip=tw.william.us.ci!txt"
+      headers:
+        Host: "learn00.evany.de5.net"
+  - name: "🇧🇪_3"
+    type: vless
     server: "104.155.124.198"
     port: 443
     uuid: "29ca503d-e6b8-4509-b666-48133f450857"
@@ -93,21 +108,14 @@ proxies:
       headers:
         Host: "learn00.evany.de5.net"
   - name: "🇧🇪_4"
-    type: vless
-    server: "35.241.172.224"
+    type: trojan
+    server: "hl-freedom-2.undef.network"
     port: 443
-    uuid: "29ca503d-e6b8-4509-b666-48133f450857"
-    udp: true
-    tls: true
+    password: "Tn2Bf0iRwJkJQgDk6gX6x81RB"
+    sni: "hl-freedom-2.undef.network"
     skip-cert-verify: true
-    servername: "learn00.evany.de5.net"
-    client-fingerprint: "random"
-    network: ws
-    ws-opts:
-      path: "/fdip=tw.william.us.ci!txt"
-      headers:
-        Host: "learn00.evany.de5.net"
-  - name: "🇧🇪_6"
+    udp: true
+  - name: "🇧🇪_5"
     type: trojan
     server: "94.126.225.96"
     port: 443
@@ -115,33 +123,12 @@ proxies:
     sni: "hl-freedom-1.undef.network"
     skip-cert-verify: true
     udp: true
-  - name: "🇧🇪_7"
+  - name: "🇧🇪_6"
     type: trojan
     server: "hl-freedom-1.undef.network"
     port: 443
     password: "JaFKnqNcvnBT63t3rquidGsln"
     sni: "hl-freedom-1.undef.network"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇧🇪_8"
-    type: trojan
-    server: "hl-freedom-1.undef.network"
-    port: 443
-    password: "GZOof2R1ej4yML1NxajR2frGQ"
-    sni: "HL-FREEDOM-1.UNDEF.NETWORK"
-    skip-cert-verify: true
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/f2fc2a1f"
-      headers:
-        Host: "hl-freedom-1.undef.network"
-  - name: "🇧🇪_10"
-    type: trojan
-    server: "hl-freedom-2.undef.network"
-    port: 443
-    password: "Tn2Bf0iRwJkJQgDk6gX6x81RB"
-    sni: "hl-freedom-2.undef.network"
     skip-cert-verify: true
     udp: true
 
@@ -160,11 +147,10 @@ proxy-groups:
     proxies:
       - "🇧🇪_1"
       - "🇧🇪_2"
+      - "🇧🇪_3"
       - "🇧🇪_4"
+      - "🇧🇪_5"
       - "🇧🇪_6"
-      - "🇧🇪_7"
-      - "🇧🇪_8"
-      - "🇧🇪_10"
 
 
 rules:

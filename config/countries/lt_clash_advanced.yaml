@@ -59,17 +59,7 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇱🇹_1"
-    type: vless
-    server: "93.115.25.139"
-    port: 443
-    uuid: "3ad1d277-5715-4ca1-84db-5baea72f822d"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "ddc-chr2.astralweb.tech"
-    client-fingerprint: "firefox"
-  - name: "🇱🇹_2"
+  - name: "🇱🇹_8"
     type: vless
     server: "88.216.69.30"
     port: 8880
@@ -80,7 +70,51 @@ proxies:
       path: "/"
       headers:
         Host: "vms.lifetime06.workers.dev"
-  - name: "🇱🇹_4"
+  - name: "🇱🇹_9"
+    type: vless
+    server: "93.115.25.139"
+    port: 443
+    uuid: "3ad1d277-5715-4ca1-84db-5baea72f822d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ddc-chr2.astralweb.tech"
+    client-fingerprint: "firefox"
+  - name: "🇱🇹_10"
+    type: vless
+    server: "93.115.25.139"
+    port: 443
+    uuid: "04b9e828-43ed-4faf-8952-41069ec08355"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ddc-chr2.astralweb.tech"
+    client-fingerprint: "firefox"
+  - name: "🇱🇹_11"
+    type: vless
+    server: "ltu-01.node.lumixnet.com"
+    port: 443
+    uuid: "56ae4ec4-6705-43d0-bf3a-bc36ab3b3545"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ltu-01.node.lumixnet.com"
+    client-fingerprint: "hellochrome_120"
+    reality-opts:
+      public-key: "vEXgvoW9iQo6iiKT71cNt1CC3cAB4IWswAn-cScDz1A"
+      short-id: "bd8a588cebc3395a"
+    flow: "xtls-rprx-vision"
+  - name: "🇱🇹_12"
+    type: vless
+    server: "93.115.25.139"
+    port: 443
+    uuid: "5c192fd7-ef98-4112-a20c-129108fcd7e9"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ddc-chr2.astralweb.tech"
+    client-fingerprint: "firefox"
+  - name: "🇱🇹_13"
     type: vless
     server: "5.199.170.105"
     port: 443
@@ -93,6 +127,20 @@ proxies:
     reality-opts:
       public-key: "xFUmqmEPEKyv-5ReppEM1oTkc04HQcBUfySH-EwPBlE"
       short-id: "6ba85179e30d4fc2"
+    flow: "xtls-rprx-vision"
+  - name: "🇱🇹_14"
+    type: vless
+    server: "ltu-02.node.lumixnet.com"
+    port: 443
+    uuid: "8645697d-51c1-4e90-aca5-ba63a0392f11"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ltu-02.node.lumixnet.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "vEXgvoW9iQo6iiKT71cNt1CC3cAB4IWswAn-cScDz1A"
+      short-id: "bd8a588cebc3395a"
     flow: "xtls-rprx-vision"
 
 proxy-groups:
@@ -136,9 +184,13 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇱🇹_1"
-      - "🇱🇹_2"
-      - "🇱🇹_4"
+      - "🇱🇹_8"
+      - "🇱🇹_9"
+      - "🇱🇹_10"
+      - "🇱🇹_11"
+      - "🇱🇹_12"
+      - "🇱🇹_13"
+      - "🇱🇹_14"
 
   - name: "LB-CDN"
     type: load-balance
@@ -148,9 +200,13 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇱🇹_1"
-      - "🇱🇹_2"
-      - "🇱🇹_4"
+      - "🇱🇹_8"
+      - "🇱🇹_9"
+      - "🇱🇹_10"
+      - "🇱🇹_11"
+      - "🇱🇹_12"
+      - "🇱🇹_13"
+      - "🇱🇹_14"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -160,9 +216,13 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇱🇹_1"
-      - "🇱🇹_2"
-      - "🇱🇹_4"
+      - "🇱🇹_8"
+      - "🇱🇹_9"
+      - "🇱🇹_10"
+      - "🇱🇹_11"
+      - "🇱🇹_12"
+      - "🇱🇹_13"
+      - "🇱🇹_14"
 
   - name: "FAST-CDN"
     type: url-test
@@ -171,9 +231,13 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇱🇹_1"
-      - "🇱🇹_2"
-      - "🇱🇹_4"
+      - "🇱🇹_8"
+      - "🇱🇹_9"
+      - "🇱🇹_10"
+      - "🇱🇹_11"
+      - "🇱🇹_12"
+      - "🇱🇹_13"
+      - "🇱🇹_14"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -183,17 +247,25 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇱🇹_1"
-      - "🇱🇹_2"
-      - "🇱🇹_4"
+      - "🇱🇹_8"
+      - "🇱🇹_9"
+      - "🇱🇹_10"
+      - "🇱🇹_11"
+      - "🇱🇹_12"
+      - "🇱🇹_13"
+      - "🇱🇹_14"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
-      - "🇱🇹_1"
-      - "🇱🇹_2"
-      - "🇱🇹_4"
+      - "🇱🇹_8"
+      - "🇱🇹_9"
+      - "🇱🇹_10"
+      - "🇱🇹_11"
+      - "🇱🇹_12"
+      - "🇱🇹_13"
+      - "🇱🇹_14"
 
 rules:
   - MATCH,PROXY-BEST
