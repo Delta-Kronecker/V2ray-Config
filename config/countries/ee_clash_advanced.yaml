@@ -59,9 +59,37 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
+  - name: "🇪🇪_18"
+    type: vless
+    server: "31.56.187.47"
+    port: 8443
+    uuid: "44be17d7-8295-4d56-8623-4ae675a9cf9b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ndee.whit3.net"
+    client-fingerprint: "random"
+    reality-opts:
+      public-key: "pjTH9_lDnyhcoqZolps8Rr7Q_81IDTEjy1aq7UTguhk"
+      short-id: "3351daa81250d627"
+    flow: "xtls-rprx-vision"
+  - name: "🇪🇪_19"
+    type: vless
+    server: "185.155.97.58"
+    port: 45176
+    uuid: "dc7940e0-6bff-45e3-853d-4007561803c3"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.googletagmanager.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "A1Qf_rMG4KDfLzfCK-M5R9qW_0uThfeSosQnv6LBL1M"
+      short-id: "8433cb66b6c3ab6d"
+    flow: "xtls-rprx-vision"
   - name: "🇪🇪_20"
     type: vless
-    server: "185.215.187.143"
+    server: "144.31.170.30"
     port: 443
     uuid: "5083f498-4894-4c81-8648-40a2faf4b545"
     udp: true
@@ -74,21 +102,20 @@ proxies:
       path: "/websocket?ed=2560"
   - name: "🇪🇪_21"
     type: vless
-    server: "185.155.97.241"
+    server: "95.85.249.255"
     port: 443
-    uuid: "0b9bcbc1-b289-4a64-86fa-a5b731b65384"
+    uuid: "5083f498-4894-4c81-8648-40a2faf4b545"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "web.max.ru"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "SJkDT_L0eziQR2afDGrkN7-uRxjYu6bZxIGXlKeCvX4"
-      short-id: "15aa18f971da1f81"
-    flow: "xtls-rprx-vision"
+    servername: "cloudflare.vhub.pro"
+    client-fingerprint: "firefox"
+    network: ws
+    ws-opts:
+      path: "/websocket?ed=2560"
   - name: "🇪🇪_22"
     type: vless
-    server: "144.31.170.30"
+    server: "87.121.86.87"
     port: 443
     uuid: "5083f498-4894-4c81-8648-40a2faf4b545"
     udp: true
@@ -117,46 +144,49 @@ proxies:
       grpc-service-name: "didado-grpc"
   - name: "🇪🇪_24"
     type: vless
-    server: "5.181.202.167"
+    server: "213.111.181.239"
     port: 443
-    uuid: "b6f3b292-00c9-430e-bc4c-b1294bd895c0"
+    uuid: "5083f498-4894-4c81-8648-40a2faf4b545"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "cdn-ee.ai-apiroute.cc"
+    servername: "cloudflare.vhub.pro"
     client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "kSQNzpTkFEKdWVONCkvTGmaHrHOiiBSfmGhwPK52iEo"
-      short-id: "b512d49930874a31"
-    flow: "xtls-rprx-vision"
-  - name: "🇪🇪_25"
-    type: vless
-    server: "185.155.97.58"
-    port: 45176
-    uuid: "dc7940e0-6bff-45e3-853d-4007561803c3"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.googletagmanager.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "A1Qf_rMG4KDfLzfCK-M5R9qW_0uThfeSosQnv6LBL1M"
-      short-id: "8433cb66b6c3ab6d"
-    flow: "xtls-rprx-vision"
-  - name: "🇪🇪_26"
-    type: vless
-    server: "185.159.247.30"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
     network: ws
     ws-opts:
-      path: "/"
-      headers:
-        Host: "vms.lifetime59.workers.dev"
+      path: "/websocket?ed=2560"
+  - name: "🇪🇪_25"
+    type: vless
+    server: "80.79.121.67"
+    port: 8443
+    uuid: "8278b419-8272-4c6b-b4b1-43dfd038b8bd"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ee.jugsenkeys4pays.su"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "_ye4ItKI_LQlwohZwpLM2RPUV8XCNdNAT927ziCaKQk"
+      short-id: ""
+    network: grpc
+    grpc-opts:
+      grpc-service-name: ""
+  - name: "🇪🇪_26"
+    type: vless
+    server: "185.215.187.143"
+    port: 443
+    uuid: "5083f498-4894-4c81-8648-40a2faf4b545"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "cloudflare.vhub.pro"
+    client-fingerprint: "firefox"
+    network: ws
+    ws-opts:
+      path: "/websocket?ed=2560"
   - name: "🇪🇪_27"
     type: vless
-    server: "144.31.170.231"
+    server: "95.85.243.171"
     port: 8443
     uuid: "5083f498-4894-4c81-8648-40a2faf4b545"
     udp: true
@@ -169,18 +199,20 @@ proxies:
       path: "/websocket?ed=2560"
   - name: "🇪🇪_28"
     type: vless
-    server: "45.80.110.50"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    server: "95.85.245.165"
+    port: 443
+    uuid: "5083f498-4894-4c81-8648-40a2faf4b545"
     udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "cloudflare.vhub.pro"
+    client-fingerprint: "firefox"
     network: ws
     ws-opts:
-      path: "/?ed=2560"
-      headers:
-        Host: "vms.lifetime51.workers.dev"
+      path: "/websocket?ed=2560"
   - name: "🇪🇪_29"
     type: vless
-    server: "185.215.184.10"
+    server: "64.188.82.173"
     port: 443
     uuid: "5083f498-4894-4c81-8648-40a2faf4b545"
     udp: true
@@ -192,6 +224,19 @@ proxies:
     ws-opts:
       path: "/websocket?ed=2560"
   - name: "🇪🇪_30"
+    type: vless
+    server: "144.31.170.231"
+    port: 8443
+    uuid: "5083f498-4894-4c81-8648-40a2faf4b545"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "cloudflare.vhub.pro"
+    client-fingerprint: "firefox"
+    network: ws
+    ws-opts:
+      path: "/websocket?ed=2560"
+  - name: "🇪🇪_31"
     type: vless
     server: "31.56.187.47"
     port: 8443
@@ -205,35 +250,20 @@ proxies:
       public-key: "pjTH9_lDnyhcoqZolps8Rr7Q_81IDTEjy1aq7UTguhk"
       short-id: "3351daa81250d627"
     flow: "xtls-rprx-vision"
-  - name: "🇪🇪_31"
-    type: vless
-    server: "95.85.243.171"
-    port: 8443
-    uuid: "5083f498-4894-4c81-8648-40a2faf4b545"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "cloudflare.vhub.pro"
-    client-fingerprint: "firefox"
-    network: ws
-    ws-opts:
-      path: "/websocket?ed=2560"
   - name: "🇪🇪_32"
     type: vless
-    server: "98.142.251.31"
-    port: 8443
-    uuid: "f50822b7-02ec-4611-83bd-ff29411e0e10"
+    server: "185.155.97.241"
+    port: 443
+    uuid: "0b9bcbc1-b289-4a64-86fa-a5b731b65384"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "addons.mozilla.org"
-    client-fingerprint: "firefox"
+    servername: "web.max.ru"
+    client-fingerprint: "qq"
     reality-opts:
-      public-key: "BLEVlyhgrYYDwsqJjm5wi1yUC7z6MBH_eM6vvYUdUQY"
-      short-id: "530db35e324c3aa5"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "api.v1.telemetry.EventStream"
+      public-key: "SJkDT_L0eziQR2afDGrkN7-uRxjYu6bZxIGXlKeCvX4"
+      short-id: "15aa18f971da1f81"
+    flow: "xtls-rprx-vision"
   - name: "🇪🇪_33"
     type: vless
     server: "5.181.202.15"
@@ -250,7 +280,7 @@ proxies:
     flow: "xtls-rprx-vision"
   - name: "🇪🇪_34"
     type: vless
-    server: "95.85.249.255"
+    server: "185.215.184.10"
     port: 443
     uuid: "5083f498-4894-4c81-8648-40a2faf4b545"
     udp: true
@@ -261,61 +291,6 @@ proxies:
     network: ws
     ws-opts:
       path: "/websocket?ed=2560"
-  - name: "🇪🇪_35"
-    type: vless
-    server: "213.111.181.239"
-    port: 443
-    uuid: "5083f498-4894-4c81-8648-40a2faf4b545"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "cloudflare.vhub.pro"
-    client-fingerprint: "firefox"
-    network: ws
-    ws-opts:
-      path: "/websocket?ed=2560"
-  - name: "🇪🇪_36"
-    type: vless
-    server: "31.56.187.47"
-    port: 8443
-    uuid: "44be17d7-8295-4d56-8623-4ae675a9cf9b"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "ndee.whit3.net"
-    client-fingerprint: "random"
-    reality-opts:
-      public-key: "pjTH9_lDnyhcoqZolps8Rr7Q_81IDTEjy1aq7UTguhk"
-      short-id: "3351daa81250d627"
-    flow: "xtls-rprx-vision"
-  - name: "🇪🇪_37"
-    type: vless
-    server: "95.85.245.165"
-    port: 443
-    uuid: "5083f498-4894-4c81-8648-40a2faf4b545"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "cloudflare.vhub.pro"
-    client-fingerprint: "firefox"
-    network: ws
-    ws-opts:
-      path: "/websocket?ed=2560"
-  - name: "🇪🇪_38"
-    type: vless
-    server: "45.80.108.182"
-    port: 443
-    uuid: "926bc4cd-709e-4e90-8aa7-78db75fbe86b"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "ii--6---6--MiTiVPN---MiTiVPN-o.KinGNetWork.iR"
-    client-fingerprint: "chrome"
-    network: ws
-    ws-opts:
-      path: "/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/fl---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN"
-      headers:
-        Host: "Fls1-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.KinGNetWork.iR"
 
 proxy-groups:
   # ── Top-level selector ────────────────────────────────────────────────────
@@ -358,6 +333,8 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
+      - "🇪🇪_18"
+      - "🇪🇪_19"
       - "🇪🇪_20"
       - "🇪🇪_21"
       - "🇪🇪_22"
@@ -373,10 +350,6 @@ proxy-groups:
       - "🇪🇪_32"
       - "🇪🇪_33"
       - "🇪🇪_34"
-      - "🇪🇪_35"
-      - "🇪🇪_36"
-      - "🇪🇪_37"
-      - "🇪🇪_38"
 
   - name: "LB-CDN"
     type: load-balance
@@ -386,6 +359,8 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
+      - "🇪🇪_18"
+      - "🇪🇪_19"
       - "🇪🇪_20"
       - "🇪🇪_21"
       - "🇪🇪_22"
@@ -401,10 +376,6 @@ proxy-groups:
       - "🇪🇪_32"
       - "🇪🇪_33"
       - "🇪🇪_34"
-      - "🇪🇪_35"
-      - "🇪🇪_36"
-      - "🇪🇪_37"
-      - "🇪🇪_38"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -414,6 +385,8 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
+      - "🇪🇪_18"
+      - "🇪🇪_19"
       - "🇪🇪_20"
       - "🇪🇪_21"
       - "🇪🇪_22"
@@ -429,10 +402,6 @@ proxy-groups:
       - "🇪🇪_32"
       - "🇪🇪_33"
       - "🇪🇪_34"
-      - "🇪🇪_35"
-      - "🇪🇪_36"
-      - "🇪🇪_37"
-      - "🇪🇪_38"
 
   - name: "FAST-CDN"
     type: url-test
@@ -441,6 +410,8 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
+      - "🇪🇪_18"
+      - "🇪🇪_19"
       - "🇪🇪_20"
       - "🇪🇪_21"
       - "🇪🇪_22"
@@ -456,10 +427,6 @@ proxy-groups:
       - "🇪🇪_32"
       - "🇪🇪_33"
       - "🇪🇪_34"
-      - "🇪🇪_35"
-      - "🇪🇪_36"
-      - "🇪🇪_37"
-      - "🇪🇪_38"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -469,6 +436,8 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
+      - "🇪🇪_18"
+      - "🇪🇪_19"
       - "🇪🇪_20"
       - "🇪🇪_21"
       - "🇪🇪_22"
@@ -484,15 +453,13 @@ proxy-groups:
       - "🇪🇪_32"
       - "🇪🇪_33"
       - "🇪🇪_34"
-      - "🇪🇪_35"
-      - "🇪🇪_36"
-      - "🇪🇪_37"
-      - "🇪🇪_38"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
+      - "🇪🇪_18"
+      - "🇪🇪_19"
       - "🇪🇪_20"
       - "🇪🇪_21"
       - "🇪🇪_22"
@@ -508,10 +475,6 @@ proxy-groups:
       - "🇪🇪_32"
       - "🇪🇪_33"
       - "🇪🇪_34"
-      - "🇪🇪_35"
-      - "🇪🇪_36"
-      - "🇪🇪_37"
-      - "🇪🇪_38"
 
 rules:
   - MATCH,PROXY-BEST

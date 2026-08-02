@@ -63,20 +63,20 @@ dns:
     - https://freedns.controld.com/family
 
 proxies:
-  - name: "🇪🇬_1"
-    type: vless
-    server: "41.128.145.79"
-    port: 443
-    uuid: "f73a01e5-db7c-4cd9-8c17-a5607ac58f12"
+  - name: "🇳🇴_1"
+    type: ss
+    server: "185.213.23.63"
+    port: 990
+    cipher: "chacha20-ietf-poly1305"
+    password: "ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44="
     udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "cdn.deepseek.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "i6CVNCvuqjizwQruTgduGnHw_OHtNHCN5-PMK_GYNHw"
-      short-id: "0d99027052dca5ac"
-    flow: "xtls-rprx-vision"
+  - name: "🇳🇴_2"
+    type: ss
+    server: "185.213.23.63"
+    port: 990
+    cipher: "chacha20-ietf-poly1305"
+    password: "ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44="
+    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -91,7 +91,8 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇪🇬_1"
+      - "🇳🇴_1"
+      - "🇳🇴_2"
 
 
 rules:

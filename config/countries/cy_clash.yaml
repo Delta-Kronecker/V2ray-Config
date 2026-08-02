@@ -64,31 +64,6 @@ dns:
 
 proxies:
   - name: "🇨🇾_1"
-    type: vless
-    server: "193.24.233.175"
-    port: 443
-    uuid: "06d44c57-8e1a-41f4-b9c4-65d35869e078"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "api-endpoint.rest"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "XW9rKSbrkI0ehSHTieUsCpvhJ1_Wib9MDPZG8JafD0s"
-      short-id: "19fbc4c7dd3d3d5a"
-    flow: "xtls-rprx-vision"
-  - name: "🇨🇾_2"
-    type: vless
-    server: "195.85.59.30"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "vms.lifetime58.workers.dev"
-  - name: "🇨🇾_3"
     type: trojan
     server: "195.133.93.81"
     port: 443
@@ -111,8 +86,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇨🇾_1"
-      - "🇨🇾_2"
-      - "🇨🇾_3"
 
 
 rules:

@@ -63,20 +63,17 @@ dns:
     - https://freedns.controld.com/family
 
 proxies:
-  - name: "🇦🇫_1"
+  - name: "🇵🇹_1"
     type: vless
-    server: "103.161.237.54"
-    port: 443
-    uuid: "e911c552-3a98-41e0-b5fb-0dd3879887b7"
+    server: "156.243.83.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
     udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "vod.ensf.top"
     network: ws
     ws-opts:
-      path: "/api/v1/irc"
+      path: "/"
       headers:
-        Host: "vod.ensf.top"
+        Host: "vms.lifetime54.workers.dev"
 
 proxy-groups:
   - name: "PROXY"
@@ -91,7 +88,7 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇦🇫_1"
+      - "🇵🇹_1"
 
 
 rules:

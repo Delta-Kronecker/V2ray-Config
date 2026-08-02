@@ -59,20 +59,13 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇲🇾_4"
+  - name: "🇲🇾_5"
     type: trojan
     server: "202.43.102.57"
     port: 443
     password: "6e1b9a65-884f-3aa9-9469-bf6ec0f08610"
     sni: "45.32.28.232"
     skip-cert-verify: true
-    udp: true
-  - name: "🇲🇾_5"
-    type: ss
-    server: "47.250.212.59"
-    port: 2053
-    cipher: "none"
-    password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
     udp: true
   - name: "🇲🇾_6"
     type: ss
@@ -81,6 +74,26 @@ proxies:
     cipher: "none"
     password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
     udp: true
+  - name: "🇲🇾_7"
+    type: ss
+    server: "47.250.212.59"
+    port: 2053
+    cipher: "none"
+    password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
+    udp: true
+  - name: "🇲🇾_8"
+    type: ss
+    server: "96.126.190.196"
+    port: 443
+    cipher: "none"
+    password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "/59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
 
 proxy-groups:
   # ── Top-level selector ────────────────────────────────────────────────────
@@ -123,9 +136,10 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇲🇾_4"
       - "🇲🇾_5"
       - "🇲🇾_6"
+      - "🇲🇾_7"
+      - "🇲🇾_8"
 
   - name: "LB-CDN"
     type: load-balance
@@ -135,9 +149,10 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇲🇾_4"
       - "🇲🇾_5"
       - "🇲🇾_6"
+      - "🇲🇾_7"
+      - "🇲🇾_8"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -147,9 +162,10 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇲🇾_4"
       - "🇲🇾_5"
       - "🇲🇾_6"
+      - "🇲🇾_7"
+      - "🇲🇾_8"
 
   - name: "FAST-CDN"
     type: url-test
@@ -158,9 +174,10 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇲🇾_4"
       - "🇲🇾_5"
       - "🇲🇾_6"
+      - "🇲🇾_7"
+      - "🇲🇾_8"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -170,17 +187,19 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇲🇾_4"
       - "🇲🇾_5"
       - "🇲🇾_6"
+      - "🇲🇾_7"
+      - "🇲🇾_8"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
-      - "🇲🇾_4"
       - "🇲🇾_5"
       - "🇲🇾_6"
+      - "🇲🇾_7"
+      - "🇲🇾_8"
 
 rules:
   - MATCH,PROXY-BEST

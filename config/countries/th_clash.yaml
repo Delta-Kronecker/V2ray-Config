@@ -65,66 +65,6 @@ dns:
 proxies:
   - name: "🇹🇭_1"
     type: vless
-    server: "157.85.96.11"
-    port: 8443
-    uuid: "9abf5e0c-e98a-44a3-bd0b-1a6dd065eb0f"
-    udp: true
-  - name: "🇹🇭_2"
-    type: vless
-    server: "143.14.11.236"
-    port: 80
-    uuid: "f55ce6cc-3f6b-40fc-9e3b-abe26db17009"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "d2e1v87ko56lyw.cloudfront.net:assets.opensignal.com"
-  - name: "🇹🇭_3"
-    type: vless
-    server: "171.103.22.35"
-    port: 10616
-    uuid: "ef6c9625-62de-4b9d-b7e2-0d4a9f67a9b2"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "sni.ehb.cc.cd"
-    client-fingerprint: "firefox"
-    network: ws
-    ws-opts:
-      path: "/"
-  - name: "🇹🇭_4"
-    type: vless
-    server: "171.103.93.107"
-    port: 10911
-    uuid: "ef6c9625-62de-4b9d-b7e2-0d4a9f67a9b2"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "sni.ehb.cc.cd"
-    client-fingerprint: "chrome"
-    network: ws
-    ws-opts:
-      path: "/proxyip=ProxyIP.CMLiussss.net?uuid=ef6c9625-62de-4b9d-b7e2-0d4a9f67a9b2"
-      headers:
-        Host: "sni.ehb.cc.cd"
-  - name: "🇹🇭_5"
-    type: vless
-    server: "171.103.221.162"
-    port: 10026
-    uuid: "ef6c9625-62de-4b9d-b7e2-0d4a9f67a9b2"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "sni.ehb.cc.cd"
-    client-fingerprint: "firefox"
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "sni.ehb.cc.cd"
-  - name: "🇹🇭_6"
-    type: vless
     server: "157.85.105.179"
     port: 80
     uuid: "89c3b66f-c849-4602-a5a8-84b6f06af478"
@@ -134,7 +74,24 @@ proxies:
       path: "/"
       headers:
         Host: "d2pwbkmfr5lxa4.cloudfront.net"
-  - name: "🇹🇭_7"
+  - name: "🇹🇭_2"
+    type: vless
+    server: "157.85.96.11"
+    port: 8443
+    uuid: "9abf5e0c-e98a-44a3-bd0b-1a6dd065eb0f"
+    udp: true
+  - name: "🇹🇭_3"
+    type: vless
+    server: "dtac.exp.dog"
+    port: 80
+    uuid: "19668b6f-e215-41e6-8102-b8d29fb5b8ae"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/fnet50"
+      headers:
+        Host: "duatoup3wk8q2.cloudfront.net"
+  - name: "🇹🇭_4"
     type: vless
     server: "18.172.202.92"
     port: 80
@@ -145,25 +102,28 @@ proxies:
       path: "/fnet50"
       headers:
         Host: "duatoup3wk8q2.cloudfront.net"
-  - name: "🇹🇭_8"
-    type: vless
-    server: "154.83.2.50"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/?ed=2560"
-      headers:
-        Host: "vms.lifetime28.workers.dev"
-  - name: "🇹🇭_9"
+  - name: "🇹🇭_5"
     type: ss
     server: "47.81.56.202"
     port: 44617
     cipher: "chacha20-ietf-poly1305"
     password: "lhuULRwO4slM6k262pAC4cbq5A1H6z8eaOHV27vi7Yw="
     udp: true
-  - name: "🇹🇭_10"
+  - name: "🇹🇭_6"
+    type: ss
+    server: "102.129.229.85"
+    port: 31700
+    cipher: "chacha20-ietf-poly1305"
+    password: "d7zh2lMrXNH5+8+8pKzlxiCU9NN022ih+uAyxj5d4qo="
+    udp: true
+  - name: "🇹🇭_7"
+    type: ss
+    server: "102.129.229.85"
+    port: 31700
+    cipher: "chacha20-ietf-poly1305"
+    password: "d7zh2lMrXNH5+8+8pKzlxiCU9NN022ih+uAyxj5d4qo="
+    udp: true
+  - name: "🇹🇭_8"
     type: ss
     server: "47.81.56.202"
     port: 44617
@@ -192,8 +152,6 @@ proxy-groups:
       - "🇹🇭_6"
       - "🇹🇭_7"
       - "🇹🇭_8"
-      - "🇹🇭_9"
-      - "🇹🇭_10"
 
 
 rules:

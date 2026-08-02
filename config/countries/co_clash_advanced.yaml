@@ -59,59 +59,43 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇨🇴_10"
+  - name: "🇨🇴_7"
     type: vless
-    server: "157.137.223.61"
+    server: "157.137.209.208"
     port: 62145
     uuid: "8fb65472-5957-4f64-ba2d-b5812b2f155a"
     udp: true
-  - name: "🇨🇴_11"
-    type: vless
-    server: "149.130.185.135"
-    port: 62145
-    uuid: "8fb65472-5957-4f64-ba2d-b5812b2f155a"
-    udp: true
-  - name: "🇨🇴_12"
-    type: vless
-    server: "149.130.190.21"
-    port: 62145
-    uuid: "8fb65472-5957-4f64-ba2d-b5812b2f155a"
-    udp: true
-  - name: "🇨🇴_13"
-    type: vless
-    server: "149.130.185.1"
-    port: 62145
-    uuid: "8fb65472-5957-4f64-ba2d-b5812b2f155a"
-    udp: true
-  - name: "🇨🇴_14"
-    type: vless
-    server: "157.137.208.54"
-    port: 62145
-    uuid: "8fb65472-5957-4f64-ba2d-b5812b2f155a"
-    udp: true
-  - name: "🇨🇴_15"
-    type: vless
-    server: "149.130.190.85"
-    port: 62145
-    uuid: "8fb65472-5957-4f64-ba2d-b5812b2f155a"
-    udp: true
-  - name: "🇨🇴_16"
-    type: vless
-    server: "149.130.160.234"
-    port: 62145
-    uuid: "8fb65472-5957-4f64-ba2d-b5812b2f155a"
-    udp: true
-  - name: "🇨🇴_17"
-    type: vless
-    server: "157.137.220.13"
-    port: 62145
-    uuid: "8fb65472-5957-4f64-ba2d-b5812b2f155a"
-    udp: true
-  - name: "🇨🇴_18"
+  - name: "🇨🇴_8"
     type: vless
     server: "149.130.187.59"
     port: 62145
     uuid: "8fb65472-5957-4f64-ba2d-b5812b2f155a"
+    udp: true
+  - name: "🇨🇴_9"
+    type: vless
+    server: "157.137.238.156"
+    port: 62145
+    uuid: "8fb65472-5957-4f64-ba2d-b5812b2f155a"
+    udp: true
+  - name: "🇨🇴_10"
+    type: vless
+    server: "157.137.209.149"
+    port: 62145
+    uuid: "8fb65472-5957-4f64-ba2d-b5812b2f155a"
+    udp: true
+  - name: "🇨🇴_11"
+    type: ss
+    server: "154.223.16.96"
+    port: 6697
+    cipher: "aes-256-gcm"
+    password: "TEzjfAYq2IjtuoS"
+    udp: true
+  - name: "🇨🇴_12"
+    type: ss
+    server: "156.244.32.9"
+    port: 7002
+    cipher: "aes-256-gcm"
+    password: "RexnBgU7EV5ADxG"
     udp: true
 
 proxy-groups:
@@ -155,15 +139,12 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
+      - "🇨🇴_7"
+      - "🇨🇴_8"
+      - "🇨🇴_9"
       - "🇨🇴_10"
       - "🇨🇴_11"
       - "🇨🇴_12"
-      - "🇨🇴_13"
-      - "🇨🇴_14"
-      - "🇨🇴_15"
-      - "🇨🇴_16"
-      - "🇨🇴_17"
-      - "🇨🇴_18"
 
   - name: "LB-CDN"
     type: load-balance
@@ -173,15 +154,12 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
+      - "🇨🇴_7"
+      - "🇨🇴_8"
+      - "🇨🇴_9"
       - "🇨🇴_10"
       - "🇨🇴_11"
       - "🇨🇴_12"
-      - "🇨🇴_13"
-      - "🇨🇴_14"
-      - "🇨🇴_15"
-      - "🇨🇴_16"
-      - "🇨🇴_17"
-      - "🇨🇴_18"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -191,15 +169,12 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
+      - "🇨🇴_7"
+      - "🇨🇴_8"
+      - "🇨🇴_9"
       - "🇨🇴_10"
       - "🇨🇴_11"
       - "🇨🇴_12"
-      - "🇨🇴_13"
-      - "🇨🇴_14"
-      - "🇨🇴_15"
-      - "🇨🇴_16"
-      - "🇨🇴_17"
-      - "🇨🇴_18"
 
   - name: "FAST-CDN"
     type: url-test
@@ -208,15 +183,12 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
+      - "🇨🇴_7"
+      - "🇨🇴_8"
+      - "🇨🇴_9"
       - "🇨🇴_10"
       - "🇨🇴_11"
       - "🇨🇴_12"
-      - "🇨🇴_13"
-      - "🇨🇴_14"
-      - "🇨🇴_15"
-      - "🇨🇴_16"
-      - "🇨🇴_17"
-      - "🇨🇴_18"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -226,29 +198,23 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
+      - "🇨🇴_7"
+      - "🇨🇴_8"
+      - "🇨🇴_9"
       - "🇨🇴_10"
       - "🇨🇴_11"
       - "🇨🇴_12"
-      - "🇨🇴_13"
-      - "🇨🇴_14"
-      - "🇨🇴_15"
-      - "🇨🇴_16"
-      - "🇨🇴_17"
-      - "🇨🇴_18"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
+      - "🇨🇴_7"
+      - "🇨🇴_8"
+      - "🇨🇴_9"
       - "🇨🇴_10"
       - "🇨🇴_11"
       - "🇨🇴_12"
-      - "🇨🇴_13"
-      - "🇨🇴_14"
-      - "🇨🇴_15"
-      - "🇨🇴_16"
-      - "🇨🇴_17"
-      - "🇨🇴_18"
 
 rules:
   - MATCH,PROXY-BEST
