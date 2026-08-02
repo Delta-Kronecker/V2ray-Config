@@ -19,6 +19,12 @@ import (
 
 // ── Name counter ──────────────────────────────────────────────────────────────
 
+type countryLine struct {
+	origLine string
+	flag     string
+	proto    string
+}
+
 var gNameCountMu sync.Mutex
 var gNameCount = make(map[string]int)
 
@@ -129,55 +135,45 @@ func writeOutputFiles(results []configResult, tcpFailedLines []string) {
 	var allSNIClash []string
 	var allSNIClashNames []string
 
-	// Per-country tracking
-	byCountryV2ray := make(map[string][]string)
-	byCountryClash := make(map[string][]string)
-	byCountryClashNames := make(map[string][]string)
+	// Per-country tracking (store original line + flag emoji for country files)
+	byCountryV2ray := make(map[string][]countryLine)
+	byCountryClash := make(map[string][]countryLine)
 	countryCounts := make(map[string]int)
 
 	const fallbackName = "@DeltaKroneckerGithub"
-	const clashBaseN = "@DeltaKroneckerGithub_Clash"
 
 	for i, r := range results {
-		// Determine remark: flag emoji if available, else fallback
-		remark := r.flagEmoji
-		if remark == "" {
-			remark = fallbackName
-		}
-		clashRemark := remark
-
-		// v2ray: use flag emoji as remark
-		named := renameTo(r.line, r.proto, remark)
+		// All other files: always @DeltaKroneckerGithub
+		named := renameTo(r.line, r.proto, fallbackName)
 		all = append(all, named)
 		byProto[r.proto] = append(byProto[r.proto], named)
 
-		// Per-country v2ray
+		// Per-country v2ray: store original for flag rename later
 		if r.country != "" {
-			byCountryV2ray[r.country] = append(byCountryV2ray[r.country], named)
+			byCountryV2ray[r.country] = append(byCountryV2ray[r.country], countryLine{r.line, r.flagEmoji, r.proto})
 			countryCounts[r.country]++
 		}
 
-		// clash: numbered name with flag prefix
-		cname := generateUniqueName(clashRemark)
+		// clash: always @DeltaKroneckerGithub
+		cname := generateUniqueName(fallbackName)
 		if entry, ok := configToClashYAML(r.line, r.proto, cname); ok {
 			allClash = append(allClash, entry)
 			allClashNames = append(allClashNames, cname)
 			byProtoClash[r.proto] = append(byProtoClash[r.proto], entry)
 			byProtoClashNames[r.proto] = append(byProtoClashNames[r.proto], cname)
 
-			// Per-country clash
+			// Per-country clash: store original for flag rename later
 			if r.country != "" {
-				byCountryClash[r.country] = append(byCountryClash[r.country], entry)
-				byCountryClashNames[r.country] = append(byCountryClashNames[r.country], cname)
+				byCountryClash[r.country] = append(byCountryClash[r.country], countryLine{r.line, r.flagEmoji, r.proto})
 			}
 		}
 
 		if sniLine := toSNIConfig(r.line, r.proto); sniLine != "" && isWSTransport(r.line, r.proto) {
-			sniNamed := renameTo(sniLine, r.proto, remark)
+			sniNamed := renameTo(sniLine, r.proto, fallbackName)
 			allSNI = append(allSNI, sniNamed)
 			bySNIProto[r.proto] = append(bySNIProto[r.proto], sniNamed)
 
-			sniCname := generateUniqueName(clashRemark)
+			sniCname := generateUniqueName(fallbackName)
 			if sniEntry, ok := configToClashYAML(sniLine, r.proto, sniCname); ok {
 				allSNIClash = append(allSNIClash, sniEntry)
 				allSNIClashNames = append(allSNIClashNames, sniCname)
@@ -233,7 +229,7 @@ func writeOutputFiles(results []configResult, tcpFailedLines []string) {
 	writeTCPPassFiles(tcpFailedLines)
 
 	// ── Per-country output files ───────────────────────────────────────────────
-	writeCountryFiles(byCountryV2ray, byCountryClash, byCountryClashNames, countryCounts)
+	writeCountryFiles(byCountryV2ray, byCountryClash, countryCounts)
 }
 
 func isWSTransport(line, proto string) bool {
@@ -385,9 +381,8 @@ func writeBatchFiles(
 // ── writeCountryFiles ────────────────────────────────────────────────────────
 
 func writeCountryFiles(
-	byCountryV2ray map[string][]string,
-	byCountryClash map[string][]string,
-	byCountryClashNames map[string][]string,
+	byCountryV2ray map[string][]countryLine,
+	byCountryClash map[string][]countryLine,
 	countryCounts map[string]int,
 ) {
 	if len(countryCounts) == 0 {
@@ -419,23 +414,43 @@ func writeCountryFiles(
 		flag := entry.flag
 		safeCC := strings.ToLower(cc)
 
-		// V2ray per-country
-		if lines, ok := byCountryV2ray[cc]; ok && len(lines) > 0 {
+		// V2ray per-country: rename with flag emoji
+		if cls, ok := byCountryV2ray[cc]; ok && len(cls) > 0 {
+			var lines []string
+			for _, cl := range cls {
+				lines = append(lines, renameTo(cl.origLine, cl.proto, cl.flag))
+			}
 			writeFile(fmt.Sprintf("config/countries/%s.txt", safeCC), lines)
 		}
 
-		// Clash per-country (simple)
+		// Clash per-country (simple): rename with flag emoji
 		if gClash.simple != "" {
-			if entries, ok := byCountryClash[cc]; ok && len(entries) > 0 {
-				names := byCountryClashNames[cc]
+			if cls, ok := byCountryClash[cc]; ok && len(cls) > 0 {
+				var entries []string
+				var names []string
+				for _, cl := range cls {
+					fname := generateUniqueName(cl.flag)
+					names = append(names, fname)
+					if e, ok := configToClashYAML(cl.origLine, cl.proto, fname); ok {
+						entries = append(entries, e)
+					}
+				}
 				writeClashConfigSimple(fmt.Sprintf("config/countries/%s_clash.yaml", safeCC), entries, names)
 			}
 		}
 
-		// Clash per-country (advanced)
+		// Clash per-country (advanced): rename with flag emoji
 		if gClash.advanced != "" {
-			if entries, ok := byCountryClash[cc]; ok && len(entries) > 0 {
-				names := byCountryClashNames[cc]
+			if cls, ok := byCountryClash[cc]; ok && len(cls) > 0 {
+				var entries []string
+				var names []string
+				for _, cl := range cls {
+					fname := generateUniqueName(cl.flag)
+					names = append(names, fname)
+					if e, ok := configToClashYAML(cl.origLine, cl.proto, fname); ok {
+						entries = append(entries, e)
+					}
+				}
 				writeClashConfigAdvanced(fmt.Sprintf("config/countries/%s_clash_advanced.yaml", safeCC), entries, names)
 			}
 		}
