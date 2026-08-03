@@ -70,6 +70,17 @@ proxies:
     uuid: "f0169b08-43fd-4dc3-8195-18f6ad2fe39d"
     udp: true
   - name: "🇨🇳_2"
+    type: vless
+    server: "176.124.223.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vms.lifetime38.workers.dev"
+  - name: "🇨🇳_3"
     type: trojan
     server: "117.149.198.190"
     port: 10051
@@ -93,6 +104,7 @@ proxy-groups:
     proxies:
       - "🇨🇳_1"
       - "🇨🇳_2"
+      - "🇨🇳_3"
 
 
 rules:

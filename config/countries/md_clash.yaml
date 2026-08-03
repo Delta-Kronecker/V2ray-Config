@@ -65,6 +65,19 @@ dns:
 proxies:
   - name: "🇲🇩_1"
     type: vless
+    server: "144.31.131.241"
+    port: 8443
+    uuid: "b406bc51-9002-474c-beae-b194b02c91da"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "mold.speedload.online"
+    reality-opts:
+      public-key: "J5ITJbg5FQFembAfkogKHHQB6DigsFXQxK7xu-QMWUs"
+      short-id: "a20d3ed244c76426"
+    flow: "xtls-rprx-vision"
+  - name: "🇲🇩_2"
+    type: vless
     server: "176.123.2.210"
     port: 443
     uuid: "a5ea9247-79f3-4655-aece-3fb51e1e669e"
@@ -77,19 +90,22 @@ proxies:
       public-key: "zT7a-PnmIWP4c-G1EDUT3KZ7URi1kc8EppAWPr3h5lk"
       short-id: "afeed89ae23b36ed"
     flow: "xtls-rprx-vision"
-  - name: "🇲🇩_2"
+  - name: "🇲🇩_3"
     type: vless
-    server: "144.31.131.241"
-    port: 8443
-    uuid: "b406bc51-9002-474c-beae-b194b02c91da"
+    server: "94.103.2.253"
+    port: 2096
+    uuid: "b4bc10bf-80f9-40c9-b4e5-29817c2f0992"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "mold.speedload.online"
+    servername: "id.vk.com"
+    client-fingerprint: "chrome"
     reality-opts:
-      public-key: "J5ITJbg5FQFembAfkogKHHQB6DigsFXQxK7xu-QMWUs"
-      short-id: "a20d3ed244c76426"
-    flow: "xtls-rprx-vision"
+      public-key: "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
+      short-id: ""
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "vless-grpc-reality"
 
 proxy-groups:
   - name: "PROXY"
@@ -106,6 +122,7 @@ proxy-groups:
     proxies:
       - "🇲🇩_1"
       - "🇲🇩_2"
+      - "🇲🇩_3"
 
 
 rules:

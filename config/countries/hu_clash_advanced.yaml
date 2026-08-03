@@ -59,21 +59,21 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇭🇺_3"
+  - name: "🇭🇺_6"
     type: vless
-    server: "45.195.111.15"
+    server: "141.11.202.123"
     port: 443
-    uuid: "45459159-1536-4e98-95b3-aa1dbbfb4172"
+    uuid: "1d16c6e0-1bbe-435b-b661-90043fee999c"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "storage.yandex.net"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "7zd9mJilgjOrg_ohtw23Vmio-pdnYqeP_r-kiWt87Cg"
-      short-id: "2715592069f36fe7"
-    flow: "xtls-rprx-vision"
-  - name: "🇭🇺_4"
+    servername: "notls.lukongtou.eu.org"
+    network: ws
+    ws-opts:
+      path: "Telegram-WangCai2"
+      headers:
+        Host: "notls.lukongtou.eu.org"
+  - name: "🇭🇺_7"
     type: vless
     server: "45.195.111.15"
     port: 443
@@ -87,6 +87,45 @@ proxies:
       public-key: "7zd9mJilgjOrg_ohtw23Vmio-pdnYqeP_r-kiWt87Cg"
       short-id: "f4b4a6365558ea2e"
     flow: "xtls-rprx-vision"
+  - name: "🇭🇺_8"
+    type: vless
+    server: "45.195.111.15"
+    port: 443
+    uuid: "45459159-1536-4e98-95b3-aa1dbbfb4172"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "storage.yandex.net"
+    client-fingerprint: "qq"
+    reality-opts:
+      public-key: "7zd9mJilgjOrg_ohtw23Vmio-pdnYqeP_r-kiWt87Cg"
+      short-id: "2715592069f36fe7"
+    flow: "xtls-rprx-vision"
+  - name: "🇭🇺_9"
+    type: vless
+    server: "195.20.115.195"
+    port: 443
+    uuid: "5dc1b4ed-c897-468d-921d-266b062db2cb"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "hu.cache-4d8a.com"
+    client-fingerprint: "safari"
+    reality-opts:
+      public-key: "jwyfUdsuDBGtjuTfWOepIQ80EDSCXCp8Xe3bzXFlsjI"
+      short-id: "9d84de9d9f7b85e9"
+    flow: "xtls-rprx-vision"
+  - name: "🇭🇺_10"
+    type: trojan
+    server: "162.159.82.246"
+    port: 443
+    password: "87961f9d-bee1-4377-826b-e169e7891c4f"
+    sni: "yks-dd9.pages.dev"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/?ed=2048"
 
 proxy-groups:
   # ── Top-level selector ────────────────────────────────────────────────────
@@ -129,8 +168,11 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇭🇺_3"
-      - "🇭🇺_4"
+      - "🇭🇺_6"
+      - "🇭🇺_7"
+      - "🇭🇺_8"
+      - "🇭🇺_9"
+      - "🇭🇺_10"
 
   - name: "LB-CDN"
     type: load-balance
@@ -140,8 +182,11 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇭🇺_3"
-      - "🇭🇺_4"
+      - "🇭🇺_6"
+      - "🇭🇺_7"
+      - "🇭🇺_8"
+      - "🇭🇺_9"
+      - "🇭🇺_10"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -151,8 +196,11 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇭🇺_3"
-      - "🇭🇺_4"
+      - "🇭🇺_6"
+      - "🇭🇺_7"
+      - "🇭🇺_8"
+      - "🇭🇺_9"
+      - "🇭🇺_10"
 
   - name: "FAST-CDN"
     type: url-test
@@ -161,8 +209,11 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇭🇺_3"
-      - "🇭🇺_4"
+      - "🇭🇺_6"
+      - "🇭🇺_7"
+      - "🇭🇺_8"
+      - "🇭🇺_9"
+      - "🇭🇺_10"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -172,15 +223,21 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇭🇺_3"
-      - "🇭🇺_4"
+      - "🇭🇺_6"
+      - "🇭🇺_7"
+      - "🇭🇺_8"
+      - "🇭🇺_9"
+      - "🇭🇺_10"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
-      - "🇭🇺_3"
-      - "🇭🇺_4"
+      - "🇭🇺_6"
+      - "🇭🇺_7"
+      - "🇭🇺_8"
+      - "🇭🇺_9"
+      - "🇭🇺_10"
 
 rules:
   - MATCH,PROXY-BEST

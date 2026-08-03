@@ -59,40 +59,7 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇨🇿_6"
-    type: vless
-    server: "193.124.57.208"
-    port: 20342
-    uuid: "5eecb34f-c905-4c77-b7fb-d830b451cd11"
-    udp: true
-  - name: "🇨🇿_7"
-    type: vless
-    server: "103.200.28.187"
-    port: 2053
-    uuid: "504d0b6e-400d-45ec-b2d0-1c79006ebc16"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "web.mayluck.ru"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "aFsY-EZjSNTomlAFShKwQIQMJ5pHiZQXXJpWvcz8WkQ"
-      short-id: "0858af97f4e7324d"
-  - name: "🇨🇿_8"
-    type: vless
-    server: "141.133.172.222"
-    port: 20342
-    uuid: "5eecb34f-c905-4c77-b7fb-d830b451cd11"
-    udp: true
-  - name: "🇨🇿_9"
-    type: trojan
-    server: "ch-2.bexum.fun"
-    port: 443
-    password: "LYaEYwjN8LjWTRJdCCTzW7V6gK7atJVu"
-    sni: "ch-2.bexum.fun"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇨🇿_10"
+  - name: "🇨🇿_2"
     type: trojan
     server: "46.8.113.142"
     port: 443
@@ -142,11 +109,7 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇨🇿_6"
-      - "🇨🇿_7"
-      - "🇨🇿_8"
-      - "🇨🇿_9"
-      - "🇨🇿_10"
+      - "🇨🇿_2"
 
   - name: "LB-CDN"
     type: load-balance
@@ -156,11 +119,7 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇨🇿_6"
-      - "🇨🇿_7"
-      - "🇨🇿_8"
-      - "🇨🇿_9"
-      - "🇨🇿_10"
+      - "🇨🇿_2"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -170,11 +129,7 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇨🇿_6"
-      - "🇨🇿_7"
-      - "🇨🇿_8"
-      - "🇨🇿_9"
-      - "🇨🇿_10"
+      - "🇨🇿_2"
 
   - name: "FAST-CDN"
     type: url-test
@@ -183,11 +138,7 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇨🇿_6"
-      - "🇨🇿_7"
-      - "🇨🇿_8"
-      - "🇨🇿_9"
-      - "🇨🇿_10"
+      - "🇨🇿_2"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -197,21 +148,13 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇨🇿_6"
-      - "🇨🇿_7"
-      - "🇨🇿_8"
-      - "🇨🇿_9"
-      - "🇨🇿_10"
+      - "🇨🇿_2"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
-      - "🇨🇿_6"
-      - "🇨🇿_7"
-      - "🇨🇿_8"
-      - "🇨🇿_9"
-      - "🇨🇿_10"
+      - "🇨🇿_2"
 
 rules:
   - MATCH,PROXY-BEST

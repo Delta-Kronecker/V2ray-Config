@@ -65,6 +65,66 @@ dns:
 proxies:
   - name: "🇪🇸_1"
     type: vless
+    server: "isp05.skorostnet.space"
+    port: 443
+    uuid: "06d44c57-8e1a-41f4-b9c4-65d35869e078"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "isp05.skorostnet.space"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "aBNWkd8CVkuimbtzgsDNsIUIENI-PQuKkpUInLncz2o"
+      short-id: "fdda9806fe5d8584"
+    flow: "xtls-rprx-vision"
+  - name: "🇪🇸_2"
+    type: vless
+    server: "170.168.97.5"
+    port: 8443
+    uuid: "c6f220ed-41f2-21ba-438c-80f05ebbf92a"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "download.nvidia.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "D2SXHZRRYM0WcFChGWd57XB-U73aIsGfMpe2-Gq5XSs"
+      short-id: ""
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "TunService"
+  - name: "🇪🇸_3"
+    type: vless
+    server: "isp02.skorostnet.space"
+    port: 443
+    uuid: "c04bf2df-2b7f-44da-a893-3792d3910fd8"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "isp02.skorostnet.space"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "aBNWkd8CVkuimbtzgsDNsIUIENI-PQuKkpUInLncz2o"
+      short-id: "fdda9806fe5d8584"
+    flow: "xtls-rprx-vision"
+  - name: "🇪🇸_4"
+    type: vless
+    server: "170.168.97.3"
+    port: 8443
+    uuid: "e6d41d6f-d58a-7650-bba4-d7f0dde3ba4d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "download.nvidia.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "D2SXHZRRYM0WcFChGWd57XB-U73aIsGfMpe2-Gq5XSs"
+      short-id: ""
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "TunService"
+  - name: "🇪🇸_5"
+    type: vless
     server: "85.90.217.42"
     port: 443
     uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
@@ -72,34 +132,61 @@ proxies:
     tls: true
     skip-cert-verify: true
     servername: "85.90.217.42"
-  - name: "🇪🇸_2"
+  - name: "🇪🇸_6"
     type: vless
-    server: "162.248.162.83"
+    server: "185.18.250.50"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "vms.lifetime47.workers.dev"
+  - name: "🇪🇸_7"
+    type: vless
+    server: "isp03.skorostnet.space"
     port: 443
-    uuid: "ab7d5ea9-6eca-47c3-b14b-67378fc2d7c2"
+    uuid: "06d44c57-8e1a-41f4-b9c4-65d35869e078"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "es.tunnelx.space"
+    servername: "isp03.skorostnet.space"
     client-fingerprint: "firefox"
     reality-opts:
-      public-key: "N-ELdH_KBkeqUT4I7PknCV9hFvlSFjN-52fDLwIzbRs"
-      short-id: "4e9b0c2d1a3f5768"
+      public-key: "aBNWkd8CVkuimbtzgsDNsIUIENI-PQuKkpUInLncz2o"
+      short-id: "fdda9806fe5d8584"
     flow: "xtls-rprx-vision"
-  - name: "🇪🇸_3"
+  - name: "🇪🇸_8"
     type: vless
-    server: "46.28.71.104"
-    port: 2053
-    uuid: "504d0b6e-400d-45ec-b2d0-1c79006ebc16"
+    server: "78.17.180.93"
+    port: 443
+    uuid: "06d44c57-8e1a-41f4-b9c4-65d35869e078"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "web.abubibabu.ru"
+    servername: "isp06.skorostnet.space"
     client-fingerprint: "firefox"
     reality-opts:
-      public-key: "aFsY-EZjSNTomlAFShKwQIQMJ5pHiZQXXJpWvcz8WkQ"
-      short-id: "0858af97f4e7324d"
-  - name: "🇪🇸_4"
+      public-key: "aBNWkd8CVkuimbtzgsDNsIUIENI-PQuKkpUInLncz2o"
+      short-id: "fdda9806fe5d8584"
+    flow: "xtls-rprx-vision"
+  - name: "🇪🇸_9"
+    type: vless
+    server: "185.18.250.252"
+    port: 443
+    uuid: "f77299ea-e13d-417d-8cdc-ce5566dfc94b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "edu.ruangguru.com.r3xxe.eu.cc"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/nl-tw"
+      headers:
+        Host: "edu.ruangguru.com.r3xxe.eu.cc"
+  - name: "🇪🇸_10"
     type: vless
     server: "170.168.97.3"
     port: 8443
@@ -115,45 +202,47 @@ proxies:
     network: grpc
     grpc-opts:
       grpc-service-name: "TunService"
-  - name: "🇪🇸_5"
+  - name: "🇪🇸_11"
     type: vless
-    server: "isp06.skorostnet.space"
+    server: "78.17.180.105"
     port: 443
     uuid: "06d44c57-8e1a-41f4-b9c4-65d35869e078"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "isp06.skorostnet.space"
+    servername: "isp03.skorostnet.space"
     client-fingerprint: "firefox"
     reality-opts:
       public-key: "aBNWkd8CVkuimbtzgsDNsIUIENI-PQuKkpUInLncz2o"
       short-id: "fdda9806fe5d8584"
     flow: "xtls-rprx-vision"
-  - name: "🇪🇸_6"
-    type: trojan
-    server: "193.148.19.213"
-    port: 52794
-    password: "2eutknankxtbgkwcajzt"
-    sni: "193.148.19.213"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇪🇸_7"
-    type: trojan
-    server: "193.148.19.210"
-    port: 52794
-    password: "2eutknankxtbgkwcajzt"
-    sni: "www.vk.com"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇪🇸_8"
-    type: trojan
-    server: "65.20.102.54"
+  - name: "🇪🇸_12"
+    type: vless
+    server: "185.18.250.245"
     port: 443
-    password: "842b5f9dd11e458d8613c907c4cc5723"
-    sni: "www.gpt123.one"
-    skip-cert-verify: true
+    uuid: "f77299ea-e13d-417d-8cdc-ce5566dfc94b"
     udp: true
-  - name: "🇪🇸_9"
+    tls: true
+    skip-cert-verify: true
+    servername: "edu.ruangguru.com.r3xxe.eu.cc"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/nl-tw"
+      headers:
+        Host: "edu.ruangguru.com.r3xxe.eu.cc"
+  - name: "🇪🇸_13"
+    type: vless
+    server: "185.18.250.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vms.lifetime47.workers.dev"
+  - name: "🇪🇸_14"
     type: trojan
     server: "185.18.250.245"
     port: 443
@@ -164,33 +253,47 @@ proxies:
     network: ws
     ws-opts:
       path: "/assignment"
-  - name: "🇪🇸_10"
+  - name: "🇪🇸_15"
     type: ss
     server: "140.174.184.5"
     port: 8388
     cipher: "chacha20-ietf-poly1305"
     password: "qItG8SueYQcP"
     udp: true
-  - name: "🇪🇸_11"
+  - name: "🇪🇸_16"
+    type: ss
+    server: "82.38.31.155"
+    port: 8080
+    cipher: "chacha20-ietf-poly1305"
+    password: "oZIoA69Q8yhcQV8ka3Pa3A"
+    udp: true
+  - name: "🇪🇸_17"
     type: ss
     server: "108.181.121.226"
     port: 8388
     cipher: "chacha20-ietf-poly1305"
     password: "WSyL4XTwNsdv"
     udp: true
-  - name: "🇪🇸_12"
+  - name: "🇪🇸_18"
     type: ss
     server: "108.181.121.226"
     port: 8388
     cipher: "chacha20-ietf-poly1305"
     password: "WSyL4XTwNsdv"
     udp: true
-  - name: "🇪🇸_13"
+  - name: "🇪🇸_19"
     type: ss
     server: "140.174.184.5"
     port: 8388
     cipher: "chacha20-ietf-poly1305"
     password: "qItG8SueYQcP"
+    udp: true
+  - name: "🇪🇸_20"
+    type: ss
+    server: "82.38.31.35"
+    port: 8080
+    cipher: "chacha20-ietf-poly1305"
+    password: "oZIoA69Q8yhcQV8ka3Pa3A"
     udp: true
 
 proxy-groups:
@@ -219,6 +322,13 @@ proxy-groups:
       - "🇪🇸_11"
       - "🇪🇸_12"
       - "🇪🇸_13"
+      - "🇪🇸_14"
+      - "🇪🇸_15"
+      - "🇪🇸_16"
+      - "🇪🇸_17"
+      - "🇪🇸_18"
+      - "🇪🇸_19"
+      - "🇪🇸_20"
 
 
 rules:

@@ -76,38 +76,39 @@ proxies:
         Host: "d2pwbkmfr5lxa4.cloudfront.net"
   - name: "🇹🇭_2"
     type: vless
-    server: "157.85.96.11"
-    port: 8443
-    uuid: "9abf5e0c-e98a-44a3-bd0b-1a6dd065eb0f"
+    server: "154.83.2.50"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
     udp: true
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "vms.lifetime28.workers.dev"
   - name: "🇹🇭_3"
     type: vless
-    server: "dtac.exp.dog"
-    port: 80
-    uuid: "19668b6f-e215-41e6-8102-b8d29fb5b8ae"
+    server: "154.83.2.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
     udp: true
     network: ws
     ws-opts:
-      path: "/fnet50"
+      path: "/"
       headers:
-        Host: "duatoup3wk8q2.cloudfront.net"
+        Host: "vms.lifetime28.workers.dev"
   - name: "🇹🇭_4"
-    type: vless
-    server: "18.172.202.92"
-    port: 80
-    uuid: "19668b6f-e215-41e6-8102-b8d29fb5b8ae"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/fnet50"
-      headers:
-        Host: "duatoup3wk8q2.cloudfront.net"
-  - name: "🇹🇭_5"
     type: ss
     server: "47.81.56.202"
     port: 44617
     cipher: "chacha20-ietf-poly1305"
     password: "lhuULRwO4slM6k262pAC4cbq5A1H6z8eaOHV27vi7Yw="
+    udp: true
+  - name: "🇹🇭_5"
+    type: ss
+    server: "102.129.229.85"
+    port: 31700
+    cipher: "chacha20-ietf-poly1305"
+    password: "d7zh2lMrXNH5+8+8pKzlxiCU9NN022ih+uAyxj5d4qo="
     udp: true
   - name: "🇹🇭_6"
     type: ss
@@ -117,13 +118,6 @@ proxies:
     password: "d7zh2lMrXNH5+8+8pKzlxiCU9NN022ih+uAyxj5d4qo="
     udp: true
   - name: "🇹🇭_7"
-    type: ss
-    server: "102.129.229.85"
-    port: 31700
-    cipher: "chacha20-ietf-poly1305"
-    password: "d7zh2lMrXNH5+8+8pKzlxiCU9NN022ih+uAyxj5d4qo="
-    udp: true
-  - name: "🇹🇭_8"
     type: ss
     server: "47.81.56.202"
     port: 44617
@@ -151,7 +145,6 @@ proxy-groups:
       - "🇹🇭_5"
       - "🇹🇭_6"
       - "🇹🇭_7"
-      - "🇹🇭_8"
 
 
 rules:
