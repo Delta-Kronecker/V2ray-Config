@@ -59,7 +59,7 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇮🇩_2"
+  - name: "🇮🇩_4"
     type: vless
     server: "45.198.96.153"
     port: 443
@@ -72,6 +72,22 @@ proxies:
       public-key: "9Y-_jCI3Z1x6SXK2tHdZ6V1CN9IJPNPnoxSW0cbXxD8"
       short-id: "764f497dda21c4fc"
     flow: "xtls-rprx-vision"
+  - name: "🇮🇩_5"
+    type: trojan
+    server: "172.232.250.160"
+    port: 443
+    password: "788f2b96-47e2-4302-a417-511b6fd7d09c"
+    sni: "172.232.250.160"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇮🇩_6"
+    type: trojan
+    server: "qfdfsg.wsone.icu"
+    port: 443
+    password: "M7v%w11Se*"
+    sni: "qfdfsg.wsone.icu"
+    skip-cert-verify: true
+    udp: true
 
 proxy-groups:
   # ── Top-level selector ────────────────────────────────────────────────────
@@ -114,7 +130,9 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇮🇩_2"
+      - "🇮🇩_4"
+      - "🇮🇩_5"
+      - "🇮🇩_6"
 
   - name: "LB-CDN"
     type: load-balance
@@ -124,7 +142,9 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇮🇩_2"
+      - "🇮🇩_4"
+      - "🇮🇩_5"
+      - "🇮🇩_6"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -134,7 +154,9 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇮🇩_2"
+      - "🇮🇩_4"
+      - "🇮🇩_5"
+      - "🇮🇩_6"
 
   - name: "FAST-CDN"
     type: url-test
@@ -143,7 +165,9 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇮🇩_2"
+      - "🇮🇩_4"
+      - "🇮🇩_5"
+      - "🇮🇩_6"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -153,13 +177,17 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇮🇩_2"
+      - "🇮🇩_4"
+      - "🇮🇩_5"
+      - "🇮🇩_6"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
-      - "🇮🇩_2"
+      - "🇮🇩_4"
+      - "🇮🇩_5"
+      - "🇮🇩_6"
 
 rules:
   - MATCH,PROXY-BEST

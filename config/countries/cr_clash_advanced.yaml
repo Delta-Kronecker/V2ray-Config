@@ -59,7 +59,7 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇨🇷_6"
+  - name: "🇨🇷_5"
     type: vless
     server: "190.93.246.202"
     port: 443
@@ -74,7 +74,7 @@ proxies:
       path: "/sg-melbi"
       headers:
         Host: "support.zoom.us.yxls.eu.cc"
-  - name: "🇨🇷_7"
+  - name: "🇨🇷_6"
     type: vless
     server: "190.93.246.79"
     port: 8443
@@ -89,15 +89,7 @@ proxies:
       path: "/fdip"
       headers:
         Host: "learn00.evany.de5.net"
-  - name: "🇨🇷_8"
-    type: trojan
-    server: "190.93.247.7"
-    port: 443
-    password: "NISHIKUITAN111"
-    sni: "190.93.247.7"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇨🇷_9"
+  - name: "🇨🇷_7"
     type: ss
     server: "190.93.246.16"
     port: 443
@@ -109,7 +101,7 @@ proxies:
       mode: "websocket"
       path: "/14b02e2a-8930-4afb-8412-ea4a4954ca5b/?ed\\=2560"
       host: "ylnhh.us.ci"
-  - name: "🇨🇷_10"
+  - name: "🇨🇷_8"
     type: ss
     server: "190.93.246.16"
     port: 443
@@ -163,11 +155,10 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
+      - "🇨🇷_5"
       - "🇨🇷_6"
       - "🇨🇷_7"
       - "🇨🇷_8"
-      - "🇨🇷_9"
-      - "🇨🇷_10"
 
   - name: "LB-CDN"
     type: load-balance
@@ -177,11 +168,10 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
+      - "🇨🇷_5"
       - "🇨🇷_6"
       - "🇨🇷_7"
       - "🇨🇷_8"
-      - "🇨🇷_9"
-      - "🇨🇷_10"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -191,11 +181,10 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
+      - "🇨🇷_5"
       - "🇨🇷_6"
       - "🇨🇷_7"
       - "🇨🇷_8"
-      - "🇨🇷_9"
-      - "🇨🇷_10"
 
   - name: "FAST-CDN"
     type: url-test
@@ -204,11 +193,10 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
+      - "🇨🇷_5"
       - "🇨🇷_6"
       - "🇨🇷_7"
       - "🇨🇷_8"
-      - "🇨🇷_9"
-      - "🇨🇷_10"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -218,21 +206,19 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
+      - "🇨🇷_5"
       - "🇨🇷_6"
       - "🇨🇷_7"
       - "🇨🇷_8"
-      - "🇨🇷_9"
-      - "🇨🇷_10"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
+      - "🇨🇷_5"
       - "🇨🇷_6"
       - "🇨🇷_7"
       - "🇨🇷_8"
-      - "🇨🇷_9"
-      - "🇨🇷_10"
 
 rules:
   - MATCH,PROXY-BEST

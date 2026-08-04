@@ -65,6 +65,42 @@ dns:
 proxies:
   - name: "🇺🇦_1"
     type: vless
+    server: "45.135.235.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "vms.lifetime07.workers.dev"
+  - name: "🇺🇦_2"
+    type: vless
+    server: "194.152.44.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vms.lifetime55.workers.dev"
+  - name: "🇺🇦_3"
+    type: vless
+    server: "91.224.87.130"
+    port: 443
+    uuid: "85329505-90c2-43d1-9c4a-689b1a0be884"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "abuse.sellflow.org"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
+      short-id: ""
+    flow: "xtls-rprx-vision"
+  - name: "🇺🇦_4"
+    type: vless
     server: "45.135.235.123"
     port: 443
     uuid: "1d16c6e0-1bbe-435b-b661-90043fee999c"
@@ -77,32 +113,7 @@ proxies:
       path: "Telegram-WangCai2"
       headers:
         Host: "notls.lukongtou.eu.org"
-  - name: "🇺🇦_2"
-    type: vless
-    server: "91.224.87.130"
-    port: 443
-    uuid: "440c0fed-6aa7-4c5b-8e54-5a198712c4e4"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "abuse.sellflow.org"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
-      short-id: ""
-    flow: "xtls-rprx-vision"
-  - name: "🇺🇦_3"
-    type: vless
-    server: "45.135.235.30"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/?ed=2560"
-      headers:
-        Host: "vms.lifetime07.workers.dev"
-  - name: "🇺🇦_4"
+  - name: "🇺🇦_5"
     type: vless
     server: "89.116.180.40"
     port: 8880
@@ -113,7 +124,7 @@ proxies:
       path: "/?ed=2560"
       headers:
         Host: "vms.lifetime09.workers.dev"
-  - name: "🇺🇦_5"
+  - name: "🇺🇦_6"
     type: vless
     server: "89.116.180.30"
     port: 8880
@@ -124,7 +135,7 @@ proxies:
       path: "/"
       headers:
         Host: "vms.lifetime09.workers.dev"
-  - name: "🇺🇦_6"
+  - name: "🇺🇦_7"
     type: vless
     server: "91.236.248.20"
     port: 20071
@@ -138,17 +149,14 @@ proxies:
       public-key: "zX5dT9fA8VRXb3XSB8olbacIR1Dq69juoC7US2paR08"
       short-id: "a02bf9"
     flow: "xtls-rprx-vision"
-  - name: "🇺🇦_7"
+  - name: "🇺🇦_8"
     type: trojan
-    server: "89.116.180.49"
+    server: "130.0.236.88"
     port: 443
-    password: "f18d6149-e214-8554-e737-f7523c8b2eea"
-    sni: "0403.infinityconfig4.workers.dev"
+    password: "d2adff89-5143-4d67-921f-3478464de5bb"
+    sni: "ua.freeguard.org"
     skip-cert-verify: true
     udp: true
-    network: ws
-    ws-opts:
-      path: "/sync"
 
 proxy-groups:
   - name: "PROXY"
@@ -170,6 +178,7 @@ proxy-groups:
       - "🇺🇦_5"
       - "🇺🇦_6"
       - "🇺🇦_7"
+      - "🇺🇦_8"
 
 
 rules:

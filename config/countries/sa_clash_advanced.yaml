@@ -59,39 +59,7 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇸🇦_5"
-    type: vless
-    server: "81.208.170.142"
-    port: 1500
-    uuid: "e332f028-d343-5b44-8016-b3130f39e133"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.ebay.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "VQxVgczORkbSNdDrkNOYs6zMBINpViztTKDuWCeQsVE"
-      short-id: "775eb6408888248e"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: ""
-  - name: "🇸🇦_6"
-    type: vless
-    server: "81.208.170.142"
-    port: 1500
-    uuid: "sGLzG6kUwBpZd73sW0nq"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.ebay.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "VQxVgczORkbSNdDrkNOYs6zMBINpViztTKDuWCeQsVE"
-      short-id: "775eb6408888248e"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: ""
-  - name: "🇸🇦_7"
+  - name: "🇸🇦_3"
     type: trojan
     server: "149.104.104.58"
     port: 443
@@ -99,7 +67,7 @@ proxies:
     sni: "149.104.104.58"
     skip-cert-verify: true
     udp: true
-  - name: "🇸🇦_8"
+  - name: "🇸🇦_4"
     type: ss
     server: "156.244.8.155"
     port: 5004
@@ -148,10 +116,8 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇸🇦_5"
-      - "🇸🇦_6"
-      - "🇸🇦_7"
-      - "🇸🇦_8"
+      - "🇸🇦_3"
+      - "🇸🇦_4"
 
   - name: "LB-CDN"
     type: load-balance
@@ -161,10 +127,8 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇸🇦_5"
-      - "🇸🇦_6"
-      - "🇸🇦_7"
-      - "🇸🇦_8"
+      - "🇸🇦_3"
+      - "🇸🇦_4"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -174,10 +138,8 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇸🇦_5"
-      - "🇸🇦_6"
-      - "🇸🇦_7"
-      - "🇸🇦_8"
+      - "🇸🇦_3"
+      - "🇸🇦_4"
 
   - name: "FAST-CDN"
     type: url-test
@@ -186,10 +148,8 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇸🇦_5"
-      - "🇸🇦_6"
-      - "🇸🇦_7"
-      - "🇸🇦_8"
+      - "🇸🇦_3"
+      - "🇸🇦_4"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -199,19 +159,15 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇸🇦_5"
-      - "🇸🇦_6"
-      - "🇸🇦_7"
-      - "🇸🇦_8"
+      - "🇸🇦_3"
+      - "🇸🇦_4"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
-      - "🇸🇦_5"
-      - "🇸🇦_6"
-      - "🇸🇦_7"
-      - "🇸🇦_8"
+      - "🇸🇦_3"
+      - "🇸🇦_4"
 
 rules:
   - MATCH,PROXY-BEST

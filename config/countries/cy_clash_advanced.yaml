@@ -59,7 +59,7 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇨🇾_5"
+  - name: "🇨🇾_6"
     type: vless
     server: "195.85.59.30"
     port: 8880
@@ -70,7 +70,7 @@ proxies:
       path: "/"
       headers:
         Host: "vms.lifetime58.workers.dev"
-  - name: "🇨🇾_6"
+  - name: "🇨🇾_7"
     type: vless
     server: "195.85.59.50"
     port: 8880
@@ -81,7 +81,18 @@ proxies:
       path: "/?ed=2560"
       headers:
         Host: "vms.lifetime58.workers.dev"
-  - name: "🇨🇾_7"
+  - name: "🇨🇾_8"
+    type: vless
+    server: "195.85.59.187"
+    port: 2095
+    uuid: "86c50e3a-5b87-49dd-bd20-03c7f2735e40"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "cnmfangbinxingnmsl.cnm--fangbinxing.workers.dev"
+  - name: "🇨🇾_9"
     type: vless
     server: "77.75.199.30"
     port: 8880
@@ -92,7 +103,7 @@ proxies:
       path: "/"
       headers:
         Host: "vms.lifetime59.workers.dev"
-  - name: "🇨🇾_8"
+  - name: "🇨🇾_10"
     type: trojan
     server: "195.133.93.81"
     port: 443
@@ -142,10 +153,11 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇨🇾_5"
       - "🇨🇾_6"
       - "🇨🇾_7"
       - "🇨🇾_8"
+      - "🇨🇾_9"
+      - "🇨🇾_10"
 
   - name: "LB-CDN"
     type: load-balance
@@ -155,10 +167,11 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇨🇾_5"
       - "🇨🇾_6"
       - "🇨🇾_7"
       - "🇨🇾_8"
+      - "🇨🇾_9"
+      - "🇨🇾_10"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -168,10 +181,11 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇨🇾_5"
       - "🇨🇾_6"
       - "🇨🇾_7"
       - "🇨🇾_8"
+      - "🇨🇾_9"
+      - "🇨🇾_10"
 
   - name: "FAST-CDN"
     type: url-test
@@ -180,10 +194,11 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇨🇾_5"
       - "🇨🇾_6"
       - "🇨🇾_7"
       - "🇨🇾_8"
+      - "🇨🇾_9"
+      - "🇨🇾_10"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -193,19 +208,21 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇨🇾_5"
       - "🇨🇾_6"
       - "🇨🇾_7"
       - "🇨🇾_8"
+      - "🇨🇾_9"
+      - "🇨🇾_10"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
-      - "🇨🇾_5"
       - "🇨🇾_6"
       - "🇨🇾_7"
       - "🇨🇾_8"
+      - "🇨🇾_9"
+      - "🇨🇾_10"
 
 rules:
   - MATCH,PROXY-BEST

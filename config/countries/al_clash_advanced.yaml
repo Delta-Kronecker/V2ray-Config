@@ -59,35 +59,7 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇦🇱_5"
-    type: vless
-    server: "85.155.228.162"
-    port: 443
-    uuid: "b6f3b292-00c9-430e-bc4c-b1294bd895c0"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "cdn-al.ai-apiroute.cc"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "PCF6GYA_TCdb28mM6zsxJ38MAtmnSrJJEygkXvrt1AE"
-      short-id: "b512d49930874a31"
-    flow: "xtls-rprx-vision"
-  - name: "🇦🇱_6"
-    type: ss
-    server: "130.49.189.158"
-    port: 10792
-    cipher: "chacha20-ietf-poly1305"
-    password: "CsSYOhlDUy7Hz1yQCXSnxj"
-    udp: true
-  - name: "🇦🇱_7"
-    type: ss
-    server: "157.22.240.141"
-    port: 57925
-    cipher: "chacha20-ietf-poly1305"
-    password: "hnqVn0IJxrCBYK1xzCE9Yd"
-    udp: true
-  - name: "🇦🇱_8"
+  - name: "🇦🇱_2"
     type: ss
     server: "130.49.189.158"
     port: 10792
@@ -136,10 +108,7 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇦🇱_5"
-      - "🇦🇱_6"
-      - "🇦🇱_7"
-      - "🇦🇱_8"
+      - "🇦🇱_2"
 
   - name: "LB-CDN"
     type: load-balance
@@ -149,10 +118,7 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇦🇱_5"
-      - "🇦🇱_6"
-      - "🇦🇱_7"
-      - "🇦🇱_8"
+      - "🇦🇱_2"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -162,10 +128,7 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇦🇱_5"
-      - "🇦🇱_6"
-      - "🇦🇱_7"
-      - "🇦🇱_8"
+      - "🇦🇱_2"
 
   - name: "FAST-CDN"
     type: url-test
@@ -174,10 +137,7 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇦🇱_5"
-      - "🇦🇱_6"
-      - "🇦🇱_7"
-      - "🇦🇱_8"
+      - "🇦🇱_2"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -187,19 +147,13 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇦🇱_5"
-      - "🇦🇱_6"
-      - "🇦🇱_7"
-      - "🇦🇱_8"
+      - "🇦🇱_2"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
-      - "🇦🇱_5"
-      - "🇦🇱_6"
-      - "🇦🇱_7"
-      - "🇦🇱_8"
+      - "🇦🇱_2"
 
 rules:
   - MATCH,PROXY-BEST

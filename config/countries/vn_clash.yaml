@@ -64,27 +64,6 @@ dns:
 
 proxies:
   - name: "🇻🇳_1"
-    type: vless
-    server: "hia.waols.click"
-    port: 8443
-    uuid: "teymur_vpn"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "cdn.ir"
-    reality-opts:
-      public-key: "0QOg0Zo5ap0n33VXkkN1-k9R9IOkI3igM5Nlg5cRdDQ"
-      short-id: "aa"
-    flow: "xtls-rprx-vision"
-  - name: "🇻🇳_2"
-    type: trojan
-    server: "36.50.134.29"
-    port: 443
-    password: "94d219c9-1afc-4d42-b090-8b3794764380"
-    sni: "36.50.134.29"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇻🇳_3"
     type: trojan
     server: "160.30.160.134"
     port: 443
@@ -92,12 +71,12 @@ proxies:
     sni: "cmc5.5gsieuvip.vn"
     skip-cert-verify: true
     udp: true
-  - name: "🇻🇳_4"
+  - name: "🇻🇳_2"
     type: trojan
-    server: "103.72.96.55"
+    server: "36.50.134.29"
     port: 443
-    password: "c95357eb-2869-4511-8940-f0dc5e1ec9b1"
-    sni: "hanoiidc2.5gsieutocdo.com"
+    password: "94d219c9-1afc-4d42-b090-8b3794764380"
+    sni: "36.50.134.29"
     skip-cert-verify: true
     udp: true
 
@@ -116,8 +95,6 @@ proxy-groups:
     proxies:
       - "🇻🇳_1"
       - "🇻🇳_2"
-      - "🇻🇳_3"
-      - "🇻🇳_4"
 
 
 rules:
