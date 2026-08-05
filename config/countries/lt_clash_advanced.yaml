@@ -59,31 +59,7 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇱🇹_6"
-    type: vless
-    server: "84.32.209.7"
-    port: 443
-    uuid: "f1c496bf-d2ab-45be-bc13-051d60d227b7"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "dartsearch-cn.net"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "00n9LplaZ0VGvRS57548s7xe0deFC10pw2fkFHFPplM"
-      short-id: ""
-    flow: "xtls-rprx-vision"
-  - name: "🇱🇹_7"
-    type: vless
-    server: "93.115.25.139"
-    port: 443
-    uuid: "04b9e828-43ed-4faf-8952-41069ec08355"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "ddc-chr2.astralweb.tech"
-    client-fingerprint: "firefox"
-  - name: "🇱🇹_8"
+  - name: "🇱🇹_5"
     type: vless
     server: "5.199.170.105"
     port: 443
@@ -97,17 +73,23 @@ proxies:
       public-key: "xFUmqmEPEKyv-5ReppEM1oTkc04HQcBUfySH-EwPBlE"
       short-id: "6ba85179e30d4fc2"
     flow: "xtls-rprx-vision"
-  - name: "🇱🇹_9"
+  - name: "🇱🇹_6"
     type: vless
-    server: "93.115.25.139"
+    server: "46.29.234.210"
     port: 443
-    uuid: "5c192fd7-ef98-4112-a20c-129108fcd7e9"
+    uuid: "218fd696-e3a2-4c33-b397-a5f13a82969e"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "ddc-chr2.astralweb.tech"
-    client-fingerprint: "firefox"
-  - name: "🇱🇹_10"
+    servername: "www.tradingview.com"
+    client-fingerprint: "safari"
+    reality-opts:
+      public-key: "II9Tn-HPL7xcENiybDfQ_bSw31rSzQbIGYn-hCxdb2w"
+      short-id: "ccda00cc"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "grpc"
+  - name: "🇱🇹_7"
     type: vless
     server: "88.216.69.30"
     port: 8880
@@ -118,6 +100,16 @@ proxies:
       path: "/"
       headers:
         Host: "vms.lifetime06.workers.dev"
+  - name: "🇱🇹_8"
+    type: vless
+    server: "93.115.25.139"
+    port: 443
+    uuid: "5c192fd7-ef98-4112-a20c-129108fcd7e9"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ddc-chr2.astralweb.tech"
+    client-fingerprint: "firefox"
 
 proxy-groups:
   # ── Top-level selector ────────────────────────────────────────────────────
@@ -160,11 +152,10 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
+      - "🇱🇹_5"
       - "🇱🇹_6"
       - "🇱🇹_7"
       - "🇱🇹_8"
-      - "🇱🇹_9"
-      - "🇱🇹_10"
 
   - name: "LB-CDN"
     type: load-balance
@@ -174,11 +165,10 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
+      - "🇱🇹_5"
       - "🇱🇹_6"
       - "🇱🇹_7"
       - "🇱🇹_8"
-      - "🇱🇹_9"
-      - "🇱🇹_10"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -188,11 +178,10 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
+      - "🇱🇹_5"
       - "🇱🇹_6"
       - "🇱🇹_7"
       - "🇱🇹_8"
-      - "🇱🇹_9"
-      - "🇱🇹_10"
 
   - name: "FAST-CDN"
     type: url-test
@@ -201,11 +190,10 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
+      - "🇱🇹_5"
       - "🇱🇹_6"
       - "🇱🇹_7"
       - "🇱🇹_8"
-      - "🇱🇹_9"
-      - "🇱🇹_10"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -215,21 +203,19 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
+      - "🇱🇹_5"
       - "🇱🇹_6"
       - "🇱🇹_7"
       - "🇱🇹_8"
-      - "🇱🇹_9"
-      - "🇱🇹_10"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
+      - "🇱🇹_5"
       - "🇱🇹_6"
       - "🇱🇹_7"
       - "🇱🇹_8"
-      - "🇱🇹_9"
-      - "🇱🇹_10"
 
 rules:
   - MATCH,PROXY-BEST

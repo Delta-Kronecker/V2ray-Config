@@ -63,20 +63,14 @@ dns:
     - https://freedns.controld.com/family
 
 proxies:
-  - name: "🇲🇴_1"
-    type: vless
-    server: "45.202.247.198"
-    port: 8443
-    uuid: "e08c0f4a-9f14-4ab8-bcf4-f79538d65ebc"
-    udp: true
-    tls: true
+  - name: "🇲🇳_1"
+    type: trojan
+    server: "103.168.56.77"
+    port: 443
+    password: "4f2c305b-9a03-4493-b3e4-2dff2f1af8c9"
+    sni: "103.168.56.77"
     skip-cert-verify: true
-    servername: "www.cloudflare.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "4uM42lBcgbqZc6XoT0fA18URc7MliP6GEFz-exf7PDs"
-      short-id: "6b6fa65912382971"
-    flow: "xtls-rprx-vision"
+    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -91,7 +85,7 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇲🇴_1"
+      - "🇲🇳_1"
 
 
 rules:

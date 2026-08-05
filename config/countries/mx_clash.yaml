@@ -75,21 +75,6 @@ proxies:
     network: ws
     ws-opts:
       path: "/vless/"
-  - name: "🇲🇽_2"
-    type: vless
-    server: "ul-mexico1.09vpn.com"
-    port: 8443
-    uuid: "a6d20e79-d326-42c1-bc20-f4cecc6dc42d"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "ul-mexico1.09vpn.com"
-    client-fingerprint: "chrome"
-    network: ws
-    ws-opts:
-      path: "/vless/"
-      headers:
-        Host: "ul-mexico1.09vpn.com"
 
 proxy-groups:
   - name: "PROXY"
@@ -105,7 +90,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇲🇽_1"
-      - "🇲🇽_2"
 
 
 rules:

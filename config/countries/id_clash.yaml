@@ -64,32 +64,19 @@ dns:
 
 proxies:
   - name: "🇮🇩_1"
-    type: vless
-    server: "45.198.96.153"
+    type: trojan
+    server: "qfdfsg.wsone.icu"
     port: 443
-    uuid: "83ab4443-ec22-4b3d-a587-53090be7beb2"
-    udp: true
-    tls: true
+    password: "M7v%w11Se*"
+    sni: "qfdfsg.wsone.icu"
     skip-cert-verify: true
-    servername: "storage.yandex.net"
-    reality-opts:
-      public-key: "9Y-_jCI3Z1x6SXK2tHdZ6V1CN9IJPNPnoxSW0cbXxD8"
-      short-id: "764f497dda21c4fc"
-    flow: "xtls-rprx-vision"
+    udp: true
   - name: "🇮🇩_2"
     type: trojan
     server: "172.232.250.160"
     port: 443
     password: "788f2b96-47e2-4302-a417-511b6fd7d09c"
     sni: "172.232.250.160"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇮🇩_3"
-    type: trojan
-    server: "qfdfsg.wsone.icu"
-    port: 443
-    password: "M7v%w11Se*"
-    sni: "qfdfsg.wsone.icu"
     skip-cert-verify: true
     udp: true
 
@@ -108,7 +95,6 @@ proxy-groups:
     proxies:
       - "🇮🇩_1"
       - "🇮🇩_2"
-      - "🇮🇩_3"
 
 
 rules:

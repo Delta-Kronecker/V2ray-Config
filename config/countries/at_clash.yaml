@@ -65,22 +65,7 @@ dns:
 proxies:
   - name: "🇦🇹_1"
     type: vless
-    server: "77.110.110.214"
-    port: 6443
-    uuid: "29a77cbc-bd97-4b8c-af20-c3c6341da10f"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "woc0zvrf11w2endu.dphdlc1u77bs3y4kvussbuap4p576f1ws7igthq8zbf3.workers.dev"
-    client-fingerprint: "chrome"
-    network: ws
-    ws-opts:
-      path: "/@Marisa_kristi"
-      headers:
-        Host: "woc0zvrf11w2endu.dphdlc1u77bs3y4kvussbuap4p576f1ws7igthq8zbf3.workers.dev"
-  - name: "🇦🇹_2"
-    type: vless
-    server: "87.251.69.48"
+    server: "130.49.219.126"
     port: 8443
     uuid: "2ee2b77f-e4cd-4e5d-af22-f9d919eeadd5"
     udp: true
@@ -88,6 +73,16 @@ proxies:
     skip-cert-verify: true
     servername: "at16.fastlanehosting.ru"
     client-fingerprint: "chrome"
+  - name: "🇦🇹_2"
+    type: vless
+    server: "130.49.219.126"
+    port: 8443
+    uuid: "ab5becac-6d0c-491a-b8ae-5648603dfc7d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "at16.fastlanehosting.ru"
+    client-fingerprint: "firefox"
   - name: "🇦🇹_3"
     type: vless
     server: "152.53.114.186"
@@ -118,30 +113,29 @@ proxies:
     flow: "xtls-rprx-vision"
   - name: "🇦🇹_5"
     type: vless
-    server: "46.102.156.144"
-    port: 2053
-    uuid: "c7e9c591-2764-423a-afca-efbd010fd396"
+    server: "87.251.69.48"
+    port: 8443
+    uuid: "2ee2b77f-e4cd-4e5d-af22-f9d919eeadd5"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "forfreeuse.sub-flow.online"
+    servername: "at16.fastlanehosting.ru"
+    client-fingerprint: "chrome"
+  - name: "🇦🇹_6"
+    type: vless
+    server: "77.110.110.214"
+    port: 6443
+    uuid: "29a77cbc-bd97-4b8c-af20-c3c6341da10f"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "woc0zvrf11w2endu.dphdlc1u77bs3y4kvussbuap4p576f1ws7igthq8zbf3.workers.dev"
     client-fingerprint: "chrome"
     network: ws
     ws-opts:
-      path: "/"
+      path: "/@Marisa_kristi"
       headers:
-        Host: "forfreeuse.sub-flow.online"
-  - name: "🇦🇹_6"
-    type: vless
-    server: "212.183.88.30"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/?ed=2560"
-      headers:
-        Host: "vms.lifetime23.workers.dev"
+        Host: "woc0zvrf11w2endu.dphdlc1u77bs3y4kvussbuap4p576f1ws7igthq8zbf3.workers.dev"
   - name: "🇦🇹_7"
     type: vless
     server: "77.73.131.154"
@@ -157,29 +151,16 @@ proxies:
     flow: "xtls-rprx-vision"
   - name: "🇦🇹_8"
     type: vless
-    server: "130.49.219.126"
-    port: 8443
-    uuid: "2ee2b77f-e4cd-4e5d-af22-f9d919eeadd5"
+    server: "212.183.88.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
     udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "at16.fastlanehosting.ru"
-    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "vms.lifetime23.workers.dev"
   - name: "🇦🇹_9"
-    type: vless
-    server: "130.49.219.126"
-    port: 443
-    uuid: "1bfd045c-3c64-4f27-874f-8e0b9da23fc8"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "sun6-22.userapi.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "fp_r7Tz3YdOZUY1wmo21U5xAoqyhHhb8l0q-py3JARo"
-      short-id: "f5e89824"
-    flow: "xtls-rprx-vision"
-  - name: "🇦🇹_10"
     type: trojan
     server: "212.183.88.136"
     port: 443
@@ -192,7 +173,7 @@ proxies:
       path: "/assignment"
       headers:
         Host: "www.calmlunch.com"
-  - name: "🇦🇹_11"
+  - name: "🇦🇹_10"
     type: ss
     server: "130.195.222.215"
     port: 443
@@ -205,7 +186,7 @@ proxies:
       path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
       host: "woshinidie-et3.pages.dev"
       tls: true
-  - name: "🇦🇹_12"
+  - name: "🇦🇹_11"
     type: ss
     server: "130.195.222.215"
     port: 443
@@ -243,7 +224,6 @@ proxy-groups:
       - "🇦🇹_9"
       - "🇦🇹_10"
       - "🇦🇹_11"
-      - "🇦🇹_12"
 
 
 rules:

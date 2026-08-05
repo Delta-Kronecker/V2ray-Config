@@ -65,16 +65,69 @@ dns:
 proxies:
   - name: "🇧🇷_1"
     type: vless
-    server: "45.194.53.30"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    server: "vpn.morrow-vpn.ru"
+    port: 443
+    uuid: "482d4c0f-69df-1d34-9803-b933a6b990a2"
     udp: true
-    network: ws
-    ws-opts:
-      path: "/?ed=2560"
-      headers:
-        Host: "vms.lifetime19.workers.dev"
+    tls: true
+    skip-cert-verify: true
+    servername: "ya.ru"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "bKDaOHdoIGn61t71D2iF-5_Jh9YS2aGOCXadFYuAhT8"
+      short-id: "2aff3dd38675a4c7"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "assets.RealityFanout1"
   - name: "🇧🇷_2"
+    type: vless
+    server: "vpn.morrow-vpn.ru"
+    port: 443
+    uuid: "482d4c0f-69df-1c53-9803-b933a6b990a2"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ya.ru"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "bKDaOHdoIGn61t71D2iF-5_Jh9YS2aGOCXadFYuAhT8"
+      short-id: "2aff3dd38675a4c7"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "assets.RealityFanout1"
+  - name: "🇧🇷_3"
+    type: vless
+    server: "vpn.morrow-vpn.ru"
+    port: 443
+    uuid: "482d4c0f-69df-1d32-9803-b933a6b990a2"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "avito.ru"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "bKDaOHdoIGn61t71D2iF-5_Jh9YS2aGOCXadFYuAhT8"
+      short-id: "2aff3dd38675a4c7"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "assets.RealityFanout9"
+  - name: "🇧🇷_4"
+    type: vless
+    server: "vpn.morrow-vpn.ru"
+    port: 443
+    uuid: "970457cc-29c9-1c00-bc8e-f2821baa1be8"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "max.ru"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "bKDaOHdoIGn61t71D2iF-5_Jh9YS2aGOCXadFYuAhT8"
+      short-id: "2aff3dd38675a4c7"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "assets.RealityService"
+  - name: "🇧🇷_5"
     type: vless
     server: "167.234.255.2"
     port: 34045
@@ -87,30 +140,41 @@ proxies:
     reality-opts:
       public-key: "cDaDzPr3PlS3NM8lreHZbdo-Mhqz8vMBzMSkHXhGIUA"
       short-id: "e8ab71d0"
-  - name: "🇧🇷_3"
-    type: ss
-    server: "168.75.108.224"
-    port: 59319
-    cipher: "chacha20-ietf-poly1305"
-    password: "YjliYmFlNzVmMmE4ZmJkYjAxNzQ2NWUyNzZlNjhkZGU="
-    udp: true
-  - name: "🇧🇷_4"
-    type: ss
-    server: "140.238.191.246"
-    port: 59319
-    cipher: "chacha20-ietf-poly1305"
-    password: "YjliYmFlNzVmMmE4ZmJkYjAxNzQ2NWUyNzZlNjhkZGU="
-    udp: true
-  - name: "🇧🇷_5"
-    type: ss
-    server: "140.238.191.246"
-    port: 59319
-    cipher: "chacha20-ietf-poly1305"
-    password: "YjliYmFlNzVmMmE4ZmJkYjAxNzQ2NWUyNzZlNjhkZGU="
-    udp: true
   - name: "🇧🇷_6"
+    type: vless
+    server: "45.194.53.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "vms.lifetime19.workers.dev"
+  - name: "🇧🇷_7"
     type: ss
-    server: "168.75.108.224"
+    server: "136.248.89.191"
+    port: 59319
+    cipher: "chacha20-ietf-poly1305"
+    password: "YjliYmFlNzVmMmE4ZmJkYjAxNzQ2NWUyNzZlNjhkZGU="
+    udp: true
+  - name: "🇧🇷_8"
+    type: ss
+    server: "168.138.246.189"
+    port: 59319
+    cipher: "chacha20-ietf-poly1305"
+    password: "YjliYmFlNzVmMmE4ZmJkYjAxNzQ2NWUyNzZlNjhkZGU="
+    udp: true
+  - name: "🇧🇷_9"
+    type: ss
+    server: "168.138.246.189"
+    port: 59319
+    cipher: "chacha20-ietf-poly1305"
+    password: "YjliYmFlNzVmMmE4ZmJkYjAxNzQ2NWUyNzZlNjhkZGU="
+    udp: true
+  - name: "🇧🇷_10"
+    type: ss
+    server: "136.248.89.191"
     port: 59319
     cipher: "chacha20-ietf-poly1305"
     password: "YjliYmFlNzVmMmE4ZmJkYjAxNzQ2NWUyNzZlNjhkZGU="
@@ -135,6 +199,10 @@ proxy-groups:
       - "🇧🇷_4"
       - "🇧🇷_5"
       - "🇧🇷_6"
+      - "🇧🇷_7"
+      - "🇧🇷_8"
+      - "🇧🇷_9"
+      - "🇧🇷_10"
 
 
 rules:

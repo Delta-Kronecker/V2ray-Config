@@ -65,18 +65,18 @@ dns:
 proxies:
   - name: "🇭🇺_1"
     type: vless
-    server: "45.195.111.15"
+    server: "141.11.202.123"
     port: 443
-    uuid: "82e209b2-97a6-4d67-a10b-72627b9f6702"
+    uuid: "1d16c6e0-1bbe-435b-b661-90043fee999c"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "storage.yandex.net"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "7zd9mJilgjOrg_ohtw23Vmio-pdnYqeP_r-kiWt87Cg"
-      short-id: "f4b4a6365558ea2e"
-    flow: "xtls-rprx-vision"
+    servername: "notls.lukongtou.eu.org"
+    network: ws
+    ws-opts:
+      path: "Telegram-WangCai2"
+      headers:
+        Host: "notls.lukongtou.eu.org"
   - name: "🇭🇺_2"
     type: vless
     server: "45.195.111.15"
@@ -93,29 +93,18 @@ proxies:
     flow: "xtls-rprx-vision"
   - name: "🇭🇺_3"
     type: vless
-    server: "141.11.202.123"
+    server: "45.195.111.15"
     port: 443
-    uuid: "1d16c6e0-1bbe-435b-b661-90043fee999c"
+    uuid: "82e209b2-97a6-4d67-a10b-72627b9f6702"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "notls.lukongtou.eu.org"
-    network: ws
-    ws-opts:
-      path: "Telegram-WangCai2"
-      headers:
-        Host: "notls.lukongtou.eu.org"
-  - name: "🇭🇺_4"
-    type: trojan
-    server: "162.159.82.246"
-    port: 443
-    password: "87961f9d-bee1-4377-826b-e169e7891c4f"
-    sni: "yks-dd9.pages.dev"
-    skip-cert-verify: true
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/?ed=2048"
+    servername: "storage.yandex.net"
+    client-fingerprint: "qq"
+    reality-opts:
+      public-key: "7zd9mJilgjOrg_ohtw23Vmio-pdnYqeP_r-kiWt87Cg"
+      short-id: "f4b4a6365558ea2e"
+    flow: "xtls-rprx-vision"
 
 proxy-groups:
   - name: "PROXY"
@@ -133,7 +122,6 @@ proxy-groups:
       - "🇭🇺_1"
       - "🇭🇺_2"
       - "🇭🇺_3"
-      - "🇭🇺_4"
 
 
 rules:
