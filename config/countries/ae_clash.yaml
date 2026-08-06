@@ -65,28 +65,6 @@ dns:
 proxies:
   - name: "🇦🇪_1"
     type: vless
-    server: "77.232.140.30"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/?ed=2560"
-      headers:
-        Host: "vms.lifetime61.workers.dev"
-  - name: "🇦🇪_2"
-    type: vless
-    server: "77.232.140.40"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/?ed"
-      headers:
-        Host: "vms.lifetime61.workers.dev"
-  - name: "🇦🇪_3"
-    type: vless
     server: "84.235.244.108"
     port: 22573
     uuid: "39947382-3212-41c9-bc3a-589574ac8b23"
@@ -96,7 +74,7 @@ proxies:
       path: "/"
       headers:
         Host: "uae.unixzone.us"
-  - name: "🇦🇪_4"
+  - name: "🇦🇪_2"
     type: vless
     server: "185.225.195.30"
     port: 8880
@@ -107,50 +85,40 @@ proxies:
       path: "/"
       headers:
         Host: "vms.lifetime18.workers.dev"
-  - name: "🇦🇪_5"
+  - name: "🇦🇪_3"
     type: vless
-    server: "45.88.13.3"
-    port: 993
-    uuid: "5e243126-4a2a-84b6-782a-73b14797fb5f"
+    server: "77.232.140.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
     udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "download.nvidia.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "FOQzn10eHqu4F5xOxiXW2bTDG8lH4TdOXP6A5rDqKFk"
-      short-id: ""
-    flow: "xtls-rprx-vision"
-  - name: "🇦🇪_6"
-    type: vless
-    server: "94.140.0.100"
-    port: 443
-    uuid: "c9d1b8e6-f28a-419f-2581-97ad3258c320"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "withered-cake-d636.asfvgsrhtrzdbvcgfn.workers.dev"
-    client-fingerprint: "chrome"
     network: ws
     ws-opts:
-      path: "/kbapqjwhbsjwoqjhskso"
+      path: "/?ed=2560"
       headers:
-        Host: "withered-cake-d636.asfvgsrhtrzdbvcgfn.workers.dev"
-  - name: "🇦🇪_7"
+        Host: "vms.lifetime61.workers.dev"
+  - name: "🇦🇪_4"
     type: vless
-    server: "45.88.13.3"
-    port: 993
-    uuid: "e6d41d6f-d58a-7650-bba4-d7f0dde3ba4d"
+    server: "94.140.0.100"
+    port: 8880
+    uuid: "78e6619e-e82a-cd8d-b482-0973d8498305"
     udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "download.nvidia.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "FOQzn10eHqu4F5xOxiXW2bTDG8lH4TdOXP6A5rDqKFk"
-      short-id: ""
-    flow: "xtls-rprx-vision"
-  - name: "🇦🇪_8"
+    network: ws
+    ws-opts:
+      path: "/sync"
+      headers:
+        Host: "silent-pine-a674.jfadwkglaugul.workers.dev"
+  - name: "🇦🇪_5"
+    type: vless
+    server: "77.232.140.40"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/?ed"
+      headers:
+        Host: "vms.lifetime61.workers.dev"
+  - name: "🇦🇪_6"
     type: vless
     server: "45.88.13.3"
     port: 8443
@@ -166,28 +134,53 @@ proxies:
     network: grpc
     grpc-opts:
       grpc-service-name: "TunService"
-  - name: "🇦🇪_9"
+  - name: "🇦🇪_7"
     type: vless
     server: "94.140.0.100"
-    port: 8880
-    uuid: "78e6619e-e82a-cd8d-b482-0973d8498305"
+    port: 443
+    uuid: "c9d1b8e6-f28a-419f-2581-97ad3258c320"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "withered-cake-d636.asfvgsrhtrzdbvcgfn.workers.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/kbapqjwhbsjwoqjhskso"
+      headers:
+        Host: "withered-cake-d636.asfvgsrhtrzdbvcgfn.workers.dev"
+  - name: "🇦🇪_8"
+    type: vless
+    server: "uae.unixzone.us"
+    port: 22573
+    uuid: "39947382-3212-41c9-bc3a-589574ac8b23"
     udp: true
     network: ws
     ws-opts:
-      path: "/sync"
+      path: "/"
       headers:
-        Host: "silent-pine-a674.jfadwkglaugul.workers.dev"
-  - name: "🇦🇪_10"
-    type: trojan
-    server: "zhilian-ae-a.gocmydns.com"
-    port: 446
-    password: "29db38f0-e302-3768-8867-0b9bf00c77e4cmynw"
-    sni: "www.zueuqnpjvcllc.co"
-    skip-cert-verify: true
+        Host: "uae.unixzone.us"
+  - name: "🇦🇪_9"
+    type: vless
+    server: "45.88.13.3"
+    port: 993
+    uuid: "e6d41d6f-d58a-7650-bba4-d7f0dde3ba4d"
     udp: true
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "mm_grpc"
+    tls: true
+    skip-cert-verify: true
+    servername: "download.nvidia.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "FOQzn10eHqu4F5xOxiXW2bTDG8lH4TdOXP6A5rDqKFk"
+      short-id: ""
+    flow: "xtls-rprx-vision"
+  - name: "🇦🇪_10"
+    type: ss
+    server: "38.54.9.181"
+    port: 3306
+    cipher: "aes-256-gcm"
+    password: "Y6R9pAtvxxzmGC"
+    udp: true
 
 proxy-groups:
   - name: "PROXY"

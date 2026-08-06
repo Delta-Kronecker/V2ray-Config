@@ -65,6 +65,16 @@ dns:
 proxies:
   - name: "🇱🇹_1"
     type: vless
+    server: "93.115.25.139"
+    port: 443
+    uuid: "5c192fd7-ef98-4112-a20c-129108fcd7e9"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ddc-chr2.astralweb.tech"
+    client-fingerprint: "firefox"
+  - name: "🇱🇹_2"
+    type: vless
     server: "5.199.170.105"
     port: 443
     uuid: "fd47216b-4217-4ec1-85b9-98304634a391"
@@ -77,7 +87,7 @@ proxies:
       public-key: "xFUmqmEPEKyv-5ReppEM1oTkc04HQcBUfySH-EwPBlE"
       short-id: "6ba85179e30d4fc2"
     flow: "xtls-rprx-vision"
-  - name: "🇱🇹_2"
+  - name: "🇱🇹_3"
     type: vless
     server: "46.29.234.210"
     port: 443
@@ -93,7 +103,7 @@ proxies:
     network: grpc
     grpc-opts:
       grpc-service-name: "grpc"
-  - name: "🇱🇹_3"
+  - name: "🇱🇹_4"
     type: vless
     server: "88.216.69.30"
     port: 8880
@@ -104,16 +114,6 @@ proxies:
       path: "/"
       headers:
         Host: "vms.lifetime06.workers.dev"
-  - name: "🇱🇹_4"
-    type: vless
-    server: "93.115.25.139"
-    port: 443
-    uuid: "5c192fd7-ef98-4112-a20c-129108fcd7e9"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "ddc-chr2.astralweb.tech"
-    client-fingerprint: "firefox"
 
 proxy-groups:
   - name: "PROXY"

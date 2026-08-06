@@ -59,7 +59,7 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇺🇦_9"
+  - name: "🇺🇦_7"
     type: vless
     server: "194.152.44.30"
     port: 8880
@@ -70,18 +70,7 @@ proxies:
       path: "/"
       headers:
         Host: "vms.lifetime55.workers.dev"
-  - name: "🇺🇦_10"
-    type: vless
-    server: "89.116.180.40"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/?ed=2560"
-      headers:
-        Host: "vms.lifetime09.workers.dev"
-  - name: "🇺🇦_11"
+  - name: "🇺🇦_8"
     type: vless
     server: "89.116.180.30"
     port: 8880
@@ -92,21 +81,7 @@ proxies:
       path: "/"
       headers:
         Host: "vms.lifetime09.workers.dev"
-  - name: "🇺🇦_12"
-    type: vless
-    server: "45.135.235.123"
-    port: 443
-    uuid: "1d16c6e0-1bbe-435b-b661-90043fee999c"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "notls.lukongtou.eu.org"
-    network: ws
-    ws-opts:
-      path: "Telegram-WangCai2"
-      headers:
-        Host: "notls.lukongtou.eu.org"
-  - name: "🇺🇦_13"
+  - name: "🇺🇦_9"
     type: vless
     server: "45.135.235.30"
     port: 8880
@@ -117,29 +92,20 @@ proxies:
       path: "/?ed=2560"
       headers:
         Host: "vms.lifetime07.workers.dev"
-  - name: "🇺🇦_14"
+  - name: "🇺🇦_10"
     type: vless
-    server: "ukraine.xiaomaimai.dpdns.org"
+    server: "91.236.248.20"
     port: 20071
     uuid: "65c56e1f-5c41-40bc-b0b5-9346772476ca"
     udp: true
     tls: true
     skip-cert-verify: true
     servername: "www.lamer.com"
-    client-fingerprint: "edge"
     reality-opts:
       public-key: "zX5dT9fA8VRXb3XSB8olbacIR1Dq69juoC7US2paR08"
       short-id: "a02bf9"
     flow: "xtls-rprx-vision"
-  - name: "🇺🇦_15"
-    type: trojan
-    server: "130.0.236.88"
-    port: 443
-    password: "d2adff89-5143-4d67-921f-3478464de5bb"
-    sni: "ua.freeguard.org"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇺🇦_16"
+  - name: "🇺🇦_11"
     type: trojan
     server: "89.116.180.49"
     port: 443
@@ -150,6 +116,14 @@ proxies:
     network: ws
     ws-opts:
       path: "/sync"
+  - name: "🇺🇦_12"
+    type: trojan
+    server: "130.0.236.88"
+    port: 443
+    password: "d2adff89-5143-4d67-921f-3478464de5bb"
+    sni: "ua.freeguard.org"
+    skip-cert-verify: true
+    udp: true
 
 proxy-groups:
   # ── Top-level selector ────────────────────────────────────────────────────
@@ -192,14 +166,12 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
+      - "🇺🇦_7"
+      - "🇺🇦_8"
       - "🇺🇦_9"
       - "🇺🇦_10"
       - "🇺🇦_11"
       - "🇺🇦_12"
-      - "🇺🇦_13"
-      - "🇺🇦_14"
-      - "🇺🇦_15"
-      - "🇺🇦_16"
 
   - name: "LB-CDN"
     type: load-balance
@@ -209,14 +181,12 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
+      - "🇺🇦_7"
+      - "🇺🇦_8"
       - "🇺🇦_9"
       - "🇺🇦_10"
       - "🇺🇦_11"
       - "🇺🇦_12"
-      - "🇺🇦_13"
-      - "🇺🇦_14"
-      - "🇺🇦_15"
-      - "🇺🇦_16"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -226,14 +196,12 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
+      - "🇺🇦_7"
+      - "🇺🇦_8"
       - "🇺🇦_9"
       - "🇺🇦_10"
       - "🇺🇦_11"
       - "🇺🇦_12"
-      - "🇺🇦_13"
-      - "🇺🇦_14"
-      - "🇺🇦_15"
-      - "🇺🇦_16"
 
   - name: "FAST-CDN"
     type: url-test
@@ -242,14 +210,12 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
+      - "🇺🇦_7"
+      - "🇺🇦_8"
       - "🇺🇦_9"
       - "🇺🇦_10"
       - "🇺🇦_11"
       - "🇺🇦_12"
-      - "🇺🇦_13"
-      - "🇺🇦_14"
-      - "🇺🇦_15"
-      - "🇺🇦_16"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -259,27 +225,23 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
+      - "🇺🇦_7"
+      - "🇺🇦_8"
       - "🇺🇦_9"
       - "🇺🇦_10"
       - "🇺🇦_11"
       - "🇺🇦_12"
-      - "🇺🇦_13"
-      - "🇺🇦_14"
-      - "🇺🇦_15"
-      - "🇺🇦_16"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
+      - "🇺🇦_7"
+      - "🇺🇦_8"
       - "🇺🇦_9"
       - "🇺🇦_10"
       - "🇺🇦_11"
       - "🇺🇦_12"
-      - "🇺🇦_13"
-      - "🇺🇦_14"
-      - "🇺🇦_15"
-      - "🇺🇦_16"
 
 rules:
   - MATCH,PROXY-BEST

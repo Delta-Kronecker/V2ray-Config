@@ -61,6 +61,17 @@ dns:
 proxies:
   - name: "🇮🇷_27"
     type: vless
+    server: "45.131.4.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vms.lifetime59.workers.dev"
+  - name: "🇮🇷_28"
+    type: vless
     server: "45.131.4.192"
     port: 80
     uuid: "5f4845b4-11dc-41d6-9508-4ff6a02e36c1"
@@ -70,29 +81,7 @@ proxies:
       path: "/"
       headers:
         Host: "silent-paper-fa57.fipiyag989.workers.dev"
-  - name: "🇮🇷_28"
-    type: vless
-    server: "185.143.233.238"
-    port: 2086
-    uuid: "1ee1f28d-4975-4d7c-95c7-76172c20eed5"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "parsi.parsi.sbs"
   - name: "🇮🇷_29"
-    type: vless
-    server: "185.143.234.238"
-    port: 2086
-    uuid: "1ee1f28d-4975-4d7c-95c7-76172c20eed5"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "parsi.parsi.sbs"
-  - name: "🇮🇷_30"
     type: vless
     server: "45.131.4.115"
     port: 80
@@ -103,33 +92,29 @@ proxies:
       path: "/eyJqdW5rIjoiQXoydFJwaWM0WSIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0="
       headers:
         Host: "worker3.gigak25604.workers.dev"
+  - name: "🇮🇷_30"
+    type: vless
+    server: "185.143.234.238"
+    port: 2086
+    uuid: "1ee1f28d-4975-4d7c-95c7-76172c20eed5"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "parsi.parsi.sbs"
   - name: "🇮🇷_31"
     type: vless
-    server: "45.131.4.30"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    server: "185.143.233.238"
+    port: 2086
+    uuid: "1ee1f28d-4975-4d7c-95c7-76172c20eed5"
     udp: true
     network: ws
     ws-opts:
       path: "/"
       headers:
-        Host: "vms.lifetime59.workers.dev"
+        Host: "parsi.parsi.sbs"
   - name: "🇮🇷_32"
-    type: vless
-    server: "new01.asaltabie.monster"
-    port: 443
-    uuid: "f0e5bb7a-4d44-4316-9038-91bf4e343289"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "new01.asaltabie.monster"
-    client-fingerprint: "chrome"
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "new01.asaltabie.monster"
-  - name: "🇮🇷_33"
     type: trojan
     server: "193.151.134.182"
     port: 443
@@ -137,7 +122,7 @@ proxies:
     sni: "iprostable.enterprises"
     skip-cert-verify: true
     udp: true
-  - name: "🇮🇷_34"
+  - name: "🇮🇷_33"
     type: trojan
     server: "45.131.4.118"
     port: 443
@@ -148,7 +133,7 @@ proxies:
     network: ws
     ws-opts:
       path: "/sync"
-  - name: "🇮🇷_35"
+  - name: "🇮🇷_34"
     type: trojan
     server: "ir1.iobase.ir"
     port: 443
@@ -156,19 +141,26 @@ proxies:
     sni: "ir1.iobase.ir"
     skip-cert-verify: true
     udp: true
+  - name: "🇮🇷_35"
+    type: ss
+    server: "185.188.104.10"
+    port: 443
+    cipher: "none"
+    password: "RSzEIkk2EsHEAVj15N5E/A=="
+    udp: true
   - name: "🇮🇷_36"
     type: ss
-    server: "185.188.104.12"
+    server: "185.188.107.10"
     port: 443
     cipher: "none"
     password: "RSzEIkk2EsHEAVj15N5E/A=="
     udp: true
   - name: "🇮🇷_37"
     type: ss
-    server: "185.188.107.10"
+    server: "82.38.31.57"
     port: 443
-    cipher: "none"
-    password: "RSzEIkk2EsHEAVj15N5E/A=="
+    cipher: "chacha20-ietf-poly1305"
+    password: "oZIoA69Q8yhcQV8ka3Pa3A"
     udp: true
   - name: "🇮🇷_38"
     type: ss
@@ -179,77 +171,77 @@ proxies:
     udp: true
   - name: "🇮🇷_39"
     type: ss
-    server: "82.38.31.57"
+    server: "185.188.104.11"
     port: 443
-    cipher: "chacha20-ietf-poly1305"
-    password: "oZIoA69Q8yhcQV8ka3Pa3A"
+    cipher: "none"
+    password: "RSzEIkk2EsHEAVj15N5E/A=="
     udp: true
   - name: "🇮🇷_40"
-    type: ss
-    server: "185.188.105.11"
-    port: 443
-    cipher: "none"
-    password: "RSzEIkk2EsHEAVj15N5E/A=="
-    udp: true
-  - name: "🇮🇷_41"
-    type: ss
-    server: "185.188.104.11"
-    port: 443
-    cipher: "none"
-    password: "RSzEIkk2EsHEAVj15N5E/A=="
-    udp: true
-  - name: "🇮🇷_42"
-    type: ss
-    server: "185.188.104.10"
-    port: 443
-    cipher: "none"
-    password: "RSzEIkk2EsHEAVj15N5E/A=="
-    udp: true
-  - name: "🇮🇷_43"
-    type: ss
-    server: "185.188.104.11"
-    port: 443
-    cipher: "none"
-    password: "RSzEIkk2EsHEAVj15N5E/A=="
-    udp: true
-  - name: "🇮🇷_44"
     type: ss
     server: "185.188.105.10"
     port: 443
     cipher: "none"
     password: "RSzEIkk2EsHEAVj15N5E/A=="
     udp: true
-  - name: "🇮🇷_45"
+  - name: "🇮🇷_41"
     type: ss
-    server: "82.38.31.57"
+    server: "185.188.106.10"
     port: 443
-    cipher: "chacha20-ietf-poly1305"
-    password: "oZIoA69Q8yhcQV8ka3Pa3A"
+    cipher: "none"
+    password: "RSzEIkk2EsHEAVj15N5E/A=="
     udp: true
-  - name: "🇮🇷_46"
+  - name: "🇮🇷_42"
     type: ss
     server: "185.188.107.10"
     port: 443
     cipher: "none"
     password: "RSzEIkk2EsHEAVj15N5E/A=="
     udp: true
+  - name: "🇮🇷_43"
+    type: ss
+    server: "185.188.105.10"
+    port: 443
+    cipher: "none"
+    password: "RSzEIkk2EsHEAVj15N5E/A=="
+    udp: true
+  - name: "🇮🇷_44"
+    type: ss
+    server: "82.38.31.57"
+    port: 443
+    cipher: "chacha20-ietf-poly1305"
+    password: "oZIoA69Q8yhcQV8ka3Pa3A"
+    udp: true
+  - name: "🇮🇷_45"
+    type: ss
+    server: "dkstatics-public.digikala.com"
+    port: 443
+    cipher: "none"
+    password: "RSzEIkk2EsHEAVj15N5E/A=="
+    udp: true
+  - name: "🇮🇷_46"
+    type: ss
+    server: "dkstatics-public.digikala.com"
+    port: 443
+    cipher: "none"
+    password: "RSzEIkk2EsHEAVj15N5E/A=="
+    udp: true
   - name: "🇮🇷_47"
     type: ss
-    server: "185.188.106.10"
+    server: "185.188.104.12"
     port: 443
     cipher: "none"
     password: "RSzEIkk2EsHEAVj15N5E/A=="
     udp: true
   - name: "🇮🇷_48"
     type: ss
-    server: "185.188.106.10"
+    server: "185.188.104.11"
     port: 443
     cipher: "none"
     password: "RSzEIkk2EsHEAVj15N5E/A=="
     udp: true
   - name: "🇮🇷_49"
     type: ss
-    server: "185.188.104.10"
+    server: "185.188.106.10"
     port: 443
     cipher: "none"
     password: "RSzEIkk2EsHEAVj15N5E/A=="
@@ -263,14 +255,14 @@ proxies:
     udp: true
   - name: "🇮🇷_51"
     type: ss
-    server: "185.188.105.10"
+    server: "185.188.105.11"
     port: 443
     cipher: "none"
     password: "RSzEIkk2EsHEAVj15N5E/A=="
     udp: true
   - name: "🇮🇷_52"
     type: ss
-    server: "dkstatics-public.digikala.com"
+    server: "185.188.104.10"
     port: 443
     cipher: "none"
     password: "RSzEIkk2EsHEAVj15N5E/A=="

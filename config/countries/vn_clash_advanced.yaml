@@ -59,7 +59,7 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇻🇳_6"
+  - name: "🇻🇳_5"
     type: vless
     server: "hia.waols.click"
     port: 8443
@@ -72,18 +72,7 @@ proxies:
       public-key: "0QOg0Zo5ap0n33VXkkN1-k9R9IOkI3igM5Nlg5cRdDQ"
       short-id: "aa"
     flow: "xtls-rprx-vision"
-  - name: "🇻🇳_7"
-    type: trojan
-    server: "l2-vn-a.gocmydns.com"
-    port: 443
-    password: "29db38f0-e302-3768-8867-0b9bf00c77e4cmynw"
-    sni: "www.zueuqnpjvcllc.co"
-    skip-cert-verify: true
-    udp: true
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "mm_grpc"
-  - name: "🇻🇳_8"
+  - name: "🇻🇳_6"
     type: trojan
     server: "36.50.134.29"
     port: 443
@@ -91,7 +80,7 @@ proxies:
     sni: "36.50.134.29"
     skip-cert-verify: true
     udp: true
-  - name: "🇻🇳_9"
+  - name: "🇻🇳_7"
     type: trojan
     server: "160.30.160.134"
     port: 443
@@ -99,7 +88,7 @@ proxies:
     sni: "cmc5.5gsieuvip.vn"
     skip-cert-verify: true
     udp: true
-  - name: "🇻🇳_10"
+  - name: "🇻🇳_8"
     type: trojan
     server: "103.72.96.55"
     port: 443
@@ -149,11 +138,10 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
+      - "🇻🇳_5"
       - "🇻🇳_6"
       - "🇻🇳_7"
       - "🇻🇳_8"
-      - "🇻🇳_9"
-      - "🇻🇳_10"
 
   - name: "LB-CDN"
     type: load-balance
@@ -163,11 +151,10 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
+      - "🇻🇳_5"
       - "🇻🇳_6"
       - "🇻🇳_7"
       - "🇻🇳_8"
-      - "🇻🇳_9"
-      - "🇻🇳_10"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -177,11 +164,10 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
+      - "🇻🇳_5"
       - "🇻🇳_6"
       - "🇻🇳_7"
       - "🇻🇳_8"
-      - "🇻🇳_9"
-      - "🇻🇳_10"
 
   - name: "FAST-CDN"
     type: url-test
@@ -190,11 +176,10 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
+      - "🇻🇳_5"
       - "🇻🇳_6"
       - "🇻🇳_7"
       - "🇻🇳_8"
-      - "🇻🇳_9"
-      - "🇻🇳_10"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -204,21 +189,19 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
+      - "🇻🇳_5"
       - "🇻🇳_6"
       - "🇻🇳_7"
       - "🇻🇳_8"
-      - "🇻🇳_9"
-      - "🇻🇳_10"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
+      - "🇻🇳_5"
       - "🇻🇳_6"
       - "🇻🇳_7"
       - "🇻🇳_8"
-      - "🇻🇳_9"
-      - "🇻🇳_10"
 
 rules:
   - MATCH,PROXY-BEST

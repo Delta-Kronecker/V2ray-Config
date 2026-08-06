@@ -59,58 +59,22 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇷🇴_6"
+  - name: "🇷🇴_3"
     type: vless
-    server: "196.245.156.27"
+    server: "151.242.191.161"
     port: 443
-    uuid: "f5e98e30-28b8-468a-a5a5-c6c22be64055"
+    uuid: "301d514e-4aa0-47b0-ba44-a0cb891cd52f"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "rm2.magazinnarubeva.ru"
-    client-fingerprint: "firefox"
+    servername: "www.samsung.com"
+    client-fingerprint: "chrome"
     reality-opts:
-      public-key: "hyOYRfDSIYyqALQt3N2H0RjK8gbV1JvPTkNACC4PJF8"
-      short-id: "8718c58d3d51db59"
-    flow: "xtls-rprx-vision"
-  - name: "🇷🇴_7"
-    type: vless
-    server: "109.104.106.140"
-    port: 443
-    uuid: "b55a6115-07f5-4464-85b5-7059ce4701f3"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "d2-ro.cloud-cdn.xyz"
-    client-fingerprint: "edge"
-    reality-opts:
-      public-key: "6HRVYg1i4ah9VhuV5hne2-JA8Z5HTV5jbFi-h3qKsDQ"
-      short-id: "dd4d615422c6424c"
-    flow: "xtls-rprx-vision"
-  - name: "🇷🇴_8"
-    type: vless
-    server: "196.245.156.30"
-    port: 443
-    uuid: "f5e98e30-28b8-468a-a5a5-c6c22be64055"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "rm2.magazinnarubeva.ru"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "hyOYRfDSIYyqALQt3N2H0RjK8gbV1JvPTkNACC4PJF8"
-      short-id: "8718c58d3d51db59"
-    flow: "xtls-rprx-vision"
-  - name: "🇷🇴_9"
+      public-key: "OZVjfQBboTDTBw0baMFqzVPsVUI4FNQmspTEb0b0zW4"
+      short-id: "a1b2c3d4"
+  - name: "🇷🇴_4"
     type: ss
     server: "154.46.31.106"
-    port: 443
-    cipher: "chacha20-ietf-poly1305"
-    password: "QFWzCw2uX9B9i6qAYeFBIE"
-    udp: true
-  - name: "🇷🇴_10"
-    type: ss
-    server: "bogging-eyeteeth-fly.freesocks.work"
     port: 443
     cipher: "chacha20-ietf-poly1305"
     password: "QFWzCw2uX9B9i6qAYeFBIE"
@@ -157,11 +121,8 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇷🇴_6"
-      - "🇷🇴_7"
-      - "🇷🇴_8"
-      - "🇷🇴_9"
-      - "🇷🇴_10"
+      - "🇷🇴_3"
+      - "🇷🇴_4"
 
   - name: "LB-CDN"
     type: load-balance
@@ -171,11 +132,8 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇷🇴_6"
-      - "🇷🇴_7"
-      - "🇷🇴_8"
-      - "🇷🇴_9"
-      - "🇷🇴_10"
+      - "🇷🇴_3"
+      - "🇷🇴_4"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -185,11 +143,8 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇷🇴_6"
-      - "🇷🇴_7"
-      - "🇷🇴_8"
-      - "🇷🇴_9"
-      - "🇷🇴_10"
+      - "🇷🇴_3"
+      - "🇷🇴_4"
 
   - name: "FAST-CDN"
     type: url-test
@@ -198,11 +153,8 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇷🇴_6"
-      - "🇷🇴_7"
-      - "🇷🇴_8"
-      - "🇷🇴_9"
-      - "🇷🇴_10"
+      - "🇷🇴_3"
+      - "🇷🇴_4"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -212,21 +164,15 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇷🇴_6"
-      - "🇷🇴_7"
-      - "🇷🇴_8"
-      - "🇷🇴_9"
-      - "🇷🇴_10"
+      - "🇷🇴_3"
+      - "🇷🇴_4"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
-      - "🇷🇴_6"
-      - "🇷🇴_7"
-      - "🇷🇴_8"
-      - "🇷🇴_9"
-      - "🇷🇴_10"
+      - "🇷🇴_3"
+      - "🇷🇴_4"
 
 rules:
   - MATCH,PROXY-BEST
