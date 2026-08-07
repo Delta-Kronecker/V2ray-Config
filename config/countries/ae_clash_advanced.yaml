@@ -61,27 +61,11 @@ dns:
 proxies:
   - name: "🇦🇪_11"
     type: vless
-    server: "84.235.244.108"
-    port: 22573
-    uuid: "39947382-3212-41c9-bc3a-589574ac8b23"
+    server: "v1.vahid2961.sbs"
+    port: 53680
+    uuid: "fb841b0d-4de1-40fe-8192-45351886458f"
     udp: true
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "uae.unixzone.us"
   - name: "🇦🇪_12"
-    type: vless
-    server: "185.225.195.30"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "vms.lifetime18.workers.dev"
-  - name: "🇦🇪_13"
     type: vless
     server: "77.232.140.30"
     port: 8880
@@ -92,18 +76,47 @@ proxies:
       path: "/?ed=2560"
       headers:
         Host: "vms.lifetime61.workers.dev"
+  - name: "🇦🇪_13"
+    type: vless
+    server: "45.88.13.3"
+    port: 993
+    uuid: "e6d41d6f-d58a-7650-bba4-d7f0dde3ba4d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "download.nvidia.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "FOQzn10eHqu4F5xOxiXW2bTDG8lH4TdOXP6A5rDqKFk"
+      short-id: ""
+    flow: "xtls-rprx-vision"
   - name: "🇦🇪_14"
     type: vless
     server: "94.140.0.100"
+    port: 443
+    uuid: "c9d1b8e6-f28a-419f-2581-97ad3258c320"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "withered-cake-d636.asfvgsrhtrzdbvcgfn.workers.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/kbapqjwhbsjwoqjhskso"
+      headers:
+        Host: "withered-cake-d636.asfvgsrhtrzdbvcgfn.workers.dev"
+  - name: "🇦🇪_15"
+    type: vless
+    server: "185.225.195.30"
     port: 8880
-    uuid: "78e6619e-e82a-cd8d-b482-0973d8498305"
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
     udp: true
     network: ws
     ws-opts:
-      path: "/sync"
+      path: "/"
       headers:
-        Host: "silent-pine-a674.jfadwkglaugul.workers.dev"
-  - name: "🇦🇪_15"
+        Host: "vms.lifetime18.workers.dev"
+  - name: "🇦🇪_16"
     type: vless
     server: "77.232.140.40"
     port: 8880
@@ -114,7 +127,22 @@ proxies:
       path: "/?ed"
       headers:
         Host: "vms.lifetime61.workers.dev"
-  - name: "🇦🇪_16"
+  - name: "🇦🇪_17"
+    type: vless
+    server: "188.72.103.3"
+    port: 443
+    uuid: "166ef05e-8ab5-43b7-8910-d1bb0a4326a5"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "cdn.tracker.yandex.net"
+    client-fingerprint: "qq"
+    network: ws
+    ws-opts:
+      path: "/api/v1/rooms/63368e3dbb/sync"
+      headers:
+        Host: "sync.watchwave.link"
+  - name: "🇦🇪_18"
     type: vless
     server: "45.88.13.3"
     port: 8443
@@ -130,24 +158,20 @@ proxies:
     network: grpc
     grpc-opts:
       grpc-service-name: "TunService"
-  - name: "🇦🇪_17"
+  - name: "🇦🇪_19"
     type: vless
     server: "94.140.0.100"
-    port: 443
-    uuid: "c9d1b8e6-f28a-419f-2581-97ad3258c320"
+    port: 8880
+    uuid: "78e6619e-e82a-cd8d-b482-0973d8498305"
     udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "withered-cake-d636.asfvgsrhtrzdbvcgfn.workers.dev"
-    client-fingerprint: "chrome"
     network: ws
     ws-opts:
-      path: "/kbapqjwhbsjwoqjhskso"
+      path: "/sync"
       headers:
-        Host: "withered-cake-d636.asfvgsrhtrzdbvcgfn.workers.dev"
-  - name: "🇦🇪_18"
+        Host: "silent-pine-a674.jfadwkglaugul.workers.dev"
+  - name: "🇦🇪_20"
     type: vless
-    server: "uae.unixzone.us"
+    server: "84.235.244.108"
     port: 22573
     uuid: "39947382-3212-41c9-bc3a-589574ac8b23"
     udp: true
@@ -156,27 +180,6 @@ proxies:
       path: "/"
       headers:
         Host: "uae.unixzone.us"
-  - name: "🇦🇪_19"
-    type: vless
-    server: "45.88.13.3"
-    port: 993
-    uuid: "e6d41d6f-d58a-7650-bba4-d7f0dde3ba4d"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "download.nvidia.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "FOQzn10eHqu4F5xOxiXW2bTDG8lH4TdOXP6A5rDqKFk"
-      short-id: ""
-    flow: "xtls-rprx-vision"
-  - name: "🇦🇪_20"
-    type: ss
-    server: "38.54.9.181"
-    port: 3306
-    cipher: "aes-256-gcm"
-    password: "Y6R9pAtvxxzmGC"
-    udp: true
 
 proxy-groups:
   # ── Top-level selector ────────────────────────────────────────────────────

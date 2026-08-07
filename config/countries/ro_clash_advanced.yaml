@@ -59,7 +59,7 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇷🇴_3"
+  - name: "🇷🇴_2"
     type: vless
     server: "151.242.191.161"
     port: 443
@@ -72,13 +72,6 @@ proxies:
     reality-opts:
       public-key: "OZVjfQBboTDTBw0baMFqzVPsVUI4FNQmspTEb0b0zW4"
       short-id: "a1b2c3d4"
-  - name: "🇷🇴_4"
-    type: ss
-    server: "154.46.31.106"
-    port: 443
-    cipher: "chacha20-ietf-poly1305"
-    password: "QFWzCw2uX9B9i6qAYeFBIE"
-    udp: true
 
 proxy-groups:
   # ── Top-level selector ────────────────────────────────────────────────────
@@ -121,8 +114,7 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇷🇴_3"
-      - "🇷🇴_4"
+      - "🇷🇴_2"
 
   - name: "LB-CDN"
     type: load-balance
@@ -132,8 +124,7 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇷🇴_3"
-      - "🇷🇴_4"
+      - "🇷🇴_2"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -143,8 +134,7 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇷🇴_3"
-      - "🇷🇴_4"
+      - "🇷🇴_2"
 
   - name: "FAST-CDN"
     type: url-test
@@ -153,8 +143,7 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇷🇴_3"
-      - "🇷🇴_4"
+      - "🇷🇴_2"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -164,15 +153,13 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇷🇴_3"
-      - "🇷🇴_4"
+      - "🇷🇴_2"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
-      - "🇷🇴_3"
-      - "🇷🇴_4"
+      - "🇷🇴_2"
 
 rules:
   - MATCH,PROXY-BEST

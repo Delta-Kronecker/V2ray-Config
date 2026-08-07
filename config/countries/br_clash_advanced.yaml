@@ -59,7 +59,7 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇧🇷_9"
+  - name: "🇧🇷_5"
     type: vless
     server: "167.234.255.2"
     port: 34045
@@ -72,7 +72,7 @@ proxies:
     reality-opts:
       public-key: "cDaDzPr3PlS3NM8lreHZbdo-Mhqz8vMBzMSkHXhGIUA"
       short-id: "e8ab71d0"
-  - name: "🇧🇷_10"
+  - name: "🇧🇷_6"
     type: vless
     server: "45.194.53.30"
     port: 8880
@@ -83,44 +83,16 @@ proxies:
       path: "/?ed=2560"
       headers:
         Host: "vms.lifetime19.workers.dev"
-  - name: "🇧🇷_11"
+  - name: "🇧🇷_7"
     type: ss
-    server: "137.131.170.42"
+    server: "137.131.223.233"
     port: 59319
     cipher: "chacha20-ietf-poly1305"
     password: "YjliYmFlNzVmMmE4ZmJkYjAxNzQ2NWUyNzZlNjhkZGU="
     udp: true
-  - name: "🇧🇷_12"
+  - name: "🇧🇷_8"
     type: ss
-    server: "163.176.59.72"
-    port: 59319
-    cipher: "chacha20-ietf-poly1305"
-    password: "YjliYmFlNzVmMmE4ZmJkYjAxNzQ2NWUyNzZlNjhkZGU="
-    udp: true
-  - name: "🇧🇷_13"
-    type: ss
-    server: "144.22.183.254"
-    port: 59319
-    cipher: "chacha20-ietf-poly1305"
-    password: "YjliYmFlNzVmMmE4ZmJkYjAxNzQ2NWUyNzZlNjhkZGU="
-    udp: true
-  - name: "🇧🇷_14"
-    type: ss
-    server: "144.22.183.254"
-    port: 59319
-    cipher: "chacha20-ietf-poly1305"
-    password: "YjliYmFlNzVmMmE4ZmJkYjAxNzQ2NWUyNzZlNjhkZGU="
-    udp: true
-  - name: "🇧🇷_15"
-    type: ss
-    server: "137.131.170.42"
-    port: 59319
-    cipher: "chacha20-ietf-poly1305"
-    password: "YjliYmFlNzVmMmE4ZmJkYjAxNzQ2NWUyNzZlNjhkZGU="
-    udp: true
-  - name: "🇧🇷_16"
-    type: ss
-    server: "163.176.59.72"
+    server: "147.15.111.219"
     port: 59319
     cipher: "chacha20-ietf-poly1305"
     password: "YjliYmFlNzVmMmE4ZmJkYjAxNzQ2NWUyNzZlNjhkZGU="
@@ -167,14 +139,10 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇧🇷_9"
-      - "🇧🇷_10"
-      - "🇧🇷_11"
-      - "🇧🇷_12"
-      - "🇧🇷_13"
-      - "🇧🇷_14"
-      - "🇧🇷_15"
-      - "🇧🇷_16"
+      - "🇧🇷_5"
+      - "🇧🇷_6"
+      - "🇧🇷_7"
+      - "🇧🇷_8"
 
   - name: "LB-CDN"
     type: load-balance
@@ -184,14 +152,10 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇧🇷_9"
-      - "🇧🇷_10"
-      - "🇧🇷_11"
-      - "🇧🇷_12"
-      - "🇧🇷_13"
-      - "🇧🇷_14"
-      - "🇧🇷_15"
-      - "🇧🇷_16"
+      - "🇧🇷_5"
+      - "🇧🇷_6"
+      - "🇧🇷_7"
+      - "🇧🇷_8"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -201,14 +165,10 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇧🇷_9"
-      - "🇧🇷_10"
-      - "🇧🇷_11"
-      - "🇧🇷_12"
-      - "🇧🇷_13"
-      - "🇧🇷_14"
-      - "🇧🇷_15"
-      - "🇧🇷_16"
+      - "🇧🇷_5"
+      - "🇧🇷_6"
+      - "🇧🇷_7"
+      - "🇧🇷_8"
 
   - name: "FAST-CDN"
     type: url-test
@@ -217,14 +177,10 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇧🇷_9"
-      - "🇧🇷_10"
-      - "🇧🇷_11"
-      - "🇧🇷_12"
-      - "🇧🇷_13"
-      - "🇧🇷_14"
-      - "🇧🇷_15"
-      - "🇧🇷_16"
+      - "🇧🇷_5"
+      - "🇧🇷_6"
+      - "🇧🇷_7"
+      - "🇧🇷_8"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -234,27 +190,19 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇧🇷_9"
-      - "🇧🇷_10"
-      - "🇧🇷_11"
-      - "🇧🇷_12"
-      - "🇧🇷_13"
-      - "🇧🇷_14"
-      - "🇧🇷_15"
-      - "🇧🇷_16"
+      - "🇧🇷_5"
+      - "🇧🇷_6"
+      - "🇧🇷_7"
+      - "🇧🇷_8"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
-      - "🇧🇷_9"
-      - "🇧🇷_10"
-      - "🇧🇷_11"
-      - "🇧🇷_12"
-      - "🇧🇷_13"
-      - "🇧🇷_14"
-      - "🇧🇷_15"
-      - "🇧🇷_16"
+      - "🇧🇷_5"
+      - "🇧🇷_6"
+      - "🇧🇷_7"
+      - "🇧🇷_8"
 
 rules:
   - MATCH,PROXY-BEST
