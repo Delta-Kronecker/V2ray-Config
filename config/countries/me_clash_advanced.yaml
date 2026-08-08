@@ -59,27 +59,21 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇿🇦_4"
-    type: ss
-    server: "102.37.156.224"
-    port: 443
-    cipher: "chacha20-ietf-poly1305"
-    password: "aduB9HGxQHjA2SBMRjkHX6"
+  - name: "🇲🇪_2"
+    type: vless
+    server: "178.83.110.32"
+    port: 7443
+    uuid: "9bb71136-2380-4b6a-97be-1d4ba11d5a55"
     udp: true
-  - name: "🇿🇦_5"
-    type: ss
-    server: "102.37.156.224"
-    port: 443
-    cipher: "chacha20-ietf-poly1305"
-    password: "aduB9HGxQHjA2SBMRjkHX6"
-    udp: true
-  - name: "🇿🇦_6"
-    type: ss
-    server: "102.133.165.160"
-    port: 16233
-    cipher: "chacha20-ietf-poly1305"
-    password: "Xsy8Ox4yOV3xLlpxtjzs3X"
-    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "9-7u3b6e.wzkija0v0du4yhk6jfyfafml3nh22kne.workers.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/@Marisa_kristi"
+      headers:
+        Host: "9-7u3b6e.wzkija0v0du4yhk6jfyfafml3nh22kne.workers.dev"
 
 proxy-groups:
   # ── Top-level selector ────────────────────────────────────────────────────
@@ -122,9 +116,7 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇿🇦_4"
-      - "🇿🇦_5"
-      - "🇿🇦_6"
+      - "🇲🇪_2"
 
   - name: "LB-CDN"
     type: load-balance
@@ -134,9 +126,7 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇿🇦_4"
-      - "🇿🇦_5"
-      - "🇿🇦_6"
+      - "🇲🇪_2"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -146,9 +136,7 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇿🇦_4"
-      - "🇿🇦_5"
-      - "🇿🇦_6"
+      - "🇲🇪_2"
 
   - name: "FAST-CDN"
     type: url-test
@@ -157,9 +145,7 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇿🇦_4"
-      - "🇿🇦_5"
-      - "🇿🇦_6"
+      - "🇲🇪_2"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -169,17 +155,13 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇿🇦_4"
-      - "🇿🇦_5"
-      - "🇿🇦_6"
+      - "🇲🇪_2"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
-      - "🇿🇦_4"
-      - "🇿🇦_5"
-      - "🇿🇦_6"
+      - "🇲🇪_2"
 
 rules:
   - MATCH,PROXY-BEST

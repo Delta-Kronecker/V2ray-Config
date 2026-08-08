@@ -79,17 +79,6 @@ proxies:
         Host: "notls.lukongtou.eu.org"
   - name: "🇺🇦_2"
     type: vless
-    server: "89.116.180.40"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/?ed=2560"
-      headers:
-        Host: "vms.lifetime09.workers.dev"
-  - name: "🇺🇦_3"
-    type: vless
     server: "194.152.44.30"
     port: 8880
     uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
@@ -99,7 +88,7 @@ proxies:
       path: "/"
       headers:
         Host: "vms.lifetime55.workers.dev"
-  - name: "🇺🇦_4"
+  - name: "🇺🇦_3"
     type: vless
     server: "45.135.235.30"
     port: 8880
@@ -110,7 +99,32 @@ proxies:
       path: "/?ed=2560"
       headers:
         Host: "vms.lifetime07.workers.dev"
+  - name: "🇺🇦_4"
+    type: vless
+    server: "89.116.180.40"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "vms.lifetime09.workers.dev"
   - name: "🇺🇦_5"
+    type: vless
+    server: "45.135.235.8"
+    port: 443
+    uuid: "47fcef29-ab4e-4aa6-932b-d95a18f28a4e"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "gj2rf.mlrb.tyr.hh.vavava.kdns.fr"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "gj2rf.mlrb.tyr.hh.vavava.kdns.fr"
+  - name: "🇺🇦_6"
     type: vless
     server: "89.116.180.30"
     port: 8880
@@ -121,14 +135,6 @@ proxies:
       path: "/"
       headers:
         Host: "vms.lifetime09.workers.dev"
-  - name: "🇺🇦_6"
-    type: trojan
-    server: "130.0.236.88"
-    port: 443
-    password: "d2adff89-5143-4d67-921f-3478464de5bb"
-    sni: "ua.freeguard.org"
-    skip-cert-verify: true
-    udp: true
   - name: "🇺🇦_7"
     type: trojan
     server: "89.116.180.49"
@@ -140,6 +146,14 @@ proxies:
     network: ws
     ws-opts:
       path: "/sync"
+  - name: "🇺🇦_8"
+    type: trojan
+    server: "130.0.236.88"
+    port: 443
+    password: "d2adff89-5143-4d67-921f-3478464de5bb"
+    sni: "ua.freeguard.org"
+    skip-cert-verify: true
+    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -161,6 +175,7 @@ proxy-groups:
       - "🇺🇦_5"
       - "🇺🇦_6"
       - "🇺🇦_7"
+      - "🇺🇦_8"
 
 
 rules:

@@ -65,6 +65,20 @@ dns:
 proxies:
   - name: "🇧🇷_1"
     type: vless
+    server: "185.133.35.8"
+    port: 443
+    uuid: "47fcef29-ab4e-4aa6-932b-d95a18f28a4e"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "gj2rf.mlrb.tyr.hh.vavava.kdns.fr"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "gj2rf.mlrb.tyr.hh.vavava.kdns.fr"
+  - name: "🇧🇷_2"
+    type: vless
     server: "167.234.255.2"
     port: 34045
     uuid: "d8dd94fd-540e-461d-b5d4-acebef02c22a"
@@ -76,7 +90,7 @@ proxies:
     reality-opts:
       public-key: "cDaDzPr3PlS3NM8lreHZbdo-Mhqz8vMBzMSkHXhGIUA"
       short-id: "e8ab71d0"
-  - name: "🇧🇷_2"
+  - name: "🇧🇷_3"
     type: vless
     server: "45.194.53.30"
     port: 8880
@@ -87,16 +101,30 @@ proxies:
       path: "/?ed=2560"
       headers:
         Host: "vms.lifetime19.workers.dev"
-  - name: "🇧🇷_3"
+  - name: "🇧🇷_4"
+    type: vless
+    server: "45.194.53.8"
+    port: 443
+    uuid: "47fcef29-ab4e-4aa6-932b-d95a18f28a4e"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "gj2rf.mlrb.tyr.hh.vavava.kdns.fr"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "gj2rf.mlrb.tyr.hh.vavava.kdns.fr"
+  - name: "🇧🇷_5"
     type: ss
-    server: "137.131.223.233"
+    server: "137.131.151.240"
     port: 59319
     cipher: "chacha20-ietf-poly1305"
     password: "YjliYmFlNzVmMmE4ZmJkYjAxNzQ2NWUyNzZlNjhkZGU="
     udp: true
-  - name: "🇧🇷_4"
+  - name: "🇧🇷_6"
     type: ss
-    server: "147.15.111.219"
+    server: "137.131.151.240"
     port: 59319
     cipher: "chacha20-ietf-poly1305"
     password: "YjliYmFlNzVmMmE4ZmJkYjAxNzQ2NWUyNzZlNjhkZGU="
@@ -119,6 +147,8 @@ proxy-groups:
       - "🇧🇷_2"
       - "🇧🇷_3"
       - "🇧🇷_4"
+      - "🇧🇷_5"
+      - "🇧🇷_6"
 
 
 rules:

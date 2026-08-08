@@ -63,27 +63,22 @@ dns:
     - https://freedns.controld.com/family
 
 proxies:
-  - name: "🇿🇦_1"
-    type: ss
-    server: "102.37.156.224"
+  - name: "🇩🇰_1"
+    type: vless
+    server: "144.31.242.54"
     port: 443
-    cipher: "chacha20-ietf-poly1305"
-    password: "aduB9HGxQHjA2SBMRjkHX6"
+    uuid: "f692629b-3557-488a-9c9b-60775331e423"
     udp: true
-  - name: "🇿🇦_2"
-    type: ss
-    server: "102.37.156.224"
-    port: 443
-    cipher: "chacha20-ietf-poly1305"
-    password: "aduB9HGxQHjA2SBMRjkHX6"
-    udp: true
-  - name: "🇿🇦_3"
-    type: ss
-    server: "102.133.165.160"
-    port: 16233
-    cipher: "chacha20-ietf-poly1305"
-    password: "Xsy8Ox4yOV3xLlpxtjzs3X"
-    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "fi1-cosmostechnology.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "f3Mwf_vaM2TDw1X8HZORkYPLY0-DE5smNYgHuhrQLTA"
+      short-id: ""
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "fi1cosmos"
 
 proxy-groups:
   - name: "PROXY"
@@ -98,9 +93,7 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇿🇦_1"
-      - "🇿🇦_2"
-      - "🇿🇦_3"
+      - "🇩🇰_1"
 
 
 rules:

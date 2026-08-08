@@ -59,18 +59,21 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇮🇷_15"
+  - name: "🇮🇷_13"
     type: vless
-    server: "45.131.4.192"
-    port: 80
-    uuid: "5f4845b4-11dc-41d6-9508-4ff6a02e36c1"
+    server: "45.131.4.8"
+    port: 443
+    uuid: "47fcef29-ab4e-4aa6-932b-d95a18f28a4e"
     udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "gj2rf.mlrb.tyr.hh.vavava.kdns.fr"
     network: ws
     ws-opts:
       path: "/"
       headers:
-        Host: "silent-paper-fa57.fipiyag989.workers.dev"
-  - name: "🇮🇷_16"
+        Host: "gj2rf.mlrb.tyr.hh.vavava.kdns.fr"
+  - name: "🇮🇷_14"
     type: vless
     server: "45.131.4.30"
     port: 8880
@@ -81,13 +84,20 @@ proxies:
       path: "/"
       headers:
         Host: "vms.lifetime59.workers.dev"
-  - name: "🇮🇷_17"
+  - name: "🇮🇷_15"
     type: vless
-    server: "92.114.24.95"
-    port: 43630
-    uuid: "01a95af3-a2f6-453e-9f88-b2fc011627cc"
+    server: "sir.m2love2.top"
+    port: 9090
+    uuid: "a00a4a9f-4ee7-458e-9485-4047d250c296"
     udp: true
-  - name: "🇮🇷_18"
+    tls: true
+    skip-cert-verify: true
+    servername: "www.cloudflare.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "VPD--NqsJ9fyU-xAGks-zUk-cPQjO66EMpovwLLsjm4"
+      short-id: "8a881d1f3005"
+  - name: "🇮🇷_16"
     type: vless
     server: "45.131.4.115"
     port: 80
@@ -98,6 +108,23 @@ proxies:
       path: "/eyJqdW5rIjoiQXoydFJwaWM0WSIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0="
       headers:
         Host: "worker3.gigak25604.workers.dev"
+  - name: "🇮🇷_17"
+    type: vless
+    server: "45.131.4.192"
+    port: 80
+    uuid: "5f4845b4-11dc-41d6-9508-4ff6a02e36c1"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "silent-paper-fa57.fipiyag989.workers.dev"
+  - name: "🇮🇷_18"
+    type: vless
+    server: "185.128.139.11"
+    port: 18244
+    uuid: "0d543aed-4e30-4553-b5ac-211419bb0961"
+    udp: true
   - name: "🇮🇷_19"
     type: trojan
     server: "45.131.4.118"
@@ -111,64 +138,37 @@ proxies:
       path: "/sync"
   - name: "🇮🇷_20"
     type: trojan
+    server: "ir1.iobase.ir"
+    port: 443
+    password: "a6xjq4UD2t"
+    sni: "ir1.iobase.ir"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇮🇷_21"
+    type: trojan
     server: "193.151.134.182"
     port: 443
     password: "diCyRX1d"
     sni: "iprostable.enterprises"
     skip-cert-verify: true
     udp: true
-  - name: "🇮🇷_21"
-    type: ss
-    server: "dkstatics-public.digikala.com"
-    port: 443
-    cipher: "none"
-    password: "RSzEIkk2EsHEAVj15N5E/A=="
-    udp: true
   - name: "🇮🇷_22"
     type: ss
-    server: "185.188.105.10"
+    server: "185.188.107.10"
     port: 443
     cipher: "none"
     password: "RSzEIkk2EsHEAVj15N5E/A=="
     udp: true
   - name: "🇮🇷_23"
     type: ss
-    server: "185.188.105.11"
+    server: "dkstatics-public.digikala.com"
     port: 443
     cipher: "none"
     password: "RSzEIkk2EsHEAVj15N5E/A=="
     udp: true
   - name: "🇮🇷_24"
     type: ss
-    server: "185.188.105.10"
-    port: 443
-    cipher: "none"
-    password: "RSzEIkk2EsHEAVj15N5E/A=="
-    udp: true
-  - name: "🇮🇷_25"
-    type: ss
-    server: "dkstatics-public.digikala.com"
-    port: 443
-    cipher: "none"
-    password: "RSzEIkk2EsHEAVj15N5E/A=="
-    udp: true
-  - name: "🇮🇷_26"
-    type: ss
-    server: "185.188.104.10"
-    port: 443
-    cipher: "none"
-    password: "RSzEIkk2EsHEAVj15N5E/A=="
-    udp: true
-  - name: "🇮🇷_27"
-    type: ss
-    server: "185.188.105.11"
-    port: 443
-    cipher: "none"
-    password: "RSzEIkk2EsHEAVj15N5E/A=="
-    udp: true
-  - name: "🇮🇷_28"
-    type: ss
-    server: "185.188.104.10"
+    server: "185.188.107.10"
     port: 443
     cipher: "none"
     password: "RSzEIkk2EsHEAVj15N5E/A=="
@@ -215,6 +215,8 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
+      - "🇮🇷_13"
+      - "🇮🇷_14"
       - "🇮🇷_15"
       - "🇮🇷_16"
       - "🇮🇷_17"
@@ -225,10 +227,6 @@ proxy-groups:
       - "🇮🇷_22"
       - "🇮🇷_23"
       - "🇮🇷_24"
-      - "🇮🇷_25"
-      - "🇮🇷_26"
-      - "🇮🇷_27"
-      - "🇮🇷_28"
 
   - name: "LB-CDN"
     type: load-balance
@@ -238,6 +236,8 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
+      - "🇮🇷_13"
+      - "🇮🇷_14"
       - "🇮🇷_15"
       - "🇮🇷_16"
       - "🇮🇷_17"
@@ -248,10 +248,6 @@ proxy-groups:
       - "🇮🇷_22"
       - "🇮🇷_23"
       - "🇮🇷_24"
-      - "🇮🇷_25"
-      - "🇮🇷_26"
-      - "🇮🇷_27"
-      - "🇮🇷_28"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -261,6 +257,8 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
+      - "🇮🇷_13"
+      - "🇮🇷_14"
       - "🇮🇷_15"
       - "🇮🇷_16"
       - "🇮🇷_17"
@@ -271,10 +269,6 @@ proxy-groups:
       - "🇮🇷_22"
       - "🇮🇷_23"
       - "🇮🇷_24"
-      - "🇮🇷_25"
-      - "🇮🇷_26"
-      - "🇮🇷_27"
-      - "🇮🇷_28"
 
   - name: "FAST-CDN"
     type: url-test
@@ -283,6 +277,8 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
+      - "🇮🇷_13"
+      - "🇮🇷_14"
       - "🇮🇷_15"
       - "🇮🇷_16"
       - "🇮🇷_17"
@@ -293,10 +289,6 @@ proxy-groups:
       - "🇮🇷_22"
       - "🇮🇷_23"
       - "🇮🇷_24"
-      - "🇮🇷_25"
-      - "🇮🇷_26"
-      - "🇮🇷_27"
-      - "🇮🇷_28"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -306,6 +298,8 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
+      - "🇮🇷_13"
+      - "🇮🇷_14"
       - "🇮🇷_15"
       - "🇮🇷_16"
       - "🇮🇷_17"
@@ -316,15 +310,13 @@ proxy-groups:
       - "🇮🇷_22"
       - "🇮🇷_23"
       - "🇮🇷_24"
-      - "🇮🇷_25"
-      - "🇮🇷_26"
-      - "🇮🇷_27"
-      - "🇮🇷_28"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
+      - "🇮🇷_13"
+      - "🇮🇷_14"
       - "🇮🇷_15"
       - "🇮🇷_16"
       - "🇮🇷_17"
@@ -335,10 +327,6 @@ proxy-groups:
       - "🇮🇷_22"
       - "🇮🇷_23"
       - "🇮🇷_24"
-      - "🇮🇷_25"
-      - "🇮🇷_26"
-      - "🇮🇷_27"
-      - "🇮🇷_28"
 
 rules:
   - MATCH,PROXY-BEST

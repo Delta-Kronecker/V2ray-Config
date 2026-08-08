@@ -65,19 +65,33 @@ dns:
 proxies:
   - name: "🇭🇺_1"
     type: vless
-    server: "45.195.111.15"
+    server: "74.49.214.8"
     port: 443
-    uuid: "82e209b2-97a6-4d67-a10b-72627b9f6702"
+    uuid: "47fcef29-ab4e-4aa6-932b-d95a18f28a4e"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "storage.yandex.net"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "7zd9mJilgjOrg_ohtw23Vmio-pdnYqeP_r-kiWt87Cg"
-      short-id: "f4b4a6365558ea2e"
-    flow: "xtls-rprx-vision"
+    servername: "gj2rf.mlrb.tyr.hh.vavava.kdns.fr"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "gj2rf.mlrb.tyr.hh.vavava.kdns.fr"
   - name: "🇭🇺_2"
+    type: vless
+    server: "141.11.203.8"
+    port: 443
+    uuid: "47fcef29-ab4e-4aa6-932b-d95a18f28a4e"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "gj2rf.mlrb.tyr.hh.vavava.kdns.fr"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "gj2rf.mlrb.tyr.hh.vavava.kdns.fr"
+  - name: "🇭🇺_3"
     type: vless
     server: "45.195.111.15"
     port: 443
@@ -91,6 +105,75 @@ proxies:
       public-key: "7zd9mJilgjOrg_ohtw23Vmio-pdnYqeP_r-kiWt87Cg"
       short-id: "2715592069f36fe7"
     flow: "xtls-rprx-vision"
+  - name: "🇭🇺_4"
+    type: vless
+    server: "141.11.202.8"
+    port: 443
+    uuid: "47fcef29-ab4e-4aa6-932b-d95a18f28a4e"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "gj2rf.mlrb.tyr.hh.vavava.kdns.fr"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "gj2rf.mlrb.tyr.hh.vavava.kdns.fr"
+  - name: "🇭🇺_5"
+    type: vless
+    server: "45.195.111.15"
+    port: 443
+    uuid: "82e209b2-97a6-4d67-a10b-72627b9f6702"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "storage.yandex.net"
+    client-fingerprint: "qq"
+    reality-opts:
+      public-key: "7zd9mJilgjOrg_ohtw23Vmio-pdnYqeP_r-kiWt87Cg"
+      short-id: "f4b4a6365558ea2e"
+    flow: "xtls-rprx-vision"
+  - name: "🇭🇺_6"
+    type: vless
+    server: "74.49.215.8"
+    port: 443
+    uuid: "47fcef29-ab4e-4aa6-932b-d95a18f28a4e"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "gj2rf.mlrb.tyr.hh.vavava.kdns.fr"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "gj2rf.mlrb.tyr.hh.vavava.kdns.fr"
+  - name: "🇭🇺_7"
+    type: vless
+    server: "141.11.202.123"
+    port: 443
+    uuid: "1d16c6e0-1bbe-435b-b661-90043fee999c"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "notls.lukongtou.eu.org"
+    network: ws
+    ws-opts:
+      path: "Telegram-WangCai2"
+      headers:
+        Host: "notls.lukongtou.eu.org"
+  - name: "🇭🇺_8"
+    type: trojan
+    server: "185.225.68.232"
+    port: 443
+    password: "humanity"
+    sni: "www.calmlunch.com"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/assignment"
+      headers:
+        Host: "www.calmlunch.com"
 
 proxy-groups:
   - name: "PROXY"
@@ -107,6 +190,12 @@ proxy-groups:
     proxies:
       - "🇭🇺_1"
       - "🇭🇺_2"
+      - "🇭🇺_3"
+      - "🇭🇺_4"
+      - "🇭🇺_5"
+      - "🇭🇺_6"
+      - "🇭🇺_7"
+      - "🇭🇺_8"
 
 
 rules:

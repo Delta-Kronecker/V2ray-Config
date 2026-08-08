@@ -80,6 +80,26 @@ proxies:
         Host: "ov186.ochmaybrooooo.online"
   - name: "🇨🇳_2"
     type: vless
+    server: "120.227.1.43"
+    port: 12528
+    uuid: "f0169b08-43fd-4dc3-8195-18f6ad2fe39d"
+    udp: true
+  - name: "🇨🇳_3"
+    type: vless
+    server: "176.124.223.8"
+    port: 443
+    uuid: "47fcef29-ab4e-4aa6-932b-d95a18f28a4e"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "gj2rf.mlrb.tyr.hh.vavava.kdns.fr"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "gj2rf.mlrb.tyr.hh.vavava.kdns.fr"
+  - name: "🇨🇳_4"
+    type: vless
     server: "176.124.223.30"
     port: 8880
     uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
@@ -89,13 +109,7 @@ proxies:
       path: "/"
       headers:
         Host: "vms.lifetime38.workers.dev"
-  - name: "🇨🇳_3"
-    type: vless
-    server: "120.227.1.43"
-    port: 12528
-    uuid: "f0169b08-43fd-4dc3-8195-18f6ad2fe39d"
-    udp: true
-  - name: "🇨🇳_4"
+  - name: "🇨🇳_5"
     type: trojan
     server: "117.149.198.190"
     port: 10051
@@ -121,6 +135,7 @@ proxy-groups:
       - "🇨🇳_2"
       - "🇨🇳_3"
       - "🇨🇳_4"
+      - "🇨🇳_5"
 
 
 rules:

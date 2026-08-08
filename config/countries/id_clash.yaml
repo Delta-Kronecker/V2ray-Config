@@ -64,6 +64,20 @@ dns:
 
 proxies:
   - name: "🇮🇩_1"
+    type: vless
+    server: "45.196.29.8"
+    port: 443
+    uuid: "47fcef29-ab4e-4aa6-932b-d95a18f28a4e"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "gj2rf.mlrb.tyr.hh.vavava.kdns.fr"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "gj2rf.mlrb.tyr.hh.vavava.kdns.fr"
+  - name: "🇮🇩_2"
     type: trojan
     server: "172.232.250.160"
     port: 443
@@ -86,6 +100,7 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇮🇩_1"
+      - "🇮🇩_2"
 
 
 rules:
