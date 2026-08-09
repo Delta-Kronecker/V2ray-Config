@@ -65,6 +65,15 @@ dns:
 proxies:
   - name: "🇪🇸_1"
     type: vless
+    server: "85.90.217.42"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "85.90.217.42"
+  - name: "🇪🇸_2"
+    type: vless
     server: "185.18.250.30"
     port: 8880
     uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
@@ -74,21 +83,6 @@ proxies:
       path: "/"
       headers:
         Host: "vms.lifetime47.workers.dev"
-  - name: "🇪🇸_2"
-    type: vless
-    server: "185.18.250.252"
-    port: 443
-    uuid: "f77299ea-e13d-417d-8cdc-ce5566dfc94b"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "edu.ruangguru.com.r3xxe.eu.cc"
-    client-fingerprint: "chrome"
-    network: ws
-    ws-opts:
-      path: "/nl-tw"
-      headers:
-        Host: "edu.ruangguru.com.r3xxe.eu.cc"
   - name: "🇪🇸_3"
     type: vless
     server: "185.18.250.50"
@@ -101,15 +95,6 @@ proxies:
       headers:
         Host: "vms.lifetime47.workers.dev"
   - name: "🇪🇸_4"
-    type: vless
-    server: "85.90.217.42"
-    port: 443
-    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "85.90.217.42"
-  - name: "🇪🇸_5"
     type: vless
     server: "170.168.97.5"
     port: 8443
@@ -125,26 +110,38 @@ proxies:
     network: grpc
     grpc-opts:
       grpc-service-name: "TunService"
-  - name: "🇪🇸_6"
+  - name: "🇪🇸_5"
     type: vless
-    server: "185.18.250.8"
+    server: "185.18.250.245"
     port: 443
-    uuid: "47fcef29-ab4e-4aa6-932b-d95a18f28a4e"
+    uuid: "f77299ea-e13d-417d-8cdc-ce5566dfc94b"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "gj2rf.mlrb.tyr.hh.vavava.kdns.fr"
+    servername: "edu.ruangguru.com.r3xxe.eu.cc"
+    client-fingerprint: "chrome"
     network: ws
     ws-opts:
-      path: "/"
+      path: "/nl-tw"
       headers:
-        Host: "gj2rf.mlrb.tyr.hh.vavava.kdns.fr"
+        Host: "edu.ruangguru.com.r3xxe.eu.cc"
+  - name: "🇪🇸_6"
+    type: trojan
+    server: "185.18.250.245"
+    port: 443
+    password: "humanity"
+    sni: "www.calmlunch.com"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/assignment"
   - name: "🇪🇸_7"
     type: trojan
-    server: "193.148.19.213"
+    server: "193.148.19.210"
     port: 52794
     password: "2eutknankxtbgkwcajzt"
-    sni: "193.148.19.213"
+    sni: "www.vk.com"
     skip-cert-verify: true
     udp: true
   - name: "🇪🇸_8"
@@ -162,30 +159,47 @@ proxies:
         Host: "www.calmlunch.com"
   - name: "🇪🇸_9"
     type: trojan
-    server: "185.18.250.245"
-    port: 443
-    password: "humanity"
-    sni: "www.calmlunch.com"
-    skip-cert-verify: true
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/assignment"
-  - name: "🇪🇸_10"
-    type: trojan
     server: "65.20.102.54"
     port: 443
     password: "842b5f9dd11e458d8613c907c4cc5723"
     sni: "www.gpt123.one"
     skip-cert-verify: true
     udp: true
-  - name: "🇪🇸_11"
+  - name: "🇪🇸_10"
     type: trojan
-    server: "193.148.19.210"
+    server: "193.148.19.213"
     port: 52794
     password: "2eutknankxtbgkwcajzt"
-    sni: "www.vk.com"
+    sni: "193.148.19.213"
     skip-cert-verify: true
+    udp: true
+  - name: "🇪🇸_11"
+    type: ss
+    server: "108.181.121.226"
+    port: 8388
+    cipher: "chacha20-ietf-poly1305"
+    password: "WSyL4XTwNsdv"
+    udp: true
+  - name: "🇪🇸_12"
+    type: ss
+    server: "140.174.184.5"
+    port: 8388
+    cipher: "chacha20-ietf-poly1305"
+    password: "qItG8SueYQcP"
+    udp: true
+  - name: "🇪🇸_13"
+    type: ss
+    server: "108.181.121.226"
+    port: 8388
+    cipher: "chacha20-ietf-poly1305"
+    password: "WSyL4XTwNsdv"
+    udp: true
+  - name: "🇪🇸_14"
+    type: ss
+    server: "140.174.184.5"
+    port: 8388
+    cipher: "chacha20-ietf-poly1305"
+    password: "qItG8SueYQcP"
     udp: true
 
 proxy-groups:
@@ -212,6 +226,9 @@ proxy-groups:
       - "🇪🇸_9"
       - "🇪🇸_10"
       - "🇪🇸_11"
+      - "🇪🇸_12"
+      - "🇪🇸_13"
+      - "🇪🇸_14"
 
 
 rules:

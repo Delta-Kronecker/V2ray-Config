@@ -59,6 +59,17 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
+  - name: "🇺🇦_8"
+    type: vless
+    server: "89.116.180.40"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "vms.lifetime09.workers.dev"
   - name: "🇺🇦_9"
     type: vless
     server: "45.135.235.123"
@@ -75,17 +86,6 @@ proxies:
         Host: "notls.lukongtou.eu.org"
   - name: "🇺🇦_10"
     type: vless
-    server: "194.152.44.30"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "vms.lifetime55.workers.dev"
-  - name: "🇺🇦_11"
-    type: vless
     server: "45.135.235.30"
     port: 8880
     uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
@@ -95,32 +95,18 @@ proxies:
       path: "/?ed=2560"
       headers:
         Host: "vms.lifetime07.workers.dev"
-  - name: "🇺🇦_12"
+  - name: "🇺🇦_11"
     type: vless
-    server: "89.116.180.40"
+    server: "194.152.44.30"
     port: 8880
     uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
     udp: true
     network: ws
     ws-opts:
-      path: "/?ed=2560"
-      headers:
-        Host: "vms.lifetime09.workers.dev"
-  - name: "🇺🇦_13"
-    type: vless
-    server: "45.135.235.8"
-    port: 443
-    uuid: "47fcef29-ab4e-4aa6-932b-d95a18f28a4e"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "gj2rf.mlrb.tyr.hh.vavava.kdns.fr"
-    network: ws
-    ws-opts:
       path: "/"
       headers:
-        Host: "gj2rf.mlrb.tyr.hh.vavava.kdns.fr"
-  - name: "🇺🇦_14"
+        Host: "vms.lifetime55.workers.dev"
+  - name: "🇺🇦_12"
     type: vless
     server: "89.116.180.30"
     port: 8880
@@ -131,7 +117,7 @@ proxies:
       path: "/"
       headers:
         Host: "vms.lifetime09.workers.dev"
-  - name: "🇺🇦_15"
+  - name: "🇺🇦_13"
     type: trojan
     server: "89.116.180.49"
     port: 443
@@ -142,7 +128,7 @@ proxies:
     network: ws
     ws-opts:
       path: "/sync"
-  - name: "🇺🇦_16"
+  - name: "🇺🇦_14"
     type: trojan
     server: "130.0.236.88"
     port: 443
@@ -192,14 +178,13 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
+      - "🇺🇦_8"
       - "🇺🇦_9"
       - "🇺🇦_10"
       - "🇺🇦_11"
       - "🇺🇦_12"
       - "🇺🇦_13"
       - "🇺🇦_14"
-      - "🇺🇦_15"
-      - "🇺🇦_16"
 
   - name: "LB-CDN"
     type: load-balance
@@ -209,14 +194,13 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
+      - "🇺🇦_8"
       - "🇺🇦_9"
       - "🇺🇦_10"
       - "🇺🇦_11"
       - "🇺🇦_12"
       - "🇺🇦_13"
       - "🇺🇦_14"
-      - "🇺🇦_15"
-      - "🇺🇦_16"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -226,14 +210,13 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
+      - "🇺🇦_8"
       - "🇺🇦_9"
       - "🇺🇦_10"
       - "🇺🇦_11"
       - "🇺🇦_12"
       - "🇺🇦_13"
       - "🇺🇦_14"
-      - "🇺🇦_15"
-      - "🇺🇦_16"
 
   - name: "FAST-CDN"
     type: url-test
@@ -242,14 +225,13 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
+      - "🇺🇦_8"
       - "🇺🇦_9"
       - "🇺🇦_10"
       - "🇺🇦_11"
       - "🇺🇦_12"
       - "🇺🇦_13"
       - "🇺🇦_14"
-      - "🇺🇦_15"
-      - "🇺🇦_16"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -259,27 +241,25 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
+      - "🇺🇦_8"
       - "🇺🇦_9"
       - "🇺🇦_10"
       - "🇺🇦_11"
       - "🇺🇦_12"
       - "🇺🇦_13"
       - "🇺🇦_14"
-      - "🇺🇦_15"
-      - "🇺🇦_16"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
+      - "🇺🇦_8"
       - "🇺🇦_9"
       - "🇺🇦_10"
       - "🇺🇦_11"
       - "🇺🇦_12"
       - "🇺🇦_13"
       - "🇺🇦_14"
-      - "🇺🇦_15"
-      - "🇺🇦_16"
 
 rules:
   - MATCH,PROXY-BEST

@@ -59,21 +59,7 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇮🇩_3"
-    type: vless
-    server: "45.196.29.8"
-    port: 443
-    uuid: "47fcef29-ab4e-4aa6-932b-d95a18f28a4e"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "gj2rf.mlrb.tyr.hh.vavava.kdns.fr"
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "gj2rf.mlrb.tyr.hh.vavava.kdns.fr"
-  - name: "🇮🇩_4"
+  - name: "🇮🇩_2"
     type: trojan
     server: "172.232.250.160"
     port: 443
@@ -123,8 +109,7 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇮🇩_3"
-      - "🇮🇩_4"
+      - "🇮🇩_2"
 
   - name: "LB-CDN"
     type: load-balance
@@ -134,8 +119,7 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇮🇩_3"
-      - "🇮🇩_4"
+      - "🇮🇩_2"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -145,8 +129,7 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇮🇩_3"
-      - "🇮🇩_4"
+      - "🇮🇩_2"
 
   - name: "FAST-CDN"
     type: url-test
@@ -155,8 +138,7 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇮🇩_3"
-      - "🇮🇩_4"
+      - "🇮🇩_2"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -166,15 +148,13 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇮🇩_3"
-      - "🇮🇩_4"
+      - "🇮🇩_2"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
-      - "🇮🇩_3"
-      - "🇮🇩_4"
+      - "🇮🇩_2"
 
 rules:
   - MATCH,PROXY-BEST

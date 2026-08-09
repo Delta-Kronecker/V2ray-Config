@@ -59,35 +59,7 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇭🇺_9"
-    type: vless
-    server: "74.49.214.8"
-    port: 443
-    uuid: "47fcef29-ab4e-4aa6-932b-d95a18f28a4e"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "gj2rf.mlrb.tyr.hh.vavava.kdns.fr"
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "gj2rf.mlrb.tyr.hh.vavava.kdns.fr"
-  - name: "🇭🇺_10"
-    type: vless
-    server: "141.11.203.8"
-    port: 443
-    uuid: "47fcef29-ab4e-4aa6-932b-d95a18f28a4e"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "gj2rf.mlrb.tyr.hh.vavava.kdns.fr"
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "gj2rf.mlrb.tyr.hh.vavava.kdns.fr"
-  - name: "🇭🇺_11"
+  - name: "🇭🇺_5"
     type: vless
     server: "45.195.111.15"
     port: 443
@@ -101,21 +73,7 @@ proxies:
       public-key: "7zd9mJilgjOrg_ohtw23Vmio-pdnYqeP_r-kiWt87Cg"
       short-id: "2715592069f36fe7"
     flow: "xtls-rprx-vision"
-  - name: "🇭🇺_12"
-    type: vless
-    server: "141.11.202.8"
-    port: 443
-    uuid: "47fcef29-ab4e-4aa6-932b-d95a18f28a4e"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "gj2rf.mlrb.tyr.hh.vavava.kdns.fr"
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "gj2rf.mlrb.tyr.hh.vavava.kdns.fr"
-  - name: "🇭🇺_13"
+  - name: "🇭🇺_6"
     type: vless
     server: "45.195.111.15"
     port: 443
@@ -129,21 +87,7 @@ proxies:
       public-key: "7zd9mJilgjOrg_ohtw23Vmio-pdnYqeP_r-kiWt87Cg"
       short-id: "f4b4a6365558ea2e"
     flow: "xtls-rprx-vision"
-  - name: "🇭🇺_14"
-    type: vless
-    server: "74.49.215.8"
-    port: 443
-    uuid: "47fcef29-ab4e-4aa6-932b-d95a18f28a4e"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "gj2rf.mlrb.tyr.hh.vavava.kdns.fr"
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "gj2rf.mlrb.tyr.hh.vavava.kdns.fr"
-  - name: "🇭🇺_15"
+  - name: "🇭🇺_7"
     type: vless
     server: "141.11.202.123"
     port: 443
@@ -157,7 +101,7 @@ proxies:
       path: "Telegram-WangCai2"
       headers:
         Host: "notls.lukongtou.eu.org"
-  - name: "🇭🇺_16"
+  - name: "🇭🇺_8"
     type: trojan
     server: "185.225.68.232"
     port: 443
@@ -212,14 +156,10 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇭🇺_9"
-      - "🇭🇺_10"
-      - "🇭🇺_11"
-      - "🇭🇺_12"
-      - "🇭🇺_13"
-      - "🇭🇺_14"
-      - "🇭🇺_15"
-      - "🇭🇺_16"
+      - "🇭🇺_5"
+      - "🇭🇺_6"
+      - "🇭🇺_7"
+      - "🇭🇺_8"
 
   - name: "LB-CDN"
     type: load-balance
@@ -229,14 +169,10 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇭🇺_9"
-      - "🇭🇺_10"
-      - "🇭🇺_11"
-      - "🇭🇺_12"
-      - "🇭🇺_13"
-      - "🇭🇺_14"
-      - "🇭🇺_15"
-      - "🇭🇺_16"
+      - "🇭🇺_5"
+      - "🇭🇺_6"
+      - "🇭🇺_7"
+      - "🇭🇺_8"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -246,14 +182,10 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇭🇺_9"
-      - "🇭🇺_10"
-      - "🇭🇺_11"
-      - "🇭🇺_12"
-      - "🇭🇺_13"
-      - "🇭🇺_14"
-      - "🇭🇺_15"
-      - "🇭🇺_16"
+      - "🇭🇺_5"
+      - "🇭🇺_6"
+      - "🇭🇺_7"
+      - "🇭🇺_8"
 
   - name: "FAST-CDN"
     type: url-test
@@ -262,14 +194,10 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇭🇺_9"
-      - "🇭🇺_10"
-      - "🇭🇺_11"
-      - "🇭🇺_12"
-      - "🇭🇺_13"
-      - "🇭🇺_14"
-      - "🇭🇺_15"
-      - "🇭🇺_16"
+      - "🇭🇺_5"
+      - "🇭🇺_6"
+      - "🇭🇺_7"
+      - "🇭🇺_8"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -279,27 +207,19 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇭🇺_9"
-      - "🇭🇺_10"
-      - "🇭🇺_11"
-      - "🇭🇺_12"
-      - "🇭🇺_13"
-      - "🇭🇺_14"
-      - "🇭🇺_15"
-      - "🇭🇺_16"
+      - "🇭🇺_5"
+      - "🇭🇺_6"
+      - "🇭🇺_7"
+      - "🇭🇺_8"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
-      - "🇭🇺_9"
-      - "🇭🇺_10"
-      - "🇭🇺_11"
-      - "🇭🇺_12"
-      - "🇭🇺_13"
-      - "🇭🇺_14"
-      - "🇭🇺_15"
-      - "🇭🇺_16"
+      - "🇭🇺_5"
+      - "🇭🇺_6"
+      - "🇭🇺_7"
+      - "🇭🇺_8"
 
 rules:
   - MATCH,PROXY-BEST
