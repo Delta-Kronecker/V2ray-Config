@@ -65,6 +65,22 @@ dns:
 proxies:
   - name: "🇧🇷_1"
     type: vless
+    server: "168.222.251.122"
+    port: 711
+    uuid: "02e2d68f-9982-4467-ad47-00cbeeae30e6"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "who.int"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "ADsaY9WkhwRaspXqF1JUt4Wg_Aw15h8h679K7Kt9GUU"
+      short-id: ""
+    network: grpc
+    grpc-opts:
+      grpc-service-name: ""
+  - name: "🇧🇷_2"
+    type: vless
     server: "45.194.53.30"
     port: 8880
     uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
@@ -89,6 +105,7 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇧🇷_1"
+      - "🇧🇷_2"
 
 
 rules:

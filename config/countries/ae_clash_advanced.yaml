@@ -59,18 +59,32 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇦🇪_9"
+  - name: "🇦🇪_11"
     type: vless
-    server: "77.232.140.30"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    server: "uae.unixzone.us"
+    port: 22573
+    uuid: "39947382-3212-41c9-bc3a-589574ac8b23"
     udp: true
     network: ws
     ws-opts:
-      path: "/?ed=2560"
+      path: "/"
       headers:
-        Host: "vms.lifetime61.workers.dev"
-  - name: "🇦🇪_10"
+        Host: "uae.unixzone.us"
+  - name: "🇦🇪_12"
+    type: vless
+    server: "178.83.121.19"
+    port: 443
+    uuid: "02e2d68f-9982-4467-ad47-00cbeeae30e6"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "hk.cdn-global.pro"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "nFJCJ2tvxLdLrc9G-O1laW8KDir5SDnaOTmYndVaOGQ"
+      short-id: "7a3f9e2b1c8d4f6a"
+    flow: "xtls-rprx-vision"
+  - name: "🇦🇪_13"
     type: vless
     server: "185.225.195.30"
     port: 8880
@@ -81,7 +95,7 @@ proxies:
       path: "/"
       headers:
         Host: "vms.lifetime18.workers.dev"
-  - name: "🇦🇪_11"
+  - name: "🇦🇪_14"
     type: vless
     server: "94.140.0.100"
     port: 443
@@ -96,7 +110,7 @@ proxies:
       path: "/kbapqjwhbsjwoqjhskso"
       headers:
         Host: "withered-cake-d636.asfvgsrhtrzdbvcgfn.workers.dev"
-  - name: "🇦🇪_12"
+  - name: "🇦🇪_15"
     type: vless
     server: "188.72.103.3"
     port: 443
@@ -111,18 +125,7 @@ proxies:
       path: "/api/v1/rooms/63368e3dbb/sync"
       headers:
         Host: "sync.watchwave.link"
-  - name: "🇦🇪_13"
-    type: vless
-    server: "94.140.0.100"
-    port: 8880
-    uuid: "78e6619e-e82a-cd8d-b482-0973d8498305"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/sync"
-      headers:
-        Host: "silent-pine-a674.jfadwkglaugul.workers.dev"
-  - name: "🇦🇪_14"
+  - name: "🇦🇪_16"
     type: vless
     server: "77.232.140.40"
     port: 8880
@@ -133,7 +136,18 @@ proxies:
       path: "/?ed"
       headers:
         Host: "vms.lifetime61.workers.dev"
-  - name: "🇦🇪_15"
+  - name: "🇦🇪_17"
+    type: vless
+    server: "94.140.0.100"
+    port: 8880
+    uuid: "78e6619e-e82a-cd8d-b482-0973d8498305"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/sync"
+      headers:
+        Host: "silent-pine-a674.jfadwkglaugul.workers.dev"
+  - name: "🇦🇪_18"
     type: vless
     server: "84.235.244.108"
     port: 22573
@@ -144,13 +158,30 @@ proxies:
       path: "/"
       headers:
         Host: "uae.unixzone.us"
-  - name: "🇦🇪_16"
-    type: ss
-    server: "38.54.9.181"
-    port: 3306
-    cipher: "aes-256-gcm"
-    password: "Y6R9pAtvxxzmGC"
+  - name: "🇦🇪_19"
+    type: vless
+    server: "31.57.228.166"
+    port: 20513
+    uuid: "eb8c46f5-68ae-46dc-aea3-50c8cef41897"
     udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "updates.cdn-apple.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "CTfSuRE6fUPYVBJGsmOYnP3UketmmTJSQP45OcoGI2k"
+      short-id: "285db1978fd0d8c1"
+  - name: "🇦🇪_20"
+    type: vless
+    server: "77.232.140.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "vms.lifetime61.workers.dev"
 
 proxy-groups:
   # ── Top-level selector ────────────────────────────────────────────────────
@@ -193,14 +224,16 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇦🇪_9"
-      - "🇦🇪_10"
       - "🇦🇪_11"
       - "🇦🇪_12"
       - "🇦🇪_13"
       - "🇦🇪_14"
       - "🇦🇪_15"
       - "🇦🇪_16"
+      - "🇦🇪_17"
+      - "🇦🇪_18"
+      - "🇦🇪_19"
+      - "🇦🇪_20"
 
   - name: "LB-CDN"
     type: load-balance
@@ -210,14 +243,16 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇦🇪_9"
-      - "🇦🇪_10"
       - "🇦🇪_11"
       - "🇦🇪_12"
       - "🇦🇪_13"
       - "🇦🇪_14"
       - "🇦🇪_15"
       - "🇦🇪_16"
+      - "🇦🇪_17"
+      - "🇦🇪_18"
+      - "🇦🇪_19"
+      - "🇦🇪_20"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -227,14 +262,16 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇦🇪_9"
-      - "🇦🇪_10"
       - "🇦🇪_11"
       - "🇦🇪_12"
       - "🇦🇪_13"
       - "🇦🇪_14"
       - "🇦🇪_15"
       - "🇦🇪_16"
+      - "🇦🇪_17"
+      - "🇦🇪_18"
+      - "🇦🇪_19"
+      - "🇦🇪_20"
 
   - name: "FAST-CDN"
     type: url-test
@@ -243,14 +280,16 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇦🇪_9"
-      - "🇦🇪_10"
       - "🇦🇪_11"
       - "🇦🇪_12"
       - "🇦🇪_13"
       - "🇦🇪_14"
       - "🇦🇪_15"
       - "🇦🇪_16"
+      - "🇦🇪_17"
+      - "🇦🇪_18"
+      - "🇦🇪_19"
+      - "🇦🇪_20"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -260,27 +299,31 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇦🇪_9"
-      - "🇦🇪_10"
       - "🇦🇪_11"
       - "🇦🇪_12"
       - "🇦🇪_13"
       - "🇦🇪_14"
       - "🇦🇪_15"
       - "🇦🇪_16"
+      - "🇦🇪_17"
+      - "🇦🇪_18"
+      - "🇦🇪_19"
+      - "🇦🇪_20"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
-      - "🇦🇪_9"
-      - "🇦🇪_10"
       - "🇦🇪_11"
       - "🇦🇪_12"
       - "🇦🇪_13"
       - "🇦🇪_14"
       - "🇦🇪_15"
       - "🇦🇪_16"
+      - "🇦🇪_17"
+      - "🇦🇪_18"
+      - "🇦🇪_19"
+      - "🇦🇪_20"
 
 rules:
   - MATCH,PROXY-BEST

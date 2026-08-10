@@ -59,7 +59,7 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇧🇪_7"
+  - name: "🇧🇪_10"
     type: vless
     server: "109.69.218.208"
     port: 443
@@ -73,7 +73,7 @@ proxies:
       public-key: "8hse7wRRL-F66rQ-aAeetKTw0MSeJC7Rr6EaDeLzdCU"
       short-id: ""
     flow: "xtls-rprx-vision"
-  - name: "🇧🇪_8"
+  - name: "🇧🇪_11"
     type: vless
     server: "109.69.218.216"
     port: 443
@@ -87,21 +87,7 @@ proxies:
       public-key: "8hse7wRRL-F66rQ-aAeetKTw0MSeJC7Rr6EaDeLzdCU"
       short-id: ""
     flow: "xtls-rprx-vision"
-  - name: "🇧🇪_9"
-    type: vless
-    server: "109.69.218.164"
-    port: 443
-    uuid: "c28ee61d-0d43-4e69-8e6a-6397ed0ffc03"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "zealous-vortex.cdn.cachefleet.com"
-    client-fingerprint: "random"
-    reality-opts:
-      public-key: "cv_KJnMzQUZruACPbH-BCgLWrYqPm2dbUymg-gW_sVc"
-      short-id: ""
-    flow: "xtls-rprx-vision"
-  - name: "🇧🇪_10"
+  - name: "🇧🇪_12"
     type: vless
     server: "109.69.218.168"
     port: 443
@@ -115,7 +101,59 @@ proxies:
       public-key: "cv_KJnMzQUZruACPbH-BCgLWrYqPm2dbUymg-gW_sVc"
       short-id: ""
     flow: "xtls-rprx-vision"
-  - name: "🇧🇪_11"
+  - name: "🇧🇪_13"
+    type: vless
+    server: "109.69.218.207"
+    port: 443
+    uuid: "2a12bb81-f3a3-41bb-99ab-36febf676b4a"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "crisp-titan.cdn.cachefleet.com"
+    client-fingerprint: "random"
+    reality-opts:
+      public-key: "8hse7wRRL-F66rQ-aAeetKTw0MSeJC7Rr6EaDeLzdCU"
+      short-id: ""
+    flow: "xtls-rprx-vision"
+  - name: "🇧🇪_14"
+    type: vless
+    server: "109.69.218.164"
+    port: 443
+    uuid: "c28ee61d-0d43-4e69-8e6a-6397ed0ffc03"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "zealous-vortex.cdn.cachefleet.com"
+    client-fingerprint: "random"
+    reality-opts:
+      public-key: "cv_KJnMzQUZruACPbH-BCgLWrYqPm2dbUymg-gW_sVc"
+      short-id: ""
+    flow: "xtls-rprx-vision"
+  - name: "🇧🇪_15"
+    type: vless
+    server: "109.69.218.217"
+    port: 443
+    uuid: "2a12bb81-f3a3-41bb-99ab-36febf676b4a"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "kind-wolf.cdn.cachefleet.com"
+    client-fingerprint: "random"
+    reality-opts:
+      public-key: "8hse7wRRL-F66rQ-aAeetKTw0MSeJC7Rr6EaDeLzdCU"
+      short-id: ""
+    flow: "xtls-rprx-vision"
+  - name: "🇧🇪_16"
+    type: vless
+    server: "188.95.12.226"
+    port: 2082
+    uuid: "a06119a7-4f1a-4592-86d9-e050a332b2b3"
+    udp: true
+    network: httpupgrade
+    httpupgrade-opts:
+      path: "/"
+      host: "frs.milkabebar.ir"
+  - name: "🇧🇪_17"
     type: vless
     server: "109.69.218.206"
     port: 443
@@ -129,7 +167,7 @@ proxies:
       public-key: "8hse7wRRL-F66rQ-aAeetKTw0MSeJC7Rr6EaDeLzdCU"
       short-id: ""
     flow: "xtls-rprx-vision"
-  - name: "🇧🇪_12"
+  - name: "🇧🇪_18"
     type: trojan
     server: "94.126.225.96"
     port: 443
@@ -179,12 +217,15 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇧🇪_7"
-      - "🇧🇪_8"
-      - "🇧🇪_9"
       - "🇧🇪_10"
       - "🇧🇪_11"
       - "🇧🇪_12"
+      - "🇧🇪_13"
+      - "🇧🇪_14"
+      - "🇧🇪_15"
+      - "🇧🇪_16"
+      - "🇧🇪_17"
+      - "🇧🇪_18"
 
   - name: "LB-CDN"
     type: load-balance
@@ -194,12 +235,15 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇧🇪_7"
-      - "🇧🇪_8"
-      - "🇧🇪_9"
       - "🇧🇪_10"
       - "🇧🇪_11"
       - "🇧🇪_12"
+      - "🇧🇪_13"
+      - "🇧🇪_14"
+      - "🇧🇪_15"
+      - "🇧🇪_16"
+      - "🇧🇪_17"
+      - "🇧🇪_18"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -209,12 +253,15 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇧🇪_7"
-      - "🇧🇪_8"
-      - "🇧🇪_9"
       - "🇧🇪_10"
       - "🇧🇪_11"
       - "🇧🇪_12"
+      - "🇧🇪_13"
+      - "🇧🇪_14"
+      - "🇧🇪_15"
+      - "🇧🇪_16"
+      - "🇧🇪_17"
+      - "🇧🇪_18"
 
   - name: "FAST-CDN"
     type: url-test
@@ -223,12 +270,15 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇧🇪_7"
-      - "🇧🇪_8"
-      - "🇧🇪_9"
       - "🇧🇪_10"
       - "🇧🇪_11"
       - "🇧🇪_12"
+      - "🇧🇪_13"
+      - "🇧🇪_14"
+      - "🇧🇪_15"
+      - "🇧🇪_16"
+      - "🇧🇪_17"
+      - "🇧🇪_18"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -238,23 +288,29 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇧🇪_7"
-      - "🇧🇪_8"
-      - "🇧🇪_9"
       - "🇧🇪_10"
       - "🇧🇪_11"
       - "🇧🇪_12"
+      - "🇧🇪_13"
+      - "🇧🇪_14"
+      - "🇧🇪_15"
+      - "🇧🇪_16"
+      - "🇧🇪_17"
+      - "🇧🇪_18"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
-      - "🇧🇪_7"
-      - "🇧🇪_8"
-      - "🇧🇪_9"
       - "🇧🇪_10"
       - "🇧🇪_11"
       - "🇧🇪_12"
+      - "🇧🇪_13"
+      - "🇧🇪_14"
+      - "🇧🇪_15"
+      - "🇧🇪_16"
+      - "🇧🇪_17"
+      - "🇧🇪_18"
 
 rules:
   - MATCH,PROXY-BEST

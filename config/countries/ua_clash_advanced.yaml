@@ -61,13 +61,13 @@ dns:
 proxies:
   - name: "🇺🇦_8"
     type: vless
-    server: "89.116.180.40"
+    server: "89.116.180.30"
     port: 8880
     uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
     udp: true
     network: ws
     ws-opts:
-      path: "/?ed=2560"
+      path: "/"
       headers:
         Host: "vms.lifetime09.workers.dev"
   - name: "🇺🇦_9"
@@ -108,16 +108,24 @@ proxies:
         Host: "vms.lifetime55.workers.dev"
   - name: "🇺🇦_12"
     type: vless
-    server: "89.116.180.30"
+    server: "89.116.180.40"
     port: 8880
     uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
     udp: true
     network: ws
     ws-opts:
-      path: "/"
+      path: "/?ed=2560"
       headers:
         Host: "vms.lifetime09.workers.dev"
   - name: "🇺🇦_13"
+    type: trojan
+    server: "130.0.236.88"
+    port: 443
+    password: "d2adff89-5143-4d67-921f-3478464de5bb"
+    sni: "ua.freeguard.org"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇺🇦_14"
     type: trojan
     server: "89.116.180.49"
     port: 443
@@ -128,14 +136,6 @@ proxies:
     network: ws
     ws-opts:
       path: "/sync"
-  - name: "🇺🇦_14"
-    type: trojan
-    server: "130.0.236.88"
-    port: 443
-    password: "d2adff89-5143-4d67-921f-3478464de5bb"
-    sni: "ua.freeguard.org"
-    skip-cert-verify: true
-    udp: true
 
 proxy-groups:
   # ── Top-level selector ────────────────────────────────────────────────────
