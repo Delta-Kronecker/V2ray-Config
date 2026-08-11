@@ -65,21 +65,56 @@ dns:
 proxies:
   - name: "🇧🇷_1"
     type: vless
-    server: "168.222.251.122"
-    port: 711
-    uuid: "02e2d68f-9982-4467-ad47-00cbeeae30e6"
+    server: "185.133.35.10"
+    port: 443
+    uuid: "05000d14-abf6-45e0-b51a-16469cdea06a"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "who.int"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "ADsaY9WkhwRaspXqF1JUt4Wg_Aw15h8h679K7Kt9GUU"
-      short-id: ""
+    servername: "feijige.rujiao.icu"
+    network: ws
+    ws-opts:
+      path: "/?Telegram-WangCai2"
+      headers:
+        Host: "feijige.rujiao.icu"
+  - name: "🇧🇷_2"
+    type: vless
+    server: "177.3.213.230"
+    port: 3443
+    uuid: "11b7e901-e970-4491-9c7d-13c153e39e5b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "get.wlrus.cfd"
+    client-fingerprint: "edge"
     network: grpc
     grpc-opts:
       grpc-service-name: ""
-  - name: "🇧🇷_2"
+  - name: "🇧🇷_3"
+    type: vless
+    server: "45.194.53.10"
+    port: 443
+    uuid: "b940be1b-3998-45d2-bf7b-06e7b6c4987a"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "2026080908.yzqiang.de5.net"
+    network: ws
+    ws-opts:
+      path: "/?Telegram-WangCai2"
+      headers:
+        Host: "2026080908.yzqiang.de5.net"
+  - name: "🇧🇷_4"
+    type: vless
+    server: "177.3.213.230"
+    port: 5443
+    uuid: "11b7e901-e970-4491-9c7d-13c153e39e5b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "get.wlrus.cfd"
+    client-fingerprint: "edge"
+  - name: "🇧🇷_5"
     type: vless
     server: "45.194.53.30"
     port: 8880
@@ -106,6 +141,9 @@ proxy-groups:
     proxies:
       - "🇧🇷_1"
       - "🇧🇷_2"
+      - "🇧🇷_3"
+      - "🇧🇷_4"
+      - "🇧🇷_5"
 
 
 rules:

@@ -64,28 +64,6 @@ dns:
 
 proxies:
   - name: "🇮🇩_1"
-    type: vless
-    server: "202.155.14.176"
-    port: 443
-    uuid: "02e2d68f-9982-4467-ad47-00cbeeae30e6"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "id.cdn-global.pro"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "UdeZc5DrXa8lWOET4wlBp55-nXskqsvoU-2kVvd3zBg"
-      short-id: "7a3f9e2b1c8d4f6a"
-    flow: "xtls-rprx-vision"
-  - name: "🇮🇩_2"
-    type: trojan
-    server: "qfdfsg.wsone.icu"
-    port: 443
-    password: "M7v%w11Se*"
-    sni: "qfdfsg.wsone.icu"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇮🇩_3"
     type: trojan
     server: "172.232.250.160"
     port: 443
@@ -108,8 +86,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇮🇩_1"
-      - "🇮🇩_2"
-      - "🇮🇩_3"
 
 
 rules:

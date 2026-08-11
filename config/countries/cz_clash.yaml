@@ -65,6 +65,20 @@ dns:
 proxies:
   - name: "🇨🇿_1"
     type: vless
+    server: "195.133.35.75"
+    port: 1337
+    uuid: "db9a9b0f-fd4c-404b-9437-16e567544665"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "czh.xanka.best"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "8ik0rnxTlrrGfJaQnmLnUXpY0DSm_xohbJGvmfrbMSA"
+      short-id: "459193ba"
+    flow: "xtls-rprx-vision"
+  - name: "🇨🇿_2"
+    type: vless
     server: "188.127.247.129"
     port: 443
     uuid: "33aa2b47-484b-49f6-8f23-fb34602d221f"
@@ -77,14 +91,6 @@ proxies:
       public-key: "Kb0rDCu2kKhfnC6bsi0DMRxDej9S-Mu1vVza1H1l4U4"
       short-id: "0c"
     flow: "xtls-rprx-vision"
-  - name: "🇨🇿_2"
-    type: trojan
-    server: "46.8.113.142"
-    port: 443
-    password: "LYaEYwjN8LjWTRJdCCTzW7V6gK7atJVu"
-    sni: "ch-2.bexum.fun"
-    skip-cert-verify: true
-    udp: true
   - name: "🇨🇿_3"
     type: trojan
     server: "ch-2.bexum.fun"
@@ -94,6 +100,25 @@ proxies:
     skip-cert-verify: true
     udp: true
   - name: "🇨🇿_4"
+    type: trojan
+    server: "46.8.113.142"
+    port: 443
+    password: "LYaEYwjN8LjWTRJdCCTzW7V6gK7atJVu"
+    sni: "ch-2.bexum.fun"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇨🇿_5"
+    type: trojan
+    server: "178.208.75.155"
+    port: 8443
+    password: "humanity"
+    sni: "www.calmlunch.com"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/assignment"
+  - name: "🇨🇿_6"
     type: trojan
     server: "178.208.75.155"
     port: 2053
@@ -106,17 +131,6 @@ proxies:
       path: "/assignment"
       headers:
         Host: "www.calmlunch.com"
-  - name: "🇨🇿_5"
-    type: trojan
-    server: "178.208.75.155"
-    port: 8443
-    password: "humanity"
-    sni: "www.calmlunch.com"
-    skip-cert-verify: true
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/assignment"
 
 proxy-groups:
   - name: "PROXY"
@@ -136,6 +150,7 @@ proxy-groups:
       - "🇨🇿_3"
       - "🇨🇿_4"
       - "🇨🇿_5"
+      - "🇨🇿_6"
 
 
 rules:

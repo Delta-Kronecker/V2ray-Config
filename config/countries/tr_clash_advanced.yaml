@@ -59,16 +59,7 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇹🇷_12"
-    type: vless
-    server: "185.39.204.155"
-    port: 8443
-    uuid: "7e8f7489-e65f-4be6-93ed-867a74ec6759"
-    udp: true
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "grpc"
-  - name: "🇹🇷_13"
+  - name: "🇹🇷_11"
     type: vless
     server: "216.9.224.42"
     port: 443
@@ -81,6 +72,33 @@ proxies:
     reality-opts:
       public-key: "OFmJtVi6OB9E6KIc5QV5YmoouimRFc-Se9hICjtV8hQ"
       short-id: ""
+    flow: "xtls-rprx-vision"
+  - name: "🇹🇷_12"
+    type: vless
+    server: "201.50.115.23"
+    port: 443
+    uuid: "fc1b3bda-b226-452a-8c5c-b0e36a1f8f88"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "eu-central.cendora.ru"
+    client-fingerprint: "qq"
+    reality-opts:
+      public-key: "b-Cm9hX-3UHsS1L_lnUB6AMjuKhlN1IDdBbZ506itjI"
+      short-id: "00bca5982f82d083"
+    flow: "xtls-rprx-vision"
+  - name: "🇹🇷_13"
+    type: vless
+    server: "81.177.215.156"
+    port: 13868
+    uuid: "06d44c57-8e1a-41f4-b9c4-65d35869e078"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "amd.com"
+    reality-opts:
+      public-key: "FaX6hUpswBFFN-GaXFmFK8bVWYcPlrB4KP26n_INgko"
+      short-id: "e852dc"
     flow: "xtls-rprx-vision"
   - name: "🇹🇷_14"
     type: vless
@@ -98,55 +116,14 @@ proxies:
     flow: "xtls-rprx-vision"
   - name: "🇹🇷_15"
     type: vless
-    server: "81.177.215.156"
-    port: 13868
-    uuid: "06d44c57-8e1a-41f4-b9c4-65d35869e078"
+    server: "185.39.204.155"
+    port: 8443
+    uuid: "7e8f7489-e65f-4be6-93ed-867a74ec6759"
     udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "amd.com"
-    reality-opts:
-      public-key: "FaX6hUpswBFFN-GaXFmFK8bVWYcPlrB4KP26n_INgko"
-      short-id: "e852dc"
-    flow: "xtls-rprx-vision"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "grpc"
   - name: "🇹🇷_16"
-    type: vless
-    server: "2.56.127.137"
-    port: 443
-    uuid: "mahanvpn-mahanvpn"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "mAhaNrEaliteAm.MaHkHan.iR"
-    client-fingerprint: "chrome"
-    network: ws
-    ws-opts:
-      path: "/?ed=2560"
-      headers:
-        Host: "mAhaNrEaliteAm.MaHkHan.iR"
-  - name: "🇹🇷_17"
-    type: vless
-    server: "201.50.115.23"
-    port: 443
-    uuid: "fc1b3bda-b226-452a-8c5c-b0e36a1f8f88"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "eu-central.cendora.ru"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "b-Cm9hX-3UHsS1L_lnUB6AMjuKhlN1IDdBbZ506itjI"
-      short-id: "00bca5982f82d083"
-    flow: "xtls-rprx-vision"
-  - name: "🇹🇷_18"
-    type: trojan
-    server: "195.162.69.238"
-    port: 9443
-    password: "ac8ae2c29cd149eb85cae990572f0d59"
-    sni: "apple.com"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇹🇷_19"
     type: trojan
     server: "45.67.202.101"
     port: 8443
@@ -154,28 +131,34 @@ proxies:
     sni: "Koma-YT.PAGeS.Dev"
     skip-cert-verify: true
     udp: true
-  - name: "🇹🇷_20"
+  - name: "🇹🇷_17"
     type: trojan
-    server: "tr-1.stunnel.cc"
-    port: 8441
-    password: "tunnel-ljlcf"
-    sni: "tr-1.stunnel.cc"
+    server: "195.162.69.238"
+    port: 9443
+    password: "ac8ae2c29cd149eb85cae990572f0d59"
+    sni: "apple.com"
     skip-cert-verify: true
     udp: true
-  - name: "🇹🇷_21"
-    type: trojan
-    server: "193.124.46.134"
-    port: 8441
-    password: "tunnel-ljlcf"
-    sni: "193.124.46.134"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇹🇷_22"
+  - name: "🇹🇷_18"
     type: ss
-    server: "38.180.113.194"
-    port: 8119
-    cipher: "aes-256-gcm"
-    password: "cdBIDV42DCwnfIN"
+    server: "sub.almavpn.shop"
+    port: 1080
+    cipher: "chacha20-ietf-poly1305"
+    password: "LHZzf4y0j2WQlZsTh0NzPxVmTYufR-TA"
+    udp: true
+  - name: "🇹🇷_19"
+    type: ss
+    server: "sub.almavpn.shop"
+    port: 1080
+    cipher: "chacha20-ietf-poly1305"
+    password: "LHZzf4y0j2WQlZsTh0NzPxVmTYufR-TA"
+    udp: true
+  - name: "🇹🇷_20"
+    type: ss
+    server: "tr-1.stunnel.cc"
+    port: 8444
+    cipher: "chacha20-ietf-poly1305"
+    password: "tunnel-fbrof"
     udp: true
 
 proxy-groups:
@@ -219,6 +202,7 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
+      - "🇹🇷_11"
       - "🇹🇷_12"
       - "🇹🇷_13"
       - "🇹🇷_14"
@@ -228,8 +212,6 @@ proxy-groups:
       - "🇹🇷_18"
       - "🇹🇷_19"
       - "🇹🇷_20"
-      - "🇹🇷_21"
-      - "🇹🇷_22"
 
   - name: "LB-CDN"
     type: load-balance
@@ -239,6 +221,7 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
+      - "🇹🇷_11"
       - "🇹🇷_12"
       - "🇹🇷_13"
       - "🇹🇷_14"
@@ -248,8 +231,6 @@ proxy-groups:
       - "🇹🇷_18"
       - "🇹🇷_19"
       - "🇹🇷_20"
-      - "🇹🇷_21"
-      - "🇹🇷_22"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -259,6 +240,7 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
+      - "🇹🇷_11"
       - "🇹🇷_12"
       - "🇹🇷_13"
       - "🇹🇷_14"
@@ -268,8 +250,6 @@ proxy-groups:
       - "🇹🇷_18"
       - "🇹🇷_19"
       - "🇹🇷_20"
-      - "🇹🇷_21"
-      - "🇹🇷_22"
 
   - name: "FAST-CDN"
     type: url-test
@@ -278,6 +258,7 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
+      - "🇹🇷_11"
       - "🇹🇷_12"
       - "🇹🇷_13"
       - "🇹🇷_14"
@@ -287,8 +268,6 @@ proxy-groups:
       - "🇹🇷_18"
       - "🇹🇷_19"
       - "🇹🇷_20"
-      - "🇹🇷_21"
-      - "🇹🇷_22"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -298,6 +277,7 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
+      - "🇹🇷_11"
       - "🇹🇷_12"
       - "🇹🇷_13"
       - "🇹🇷_14"
@@ -307,13 +287,12 @@ proxy-groups:
       - "🇹🇷_18"
       - "🇹🇷_19"
       - "🇹🇷_20"
-      - "🇹🇷_21"
-      - "🇹🇷_22"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
+      - "🇹🇷_11"
       - "🇹🇷_12"
       - "🇹🇷_13"
       - "🇹🇷_14"
@@ -323,8 +302,6 @@ proxy-groups:
       - "🇹🇷_18"
       - "🇹🇷_19"
       - "🇹🇷_20"
-      - "🇹🇷_21"
-      - "🇹🇷_22"
 
 rules:
   - MATCH,PROXY-BEST

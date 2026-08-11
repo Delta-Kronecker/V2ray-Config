@@ -65,28 +65,26 @@ dns:
 proxies:
   - name: "🇲🇾_1"
     type: vless
-    server: "136.0.110.35"
-    port: 16865
-    uuid: "08d4e275-eb67-4878-949c-79a39e10cca1"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "136.0.110.35"
-    client-fingerprint: "chrome"
-  - name: "🇲🇾_2"
-    type: vless
-    server: "87.76.160.67"
+    server: "43.216.71.17"
     port: 443
-    uuid: "02e2d68f-9982-4467-ad47-00cbeeae30e6"
+    uuid: "ce3794af-ef2c-4ca6-9032-6e259a703615"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "my.cdn-global.pro"
-    client-fingerprint: "firefox"
+    servername: "www.cloudflare.com"
+    client-fingerprint: "chrome"
     reality-opts:
-      public-key: "nFJCJ2tvxLdLrc9G-O1laW8KDir5SDnaOTmYndVaOGQ"
-      short-id: "7a3f9e2b1c8d4f6a"
+      public-key: "hl7n2f8wPw8wsZFSBdOv1b0wy5BJc7qOA_ktzVVUGAA"
+      short-id: "6546bebc9cfcef14"
     flow: "xtls-rprx-vision"
+  - name: "🇲🇾_2"
+    type: trojan
+    server: "my.singaporenodeserverone.kyiv.ua"
+    port: 443
+    password: "6e1b9a65-884f-3aa9-9469-bf6ec0f08610"
+    sni: "45.32.28.232"
+    skip-cert-verify: true
+    udp: true
   - name: "🇲🇾_3"
     type: trojan
     server: "202.43.102.57"
@@ -96,26 +94,19 @@ proxies:
     skip-cert-verify: true
     udp: true
   - name: "🇲🇾_4"
-    type: trojan
-    server: "my.singaporenodeserverone.kyiv.ua"
-    port: 443
-    password: "6e1b9a65-884f-3aa9-9469-bf6ec0f08610"
-    sni: "45.32.28.232"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇲🇾_5"
     type: ss
-    server: "96.126.190.196"
-    port: 443
+    server: "47.250.212.59"
+    port: 2053
     cipher: "none"
     password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
     udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "/59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
+  - name: "🇲🇾_5"
+    type: ss
+    server: "47.250.212.59"
+    port: 2053
+    cipher: "none"
+    password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
+    udp: true
 
 proxy-groups:
   - name: "PROXY"

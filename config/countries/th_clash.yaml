@@ -65,17 +65,6 @@ dns:
 proxies:
   - name: "🇹🇭_1"
     type: vless
-    server: "18.239.134.69"
-    port: 80
-    uuid: "de27291c-15a9-4256-9ba7-ad517569877e"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "d2e1v87ko56lyw.cloudfront.net:assets.opensignal.com"
-  - name: "🇹🇭_2"
-    type: vless
     server: "154.83.2.50"
     port: 8880
     uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
@@ -85,6 +74,17 @@ proxies:
       path: "/?ed=2560"
       headers:
         Host: "vms.lifetime28.workers.dev"
+  - name: "🇹🇭_2"
+    type: vless
+    server: "18.239.134.69"
+    port: 80
+    uuid: "de27291c-15a9-4256-9ba7-ad517569877e"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "d2e1v87ko56lyw.cloudfront.net:assets.opensignal.com"
   - name: "🇹🇭_3"
     type: vless
     server: "43.164.1.23"
@@ -112,26 +112,12 @@ proxies:
         Host: "vms.lifetime28.workers.dev"
   - name: "🇹🇭_5"
     type: ss
-    server: "47.81.56.202"
-    port: 44617
-    cipher: "chacha20-ietf-poly1305"
-    password: "lhuULRwO4slM6k262pAC4cbq5A1H6z8eaOHV27vi7Yw="
-    udp: true
-  - name: "🇹🇭_6"
-    type: ss
-    server: "47.81.56.202"
-    port: 44617
-    cipher: "chacha20-ietf-poly1305"
-    password: "lhuULRwO4slM6k262pAC4cbq5A1H6z8eaOHV27vi7Yw="
-    udp: true
-  - name: "🇹🇭_7"
-    type: ss
     server: "102.129.229.85"
     port: 31700
     cipher: "chacha20-ietf-poly1305"
     password: "d7zh2lMrXNH5+8+8pKzlxiCU9NN022ih+uAyxj5d4qo="
     udp: true
-  - name: "🇹🇭_8"
+  - name: "🇹🇭_6"
     type: ss
     server: "102.129.229.85"
     port: 31700
@@ -158,8 +144,6 @@ proxy-groups:
       - "🇹🇭_4"
       - "🇹🇭_5"
       - "🇹🇭_6"
-      - "🇹🇭_7"
-      - "🇹🇭_8"
 
 
 rules:

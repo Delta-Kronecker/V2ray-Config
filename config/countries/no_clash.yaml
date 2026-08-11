@@ -63,38 +63,19 @@ dns:
     - https://freedns.controld.com/family
 
 proxies:
-  - name: "🇷🇴_1"
-    type: vless
-    server: "109.104.106.51"
-    port: 443
-    uuid: "02e2d68f-9982-4467-ad47-00cbeeae30e6"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "ro.cdn-global.pro"
-    client-fingerprint: "firefox"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "grpc"
-  - name: "🇷🇴_2"
-    type: vless
-    server: "151.242.191.161"
-    port: 443
-    uuid: "301d514e-4aa0-47b0-ba44-a0cb891cd52f"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.samsung.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "OZVjfQBboTDTBw0baMFqzVPsVUI4FNQmspTEb0b0zW4"
-      short-id: "a1b2c3d4"
-  - name: "🇷🇴_3"
+  - name: "🇳🇴_1"
     type: ss
-    server: "154.46.31.106"
-    port: 443
+    server: "185.213.23.63"
+    port: 990
     cipher: "chacha20-ietf-poly1305"
-    password: "QFWzCw2uX9B9i6qAYeFBIE"
+    password: "ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44="
+    udp: true
+  - name: "🇳🇴_2"
+    type: ss
+    server: "185.213.23.63"
+    port: 990
+    cipher: "chacha20-ietf-poly1305"
+    password: "ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44="
     udp: true
 
 proxy-groups:
@@ -110,9 +91,8 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇷🇴_1"
-      - "🇷🇴_2"
-      - "🇷🇴_3"
+      - "🇳🇴_1"
+      - "🇳🇴_2"
 
 
 rules:
