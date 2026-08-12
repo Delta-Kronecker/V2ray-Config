@@ -65,32 +65,16 @@ dns:
 proxies:
   - name: "🇧🇷_1"
     type: vless
-    server: "185.133.35.10"
-    port: 443
-    uuid: "05000d14-abf6-45e0-b51a-16469cdea06a"
+    server: "45.194.53.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
     udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "feijige.rujiao.icu"
     network: ws
     ws-opts:
-      path: "/?Telegram-WangCai2"
+      path: "/?ed=2560"
       headers:
-        Host: "feijige.rujiao.icu"
+        Host: "vms.lifetime19.workers.dev"
   - name: "🇧🇷_2"
-    type: vless
-    server: "177.3.213.230"
-    port: 3443
-    uuid: "11b7e901-e970-4491-9c7d-13c153e39e5b"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "get.wlrus.cfd"
-    client-fingerprint: "edge"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: ""
-  - name: "🇧🇷_3"
     type: vless
     server: "45.194.53.10"
     port: 443
@@ -104,27 +88,6 @@ proxies:
       path: "/?Telegram-WangCai2"
       headers:
         Host: "2026080908.yzqiang.de5.net"
-  - name: "🇧🇷_4"
-    type: vless
-    server: "177.3.213.230"
-    port: 5443
-    uuid: "11b7e901-e970-4491-9c7d-13c153e39e5b"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "get.wlrus.cfd"
-    client-fingerprint: "edge"
-  - name: "🇧🇷_5"
-    type: vless
-    server: "45.194.53.30"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/?ed=2560"
-      headers:
-        Host: "vms.lifetime19.workers.dev"
 
 proxy-groups:
   - name: "PROXY"
@@ -141,9 +104,6 @@ proxy-groups:
     proxies:
       - "🇧🇷_1"
       - "🇧🇷_2"
-      - "🇧🇷_3"
-      - "🇧🇷_4"
-      - "🇧🇷_5"
 
 
 rules:

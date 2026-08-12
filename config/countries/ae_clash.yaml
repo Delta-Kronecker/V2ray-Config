@@ -79,28 +79,6 @@ proxies:
         Host: "feijige.rujiao.icu"
   - name: "🇦🇪_2"
     type: vless
-    server: "77.232.140.30"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/?ed=2560"
-      headers:
-        Host: "vms.lifetime61.workers.dev"
-  - name: "🇦🇪_3"
-    type: vless
-    server: "uae.unixzone.us"
-    port: 22573
-    uuid: "39947382-3212-41c9-bc3a-589574ac8b23"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "uae.unixzone.us"
-  - name: "🇦🇪_4"
-    type: vless
     server: "77.232.140.40"
     port: 8880
     uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
@@ -110,7 +88,18 @@ proxies:
       path: "/?ed"
       headers:
         Host: "vms.lifetime61.workers.dev"
-  - name: "🇦🇪_5"
+  - name: "🇦🇪_3"
+    type: vless
+    server: "77.232.140.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "vms.lifetime61.workers.dev"
+  - name: "🇦🇪_4"
     type: vless
     server: "84.235.244.108"
     port: 22573
@@ -121,6 +110,17 @@ proxies:
       path: "/"
       headers:
         Host: "uae.unixzone.us"
+  - name: "🇦🇪_5"
+    type: vless
+    server: "185.225.195.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vms.lifetime18.workers.dev"
   - name: "🇦🇪_6"
     type: vless
     server: "94.140.0.100"
@@ -148,31 +148,19 @@ proxies:
       headers:
         Host: "withered-cake-d636.asfvgsrhtrzdbvcgfn.workers.dev"
   - name: "🇦🇪_8"
-    type: vless
-    server: "185.225.195.30"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    type: ss
+    server: "38.54.9.181"
+    port: 3306
+    cipher: "aes-256-gcm"
+    password: "Y6R9pAtvxxzmGC"
     udp: true
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "vms.lifetime18.workers.dev"
   - name: "🇦🇪_9"
-    type: vless
-    server: "188.72.103.3"
-    port: 443
-    uuid: "166ef05e-8ab5-43b7-8910-d1bb0a4326a5"
+    type: ss
+    server: "38.54.9.181"
+    port: 3306
+    cipher: "aes-256-gcm"
+    password: "Y6R9pAtvxxzmGC"
     udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "cdn.tracker.yandex.net"
-    client-fingerprint: "qq"
-    network: ws
-    ws-opts:
-      path: "/api/v1/rooms/63368e3dbb/sync"
-      headers:
-        Host: "sync.watchwave.link"
 
 proxy-groups:
   - name: "PROXY"

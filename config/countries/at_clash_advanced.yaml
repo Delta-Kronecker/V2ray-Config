@@ -61,6 +61,44 @@ dns:
 proxies:
   - name: "🇦🇹_9"
     type: vless
+    server: "212.183.88.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "vms.lifetime23.workers.dev"
+  - name: "🇦🇹_10"
+    type: vless
+    server: "77.73.131.154"
+    port: 443
+    uuid: "1f4c983e-382c-d2fa-b2dc-7981f02b34de"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vindobona.org"
+    reality-opts:
+      public-key: "5GhMSJXQv1wXHVD999YHRRj83m-7VKH8qb_vTxBGbng"
+      short-id: "08"
+    flow: "xtls-rprx-vision"
+  - name: "🇦🇹_11"
+    type: vless
+    server: "193.233.233.56"
+    port: 40443
+    uuid: "641baa2f-6f74-4ecf-b948-032d19ba0142"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.samsung.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "EbXSjwJKAI1cmU2TK3af62qS2k58x8Rnct1525c0m1I"
+      short-id: "c3d4e5f607182939"
+    flow: "xtls-rprx-vision"
+  - name: "🇦🇹_12"
+    type: vless
     server: "152.53.114.186"
     port: 443
     uuid: "ab7d5ea9-6eca-47c3-b14b-67378fc2d7c2"
@@ -73,32 +111,7 @@ proxies:
       public-key: "UO3EObgU3xUrhIGEE0gfCn5ZOz8YxNcwwW6ZaYzD3SA"
       short-id: "4e9b0c2d1a3f5768"
     flow: "xtls-rprx-vision"
-  - name: "🇦🇹_10"
-    type: vless
-    server: "212.183.88.30"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/?ed=2560"
-      headers:
-        Host: "vms.lifetime23.workers.dev"
-  - name: "🇦🇹_11"
-    type: vless
-    server: "as.tunnelx.space"
-    port: 443
-    uuid: "ab7d5ea9-6eca-47c3-b14b-67378fc2d7c2"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "as.tunnelx.space"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "UO3EObgU3xUrhIGEE0gfCn5ZOz8YxNcwwW6ZaYzD3SA"
-      short-id: "4e9b0c2d1a3f5768"
-    flow: "xtls-rprx-vision"
-  - name: "🇦🇹_12"
+  - name: "🇦🇹_13"
     type: vless
     server: "77.110.110.214"
     port: 6443
@@ -113,25 +126,19 @@ proxies:
       path: "/@Marisa_kristi"
       headers:
         Host: "woc0zvrf11w2endu.dphdlc1u77bs3y4kvussbuap4p576f1ws7igthq8zbf3.workers.dev"
-  - name: "🇦🇹_13"
-    type: vless
-    server: "77.73.131.154"
-    port: 443
-    uuid: "1f4c983e-382c-d2fa-b2dc-7981f02b34de"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "vindobona.org"
-    reality-opts:
-      public-key: "5GhMSJXQv1wXHVD999YHRRj83m-7VKH8qb_vTxBGbng"
-      short-id: "08"
-    flow: "xtls-rprx-vision"
   - name: "🇦🇹_14"
-    type: vless
-    server: "185.126.236.181"
-    port: 14006
-    uuid: "36da22bd-ab50-4759-9ce2-f894db39358e"
+    type: trojan
+    server: "212.183.88.136"
+    port: 443
+    password: "humanity"
+    sni: "www.calmlunch.com"
+    skip-cert-verify: true
     udp: true
+    network: ws
+    ws-opts:
+      path: "/assignment"
+      headers:
+        Host: "www.calmlunch.com"
   - name: "🇦🇹_15"
     type: ss
     server: "130.195.222.215"

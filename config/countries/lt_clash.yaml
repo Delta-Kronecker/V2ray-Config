@@ -65,47 +65,6 @@ dns:
 proxies:
   - name: "🇱🇹_1"
     type: vless
-    server: "88.216.69.30"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "vms.lifetime06.workers.dev"
-  - name: "🇱🇹_2"
-    type: vless
-    server: "46.29.234.210"
-    port: 443
-    uuid: "218fd696-e3a2-4c33-b397-a5f13a82969e"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.tradingview.com"
-    client-fingerprint: "safari"
-    reality-opts:
-      public-key: "II9Tn-HPL7xcENiybDfQ_bSw31rSzQbIGYn-hCxdb2w"
-      short-id: "ccda00cc"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "grpc"
-  - name: "🇱🇹_3"
-    type: vless
-    server: "2.59.162.170"
-    port: 8443
-    uuid: "bb3f45ce-3b7f-4efe-8bf1-b16b282d8bc9"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "lt.xanka.best"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "e2-jEFJ7ALVhZDM_93rJsi4pP9kFvhYJC2iTJ8gu7Es"
-      short-id: "06cbfdd7"
-    flow: "xtls-rprx-vision"
-  - name: "🇱🇹_4"
-    type: vless
     server: "84.32.209.7"
     port: 443
     uuid: "f1c496bf-d2ab-45be-bc13-051d60d227b7"
@@ -118,22 +77,20 @@ proxies:
       public-key: "00n9LplaZ0VGvRS57548s7xe0deFC10pw2fkFHFPplM"
       short-id: ""
     flow: "xtls-rprx-vision"
-  - name: "🇱🇹_5"
-    type: trojan
-    server: "195.181.244.216"
-    port: 443
-    password: "humanity"
-    sni: "www.calmlunch.com"
-    skip-cert-verify: true
+  - name: "🇱🇹_2"
+    type: vless
+    server: "88.216.69.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
     udp: true
     network: ws
     ws-opts:
-      path: "/assignment"
+      path: "/"
       headers:
-        Host: "www.calmlunch.com"
-  - name: "🇱🇹_6"
+        Host: "vms.lifetime06.workers.dev"
+  - name: "🇱🇹_3"
     type: trojan
-    server: "194.135.80.192"
+    server: "195.181.244.216"
     port: 443
     password: "humanity"
     sni: "www.calmlunch.com"
@@ -161,9 +118,6 @@ proxy-groups:
       - "🇱🇹_1"
       - "🇱🇹_2"
       - "🇱🇹_3"
-      - "🇱🇹_4"
-      - "🇱🇹_5"
-      - "🇱🇹_6"
 
 
 rules:

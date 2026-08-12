@@ -65,20 +65,6 @@ dns:
 proxies:
   - name: "🇹🇷_1"
     type: vless
-    server: "216.9.224.42"
-    port: 443
-    uuid: "f61025f4-7973-4e3e-883c-a0fe85f0489c"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "us.rexten.cc"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "OFmJtVi6OB9E6KIc5QV5YmoouimRFc-Se9hICjtV8hQ"
-      short-id: ""
-    flow: "xtls-rprx-vision"
-  - name: "🇹🇷_2"
-    type: vless
     server: "201.50.115.23"
     port: 443
     uuid: "fc1b3bda-b226-452a-8c5c-b0e36a1f8f88"
@@ -91,7 +77,7 @@ proxies:
       public-key: "b-Cm9hX-3UHsS1L_lnUB6AMjuKhlN1IDdBbZ506itjI"
       short-id: "00bca5982f82d083"
     flow: "xtls-rprx-vision"
-  - name: "🇹🇷_3"
+  - name: "🇹🇷_2"
     type: vless
     server: "81.177.215.156"
     port: 13868
@@ -104,9 +90,60 @@ proxies:
       public-key: "FaX6hUpswBFFN-GaXFmFK8bVWYcPlrB4KP26n_INgko"
       short-id: "e852dc"
     flow: "xtls-rprx-vision"
+  - name: "🇹🇷_3"
+    type: vless
+    server: "2.56.127.137"
+    port: 443
+    uuid: "mahanvpn-mahanvpn"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "mAhaNrEaliteAm.MaHkHan.iR"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "mAhaNrEaliteAm.MaHkHan.iR"
   - name: "🇹🇷_4"
     type: vless
-    server: "216.9.224.248"
+    server: "185.39.204.155"
+    port: 8443
+    uuid: "7e8f7489-e65f-4be6-93ed-867a74ec6759"
+    udp: true
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "grpc"
+  - name: "🇹🇷_5"
+    type: vless
+    server: "185.226.92.175"
+    port: 32166
+    uuid: "442e1d8f-d2d3-422c-b03a-00b13098fb9a"
+    udp: true
+    network: httpupgrade
+    httpupgrade-opts:
+      path: "/"
+      host: "play.google.com"
+  - name: "🇹🇷_6"
+    type: vless
+    server: "185.226.92.175"
+    port: 31298
+    uuid: "442e1d8f-d2d3-422c-b03a-00b13098fb9a"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "play.google.com"
+  - name: "🇹🇷_7"
+    type: vless
+    server: "185.226.92.175"
+    port: 59230
+    uuid: "442e1d8f-d2d3-422c-b03a-00b13098fb9a"
+    udp: true
+  - name: "🇹🇷_8"
+    type: vless
+    server: "216.9.224.172"
     port: 443
     uuid: "f61025f4-7973-4e3e-883c-a0fe85f0489c"
     udp: true
@@ -118,16 +155,24 @@ proxies:
       public-key: "OFmJtVi6OB9E6KIc5QV5YmoouimRFc-Se9hICjtV8hQ"
       short-id: ""
     flow: "xtls-rprx-vision"
-  - name: "🇹🇷_5"
+  - name: "🇹🇷_9"
     type: vless
-    server: "185.39.204.155"
-    port: 8443
-    uuid: "7e8f7489-e65f-4be6-93ed-867a74ec6759"
+    server: "185.226.92.175"
+    port: 36980
+    uuid: "442e1d8f-d2d3-422c-b03a-00b13098fb9a"
     udp: true
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "grpc"
-  - name: "🇹🇷_6"
+  - name: "🇹🇷_10"
+    type: vless
+    server: "185.226.92.175"
+    port: 37414
+    uuid: "442e1d8f-d2d3-422c-b03a-00b13098fb9a"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "www.samsung.com"
+  - name: "🇹🇷_11"
     type: trojan
     server: "45.67.202.101"
     port: 8443
@@ -135,7 +180,7 @@ proxies:
     sni: "Koma-YT.PAGeS.Dev"
     skip-cert-verify: true
     udp: true
-  - name: "🇹🇷_7"
+  - name: "🇹🇷_12"
     type: trojan
     server: "195.162.69.238"
     port: 9443
@@ -143,26 +188,19 @@ proxies:
     sni: "apple.com"
     skip-cert-verify: true
     udp: true
-  - name: "🇹🇷_8"
+  - name: "🇹🇷_13"
     type: ss
-    server: "sub.almavpn.shop"
-    port: 1080
-    cipher: "chacha20-ietf-poly1305"
-    password: "LHZzf4y0j2WQlZsTh0NzPxVmTYufR-TA"
+    server: "185.123.101.64"
+    port: 2376
+    cipher: "aes-256-gcm"
+    password: "faBAoD54k87UJG7"
     udp: true
-  - name: "🇹🇷_9"
+  - name: "🇹🇷_14"
     type: ss
-    server: "sub.almavpn.shop"
-    port: 1080
-    cipher: "chacha20-ietf-poly1305"
-    password: "LHZzf4y0j2WQlZsTh0NzPxVmTYufR-TA"
-    udp: true
-  - name: "🇹🇷_10"
-    type: ss
-    server: "tr-1.stunnel.cc"
-    port: 8444
-    cipher: "chacha20-ietf-poly1305"
-    password: "tunnel-fbrof"
+    server: "38.180.113.194"
+    port: 8119
+    cipher: "aes-256-gcm"
+    password: "cdBIDV42DCwnfIN"
     udp: true
 
 proxy-groups:
@@ -188,6 +226,10 @@ proxy-groups:
       - "🇹🇷_8"
       - "🇹🇷_9"
       - "🇹🇷_10"
+      - "🇹🇷_11"
+      - "🇹🇷_12"
+      - "🇹🇷_13"
+      - "🇹🇷_14"
 
 
 rules:
