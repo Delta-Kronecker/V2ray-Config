@@ -1629,6 +1629,39 @@ func writeSummary(results []configResult, failedLinks []string, duration float64
 	gen.WriteString(autoGenMarker)
 	gen.WriteString("\n")
 
+	fargSupported := map[string]bool{"vless": true, "trojan": true, "vmess": true, "ss": true}
+	fargCount := 0
+	for _, r := range results {
+		if fargSupported[r.proto] {
+			fargCount++
+		}
+	}
+
+	// ── 0. Custom Batches ───────────────────────────────────────────────────────
+	customBatches := countBatchFiles("config/farg/batches")
+	if customBatches > 0 {
+		gen.WriteString("## Custom Batch\n\n")
+		for i := 1; i <= customBatches; i++ {
+			cnt := min500(i, fargCount)
+			fmt.Fprintf(&gen, "Custom Batch %03d (%d config):\n```\n%s/config/farg/batches/batch_%03d.json\n```\n\n",
+				i, cnt, repoBase, i)
+		}
+	}
+
+	// ── 0. Custom ───────────────────────────────────────────────────────────────
+	if fargCount > 0 {
+		gen.WriteString("## Custom\n\n")
+		fmt.Fprintf(&gen, "Custom All (%d config):\n```\n%s/config/farg/all_configs.json\n```\n\n", fargCount, repoBase)
+		for _, p := range cfg.ProtocolOrder {
+			if fargSupported[p] {
+				if n := byProtoOut[p]; n > 0 {
+					fmt.Fprintf(&gen, "Custom %s (%d config):\n```\n%s/config/farg/protocols/%s.json\n```\n\n",
+						strings.ToUpper(p), n, repoBase, p)
+				}
+			}
+		}
+	}
+
 	// ── 1. V2ray ────────────────────────────────────────────────────────────────
 	gen.WriteString("## V2ray\n\n")
 	fmt.Fprintf(&gen, "V2ray All (%d config):\n```\n%s/config/all_configs.txt\n```\n\n", len(results), repoBase)
