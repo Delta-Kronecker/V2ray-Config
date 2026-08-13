@@ -175,7 +175,7 @@ func writeFargFiles(results []configResult) {
 }
 
 func writeFargBatches(entries []fargConfig) int {
-	const batchSize = 1000
+	const batchSize = 500
 
 	rng := rand.New(rand.NewSource(time.Now().UnixNano()))
 	shuffled := make([]fargConfig, len(entries))
