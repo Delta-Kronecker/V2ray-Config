@@ -59,29 +59,7 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇪🇸_13"
-    type: vless
-    server: "185.18.250.50"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/?ed=2560"
-      headers:
-        Host: "vms.lifetime47.workers.dev"
-  - name: "🇪🇸_14"
-    type: vless
-    server: "185.18.250.30"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "vms.lifetime47.workers.dev"
-  - name: "🇪🇸_15"
+  - name: "🇪🇸_12"
     type: vless
     server: "212.227.235.66"
     port: 2053
@@ -94,7 +72,7 @@ proxies:
     reality-opts:
       public-key: "6huZliKELOkP6l-eOIFe7PKP5MCGK2p5KzUeXRiMi00"
       short-id: "13e0569248e98a05"
-  - name: "🇪🇸_16"
+  - name: "🇪🇸_13"
     type: vless
     server: "85.90.217.42"
     port: 443
@@ -103,15 +81,15 @@ proxies:
     tls: true
     skip-cert-verify: true
     servername: "85.90.217.42"
-  - name: "🇪🇸_17"
+  - name: "🇪🇸_14"
     type: trojan
-    server: "193.148.19.213"
-    port: 52794
-    password: "2eutknankxtbgkwcajzt"
-    sni: "193.148.19.213"
+    server: "65.20.102.54"
+    port: 443
+    password: "842b5f9dd11e458d8613c907c4cc5723"
+    sni: "www.gpt123.one"
     skip-cert-verify: true
     udp: true
-  - name: "🇪🇸_18"
+  - name: "🇪🇸_15"
     type: trojan
     server: "193.148.19.210"
     port: 52794
@@ -119,7 +97,7 @@ proxies:
     sni: "www.vk.com"
     skip-cert-verify: true
     udp: true
-  - name: "🇪🇸_19"
+  - name: "🇪🇸_16"
     type: trojan
     server: "185.114.72.31"
     port: 2053
@@ -132,36 +110,47 @@ proxies:
       path: "/assignment"
       headers:
         Host: "www.calmlunch.com"
-  - name: "🇪🇸_20"
+  - name: "🇪🇸_17"
     type: trojan
-    server: "65.20.102.54"
-    port: 443
-    password: "842b5f9dd11e458d8613c907c4cc5723"
-    sni: "www.gpt123.one"
+    server: "193.148.19.213"
+    port: 52794
+    password: "2eutknankxtbgkwcajzt"
+    sni: "193.148.19.213"
     skip-cert-verify: true
     udp: true
-  - name: "🇪🇸_21"
+  - name: "🇪🇸_18"
+    type: trojan
+    server: "185.18.250.245"
+    port: 443
+    password: "humanity"
+    sni: "www.calmlunch.com"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/assignment"
+  - name: "🇪🇸_19"
     type: ss
     server: "140.174.184.5"
     port: 8388
     cipher: "chacha20-ietf-poly1305"
     password: "qItG8SueYQcP"
     udp: true
-  - name: "🇪🇸_22"
+  - name: "🇪🇸_20"
+    type: ss
+    server: "140.174.184.5"
+    port: 8388
+    cipher: "chacha20-ietf-poly1305"
+    password: "qItG8SueYQcP"
+    udp: true
+  - name: "🇪🇸_21"
     type: ss
     server: "108.181.121.226"
     port: 8388
     cipher: "chacha20-ietf-poly1305"
     password: "WSyL4XTwNsdv"
     udp: true
-  - name: "🇪🇸_23"
-    type: ss
-    server: "140.174.184.5"
-    port: 8388
-    cipher: "chacha20-ietf-poly1305"
-    password: "qItG8SueYQcP"
-    udp: true
-  - name: "🇪🇸_24"
+  - name: "🇪🇸_22"
     type: ss
     server: "108.181.121.226"
     port: 8388
@@ -210,6 +199,7 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
+      - "🇪🇸_12"
       - "🇪🇸_13"
       - "🇪🇸_14"
       - "🇪🇸_15"
@@ -220,8 +210,6 @@ proxy-groups:
       - "🇪🇸_20"
       - "🇪🇸_21"
       - "🇪🇸_22"
-      - "🇪🇸_23"
-      - "🇪🇸_24"
 
   - name: "LB-CDN"
     type: load-balance
@@ -231,6 +219,7 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
+      - "🇪🇸_12"
       - "🇪🇸_13"
       - "🇪🇸_14"
       - "🇪🇸_15"
@@ -241,8 +230,6 @@ proxy-groups:
       - "🇪🇸_20"
       - "🇪🇸_21"
       - "🇪🇸_22"
-      - "🇪🇸_23"
-      - "🇪🇸_24"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -252,6 +239,7 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
+      - "🇪🇸_12"
       - "🇪🇸_13"
       - "🇪🇸_14"
       - "🇪🇸_15"
@@ -262,8 +250,6 @@ proxy-groups:
       - "🇪🇸_20"
       - "🇪🇸_21"
       - "🇪🇸_22"
-      - "🇪🇸_23"
-      - "🇪🇸_24"
 
   - name: "FAST-CDN"
     type: url-test
@@ -272,6 +258,7 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
+      - "🇪🇸_12"
       - "🇪🇸_13"
       - "🇪🇸_14"
       - "🇪🇸_15"
@@ -282,8 +269,6 @@ proxy-groups:
       - "🇪🇸_20"
       - "🇪🇸_21"
       - "🇪🇸_22"
-      - "🇪🇸_23"
-      - "🇪🇸_24"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -293,6 +278,7 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
+      - "🇪🇸_12"
       - "🇪🇸_13"
       - "🇪🇸_14"
       - "🇪🇸_15"
@@ -303,13 +289,12 @@ proxy-groups:
       - "🇪🇸_20"
       - "🇪🇸_21"
       - "🇪🇸_22"
-      - "🇪🇸_23"
-      - "🇪🇸_24"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
+      - "🇪🇸_12"
       - "🇪🇸_13"
       - "🇪🇸_14"
       - "🇪🇸_15"
@@ -320,8 +305,6 @@ proxy-groups:
       - "🇪🇸_20"
       - "🇪🇸_21"
       - "🇪🇸_22"
-      - "🇪🇸_23"
-      - "🇪🇸_24"
 
 rules:
   - MATCH,PROXY-BEST

@@ -59,32 +59,7 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇳🇿_4"
-    type: vless
-    server: "114.129.43.30"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "vms.lifetime04.workers.dev"
-  - name: "🇳🇿_5"
-    type: vless
-    server: "114.129.43.123"
-    port: 443
-    uuid: "1d16c6e0-1bbe-435b-b661-90043fee999c"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "notls.lukongtou.eu.org"
-    network: ws
-    ws-opts:
-      path: "Telegram-WangCai2"
-      headers:
-        Host: "notls.lukongtou.eu.org"
-  - name: "🇳🇿_6"
+  - name: "🇳🇿_2"
     type: vless
     server: "202.37.33.80"
     port: 443
@@ -140,9 +115,7 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇳🇿_4"
-      - "🇳🇿_5"
-      - "🇳🇿_6"
+      - "🇳🇿_2"
 
   - name: "LB-CDN"
     type: load-balance
@@ -152,9 +125,7 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇳🇿_4"
-      - "🇳🇿_5"
-      - "🇳🇿_6"
+      - "🇳🇿_2"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -164,9 +135,7 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇳🇿_4"
-      - "🇳🇿_5"
-      - "🇳🇿_6"
+      - "🇳🇿_2"
 
   - name: "FAST-CDN"
     type: url-test
@@ -175,9 +144,7 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇳🇿_4"
-      - "🇳🇿_5"
-      - "🇳🇿_6"
+      - "🇳🇿_2"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -187,17 +154,13 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇳🇿_4"
-      - "🇳🇿_5"
-      - "🇳🇿_6"
+      - "🇳🇿_2"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
-      - "🇳🇿_4"
-      - "🇳🇿_5"
-      - "🇳🇿_6"
+      - "🇳🇿_2"
 
 rules:
   - MATCH,PROXY-BEST

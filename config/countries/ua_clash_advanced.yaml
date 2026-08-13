@@ -59,21 +59,7 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇺🇦_5"
-    type: vless
-    server: "45.135.235.123"
-    port: 443
-    uuid: "1d16c6e0-1bbe-435b-b661-90043fee999c"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "notls.lukongtou.eu.org"
-    network: ws
-    ws-opts:
-      path: "Telegram-WangCai2"
-      headers:
-        Host: "notls.lukongtou.eu.org"
-  - name: "🇺🇦_6"
+  - name: "🇺🇦_3"
     type: vless
     server: "193.238.153.15"
     port: 443
@@ -87,20 +73,7 @@ proxies:
       public-key: "dzknsuwujuOacNHTXzdPxBLNUEJfEImiwLinPPNFmwU"
       short-id: "1ea21a140beaecc5"
     flow: "xtls-rprx-vision"
-  - name: "🇺🇦_7"
-    type: vless
-    server: "78.159.240.215"
-    port: 2053
-    uuid: "716b4e8e-482f-462e-9c69-9df1d235e0c2"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "31.56.188.26.fwqfw783rg2dad.website"
-    client-fingerprint: "firefox"
-    network: ws
-    ws-opts:
-      path: "/websocket?ed=2560"
-  - name: "🇺🇦_8"
+  - name: "🇺🇦_4"
     type: trojan
     server: "130.0.236.88"
     port: 443
@@ -150,10 +123,8 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇺🇦_5"
-      - "🇺🇦_6"
-      - "🇺🇦_7"
-      - "🇺🇦_8"
+      - "🇺🇦_3"
+      - "🇺🇦_4"
 
   - name: "LB-CDN"
     type: load-balance
@@ -163,10 +134,8 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇺🇦_5"
-      - "🇺🇦_6"
-      - "🇺🇦_7"
-      - "🇺🇦_8"
+      - "🇺🇦_3"
+      - "🇺🇦_4"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -176,10 +145,8 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇺🇦_5"
-      - "🇺🇦_6"
-      - "🇺🇦_7"
-      - "🇺🇦_8"
+      - "🇺🇦_3"
+      - "🇺🇦_4"
 
   - name: "FAST-CDN"
     type: url-test
@@ -188,10 +155,8 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇺🇦_5"
-      - "🇺🇦_6"
-      - "🇺🇦_7"
-      - "🇺🇦_8"
+      - "🇺🇦_3"
+      - "🇺🇦_4"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -201,19 +166,15 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇺🇦_5"
-      - "🇺🇦_6"
-      - "🇺🇦_7"
-      - "🇺🇦_8"
+      - "🇺🇦_3"
+      - "🇺🇦_4"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
-      - "🇺🇦_5"
-      - "🇺🇦_6"
-      - "🇺🇦_7"
-      - "🇺🇦_8"
+      - "🇺🇦_3"
+      - "🇺🇦_4"
 
 rules:
   - MATCH,PROXY-BEST

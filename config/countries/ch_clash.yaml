@@ -62,20 +62,6 @@ dns:
 proxies:
   - name: "🇨🇭_1"
     type: vless
-    server: "151.243.190.41"
-    port: 25488
-    uuid: "489b61b6-e7fa-4254-ad2b-6ac989b75d86"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "proxy11.h1guro.ovh"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "z3eHrafcEv7gDkshLVUyR7GOH2eqxUigKB-LOg8-EgI"
-      short-id: "135f036cf30861a5"
-    flow: "xtls-rprx-vision"
-  - name: "🇨🇭_2"
-    type: vless
     server: "45.90.56.231"
     port: 443
     uuid: "e2b8f727-c5ee-47e1-8f1b-7c5c61479ce0"
@@ -88,7 +74,7 @@ proxies:
       public-key: "KrFnWxAwVGL6tuj1JE0qpykLzY4aOFjyK3OaymF_hT0"
       short-id: "e2e66f4537770cef"
     flow: "xtls-rprx-vision"
-  - name: "🇨🇭_3"
+  - name: "🇨🇭_2"
     type: vless
     server: "178.83.226.55"
     port: 443
@@ -101,21 +87,7 @@ proxies:
       public-key: "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
       short-id: ""
     flow: "xtls-rprx-vision"
-  - name: "🇨🇭_4"
-    type: vless
-    server: "45.85.93.92"
-    port: 443
-    uuid: "89281585-8bde-4ef2-8807-96c603281ef8"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "free.ch1.laodavip.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "QZDU9ZZt6HEIijqRyeyebLxt11S692nSBIDNCKLBM3k"
-      short-id: "f5420efbe305d354"
-    flow: "xtls-rprx-vision"
-  - name: "🇨🇭_5"
+  - name: "🇨🇭_3"
     type: trojan
     server: "86.106.84.195"
     port: 53261
@@ -142,8 +114,6 @@ proxy-groups:
       - "🇨🇭_1"
       - "🇨🇭_2"
       - "🇨🇭_3"
-      - "🇨🇭_4"
-      - "🇨🇭_5"
 
 
   - name: "Load Balance"
@@ -155,8 +125,6 @@ proxy-groups:
       - "🇨🇭_1"
       - "🇨🇭_2"
       - "🇨🇭_3"
-      - "🇨🇭_4"
-      - "🇨🇭_5"
 
 rules:
   - MATCH,PROXY

@@ -62,28 +62,6 @@ dns:
 proxies:
   - name: "🇦🇪_1"
     type: vless
-    server: "77.232.140.40"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/?ed"
-      headers:
-        Host: "vms.lifetime61.workers.dev"
-  - name: "🇦🇪_2"
-    type: vless
-    server: "77.232.140.30"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/?ed=2560"
-      headers:
-        Host: "vms.lifetime61.workers.dev"
-  - name: "🇦🇪_3"
-    type: vless
     server: "84.235.244.108"
     port: 22573
     uuid: "39947382-3212-41c9-bc3a-589574ac8b23"
@@ -93,32 +71,6 @@ proxies:
       path: "/"
       headers:
         Host: "uae.unixzone.us"
-  - name: "🇦🇪_4"
-    type: vless
-    server: "94.140.0.100"
-    port: 443
-    uuid: "c9d1b8e6-f28a-419f-2581-97ad3258c320"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "withered-cake-d636.asfvgsrhtrzdbvcgfn.workers.dev"
-    client-fingerprint: "chrome"
-    network: ws
-    ws-opts:
-      path: "/kbapqjwhbsjwoqjhskso"
-      headers:
-        Host: "withered-cake-d636.asfvgsrhtrzdbvcgfn.workers.dev"
-  - name: "🇦🇪_5"
-    type: vless
-    server: "185.225.195.30"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "vms.lifetime18.workers.dev"
 
 proxy-groups:
   - name: "PROXY"
@@ -136,10 +88,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇦🇪_1"
-      - "🇦🇪_2"
-      - "🇦🇪_3"
-      - "🇦🇪_4"
-      - "🇦🇪_5"
 
 
   - name: "Load Balance"
@@ -149,10 +97,6 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇦🇪_1"
-      - "🇦🇪_2"
-      - "🇦🇪_3"
-      - "🇦🇪_4"
-      - "🇦🇪_5"
 
 rules:
   - MATCH,PROXY

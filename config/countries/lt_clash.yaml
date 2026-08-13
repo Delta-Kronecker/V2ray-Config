@@ -62,35 +62,6 @@ dns:
 proxies:
   - name: "🇱🇹_1"
     type: vless
-    server: "84.32.51.253"
-    port: 443
-    uuid: "ff1b0b50-70dc-4bae-866e-55cff86f4d6d"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "lt.nosok-top.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "AYQOZFxjvHN-RIzKYEibwFiFsp03cdlWGdCmyFfuNVc"
-      short-id: "4fa44664f6a566d3"
-    flow: "xtls-rprx-vision"
-  - name: "🇱🇹_2"
-    type: vless
-    server: "88.216.69.144"
-    port: 443
-    uuid: "50414e45-4c5f-5a45-5553-4d64f1370eeb"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "r5zenrelur2s.pqzdileiu8es.workers.dev"
-    client-fingerprint: "ios"
-    network: ws
-    ws-opts:
-      path: "/stream/PANEL_ZEUS/4d64f1370eeb/loc-0"
-      headers:
-        Host: "r5zenrelur2s.pqzdileiu8es.workers.dev"
-  - name: "🇱🇹_3"
-    type: vless
     server: "84.32.209.7"
     port: 443
     uuid: "f1c496bf-d2ab-45be-bc13-051d60d227b7"
@@ -103,9 +74,9 @@ proxies:
       public-key: "00n9LplaZ0VGvRS57548s7xe0deFC10pw2fkFHFPplM"
       short-id: ""
     flow: "xtls-rprx-vision"
-  - name: "🇱🇹_4"
+  - name: "🇱🇹_2"
     type: vless
-    server: "84.32.51.241"
+    server: "84.32.215.14"
     port: 443
     uuid: "ff1b0b50-70dc-4bae-866e-55cff86f4d6d"
     udp: true
@@ -117,18 +88,21 @@ proxies:
       public-key: "AYQOZFxjvHN-RIzKYEibwFiFsp03cdlWGdCmyFfuNVc"
       short-id: "4fa44664f6a566d3"
     flow: "xtls-rprx-vision"
-  - name: "🇱🇹_5"
+  - name: "🇱🇹_3"
     type: vless
-    server: "88.216.69.30"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    server: "84.32.151.255"
+    port: 443
+    uuid: "ff1b0b50-70dc-4bae-866e-55cff86f4d6d"
     udp: true
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "vms.lifetime06.workers.dev"
-  - name: "🇱🇹_6"
+    tls: true
+    skip-cert-verify: true
+    servername: "lt.nosok-top.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "AYQOZFxjvHN-RIzKYEibwFiFsp03cdlWGdCmyFfuNVc"
+      short-id: "4fa44664f6a566d3"
+    flow: "xtls-rprx-vision"
+  - name: "🇱🇹_4"
     type: trojan
     server: "195.181.244.216"
     port: 443
@@ -161,8 +135,6 @@ proxy-groups:
       - "🇱🇹_2"
       - "🇱🇹_3"
       - "🇱🇹_4"
-      - "🇱🇹_5"
-      - "🇱🇹_6"
 
 
   - name: "Load Balance"
@@ -175,8 +147,6 @@ proxy-groups:
       - "🇱🇹_2"
       - "🇱🇹_3"
       - "🇱🇹_4"
-      - "🇱🇹_5"
-      - "🇱🇹_6"
 
 rules:
   - MATCH,PROXY

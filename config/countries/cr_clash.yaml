@@ -61,20 +61,6 @@ dns:
 
 proxies:
   - name: "🇨🇷_1"
-    type: vless
-    server: "190.93.245.7"
-    port: 8443
-    uuid: "7967bf59-57e3-4cde-9898-527b0fe60022"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "speed.dulacloud.store"
-    network: ws
-    ws-opts:
-      path: "/dula?Telegram-WangCai2"
-      headers:
-        Host: "speed.dulacloud.store"
-  - name: "🇨🇷_2"
     type: trojan
     server: "190.93.247.7"
     port: 443
@@ -82,7 +68,7 @@ proxies:
     sni: "190.93.247.7"
     skip-cert-verify: true
     udp: true
-  - name: "🇨🇷_3"
+  - name: "🇨🇷_2"
     type: ss
     server: "190.93.246.16"
     port: 443
@@ -94,7 +80,7 @@ proxies:
       mode: "websocket"
       path: "/14b02e2a-8930-4afb-8412-ea4a4954ca5b/?ed\\=2560"
       host: "ylnhh.us.ci"
-  - name: "🇨🇷_4"
+  - name: "🇨🇷_3"
     type: ss
     server: "190.93.246.16"
     port: 443
@@ -125,7 +111,6 @@ proxy-groups:
       - "🇨🇷_1"
       - "🇨🇷_2"
       - "🇨🇷_3"
-      - "🇨🇷_4"
 
 
   - name: "Load Balance"
@@ -137,7 +122,6 @@ proxy-groups:
       - "🇨🇷_1"
       - "🇨🇷_2"
       - "🇨🇷_3"
-      - "🇨🇷_4"
 
 rules:
   - MATCH,PROXY
