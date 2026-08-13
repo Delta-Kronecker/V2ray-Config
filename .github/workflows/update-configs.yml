@@ -3,8 +3,12 @@ permissions: write-all
 
 on:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '0 0  * * *'
   workflow_dispatch:
+  push:
+    branches:
+      - main
+      - SUB
 
 jobs:
   update:
@@ -17,6 +21,7 @@ jobs:
       with:
         fetch-depth: 0
         token: ${{ secrets.GITHUB_TOKEN }}
+        ref: ${{ github.ref }}  # Checkout the current branch
 
     - name: Setup Go
       uses: actions/setup-go@v5
@@ -90,18 +95,21 @@ jobs:
             git config user.name "GitHub Actions"
             git config user.email "actions@github.com"
             
+            # Get current branch name
+            CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+            echo "Current branch: $CURRENT_BRANCH"
             
-            # Pull latest changes cleanly
-            git pull origin main --rebase --autostash
+            # Pull latest changes from same branch
+            git pull origin $CURRENT_BRANCH --rebase --autostash
             
-            # Add freshly generated files (only if they exist)
+            # Add freshly generated files
             git add config/ 2>/dev/null || true
             git add README.md 2>/dev/null || true
             
             # Only commit if there are changes
             if ! git diff --staged --quiet; then
-              git commit -m "Update configs [$(date -u '+%Y-%m-%d %H:%M UTC')]"
-              git push origin main
+              git commit -m "Update configs [$(date -u '+%Y-%m-%d %H:%M UTC')] - $CURRENT_BRANCH"
+              git push origin $CURRENT_BRANCH
             else
-              echo "No changes to commit"
+              echo "No changes to commit on $CURRENT_BRANCH"
             fi
