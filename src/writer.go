@@ -288,7 +288,7 @@ func writeBatchFiles(
 	allV2ray []string, allClash []string, allClashNames []string,
 	allSNIV2ray []string, allSNIClash []string, allSNIClashNames []string,
 ) {
-	const batchSize = 1000
+	const batchSize = 500
 
 	rng := rand.New(rand.NewSource(time.Now().UnixNano()))
 
@@ -1867,11 +1867,11 @@ func countBatchFiles(dir string) int {
 }
 
 func min500(batchIdx, total int) int {
-	start := (batchIdx - 1) * 1000
+	start := (batchIdx - 1) * 500
 	if start >= total {
 		return 0
 	}
-	end := start + 1000
+	end := start + 500
 	if end > total {
 		return total - start
 	}
