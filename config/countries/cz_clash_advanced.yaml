@@ -74,22 +74,21 @@ proxies:
       short-id: "0c"
     flow: "xtls-rprx-vision"
   - name: "🇨🇿_7"
-    type: vless
-    server: "78.159.247.253"
-    port: 2027
-    uuid: "851ed0d8-a37b-452d-8ef2-5b6c2d28a060"
-    udp: true
-    tls: true
+    type: trojan
+    server: "178.208.75.155"
+    port: 2053
+    password: "humanity"
+    sni: "www.calmlunch.com"
     skip-cert-verify: true
-    servername: "storage.yandex.net"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "ISa-DZOI4LRRb9DHMFYm5oFqBXDjYzz0hVWUfWvzLmo"
-      short-id: "dc8109baf0f607ea"
-    flow: "xtls-rprx-vision"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/assignment"
+      headers:
+        Host: "www.calmlunch.com"
   - name: "🇨🇿_8"
     type: trojan
-    server: "46.8.113.142"
+    server: "ch-2.bexum.fun"
     port: 443
     password: "LYaEYwjN8LjWTRJdCCTzW7V6gK7atJVu"
     sni: "ch-2.bexum.fun"
@@ -108,17 +107,12 @@ proxies:
       path: "/assignment"
   - name: "🇨🇿_10"
     type: trojan
-    server: "178.208.75.155"
-    port: 2053
-    password: "humanity"
-    sni: "www.calmlunch.com"
+    server: "46.8.113.142"
+    port: 443
+    password: "LYaEYwjN8LjWTRJdCCTzW7V6gK7atJVu"
+    sni: "ch-2.bexum.fun"
     skip-cert-verify: true
     udp: true
-    network: ws
-    ws-opts:
-      path: "/assignment"
-      headers:
-        Host: "www.calmlunch.com"
 
 proxy-groups:
   # ── Top-level selector ────────────────────────────────────────────────────

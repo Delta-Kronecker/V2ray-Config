@@ -16,6 +16,13 @@ global-client-fingerprint: chrome
 find-process-mode: strict
 keep-alive-interval: 15
 
+fragment:
+  enable: true
+  size: "5-40"
+  sleep: "1-2"
+
+ttl: 5
+
 profile:
   store-selected: true
   store-fake-ip: false
@@ -42,25 +49,15 @@ dns:
   default-nameserver:
     - 1.1.1.1
     - 8.8.8.8
+  nameserver:
+    - 1.1.1.1
+    - 1.0.0.1
+    - 8.8.8.8
+    - 8.8.4.4
     - 9.9.9.9
     - 149.112.112.112
     - 208.67.222.222
-    - 94.140.14.14
-    - 64.6.64.6
-    - 84.200.69.80
-    - 76.76.19.19
-    - 8.26.56.26
-  nameserver:
-    - https://cloudflare-dns.com/dns-query
-    - https://dns.google/dns-query
-    - https://dns.quad9.net/dns-query
-    - https://dns.adguard.com/dns-query
-    - https://doh.opendns.com/dns-query
-    - https://doh.comodo.com/dns-query
-    - https://doh.mullvad.net/dns-query
-    - https://doh.dns.mullvad.net/dns-query
-    - https://freedns.controld.com/p0
-    - https://freedns.controld.com/family
+    - 208.67.220.220
 
 proxies:
   - name: "🇭🇺_1"
@@ -93,18 +90,19 @@ proxies:
         Host: "notls.lukongtou.eu.org"
   - name: "🇭🇺_3"
     type: vless
-    server: "45.195.111.15"
-    port: 443
-    uuid: "45459159-1536-4e98-95b3-aa1dbbfb4172"
+    server: "141.11.202.7"
+    port: 8443
+    uuid: "7967bf59-57e3-4cde-9898-527b0fe60022"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "storage.yandex.net"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "7zd9mJilgjOrg_ohtw23Vmio-pdnYqeP_r-kiWt87Cg"
-      short-id: "2715592069f36fe7"
-    flow: "xtls-rprx-vision"
+    servername: "speed.dulacloud.store"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/dula?Telegram-WangCai2"
+      headers:
+        Host: "speed.dulacloud.store"
   - name: "🇭🇺_4"
     type: trojan
     server: "185.225.68.232"
@@ -124,7 +122,9 @@ proxy-groups:
     type: select
     proxies:
       - "Auto"
+      - "Load Balance"
 
+      
   - name: "Auto"
     type: url-test
     url: https://www.gstatic.com/generate_204
@@ -137,6 +137,17 @@ proxy-groups:
       - "🇭🇺_3"
       - "🇭🇺_4"
 
+
+  - name: "Load Balance"
+    type: load-balance
+    strategy: round-robin
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+    proxies:
+      - "🇭🇺_1"
+      - "🇭🇺_2"
+      - "🇭🇺_3"
+      - "🇭🇺_4"
 
 rules:
   - MATCH,PROXY

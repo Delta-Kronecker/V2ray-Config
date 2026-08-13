@@ -59,7 +59,21 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇲🇾_5"
+  - name: "🇲🇾_6"
+    type: vless
+    server: "205.186.67.233"
+    port: 13779
+    uuid: "928e6cce-8ced-4243-9a48-a6642edd09b0"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "tesla.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "llTyp52oRXnJmQ3I9UUrmlwbMA79B-wLCRHCu-8dLGg"
+      short-id: "af1bdd293097b664"
+    flow: "xtls-rprx-vision"
+  - name: "🇲🇾_7"
     type: trojan
     server: "202.43.102.57"
     port: 443
@@ -67,7 +81,14 @@ proxies:
     sni: "45.32.28.232"
     skip-cert-verify: true
     udp: true
-  - name: "🇲🇾_6"
+  - name: "🇲🇾_8"
+    type: ss
+    server: "47.250.212.59"
+    port: 2053
+    cipher: "none"
+    password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
+    udp: true
+  - name: "🇲🇾_9"
     type: ss
     server: "96.126.190.196"
     port: 443
@@ -80,14 +101,7 @@ proxies:
       path: "/59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
       host: "woshinidie-et3.pages.dev"
       tls: true
-  - name: "🇲🇾_7"
-    type: ss
-    server: "47.250.212.59"
-    port: 2053
-    cipher: "none"
-    password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
-    udp: true
-  - name: "🇲🇾_8"
+  - name: "🇲🇾_10"
     type: ss
     server: "47.250.212.59"
     port: 2053
@@ -136,10 +150,11 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇲🇾_5"
       - "🇲🇾_6"
       - "🇲🇾_7"
       - "🇲🇾_8"
+      - "🇲🇾_9"
+      - "🇲🇾_10"
 
   - name: "LB-CDN"
     type: load-balance
@@ -149,10 +164,11 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇲🇾_5"
       - "🇲🇾_6"
       - "🇲🇾_7"
       - "🇲🇾_8"
+      - "🇲🇾_9"
+      - "🇲🇾_10"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -162,10 +178,11 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇲🇾_5"
       - "🇲🇾_6"
       - "🇲🇾_7"
       - "🇲🇾_8"
+      - "🇲🇾_9"
+      - "🇲🇾_10"
 
   - name: "FAST-CDN"
     type: url-test
@@ -174,10 +191,11 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇲🇾_5"
       - "🇲🇾_6"
       - "🇲🇾_7"
       - "🇲🇾_8"
+      - "🇲🇾_9"
+      - "🇲🇾_10"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -187,19 +205,21 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇲🇾_5"
       - "🇲🇾_6"
       - "🇲🇾_7"
       - "🇲🇾_8"
+      - "🇲🇾_9"
+      - "🇲🇾_10"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
-      - "🇲🇾_5"
       - "🇲🇾_6"
       - "🇲🇾_7"
       - "🇲🇾_8"
+      - "🇲🇾_9"
+      - "🇲🇾_10"
 
 rules:
   - MATCH,PROXY-BEST

@@ -16,6 +16,13 @@ global-client-fingerprint: chrome
 find-process-mode: strict
 keep-alive-interval: 15
 
+fragment:
+  enable: true
+  size: "5-40"
+  sleep: "1-2"
+
+ttl: 5
+
 profile:
   store-selected: true
   store-fake-ip: false
@@ -42,25 +49,15 @@ dns:
   default-nameserver:
     - 1.1.1.1
     - 8.8.8.8
+  nameserver:
+    - 1.1.1.1
+    - 1.0.0.1
+    - 8.8.8.8
+    - 8.8.4.4
     - 9.9.9.9
     - 149.112.112.112
     - 208.67.222.222
-    - 94.140.14.14
-    - 64.6.64.6
-    - 84.200.69.80
-    - 76.76.19.19
-    - 8.26.56.26
-  nameserver:
-    - https://cloudflare-dns.com/dns-query
-    - https://dns.google/dns-query
-    - https://dns.quad9.net/dns-query
-    - https://dns.adguard.com/dns-query
-    - https://doh.opendns.com/dns-query
-    - https://doh.comodo.com/dns-query
-    - https://doh.mullvad.net/dns-query
-    - https://doh.dns.mullvad.net/dns-query
-    - https://freedns.controld.com/p0
-    - https://freedns.controld.com/family
+    - 208.67.220.220
 
 proxies:
   - name: "🇮🇷_1"
@@ -76,11 +73,38 @@ proxies:
         Host: "vms.lifetime59.workers.dev"
   - name: "🇮🇷_2"
     type: vless
-    server: "185.128.139.11"
-    port: 18244
-    uuid: "0d543aed-4e30-4553-b5ac-211419bb0961"
+    server: "185.143.234.238"
+    port: 2086
+    uuid: "1ee1f28d-4975-4d7c-95c7-76172c20eed5"
     udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "parsi.parsi.sbs"
   - name: "🇮🇷_3"
+    type: vless
+    server: "185.143.233.238"
+    port: 2086
+    uuid: "1ee1f28d-4975-4d7c-95c7-76172c20eed5"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "parsi.parsi.sbs"
+  - name: "🇮🇷_4"
+    type: vless
+    server: "p01.parsi.sbs"
+    port: 2086
+    uuid: "1ee1f28d-4975-4d7c-95c7-76172c20eed5"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "parsi.parsi.sbs"
+  - name: "🇮🇷_5"
     type: vless
     server: "45.131.4.192"
     port: 80
@@ -91,39 +115,7 @@ proxies:
       path: "/"
       headers:
         Host: "silent-paper-fa57.fipiyag989.workers.dev"
-  - name: "🇮🇷_4"
-    type: vless
-    server: "62.60.188.240"
-    port: 443
-    uuid: "0108346a-e5a8-485f-912c-e5b142cf0a80"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "it.nvidia.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "2HZyHolhLXqkOW3A6VGNJeDwC7lStJJmN1GhIVkpYWI"
-      short-id: "571a5e8791b284e7"
-  - name: "🇮🇷_5"
-    type: trojan
-    server: "193.151.134.182"
-    port: 443
-    password: "diCyRX1d"
-    sni: "iprostable.enterprises"
-    skip-cert-verify: true
-    udp: true
   - name: "🇮🇷_6"
-    type: trojan
-    server: "45.131.4.118"
-    port: 443
-    password: "f18d6149-e214-8554-e737-f7523c8b2eea"
-    sni: "0403.infinityconfig4.workers.dev"
-    skip-cert-verify: true
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/sync"
-  - name: "🇮🇷_7"
     type: trojan
     server: "ir1.iobase.ir"
     port: 443
@@ -131,65 +123,73 @@ proxies:
     sni: "ir1.iobase.ir"
     skip-cert-verify: true
     udp: true
-  - name: "🇮🇷_8"
-    type: ss
-    server: "185.188.106.10"
+  - name: "🇮🇷_7"
+    type: trojan
+    server: "193.151.134.182"
     port: 443
-    cipher: "none"
-    password: "RSzEIkk2EsHEAVj15N5E/A=="
+    password: "diCyRX1d"
+    sni: "iprostable.enterprises"
+    skip-cert-verify: true
     udp: true
-  - name: "🇮🇷_9"
+  - name: "🇮🇷_8"
     type: ss
     server: "185.188.105.11"
     port: 443
     cipher: "none"
     password: "RSzEIkk2EsHEAVj15N5E/A=="
     udp: true
-  - name: "🇮🇷_10"
+  - name: "🇮🇷_9"
     type: ss
     server: "185.188.104.11"
     port: 443
     cipher: "none"
     password: "RSzEIkk2EsHEAVj15N5E/A=="
     udp: true
+  - name: "🇮🇷_10"
+    type: ss
+    server: "185.188.106.10"
+    port: 443
+    cipher: "none"
+    password: "RSzEIkk2EsHEAVj15N5E/A=="
+    udp: true
   - name: "🇮🇷_11"
     type: ss
-    server: "185.188.104.12"
+    server: "185.188.106.10"
     port: 443
     cipher: "none"
     password: "RSzEIkk2EsHEAVj15N5E/A=="
     udp: true
   - name: "🇮🇷_12"
     type: ss
-    server: "185.188.107.10"
+    server: "185.188.104.12"
     port: 443
     cipher: "none"
     password: "RSzEIkk2EsHEAVj15N5E/A=="
     udp: true
   - name: "🇮🇷_13"
     type: ss
-    server: "185.188.104.12"
+    server: "185.188.104.11"
     port: 443
     cipher: "none"
     password: "RSzEIkk2EsHEAVj15N5E/A=="
     udp: true
   - name: "🇮🇷_14"
     type: ss
-    server: "185.188.107.10"
+    server: "185.188.104.10"
     port: 443
     cipher: "none"
     password: "RSzEIkk2EsHEAVj15N5E/A=="
     udp: true
   - name: "🇮🇷_15"
     type: ss
-    server: "82.38.31.57"
+    server: "185.188.107.10"
     port: 443
-    cipher: "chacha20-ietf-poly1305"
-    password: "oZIoA69Q8yhcQV8ka3Pa3A"
+    cipher: "none"
+    password: "RSzEIkk2EsHEAVj15N5E/A=="
     udp: true
   - name: "🇮🇷_16"
     type: ss
-    server: "185.188.104.10"
+    server: "185.188.104.12"
     port: 443
     cipher: "none"
     password: "RSzEIkk2EsHEAVj15N5E/A=="
@@ -203,35 +203,35 @@ proxies:
     udp: true
   - name: "🇮🇷_18"
     type: ss
-    server: "185.188.105.10"
+    server: "185.188.105.11"
     port: 443
     cipher: "none"
     password: "RSzEIkk2EsHEAVj15N5E/A=="
     udp: true
   - name: "🇮🇷_19"
     type: ss
-    server: "185.188.105.11"
+    server: "185.188.105.10"
     port: 443
     cipher: "none"
     password: "RSzEIkk2EsHEAVj15N5E/A=="
     udp: true
   - name: "🇮🇷_20"
     type: ss
-    server: "185.188.106.10"
+    server: "185.188.107.10"
     port: 443
     cipher: "none"
     password: "RSzEIkk2EsHEAVj15N5E/A=="
     udp: true
   - name: "🇮🇷_21"
     type: ss
-    server: "185.188.104.10"
+    server: "82.38.31.57"
     port: 443
-    cipher: "none"
-    password: "RSzEIkk2EsHEAVj15N5E/A=="
+    cipher: "chacha20-ietf-poly1305"
+    password: "oZIoA69Q8yhcQV8ka3Pa3A"
     udp: true
   - name: "🇮🇷_22"
     type: ss
-    server: "185.188.104.11"
+    server: "185.188.104.10"
     port: 443
     cipher: "none"
     password: "RSzEIkk2EsHEAVj15N5E/A=="
@@ -242,7 +242,9 @@ proxy-groups:
     type: select
     proxies:
       - "Auto"
+      - "Load Balance"
 
+      
   - name: "Auto"
     type: url-test
     url: https://www.gstatic.com/generate_204
@@ -273,6 +275,35 @@ proxy-groups:
       - "🇮🇷_21"
       - "🇮🇷_22"
 
+
+  - name: "Load Balance"
+    type: load-balance
+    strategy: round-robin
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+    proxies:
+      - "🇮🇷_1"
+      - "🇮🇷_2"
+      - "🇮🇷_3"
+      - "🇮🇷_4"
+      - "🇮🇷_5"
+      - "🇮🇷_6"
+      - "🇮🇷_7"
+      - "🇮🇷_8"
+      - "🇮🇷_9"
+      - "🇮🇷_10"
+      - "🇮🇷_11"
+      - "🇮🇷_12"
+      - "🇮🇷_13"
+      - "🇮🇷_14"
+      - "🇮🇷_15"
+      - "🇮🇷_16"
+      - "🇮🇷_17"
+      - "🇮🇷_18"
+      - "🇮🇷_19"
+      - "🇮🇷_20"
+      - "🇮🇷_21"
+      - "🇮🇷_22"
 
 rules:
   - MATCH,PROXY

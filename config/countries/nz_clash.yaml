@@ -16,6 +16,13 @@ global-client-fingerprint: chrome
 find-process-mode: strict
 keep-alive-interval: 15
 
+fragment:
+  enable: true
+  size: "5-40"
+  sleep: "1-2"
+
+ttl: 5
+
 profile:
   store-selected: true
   store-fake-ip: false
@@ -42,25 +49,15 @@ dns:
   default-nameserver:
     - 1.1.1.1
     - 8.8.8.8
+  nameserver:
+    - 1.1.1.1
+    - 1.0.0.1
+    - 8.8.8.8
+    - 8.8.4.4
     - 9.9.9.9
     - 149.112.112.112
     - 208.67.222.222
-    - 94.140.14.14
-    - 64.6.64.6
-    - 84.200.69.80
-    - 76.76.19.19
-    - 8.26.56.26
-  nameserver:
-    - https://cloudflare-dns.com/dns-query
-    - https://dns.google/dns-query
-    - https://dns.quad9.net/dns-query
-    - https://dns.adguard.com/dns-query
-    - https://doh.opendns.com/dns-query
-    - https://doh.comodo.com/dns-query
-    - https://doh.mullvad.net/dns-query
-    - https://doh.dns.mullvad.net/dns-query
-    - https://freedns.controld.com/p0
-    - https://freedns.controld.com/family
+    - 208.67.220.220
 
 proxies:
   - name: "🇳🇿_1"
@@ -76,20 +73,6 @@ proxies:
         Host: "vms.lifetime04.workers.dev"
   - name: "🇳🇿_2"
     type: vless
-    server: "202.37.33.80"
-    port: 443
-    uuid: "5aafc2be-9348-4dec-b896-f4a91253bbca"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "support.zoom.us.yxls.eu.cc"
-    network: ws
-    ws-opts:
-      path: "/id-tksi?ed=2048_/@sil3nt_network"
-      headers:
-        Host: "support.zoom.us.yxls.eu.cc"
-  - name: "🇳🇿_3"
-    type: vless
     server: "114.129.43.123"
     port: 443
     uuid: "1d16c6e0-1bbe-435b-b661-90043fee999c"
@@ -102,13 +85,29 @@ proxies:
       path: "Telegram-WangCai2"
       headers:
         Host: "notls.lukongtou.eu.org"
+  - name: "🇳🇿_3"
+    type: vless
+    server: "202.37.33.80"
+    port: 443
+    uuid: "5aafc2be-9348-4dec-b896-f4a91253bbca"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "support.zoom.us.yxls.eu.cc"
+    network: ws
+    ws-opts:
+      path: "/id-tksi?ed=2048_/@sil3nt_network"
+      headers:
+        Host: "support.zoom.us.yxls.eu.cc"
 
 proxy-groups:
   - name: "PROXY"
     type: select
     proxies:
       - "Auto"
+      - "Load Balance"
 
+      
   - name: "Auto"
     type: url-test
     url: https://www.gstatic.com/generate_204
@@ -120,6 +119,16 @@ proxy-groups:
       - "🇳🇿_2"
       - "🇳🇿_3"
 
+
+  - name: "Load Balance"
+    type: load-balance
+    strategy: round-robin
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+    proxies:
+      - "🇳🇿_1"
+      - "🇳🇿_2"
+      - "🇳🇿_3"
 
 rules:
   - MATCH,PROXY

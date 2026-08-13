@@ -59,26 +59,40 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇦🇱_4"
-    type: ss
-    server: "130.49.189.158"
-    port: 10792
-    cipher: "chacha20-ietf-poly1305"
-    password: "OgwIA3nyxjYYOudO54puot"
-    udp: true
   - name: "🇦🇱_5"
+    type: vless
+    server: "130.49.189.41"
+    port: 443
+    uuid: "d4cae7df-50a1-428c-bd62-881c8f3bbd90"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "youtube.superbuba.top"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "rCkSHJ7goy7ZvSlau4LfXF-QLloOJMNeMxpeeQtwtVs"
+      short-id: "4fa44664f6a566d3"
+    flow: "xtls-rprx-vision"
+  - name: "🇦🇱_6"
     type: ss
     server: "157.22.240.141"
     port: 57925
     cipher: "chacha20-ietf-poly1305"
     password: "624THneJeXsxlSl3DPr7KR"
     udp: true
-  - name: "🇦🇱_6"
+  - name: "🇦🇱_7"
     type: ss
     server: "130.49.189.158"
     port: 10792
     cipher: "chacha20-ietf-poly1305"
     password: "ED4OgXeXXYwPCeMHVycEFe"
+    udp: true
+  - name: "🇦🇱_8"
+    type: ss
+    server: "130.49.189.158"
+    port: 10792
+    cipher: "chacha20-ietf-poly1305"
+    password: "OgwIA3nyxjYYOudO54puot"
     udp: true
 
 proxy-groups:
@@ -122,9 +136,10 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇦🇱_4"
       - "🇦🇱_5"
       - "🇦🇱_6"
+      - "🇦🇱_7"
+      - "🇦🇱_8"
 
   - name: "LB-CDN"
     type: load-balance
@@ -134,9 +149,10 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇦🇱_4"
       - "🇦🇱_5"
       - "🇦🇱_6"
+      - "🇦🇱_7"
+      - "🇦🇱_8"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -146,9 +162,10 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇦🇱_4"
       - "🇦🇱_5"
       - "🇦🇱_6"
+      - "🇦🇱_7"
+      - "🇦🇱_8"
 
   - name: "FAST-CDN"
     type: url-test
@@ -157,9 +174,10 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇦🇱_4"
       - "🇦🇱_5"
       - "🇦🇱_6"
+      - "🇦🇱_7"
+      - "🇦🇱_8"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -169,17 +187,19 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇦🇱_4"
       - "🇦🇱_5"
       - "🇦🇱_6"
+      - "🇦🇱_7"
+      - "🇦🇱_8"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
-      - "🇦🇱_4"
       - "🇦🇱_5"
       - "🇦🇱_6"
+      - "🇦🇱_7"
+      - "🇦🇱_8"
 
 rules:
   - MATCH,PROXY-BEST

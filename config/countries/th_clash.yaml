@@ -16,6 +16,13 @@ global-client-fingerprint: chrome
 find-process-mode: strict
 keep-alive-interval: 15
 
+fragment:
+  enable: true
+  size: "5-40"
+  sleep: "1-2"
+
+ttl: 5
+
 profile:
   store-selected: true
   store-fake-ip: false
@@ -42,39 +49,18 @@ dns:
   default-nameserver:
     - 1.1.1.1
     - 8.8.8.8
+  nameserver:
+    - 1.1.1.1
+    - 1.0.0.1
+    - 8.8.8.8
+    - 8.8.4.4
     - 9.9.9.9
     - 149.112.112.112
     - 208.67.222.222
-    - 94.140.14.14
-    - 64.6.64.6
-    - 84.200.69.80
-    - 76.76.19.19
-    - 8.26.56.26
-  nameserver:
-    - https://cloudflare-dns.com/dns-query
-    - https://dns.google/dns-query
-    - https://dns.quad9.net/dns-query
-    - https://dns.adguard.com/dns-query
-    - https://doh.opendns.com/dns-query
-    - https://doh.comodo.com/dns-query
-    - https://doh.mullvad.net/dns-query
-    - https://doh.dns.mullvad.net/dns-query
-    - https://freedns.controld.com/p0
-    - https://freedns.controld.com/family
+    - 208.67.220.220
 
 proxies:
   - name: "🇹🇭_1"
-    type: vless
-    server: "154.83.2.30"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "vms.lifetime28.workers.dev"
-  - name: "🇹🇭_2"
     type: vless
     server: "18.239.134.69"
     port: 80
@@ -85,25 +71,27 @@ proxies:
       path: "/"
       headers:
         Host: "d2e1v87ko56lyw.cloudfront.net:assets.opensignal.com"
-  - name: "🇹🇭_3"
+  - name: "🇹🇭_2"
     type: vless
-    server: "154.83.2.50"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    server: "171.97.18.114"
+    port: 8443
+    uuid: "d6c81f6d-24a8-46d9-a3bf-c38d51fc5fe5"
     udp: true
-    network: ws
-    ws-opts:
-      path: "/?ed=2560"
-      headers:
-        Host: "vms.lifetime28.workers.dev"
-  - name: "🇹🇭_4"
+    tls: true
+    skip-cert-verify: true
+    servername: "www.apple.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "sDH4MlZFHXJB5VR_mfuFNBrQHtptpNK-qj3sot7b1zU"
+      short-id: "16887c51"
+  - name: "🇹🇭_3"
     type: ss
     server: "102.129.229.85"
     port: 31700
     cipher: "chacha20-ietf-poly1305"
     password: "d7zh2lMrXNH5+8+8pKzlxiCU9NN022ih+uAyxj5d4qo="
     udp: true
-  - name: "🇹🇭_5"
+  - name: "🇹🇭_4"
     type: ss
     server: "102.129.229.85"
     port: 31700
@@ -116,7 +104,9 @@ proxy-groups:
     type: select
     proxies:
       - "Auto"
+      - "Load Balance"
 
+      
   - name: "Auto"
     type: url-test
     url: https://www.gstatic.com/generate_204
@@ -128,8 +118,18 @@ proxy-groups:
       - "🇹🇭_2"
       - "🇹🇭_3"
       - "🇹🇭_4"
-      - "🇹🇭_5"
 
+
+  - name: "Load Balance"
+    type: load-balance
+    strategy: round-robin
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+    proxies:
+      - "🇹🇭_1"
+      - "🇹🇭_2"
+      - "🇹🇭_3"
+      - "🇹🇭_4"
 
 rules:
   - MATCH,PROXY

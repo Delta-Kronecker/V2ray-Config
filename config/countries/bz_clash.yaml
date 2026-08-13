@@ -16,6 +16,13 @@ global-client-fingerprint: chrome
 find-process-mode: strict
 keep-alive-interval: 15
 
+fragment:
+  enable: true
+  size: "5-40"
+  sleep: "1-2"
+
+ttl: 5
+
 profile:
   store-selected: true
   store-fake-ip: false
@@ -42,39 +49,18 @@ dns:
   default-nameserver:
     - 1.1.1.1
     - 8.8.8.8
+  nameserver:
+    - 1.1.1.1
+    - 1.0.0.1
+    - 8.8.8.8
+    - 8.8.4.4
     - 9.9.9.9
     - 149.112.112.112
     - 208.67.222.222
-    - 94.140.14.14
-    - 64.6.64.6
-    - 84.200.69.80
-    - 76.76.19.19
-    - 8.26.56.26
-  nameserver:
-    - https://cloudflare-dns.com/dns-query
-    - https://dns.google/dns-query
-    - https://dns.quad9.net/dns-query
-    - https://dns.adguard.com/dns-query
-    - https://doh.opendns.com/dns-query
-    - https://doh.comodo.com/dns-query
-    - https://doh.mullvad.net/dns-query
-    - https://doh.dns.mullvad.net/dns-query
-    - https://freedns.controld.com/p0
-    - https://freedns.controld.com/family
+    - 208.67.220.220
 
 proxies:
   - name: "🇧🇿_1"
-    type: vless
-    server: "45.131.210.30"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "vms.lifetime05.workers.dev"
-  - name: "🇧🇿_2"
     type: vless
     server: "45.131.6.30"
     port: 8880
@@ -85,43 +71,7 @@ proxies:
       path: "/"
       headers:
         Host: "vms.lifetime61.workers.dev"
-  - name: "🇧🇿_3"
-    type: vless
-    server: "45.131.209.30"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "vms.lifetime04.workers.dev"
-  - name: "🇧🇿_4"
-    type: vless
-    server: "45.131.6.123"
-    port: 443
-    uuid: "1d16c6e0-1bbe-435b-b661-90043fee999c"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "notls.lukongtou.eu.org"
-    network: ws
-    ws-opts:
-      path: "Telegram-WangCai2"
-      headers:
-        Host: "notls.lukongtou.eu.org"
-  - name: "🇧🇿_5"
-    type: vless
-    server: "45.131.7.30"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "vms.lifetime02.workers.dev"
-  - name: "🇧🇿_6"
+  - name: "🇧🇿_2"
     type: vless
     server: "45.131.211.30"
     port: 8880
@@ -132,13 +82,67 @@ proxies:
       path: "/?ed=2560"
       headers:
         Host: "vms.lifetime06.workers.dev"
+  - name: "🇧🇿_3"
+    type: vless
+    server: "45.131.6.7"
+    port: 8443
+    uuid: "7967bf59-57e3-4cde-9898-527b0fe60022"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "speed.dulacloud.store"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/dula?Telegram-WangCai2"
+      headers:
+        Host: "speed.dulacloud.store"
+  - name: "🇧🇿_4"
+    type: vless
+    server: "45.131.209.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vms.lifetime04.workers.dev"
+  - name: "🇧🇿_5"
+    type: vless
+    server: "45.131.210.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vms.lifetime05.workers.dev"
+  - name: "🇧🇿_6"
+    type: vless
+    server: "45.131.7.7"
+    port: 8443
+    uuid: "7967bf59-57e3-4cde-9898-527b0fe60022"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "speed.dulacloud.store"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/dula?Telegram-WangCai2"
+      headers:
+        Host: "speed.dulacloud.store"
 
 proxy-groups:
   - name: "PROXY"
     type: select
     proxies:
       - "Auto"
+      - "Load Balance"
 
+      
   - name: "Auto"
     type: url-test
     url: https://www.gstatic.com/generate_204
@@ -153,6 +157,19 @@ proxy-groups:
       - "🇧🇿_5"
       - "🇧🇿_6"
 
+
+  - name: "Load Balance"
+    type: load-balance
+    strategy: round-robin
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+    proxies:
+      - "🇧🇿_1"
+      - "🇧🇿_2"
+      - "🇧🇿_3"
+      - "🇧🇿_4"
+      - "🇧🇿_5"
+      - "🇧🇿_6"
 
 rules:
   - MATCH,PROXY

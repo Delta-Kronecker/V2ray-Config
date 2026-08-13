@@ -59,7 +59,49 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇷🇴_3"
+  - name: "🇷🇴_7"
+    type: vless
+    server: "72.5.42.70"
+    port: 40443
+    uuid: "000f16e8-cc68-4951-b336-acd81996efde"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "deepl.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "6AOnobBShzL_N96JRBNMfbL84_3myz8ZbKfZUEqRXiY"
+      short-id: ""
+    flow: "xtls-rprx-vision"
+  - name: "🇷🇴_8"
+    type: vless
+    server: "94.198.190.22"
+    port: 8443
+    uuid: "47388561-cf0c-4cfc-91f8-fdfd9fa3d756"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.amazon.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "B5F8h8tpeZ-1ydiT0uFgdc30jJyw8H89Y8e-p_VV6yw"
+      short-id: "7b"
+    flow: "xtls-rprx-vision"
+  - name: "🇷🇴_9"
+    type: vless
+    server: "node14.fastdatastream.com"
+    port: 8443
+    uuid: "2c532831-127d-45d7-a84e-11ce36a6b1af"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.intel.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "gyKPxwQBhJUGVHE2t4R2pOf64NkdSNgu3DqMxOzKtGU"
+      short-id: "5b"
+    flow: "xtls-rprx-vision"
+  - name: "🇷🇴_10"
     type: vless
     server: "82.117.255.87"
     port: 443
@@ -73,7 +115,21 @@ proxies:
       public-key: "1xxZM10W-A8nuj6MOXFd1kA9lS7bEy-5SO5j-jrd_Cg"
       short-id: "b70076439f4a1340"
     flow: "xtls-rprx-vision"
-  - name: "🇷🇴_4"
+  - name: "🇷🇴_11"
+    type: vless
+    server: "72.5.43.45"
+    port: 8443
+    uuid: "2c532831-127d-45d7-a84e-11ce36a6b1af"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.intel.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "gyKPxwQBhJUGVHE2t4R2pOf64NkdSNgu3DqMxOzKtGU"
+      short-id: "5b"
+    flow: "xtls-rprx-vision"
+  - name: "🇷🇴_12"
     type: ss
     server: "154.46.31.106"
     port: 443
@@ -122,8 +178,12 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇷🇴_3"
-      - "🇷🇴_4"
+      - "🇷🇴_7"
+      - "🇷🇴_8"
+      - "🇷🇴_9"
+      - "🇷🇴_10"
+      - "🇷🇴_11"
+      - "🇷🇴_12"
 
   - name: "LB-CDN"
     type: load-balance
@@ -133,8 +193,12 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇷🇴_3"
-      - "🇷🇴_4"
+      - "🇷🇴_7"
+      - "🇷🇴_8"
+      - "🇷🇴_9"
+      - "🇷🇴_10"
+      - "🇷🇴_11"
+      - "🇷🇴_12"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -144,8 +208,12 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇷🇴_3"
-      - "🇷🇴_4"
+      - "🇷🇴_7"
+      - "🇷🇴_8"
+      - "🇷🇴_9"
+      - "🇷🇴_10"
+      - "🇷🇴_11"
+      - "🇷🇴_12"
 
   - name: "FAST-CDN"
     type: url-test
@@ -154,8 +222,12 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇷🇴_3"
-      - "🇷🇴_4"
+      - "🇷🇴_7"
+      - "🇷🇴_8"
+      - "🇷🇴_9"
+      - "🇷🇴_10"
+      - "🇷🇴_11"
+      - "🇷🇴_12"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -165,15 +237,23 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇷🇴_3"
-      - "🇷🇴_4"
+      - "🇷🇴_7"
+      - "🇷🇴_8"
+      - "🇷🇴_9"
+      - "🇷🇴_10"
+      - "🇷🇴_11"
+      - "🇷🇴_12"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
-      - "🇷🇴_3"
-      - "🇷🇴_4"
+      - "🇷🇴_7"
+      - "🇷🇴_8"
+      - "🇷🇴_9"
+      - "🇷🇴_10"
+      - "🇷🇴_11"
+      - "🇷🇴_12"
 
 rules:
   - MATCH,PROXY-BEST

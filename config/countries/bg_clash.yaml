@@ -16,6 +16,13 @@ global-client-fingerprint: chrome
 find-process-mode: strict
 keep-alive-interval: 15
 
+fragment:
+  enable: true
+  size: "5-40"
+  sleep: "1-2"
+
+ttl: 5
+
 profile:
   store-selected: true
   store-fake-ip: false
@@ -42,91 +49,18 @@ dns:
   default-nameserver:
     - 1.1.1.1
     - 8.8.8.8
+  nameserver:
+    - 1.1.1.1
+    - 1.0.0.1
+    - 8.8.8.8
+    - 8.8.4.4
     - 9.9.9.9
     - 149.112.112.112
     - 208.67.222.222
-    - 94.140.14.14
-    - 64.6.64.6
-    - 84.200.69.80
-    - 76.76.19.19
-    - 8.26.56.26
-  nameserver:
-    - https://cloudflare-dns.com/dns-query
-    - https://dns.google/dns-query
-    - https://dns.quad9.net/dns-query
-    - https://dns.adguard.com/dns-query
-    - https://doh.opendns.com/dns-query
-    - https://doh.comodo.com/dns-query
-    - https://doh.mullvad.net/dns-query
-    - https://doh.dns.mullvad.net/dns-query
-    - https://freedns.controld.com/p0
-    - https://freedns.controld.com/family
+    - 208.67.220.220
 
 proxies:
   - name: "🇧🇬_1"
-    type: vless
-    server: "185.82.219.152"
-    port: 443
-    uuid: "fc1b3bda-b226-452a-8c5c-b0e36a1f8f88"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "eu-central.cendora.ru"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "b-Cm9hX-3UHsS1L_lnUB6AMjuKhlN1IDdBbZ506itjI"
-      short-id: "00bca5982f82d083"
-    flow: "xtls-rprx-vision"
-  - name: "🇧🇬_2"
-    type: vless
-    server: "89.117.112.30"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/?ed=2560"
-      headers:
-        Host: "vms.lifetime11.workers.dev"
-  - name: "🇧🇬_3"
-    type: vless
-    server: "91.92.136.28"
-    port: 443
-    uuid: "52bc7468-0c2f-4e9d-bdfa-e266242ab44b"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "ripe.net"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "VuM9HrCRtt7gaOXYkrPggV3GT_HKj18_5y6PcQKjWgQ"
-      short-id: "0a076a71"
-  - name: "🇧🇬_4"
-    type: vless
-    server: "147.78.140.10"
-    port: 443
-    uuid: "b940be1b-3998-45d2-bf7b-06e7b6c4987a"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "2026080908.yzqiang.de5.net"
-    network: ws
-    ws-opts:
-      path: "/?Telegram-WangCai2"
-      headers:
-        Host: "2026080908.yzqiang.de5.net"
-  - name: "🇧🇬_5"
-    type: vless
-    server: "89.117.112.40"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "vms.lifetime11.workers.dev"
-  - name: "🇧🇬_6"
     type: vless
     server: "185.82.219.152"
     port: 13443
@@ -139,57 +73,7 @@ proxies:
       public-key: "gc9oXe37KCCm3J1dJ03wdGsnxPBdeEkRPOvl_t-vfVM"
       short-id: "a7f3c91b2e6d84c0"
     flow: "xtls-rprx-vision"
-  - name: "🇧🇬_7"
-    type: vless
-    server: "193.37.213.44"
-    port: 443
-    uuid: "52bc7468-0c2f-4e9d-bdfa-e266242ab44b"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "193.37.213.44"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "fu-_qH499aSXYcsyiJIUf9o28LYahPCIFyRHrLWuCDI"
-      short-id: "0a077a46"
-  - name: "🇧🇬_8"
-    type: vless
-    server: "108.165.233.223"
-    port: 443
-    uuid: "2388e166-3890-33ae-f77e-efac00000003"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "netlivpn4813.ddhshhshs.workers.dev"
-    client-fingerprint: "chrome"
-    network: ws
-    ws-opts:
-      path: "/NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN"
-      headers:
-        Host: "netlivpn4813.ddhshhshs.workers.dev"
-  - name: "🇧🇬_9"
-    type: vless
-    server: "45.142.120.40"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "vms.lifetime08.workers.dev"
-  - name: "🇧🇬_10"
-    type: vless
-    server: "45.142.120.30"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "vms.lifetime08.workers.dev"
-  - name: "🇧🇬_11"
+  - name: "🇧🇬_2"
     type: vless
     server: "108.165.233.223"
     port: 443
@@ -204,7 +88,88 @@ proxies:
       path: "/NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN"
       headers:
         Host: "netlivpn4813.ddhshhshs.workers.dev"
-  - name: "🇧🇬_12"
+  - name: "🇧🇬_3"
+    type: vless
+    server: "89.117.112.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "vms.lifetime11.workers.dev"
+  - name: "🇧🇬_4"
+    type: vless
+    server: "89.117.112.40"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vms.lifetime11.workers.dev"
+  - name: "🇧🇬_5"
+    type: vless
+    server: "108.165.233.223"
+    port: 443
+    uuid: "2388e166-3890-33ae-f77e-efac00000003"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "netlivpn4813.ddhshhshs.workers.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN"
+      headers:
+        Host: "netlivpn4813.ddhshhshs.workers.dev"
+  - name: "🇧🇬_6"
+    type: vless
+    server: "185.82.219.152"
+    port: 443
+    uuid: "fc1b3bda-b226-452a-8c5c-b0e36a1f8f88"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "eu-central.cendora.ru"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "b-Cm9hX-3UHsS1L_lnUB6AMjuKhlN1IDdBbZ506itjI"
+      short-id: "00bca5982f82d083"
+    flow: "xtls-rprx-vision"
+  - name: "🇧🇬_7"
+    type: vless
+    server: "45.142.120.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vms.lifetime08.workers.dev"
+  - name: "🇧🇬_8"
+    type: vless
+    server: "45.142.120.40"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vms.lifetime08.workers.dev"
+  - name: "🇧🇬_9"
+    type: trojan
+    server: "91.227.77.87"
+    port: 443
+    password: "bpb-trojan"
+    sni: "skwygx.top"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇧🇬_10"
     type: trojan
     server: "193.239.160.134"
     port: 443
@@ -217,22 +182,14 @@ proxies:
       path: "/assignment"
       headers:
         Host: "www.calmlunch.com"
-  - name: "🇧🇬_13"
-    type: trojan
-    server: "91.227.77.87"
-    port: 443
-    password: "bpb-trojan"
-    sni: "skwygx.top"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇧🇬_14"
+  - name: "🇧🇬_11"
     type: ss
     server: "38.244.132.14"
     port: 5499
     cipher: "aes-256-gcm"
     password: "lGqs95QkFHo2NV"
     udp: true
-  - name: "🇧🇬_15"
+  - name: "🇧🇬_12"
     type: ss
     server: "38.244.132.14"
     port: 5499
@@ -245,7 +202,9 @@ proxy-groups:
     type: select
     proxies:
       - "Auto"
+      - "Load Balance"
 
+      
   - name: "Auto"
     type: url-test
     url: https://www.gstatic.com/generate_204
@@ -265,10 +224,26 @@ proxy-groups:
       - "🇧🇬_10"
       - "🇧🇬_11"
       - "🇧🇬_12"
-      - "🇧🇬_13"
-      - "🇧🇬_14"
-      - "🇧🇬_15"
 
+
+  - name: "Load Balance"
+    type: load-balance
+    strategy: round-robin
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+    proxies:
+      - "🇧🇬_1"
+      - "🇧🇬_2"
+      - "🇧🇬_3"
+      - "🇧🇬_4"
+      - "🇧🇬_5"
+      - "🇧🇬_6"
+      - "🇧🇬_7"
+      - "🇧🇬_8"
+      - "🇧🇬_9"
+      - "🇧🇬_10"
+      - "🇧🇬_11"
+      - "🇧🇬_12"
 
 rules:
   - MATCH,PROXY

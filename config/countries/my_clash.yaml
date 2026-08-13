@@ -16,6 +16,13 @@ global-client-fingerprint: chrome
 find-process-mode: strict
 keep-alive-interval: 15
 
+fragment:
+  enable: true
+  size: "5-40"
+  sleep: "1-2"
+
+ttl: 5
+
 profile:
   store-selected: true
   store-fake-ip: false
@@ -42,28 +49,32 @@ dns:
   default-nameserver:
     - 1.1.1.1
     - 8.8.8.8
+  nameserver:
+    - 1.1.1.1
+    - 1.0.0.1
+    - 8.8.8.8
+    - 8.8.4.4
     - 9.9.9.9
     - 149.112.112.112
     - 208.67.222.222
-    - 94.140.14.14
-    - 64.6.64.6
-    - 84.200.69.80
-    - 76.76.19.19
-    - 8.26.56.26
-  nameserver:
-    - https://cloudflare-dns.com/dns-query
-    - https://dns.google/dns-query
-    - https://dns.quad9.net/dns-query
-    - https://dns.adguard.com/dns-query
-    - https://doh.opendns.com/dns-query
-    - https://doh.comodo.com/dns-query
-    - https://doh.mullvad.net/dns-query
-    - https://doh.dns.mullvad.net/dns-query
-    - https://freedns.controld.com/p0
-    - https://freedns.controld.com/family
+    - 208.67.220.220
 
 proxies:
   - name: "🇲🇾_1"
+    type: vless
+    server: "205.186.67.233"
+    port: 13779
+    uuid: "928e6cce-8ced-4243-9a48-a6642edd09b0"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "tesla.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "llTyp52oRXnJmQ3I9UUrmlwbMA79B-wLCRHCu-8dLGg"
+      short-id: "af1bdd293097b664"
+    flow: "xtls-rprx-vision"
+  - name: "🇲🇾_2"
     type: trojan
     server: "202.43.102.57"
     port: 443
@@ -71,7 +82,14 @@ proxies:
     sni: "45.32.28.232"
     skip-cert-verify: true
     udp: true
-  - name: "🇲🇾_2"
+  - name: "🇲🇾_3"
+    type: ss
+    server: "47.250.212.59"
+    port: 2053
+    cipher: "none"
+    password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
+    udp: true
+  - name: "🇲🇾_4"
     type: ss
     server: "96.126.190.196"
     port: 443
@@ -84,14 +102,7 @@ proxies:
       path: "/59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
       host: "woshinidie-et3.pages.dev"
       tls: true
-  - name: "🇲🇾_3"
-    type: ss
-    server: "47.250.212.59"
-    port: 2053
-    cipher: "none"
-    password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
-    udp: true
-  - name: "🇲🇾_4"
+  - name: "🇲🇾_5"
     type: ss
     server: "47.250.212.59"
     port: 2053
@@ -104,7 +115,9 @@ proxy-groups:
     type: select
     proxies:
       - "Auto"
+      - "Load Balance"
 
+      
   - name: "Auto"
     type: url-test
     url: https://www.gstatic.com/generate_204
@@ -116,7 +129,20 @@ proxy-groups:
       - "🇲🇾_2"
       - "🇲🇾_3"
       - "🇲🇾_4"
+      - "🇲🇾_5"
 
+
+  - name: "Load Balance"
+    type: load-balance
+    strategy: round-robin
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+    proxies:
+      - "🇲🇾_1"
+      - "🇲🇾_2"
+      - "🇲🇾_3"
+      - "🇲🇾_4"
+      - "🇲🇾_5"
 
 rules:
   - MATCH,PROXY

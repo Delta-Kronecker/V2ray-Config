@@ -16,6 +16,13 @@ global-client-fingerprint: chrome
 find-process-mode: strict
 keep-alive-interval: 15
 
+fragment:
+  enable: true
+  size: "5-40"
+  sleep: "1-2"
+
+ttl: 5
+
 profile:
   store-selected: true
   store-fake-ip: false
@@ -42,56 +49,18 @@ dns:
   default-nameserver:
     - 1.1.1.1
     - 8.8.8.8
+  nameserver:
+    - 1.1.1.1
+    - 1.0.0.1
+    - 8.8.8.8
+    - 8.8.4.4
     - 9.9.9.9
     - 149.112.112.112
     - 208.67.222.222
-    - 94.140.14.14
-    - 64.6.64.6
-    - 84.200.69.80
-    - 76.76.19.19
-    - 8.26.56.26
-  nameserver:
-    - https://cloudflare-dns.com/dns-query
-    - https://dns.google/dns-query
-    - https://dns.quad9.net/dns-query
-    - https://dns.adguard.com/dns-query
-    - https://doh.opendns.com/dns-query
-    - https://doh.comodo.com/dns-query
-    - https://doh.mullvad.net/dns-query
-    - https://doh.dns.mullvad.net/dns-query
-    - https://freedns.controld.com/p0
-    - https://freedns.controld.com/family
+    - 208.67.220.220
 
 proxies:
   - name: "🇪🇸_1"
-    type: vless
-    server: "45.196.208.84"
-    port: 443
-    uuid: "d2042070-c247-4226-a3ac-15337923e00d"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "storage.yandex.net"
-    reality-opts:
-      public-key: "zr8_rtHm86s_G1gfRwNtunStGngYZSdYkA3PyBFXpDg"
-      short-id: "28047c78b3f5ee2c"
-    flow: "xtls-rprx-vision"
-  - name: "🇪🇸_2"
-    type: vless
-    server: "185.18.250.252"
-    port: 443
-    uuid: "f77299ea-e13d-417d-8cdc-ce5566dfc94b"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "edu.ruangguru.com.r3xxe.eu.cc"
-    client-fingerprint: "chrome"
-    network: ws
-    ws-opts:
-      path: "/nl-tw"
-      headers:
-        Host: "edu.ruangguru.com.r3xxe.eu.cc"
-  - name: "🇪🇸_3"
     type: vless
     server: "185.18.250.50"
     port: 8880
@@ -102,16 +71,7 @@ proxies:
       path: "/?ed=2560"
       headers:
         Host: "vms.lifetime47.workers.dev"
-  - name: "🇪🇸_4"
-    type: vless
-    server: "85.90.217.42"
-    port: 443
-    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "85.90.217.42"
-  - name: "🇪🇸_5"
+  - name: "🇪🇸_2"
     type: vless
     server: "185.18.250.30"
     port: 8880
@@ -122,36 +82,29 @@ proxies:
       path: "/"
       headers:
         Host: "vms.lifetime47.workers.dev"
-  - name: "🇪🇸_6"
+  - name: "🇪🇸_3"
     type: vless
-    server: "193.17.183.81"
-    port: 8433
-    uuid: "3a4dbd51-72ea-4c20-a764-f51de001c0ab"
+    server: "212.227.235.66"
+    port: 2053
+    uuid: "855d82bc-8cc6-4037-8da5-df0412f3c063"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "yahoo.com"
-    client-fingerprint: "chrome"
+    servername: "www.apple.com"
+    client-fingerprint: "firefox"
     reality-opts:
-      public-key: "VnpuNVes24AiqJofMykF5ZPj_1ufZZyHnj_oAZ4_8kw"
-      short-id: "81f3d1e4c057"
-    flow: "xtls-rprx-vision"
-  - name: "🇪🇸_7"
+      public-key: "6huZliKELOkP6l-eOIFe7PKP5MCGK2p5KzUeXRiMi00"
+      short-id: "13e0569248e98a05"
+  - name: "🇪🇸_4"
     type: vless
-    server: "185.18.250.245"
+    server: "85.90.217.42"
     port: 443
-    uuid: "f77299ea-e13d-417d-8cdc-ce5566dfc94b"
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "edu.ruangguru.com.r3xxe.eu.cc"
-    client-fingerprint: "chrome"
-    network: ws
-    ws-opts:
-      path: "/nl-tw"
-      headers:
-        Host: "edu.ruangguru.com.r3xxe.eu.cc"
-  - name: "🇪🇸_8"
+    servername: "85.90.217.42"
+  - name: "🇪🇸_5"
     type: trojan
     server: "193.148.19.213"
     port: 52794
@@ -159,7 +112,15 @@ proxies:
     sni: "193.148.19.213"
     skip-cert-verify: true
     udp: true
-  - name: "🇪🇸_9"
+  - name: "🇪🇸_6"
+    type: trojan
+    server: "193.148.19.210"
+    port: 52794
+    password: "2eutknankxtbgkwcajzt"
+    sni: "www.vk.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇪🇸_7"
     type: trojan
     server: "185.114.72.31"
     port: 2053
@@ -172,26 +133,7 @@ proxies:
       path: "/assignment"
       headers:
         Host: "www.calmlunch.com"
-  - name: "🇪🇸_10"
-    type: trojan
-    server: "185.18.250.245"
-    port: 443
-    password: "humanity"
-    sni: "www.calmlunch.com"
-    skip-cert-verify: true
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/assignment"
-  - name: "🇪🇸_11"
-    type: trojan
-    server: "193.148.19.210"
-    port: 52794
-    password: "2eutknankxtbgkwcajzt"
-    sni: "www.vk.com"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇪🇸_12"
+  - name: "🇪🇸_8"
     type: trojan
     server: "65.20.102.54"
     port: 443
@@ -199,40 +141,33 @@ proxies:
     sni: "www.gpt123.one"
     skip-cert-verify: true
     udp: true
-  - name: "🇪🇸_13"
-    type: ss
-    server: "82.38.31.155"
-    port: 8080
-    cipher: "chacha20-ietf-poly1305"
-    password: "oZIoA69Q8yhcQV8ka3Pa3A"
-    udp: true
-  - name: "🇪🇸_14"
-    type: ss
-    server: "108.181.121.226"
-    port: 8388
-    cipher: "chacha20-ietf-poly1305"
-    password: "WSyL4XTwNsdv"
-    udp: true
-  - name: "🇪🇸_15"
-    type: ss
-    server: "108.181.121.226"
-    port: 8388
-    cipher: "chacha20-ietf-poly1305"
-    password: "WSyL4XTwNsdv"
-    udp: true
-  - name: "🇪🇸_16"
+  - name: "🇪🇸_9"
     type: ss
     server: "140.174.184.5"
     port: 8388
     cipher: "chacha20-ietf-poly1305"
     password: "qItG8SueYQcP"
     udp: true
-  - name: "🇪🇸_17"
+  - name: "🇪🇸_10"
+    type: ss
+    server: "108.181.121.226"
+    port: 8388
+    cipher: "chacha20-ietf-poly1305"
+    password: "WSyL4XTwNsdv"
+    udp: true
+  - name: "🇪🇸_11"
     type: ss
     server: "140.174.184.5"
     port: 8388
     cipher: "chacha20-ietf-poly1305"
     password: "qItG8SueYQcP"
+    udp: true
+  - name: "🇪🇸_12"
+    type: ss
+    server: "108.181.121.226"
+    port: 8388
+    cipher: "chacha20-ietf-poly1305"
+    password: "WSyL4XTwNsdv"
     udp: true
 
 proxy-groups:
@@ -240,7 +175,9 @@ proxy-groups:
     type: select
     proxies:
       - "Auto"
+      - "Load Balance"
 
+      
   - name: "Auto"
     type: url-test
     url: https://www.gstatic.com/generate_204
@@ -260,12 +197,26 @@ proxy-groups:
       - "🇪🇸_10"
       - "🇪🇸_11"
       - "🇪🇸_12"
-      - "🇪🇸_13"
-      - "🇪🇸_14"
-      - "🇪🇸_15"
-      - "🇪🇸_16"
-      - "🇪🇸_17"
 
+
+  - name: "Load Balance"
+    type: load-balance
+    strategy: round-robin
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+    proxies:
+      - "🇪🇸_1"
+      - "🇪🇸_2"
+      - "🇪🇸_3"
+      - "🇪🇸_4"
+      - "🇪🇸_5"
+      - "🇪🇸_6"
+      - "🇪🇸_7"
+      - "🇪🇸_8"
+      - "🇪🇸_9"
+      - "🇪🇸_10"
+      - "🇪🇸_11"
+      - "🇪🇸_12"
 
 rules:
   - MATCH,PROXY

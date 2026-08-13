@@ -16,6 +16,13 @@ global-client-fingerprint: chrome
 find-process-mode: strict
 keep-alive-interval: 15
 
+fragment:
+  enable: true
+  size: "5-40"
+  sleep: "1-2"
+
+ttl: 5
+
 profile:
   store-selected: true
   store-fake-ip: false
@@ -42,28 +49,60 @@ dns:
   default-nameserver:
     - 1.1.1.1
     - 8.8.8.8
+  nameserver:
+    - 1.1.1.1
+    - 1.0.0.1
+    - 8.8.8.8
+    - 8.8.4.4
     - 9.9.9.9
     - 149.112.112.112
     - 208.67.222.222
-    - 94.140.14.14
-    - 64.6.64.6
-    - 84.200.69.80
-    - 76.76.19.19
-    - 8.26.56.26
-  nameserver:
-    - https://cloudflare-dns.com/dns-query
-    - https://dns.google/dns-query
-    - https://dns.quad9.net/dns-query
-    - https://dns.adguard.com/dns-query
-    - https://doh.opendns.com/dns-query
-    - https://doh.comodo.com/dns-query
-    - https://doh.mullvad.net/dns-query
-    - https://doh.dns.mullvad.net/dns-query
-    - https://freedns.controld.com/p0
-    - https://freedns.controld.com/family
+    - 208.67.220.220
 
 proxies:
   - name: "🇷🇴_1"
+    type: vless
+    server: "72.5.42.70"
+    port: 40443
+    uuid: "000f16e8-cc68-4951-b336-acd81996efde"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "deepl.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "6AOnobBShzL_N96JRBNMfbL84_3myz8ZbKfZUEqRXiY"
+      short-id: ""
+    flow: "xtls-rprx-vision"
+  - name: "🇷🇴_2"
+    type: vless
+    server: "94.198.190.22"
+    port: 8443
+    uuid: "47388561-cf0c-4cfc-91f8-fdfd9fa3d756"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.amazon.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "B5F8h8tpeZ-1ydiT0uFgdc30jJyw8H89Y8e-p_VV6yw"
+      short-id: "7b"
+    flow: "xtls-rprx-vision"
+  - name: "🇷🇴_3"
+    type: vless
+    server: "node14.fastdatastream.com"
+    port: 8443
+    uuid: "2c532831-127d-45d7-a84e-11ce36a6b1af"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.intel.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "gyKPxwQBhJUGVHE2t4R2pOf64NkdSNgu3DqMxOzKtGU"
+      short-id: "5b"
+    flow: "xtls-rprx-vision"
+  - name: "🇷🇴_4"
     type: vless
     server: "82.117.255.87"
     port: 443
@@ -77,7 +116,21 @@ proxies:
       public-key: "1xxZM10W-A8nuj6MOXFd1kA9lS7bEy-5SO5j-jrd_Cg"
       short-id: "b70076439f4a1340"
     flow: "xtls-rprx-vision"
-  - name: "🇷🇴_2"
+  - name: "🇷🇴_5"
+    type: vless
+    server: "72.5.43.45"
+    port: 8443
+    uuid: "2c532831-127d-45d7-a84e-11ce36a6b1af"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.intel.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "gyKPxwQBhJUGVHE2t4R2pOf64NkdSNgu3DqMxOzKtGU"
+      short-id: "5b"
+    flow: "xtls-rprx-vision"
+  - name: "🇷🇴_6"
     type: ss
     server: "154.46.31.106"
     port: 443
@@ -90,7 +143,9 @@ proxy-groups:
     type: select
     proxies:
       - "Auto"
+      - "Load Balance"
 
+      
   - name: "Auto"
     type: url-test
     url: https://www.gstatic.com/generate_204
@@ -100,7 +155,24 @@ proxy-groups:
     proxies:
       - "🇷🇴_1"
       - "🇷🇴_2"
+      - "🇷🇴_3"
+      - "🇷🇴_4"
+      - "🇷🇴_5"
+      - "🇷🇴_6"
 
+
+  - name: "Load Balance"
+    type: load-balance
+    strategy: round-robin
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+    proxies:
+      - "🇷🇴_1"
+      - "🇷🇴_2"
+      - "🇷🇴_3"
+      - "🇷🇴_4"
+      - "🇷🇴_5"
+      - "🇷🇴_6"
 
 rules:
   - MATCH,PROXY

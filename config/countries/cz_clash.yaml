@@ -16,6 +16,13 @@ global-client-fingerprint: chrome
 find-process-mode: strict
 keep-alive-interval: 15
 
+fragment:
+  enable: true
+  size: "5-40"
+  sleep: "1-2"
+
+ttl: 5
+
 profile:
   store-selected: true
   store-fake-ip: false
@@ -42,25 +49,15 @@ dns:
   default-nameserver:
     - 1.1.1.1
     - 8.8.8.8
+  nameserver:
+    - 1.1.1.1
+    - 1.0.0.1
+    - 8.8.8.8
+    - 8.8.4.4
     - 9.9.9.9
     - 149.112.112.112
     - 208.67.222.222
-    - 94.140.14.14
-    - 64.6.64.6
-    - 84.200.69.80
-    - 76.76.19.19
-    - 8.26.56.26
-  nameserver:
-    - https://cloudflare-dns.com/dns-query
-    - https://dns.google/dns-query
-    - https://dns.quad9.net/dns-query
-    - https://dns.adguard.com/dns-query
-    - https://doh.opendns.com/dns-query
-    - https://doh.comodo.com/dns-query
-    - https://doh.mullvad.net/dns-query
-    - https://doh.dns.mullvad.net/dns-query
-    - https://freedns.controld.com/p0
-    - https://freedns.controld.com/family
+    - 208.67.220.220
 
 proxies:
   - name: "🇨🇿_1"
@@ -78,22 +75,21 @@ proxies:
       short-id: "0c"
     flow: "xtls-rprx-vision"
   - name: "🇨🇿_2"
-    type: vless
-    server: "78.159.247.253"
-    port: 2027
-    uuid: "851ed0d8-a37b-452d-8ef2-5b6c2d28a060"
-    udp: true
-    tls: true
+    type: trojan
+    server: "178.208.75.155"
+    port: 2053
+    password: "humanity"
+    sni: "www.calmlunch.com"
     skip-cert-verify: true
-    servername: "storage.yandex.net"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "ISa-DZOI4LRRb9DHMFYm5oFqBXDjYzz0hVWUfWvzLmo"
-      short-id: "dc8109baf0f607ea"
-    flow: "xtls-rprx-vision"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/assignment"
+      headers:
+        Host: "www.calmlunch.com"
   - name: "🇨🇿_3"
     type: trojan
-    server: "46.8.113.142"
+    server: "ch-2.bexum.fun"
     port: 443
     password: "LYaEYwjN8LjWTRJdCCTzW7V6gK7atJVu"
     sni: "ch-2.bexum.fun"
@@ -112,24 +108,21 @@ proxies:
       path: "/assignment"
   - name: "🇨🇿_5"
     type: trojan
-    server: "178.208.75.155"
-    port: 2053
-    password: "humanity"
-    sni: "www.calmlunch.com"
+    server: "46.8.113.142"
+    port: 443
+    password: "LYaEYwjN8LjWTRJdCCTzW7V6gK7atJVu"
+    sni: "ch-2.bexum.fun"
     skip-cert-verify: true
     udp: true
-    network: ws
-    ws-opts:
-      path: "/assignment"
-      headers:
-        Host: "www.calmlunch.com"
 
 proxy-groups:
   - name: "PROXY"
     type: select
     proxies:
       - "Auto"
+      - "Load Balance"
 
+      
   - name: "Auto"
     type: url-test
     url: https://www.gstatic.com/generate_204
@@ -143,6 +136,18 @@ proxy-groups:
       - "🇨🇿_4"
       - "🇨🇿_5"
 
+
+  - name: "Load Balance"
+    type: load-balance
+    strategy: round-robin
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+    proxies:
+      - "🇨🇿_1"
+      - "🇨🇿_2"
+      - "🇨🇿_3"
+      - "🇨🇿_4"
+      - "🇨🇿_5"
 
 rules:
   - MATCH,PROXY

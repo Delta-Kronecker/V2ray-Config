@@ -16,6 +16,13 @@ global-client-fingerprint: chrome
 find-process-mode: strict
 keep-alive-interval: 15
 
+fragment:
+  enable: true
+  size: "5-40"
+  sleep: "1-2"
+
+ttl: 5
+
 profile:
   store-selected: true
   store-fake-ip: false
@@ -42,28 +49,44 @@ dns:
   default-nameserver:
     - 1.1.1.1
     - 8.8.8.8
+  nameserver:
+    - 1.1.1.1
+    - 1.0.0.1
+    - 8.8.8.8
+    - 8.8.4.4
     - 9.9.9.9
     - 149.112.112.112
     - 208.67.222.222
-    - 94.140.14.14
-    - 64.6.64.6
-    - 84.200.69.80
-    - 76.76.19.19
-    - 8.26.56.26
-  nameserver:
-    - https://cloudflare-dns.com/dns-query
-    - https://dns.google/dns-query
-    - https://dns.quad9.net/dns-query
-    - https://dns.adguard.com/dns-query
-    - https://doh.opendns.com/dns-query
-    - https://doh.comodo.com/dns-query
-    - https://doh.mullvad.net/dns-query
-    - https://doh.dns.mullvad.net/dns-query
-    - https://freedns.controld.com/p0
-    - https://freedns.controld.com/family
+    - 208.67.220.220
 
 proxies:
   - name: "🇰🇷_1"
+    type: vless
+    server: "3.39.4.109"
+    port: 18967
+    uuid: "814bd064-544d-4255-a070-5705c03f6da9"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.apple.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "k2hPp0tTW0Da-HK94wYpSCLbuK44LfGqC2MSJIM1Ti0"
+      short-id: "48050fab"
+    flow: "xtls-rprx-vision"
+  - name: "🇰🇷_2"
+    type: vless
+    server: "3.34.179.147"
+    port: 8686
+    uuid: "1a17b19d-4896-4531-af79-6e91d8ef8228"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.apple.com"
+    reality-opts:
+      public-key: "A3NXnUIT-W0m1Y_leRnv5so2IeCvk9FCFgL31PulfTw"
+      short-id: "628b3c90c98ead4f"
+  - name: "🇰🇷_3"
     type: vless
     server: "175.195.149.58"
     port: 10280
@@ -78,7 +101,7 @@ proxies:
       path: "/@Marisa_kristi"
       headers:
         Host: "bapj1qapjk4.0sds0li1bwcz0i76it0gjxv1.workers.dev"
-  - name: "🇰🇷_2"
+  - name: "🇰🇷_4"
     type: vless
     server: "3.39.4.109"
     port: 13672
@@ -92,22 +115,7 @@ proxies:
       public-key: "k2hPp0tTW0Da-HK94wYpSCLbuK44LfGqC2MSJIM1Ti0"
       short-id: "48050fab"
     flow: "xtls-rprx-vision"
-  - name: "🇰🇷_3"
-    type: vless
-    server: "220.72.143.166"
-    port: 12016
-    uuid: "0735b6f3-fdaa-4413-9c98-9af58e8a9052"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "2-gys60wmzb6bqzd.qpsjn114hh3vlph9z60sesz0agjawpwroneg.workers.dev"
-    client-fingerprint: "chrome"
-    network: ws
-    ws-opts:
-      path: "/@Marisa_kristi"
-      headers:
-        Host: "2-gys60wmzb6bqzd.qpsjn114hh3vlph9z60sesz0agjawpwroneg.workers.dev"
-  - name: "🇰🇷_4"
+  - name: "🇰🇷_5"
     type: vless
     server: "183.107.137.157"
     port: 36389
@@ -122,49 +130,18 @@ proxies:
       path: "/@Marisa_kristi"
       headers:
         Host: "wkytah9k8oggj60.qzfi0skkopy875xhtc0l9pwds.workers.dev"
-  - name: "🇰🇷_5"
-    type: vless
-    server: "211.48.30.184"
-    port: 30017
-    uuid: "beec57a5-8266-4279-b279-f495bdc70699"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "bapj1qapjk4.0sds0li1bwcz0i76it0gjxv1.workers.dev"
-    client-fingerprint: "chrome"
-    network: ws
-    ws-opts:
-      path: "/@Marisa_kristi"
-      headers:
-        Host: "bapj1qapjk4.0sds0li1bwcz0i76it0gjxv1.workers.dev"
   - name: "🇰🇷_6"
     type: vless
-    server: "183.107.137.157"
-    port: 36389
-    uuid: "ae6f014e-c539-4278-8f21-66c7ad2bbb47"
+    server: "132.145.89.30"
+    port: 443
+    uuid: "e6d8d743-a9bc-48c9-be99-8f3cc94d16e1"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "kqjifhg9rw.tradsc8p9xp7wxyqmc1wy0ah.workers.dev"
+    servername: "ako.pagate.top"
     client-fingerprint: "chrome"
-    network: ws
-    ws-opts:
-      path: "/@Marisa_kristi"
-      headers:
-        Host: "kqjifhg9rw.tradsc8p9xp7wxyqmc1wy0ah.workers.dev"
+    flow: "xtls-rprx-vision"
   - name: "🇰🇷_7"
-    type: vless
-    server: "43.201.107.232"
-    port: 8686
-    uuid: "1a17b19d-4896-4531-af79-6e91d8ef8228"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.apple.com"
-    reality-opts:
-      public-key: "A3NXnUIT-W0m1Y_leRnv5so2IeCvk9FCFgL31PulfTw"
-      short-id: "628b3c90c98ead4f"
-  - name: "🇰🇷_8"
     type: vless
     server: "183.107.137.157"
     port: 36389
@@ -179,7 +156,7 @@ proxies:
       path: "/@Marisa_kristi"
       headers:
         Host: "woc0zvrf11w2endu.dphdlc1u77bs3y4kvussbuap4p576f1ws7igthq8zbf3.workers.dev"
-  - name: "🇰🇷_9"
+  - name: "🇰🇷_8"
     type: vless
     server: "220.71.172.2"
     port: 16034
@@ -194,7 +171,37 @@ proxies:
       path: "/@Marisa_kristi"
       headers:
         Host: "bapj1qapjk4.0sds0li1bwcz0i76it0gjxv1.workers.dev"
+  - name: "🇰🇷_9"
+    type: vless
+    server: "220.72.143.166"
+    port: 12016
+    uuid: "0735b6f3-fdaa-4413-9c98-9af58e8a9052"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "2-gys60wmzb6bqzd.qpsjn114hh3vlph9z60sesz0agjawpwroneg.workers.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/@Marisa_kristi"
+      headers:
+        Host: "2-gys60wmzb6bqzd.qpsjn114hh3vlph9z60sesz0agjawpwroneg.workers.dev"
   - name: "🇰🇷_10"
+    type: vless
+    server: "211.48.30.184"
+    port: 30017
+    uuid: "beec57a5-8266-4279-b279-f495bdc70699"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "bapj1qapjk4.0sds0li1bwcz0i76it0gjxv1.workers.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/@Marisa_kristi"
+      headers:
+        Host: "bapj1qapjk4.0sds0li1bwcz0i76it0gjxv1.workers.dev"
+  - name: "🇰🇷_11"
     type: vless
     server: "183.107.137.157"
     port: 36389
@@ -209,507 +216,29 @@ proxies:
       path: "/@Marisa_kristi"
       headers:
         Host: "sxyyvihkektlx4rjxsdj.pkc73phpweu4rbxbatm444.workers.dev"
-  - name: "🇰🇷_11"
-    type: vless
-    server: "3.39.4.109"
-    port: 18967
-    uuid: "814bd064-544d-4255-a070-5705c03f6da9"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.apple.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "k2hPp0tTW0Da-HK94wYpSCLbuK44LfGqC2MSJIM1Ti0"
-      short-id: "48050fab"
-    flow: "xtls-rprx-vision"
   - name: "🇰🇷_12"
     type: vless
-    server: "3.37.55.114"
-    port: 8686
-    uuid: "f0b9ae63-91a7-4673-924e-498e0e0828c0"
+    server: "47.80.59.17"
+    port: 13779
+    uuid: "928e6cce-8ced-4243-9a48-a6642edd09b0"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "www.apple.com"
+    servername: "tesla.com"
+    client-fingerprint: "chrome"
     reality-opts:
-      public-key: "A3NXnUIT-W0m1Y_leRnv5so2IeCvk9FCFgL31PulfTw"
-      short-id: "628b3c90c98ead4f"
-  - name: "🇰🇷_13"
-    type: vless
-    server: "220.72.143.166"
-    port: 12016
-    uuid: "9487e433-862e-4b53-893a-5a4f6bc911f0"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "kqjifhg9rw.tradsc8p9xp7wxyqmc1wy0ah.workers.dev"
-    client-fingerprint: "chrome"
-    network: ws
-    ws-opts:
-      path: "/@Marisa_kristi"
-      headers:
-        Host: "kqjifhg9rw.tradsc8p9xp7wxyqmc1wy0ah.workers.dev"
-  - name: "🇰🇷_14"
-    type: vless
-    server: "132.145.89.30"
-    port: 443
-    uuid: "e6d8d743-a9bc-48c9-be99-8f3cc94d16e1"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "ako.pagate.top"
-    client-fingerprint: "chrome"
+      public-key: "llTyp52oRXnJmQ3I9UUrmlwbMA79B-wLCRHCu-8dLGg"
+      short-id: "af1bdd293097b664"
     flow: "xtls-rprx-vision"
-  - name: "🇰🇷_15"
+  - name: "🇰🇷_13"
     type: trojan
-    server: "engaging-elf.rooster465.autos"
-    port: 443
-    password: "NQ26071394"
-    sni: "engaging-elf.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_16"
-    type: trojan
-    server: "organic-locust.rooster465.autos"
-    port: 443
-    password: "NQ26071394"
-    sni: "organic-locust.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_17"
-    type: trojan
-    server: "43.203.247.197"
-    port: 443
-    password: "ND91608427"
-    sni: "definite-malamute.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_18"
-    type: trojan
-    server: "rare-lion.rooster465.autos"
-    port: 443
-    password: "ON38567014"
-    sni: "rare-lion.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_19"
-    type: trojan
-    server: "121.175.77.73"
-    port: 11027
-    password: "5a2c16f9"
-    sni: "snippets.kkii.eu.org"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_20"
-    type: trojan
-    server: "striking-maggot.rooster465.autos"
-    port: 443
-    password: "ND91608427"
-    sni: "striking-maggot.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_21"
-    type: trojan
-    server: "13.125.239.182"
-    port: 443
-    password: "ND91608427"
-    sni: "saving-octopus.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_22"
-    type: trojan
-    server: "inviting-rabbit.rooster465.autos"
-    port: 443
-    password: "NQ26071394"
-    sni: "inviting-rabbit.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_23"
-    type: trojan
-    server: "52.78.13.238"
-    port: 443
-    password: "ND91608427"
-    sni: "upward-puma.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_24"
-    type: trojan
-    server: "relaxed-unicorn.rooster465.autos"
-    port: 443
-    password: "PD07395842"
-    sni: "relaxed-unicorn.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_25"
-    type: trojan
-    server: "alive-glider.rooster465.autos"
-    port: 443
-    password: "NQ26071394"
-    sni: "alive-glider.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_26"
-    type: trojan
-    server: "hopeful-burro.rooster465.autos"
-    port: 443
-    password: "PD07395842"
-    sni: "hopeful-burro.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_27"
-    type: trojan
-    server: "allowed-hermit.rooster465.autos"
+    server: "novel-kitten.rooster465.autos"
     port: 443
     password: "XG59623478"
-    sni: "allowed-hermit.rooster465.autos"
+    sni: "novel-kitten.rooster465.autos"
     skip-cert-verify: true
     udp: true
-  - name: "🇰🇷_28"
-    type: trojan
-    server: "magnetic-haddock.rooster465.autos"
-    port: 443
-    password: "PD07395842"
-    sni: "magnetic-haddock.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_29"
-    type: trojan
-    server: "select-ferret.rooster465.autos"
-    port: 443
-    password: "ND91608427"
-    sni: "select-ferret.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_30"
-    type: trojan
-    server: "enormous-whippet.rooster465.autos"
-    port: 443
-    password: "CF68213490"
-    sni: "enormous-whippet.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_31"
-    type: trojan
-    server: "destined-skylark.rooster465.autos"
-    port: 443
-    password: "JA96378052"
-    sni: "destined-skylark.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_32"
-    type: trojan
-    server: "3.38.106.2"
-    port: 443
-    password: "ND91608427"
-    sni: "communal-sunbird.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_33"
-    type: trojan
-    server: "allowing-halibut.rooster465.autos"
-    port: 443
-    password: "PD07395842"
-    sni: "allowing-halibut.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_34"
-    type: trojan
-    server: "moved-meerkat.rooster465.autos"
-    port: 443
-    password: "ND91608427"
-    sni: "moved-meerkat.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_35"
-    type: trojan
-    server: "star-bluejay.rooster465.autos"
-    port: 443
-    password: "CF68213490"
-    sni: "star-bluejay.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_36"
-    type: trojan
-    server: "grateful-owl.rooster465.autos"
-    port: 443
-    password: "ND91608427"
-    sni: "grateful-owl.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_37"
-    type: trojan
-    server: "123.140.124.25"
-    port: 8443
-    password: "96983eb4-c8f1-316e-ab00-500014ed3d8b"
-    sni: "official.seoulcityhall.com.ua"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_38"
-    type: trojan
-    server: "ruling-toucan.rooster465.autos"
-    port: 443
-    password: "XG59623478"
-    sni: "ruling-toucan.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_39"
-    type: trojan
-    server: "precise-locust.rooster465.autos"
-    port: 443
-    password: "ON38567014"
-    sni: "precise-locust.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_40"
-    type: trojan
-    server: "eternal-horse.rooster465.autos"
-    port: 443
-    password: "CF68213490"
-    sni: "eternal-horse.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_41"
-    type: trojan
-    server: "146.56.180.103"
-    port: 443
-    password: "4c3164ee-abcf-4091-abea-d1cd4937a68d"
-    sni: "jy.hhllfly.kdns.fr"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_42"
-    type: trojan
-    server: "one-dove.rooster465.autos"
-    port: 443
-    password: "PD07395842"
-    sni: "one-dove.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_43"
-    type: trojan
-    server: "upright-rhino.rooster465.autos"
-    port: 443
-    password: "CF68213490"
-    sni: "upright-rhino.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_44"
-    type: trojan
-    server: "giving-perch.rooster465.autos"
-    port: 443
-    password: "XG59623478"
-    sni: "giving-perch.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_45"
-    type: trojan
-    server: "moved-meerkat.rooster465.autos"
-    port: 443
-    password: "PD07395842"
-    sni: "moved-meerkat.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_46"
-    type: trojan
-    server: "ruling-toucan.rooster465.autos"
-    port: 443
-    password: "JA96378052"
-    sni: "ruling-toucan.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_47"
-    type: trojan
-    server: "brave-muskox.rooster465.autos"
-    port: 443
-    password: "JA96378052"
-    sni: "brave-muskox.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_48"
-    type: trojan
-    server: "massive-ocelot.rooster465.autos"
-    port: 443
-    password: "PD07395842"
-    sni: "massive-ocelot.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_49"
-    type: trojan
-    server: "123.140.124.25"
-    port: 2053
-    password: "96983eb4-c8f1-316e-ab00-500014ed3d8b"
-    sni: "official.seoulcityhall.com.ua"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_50"
-    type: trojan
-    server: "humorous-malamute.rooster465.autos"
-    port: 443
-    password: "PD07395842"
-    sni: "humorous-malamute.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_51"
-    type: trojan
-    server: "moved-meerkat.rooster465.autos"
-    port: 443
-    password: "ON38567014"
-    sni: "moved-meerkat.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_52"
-    type: trojan
-    server: "precious-stag.rooster465.autos"
-    port: 443
-    password: "JA96378052"
-    sni: "precious-stag.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_53"
-    type: trojan
-    server: "13.125.159.219"
-    port: 443
-    password: "CF68213490"
-    sni: "star-bluejay.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_54"
-    type: trojan
-    server: "communal-sunbird.rooster465.autos"
-    port: 443
-    password: "ND91608427"
-    sni: "communal-sunbird.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_55"
-    type: trojan
-    server: "quick-lab.rooster465.autos"
-    port: 443
-    password: "ON38567014"
-    sni: "quick-lab.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_56"
-    type: trojan
-    server: "43.201.56.44"
-    port: 443
-    password: "ND91608427"
-    sni: "distinct-llama.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_57"
-    type: trojan
-    server: "hopeful-burro.rooster465.autos"
-    port: 443
-    password: "HW85960347"
-    sni: "hopeful-burro.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_58"
-    type: trojan
-    server: "skilled-monster.rooster465.autos"
-    port: 443
-    password: "PD07395842"
-    sni: "skilled-monster.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_59"
-    type: trojan
-    server: "43.203.119.20"
-    port: 443
-    password: "ND91608427"
-    sni: "uncommon-feline.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_60"
-    type: trojan
-    server: "renewing-leopard.rooster465.autos"
-    port: 443
-    password: "PD07395842"
-    sni: "renewing-leopard.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_61"
-    type: trojan
-    server: "humorous-malamute.rooster465.autos"
-    port: 443
-    password: "ND91608427"
-    sni: "humorous-malamute.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_62"
-    type: trojan
-    server: "moral-basilisk.rooster465.autos"
-    port: 443
-    password: "CF68213490"
-    sni: "moral-basilisk.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_63"
-    type: trojan
-    server: "intimate-moray.rooster465.autos"
-    port: 443
-    password: "ND91608427"
-    sni: "intimate-moray.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_64"
-    type: trojan
-    server: "awake-satyr.rooster465.autos"
-    port: 443
-    password: "CF68213490"
-    sni: "awake-satyr.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_65"
-    type: trojan
-    server: "absolute-bobcat.rooster465.autos"
-    port: 443
-    password: "ON38567014"
-    sni: "absolute-bobcat.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_66"
-    type: trojan
-    server: "125.179.4.175"
-    port: 443
-    password: "6455f944-7c07-4ab0-b88f-440e581f41d9"
-    sni: "kr3.twincloud.xyz"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_67"
-    type: trojan
-    server: "54.180.228.238"
-    port: 443
-    password: "ND91608427"
-    sni: "pure-ram.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_68"
-    type: trojan
-    server: "43.201.103.8"
-    port: 443
-    password: "ND91608427"
-    sni: "intimate-moray.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_69"
-    type: trojan
-    server: "absolute-bobcat.rooster465.autos"
-    port: 443
-    password: "IQ68037294"
-    sni: "absolute-bobcat.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_70"
-    type: trojan
-    server: "43.202.46.7"
-    port: 443
-    password: "PI36027154"
-    sni: "43.202.46.7"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_71"
+  - name: "🇰🇷_14"
     type: trojan
     server: "dynamic-eel.rooster465.autos"
     port: 443
@@ -717,231 +246,55 @@ proxies:
     sni: "dynamic-eel.rooster465.autos"
     skip-cert-verify: true
     udp: true
-  - name: "🇰🇷_72"
+  - name: "🇰🇷_15"
     type: trojan
-    server: "saved-ghoul.rooster465.autos"
-    port: 443
-    password: "ON38567014"
-    sni: "saved-ghoul.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_73"
-    type: trojan
-    server: "complete-narwhal.rooster465.autos"
+    server: "humorous-malamute.rooster465.autos"
     port: 443
     password: "PD07395842"
-    sni: "complete-narwhal.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_74"
-    type: trojan
-    server: "exotic-chow.rooster465.autos"
-    port: 443
-    password: "ND91608427"
-    sni: "exotic-chow.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_75"
-    type: trojan
-    server: "52.79.210.229"
-    port: 443
-    password: "ND91608427"
-    sni: "chief-bluegill.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_76"
-    type: trojan
-    server: "3.35.140.99"
-    port: 443
-    password: "ND91608427"
-    sni: "moved-meerkat.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_77"
-    type: trojan
-    server: "pure-ram.rooster465.autos"
-    port: 443
-    password: "PD07395842"
-    sni: "pure-ram.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_78"
-    type: trojan
-    server: "firm-krill.rooster465.autos"
-    port: 443
-    password: "XG59623478"
-    sni: "firm-krill.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_79"
-    type: trojan
-    server: "peaceful-muskrat.rooster465.autos"
-    port: 443
-    password: "JA96378052"
-    sni: "peaceful-muskrat.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_80"
-    type: trojan
-    server: "gentle-mastiff.rooster465.autos"
-    port: 443
-    password: "NQ26071394"
-    sni: "gentle-mastiff.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_81"
-    type: trojan
-    server: "43.201.46.108"
-    port: 443
-    password: "ND91608427"
-    sni: "exotic-chow.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_82"
-    type: trojan
-    server: "powerful-troll.rooster465.autos"
-    port: 443
-    password: "CF68213490"
-    sni: "powerful-troll.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_83"
-    type: trojan
-    server: "eager-platypus.rooster465.autos"
-    port: 443
-    password: "CF68213490"
-    sni: "eager-platypus.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_84"
-    type: trojan
-    server: "3.36.94.34"
-    port: 443
-    password: "CF68213490"
-    sni: "awake-satyr.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_85"
-    type: trojan
-    server: "light-sheepdog.rooster465.autos"
-    port: 443
-    password: "ON38567014"
-    sni: "light-sheepdog.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_86"
-    type: trojan
-    server: "43.202.56.122"
-    port: 443
-    password: "ND91608427"
-    sni: "striking-maggot.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_87"
-    type: trojan
-    server: "grateful-owl.rooster465.autos"
-    port: 443
-    password: "CF68213490"
-    sni: "grateful-owl.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_88"
-    type: trojan
-    server: "firm-krill.rooster465.autos"
-    port: 443
-    password: "NQ26071394"
-    sni: "firm-krill.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_89"
-    type: trojan
-    server: "grateful-owl.rooster465.autos"
-    port: 443
-    password: "XG59623478"
-    sni: "grateful-owl.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_90"
-    type: trojan
-    server: "3.35.140.99"
-    port: 443
-    password: "554f139b-f31f-41c4-99f9-73d60647db26"
-    sni: "moved-meerkat.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_91"
-    type: trojan
-    server: "grateful-owl.rooster465.autos"
-    port: 443
-    password: "PD07395842"
-    sni: "grateful-owl.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_92"
-    type: trojan
-    server: "3.36.59.34"
-    port: 443
-    password: "ND91608427"
-    sni: "select-ferret.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_93"
-    type: trojan
-    server: "43.203.203.244"
-    port: 443
-    password: "ND91608427"
-    sni: "main-whippet.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_94"
-    type: trojan
-    server: "crack-martin.rooster465.autos"
-    port: 443
-    password: "NQ26071394"
-    sni: "crack-martin.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_95"
-    type: trojan
-    server: "official.seoulcityhall.com.ua"
-    port: 8443
-    password: "96983eb4-c8f1-316e-ab00-500014ed3d8b"
-    sni: "official.seoulcityhall.com.ua"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_96"
-    type: trojan
-    server: "138.2.114.255"
-    port: 443
-    password: "81d93f62-15a2-4994-adb9-0b5d906aac7e"
-    sni: "138.2.114.255"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_97"
-    type: trojan
-    server: "powerful-troll.rooster465.autos"
-    port: 443
-    password: "ON38567014"
-    sni: "powerful-troll.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_98"
-    type: trojan
-    server: "3.36.131.218"
-    port: 443
-    password: "ND91608427"
     sni: "humorous-malamute.rooster465.autos"
     skip-cert-verify: true
     udp: true
-  - name: "🇰🇷_99"
+  - name: "🇰🇷_16"
     type: trojan
-    server: "gentle-honeybee.rooster465.autos"
+    server: "noble-tahr.rooster465.autos"
     port: 443
-    password: "CF68213490"
-    sni: "gentle-honeybee.rooster465.autos"
+    password: "XG59623478"
+    sni: "noble-tahr.rooster465.autos"
     skip-cert-verify: true
     udp: true
-  - name: "🇰🇷_100"
+  - name: "🇰🇷_17"
+    type: trojan
+    server: "humorous-malamute.rooster465.autos"
+    port: 443
+    password: "ON38567014"
+    sni: "humorous-malamute.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_18"
+    type: trojan
+    server: "allowing-halibut.rooster465.autos"
+    port: 443
+    password: "ON38567014"
+    sni: "allowing-halibut.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_19"
+    type: trojan
+    server: "striking-maggot.rooster465.autos"
+    port: 443
+    password: "NQ26071394"
+    sni: "striking-maggot.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_20"
+    type: trojan
+    server: "fit-marten.rooster465.autos"
+    port: 443
+    password: "NQ26071394"
+    sni: "fit-marten.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_21"
     type: trojan
     server: "charming-puma.rooster465.autos"
     port: 443
@@ -949,39 +302,103 @@ proxies:
     sni: "charming-puma.rooster465.autos"
     skip-cert-verify: true
     udp: true
-  - name: "🇰🇷_101"
+  - name: "🇰🇷_22"
     type: trojan
-    server: "wise-rhino.rooster465.autos"
+    server: "43.201.46.108"
     port: 443
-    password: "PD07395842"
-    sni: "wise-rhino.rooster465.autos"
+    password: "ND91608427"
+    sni: "exotic-chow.rooster465.autos"
     skip-cert-verify: true
     udp: true
-  - name: "🇰🇷_102"
+  - name: "🇰🇷_23"
+    type: trojan
+    server: "13.125.159.219"
+    port: 443
+    password: "CF68213490"
+    sni: "star-bluejay.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_24"
+    type: trojan
+    server: "engaging-elf.rooster465.autos"
+    port: 443
+    password: "NQ26071394"
+    sni: "engaging-elf.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_25"
+    type: trojan
+    server: "13.125.239.182"
+    port: 443
+    password: "ND91608427"
+    sni: "saving-octopus.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_26"
+    type: trojan
+    server: "125.179.4.175"
+    port: 443
+    password: "6455f944-7c07-4ab0-b88f-440e581f41d9"
+    sni: "kr3.twincloud.xyz"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_27"
+    type: trojan
+    server: "ethical-monkfish.rooster465.autos"
+    port: 443
+    password: "PD07395842"
+    sni: "ethical-monkfish.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_28"
+    type: trojan
+    server: "star-bluejay.rooster465.autos"
+    port: 443
+    password: "CF68213490"
+    sni: "star-bluejay.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_29"
     type: trojan
     server: "capable-jay.rooster465.autos"
     port: 443
-    password: "NQ26071394"
+    password: "PD07395842"
     sni: "capable-jay.rooster465.autos"
     skip-cert-verify: true
     udp: true
-  - name: "🇰🇷_103"
+  - name: "🇰🇷_30"
     type: trojan
-    server: "pure-ram.rooster465.autos"
+    server: "simple-molly.rooster465.autos"
     port: 443
-    password: "CF68213490"
-    sni: "pure-ram.rooster465.autos"
+    password: "PD07395842"
+    sni: "simple-molly.rooster465.autos"
     skip-cert-verify: true
     udp: true
-  - name: "🇰🇷_104"
+  - name: "🇰🇷_31"
     type: trojan
-    server: "tolerant-stag.rooster465.autos"
+    server: "select-ferret.rooster465.autos"
     port: 443
-    password: "CF68213490"
-    sni: "tolerant-stag.rooster465.autos"
+    password: "NQ26071394"
+    sni: "select-ferret.rooster465.autos"
     skip-cert-verify: true
     udp: true
-  - name: "🇰🇷_105"
+  - name: "🇰🇷_32"
+    type: trojan
+    server: "grand-grub.rooster465.autos"
+    port: 443
+    password: "NQ26071394"
+    sni: "grand-grub.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_33"
+    type: trojan
+    server: "balanced-stag.rooster465.autos"
+    port: 443
+    password: "PD07395842"
+    sni: "balanced-stag.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_34"
     type: trojan
     server: "absolute-bobcat.rooster465.autos"
     port: 443
@@ -989,23 +406,23 @@ proxies:
     sni: "absolute-bobcat.rooster465.autos"
     skip-cert-verify: true
     udp: true
-  - name: "🇰🇷_106"
+  - name: "🇰🇷_35"
     type: trojan
-    server: "brave-muskox.rooster465.autos"
+    server: "simple-molly.rooster465.autos"
     port: 443
-    password: "PD07395842"
-    sni: "brave-muskox.rooster465.autos"
+    password: "IQ68037294"
+    sni: "simple-molly.rooster465.autos"
     skip-cert-verify: true
     udp: true
-  - name: "🇰🇷_107"
+  - name: "🇰🇷_36"
     type: trojan
-    server: "musical-manatee.rooster465.autos"
+    server: "3.36.94.34"
     port: 443
-    password: "PD07395842"
-    sni: "musical-manatee.rooster465.autos"
+    password: "CF68213490"
+    sni: "awake-satyr.rooster465.autos"
     skip-cert-verify: true
     udp: true
-  - name: "🇰🇷_108"
+  - name: "🇰🇷_37"
     type: trojan
     server: "43.203.244.203"
     port: 443
@@ -1013,20 +430,1124 @@ proxies:
     sni: "grateful-owl.rooster465.autos"
     skip-cert-verify: true
     udp: true
-  - name: "🇰🇷_109"
-    type: ss
-    server: "132.145.91.181"
+  - name: "🇰🇷_38"
+    type: trojan
+    server: "relaxed-unicorn.rooster465.autos"
+    port: 443
+    password: "XG59623478"
+    sni: "relaxed-unicorn.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_39"
+    type: trojan
+    server: "grateful-owl.rooster465.autos"
+    port: 443
+    password: "ND91608427"
+    sni: "grateful-owl.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_40"
+    type: trojan
+    server: "brave-muskox.rooster465.autos"
+    port: 443
+    password: "PD07395842"
+    sni: "brave-muskox.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_41"
+    type: trojan
+    server: "glorious-glider.rooster465.autos"
+    port: 443
+    password: "ON38567014"
+    sni: "glorious-glider.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_42"
+    type: trojan
+    server: "renewing-leopard.rooster465.autos"
+    port: 443
+    password: "HW85960347"
+    sni: "renewing-leopard.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_43"
+    type: trojan
+    server: "absolute-bobcat.rooster465.autos"
+    port: 443
+    password: "ON38567014"
+    sni: "absolute-bobcat.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_44"
+    type: trojan
+    server: "3.35.140.99"
+    port: 443
+    password: "554f139b-f31f-41c4-99f9-73d60647db26"
+    sni: "moved-meerkat.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_45"
+    type: trojan
+    server: "awake-satyr.rooster465.autos"
+    port: 443
+    password: "ON38567014"
+    sni: "awake-satyr.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_46"
+    type: trojan
+    server: "official.seoulcitygovernment.com.ua"
     port: 8443
+    password: "96983eb4-c8f1-316e-ab00-500014ed3d8b"
+    sni: "official.seoulcitygovernment.com.ua"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_47"
+    type: trojan
+    server: "intimate-moray.rooster465.autos"
+    port: 443
+    password: "AE62539071"
+    sni: "intimate-moray.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_48"
+    type: trojan
+    server: "massive-ocelot.rooster465.autos"
+    port: 443
+    password: "NQ26071394"
+    sni: "massive-ocelot.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_49"
+    type: trojan
+    server: "3.36.131.218"
+    port: 443
+    password: "ND91608427"
+    sni: "humorous-malamute.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_50"
+    type: trojan
+    server: "grateful-owl.rooster465.autos"
+    port: 443
+    password: "CF68213490"
+    sni: "grateful-owl.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_51"
+    type: trojan
+    server: "wise-rhino.rooster465.autos"
+    port: 443
+    password: "NQ26071394"
+    sni: "wise-rhino.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_52"
+    type: trojan
+    server: "43.202.56.122"
+    port: 443
+    password: "ND91608427"
+    sni: "striking-maggot.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_53"
+    type: trojan
+    server: "123.140.124.25"
+    port: 8443
+    password: "96983eb4-c8f1-316e-ab00-500014ed3d8b"
+    sni: "official.seoulcityhall.com.ua"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_54"
+    type: trojan
+    server: "driving-antelope.rooster465.autos"
+    port: 443
+    password: "AE62539071"
+    sni: "driving-antelope.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_55"
+    type: trojan
+    server: "3.35.140.99"
+    port: 443
+    password: "ND91608427"
+    sni: "moved-meerkat.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_56"
+    type: trojan
+    server: "firm-krill.rooster465.autos"
+    port: 443
+    password: "NQ26071394"
+    sni: "firm-krill.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_57"
+    type: trojan
+    server: "52.79.210.229"
+    port: 443
+    password: "ND91608427"
+    sni: "chief-bluegill.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_58"
+    type: trojan
+    server: "43.203.203.244"
+    port: 443
+    password: "ND91608427"
+    sni: "main-whippet.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_59"
+    type: trojan
+    server: "crack-martin.rooster465.autos"
+    port: 443
+    password: "IQ68037294"
+    sni: "crack-martin.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_60"
+    type: trojan
+    server: "official.seoulcityhall.com.ua"
+    port: 8443
+    password: "96983eb4-c8f1-316e-ab00-500014ed3d8b"
+    sni: "official.seoulcityhall.com.ua"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_61"
+    type: trojan
+    server: "43.202.46.7"
+    port: 443
+    password: "PI36027154"
+    sni: "43.202.46.7"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_62"
+    type: trojan
+    server: "138.2.114.255"
+    port: 443
+    password: "81d93f62-15a2-4994-adb9-0b5d906aac7e"
+    sni: "138.2.114.255"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_63"
+    type: trojan
+    server: "official.seoulcityhall.com.ua"
+    port: 2053
+    password: "96983eb4-c8f1-316e-ab00-500014ed3d8b"
+    sni: "official.seoulcityhall.com.ua"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_64"
+    type: trojan
+    server: "3.36.59.34"
+    port: 443
+    password: "ND91608427"
+    sni: "select-ferret.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_65"
+    type: trojan
+    server: "distinct-llama.rooster465.autos"
+    port: 443
+    password: "ND91608427"
+    sni: "distinct-llama.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_66"
+    type: trojan
+    server: "43.203.119.20"
+    port: 443
+    password: "ND91608427"
+    sni: "uncommon-feline.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_67"
+    type: trojan
+    server: "main-whippet.rooster465.autos"
+    port: 443
+    password: "AE62539071"
+    sni: "main-whippet.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_68"
+    type: trojan
+    server: "full-mayfly.rooster465.autos"
+    port: 443
+    password: "XG59623478"
+    sni: "full-mayfly.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_69"
+    type: trojan
+    server: "pure-ram.rooster465.autos"
+    port: 443
+    password: "CF68213490"
+    sni: "pure-ram.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_70"
+    type: trojan
+    server: "noble-tahr.rooster465.autos"
+    port: 443
+    password: "CF68213490"
+    sni: "noble-tahr.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_71"
+    type: trojan
+    server: "infinite-tuna.rooster465.autos"
+    port: 443
+    password: "AE62539071"
+    sni: "infinite-tuna.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_72"
+    type: trojan
+    server: "sacred-hound.rooster465.autos"
+    port: 443
+    password: "AE62539071"
+    sni: "sacred-hound.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_73"
+    type: trojan
+    server: "normal-dory.rooster465.autos"
+    port: 443
+    password: "JA96378052"
+    sni: "normal-dory.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_74"
+    type: trojan
+    server: "causal-ladybug.rooster465.autos"
+    port: 443
+    password: "AE62539071"
+    sni: "causal-ladybug.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_75"
+    type: trojan
+    server: "normal-dory.rooster465.autos"
+    port: 443
+    password: "PD07395842"
+    sni: "normal-dory.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_76"
+    type: trojan
+    server: "52.78.13.238"
+    port: 443
+    password: "ND91608427"
+    sni: "upward-puma.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_77"
+    type: trojan
+    server: "charmed-cheetah.rooster465.autos"
+    port: 443
+    password: "XG59623478"
+    sni: "charmed-cheetah.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_78"
+    type: trojan
+    server: "one-dove.rooster465.autos"
+    port: 443
+    password: "PD07395842"
+    sni: "one-dove.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_79"
+    type: trojan
+    server: "intimate-moray.rooster465.autos"
+    port: 443
+    password: "CF68213490"
+    sni: "intimate-moray.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_80"
+    type: trojan
+    server: "saved-tuna.rooster465.autos"
+    port: 443
+    password: "PD07395842"
+    sni: "saved-tuna.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_81"
+    type: trojan
+    server: "skilled-monster.rooster465.autos"
+    port: 443
+    password: "AE62539071"
+    sni: "skilled-monster.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_82"
+    type: trojan
+    server: "eager-platypus.rooster465.autos"
+    port: 443
+    password: "AE62539071"
+    sni: "eager-platypus.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_83"
+    type: trojan
+    server: "allowing-halibut.rooster465.autos"
+    port: 443
+    password: "AE62539071"
+    sni: "allowing-halibut.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_84"
+    type: trojan
+    server: "exotic-chow.rooster465.autos"
+    port: 443
+    password: "ND91608427"
+    sni: "exotic-chow.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_85"
+    type: trojan
+    server: "full-mayfly.rooster465.autos"
+    port: 443
+    password: "AE62539071"
+    sni: "full-mayfly.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_86"
+    type: trojan
+    server: "powerful-troll.rooster465.autos"
+    port: 443
+    password: "NQ26071394"
+    sni: "powerful-troll.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_87"
+    type: trojan
+    server: "hopeful-burro.rooster465.autos"
+    port: 443
+    password: "PD07395842"
+    sni: "hopeful-burro.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_88"
+    type: trojan
+    server: "allowed-hermit.rooster465.autos"
+    port: 443
+    password: "AE62539071"
+    sni: "allowed-hermit.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_89"
+    type: trojan
+    server: "saving-octopus.rooster465.autos"
+    port: 443
+    password: "ND91608427"
+    sni: "saving-octopus.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_90"
+    type: trojan
+    server: "light-sheepdog.rooster465.autos"
+    port: 443
+    password: "AE62539071"
+    sni: "light-sheepdog.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_91"
+    type: trojan
+    server: "upward-puma.rooster465.autos"
+    port: 443
+    password: "ND91608427"
+    sni: "upward-puma.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_92"
+    type: trojan
+    server: "regular-raptor.rooster465.autos"
+    port: 443
+    password: "XG59623478"
+    sni: "regular-raptor.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_93"
+    type: trojan
+    server: "humorous-malamute.rooster465.autos"
+    port: 443
+    password: "ND91608427"
+    sni: "humorous-malamute.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_94"
+    type: trojan
+    server: "communal-sunbird.rooster465.autos"
+    port: 443
+    password: "ND91608427"
+    sni: "communal-sunbird.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_95"
+    type: trojan
+    server: "precise-locust.rooster465.autos"
+    port: 443
+    password: "ON38567014"
+    sni: "precise-locust.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_96"
+    type: trojan
+    server: "precious-racer.rooster465.autos"
+    port: 443
+    password: "XG59623478"
+    sni: "precious-racer.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_97"
+    type: trojan
+    server: "simple-molly.rooster465.autos"
+    port: 443
+    password: "WG39087154"
+    sni: "simple-molly.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_98"
+    type: trojan
+    server: "absolute-bobcat.rooster465.autos"
+    port: 443
+    password: "JA96378052"
+    sni: "absolute-bobcat.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_99"
+    type: trojan
+    server: "driving-antelope.rooster465.autos"
+    port: 443
+    password: "ON38567014"
+    sni: "driving-antelope.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_100"
+    type: trojan
+    server: "skilled-monster.rooster465.autos"
+    port: 443
+    password: "PD07395842"
+    sni: "skilled-monster.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_101"
+    type: trojan
+    server: "polished-cicada.rooster465.autos"
+    port: 443
+    password: "WG39087154"
+    sni: "polished-cicada.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_102"
+    type: trojan
+    server: "next-moth.rooster465.autos"
+    port: 443
+    password: "NQ26071394"
+    sni: "next-moth.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_103"
+    type: trojan
+    server: "careful-cow.rooster465.autos"
+    port: 443
+    password: "IQ68037294"
+    sni: "careful-cow.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_104"
+    type: trojan
+    server: "prepared-monitor.rooster465.autos"
+    port: 443
+    password: "ON38567014"
+    sni: "prepared-monitor.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_105"
+    type: trojan
+    server: "tolerant-stag.rooster465.autos"
+    port: 443
+    password: "ON38567014"
+    sni: "tolerant-stag.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_106"
+    type: trojan
+    server: "musical-manatee.rooster465.autos"
+    port: 443
+    password: "PD07395842"
+    sni: "musical-manatee.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_107"
+    type: trojan
+    server: "uncommon-feline.rooster465.autos"
+    port: 443
+    password: "ND91608427"
+    sni: "uncommon-feline.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_108"
+    type: trojan
+    server: "moved-meerkat.rooster465.autos"
+    port: 443
+    password: "ON38567014"
+    sni: "moved-meerkat.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_109"
+    type: trojan
+    server: "quick-lab.rooster465.autos"
+    port: 443
+    password: "ON38567014"
+    sni: "quick-lab.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_110"
+    type: trojan
+    server: "engaged-skink.rooster465.autos"
+    port: 443
+    password: "AE62539071"
+    sni: "engaged-skink.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_111"
+    type: trojan
+    server: "evident-clam.rooster465.autos"
+    port: 443
+    password: "ON38567014"
+    sni: "evident-clam.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_112"
+    type: trojan
+    server: "powerful-troll.rooster465.autos"
+    port: 443
+    password: "ON38567014"
+    sni: "powerful-troll.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_113"
+    type: trojan
+    server: "magnetic-haddock.rooster465.autos"
+    port: 443
+    password: "PD07395842"
+    sni: "magnetic-haddock.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_114"
+    type: trojan
+    server: "rare-lion.rooster465.autos"
+    port: 443
+    password: "ON38567014"
+    sni: "rare-lion.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_115"
+    type: trojan
+    server: "magnetic-haddock.rooster465.autos"
+    port: 443
+    password: "NQ26071394"
+    sni: "magnetic-haddock.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_116"
+    type: trojan
+    server: "allowing-halibut.rooster465.autos"
+    port: 443
+    password: "PD07395842"
+    sni: "allowing-halibut.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_117"
+    type: trojan
+    server: "ruling-toucan.rooster465.autos"
+    port: 443
+    password: "XG59623478"
+    sni: "ruling-toucan.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_118"
+    type: trojan
+    server: "driving-antelope.rooster465.autos"
+    port: 443
+    password: "NQ26071394"
+    sni: "driving-antelope.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_119"
+    type: trojan
+    server: "chief-bluegill.rooster465.autos"
+    port: 443
+    password: "ND91608427"
+    sni: "chief-bluegill.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_120"
+    type: trojan
+    server: "firm-krill.rooster465.autos"
+    port: 443
+    password: "XG59623478"
+    sni: "firm-krill.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_121"
+    type: trojan
+    server: "tolerant-stag.rooster465.autos"
+    port: 443
+    password: "CF68213490"
+    sni: "tolerant-stag.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_122"
+    type: trojan
+    server: "54.180.228.238"
+    port: 443
+    password: "ND91608427"
+    sni: "pure-ram.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_123"
+    type: trojan
+    server: "absolute-bobcat.rooster465.autos"
+    port: 443
+    password: "IQ68037294"
+    sni: "absolute-bobcat.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_124"
+    type: trojan
+    server: "enough-lamb.rooster465.autos"
+    port: 443
+    password: "PD07395842"
+    sni: "enough-lamb.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_125"
+    type: trojan
+    server: "43.201.103.8"
+    port: 443
+    password: "ND91608427"
+    sni: "intimate-moray.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_126"
+    type: trojan
+    server: "gentle-platypus.rooster465.autos"
+    port: 443
+    password: "NQ26071394"
+    sni: "gentle-platypus.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_127"
+    type: trojan
+    server: "definite-malamute.rooster465.autos"
+    port: 443
+    password: "ND91608427"
+    sni: "definite-malamute.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_128"
+    type: trojan
+    server: "select-ferret.rooster465.autos"
+    port: 443
+    password: "ND91608427"
+    sni: "select-ferret.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_129"
+    type: trojan
+    server: "striking-maggot.rooster465.autos"
+    port: 443
+    password: "ND91608427"
+    sni: "striking-maggot.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_130"
+    type: trojan
+    server: "saved-mantis.rooster465.autos"
+    port: 443
+    password: "HW85960347"
+    sni: "saved-mantis.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_131"
+    type: trojan
+    server: "destined-skylark.rooster465.autos"
+    port: 443
+    password: "JA96378052"
+    sni: "destined-skylark.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_132"
+    type: trojan
+    server: "grand-grub.rooster465.autos"
+    port: 443
+    password: "AE62539071"
+    sni: "grand-grub.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_133"
+    type: trojan
+    server: "sharp-scorpion.rooster465.autos"
+    port: 443
+    password: "CF68213490"
+    sni: "sharp-scorpion.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_134"
+    type: trojan
+    server: "121.175.77.73"
+    port: 11027
+    password: "5a2c16f9"
+    sni: "snippets.kkii.eu.org"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_135"
+    type: trojan
+    server: "next-moth.rooster465.autos"
+    port: 443
+    password: "PD07395842"
+    sni: "next-moth.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_136"
+    type: trojan
+    server: "saved-ghoul.rooster465.autos"
+    port: 443
+    password: "ON38567014"
+    sni: "saved-ghoul.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_137"
+    type: trojan
+    server: "crack-martin.rooster465.autos"
+    port: 443
+    password: "NQ26071394"
+    sni: "crack-martin.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_138"
+    type: trojan
+    server: "united-grouse.rooster465.autos"
+    port: 443
+    password: "HW85960347"
+    sni: "united-grouse.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_139"
+    type: trojan
+    server: "eager-platypus.rooster465.autos"
+    port: 443
+    password: "CF68213490"
+    sni: "eager-platypus.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_140"
+    type: trojan
+    server: "123.140.124.25"
+    port: 2053
+    password: "96983eb4-c8f1-316e-ab00-500014ed3d8b"
+    sni: "official.seoulcityhall.com.ua"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_141"
+    type: trojan
+    server: "wise-rhino.rooster465.autos"
+    port: 443
+    password: "PD07395842"
+    sni: "wise-rhino.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_142"
+    type: trojan
+    server: "alive-glider.rooster465.autos"
+    port: 443
+    password: "NQ26071394"
+    sni: "alive-glider.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_143"
+    type: trojan
+    server: "glorious-lark.rooster465.autos"
+    port: 443
+    password: "AE62539071"
+    sni: "glorious-lark.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_144"
+    type: trojan
+    server: "kind-grizzly.rooster465.autos"
+    port: 443
+    password: "PD07395842"
+    sni: "kind-grizzly.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_145"
+    type: trojan
+    server: "guiding-alpaca.rooster465.autos"
+    port: 443
+    password: "PD07395842"
+    sni: "guiding-alpaca.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_146"
+    type: trojan
+    server: "pleased-mammal.rooster465.autos"
+    port: 443
+    password: "XG59623478"
+    sni: "pleased-mammal.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_147"
+    type: trojan
+    server: "brave-muskox.rooster465.autos"
+    port: 443
+    password: "JA96378052"
+    sni: "brave-muskox.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_148"
+    type: trojan
+    server: "wise-rhino.rooster465.autos"
+    port: 443
+    password: "XG59623478"
+    sni: "wise-rhino.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_149"
+    type: trojan
+    server: "43.201.56.44"
+    port: 443
+    password: "ND91608427"
+    sni: "distinct-llama.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_150"
+    type: trojan
+    server: "normal-dory.rooster465.autos"
+    port: 443
+    password: "HW85960347"
+    sni: "normal-dory.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_151"
+    type: trojan
+    server: "43.203.247.197"
+    port: 443
+    password: "ND91608427"
+    sni: "definite-malamute.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_152"
+    type: trojan
+    server: "140.238.17.157"
+    port: 443
+    password: "4c3164ee-abcf-4091-abea-d1cd4937a68d"
+    sni: "jy.hhllfly.kdns.fr"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_153"
+    type: trojan
+    server: "allowing-halibut.rooster465.autos"
+    port: 443
+    password: "CF68213490"
+    sni: "allowing-halibut.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_154"
+    type: trojan
+    server: "precious-racer.rooster465.autos"
+    port: 443
+    password: "AE62539071"
+    sni: "precious-racer.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_155"
+    type: trojan
+    server: "square-gnat.rooster465.autos"
+    port: 443
+    password: "AE62539071"
+    sni: "square-gnat.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_156"
+    type: trojan
+    server: "charmed-cheetah.rooster465.autos"
+    port: 443
+    password: "PD07395842"
+    sni: "charmed-cheetah.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_157"
+    type: trojan
+    server: "musical-manatee.rooster465.autos"
+    port: 443
+    password: "CF68213490"
+    sni: "musical-manatee.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_158"
+    type: trojan
+    server: "simple-molly.rooster465.autos"
+    port: 443
+    password: "ON38567014"
+    sni: "simple-molly.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_159"
+    type: trojan
+    server: "square-skink.rooster465.autos"
+    port: 443
+    password: "AE62539071"
+    sni: "square-skink.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_160"
+    type: trojan
+    server: "possible-yeti.rooster465.autos"
+    port: 443
+    password: "AE62539071"
+    sni: "possible-yeti.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_161"
+    type: trojan
+    server: "powerful-troll.rooster465.autos"
+    port: 443
+    password: "CF68213490"
+    sni: "powerful-troll.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_162"
+    type: trojan
+    server: "relaxed-unicorn.rooster465.autos"
+    port: 443
+    password: "PD07395842"
+    sni: "relaxed-unicorn.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_163"
+    type: trojan
+    server: "3.38.106.2"
+    port: 443
+    password: "ND91608427"
+    sni: "communal-sunbird.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_164"
+    type: trojan
+    server: "peaceful-muskrat.rooster465.autos"
+    port: 443
+    password: "XG59623478"
+    sni: "peaceful-muskrat.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_165"
+    type: trojan
+    server: "engaging-elf.rooster465.autos"
+    port: 443
+    password: "PD07395842"
+    sni: "engaging-elf.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_166"
+    type: trojan
+    server: "moved-meerkat.rooster465.autos"
+    port: 443
+    password: "PD07395842"
+    sni: "moved-meerkat.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_167"
+    type: trojan
+    server: "capable-jay.rooster465.autos"
+    port: 443
+    password: "NQ26071394"
+    sni: "capable-jay.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_168"
+    type: trojan
+    server: "intimate-moray.rooster465.autos"
+    port: 443
+    password: "ND91608427"
+    sni: "intimate-moray.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_169"
+    type: trojan
+    server: "viable-serval.rooster465.autos"
+    port: 443
+    password: "AE62539071"
+    sni: "viable-serval.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_170"
+    type: trojan
+    server: "communal-sunbird.rooster465.autos"
+    port: 443
+    password: "CF68213490"
+    sni: "communal-sunbird.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_171"
+    type: trojan
+    server: "awake-satyr.rooster465.autos"
+    port: 443
+    password: "AE62539071"
+    sni: "awake-satyr.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_172"
+    type: trojan
+    server: "moral-basilisk.rooster465.autos"
+    port: 443
+    password: "CF68213490"
+    sni: "moral-basilisk.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_173"
+    type: trojan
+    server: "careful-cow.rooster465.autos"
+    port: 443
+    password: "JA96378052"
+    sni: "careful-cow.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_174"
+    type: trojan
+    server: "caring-wallaby.rooster465.autos"
+    port: 443
+    password: "CF68213490"
+    sni: "caring-wallaby.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_175"
+    type: trojan
+    server: "live-javelin.rooster465.autos"
+    port: 443
+    password: "PD07395842"
+    sni: "live-javelin.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_176"
+    type: ss
+    server: "168.126.204.135"
+    port: 10035
     cipher: "none"
-    password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
+    password: "https://t.me/WangCai2🇨🇳"
     udp: true
     plugin: v2ray-plugin
     plugin-opts:
       mode: "websocket"
-      path: "/59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
       host: "woshinidie-et3.pages.dev"
       tls: true
-  - name: "🇰🇷_110"
+  - name: "🇰🇷_177"
     type: ss
     server: "158.247.250.157"
     port: 81
@@ -1039,10 +1560,10 @@ proxies:
       path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
       host: "woshinidie-et3.pages.dev"
       tls: true
-  - name: "🇰🇷_111"
+  - name: "🇰🇷_178"
     type: ss
-    server: "211.224.59.175"
-    port: 20332
+    server: "220.94.94.109"
+    port: 10250
     cipher: "none"
     password: "https://t.me/WangCai2🇨🇳"
     udp: true
@@ -1052,10 +1573,10 @@ proxies:
       path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
       host: "woshinidie-et3.pages.dev"
       tls: true
-  - name: "🇰🇷_112"
+  - name: "🇰🇷_179"
     type: ss
-    server: "211.224.59.175"
-    port: 20332
+    server: "125.134.6.129"
+    port: 27017
     cipher: "none"
     password: "https://t.me/WangCai2🇨🇳"
     udp: true
@@ -1065,40 +1586,7 @@ proxies:
       path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
       host: "woshinidie-et3.pages.dev"
       tls: true
-  - name: "🇰🇷_113"
-    type: ss
-    server: "121.178.230.168"
-    port: 19071
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
-  - name: "🇰🇷_114"
-    type: ss
-    server: "3.37.55.114"
-    port: 8989
-    cipher: "chacha20-ietf-poly1305"
-    password: "f0b9ae63-91a7-4673-924e-498e0e0828c0"
-    udp: true
-  - name: "🇰🇷_115"
-    type: ss
-    server: "121.182.16.235"
-    port: 11434
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
-  - name: "🇰🇷_116"
+  - name: "🇰🇷_180"
     type: ss
     server: "112.163.229.82"
     port: 10909
@@ -1111,23 +1599,10 @@ proxies:
       path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
       host: "woshinidie-et3.pages.dev"
       tls: true
-  - name: "🇰🇷_117"
+  - name: "🇰🇷_181"
     type: ss
-    server: "121.182.16.235"
-    port: 18246
-    cipher: "none"
-    password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "/59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
-  - name: "🇰🇷_118"
-    type: ss
-    server: "14.46.128.84"
-    port: 25010
+    server: "168.126.204.135"
+    port: 10035
     cipher: "none"
     password: "https://t.me/WangCai2🇨🇳"
     udp: true
@@ -1137,67 +1612,7 @@ proxies:
       path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
       host: "woshinidie-et3.pages.dev"
       tls: true
-  - name: "🇰🇷_119"
-    type: ss
-    server: "141.164.45.187"
-    port: 6697
-    cipher: "aes-256-gcm"
-    password: "TEzjfAYq2IjtuoS"
-    udp: true
-  - name: "🇰🇷_120"
-    type: ss
-    server: "183.108.82.157"
-    port: 10002
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
-  - name: "🇰🇷_121"
-    type: ss
-    server: "141.164.45.187"
-    port: 8008
-    cipher: "aes-256-gcm"
-    password: "XKFKl2rULjIp74"
-    udp: true
-  - name: "🇰🇷_122"
-    type: ss
-    server: "158.247.250.157"
-    port: 81
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
-  - name: "🇰🇷_123"
-    type: ss
-    server: "141.164.45.187"
-    port: 7001
-    cipher: "aes-256-gcm"
-    password: "RexnBgU7EV5ADxG"
-    udp: true
-  - name: "🇰🇷_124"
-    type: ss
-    server: "125.138.18.69"
-    port: 11300
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
-  - name: "🇰🇷_125"
+  - name: "🇰🇷_182"
     type: ss
     server: "211.104.26.48"
     port: 10000
@@ -1210,17 +1625,10 @@ proxies:
       path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
       host: "woshinidie-et3.pages.dev"
       tls: true
-  - name: "🇰🇷_126"
+  - name: "🇰🇷_183"
     type: ss
-    server: "141.164.45.187"
-    port: 7002
-    cipher: "aes-256-gcm"
-    password: "RexnBgU7EV5ADxG"
-    udp: true
-  - name: "🇰🇷_127"
-    type: ss
-    server: "132.145.91.181"
-    port: 8443
+    server: "158.247.250.157"
+    port: 81
     cipher: "none"
     password: "https://t.me/WangCai2🇨🇳"
     udp: true
@@ -1230,7 +1638,7 @@ proxies:
       path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
       host: "woshinidie-et3.pages.dev"
       tls: true
-  - name: "🇰🇷_128"
+  - name: "🇰🇷_184"
     type: ss
     server: "121.182.16.235"
     port: 18246
@@ -1243,7 +1651,46 @@ proxies:
       path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
       host: "woshinidie-et3.pages.dev"
       tls: true
-  - name: "🇰🇷_129"
+  - name: "🇰🇷_185"
+    type: ss
+    server: "183.108.82.157"
+    port: 10002
+    cipher: "none"
+    password: "https://t.me/WangCai2🇨🇳"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
+  - name: "🇰🇷_186"
+    type: ss
+    server: "49.142.200.31"
+    port: 28017
+    cipher: "none"
+    password: "https://t.me/WangCai2🇨🇳"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
+  - name: "🇰🇷_187"
+    type: ss
+    server: "14.46.128.84"
+    port: 25010
+    cipher: "none"
+    password: "https://t.me/WangCai2🇨🇳"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
+  - name: "🇰🇷_188"
     type: ss
     server: "175.204.72.94"
     port: 11001
@@ -1256,30 +1703,10 @@ proxies:
       path: "/59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
       host: "woshinidie-et3.pages.dev"
       tls: true
-  - name: "🇰🇷_130"
+  - name: "🇰🇷_189"
     type: ss
-    server: "141.164.45.187"
-    port: 8008
-    cipher: "aes-256-gcm"
-    password: "XKFKl2rULjIp74"
-    udp: true
-  - name: "🇰🇷_131"
-    type: ss
-    server: "49.142.200.31"
-    port: 28017
-    cipher: "none"
-    password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "/59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
-  - name: "🇰🇷_132"
-    type: ss
-    server: "14.46.128.84"
-    port: 25010
+    server: "125.138.18.69"
+    port: 11300
     cipher: "none"
     password: "https://t.me/WangCai2🇨🇳"
     udp: true
@@ -1289,223 +1716,7 @@ proxies:
       path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
       host: "woshinidie-et3.pages.dev"
       tls: true
-  - name: "🇰🇷_133"
-    type: ss
-    server: "36.38.117.86"
-    port: 11965
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
-  - name: "🇰🇷_134"
-    type: ss
-    server: "36.38.117.86"
-    port: 11965
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
-  - name: "🇰🇷_135"
-    type: ss
-    server: "141.164.45.187"
-    port: 8000
-    cipher: "aes-256-gcm"
-    password: "KixLvKzwjekG00rm"
-    udp: true
-  - name: "🇰🇷_136"
-    type: ss
-    server: "14.58.60.153"
-    port: 16992
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
-  - name: "🇰🇷_137"
-    type: ss
-    server: "112.163.229.82"
-    port: 10909
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
-  - name: "🇰🇷_138"
-    type: ss
-    server: "222.113.18.214"
-    port: 11310
-    cipher: "none"
-    password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
-    udp: true
-  - name: "🇰🇷_139"
-    type: ss
-    server: "124.216.61.15"
-    port: 33258
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
-  - name: "🇰🇷_140"
-    type: ss
-    server: "14.58.60.153"
-    port: 16992
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
-  - name: "🇰🇷_141"
-    type: ss
-    server: "124.57.36.207"
-    port: 37020
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
-  - name: "🇰🇷_142"
-    type: ss
-    server: "121.151.210.54"
-    port: 33848
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
-  - name: "🇰🇷_143"
-    type: ss
-    server: "168.126.204.135"
-    port: 10035
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
-  - name: "🇰🇷_144"
-    type: ss
-    server: "124.216.61.15"
-    port: 33258
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
-  - name: "🇰🇷_145"
-    type: ss
-    server: "220.94.94.109"
-    port: 10250
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
-  - name: "🇰🇷_146"
-    type: ss
-    server: "183.108.82.157"
-    port: 10002
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
-  - name: "🇰🇷_147"
-    type: ss
-    server: "118.47.115.196"
-    port: 37810
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
-  - name: "🇰🇷_148"
-    type: ss
-    server: "222.113.18.214"
-    port: 11310
-    cipher: "none"
-    password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
-    udp: true
-  - name: "🇰🇷_149"
-    type: ss
-    server: "59.0.58.42"
-    port: 14000
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
-  - name: "🇰🇷_150"
-    type: ss
-    server: "125.134.6.129"
-    port: 27017
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
-  - name: "🇰🇷_151"
+  - name: "🇰🇷_190"
     type: ss
     server: "221.147.173.70"
     port: 25448
@@ -1518,211 +1729,21 @@ proxies:
       path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
       host: "woshinidie-et3.pages.dev"
       tls: true
-  - name: "🇰🇷_152"
+  - name: "🇰🇷_191"
     type: ss
-    server: "49.142.200.31"
-    port: 11434
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
+    server: "141.164.45.187"
+    port: 8119
+    cipher: "aes-256-gcm"
+    password: "cdBIDV42DCwnfIN"
     udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
-  - name: "🇰🇷_153"
+  - name: "🇰🇷_192"
     type: ss
-    server: "222.113.18.214"
-    port: 37215
-    cipher: "none"
-    password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
+    server: "141.164.45.187"
+    port: 5001
+    cipher: "aes-256-gcm"
+    password: "Y6R9pAtvxxzmGC"
     udp: true
-  - name: "🇰🇷_154"
-    type: ss
-    server: "3.37.55.114"
-    port: 8989
-    cipher: "chacha20-ietf-poly1305"
-    password: "f0b9ae63-91a7-4673-924e-498e0e0828c0"
-    udp: true
-  - name: "🇰🇷_155"
-    type: ss
-    server: "49.142.200.31"
-    port: 11434
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
-  - name: "🇰🇷_156"
-    type: ss
-    server: "168.126.204.135"
-    port: 10035
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
-  - name: "🇰🇷_157"
-    type: ss
-    server: "59.31.102.62"
-    port: 25565
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
-  - name: "🇰🇷_158"
-    type: ss
-    server: "121.178.230.168"
-    port: 19071
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
-  - name: "🇰🇷_159"
-    type: ss
-    server: "220.94.94.109"
-    port: 10250
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
-  - name: "🇰🇷_160"
-    type: ss
-    server: "124.57.36.207"
-    port: 37020
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
-  - name: "🇰🇷_161"
-    type: ss
-    server: "121.182.16.235"
-    port: 11434
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
-  - name: "🇰🇷_162"
-    type: ss
-    server: "59.0.58.42"
-    port: 14000
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
-  - name: "🇰🇷_163"
-    type: ss
-    server: "59.31.102.62"
-    port: 25565
-    cipher: "none"
-    password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
-    udp: true
-  - name: "🇰🇷_164"
-    type: ss
-    server: "211.104.26.48"
-    port: 10000
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
-  - name: "🇰🇷_165"
-    type: ss
-    server: "125.134.6.129"
-    port: 27017
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
-  - name: "🇰🇷_166"
-    type: ss
-    server: "59.31.102.62"
-    port: 25565
-    cipher: "none"
-    password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
-    udp: true
-  - name: "🇰🇷_167"
-    type: ss
-    server: "49.142.200.31"
-    port: 28017
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
-  - name: "🇰🇷_168"
-    type: ss
-    server: "59.12.232.18"
-    port: 12345
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
-  - name: "🇰🇷_169"
-    type: ss
-    server: "222.113.18.214"
-    port: 37215
-    cipher: "none"
-    password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
-    udp: true
-  - name: "🇰🇷_170"
+  - name: "🇰🇷_193"
     type: ss
     server: "118.47.115.196"
     port: 37810
@@ -1735,10 +1756,538 @@ proxies:
       path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
       host: "woshinidie-et3.pages.dev"
       tls: true
-  - name: "🇰🇷_171"
+  - name: "🇰🇷_194"
     type: ss
     server: "121.182.16.235"
     port: 18246
+    cipher: "none"
+    password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "/59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
+  - name: "🇰🇷_195"
+    type: ss
+    server: "124.57.36.207"
+    port: 37020
+    cipher: "none"
+    password: "https://t.me/WangCai2🇨🇳"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
+  - name: "🇰🇷_196"
+    type: ss
+    server: "141.164.45.187"
+    port: 5498
+    cipher: "aes-256-gcm"
+    password: "lGqs95QkFHo2NV"
+    udp: true
+  - name: "🇰🇷_197"
+    type: ss
+    server: "14.46.128.84"
+    port: 25010
+    cipher: "none"
+    password: "https://t.me/WangCai2🇨🇳"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
+  - name: "🇰🇷_198"
+    type: ss
+    server: "49.142.200.31"
+    port: 11434
+    cipher: "none"
+    password: "https://t.me/WangCai2🇨🇳"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
+  - name: "🇰🇷_199"
+    type: ss
+    server: "59.31.102.62"
+    port: 25565
+    cipher: "none"
+    password: "https://t.me/WangCai2🇨🇳"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
+  - name: "🇰🇷_200"
+    type: ss
+    server: "211.104.26.48"
+    port: 10000
+    cipher: "none"
+    password: "https://t.me/WangCai2🇨🇳"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
+  - name: "🇰🇷_201"
+    type: ss
+    server: "141.164.45.187"
+    port: 2376
+    cipher: "aes-256-gcm"
+    password: "faBAoD54k87UJG7"
+    udp: true
+  - name: "🇰🇷_202"
+    type: ss
+    server: "59.0.58.42"
+    port: 14000
+    cipher: "none"
+    password: "https://t.me/WangCai2🇨🇳"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
+  - name: "🇰🇷_203"
+    type: ss
+    server: "121.182.16.235"
+    port: 11434
+    cipher: "none"
+    password: "https://t.me/WangCai2🇨🇳"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
+  - name: "🇰🇷_204"
+    type: ss
+    server: "121.182.16.235"
+    port: 18246
+    cipher: "none"
+    password: "https://t.me/WangCai2🇨🇳"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
+  - name: "🇰🇷_205"
+    type: ss
+    server: "141.164.45.187"
+    port: 8008
+    cipher: "aes-256-gcm"
+    password: "XKFKl2rULjIp74"
+    udp: true
+  - name: "🇰🇷_206"
+    type: ss
+    server: "112.163.229.82"
+    port: 10909
+    cipher: "none"
+    password: "https://t.me/WangCai2🇨🇳"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
+  - name: "🇰🇷_207"
+    type: ss
+    server: "49.142.200.31"
+    port: 11434
+    cipher: "none"
+    password: "https://t.me/WangCai2🇨🇳"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
+  - name: "🇰🇷_208"
+    type: ss
+    server: "141.164.45.187"
+    port: 6697
+    cipher: "aes-256-gcm"
+    password: "TEzjfAYq2IjtuoS"
+    udp: true
+  - name: "🇰🇷_209"
+    type: ss
+    server: "125.134.6.129"
+    port: 27017
+    cipher: "none"
+    password: "https://t.me/WangCai2🇨🇳"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
+  - name: "🇰🇷_210"
+    type: ss
+    server: "121.178.230.168"
+    port: 19071
+    cipher: "none"
+    password: "https://t.me/WangCai2🇨🇳"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
+  - name: "🇰🇷_211"
+    type: ss
+    server: "222.113.18.214"
+    port: 37215
+    cipher: "none"
+    password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
+    udp: true
+  - name: "🇰🇷_212"
+    type: ss
+    server: "59.31.102.62"
+    port: 25565
+    cipher: "none"
+    password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
+    udp: true
+  - name: "🇰🇷_213"
+    type: ss
+    server: "222.113.18.214"
+    port: 11310
+    cipher: "none"
+    password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
+    udp: true
+  - name: "🇰🇷_214"
+    type: ss
+    server: "141.164.45.187"
+    port: 7002
+    cipher: "aes-256-gcm"
+    password: "RexnBgU7EV5ADxG"
+    udp: true
+  - name: "🇰🇷_215"
+    type: ss
+    server: "141.164.45.187"
+    port: 6679
+    cipher: "aes-256-gcm"
+    password: "TEzjfAYq2IjtuoS"
+    udp: true
+  - name: "🇰🇷_216"
+    type: ss
+    server: "141.164.45.187"
+    port: 7001
+    cipher: "aes-256-gcm"
+    password: "RexnBgU7EV5ADxG"
+    udp: true
+  - name: "🇰🇷_217"
+    type: ss
+    server: "141.164.45.187"
+    port: 9101
+    cipher: "aes-256-gcm"
+    password: "e4FCWrgpkji3QY"
+    udp: true
+  - name: "🇰🇷_218"
+    type: ss
+    server: "220.94.94.109"
+    port: 10250
+    cipher: "none"
+    password: "https://t.me/WangCai2🇨🇳"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
+  - name: "🇰🇷_219"
+    type: ss
+    server: "59.0.58.42"
+    port: 14000
+    cipher: "none"
+    password: "https://t.me/WangCai2🇨🇳"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
+  - name: "🇰🇷_220"
+    type: ss
+    server: "36.38.117.86"
+    port: 11965
+    cipher: "none"
+    password: "https://t.me/WangCai2🇨🇳"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
+  - name: "🇰🇷_221"
+    type: ss
+    server: "141.164.45.187"
+    port: 8008
+    cipher: "aes-256-gcm"
+    password: "XKFKl2rULjIp74"
+    udp: true
+  - name: "🇰🇷_222"
+    type: ss
+    server: "222.113.18.214"
+    port: 11310
+    cipher: "none"
+    password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
+    udp: true
+  - name: "🇰🇷_223"
+    type: ss
+    server: "141.164.45.187"
+    port: 5498
+    cipher: "aes-256-gcm"
+    password: "lGqs95QkFHo2NV"
+    udp: true
+  - name: "🇰🇷_224"
+    type: ss
+    server: "124.216.61.15"
+    port: 33258
+    cipher: "none"
+    password: "https://t.me/WangCai2🇨🇳"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
+  - name: "🇰🇷_225"
+    type: ss
+    server: "14.58.60.153"
+    port: 16992
+    cipher: "none"
+    password: "https://t.me/WangCai2🇨🇳"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
+  - name: "🇰🇷_226"
+    type: ss
+    server: "211.224.59.175"
+    port: 20332
+    cipher: "none"
+    password: "https://t.me/WangCai2🇨🇳"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
+  - name: "🇰🇷_227"
+    type: ss
+    server: "183.108.82.157"
+    port: 10002
+    cipher: "none"
+    password: "https://t.me/WangCai2🇨🇳"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
+  - name: "🇰🇷_228"
+    type: ss
+    server: "59.12.232.18"
+    port: 12345
+    cipher: "none"
+    password: "https://t.me/WangCai2🇨🇳"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
+  - name: "🇰🇷_229"
+    type: ss
+    server: "59.31.102.62"
+    port: 25565
+    cipher: "none"
+    password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
+    udp: true
+  - name: "🇰🇷_230"
+    type: ss
+    server: "124.57.36.207"
+    port: 37020
+    cipher: "none"
+    password: "https://t.me/WangCai2🇨🇳"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
+  - name: "🇰🇷_231"
+    type: ss
+    server: "36.38.117.86"
+    port: 11965
+    cipher: "none"
+    password: "https://t.me/WangCai2🇨🇳"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
+  - name: "🇰🇷_232"
+    type: ss
+    server: "49.142.200.31"
+    port: 28017
+    cipher: "none"
+    password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "/59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
+  - name: "🇰🇷_233"
+    type: ss
+    server: "132.145.91.181"
+    port: 8443
+    cipher: "none"
+    password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "/59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
+  - name: "🇰🇷_234"
+    type: ss
+    server: "222.113.18.214"
+    port: 37215
+    cipher: "none"
+    password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
+    udp: true
+  - name: "🇰🇷_235"
+    type: ss
+    server: "132.145.91.181"
+    port: 8443
+    cipher: "none"
+    password: "https://t.me/WangCai2🇨🇳"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
+  - name: "🇰🇷_236"
+    type: ss
+    server: "124.216.61.15"
+    port: 33258
+    cipher: "none"
+    password: "https://t.me/WangCai2🇨🇳"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
+  - name: "🇰🇷_237"
+    type: ss
+    server: "121.151.210.54"
+    port: 33848
+    cipher: "none"
+    password: "https://t.me/WangCai2🇨🇳"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
+  - name: "🇰🇷_238"
+    type: ss
+    server: "118.47.115.196"
+    port: 37810
+    cipher: "none"
+    password: "https://t.me/WangCai2🇨🇳"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
+  - name: "🇰🇷_239"
+    type: ss
+    server: "14.58.60.153"
+    port: 16992
+    cipher: "none"
+    password: "https://t.me/WangCai2🇨🇳"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
+  - name: "🇰🇷_240"
+    type: ss
+    server: "121.178.230.168"
+    port: 19071
+    cipher: "none"
+    password: "https://t.me/WangCai2🇨🇳"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
+  - name: "🇰🇷_241"
+    type: ss
+    server: "121.182.16.235"
+    port: 11434
+    cipher: "none"
+    password: "https://t.me/WangCai2🇨🇳"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
+  - name: "🇰🇷_242"
+    type: ss
+    server: "211.224.59.175"
+    port: 20332
     cipher: "none"
     password: "https://t.me/WangCai2🇨🇳"
     udp: true
@@ -1754,7 +2303,9 @@ proxy-groups:
     type: select
     proxies:
       - "Auto"
+      - "Load Balance"
 
+      
   - name: "Auto"
     type: url-test
     url: https://www.gstatic.com/generate_204
@@ -1933,7 +2484,327 @@ proxy-groups:
       - "🇰🇷_169"
       - "🇰🇷_170"
       - "🇰🇷_171"
+      - "🇰🇷_172"
+      - "🇰🇷_173"
+      - "🇰🇷_174"
+      - "🇰🇷_175"
+      - "🇰🇷_176"
+      - "🇰🇷_177"
+      - "🇰🇷_178"
+      - "🇰🇷_179"
+      - "🇰🇷_180"
+      - "🇰🇷_181"
+      - "🇰🇷_182"
+      - "🇰🇷_183"
+      - "🇰🇷_184"
+      - "🇰🇷_185"
+      - "🇰🇷_186"
+      - "🇰🇷_187"
+      - "🇰🇷_188"
+      - "🇰🇷_189"
+      - "🇰🇷_190"
+      - "🇰🇷_191"
+      - "🇰🇷_192"
+      - "🇰🇷_193"
+      - "🇰🇷_194"
+      - "🇰🇷_195"
+      - "🇰🇷_196"
+      - "🇰🇷_197"
+      - "🇰🇷_198"
+      - "🇰🇷_199"
+      - "🇰🇷_200"
+      - "🇰🇷_201"
+      - "🇰🇷_202"
+      - "🇰🇷_203"
+      - "🇰🇷_204"
+      - "🇰🇷_205"
+      - "🇰🇷_206"
+      - "🇰🇷_207"
+      - "🇰🇷_208"
+      - "🇰🇷_209"
+      - "🇰🇷_210"
+      - "🇰🇷_211"
+      - "🇰🇷_212"
+      - "🇰🇷_213"
+      - "🇰🇷_214"
+      - "🇰🇷_215"
+      - "🇰🇷_216"
+      - "🇰🇷_217"
+      - "🇰🇷_218"
+      - "🇰🇷_219"
+      - "🇰🇷_220"
+      - "🇰🇷_221"
+      - "🇰🇷_222"
+      - "🇰🇷_223"
+      - "🇰🇷_224"
+      - "🇰🇷_225"
+      - "🇰🇷_226"
+      - "🇰🇷_227"
+      - "🇰🇷_228"
+      - "🇰🇷_229"
+      - "🇰🇷_230"
+      - "🇰🇷_231"
+      - "🇰🇷_232"
+      - "🇰🇷_233"
+      - "🇰🇷_234"
+      - "🇰🇷_235"
+      - "🇰🇷_236"
+      - "🇰🇷_237"
+      - "🇰🇷_238"
+      - "🇰🇷_239"
+      - "🇰🇷_240"
+      - "🇰🇷_241"
+      - "🇰🇷_242"
 
+
+  - name: "Load Balance"
+    type: load-balance
+    strategy: round-robin
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+    proxies:
+      - "🇰🇷_1"
+      - "🇰🇷_2"
+      - "🇰🇷_3"
+      - "🇰🇷_4"
+      - "🇰🇷_5"
+      - "🇰🇷_6"
+      - "🇰🇷_7"
+      - "🇰🇷_8"
+      - "🇰🇷_9"
+      - "🇰🇷_10"
+      - "🇰🇷_11"
+      - "🇰🇷_12"
+      - "🇰🇷_13"
+      - "🇰🇷_14"
+      - "🇰🇷_15"
+      - "🇰🇷_16"
+      - "🇰🇷_17"
+      - "🇰🇷_18"
+      - "🇰🇷_19"
+      - "🇰🇷_20"
+      - "🇰🇷_21"
+      - "🇰🇷_22"
+      - "🇰🇷_23"
+      - "🇰🇷_24"
+      - "🇰🇷_25"
+      - "🇰🇷_26"
+      - "🇰🇷_27"
+      - "🇰🇷_28"
+      - "🇰🇷_29"
+      - "🇰🇷_30"
+      - "🇰🇷_31"
+      - "🇰🇷_32"
+      - "🇰🇷_33"
+      - "🇰🇷_34"
+      - "🇰🇷_35"
+      - "🇰🇷_36"
+      - "🇰🇷_37"
+      - "🇰🇷_38"
+      - "🇰🇷_39"
+      - "🇰🇷_40"
+      - "🇰🇷_41"
+      - "🇰🇷_42"
+      - "🇰🇷_43"
+      - "🇰🇷_44"
+      - "🇰🇷_45"
+      - "🇰🇷_46"
+      - "🇰🇷_47"
+      - "🇰🇷_48"
+      - "🇰🇷_49"
+      - "🇰🇷_50"
+      - "🇰🇷_51"
+      - "🇰🇷_52"
+      - "🇰🇷_53"
+      - "🇰🇷_54"
+      - "🇰🇷_55"
+      - "🇰🇷_56"
+      - "🇰🇷_57"
+      - "🇰🇷_58"
+      - "🇰🇷_59"
+      - "🇰🇷_60"
+      - "🇰🇷_61"
+      - "🇰🇷_62"
+      - "🇰🇷_63"
+      - "🇰🇷_64"
+      - "🇰🇷_65"
+      - "🇰🇷_66"
+      - "🇰🇷_67"
+      - "🇰🇷_68"
+      - "🇰🇷_69"
+      - "🇰🇷_70"
+      - "🇰🇷_71"
+      - "🇰🇷_72"
+      - "🇰🇷_73"
+      - "🇰🇷_74"
+      - "🇰🇷_75"
+      - "🇰🇷_76"
+      - "🇰🇷_77"
+      - "🇰🇷_78"
+      - "🇰🇷_79"
+      - "🇰🇷_80"
+      - "🇰🇷_81"
+      - "🇰🇷_82"
+      - "🇰🇷_83"
+      - "🇰🇷_84"
+      - "🇰🇷_85"
+      - "🇰🇷_86"
+      - "🇰🇷_87"
+      - "🇰🇷_88"
+      - "🇰🇷_89"
+      - "🇰🇷_90"
+      - "🇰🇷_91"
+      - "🇰🇷_92"
+      - "🇰🇷_93"
+      - "🇰🇷_94"
+      - "🇰🇷_95"
+      - "🇰🇷_96"
+      - "🇰🇷_97"
+      - "🇰🇷_98"
+      - "🇰🇷_99"
+      - "🇰🇷_100"
+      - "🇰🇷_101"
+      - "🇰🇷_102"
+      - "🇰🇷_103"
+      - "🇰🇷_104"
+      - "🇰🇷_105"
+      - "🇰🇷_106"
+      - "🇰🇷_107"
+      - "🇰🇷_108"
+      - "🇰🇷_109"
+      - "🇰🇷_110"
+      - "🇰🇷_111"
+      - "🇰🇷_112"
+      - "🇰🇷_113"
+      - "🇰🇷_114"
+      - "🇰🇷_115"
+      - "🇰🇷_116"
+      - "🇰🇷_117"
+      - "🇰🇷_118"
+      - "🇰🇷_119"
+      - "🇰🇷_120"
+      - "🇰🇷_121"
+      - "🇰🇷_122"
+      - "🇰🇷_123"
+      - "🇰🇷_124"
+      - "🇰🇷_125"
+      - "🇰🇷_126"
+      - "🇰🇷_127"
+      - "🇰🇷_128"
+      - "🇰🇷_129"
+      - "🇰🇷_130"
+      - "🇰🇷_131"
+      - "🇰🇷_132"
+      - "🇰🇷_133"
+      - "🇰🇷_134"
+      - "🇰🇷_135"
+      - "🇰🇷_136"
+      - "🇰🇷_137"
+      - "🇰🇷_138"
+      - "🇰🇷_139"
+      - "🇰🇷_140"
+      - "🇰🇷_141"
+      - "🇰🇷_142"
+      - "🇰🇷_143"
+      - "🇰🇷_144"
+      - "🇰🇷_145"
+      - "🇰🇷_146"
+      - "🇰🇷_147"
+      - "🇰🇷_148"
+      - "🇰🇷_149"
+      - "🇰🇷_150"
+      - "🇰🇷_151"
+      - "🇰🇷_152"
+      - "🇰🇷_153"
+      - "🇰🇷_154"
+      - "🇰🇷_155"
+      - "🇰🇷_156"
+      - "🇰🇷_157"
+      - "🇰🇷_158"
+      - "🇰🇷_159"
+      - "🇰🇷_160"
+      - "🇰🇷_161"
+      - "🇰🇷_162"
+      - "🇰🇷_163"
+      - "🇰🇷_164"
+      - "🇰🇷_165"
+      - "🇰🇷_166"
+      - "🇰🇷_167"
+      - "🇰🇷_168"
+      - "🇰🇷_169"
+      - "🇰🇷_170"
+      - "🇰🇷_171"
+      - "🇰🇷_172"
+      - "🇰🇷_173"
+      - "🇰🇷_174"
+      - "🇰🇷_175"
+      - "🇰🇷_176"
+      - "🇰🇷_177"
+      - "🇰🇷_178"
+      - "🇰🇷_179"
+      - "🇰🇷_180"
+      - "🇰🇷_181"
+      - "🇰🇷_182"
+      - "🇰🇷_183"
+      - "🇰🇷_184"
+      - "🇰🇷_185"
+      - "🇰🇷_186"
+      - "🇰🇷_187"
+      - "🇰🇷_188"
+      - "🇰🇷_189"
+      - "🇰🇷_190"
+      - "🇰🇷_191"
+      - "🇰🇷_192"
+      - "🇰🇷_193"
+      - "🇰🇷_194"
+      - "🇰🇷_195"
+      - "🇰🇷_196"
+      - "🇰🇷_197"
+      - "🇰🇷_198"
+      - "🇰🇷_199"
+      - "🇰🇷_200"
+      - "🇰🇷_201"
+      - "🇰🇷_202"
+      - "🇰🇷_203"
+      - "🇰🇷_204"
+      - "🇰🇷_205"
+      - "🇰🇷_206"
+      - "🇰🇷_207"
+      - "🇰🇷_208"
+      - "🇰🇷_209"
+      - "🇰🇷_210"
+      - "🇰🇷_211"
+      - "🇰🇷_212"
+      - "🇰🇷_213"
+      - "🇰🇷_214"
+      - "🇰🇷_215"
+      - "🇰🇷_216"
+      - "🇰🇷_217"
+      - "🇰🇷_218"
+      - "🇰🇷_219"
+      - "🇰🇷_220"
+      - "🇰🇷_221"
+      - "🇰🇷_222"
+      - "🇰🇷_223"
+      - "🇰🇷_224"
+      - "🇰🇷_225"
+      - "🇰🇷_226"
+      - "🇰🇷_227"
+      - "🇰🇷_228"
+      - "🇰🇷_229"
+      - "🇰🇷_230"
+      - "🇰🇷_231"
+      - "🇰🇷_232"
+      - "🇰🇷_233"
+      - "🇰🇷_234"
+      - "🇰🇷_235"
+      - "🇰🇷_236"
+      - "🇰🇷_237"
+      - "🇰🇷_238"
+      - "🇰🇷_239"
+      - "🇰🇷_240"
+      - "🇰🇷_241"
+      - "🇰🇷_242"
 
 rules:
   - MATCH,PROXY
