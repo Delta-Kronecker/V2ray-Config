@@ -109,6 +109,9 @@ func prepareOutputDirs() error {
 		"config/tcp-pass",
 		"config/tcp-pass-sni",
 		"config/countries",
+		"config/farg",
+		"config/farg/protocols",
+		"config/farg/batches",
 	}
 	for _, dir := range dirs {
 		if err := os.MkdirAll(dir, 0755); err != nil {
@@ -227,6 +230,7 @@ func writeOutputFiles(results []configResult, tcpFailedLines []string) {
 
 	writeBatchFiles(all, allClash, allClashNames, allSNI, allSNIClash, allSNIClashNames)
 	writeTCPPassFiles(tcpFailedLines)
+	writeFargFiles(results)
 
 	// ── Per-country output files ───────────────────────────────────────────────
 	writeCountryFiles(byCountryV2ray, byCountryClash, countryCounts)
