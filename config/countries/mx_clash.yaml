@@ -62,6 +62,21 @@ dns:
 proxies:
   - name: "🇲🇽_1"
     type: vless
+    server: "ul-mexico1.09vpn.com"
+    port: 8443
+    uuid: "a6d20e79-d326-42c1-bc20-f4cecc6dc42d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ul-mexico1.09vpn.com"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/vless/"
+      headers:
+        Host: "ul-mexico1.09vpn.com"
+  - name: "🇲🇽_2"
+    type: vless
     server: "45.134.9.133"
     port: 8443
     uuid: "a6d20e79-d326-42c1-bc20-f4cecc6dc42d"
@@ -89,6 +104,7 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇲🇽_1"
+      - "🇲🇽_2"
 
 
   - name: "Load Balance"
@@ -98,6 +114,7 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇲🇽_1"
+      - "🇲🇽_2"
 
 rules:
   - MATCH,PROXY

@@ -59,21 +59,7 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇷🇴_7"
-    type: vless
-    server: "94.198.190.22"
-    port: 8443
-    uuid: "47388561-cf0c-4cfc-91f8-fdfd9fa3d756"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.amazon.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "B5F8h8tpeZ-1ydiT0uFgdc30jJyw8H89Y8e-p_VV6yw"
-      short-id: "7b"
-    flow: "xtls-rprx-vision"
-  - name: "🇷🇴_8"
+  - name: "🇷🇴_6"
     type: vless
     server: "82.117.255.87"
     port: 443
@@ -87,21 +73,7 @@ proxies:
       public-key: "1xxZM10W-A8nuj6MOXFd1kA9lS7bEy-5SO5j-jrd_Cg"
       short-id: "b70076439f4a1340"
     flow: "xtls-rprx-vision"
-  - name: "🇷🇴_9"
-    type: vless
-    server: "87.58.205.109"
-    port: 443
-    uuid: "53db95fa-4ebe-4450-8013-a2b0a5827f3f"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.googletagmanager.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "GUYDQKGvNl3_YozhbqG8bvecxjQ7HL5A8iqbuYBUUkw"
-      short-id: "01c1bb79d6a7c6cf"
-    flow: "xtls-rprx-vision"
-  - name: "🇷🇴_10"
+  - name: "🇷🇴_7"
     type: vless
     server: "72.5.42.70"
     port: 40443
@@ -115,23 +87,30 @@ proxies:
       public-key: "6AOnobBShzL_N96JRBNMfbL84_3myz8ZbKfZUEqRXiY"
       short-id: ""
     flow: "xtls-rprx-vision"
-  - name: "🇷🇴_11"
+  - name: "🇷🇴_8"
     type: vless
-    server: "72.5.43.45"
-    port: 8443
-    uuid: "2c532831-127d-45d7-a84e-11ce36a6b1af"
+    server: "87.58.205.109"
+    port: 443
+    uuid: "53db95fa-4ebe-4450-8013-a2b0a5827f3f"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "www.intel.com"
-    client-fingerprint: "chrome"
+    servername: "www.googletagmanager.com"
+    client-fingerprint: "firefox"
     reality-opts:
-      public-key: "gyKPxwQBhJUGVHE2t4R2pOf64NkdSNgu3DqMxOzKtGU"
-      short-id: "5b"
+      public-key: "GUYDQKGvNl3_YozhbqG8bvecxjQ7HL5A8iqbuYBUUkw"
+      short-id: "01c1bb79d6a7c6cf"
     flow: "xtls-rprx-vision"
-  - name: "🇷🇴_12"
+  - name: "🇷🇴_9"
     type: ss
     server: "154.46.31.106"
+    port: 443
+    cipher: "chacha20-ietf-poly1305"
+    password: "QFWzCw2uX9B9i6qAYeFBIE"
+    udp: true
+  - name: "🇷🇴_10"
+    type: ss
+    server: "bogging-eyeteeth-fly.freesocks.work"
     port: 443
     cipher: "chacha20-ietf-poly1305"
     password: "QFWzCw2uX9B9i6qAYeFBIE"
@@ -178,12 +157,11 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
+      - "🇷🇴_6"
       - "🇷🇴_7"
       - "🇷🇴_8"
       - "🇷🇴_9"
       - "🇷🇴_10"
-      - "🇷🇴_11"
-      - "🇷🇴_12"
 
   - name: "LB-CDN"
     type: load-balance
@@ -193,12 +171,11 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
+      - "🇷🇴_6"
       - "🇷🇴_7"
       - "🇷🇴_8"
       - "🇷🇴_9"
       - "🇷🇴_10"
-      - "🇷🇴_11"
-      - "🇷🇴_12"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -208,12 +185,11 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
+      - "🇷🇴_6"
       - "🇷🇴_7"
       - "🇷🇴_8"
       - "🇷🇴_9"
       - "🇷🇴_10"
-      - "🇷🇴_11"
-      - "🇷🇴_12"
 
   - name: "FAST-CDN"
     type: url-test
@@ -222,12 +198,11 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
+      - "🇷🇴_6"
       - "🇷🇴_7"
       - "🇷🇴_8"
       - "🇷🇴_9"
       - "🇷🇴_10"
-      - "🇷🇴_11"
-      - "🇷🇴_12"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -237,23 +212,21 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
+      - "🇷🇴_6"
       - "🇷🇴_7"
       - "🇷🇴_8"
       - "🇷🇴_9"
       - "🇷🇴_10"
-      - "🇷🇴_11"
-      - "🇷🇴_12"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
+      - "🇷🇴_6"
       - "🇷🇴_7"
       - "🇷🇴_8"
       - "🇷🇴_9"
       - "🇷🇴_10"
-      - "🇷🇴_11"
-      - "🇷🇴_12"
 
 rules:
   - MATCH,PROXY-BEST

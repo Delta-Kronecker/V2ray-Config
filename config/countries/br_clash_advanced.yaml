@@ -59,7 +59,18 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇧🇷_2"
+  - name: "🇧🇷_3"
+    type: vless
+    server: "45.194.53.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "vms.lifetime19.workers.dev"
+  - name: "🇧🇷_4"
     type: vless
     server: "38.180.220.203"
     port: 443
@@ -115,7 +126,8 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇧🇷_2"
+      - "🇧🇷_3"
+      - "🇧🇷_4"
 
   - name: "LB-CDN"
     type: load-balance
@@ -125,7 +137,8 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇧🇷_2"
+      - "🇧🇷_3"
+      - "🇧🇷_4"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -135,7 +148,8 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇧🇷_2"
+      - "🇧🇷_3"
+      - "🇧🇷_4"
 
   - name: "FAST-CDN"
     type: url-test
@@ -144,7 +158,8 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇧🇷_2"
+      - "🇧🇷_3"
+      - "🇧🇷_4"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -154,13 +169,15 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇧🇷_2"
+      - "🇧🇷_3"
+      - "🇧🇷_4"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
-      - "🇧🇷_2"
+      - "🇧🇷_3"
+      - "🇧🇷_4"
 
 rules:
   - MATCH,PROXY-BEST

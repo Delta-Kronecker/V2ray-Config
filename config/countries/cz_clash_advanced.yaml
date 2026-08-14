@@ -59,21 +59,7 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇨🇿_7"
-    type: vless
-    server: "195.133.35.81"
-    port: 443
-    uuid: "e2cd1f88-8582-4ab9-9497-de59de37b626"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.amd.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "8R53x47787bPBVJnKyLkOhTztNW6djdTh0WEWph8710"
-      short-id: "7479"
-    flow: "xtls-rprx-vision"
-  - name: "🇨🇿_8"
+  - name: "🇨🇿_11"
     type: vless
     server: "188.127.247.129"
     port: 443
@@ -87,7 +73,49 @@ proxies:
       public-key: "Kb0rDCu2kKhfnC6bsi0DMRxDej9S-Mu1vVza1H1l4U4"
       short-id: "0c"
     flow: "xtls-rprx-vision"
-  - name: "🇨🇿_9"
+  - name: "🇨🇿_12"
+    type: vless
+    server: "195.133.35.81"
+    port: 443
+    uuid: "e2cd1f88-8582-4ab9-9497-de59de37b626"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.amd.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "8R53x47787bPBVJnKyLkOhTztNW6djdTh0WEWph8710"
+      short-id: "7479"
+    flow: "xtls-rprx-vision"
+  - name: "🇨🇿_13"
+    type: vless
+    server: "cz.palm-network.ru"
+    port: 443
+    uuid: "e2cd1f88-8582-4ab9-9497-de59de37b626"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.amd.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "8R53x47787bPBVJnKyLkOhTztNW6djdTh0WEWph8710"
+      short-id: "7479"
+    flow: "xtls-rprx-vision"
+  - name: "🇨🇿_14"
+    type: vless
+    server: "ch1.murhost.network"
+    port: 443
+    uuid: "a6f6d9c9-9d43-4d0e-bf95-4b87cc5bbaac"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ch1.murhost.network"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "V-B12dvv0fVIwcmcRNdMQIcc4nmqsYB_PR_3X4VVB0A"
+      short-id: "91a7a393d805f5c6"
+    flow: "xtls-rprx-vision"
+  - name: "🇨🇿_15"
     type: vless
     server: "78.159.247.253"
     port: 2027
@@ -100,7 +128,40 @@ proxies:
       public-key: "ISa-DZOI4LRRb9DHMFYm5oFqBXDjYzz0hVWUfWvzLmo"
       short-id: "dc8109baf0f607ea"
     flow: "xtls-rprx-vision"
-  - name: "🇨🇿_10"
+  - name: "🇨🇿_16"
+    type: vless
+    server: "103.119.18.115"
+    port: 443
+    uuid: "a6f6d9c9-9d43-4d0e-bf95-4b87cc5bbaac"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ch1.murhost.network"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "V-B12dvv0fVIwcmcRNdMQIcc4nmqsYB_PR_3X4VVB0A"
+      short-id: "91a7a393d805f5c6"
+    flow: "xtls-rprx-vision"
+  - name: "🇨🇿_17"
+    type: trojan
+    server: "ch-2.bexum.fun"
+    port: 443
+    password: "LYaEYwjN8LjWTRJdCCTzW7V6gK7atJVu"
+    sni: "ch-2.bexum.fun"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇨🇿_18"
+    type: trojan
+    server: "178.208.75.155"
+    port: 8443
+    password: "humanity"
+    sni: "www.calmlunch.com"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/assignment"
+  - name: "🇨🇿_19"
     type: trojan
     server: "178.208.75.155"
     port: 2053
@@ -113,7 +174,7 @@ proxies:
       path: "/assignment"
       headers:
         Host: "www.calmlunch.com"
-  - name: "🇨🇿_11"
+  - name: "🇨🇿_20"
     type: trojan
     server: "46.8.113.142"
     port: 443
@@ -121,17 +182,6 @@ proxies:
     sni: "ch-2.bexum.fun"
     skip-cert-verify: true
     udp: true
-  - name: "🇨🇿_12"
-    type: trojan
-    server: "178.208.75.155"
-    port: 8443
-    password: "humanity"
-    sni: "www.calmlunch.com"
-    skip-cert-verify: true
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/assignment"
 
 proxy-groups:
   # ── Top-level selector ────────────────────────────────────────────────────
@@ -174,12 +224,16 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇨🇿_7"
-      - "🇨🇿_8"
-      - "🇨🇿_9"
-      - "🇨🇿_10"
       - "🇨🇿_11"
       - "🇨🇿_12"
+      - "🇨🇿_13"
+      - "🇨🇿_14"
+      - "🇨🇿_15"
+      - "🇨🇿_16"
+      - "🇨🇿_17"
+      - "🇨🇿_18"
+      - "🇨🇿_19"
+      - "🇨🇿_20"
 
   - name: "LB-CDN"
     type: load-balance
@@ -189,12 +243,16 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇨🇿_7"
-      - "🇨🇿_8"
-      - "🇨🇿_9"
-      - "🇨🇿_10"
       - "🇨🇿_11"
       - "🇨🇿_12"
+      - "🇨🇿_13"
+      - "🇨🇿_14"
+      - "🇨🇿_15"
+      - "🇨🇿_16"
+      - "🇨🇿_17"
+      - "🇨🇿_18"
+      - "🇨🇿_19"
+      - "🇨🇿_20"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -204,12 +262,16 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇨🇿_7"
-      - "🇨🇿_8"
-      - "🇨🇿_9"
-      - "🇨🇿_10"
       - "🇨🇿_11"
       - "🇨🇿_12"
+      - "🇨🇿_13"
+      - "🇨🇿_14"
+      - "🇨🇿_15"
+      - "🇨🇿_16"
+      - "🇨🇿_17"
+      - "🇨🇿_18"
+      - "🇨🇿_19"
+      - "🇨🇿_20"
 
   - name: "FAST-CDN"
     type: url-test
@@ -218,12 +280,16 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇨🇿_7"
-      - "🇨🇿_8"
-      - "🇨🇿_9"
-      - "🇨🇿_10"
       - "🇨🇿_11"
       - "🇨🇿_12"
+      - "🇨🇿_13"
+      - "🇨🇿_14"
+      - "🇨🇿_15"
+      - "🇨🇿_16"
+      - "🇨🇿_17"
+      - "🇨🇿_18"
+      - "🇨🇿_19"
+      - "🇨🇿_20"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -233,23 +299,31 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇨🇿_7"
-      - "🇨🇿_8"
-      - "🇨🇿_9"
-      - "🇨🇿_10"
       - "🇨🇿_11"
       - "🇨🇿_12"
+      - "🇨🇿_13"
+      - "🇨🇿_14"
+      - "🇨🇿_15"
+      - "🇨🇿_16"
+      - "🇨🇿_17"
+      - "🇨🇿_18"
+      - "🇨🇿_19"
+      - "🇨🇿_20"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
-      - "🇨🇿_7"
-      - "🇨🇿_8"
-      - "🇨🇿_9"
-      - "🇨🇿_10"
       - "🇨🇿_11"
       - "🇨🇿_12"
+      - "🇨🇿_13"
+      - "🇨🇿_14"
+      - "🇨🇿_15"
+      - "🇨🇿_16"
+      - "🇨🇿_17"
+      - "🇨🇿_18"
+      - "🇨🇿_19"
+      - "🇨🇿_20"
 
 rules:
   - MATCH,PROXY-BEST

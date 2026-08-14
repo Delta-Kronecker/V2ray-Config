@@ -85,13 +85,35 @@ proxies:
       public-key: "sDH4MlZFHXJB5VR_mfuFNBrQHtptpNK-qj3sot7b1zU"
       short-id: "16887c51"
   - name: "🇹🇭_3"
+    type: vless
+    server: "154.83.2.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vms.lifetime28.workers.dev"
+  - name: "🇹🇭_4"
+    type: vless
+    server: "154.83.2.50"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "vms.lifetime28.workers.dev"
+  - name: "🇹🇭_5"
     type: ss
     server: "102.129.229.85"
     port: 31700
     cipher: "chacha20-ietf-poly1305"
     password: "d7zh2lMrXNH5+8+8pKzlxiCU9NN022ih+uAyxj5d4qo="
     udp: true
-  - name: "🇹🇭_4"
+  - name: "🇹🇭_6"
     type: ss
     server: "102.129.229.85"
     port: 31700
@@ -118,6 +140,8 @@ proxy-groups:
       - "🇹🇭_2"
       - "🇹🇭_3"
       - "🇹🇭_4"
+      - "🇹🇭_5"
+      - "🇹🇭_6"
 
 
   - name: "Load Balance"
@@ -130,6 +154,8 @@ proxy-groups:
       - "🇹🇭_2"
       - "🇹🇭_3"
       - "🇹🇭_4"
+      - "🇹🇭_5"
+      - "🇹🇭_6"
 
 rules:
   - MATCH,PROXY

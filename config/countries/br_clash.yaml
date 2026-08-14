@@ -62,6 +62,17 @@ dns:
 proxies:
   - name: "🇧🇷_1"
     type: vless
+    server: "45.194.53.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "vms.lifetime19.workers.dev"
+  - name: "🇧🇷_2"
+    type: vless
     server: "38.180.220.203"
     port: 443
     uuid: "d4b0cf86-3ea7-4e07-990a-9f9779177a74"
@@ -91,6 +102,7 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇧🇷_1"
+      - "🇧🇷_2"
 
 
   - name: "Load Balance"
@@ -100,6 +112,7 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇧🇷_1"
+      - "🇧🇷_2"
 
 rules:
   - MATCH,PROXY

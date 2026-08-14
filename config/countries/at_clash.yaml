@@ -62,20 +62,6 @@ dns:
 proxies:
   - name: "🇦🇹_1"
     type: vless
-    server: "45.155.71.170"
-    port: 50443
-    uuid: "000f16e8-cc68-4951-b336-acd81996efde"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.icloud.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "hp9ht_jsxocTnQEbChb1G3JoDF50x-xDT8UYr66D1TQ"
-      short-id: ""
-    flow: "xtls-rprx-vision"
-  - name: "🇦🇹_2"
-    type: vless
     server: "152.53.114.186"
     port: 443
     uuid: "ab7d5ea9-6eca-47c3-b14b-67378fc2d7c2"
@@ -88,7 +74,86 @@ proxies:
       public-key: "UO3EObgU3xUrhIGEE0gfCn5ZOz8YxNcwwW6ZaYzD3SA"
       short-id: "4e9b0c2d1a3f5768"
     flow: "xtls-rprx-vision"
+  - name: "🇦🇹_2"
+    type: vless
+    server: "193.233.233.56"
+    port: 40443
+    uuid: "641baa2f-6f74-4ecf-b948-032d19ba0142"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.samsung.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "EbXSjwJKAI1cmU2TK3af62qS2k58x8Rnct1525c0m1I"
+      short-id: "c3d4e5f607182939"
+    flow: "xtls-rprx-vision"
   - name: "🇦🇹_3"
+    type: vless
+    server: "212.183.88.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "vms.lifetime23.workers.dev"
+  - name: "🇦🇹_4"
+    type: vless
+    server: "185.126.236.181"
+    port: 8880
+    uuid: "8f127368-8f47-4989-ec81-60c32953856f"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "www.icloud.com"
+  - name: "🇦🇹_5"
+    type: vless
+    server: "77.110.110.214"
+    port: 6443
+    uuid: "29a77cbc-bd97-4b8c-af20-c3c6341da10f"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "woc0zvrf11w2endu.dphdlc1u77bs3y4kvussbuap4p576f1ws7igthq8zbf3.workers.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/@Marisa_kristi"
+      headers:
+        Host: "woc0zvrf11w2endu.dphdlc1u77bs3y4kvussbuap4p576f1ws7igthq8zbf3.workers.dev"
+  - name: "🇦🇹_6"
+    type: vless
+    server: "as.tunnelx.space"
+    port: 443
+    uuid: "ab7d5ea9-6eca-47c3-b14b-67378fc2d7c2"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "as.tunnelx.space"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "UO3EObgU3xUrhIGEE0gfCn5ZOz8YxNcwwW6ZaYzD3SA"
+      short-id: "4e9b0c2d1a3f5768"
+    flow: "xtls-rprx-vision"
+  - name: "🇦🇹_7"
+    type: vless
+    server: "45.155.71.170"
+    port: 50443
+    uuid: "000f16e8-cc68-4951-b336-acd81996efde"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.icloud.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "hp9ht_jsxocTnQEbChb1G3JoDF50x-xDT8UYr66D1TQ"
+      short-id: ""
+    flow: "xtls-rprx-vision"
+  - name: "🇦🇹_8"
     type: trojan
     server: "212.183.88.136"
     port: 443
@@ -101,7 +166,7 @@ proxies:
       path: "/assignment"
       headers:
         Host: "www.calmlunch.com"
-  - name: "🇦🇹_4"
+  - name: "🇦🇹_9"
     type: ss
     server: "130.195.222.215"
     port: 443
@@ -114,7 +179,7 @@ proxies:
       path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
       host: "woshinidie-et3.pages.dev"
       tls: true
-  - name: "🇦🇹_5"
+  - name: "🇦🇹_10"
     type: ss
     server: "130.195.222.215"
     port: 443
@@ -148,6 +213,11 @@ proxy-groups:
       - "🇦🇹_3"
       - "🇦🇹_4"
       - "🇦🇹_5"
+      - "🇦🇹_6"
+      - "🇦🇹_7"
+      - "🇦🇹_8"
+      - "🇦🇹_9"
+      - "🇦🇹_10"
 
 
   - name: "Load Balance"
@@ -161,6 +231,11 @@ proxy-groups:
       - "🇦🇹_3"
       - "🇦🇹_4"
       - "🇦🇹_5"
+      - "🇦🇹_6"
+      - "🇦🇹_7"
+      - "🇦🇹_8"
+      - "🇦🇹_9"
+      - "🇦🇹_10"
 
 rules:
   - MATCH,PROXY
