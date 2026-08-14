@@ -62,75 +62,6 @@ dns:
 proxies:
   - name: "🇨🇿_1"
     type: vless
-    server: "188.127.247.129"
-    port: 443
-    uuid: "33aa2b47-484b-49f6-8f23-fb34602d221f"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "yahoo.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "Kb0rDCu2kKhfnC6bsi0DMRxDej9S-Mu1vVza1H1l4U4"
-      short-id: "0c"
-    flow: "xtls-rprx-vision"
-  - name: "🇨🇿_2"
-    type: vless
-    server: "195.133.35.81"
-    port: 443
-    uuid: "e2cd1f88-8582-4ab9-9497-de59de37b626"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.amd.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "8R53x47787bPBVJnKyLkOhTztNW6djdTh0WEWph8710"
-      short-id: "7479"
-    flow: "xtls-rprx-vision"
-  - name: "🇨🇿_3"
-    type: vless
-    server: "cz.palm-network.ru"
-    port: 443
-    uuid: "e2cd1f88-8582-4ab9-9497-de59de37b626"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.amd.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "8R53x47787bPBVJnKyLkOhTztNW6djdTh0WEWph8710"
-      short-id: "7479"
-    flow: "xtls-rprx-vision"
-  - name: "🇨🇿_4"
-    type: vless
-    server: "ch1.murhost.network"
-    port: 443
-    uuid: "a6f6d9c9-9d43-4d0e-bf95-4b87cc5bbaac"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "ch1.murhost.network"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "V-B12dvv0fVIwcmcRNdMQIcc4nmqsYB_PR_3X4VVB0A"
-      short-id: "91a7a393d805f5c6"
-    flow: "xtls-rprx-vision"
-  - name: "🇨🇿_5"
-    type: vless
-    server: "78.159.247.253"
-    port: 2027
-    uuid: "851ed0d8-a37b-452d-8ef2-5b6c2d28a060"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "storage.yandex.net"
-    reality-opts:
-      public-key: "ISa-DZOI4LRRb9DHMFYm5oFqBXDjYzz0hVWUfWvzLmo"
-      short-id: "dc8109baf0f607ea"
-    flow: "xtls-rprx-vision"
-  - name: "🇨🇿_6"
-    type: vless
     server: "103.119.18.115"
     port: 443
     uuid: "a6f6d9c9-9d43-4d0e-bf95-4b87cc5bbaac"
@@ -143,26 +74,42 @@ proxies:
       public-key: "V-B12dvv0fVIwcmcRNdMQIcc4nmqsYB_PR_3X4VVB0A"
       short-id: "91a7a393d805f5c6"
     flow: "xtls-rprx-vision"
-  - name: "🇨🇿_7"
+  - name: "🇨🇿_2"
+    type: vless
+    server: "78.159.247.253"
+    port: 2027
+    uuid: "851ed0d8-a37b-452d-8ef2-5b6c2d28a060"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "storage.yandex.net"
+    reality-opts:
+      public-key: "ISa-DZOI4LRRb9DHMFYm5oFqBXDjYzz0hVWUfWvzLmo"
+      short-id: "dc8109baf0f607ea"
+    flow: "xtls-rprx-vision"
+  - name: "🇨🇿_3"
+    type: vless
+    server: "188.127.247.129"
+    port: 443
+    uuid: "33aa2b47-484b-49f6-8f23-fb34602d221f"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "yahoo.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "Kb0rDCu2kKhfnC6bsi0DMRxDej9S-Mu1vVza1H1l4U4"
+      short-id: "0c"
+    flow: "xtls-rprx-vision"
+  - name: "🇨🇿_4"
     type: trojan
-    server: "ch-2.bexum.fun"
+    server: "46.8.113.142"
     port: 443
     password: "LYaEYwjN8LjWTRJdCCTzW7V6gK7atJVu"
     sni: "ch-2.bexum.fun"
     skip-cert-verify: true
     udp: true
-  - name: "🇨🇿_8"
-    type: trojan
-    server: "178.208.75.155"
-    port: 8443
-    password: "humanity"
-    sni: "www.calmlunch.com"
-    skip-cert-verify: true
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/assignment"
-  - name: "🇨🇿_9"
+  - name: "🇨🇿_5"
     type: trojan
     server: "178.208.75.155"
     port: 2053
@@ -175,14 +122,17 @@ proxies:
       path: "/assignment"
       headers:
         Host: "www.calmlunch.com"
-  - name: "🇨🇿_10"
+  - name: "🇨🇿_6"
     type: trojan
-    server: "46.8.113.142"
-    port: 443
-    password: "LYaEYwjN8LjWTRJdCCTzW7V6gK7atJVu"
-    sni: "ch-2.bexum.fun"
+    server: "178.208.75.155"
+    port: 8443
+    password: "humanity"
+    sni: "www.calmlunch.com"
     skip-cert-verify: true
     udp: true
+    network: ws
+    ws-opts:
+      path: "/assignment"
 
 proxy-groups:
   - name: "PROXY"
@@ -205,10 +155,6 @@ proxy-groups:
       - "🇨🇿_4"
       - "🇨🇿_5"
       - "🇨🇿_6"
-      - "🇨🇿_7"
-      - "🇨🇿_8"
-      - "🇨🇿_9"
-      - "🇨🇿_10"
 
 
   - name: "Load Balance"
@@ -223,10 +169,6 @@ proxy-groups:
       - "🇨🇿_4"
       - "🇨🇿_5"
       - "🇨🇿_6"
-      - "🇨🇿_7"
-      - "🇨🇿_8"
-      - "🇨🇿_9"
-      - "🇨🇿_10"
 
 rules:
   - MATCH,PROXY

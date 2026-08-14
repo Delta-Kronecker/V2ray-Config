@@ -62,32 +62,11 @@ dns:
 proxies:
   - name: "🇨🇳_1"
     type: vless
-    server: "36.248.14.90"
-    port: 33102
-    uuid: "fb957ee2-2ca0-43f3-ab86-724a9ca0b628"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "sgg.knhqf.com"
-    flow: "xtls-rprx-vision"
-  - name: "🇨🇳_2"
-    type: vless
-    server: "176.124.223.30"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "vms.lifetime38.workers.dev"
-  - name: "🇨🇳_3"
-    type: vless
     server: "120.227.1.43"
     port: 12528
     uuid: "f0169b08-43fd-4dc3-8195-18f6ad2fe39d"
     udp: true
-  - name: "🇨🇳_4"
+  - name: "🇨🇳_2"
     type: trojan
     server: "117.149.198.190"
     port: 10051
@@ -113,8 +92,6 @@ proxy-groups:
     proxies:
       - "🇨🇳_1"
       - "🇨🇳_2"
-      - "🇨🇳_3"
-      - "🇨🇳_4"
 
 
   - name: "Load Balance"
@@ -125,8 +102,6 @@ proxy-groups:
     proxies:
       - "🇨🇳_1"
       - "🇨🇳_2"
-      - "🇨🇳_3"
-      - "🇨🇳_4"
 
 rules:
   - MATCH,PROXY

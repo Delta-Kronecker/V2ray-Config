@@ -59,33 +59,15 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇨🇴_6"
+  - name: "🇨🇴_3"
     type: vless
-    server: "158.247.125.22"
+    server: "157.137.210.4"
     port: 62145
     uuid: "8fb65472-5957-4f64-ba2d-b5812b2f155a"
     udp: true
-  - name: "🇨🇴_7"
+  - name: "🇨🇴_4"
     type: vless
-    server: "149.130.172.133"
-    port: 62145
-    uuid: "8fb65472-5957-4f64-ba2d-b5812b2f155a"
-    udp: true
-  - name: "🇨🇴_8"
-    type: vless
-    server: "157.137.231.23"
-    port: 62145
-    uuid: "8fb65472-5957-4f64-ba2d-b5812b2f155a"
-    udp: true
-  - name: "🇨🇴_9"
-    type: vless
-    server: "149.130.189.173"
-    port: 62145
-    uuid: "8fb65472-5957-4f64-ba2d-b5812b2f155a"
-    udp: true
-  - name: "🇨🇴_10"
-    type: vless
-    server: "157.137.239.194"
+    server: "157.137.224.189"
     port: 62145
     uuid: "8fb65472-5957-4f64-ba2d-b5812b2f155a"
     udp: true
@@ -131,11 +113,8 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇨🇴_6"
-      - "🇨🇴_7"
-      - "🇨🇴_8"
-      - "🇨🇴_9"
-      - "🇨🇴_10"
+      - "🇨🇴_3"
+      - "🇨🇴_4"
 
   - name: "LB-CDN"
     type: load-balance
@@ -145,11 +124,8 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇨🇴_6"
-      - "🇨🇴_7"
-      - "🇨🇴_8"
-      - "🇨🇴_9"
-      - "🇨🇴_10"
+      - "🇨🇴_3"
+      - "🇨🇴_4"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -159,11 +135,8 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇨🇴_6"
-      - "🇨🇴_7"
-      - "🇨🇴_8"
-      - "🇨🇴_9"
-      - "🇨🇴_10"
+      - "🇨🇴_3"
+      - "🇨🇴_4"
 
   - name: "FAST-CDN"
     type: url-test
@@ -172,11 +145,8 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇨🇴_6"
-      - "🇨🇴_7"
-      - "🇨🇴_8"
-      - "🇨🇴_9"
-      - "🇨🇴_10"
+      - "🇨🇴_3"
+      - "🇨🇴_4"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -186,21 +156,15 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇨🇴_6"
-      - "🇨🇴_7"
-      - "🇨🇴_8"
-      - "🇨🇴_9"
-      - "🇨🇴_10"
+      - "🇨🇴_3"
+      - "🇨🇴_4"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
-      - "🇨🇴_6"
-      - "🇨🇴_7"
-      - "🇨🇴_8"
-      - "🇨🇴_9"
-      - "🇨🇴_10"
+      - "🇨🇴_3"
+      - "🇨🇴_4"
 
 rules:
   - MATCH,PROXY-BEST

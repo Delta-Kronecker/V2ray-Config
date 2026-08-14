@@ -71,58 +71,20 @@ proxies:
       grpc-service-name: "grpc"
   - name: "🇹🇷_2"
     type: vless
-    server: "tr2ri.mobleamiri10.ir"
-    port: 1050
-    uuid: "6423193f-06ec-4ca6-b8a4-74e21dbb3970"
+    server: "194.135.34.198"
+    port: 443
+    uuid: "52b202f9-493d-4b52-a656-64637f36afa7"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "play.google.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "W6rwa-_z6GYG3cmVxqVjOOn7LsvpAFllkbATsO-CnxU"
-      short-id: "bc6d2d6095e5f634"
-    flow: "xtls-rprx-vision"
-  - name: "🇹🇷_3"
-    type: vless
-    server: "87.120.106.63"
-    port: 1050
-    uuid: "6423193f-06ec-4ca6-b8a4-74e21dbb3970"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "play.google.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "W6rwa-_z6GYG3cmVxqVjOOn7LsvpAFllkbATsO-CnxU"
-      short-id: "bc6d2d6095e5f634"
-    flow: "xtls-rprx-vision"
-  - name: "🇹🇷_4"
-    type: vless
-    server: "45.74.178.41"
-    port: 719
-    uuid: "ae9bcc43-5fd8-4891-b06e-1c93e2747ed9"
-    udp: true
+    servername: "cloudflare.vhub.pro"
+    client-fingerprint: "firefox"
     network: ws
     ws-opts:
-      path: "/api/v2/xtrnwqjbkr?ed=2560"
+      path: "/websocket?ed=2560"
       headers:
-        Host: "play.google.com"
-  - name: "🇹🇷_5"
-    type: vless
-    server: "201.50.115.23"
-    port: 443
-    uuid: "fc1b3bda-b226-452a-8c5c-b0e36a1f8f88"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "eu-central.cendora.ru"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "b-Cm9hX-3UHsS1L_lnUB6AMjuKhlN1IDdBbZ506itjI"
-      short-id: "00bca5982f82d083"
-    flow: "xtls-rprx-vision"
-  - name: "🇹🇷_6"
+        Host: "cloudflare.vhub.pro"
+  - name: "🇹🇷_3"
     type: vless
     server: "151.241.226.201"
     port: 2053
@@ -135,7 +97,7 @@ proxies:
     reality-opts:
       public-key: "_jsI5uVVqXkzCZ0OGJ5U7waecxOEiu2lm-8f8ZyW5mc"
       short-id: "f5d596282182b440"
-  - name: "🇹🇷_7"
+  - name: "🇹🇷_4"
     type: vless
     server: "216.9.224.172"
     port: 443
@@ -149,7 +111,7 @@ proxies:
       public-key: "OFmJtVi6OB9E6KIc5QV5YmoouimRFc-Se9hICjtV8hQ"
       short-id: ""
     flow: "xtls-rprx-vision"
-  - name: "🇹🇷_8"
+  - name: "🇹🇷_5"
     type: trojan
     server: "tr-1.stunnel.cc"
     port: 8441
@@ -157,7 +119,7 @@ proxies:
     sni: "tr-1.stunnel.cc"
     skip-cert-verify: true
     udp: true
-  - name: "🇹🇷_9"
+  - name: "🇹🇷_6"
     type: trojan
     server: "195.162.69.238"
     port: 9443
@@ -165,41 +127,13 @@ proxies:
     sni: "apple.com"
     skip-cert-verify: true
     udp: true
-  - name: "🇹🇷_10"
+  - name: "🇹🇷_7"
     type: trojan
     server: "193.124.46.134"
     port: 8441
     password: "tunnel-ljlcf"
     sni: "193.124.46.134"
     skip-cert-verify: true
-    udp: true
-  - name: "🇹🇷_11"
-    type: ss
-    server: "tr-1.stunnel.cc"
-    port: 8444
-    cipher: "chacha20-ietf-poly1305"
-    password: "tunnel-fbrof"
-    udp: true
-  - name: "🇹🇷_12"
-    type: ss
-    server: "193.124.46.134"
-    port: 8444
-    cipher: "chacha20-ietf-poly1305"
-    password: "tunnel-fbrof"
-    udp: true
-  - name: "🇹🇷_13"
-    type: ss
-    server: "185.123.101.64"
-    port: 2376
-    cipher: "aes-256-gcm"
-    password: "faBAoD54k87UJG7"
-    udp: true
-  - name: "🇹🇷_14"
-    type: ss
-    server: "tr-1.stunnel.cc"
-    port: 8444
-    cipher: "chacha20-ietf-poly1305"
-    password: "tunnel-fbrof"
     udp: true
 
 proxy-groups:
@@ -224,13 +158,6 @@ proxy-groups:
       - "🇹🇷_5"
       - "🇹🇷_6"
       - "🇹🇷_7"
-      - "🇹🇷_8"
-      - "🇹🇷_9"
-      - "🇹🇷_10"
-      - "🇹🇷_11"
-      - "🇹🇷_12"
-      - "🇹🇷_13"
-      - "🇹🇷_14"
 
 
   - name: "Load Balance"
@@ -246,13 +173,6 @@ proxy-groups:
       - "🇹🇷_5"
       - "🇹🇷_6"
       - "🇹🇷_7"
-      - "🇹🇷_8"
-      - "🇹🇷_9"
-      - "🇹🇷_10"
-      - "🇹🇷_11"
-      - "🇹🇷_12"
-      - "🇹🇷_13"
-      - "🇹🇷_14"
 
 rules:
   - MATCH,PROXY

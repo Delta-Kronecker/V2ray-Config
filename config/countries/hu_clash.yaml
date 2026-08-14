@@ -75,20 +75,6 @@ proxies:
       short-id: "f4b4a6365558ea2e"
     flow: "xtls-rprx-vision"
   - name: "🇭🇺_2"
-    type: vless
-    server: "141.11.202.123"
-    port: 443
-    uuid: "1d16c6e0-1bbe-435b-b661-90043fee999c"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "notls.lukongtou.eu.org"
-    network: ws
-    ws-opts:
-      path: "Telegram-WangCai2"
-      headers:
-        Host: "notls.lukongtou.eu.org"
-  - name: "🇭🇺_3"
     type: trojan
     server: "185.225.68.232"
     port: 443
@@ -119,7 +105,6 @@ proxy-groups:
     proxies:
       - "🇭🇺_1"
       - "🇭🇺_2"
-      - "🇭🇺_3"
 
 
   - name: "Load Balance"
@@ -130,7 +115,6 @@ proxy-groups:
     proxies:
       - "🇭🇺_1"
       - "🇭🇺_2"
-      - "🇭🇺_3"
 
 rules:
   - MATCH,PROXY
