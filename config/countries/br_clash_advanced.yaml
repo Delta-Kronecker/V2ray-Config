@@ -59,18 +59,31 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇨🇴_3"
+  - name: "🇧🇷_3"
     type: vless
-    server: "157.137.210.4"
-    port: 62145
-    uuid: "8fb65472-5957-4f64-ba2d-b5812b2f155a"
+    server: "185.133.35.10"
+    port: 443
+    uuid: "05000d14-abf6-45e0-b51a-16469cdea06a"
     udp: true
-  - name: "🇨🇴_4"
+    tls: true
+    skip-cert-verify: true
+    servername: "feijige.rujiao.icu"
+    network: ws
+    ws-opts:
+      path: "/?Telegram-WangCai2"
+      headers:
+        Host: "feijige.rujiao.icu"
+  - name: "🇧🇷_4"
     type: vless
-    server: "157.137.224.189"
-    port: 62145
-    uuid: "8fb65472-5957-4f64-ba2d-b5812b2f155a"
+    server: "45.194.53.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
     udp: true
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "vms.lifetime19.workers.dev"
 
 proxy-groups:
   # ── Top-level selector ────────────────────────────────────────────────────
@@ -113,8 +126,8 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇨🇴_3"
-      - "🇨🇴_4"
+      - "🇧🇷_3"
+      - "🇧🇷_4"
 
   - name: "LB-CDN"
     type: load-balance
@@ -124,8 +137,8 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇨🇴_3"
-      - "🇨🇴_4"
+      - "🇧🇷_3"
+      - "🇧🇷_4"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -135,8 +148,8 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇨🇴_3"
-      - "🇨🇴_4"
+      - "🇧🇷_3"
+      - "🇧🇷_4"
 
   - name: "FAST-CDN"
     type: url-test
@@ -145,8 +158,8 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇨🇴_3"
-      - "🇨🇴_4"
+      - "🇧🇷_3"
+      - "🇧🇷_4"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -156,15 +169,15 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇨🇴_3"
-      - "🇨🇴_4"
+      - "🇧🇷_3"
+      - "🇧🇷_4"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
-      - "🇨🇴_3"
-      - "🇨🇴_4"
+      - "🇧🇷_3"
+      - "🇧🇷_4"
 
 rules:
   - MATCH,PROXY-BEST

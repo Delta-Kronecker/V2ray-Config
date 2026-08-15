@@ -62,18 +62,19 @@ dns:
 proxies:
   - name: "🇱🇹_1"
     type: vless
-    server: "84.32.209.7"
+    server: "88.216.69.144"
     port: 443
-    uuid: "f1c496bf-d2ab-45be-bc13-051d60d227b7"
+    uuid: "50414e45-4c5f-5a45-5553-4d64f1370eeb"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "dartsearch-cn.net"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "00n9LplaZ0VGvRS57548s7xe0deFC10pw2fkFHFPplM"
-      short-id: ""
-    flow: "xtls-rprx-vision"
+    servername: "r5zenrelur2s.pqzdileiu8es.workers.dev"
+    client-fingerprint: "ios"
+    network: ws
+    ws-opts:
+      path: "/stream/PANEL_ZEUS/4d64f1370eeb/loc-0"
+      headers:
+        Host: "r5zenrelur2s.pqzdileiu8es.workers.dev"
   - name: "🇱🇹_2"
     type: vless
     server: "84.32.209.80"
@@ -89,6 +90,31 @@ proxies:
       short-id: ""
     flow: "xtls-rprx-vision"
   - name: "🇱🇹_3"
+    type: vless
+    server: "84.32.209.7"
+    port: 443
+    uuid: "f1c496bf-d2ab-45be-bc13-051d60d227b7"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "dartsearch-cn.net"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "00n9LplaZ0VGvRS57548s7xe0deFC10pw2fkFHFPplM"
+      short-id: ""
+    flow: "xtls-rprx-vision"
+  - name: "🇱🇹_4"
+    type: vless
+    server: "88.216.69.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vms.lifetime06.workers.dev"
+  - name: "🇱🇹_5"
     type: trojan
     server: "195.181.244.216"
     port: 443
@@ -120,6 +146,8 @@ proxy-groups:
       - "🇱🇹_1"
       - "🇱🇹_2"
       - "🇱🇹_3"
+      - "🇱🇹_4"
+      - "🇱🇹_5"
 
 
   - name: "Load Balance"
@@ -131,6 +159,8 @@ proxy-groups:
       - "🇱🇹_1"
       - "🇱🇹_2"
       - "🇱🇹_3"
+      - "🇱🇹_4"
+      - "🇱🇹_5"
 
 rules:
   - MATCH,PROXY

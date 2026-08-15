@@ -62,19 +62,56 @@ dns:
 proxies:
   - name: "🇦🇪_1"
     type: vless
-    server: "144.31.128.140"
-    port: 2083
-    uuid: "9ffabf5d-d8d6-4d0e-acab-3cbdd3457fc0"
+    server: "185.225.195.10"
+    port: 443
+    uuid: "05000d14-abf6-45e0-b51a-16469cdea06a"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "www.booking.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "a3_DLO6p_ZfPf7I0JFTVlAI2pPAPtC-ji2diyPcHcQA"
-      short-id: "b4"
-    flow: "xtls-rprx-vision"
+    servername: "feijige.rujiao.icu"
+    network: ws
+    ws-opts:
+      path: "/?Telegram-WangCai2"
+      headers:
+        Host: "feijige.rujiao.icu"
   - name: "🇦🇪_2"
+    type: vless
+    server: "94.140.0.100"
+    port: 443
+    uuid: "c9d1b8e6-f28a-419f-2581-97ad3258c320"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "withered-cake-d636.asfvgsrhtrzdbvcgfn.workers.dev"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/kbapqjwhbsjwoqjhskso"
+      headers:
+        Host: "withered-cake-d636.asfvgsrhtrzdbvcgfn.workers.dev"
+  - name: "🇦🇪_3"
+    type: vless
+    server: "77.232.140.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "vms.lifetime61.workers.dev"
+  - name: "🇦🇪_4"
+    type: vless
+    server: "185.225.195.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vms.lifetime18.workers.dev"
+  - name: "🇦🇪_5"
     type: vless
     server: "84.235.244.108"
     port: 22573
@@ -85,6 +122,28 @@ proxies:
       path: "/"
       headers:
         Host: "uae.unixzone.us"
+  - name: "🇦🇪_6"
+    type: vless
+    server: "77.232.140.40"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/?ed"
+      headers:
+        Host: "vms.lifetime61.workers.dev"
+  - name: "🇦🇪_7"
+    type: vless
+    server: "94.140.0.100"
+    port: 8880
+    uuid: "78e6619e-e82a-cd8d-b482-0973d8498305"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/sync"
+      headers:
+        Host: "silent-pine-a674.jfadwkglaugul.workers.dev"
 
 proxy-groups:
   - name: "PROXY"
@@ -103,6 +162,11 @@ proxy-groups:
     proxies:
       - "🇦🇪_1"
       - "🇦🇪_2"
+      - "🇦🇪_3"
+      - "🇦🇪_4"
+      - "🇦🇪_5"
+      - "🇦🇪_6"
+      - "🇦🇪_7"
 
 
   - name: "Load Balance"
@@ -113,6 +177,11 @@ proxy-groups:
     proxies:
       - "🇦🇪_1"
       - "🇦🇪_2"
+      - "🇦🇪_3"
+      - "🇦🇪_4"
+      - "🇦🇪_5"
+      - "🇦🇪_6"
+      - "🇦🇪_7"
 
 rules:
   - MATCH,PROXY
