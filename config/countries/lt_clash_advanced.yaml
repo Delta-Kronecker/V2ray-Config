@@ -59,7 +59,49 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇱🇹_6"
+  - name: "🇱🇹_11"
+    type: vless
+    server: "88.119.176.20"
+    port: 443
+    uuid: "27dcb3a9-c82d-4628-a8c4-bae39e6cb4f4"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "unas.denegnet.cc"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "RP93KQEzBP7wvvhwYy5c87IiQbV6xnsx7XgJpajevTA"
+      short-id: "bc599ecdd54c1b3f"
+    flow: "xtls-rprx-vision"
+  - name: "🇱🇹_12"
+    type: vless
+    server: "88.119.176.121"
+    port: 443
+    uuid: "27dcb3a9-c82d-4628-a8c4-bae39e6cb4f4"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "unas.denegnet.cc"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "RP93KQEzBP7wvvhwYy5c87IiQbV6xnsx7XgJpajevTA"
+      short-id: "bc599ecdd54c1b3f"
+    flow: "xtls-rprx-vision"
+  - name: "🇱🇹_13"
+    type: vless
+    server: "unas.denegnet.cc"
+    port: 443
+    uuid: "27dcb3a9-c82d-4628-a8c4-bae39e6cb4f4"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "unas.denegnet.cc"
+    client-fingerprint: "qq"
+    reality-opts:
+      public-key: "RP93KQEzBP7wvvhwYy5c87IiQbV6xnsx7XgJpajevTA"
+      short-id: "bc599ecdd54c1b3f"
+    flow: "xtls-rprx-vision"
+  - name: "🇱🇹_14"
     type: vless
     server: "88.216.69.144"
     port: 443
@@ -74,21 +116,35 @@ proxies:
       path: "/stream/PANEL_ZEUS/4d64f1370eeb/loc-0"
       headers:
         Host: "r5zenrelur2s.pqzdileiu8es.workers.dev"
-  - name: "🇱🇹_7"
+  - name: "🇱🇹_15"
     type: vless
-    server: "84.32.209.80"
+    server: "88.119.176.146"
     port: 443
-    uuid: "463a26c2-eba8-40ea-89c4-ee5c1373ccbe"
+    uuid: "27dcb3a9-c82d-4628-a8c4-bae39e6cb4f4"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "dltch.mostserv.xyz"
+    servername: "unas.denegnet.cc"
     client-fingerprint: "firefox"
     reality-opts:
-      public-key: "bIUHw7kqfyS6-6d7yYjzyXSlc4_CrLZqzdf3KBQfly8"
-      short-id: ""
+      public-key: "RP93KQEzBP7wvvhwYy5c87IiQbV6xnsx7XgJpajevTA"
+      short-id: "bc599ecdd54c1b3f"
     flow: "xtls-rprx-vision"
-  - name: "🇱🇹_8"
+  - name: "🇱🇹_16"
+    type: vless
+    server: "31.76.83.114"
+    port: 443
+    uuid: "423b1d79-08c4-403f-9d5e-c541f791b55f"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "baltic.cendora.ru"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "t_qv0VOfWhKZJV_giGC55-ipgHYWo44Yfvik_B8T8ik"
+      short-id: "4a46213c935e2ee4"
+    flow: "xtls-rprx-vision"
+  - name: "🇱🇹_17"
     type: vless
     server: "84.32.209.7"
     port: 443
@@ -102,7 +158,7 @@ proxies:
       public-key: "00n9LplaZ0VGvRS57548s7xe0deFC10pw2fkFHFPplM"
       short-id: ""
     flow: "xtls-rprx-vision"
-  - name: "🇱🇹_9"
+  - name: "🇱🇹_18"
     type: vless
     server: "88.216.69.30"
     port: 8880
@@ -113,7 +169,22 @@ proxies:
       path: "/"
       headers:
         Host: "vms.lifetime06.workers.dev"
-  - name: "🇱🇹_10"
+  - name: "🇱🇹_19"
+    type: vless
+    server: "185.237.185.182"
+    port: 2053
+    uuid: "c7e9c591-2764-423a-afca-efbd010fd396"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "forfreeuse.rtqa.ru"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "forfreeuse.rtqa.ru"
+  - name: "🇱🇹_20"
     type: trojan
     server: "195.181.244.216"
     port: 443
@@ -168,11 +239,16 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇱🇹_6"
-      - "🇱🇹_7"
-      - "🇱🇹_8"
-      - "🇱🇹_9"
-      - "🇱🇹_10"
+      - "🇱🇹_11"
+      - "🇱🇹_12"
+      - "🇱🇹_13"
+      - "🇱🇹_14"
+      - "🇱🇹_15"
+      - "🇱🇹_16"
+      - "🇱🇹_17"
+      - "🇱🇹_18"
+      - "🇱🇹_19"
+      - "🇱🇹_20"
 
   - name: "LB-CDN"
     type: load-balance
@@ -182,11 +258,16 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇱🇹_6"
-      - "🇱🇹_7"
-      - "🇱🇹_8"
-      - "🇱🇹_9"
-      - "🇱🇹_10"
+      - "🇱🇹_11"
+      - "🇱🇹_12"
+      - "🇱🇹_13"
+      - "🇱🇹_14"
+      - "🇱🇹_15"
+      - "🇱🇹_16"
+      - "🇱🇹_17"
+      - "🇱🇹_18"
+      - "🇱🇹_19"
+      - "🇱🇹_20"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -196,11 +277,16 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇱🇹_6"
-      - "🇱🇹_7"
-      - "🇱🇹_8"
-      - "🇱🇹_9"
-      - "🇱🇹_10"
+      - "🇱🇹_11"
+      - "🇱🇹_12"
+      - "🇱🇹_13"
+      - "🇱🇹_14"
+      - "🇱🇹_15"
+      - "🇱🇹_16"
+      - "🇱🇹_17"
+      - "🇱🇹_18"
+      - "🇱🇹_19"
+      - "🇱🇹_20"
 
   - name: "FAST-CDN"
     type: url-test
@@ -209,11 +295,16 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇱🇹_6"
-      - "🇱🇹_7"
-      - "🇱🇹_8"
-      - "🇱🇹_9"
-      - "🇱🇹_10"
+      - "🇱🇹_11"
+      - "🇱🇹_12"
+      - "🇱🇹_13"
+      - "🇱🇹_14"
+      - "🇱🇹_15"
+      - "🇱🇹_16"
+      - "🇱🇹_17"
+      - "🇱🇹_18"
+      - "🇱🇹_19"
+      - "🇱🇹_20"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -223,21 +314,31 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇱🇹_6"
-      - "🇱🇹_7"
-      - "🇱🇹_8"
-      - "🇱🇹_9"
-      - "🇱🇹_10"
+      - "🇱🇹_11"
+      - "🇱🇹_12"
+      - "🇱🇹_13"
+      - "🇱🇹_14"
+      - "🇱🇹_15"
+      - "🇱🇹_16"
+      - "🇱🇹_17"
+      - "🇱🇹_18"
+      - "🇱🇹_19"
+      - "🇱🇹_20"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
-      - "🇱🇹_6"
-      - "🇱🇹_7"
-      - "🇱🇹_8"
-      - "🇱🇹_9"
-      - "🇱🇹_10"
+      - "🇱🇹_11"
+      - "🇱🇹_12"
+      - "🇱🇹_13"
+      - "🇱🇹_14"
+      - "🇱🇹_15"
+      - "🇱🇹_16"
+      - "🇱🇹_17"
+      - "🇱🇹_18"
+      - "🇱🇹_19"
+      - "🇱🇹_20"
 
 rules:
   - MATCH,PROXY-BEST

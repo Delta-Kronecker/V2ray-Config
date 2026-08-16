@@ -59,21 +59,21 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇧🇷_3"
+  - name: "🇧🇷_6"
     type: vless
-    server: "185.133.35.10"
+    server: "200.165.225.174"
     port: 443
-    uuid: "05000d14-abf6-45e0-b51a-16469cdea06a"
+    uuid: "b6b92515-13c5-4e6e-9fea-8db2d44628a0"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "feijige.rujiao.icu"
-    network: ws
-    ws-opts:
-      path: "/?Telegram-WangCai2"
-      headers:
-        Host: "feijige.rujiao.icu"
-  - name: "🇧🇷_4"
+    servername: "veilix.ciphero.xyz"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "8qUm4S6MR9bLa-ZfblO64aKjRIwGEFEwdVIxgz_tbn4"
+      short-id: "33b5887524592cad"
+    flow: "xtls-rprx-vision"
+  - name: "🇧🇷_7"
     type: vless
     server: "45.194.53.30"
     port: 8880
@@ -84,6 +84,27 @@ proxies:
       path: "/?ed=2560"
       headers:
         Host: "vms.lifetime19.workers.dev"
+  - name: "🇧🇷_8"
+    type: ss
+    server: "163.176.56.46"
+    port: 59319
+    cipher: "2022-blake3-chacha20-poly1305"
+    password: "2f/hSnAF5GDhyve8brmwep/LzS1dKM8uaWRYsvIobFw="
+    udp: true
+  - name: "🇧🇷_9"
+    type: ss
+    server: "163.176.56.46"
+    port: 59319
+    cipher: "2022-blake3-chacha20-poly1305"
+    password: "2f/hSnAF5GDhyve8brmwep/LzS1dKM8uaWRYsvIobFw="
+    udp: true
+  - name: "🇧🇷_10"
+    type: ss
+    server: "163.176.56.46"
+    port: 59319
+    cipher: "2022-blake3-chacha20-poly1305"
+    password: "2f/hSnAF5GDhyve8brmwep/LzS1dKM8uaWRYsvIobFw="
+    udp: true
 
 proxy-groups:
   # ── Top-level selector ────────────────────────────────────────────────────
@@ -126,8 +147,11 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇧🇷_3"
-      - "🇧🇷_4"
+      - "🇧🇷_6"
+      - "🇧🇷_7"
+      - "🇧🇷_8"
+      - "🇧🇷_9"
+      - "🇧🇷_10"
 
   - name: "LB-CDN"
     type: load-balance
@@ -137,8 +161,11 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇧🇷_3"
-      - "🇧🇷_4"
+      - "🇧🇷_6"
+      - "🇧🇷_7"
+      - "🇧🇷_8"
+      - "🇧🇷_9"
+      - "🇧🇷_10"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -148,8 +175,11 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇧🇷_3"
-      - "🇧🇷_4"
+      - "🇧🇷_6"
+      - "🇧🇷_7"
+      - "🇧🇷_8"
+      - "🇧🇷_9"
+      - "🇧🇷_10"
 
   - name: "FAST-CDN"
     type: url-test
@@ -158,8 +188,11 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇧🇷_3"
-      - "🇧🇷_4"
+      - "🇧🇷_6"
+      - "🇧🇷_7"
+      - "🇧🇷_8"
+      - "🇧🇷_9"
+      - "🇧🇷_10"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -169,15 +202,21 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇧🇷_3"
-      - "🇧🇷_4"
+      - "🇧🇷_6"
+      - "🇧🇷_7"
+      - "🇧🇷_8"
+      - "🇧🇷_9"
+      - "🇧🇷_10"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
-      - "🇧🇷_3"
-      - "🇧🇷_4"
+      - "🇧🇷_6"
+      - "🇧🇷_7"
+      - "🇧🇷_8"
+      - "🇧🇷_9"
+      - "🇧🇷_10"
 
 rules:
   - MATCH,PROXY-BEST

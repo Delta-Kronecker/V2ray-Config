@@ -75,22 +75,21 @@ proxies:
     flow: "xtls-rprx-vision"
   - name: "🇨🇭_8"
     type: vless
-    server: "194.147.173.116"
+    server: "31.76.4.103"
     port: 443
-    uuid: "e911c552-3a98-41e0-b5fb-0dd3879887b7"
+    uuid: "423b1d79-08c4-403f-9d5e-c541f791b55f"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "vod.ensf.top"
+    servername: "eu-central.cendora.ru"
     client-fingerprint: "chrome"
-    network: ws
-    ws-opts:
-      path: "/api/v1/irc"
-      headers:
-        Host: "vod.ensf.top"
+    reality-opts:
+      public-key: "b-Cm9hX-3UHsS1L_lnUB6AMjuKhlN1IDdBbZ506itjI"
+      short-id: "00bca5982f82d083"
+    flow: "xtls-rprx-vision"
   - name: "🇨🇭_9"
     type: vless
-    server: "45.143.200.245"
+    server: "194.147.173.116"
     port: 443
     uuid: "e911c552-3a98-41e0-b5fb-0dd3879887b7"
     udp: true
@@ -118,7 +117,7 @@ proxies:
     flow: "xtls-rprx-vision"
   - name: "🇨🇭_11"
     type: vless
-    server: "140.238.208.210"
+    server: "45.143.200.245"
     port: 443
     uuid: "e911c552-3a98-41e0-b5fb-0dd3879887b7"
     udp: true
@@ -132,12 +131,20 @@ proxies:
       headers:
         Host: "vod.ensf.top"
   - name: "🇨🇭_12"
-    type: ss
-    server: "15.235.75.71"
-    port: 8388
-    cipher: "chacha20-ietf-poly1305"
-    password: "FD3rCuOsxOay"
+    type: vless
+    server: "140.238.208.210"
+    port: 443
+    uuid: "e911c552-3a98-41e0-b5fb-0dd3879887b7"
     udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "vod.ensf.top"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/api/v1/irc"
+      headers:
+        Host: "vod.ensf.top"
 
 proxy-groups:
   # ── Top-level selector ────────────────────────────────────────────────────
