@@ -59,21 +59,7 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇬🇷_4"
-    type: vless
-    server: "85.90.197.25"
-    port: 443
-    uuid: "670decfe-68cc-499e-8cb1-22b39c20acbb"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "grek.helper-internet.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "W-zf_ncm9sYALF5EqvUsxqTkYGdAw-tQczT2SqwVMGE"
-      short-id: "ff776ff77be48b88"
-    flow: "xtls-rprx-vision"
-  - name: "🇬🇷_5"
+  - name: "🇬🇷_3"
     type: vless
     server: "85.90.197.147"
     port: 443
@@ -87,19 +73,19 @@ proxies:
       public-key: "V2JprbR_aJkS7uX6anyU3nrswGxdvDQT2HpY4WnzuC8"
       short-id: "5629431325884ff0"
     flow: "xtls-rprx-vision"
-  - name: "🇬🇷_6"
+  - name: "🇬🇷_4"
     type: vless
-    server: "185.226.67.182"
+    server: "85.90.197.25"
     port: 443
-    uuid: "27dcb3a9-c82d-4628-a8c4-bae39e6cb4f4"
+    uuid: "670decfe-68cc-499e-8cb1-22b39c20acbb"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "depa.kupivodku.top"
+    servername: "grek.helper-internet.com"
     client-fingerprint: "firefox"
     reality-opts:
-      public-key: "JyGDRuOThmoCQ2pYD5VyPnFBKb25RqwqJ6-W-tNHBlY"
-      short-id: "0491f3e34348cb95"
+      public-key: "W-zf_ncm9sYALF5EqvUsxqTkYGdAw-tQczT2SqwVMGE"
+      short-id: "ff776ff77be48b88"
     flow: "xtls-rprx-vision"
 
 proxy-groups:
@@ -143,9 +129,8 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
+      - "🇬🇷_3"
       - "🇬🇷_4"
-      - "🇬🇷_5"
-      - "🇬🇷_6"
 
   - name: "LB-CDN"
     type: load-balance
@@ -155,9 +140,8 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
+      - "🇬🇷_3"
       - "🇬🇷_4"
-      - "🇬🇷_5"
-      - "🇬🇷_6"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -167,9 +151,8 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
+      - "🇬🇷_3"
       - "🇬🇷_4"
-      - "🇬🇷_5"
-      - "🇬🇷_6"
 
   - name: "FAST-CDN"
     type: url-test
@@ -178,9 +161,8 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
+      - "🇬🇷_3"
       - "🇬🇷_4"
-      - "🇬🇷_5"
-      - "🇬🇷_6"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -190,17 +172,15 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
+      - "🇬🇷_3"
       - "🇬🇷_4"
-      - "🇬🇷_5"
-      - "🇬🇷_6"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
+      - "🇬🇷_3"
       - "🇬🇷_4"
-      - "🇬🇷_5"
-      - "🇬🇷_6"
 
 rules:
   - MATCH,PROXY-BEST

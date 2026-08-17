@@ -76,6 +76,20 @@ proxies:
     flow: "xtls-rprx-vision"
   - name: "🇭🇺_2"
     type: vless
+    server: "91.219.236.202"
+    port: 2053
+    uuid: "c7e9c591-2764-423a-afca-efbd010fd396"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "forfreeuse.rtqa.ru"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "forfreeuse.rtqa.ru"
+  - name: "🇭🇺_3"
+    type: vless
     server: "141.11.202.123"
     port: 443
     uuid: "1d16c6e0-1bbe-435b-b661-90043fee999c"
@@ -88,7 +102,7 @@ proxies:
       path: "Telegram-WangCai2"
       headers:
         Host: "notls.lukongtou.eu.org"
-  - name: "🇭🇺_3"
+  - name: "🇭🇺_4"
     type: trojan
     server: "185.225.68.232"
     port: 443
@@ -120,6 +134,7 @@ proxy-groups:
       - "🇭🇺_1"
       - "🇭🇺_2"
       - "🇭🇺_3"
+      - "🇭🇺_4"
 
 
   - name: "Load Balance"
@@ -131,6 +146,7 @@ proxy-groups:
       - "🇭🇺_1"
       - "🇭🇺_2"
       - "🇭🇺_3"
+      - "🇭🇺_4"
 
 rules:
   - MATCH,PROXY

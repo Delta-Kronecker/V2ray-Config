@@ -59,41 +59,20 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
+  - name: "🇱🇻_12"
+    type: vless
+    server: "89.36.161.222"
+    port: 2083
+    uuid: "70e20b2e-3b1f-4c25-9a3d-9240570391bb"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "laoye.in-gect.fun"
+    client-fingerprint: "ios"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "grpc"
   - name: "🇱🇻_13"
-    type: vless
-    server: "195.123.210.168"
-    port: 443
-    uuid: "423b1d79-08c4-403f-9d5e-c541f791b55f"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "eu-west.cendora.ru"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "m6RDw1b8R4lCaRUIzhHpy6TtX2Dhk6nyby8dWzeQqA0"
-      short-id: "dd3ff38418d29d22"
-    flow: "xtls-rprx-vision"
-  - name: "🇱🇻_14"
-    type: vless
-    server: "85.159.228.250"
-    port: 25703
-    uuid: "7e5964d0-36b8-43ff-885b-86c4d3bfd466"
-    udp: true
-  - name: "🇱🇻_15"
-    type: vless
-    server: "185.28.47.111"
-    port: 443
-    uuid: "2cb6b4d9-0c74-45e2-a4fb-645bb8ac532a"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "lat.o4ka-internet.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "V2JprbR_aJkS7uX6anyU3nrswGxdvDQT2HpY4WnzuC8"
-      short-id: "5629431325884ff0"
-    flow: "xtls-rprx-vision"
-  - name: "🇱🇻_16"
     type: vless
     server: "89.36.161.222"
     port: 2096
@@ -104,7 +83,7 @@ proxies:
       path: "/"
       headers:
         Host: "laoye.in-gect.fun"
-  - name: "🇱🇻_17"
+  - name: "🇱🇻_14"
     type: vless
     server: "185.28.47.110"
     port: 443
@@ -118,34 +97,22 @@ proxies:
       public-key: "W-zf_ncm9sYALF5EqvUsxqTkYGdAw-tQczT2SqwVMGE"
       short-id: "ff776ff77be48b88"
     flow: "xtls-rprx-vision"
-  - name: "🇱🇻_18"
+  - name: "🇱🇻_15"
     type: vless
-    server: "195.123.208.92"
-    port: 13443
-    uuid: "fc1b3bda-b226-452a-8c5c-b0e36a1f8f88"
+    server: "194.8.6.33"
+    port: 443
+    uuid: "9b18ccef-b9e0-41d1-8990-9d970569e142"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "auto.cendora.ru"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "gc9oXe37KCCm3J1dJ03wdGsnxPBdeEkRPOvl_t-vfVM"
-      short-id: "a7f3c91b2e6d84c0"
-    flow: "xtls-rprx-vision"
-  - name: "🇱🇻_19"
-    type: vless
-    server: "89.36.161.222"
-    port: 2083
-    uuid: "70e20b2e-3b1f-4c25-9a3d-9240570391bb"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "laoye.in-gect.fun"
-    client-fingerprint: "ios"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "grpc"
-  - name: "🇱🇻_20"
+    servername: "web-socket.tgdaosheng.ggff.net"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/proxyip=bpb.yousef.isegaro.com"
+      headers:
+        Host: "web-socket.tgdaosheng.ggff.net"
+  - name: "🇱🇻_16"
     type: vless
     server: "91.197.3.43"
     port: 52463
@@ -158,7 +125,7 @@ proxies:
     reality-opts:
       public-key: "zOv4BhJVbINHdcULln0vQ_6sxKiGjJPj4uyMttX9pWo"
       short-id: "cdaed92e1d0c"
-  - name: "🇱🇻_21"
+  - name: "🇱🇻_17"
     type: vless
     server: "89.36.161.222"
     port: 2053
@@ -172,21 +139,51 @@ proxies:
       public-key: "cGVu5j95KoeHBkWXveyTKolORbdvZm9g1T6yyo64ZBg"
       short-id: "d26f4703cdd30f4e"
     flow: "xtls-rprx-vision"
-  - name: "🇱🇻_22"
+  - name: "🇱🇻_18"
     type: vless
-    server: "195.123.210.168"
-    port: 13443
+    server: "185.28.47.111"
+    port: 443
+    uuid: "2cb6b4d9-0c74-45e2-a4fb-645bb8ac532a"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "lat.o4ka-internet.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "V2JprbR_aJkS7uX6anyU3nrswGxdvDQT2HpY4WnzuC8"
+      short-id: "5629431325884ff0"
+    flow: "xtls-rprx-vision"
+  - name: "🇱🇻_19"
+    type: vless
+    server: "31.76.62.167"
+    port: 443
     uuid: "423b1d79-08c4-403f-9d5e-c541f791b55f"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "auto.cendora.ru"
+    servername: "eu-west.cendora.ru"
     client-fingerprint: "qq"
     reality-opts:
-      public-key: "gc9oXe37KCCm3J1dJ03wdGsnxPBdeEkRPOvl_t-vfVM"
-      short-id: "a7f3c91b2e6d84c0"
+      public-key: "m6RDw1b8R4lCaRUIzhHpy6TtX2Dhk6nyby8dWzeQqA0"
+      short-id: "dd3ff38418d29d22"
     flow: "xtls-rprx-vision"
-  - name: "🇱🇻_23"
+  - name: "🇱🇻_20"
+    type: vless
+    server: "31.170.22.176"
+    port: 7443
+    uuid: "dbacac09-9ee8-400c-b53b-745a769c220a"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "tv.apple.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "8XsSsJHS3-t2C497lP13JJNtknwSMWitJGYDvRJu3XE"
+      short-id: "b66233e398c50da0"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "grpc"
+  - name: "🇱🇻_21"
     type: trojan
     server: "84.21.172.81"
     port: 443
@@ -199,7 +196,7 @@ proxies:
       path: "/assignment"
       headers:
         Host: "www.calmlunch.com"
-  - name: "🇱🇻_24"
+  - name: "🇱🇻_22"
     type: trojan
     server: "31.57.61.76"
     port: 2053
@@ -249,6 +246,7 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
+      - "🇱🇻_12"
       - "🇱🇻_13"
       - "🇱🇻_14"
       - "🇱🇻_15"
@@ -259,8 +257,6 @@ proxy-groups:
       - "🇱🇻_20"
       - "🇱🇻_21"
       - "🇱🇻_22"
-      - "🇱🇻_23"
-      - "🇱🇻_24"
 
   - name: "LB-CDN"
     type: load-balance
@@ -270,6 +266,7 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
+      - "🇱🇻_12"
       - "🇱🇻_13"
       - "🇱🇻_14"
       - "🇱🇻_15"
@@ -280,8 +277,6 @@ proxy-groups:
       - "🇱🇻_20"
       - "🇱🇻_21"
       - "🇱🇻_22"
-      - "🇱🇻_23"
-      - "🇱🇻_24"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -291,6 +286,7 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
+      - "🇱🇻_12"
       - "🇱🇻_13"
       - "🇱🇻_14"
       - "🇱🇻_15"
@@ -301,8 +297,6 @@ proxy-groups:
       - "🇱🇻_20"
       - "🇱🇻_21"
       - "🇱🇻_22"
-      - "🇱🇻_23"
-      - "🇱🇻_24"
 
   - name: "FAST-CDN"
     type: url-test
@@ -311,6 +305,7 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
+      - "🇱🇻_12"
       - "🇱🇻_13"
       - "🇱🇻_14"
       - "🇱🇻_15"
@@ -321,8 +316,6 @@ proxy-groups:
       - "🇱🇻_20"
       - "🇱🇻_21"
       - "🇱🇻_22"
-      - "🇱🇻_23"
-      - "🇱🇻_24"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -332,6 +325,7 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
+      - "🇱🇻_12"
       - "🇱🇻_13"
       - "🇱🇻_14"
       - "🇱🇻_15"
@@ -342,13 +336,12 @@ proxy-groups:
       - "🇱🇻_20"
       - "🇱🇻_21"
       - "🇱🇻_22"
-      - "🇱🇻_23"
-      - "🇱🇻_24"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
+      - "🇱🇻_12"
       - "🇱🇻_13"
       - "🇱🇻_14"
       - "🇱🇻_15"
@@ -359,8 +352,6 @@ proxy-groups:
       - "🇱🇻_20"
       - "🇱🇻_21"
       - "🇱🇻_22"
-      - "🇱🇻_23"
-      - "🇱🇻_24"
 
 rules:
   - MATCH,PROXY-BEST

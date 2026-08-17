@@ -62,6 +62,30 @@ dns:
 proxies:
   - name: "🇧🇿_1"
     type: vless
+    server: "45.131.7.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vms.lifetime02.workers.dev"
+  - name: "🇧🇿_2"
+    type: vless
+    server: "45.131.209.31"
+    port: 443
+    uuid: "c5b518dc-698a-4c03-90aa-00681c97c9cd"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "cf-fal.qvzlwk.sbs"
+    client-fingerprint: "qq"
+    network: httpupgrade
+    httpupgrade-opts:
+      path: "/e30e6f49?ed=2560"
+  - name: "🇧🇿_3"
+    type: vless
     server: "45.131.6.30"
     port: 8880
     uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
@@ -71,7 +95,31 @@ proxies:
       path: "/"
       headers:
         Host: "vms.lifetime61.workers.dev"
-  - name: "🇧🇿_2"
+  - name: "🇧🇿_4"
+    type: vless
+    server: "cl3rg3t57mqruxgvfkxdyri2yn5qw6xlonprmdtoq73hzrfr4q3545goru6s7ss.mrm.tg-iranconnect67.apruxdomain.xyz"
+    port: 443
+    uuid: "c5b518dc-698a-4c03-90aa-00681c97c9cd"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "cf-fal.qvzlwk.sbs"
+    client-fingerprint: "chrome"
+    network: httpupgrade
+    httpupgrade-opts:
+      path: "/e30e6f49?ed=2560"
+  - name: "🇧🇿_5"
+    type: vless
+    server: "45.131.210.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vms.lifetime05.workers.dev"
+  - name: "🇧🇿_6"
     type: vless
     server: "45.131.211.30"
     port: 8880
@@ -82,29 +130,7 @@ proxies:
       path: "/?ed=2560"
       headers:
         Host: "vms.lifetime06.workers.dev"
-  - name: "🇧🇿_3"
-    type: vless
-    server: "45.131.209.30"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "vms.lifetime04.workers.dev"
-  - name: "🇧🇿_4"
-    type: vless
-    server: "45.131.7.30"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "vms.lifetime02.workers.dev"
-  - name: "🇧🇿_5"
+  - name: "🇧🇿_7"
     type: vless
     server: "45.131.6.123"
     port: 443
@@ -118,9 +144,9 @@ proxies:
       path: "Telegram-WangCai2"
       headers:
         Host: "notls.lukongtou.eu.org"
-  - name: "🇧🇿_6"
+  - name: "🇧🇿_8"
     type: vless
-    server: "45.131.210.30"
+    server: "45.131.209.30"
     port: 8880
     uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
     udp: true
@@ -128,7 +154,7 @@ proxies:
     ws-opts:
       path: "/"
       headers:
-        Host: "vms.lifetime05.workers.dev"
+        Host: "vms.lifetime04.workers.dev"
 
 proxy-groups:
   - name: "PROXY"
@@ -151,6 +177,8 @@ proxy-groups:
       - "🇧🇿_4"
       - "🇧🇿_5"
       - "🇧🇿_6"
+      - "🇧🇿_7"
+      - "🇧🇿_8"
 
 
   - name: "Load Balance"
@@ -165,6 +193,8 @@ proxy-groups:
       - "🇧🇿_4"
       - "🇧🇿_5"
       - "🇧🇿_6"
+      - "🇧🇿_7"
+      - "🇧🇿_8"
 
 rules:
   - MATCH,PROXY

@@ -62,20 +62,20 @@ dns:
 proxies:
   - name: "🇳🇴_1"
     type: vless
-    server: "54.240.174.87"
-    port: 443
-    uuid: "7ce54bb3-d612-4aa7-be08-089d3c461d53"
+    server: "46.29.238.139"
+    port: 40443
+    uuid: "8384341b-cd89-4a21-a022-cc4bd4e648ca"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "d1yxsk0zprgivr.cloudfront.net"
+    servername: "deepl.com"
     client-fingerprint: "firefox"
-    network: ws
-    ws-opts:
-      path: "/"
+    reality-opts:
+      public-key: "7i4Y7v80NVAIi_4_9roDkqcXmexIHli87dfZuFaQMUI"
+      short-id: "68da"
   - name: "🇳🇴_2"
     type: vless
-    server: "54.240.174.44"
+    server: "54.240.174.87"
     port: 443
     uuid: "7ce54bb3-d612-4aa7-be08-089d3c461d53"
     udp: true
@@ -88,7 +88,7 @@ proxies:
       path: "/"
   - name: "🇳🇴_3"
     type: vless
-    server: "54.240.174.77"
+    server: "54.240.174.40"
     port: 443
     uuid: "7ce54bb3-d612-4aa7-be08-089d3c461d53"
     udp: true
@@ -101,18 +101,17 @@ proxies:
       path: "/"
   - name: "🇳🇴_4"
     type: vless
-    server: "31.76.5.26"
+    server: "54.240.174.44"
     port: 443
-    uuid: "423b1d79-08c4-403f-9d5e-c541f791b55f"
+    uuid: "7ce54bb3-d612-4aa7-be08-089d3c461d53"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "nordic.cendora.ru"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "YQTixaXzPVImuRc4TUbrFAekjIiaYV-t5S-HTKlH0AU"
-      short-id: "2186a755ed67b034"
-    flow: "xtls-rprx-vision"
+    servername: "d1yxsk0zprgivr.cloudfront.net"
+    client-fingerprint: "firefox"
+    network: ws
+    ws-opts:
+      path: "/"
   - name: "🇳🇴_5"
     type: vless
     server: "31.76.5.26"
@@ -129,7 +128,21 @@ proxies:
     flow: "xtls-rprx-vision"
   - name: "🇳🇴_6"
     type: vless
-    server: "54.240.174.40"
+    server: "31.76.5.26"
+    port: 443
+    uuid: "423b1d79-08c4-403f-9d5e-c541f791b55f"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "nordic.cendora.ru"
+    client-fingerprint: "qq"
+    reality-opts:
+      public-key: "YQTixaXzPVImuRc4TUbrFAekjIiaYV-t5S-HTKlH0AU"
+      short-id: "2186a755ed67b034"
+    flow: "xtls-rprx-vision"
+  - name: "🇳🇴_7"
+    type: vless
+    server: "54.240.174.77"
     port: 443
     uuid: "7ce54bb3-d612-4aa7-be08-089d3c461d53"
     udp: true
@@ -140,14 +153,14 @@ proxies:
     network: ws
     ws-opts:
       path: "/"
-  - name: "🇳🇴_7"
+  - name: "🇳🇴_8"
     type: ss
     server: "185.213.23.63"
     port: 990
     cipher: "chacha20-ietf-poly1305"
     password: "ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44="
     udp: true
-  - name: "🇳🇴_8"
+  - name: "🇳🇴_9"
     type: ss
     server: "185.213.23.63"
     port: 990
@@ -178,6 +191,7 @@ proxy-groups:
       - "🇳🇴_6"
       - "🇳🇴_7"
       - "🇳🇴_8"
+      - "🇳🇴_9"
 
 
   - name: "Load Balance"
@@ -194,6 +208,7 @@ proxy-groups:
       - "🇳🇴_6"
       - "🇳🇴_7"
       - "🇳🇴_8"
+      - "🇳🇴_9"
 
 rules:
   - MATCH,PROXY

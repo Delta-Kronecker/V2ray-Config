@@ -59,35 +59,7 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇷🇴_7"
-    type: vless
-    server: "79.108.166.178"
-    port: 443
-    uuid: "423b1d79-08c4-403f-9d5e-c541f791b55f"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "eu-central.cendora.ru"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "b-Cm9hX-3UHsS1L_lnUB6AMjuKhlN1IDdBbZ506itjI"
-      short-id: "00bca5982f82d083"
-    flow: "xtls-rprx-vision"
   - name: "🇷🇴_8"
-    type: vless
-    server: "31.14.41.161"
-    port: 443
-    uuid: "27dcb3a9-c82d-4628-a8c4-bae39e6cb4f4"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "buhalvrome.denegnet.cc"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "BZHYuWJM1Bm6Cqi806nq_cbTmdvANv5-8AlA2ex4NUA"
-      short-id: "a88382ffbc59c48a"
-    flow: "xtls-rprx-vision"
-  - name: "🇷🇴_9"
     type: vless
     server: "178.214.211.36"
     port: 443
@@ -100,6 +72,20 @@ proxies:
     reality-opts:
       public-key: "V2JprbR_aJkS7uX6anyU3nrswGxdvDQT2HpY4WnzuC8"
       short-id: "5629431325884ff0"
+    flow: "xtls-rprx-vision"
+  - name: "🇷🇴_9"
+    type: vless
+    server: "80.96.112.250"
+    port: 443
+    uuid: "670decfe-68cc-499e-8cb1-22b39c20acbb"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "roman3.helper-internet.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "W-zf_ncm9sYALF5EqvUsxqTkYGdAw-tQczT2SqwVMGE"
+      short-id: "ff776ff77be48b88"
     flow: "xtls-rprx-vision"
   - name: "🇷🇴_10"
     type: vless
@@ -130,6 +116,27 @@ proxies:
       short-id: "a7f3c91b2e6d84c0"
     flow: "xtls-rprx-vision"
   - name: "🇷🇴_12"
+    type: vless
+    server: "79.108.166.178"
+    port: 443
+    uuid: "423b1d79-08c4-403f-9d5e-c541f791b55f"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "eu-central.cendora.ru"
+    client-fingerprint: "qq"
+    reality-opts:
+      public-key: "b-Cm9hX-3UHsS1L_lnUB6AMjuKhlN1IDdBbZ506itjI"
+      short-id: "00bca5982f82d083"
+    flow: "xtls-rprx-vision"
+  - name: "🇷🇴_13"
+    type: ss
+    server: "bogging-eyeteeth-fly.freesocks.work"
+    port: 443
+    cipher: "chacha20-ietf-poly1305"
+    password: "QFWzCw2uX9B9i6qAYeFBIE"
+    udp: true
+  - name: "🇷🇴_14"
     type: ss
     server: "154.46.31.106"
     port: 443
@@ -178,12 +185,13 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇷🇴_7"
       - "🇷🇴_8"
       - "🇷🇴_9"
       - "🇷🇴_10"
       - "🇷🇴_11"
       - "🇷🇴_12"
+      - "🇷🇴_13"
+      - "🇷🇴_14"
 
   - name: "LB-CDN"
     type: load-balance
@@ -193,12 +201,13 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇷🇴_7"
       - "🇷🇴_8"
       - "🇷🇴_9"
       - "🇷🇴_10"
       - "🇷🇴_11"
       - "🇷🇴_12"
+      - "🇷🇴_13"
+      - "🇷🇴_14"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -208,12 +217,13 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇷🇴_7"
       - "🇷🇴_8"
       - "🇷🇴_9"
       - "🇷🇴_10"
       - "🇷🇴_11"
       - "🇷🇴_12"
+      - "🇷🇴_13"
+      - "🇷🇴_14"
 
   - name: "FAST-CDN"
     type: url-test
@@ -222,12 +232,13 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇷🇴_7"
       - "🇷🇴_8"
       - "🇷🇴_9"
       - "🇷🇴_10"
       - "🇷🇴_11"
       - "🇷🇴_12"
+      - "🇷🇴_13"
+      - "🇷🇴_14"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -237,23 +248,25 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇷🇴_7"
       - "🇷🇴_8"
       - "🇷🇴_9"
       - "🇷🇴_10"
       - "🇷🇴_11"
       - "🇷🇴_12"
+      - "🇷🇴_13"
+      - "🇷🇴_14"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
-      - "🇷🇴_7"
       - "🇷🇴_8"
       - "🇷🇴_9"
       - "🇷🇴_10"
       - "🇷🇴_11"
       - "🇷🇴_12"
+      - "🇷🇴_13"
+      - "🇷🇴_14"
 
 rules:
   - MATCH,PROXY-BEST

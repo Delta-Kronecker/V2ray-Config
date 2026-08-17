@@ -59,7 +59,7 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇭🇺_4"
+  - name: "🇭🇺_5"
     type: vless
     server: "45.195.111.15"
     port: 443
@@ -73,7 +73,21 @@ proxies:
       public-key: "7zd9mJilgjOrg_ohtw23Vmio-pdnYqeP_r-kiWt87Cg"
       short-id: "f4b4a6365558ea2e"
     flow: "xtls-rprx-vision"
-  - name: "🇭🇺_5"
+  - name: "🇭🇺_6"
+    type: vless
+    server: "91.219.236.202"
+    port: 2053
+    uuid: "c7e9c591-2764-423a-afca-efbd010fd396"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "forfreeuse.rtqa.ru"
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "forfreeuse.rtqa.ru"
+  - name: "🇭🇺_7"
     type: vless
     server: "141.11.202.123"
     port: 443
@@ -87,7 +101,7 @@ proxies:
       path: "Telegram-WangCai2"
       headers:
         Host: "notls.lukongtou.eu.org"
-  - name: "🇭🇺_6"
+  - name: "🇭🇺_8"
     type: trojan
     server: "185.225.68.232"
     port: 443
@@ -142,9 +156,10 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇭🇺_4"
       - "🇭🇺_5"
       - "🇭🇺_6"
+      - "🇭🇺_7"
+      - "🇭🇺_8"
 
   - name: "LB-CDN"
     type: load-balance
@@ -154,9 +169,10 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇭🇺_4"
       - "🇭🇺_5"
       - "🇭🇺_6"
+      - "🇭🇺_7"
+      - "🇭🇺_8"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -166,9 +182,10 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇭🇺_4"
       - "🇭🇺_5"
       - "🇭🇺_6"
+      - "🇭🇺_7"
+      - "🇭🇺_8"
 
   - name: "FAST-CDN"
     type: url-test
@@ -177,9 +194,10 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇭🇺_4"
       - "🇭🇺_5"
       - "🇭🇺_6"
+      - "🇭🇺_7"
+      - "🇭🇺_8"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -189,17 +207,19 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇭🇺_4"
       - "🇭🇺_5"
       - "🇭🇺_6"
+      - "🇭🇺_7"
+      - "🇭🇺_8"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
-      - "🇭🇺_4"
       - "🇭🇺_5"
       - "🇭🇺_6"
+      - "🇭🇺_7"
+      - "🇭🇺_8"
 
 rules:
   - MATCH,PROXY-BEST

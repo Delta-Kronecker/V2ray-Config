@@ -59,29 +59,7 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇹🇭_6"
-    type: vless
-    server: "18.239.134.69"
-    port: 80
-    uuid: "de27291c-15a9-4256-9ba7-ad517569877e"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "d2e1v87ko56lyw.cloudfront.net:assets.opensignal.com"
-  - name: "🇹🇭_7"
-    type: vless
-    server: "154.83.2.50"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/?ed=2560"
-      headers:
-        Host: "vms.lifetime28.workers.dev"
-  - name: "🇹🇭_8"
+  - name: "🇹🇭_4"
     type: vless
     server: "154.83.2.30"
     port: 8880
@@ -92,20 +70,28 @@ proxies:
       path: "/"
       headers:
         Host: "vms.lifetime28.workers.dev"
-  - name: "🇹🇭_9"
-    type: ss
-    server: "102.129.229.85"
-    port: 31700
-    cipher: "chacha20-ietf-poly1305"
-    password: "d7zh2lMrXNH5+8+8pKzlxiCU9NN022ih+uAyxj5d4qo="
+  - name: "🇹🇭_5"
+    type: vless
+    server: "18.239.134.69"
+    port: 80
+    uuid: "de27291c-15a9-4256-9ba7-ad517569877e"
     udp: true
-  - name: "🇹🇭_10"
-    type: ss
-    server: "102.129.229.85"
-    port: 31700
-    cipher: "chacha20-ietf-poly1305"
-    password: "d7zh2lMrXNH5+8+8pKzlxiCU9NN022ih+uAyxj5d4qo="
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "d2e1v87ko56lyw.cloudfront.net:assets.opensignal.com"
+  - name: "🇹🇭_6"
+    type: vless
+    server: "154.83.2.50"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
     udp: true
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "vms.lifetime28.workers.dev"
 
 proxy-groups:
   # ── Top-level selector ────────────────────────────────────────────────────
@@ -148,11 +134,9 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
+      - "🇹🇭_4"
+      - "🇹🇭_5"
       - "🇹🇭_6"
-      - "🇹🇭_7"
-      - "🇹🇭_8"
-      - "🇹🇭_9"
-      - "🇹🇭_10"
 
   - name: "LB-CDN"
     type: load-balance
@@ -162,11 +146,9 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
+      - "🇹🇭_4"
+      - "🇹🇭_5"
       - "🇹🇭_6"
-      - "🇹🇭_7"
-      - "🇹🇭_8"
-      - "🇹🇭_9"
-      - "🇹🇭_10"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -176,11 +158,9 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
+      - "🇹🇭_4"
+      - "🇹🇭_5"
       - "🇹🇭_6"
-      - "🇹🇭_7"
-      - "🇹🇭_8"
-      - "🇹🇭_9"
-      - "🇹🇭_10"
 
   - name: "FAST-CDN"
     type: url-test
@@ -189,11 +169,9 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
+      - "🇹🇭_4"
+      - "🇹🇭_5"
       - "🇹🇭_6"
-      - "🇹🇭_7"
-      - "🇹🇭_8"
-      - "🇹🇭_9"
-      - "🇹🇭_10"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -203,21 +181,17 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
+      - "🇹🇭_4"
+      - "🇹🇭_5"
       - "🇹🇭_6"
-      - "🇹🇭_7"
-      - "🇹🇭_8"
-      - "🇹🇭_9"
-      - "🇹🇭_10"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
+      - "🇹🇭_4"
+      - "🇹🇭_5"
       - "🇹🇭_6"
-      - "🇹🇭_7"
-      - "🇹🇭_8"
-      - "🇹🇭_9"
-      - "🇹🇭_10"
 
 rules:
   - MATCH,PROXY-BEST

@@ -61,6 +61,12 @@ dns:
 proxies:
   - name: "🇨🇳_5"
     type: vless
+    server: "120.227.1.43"
+    port: 12528
+    uuid: "f0169b08-43fd-4dc3-8195-18f6ad2fe39d"
+    udp: true
+  - name: "🇨🇳_6"
+    type: vless
     server: "77.105.163.59"
     port: 443
     uuid: "7a657573-2b15-7da4-f946-ea01958fc999"
@@ -74,7 +80,7 @@ proxies:
       path: "/stream/PANEL_ZEUS/ea01958fc999/loc-0"
       headers:
         Host: "amz7goecubds.qiz56mebupbs.workers.dev"
-  - name: "🇨🇳_6"
+  - name: "🇨🇳_7"
     type: vless
     server: "176.124.223.30"
     port: 8880
@@ -85,27 +91,14 @@ proxies:
       path: "/"
       headers:
         Host: "vms.lifetime38.workers.dev"
-  - name: "🇨🇳_7"
-    type: vless
-    server: "120.227.1.43"
-    port: 12528
-    uuid: "f0169b08-43fd-4dc3-8195-18f6ad2fe39d"
-    udp: true
   - name: "🇨🇳_8"
-    type: vless
-    server: "77.105.163.59"
-    port: 8443
-    uuid: "7a657573-2b15-7da4-f946-ea01958fc999"
-    udp: true
-    tls: true
+    type: trojan
+    server: "117.149.198.190"
+    port: 10051
+    password: "a13820c547fa34c5c45515c12f0cd576"
+    sni: "zz6.91js.pw"
     skip-cert-verify: true
-    servername: "amz7goecubds.qiz56mebupbs.workers.dev"
-    client-fingerprint: "ios"
-    network: ws
-    ws-opts:
-      path: "/stream/PANEL_ZEUS/ea01958fc999/loc-0"
-      headers:
-        Host: "amz7goecubds.qiz56mebupbs.workers.dev"
+    udp: true
 
 proxy-groups:
   # ── Top-level selector ────────────────────────────────────────────────────

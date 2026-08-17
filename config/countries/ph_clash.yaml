@@ -67,6 +67,13 @@ proxies:
     cipher: "aes-256-gcm"
     password: "kDWvXYZoTBcGkC4"
     udp: true
+  - name: "🇵🇭_2"
+    type: ss
+    server: "38.54.80.160"
+    port: 16292
+    cipher: "chacha20-ietf-poly1305"
+    password: "r_NRe-+WRq2zVqMpCnJtTESlT8WyffHyFy"
+    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -84,6 +91,7 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇵🇭_1"
+      - "🇵🇭_2"
 
 
   - name: "Load Balance"
@@ -93,6 +101,7 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇵🇭_1"
+      - "🇵🇭_2"
 
 rules:
   - MATCH,PROXY

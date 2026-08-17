@@ -86,26 +86,27 @@ proxies:
       headers:
         Host: "vms.lifetime19.workers.dev"
   - name: "🇧🇷_3"
-    type: ss
-    server: "163.176.56.46"
-    port: 59319
-    cipher: "2022-blake3-chacha20-poly1305"
-    password: "2f/hSnAF5GDhyve8brmwep/LzS1dKM8uaWRYsvIobFw="
+    type: vless
+    server: "cave.magazinetut.online"
+    port: 443
+    uuid: "0000e293-996d-4c32-99dc-29a8aba80d06"
     udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "cave.magazinetut.online"
+    client-fingerprint: "chrome"
+    flow: "xtls-rprx-vision"
   - name: "🇧🇷_4"
-    type: ss
-    server: "163.176.56.46"
-    port: 59319
-    cipher: "2022-blake3-chacha20-poly1305"
-    password: "2f/hSnAF5GDhyve8brmwep/LzS1dKM8uaWRYsvIobFw="
+    type: vless
+    server: "cave.magazinetut.online"
+    port: 443
+    uuid: "a78d6a0b-8751-4e8e-bafa-79a86c5a5fc7"
     udp: true
-  - name: "🇧🇷_5"
-    type: ss
-    server: "163.176.56.46"
-    port: 59319
-    cipher: "2022-blake3-chacha20-poly1305"
-    password: "2f/hSnAF5GDhyve8brmwep/LzS1dKM8uaWRYsvIobFw="
-    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "cave.magazinetut.online"
+    client-fingerprint: "chrome"
+    flow: "xtls-rprx-vision"
 
 proxy-groups:
   - name: "PROXY"
@@ -126,7 +127,6 @@ proxy-groups:
       - "🇧🇷_2"
       - "🇧🇷_3"
       - "🇧🇷_4"
-      - "🇧🇷_5"
 
 
   - name: "Load Balance"
@@ -139,7 +139,6 @@ proxy-groups:
       - "🇧🇷_2"
       - "🇧🇷_3"
       - "🇧🇷_4"
-      - "🇧🇷_5"
 
 rules:
   - MATCH,PROXY
