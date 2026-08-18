@@ -62,30 +62,26 @@ dns:
 proxies:
   - name: "🇮🇷_1"
     type: vless
-    server: "185.143.234.238"
-    port: 2086
-    uuid: "1ee1f28d-4975-4d7c-95c7-76172c20eed5"
+    server: "45.131.4.192"
+    port: 80
+    uuid: "5f4845b4-11dc-41d6-9508-4ff6a02e36c1"
     udp: true
     network: ws
     ws-opts:
       path: "/"
       headers:
-        Host: "parsi.parsi.sbs"
+        Host: "silent-paper-fa57.fipiyag989.workers.dev"
   - name: "🇮🇷_2"
     type: vless
-    server: "87.236.38.139"
-    port: 2036
-    uuid: "440d1fb3-7a10-4569-82c2-71602cef26c7"
+    server: "45.131.4.115"
+    port: 80
+    uuid: "a7b22989-6c1f-4b59-b0f3-0605401813c4"
     udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "world.ashahan.ir"
-    client-fingerprint: "chrome"
     network: ws
     ws-opts:
-      path: "/"
+      path: "/eyJqdW5rIjoiQXoydFJwaWM0WSIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0="
       headers:
-        Host: "world.ashahan.ir"
+        Host: "worker3.gigak25604.workers.dev"
   - name: "🇮🇷_3"
     type: vless
     server: "45.131.4.30"
@@ -98,53 +94,6 @@ proxies:
       headers:
         Host: "vms.lifetime59.workers.dev"
   - name: "🇮🇷_4"
-    type: vless
-    server: "45.131.4.115"
-    port: 80
-    uuid: "a7b22989-6c1f-4b59-b0f3-0605401813c4"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/eyJqdW5rIjoiQXoydFJwaWM0WSIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0="
-      headers:
-        Host: "worker3.gigak25604.workers.dev"
-  - name: "🇮🇷_5"
-    type: vless
-    server: "45.131.4.192"
-    port: 80
-    uuid: "5f4845b4-11dc-41d6-9508-4ff6a02e36c1"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "silent-paper-fa57.fipiyag989.workers.dev"
-  - name: "🇮🇷_6"
-    type: vless
-    server: "185.143.233.238"
-    port: 2086
-    uuid: "1ee1f28d-4975-4d7c-95c7-76172c20eed5"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "parsi.parsi.sbs"
-  - name: "🇮🇷_7"
-    type: vless
-    server: "go.ashahan.ir"
-    port: 2036
-    uuid: "440d1fb3-7a10-4569-82c2-71602cef26c7"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "world.ashahan.ir"
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "world.ashahan.ir"
-  - name: "🇮🇷_8"
     type: trojan
     server: "193.151.134.182"
     port: 443
@@ -152,7 +101,7 @@ proxies:
     sni: "iprostable.enterprises"
     skip-cert-verify: true
     udp: true
-  - name: "🇮🇷_9"
+  - name: "🇮🇷_5"
     type: trojan
     server: "45.131.4.118"
     port: 443
@@ -163,49 +112,6 @@ proxies:
     network: ws
     ws-opts:
       path: "/sync"
-  - name: "🇮🇷_10"
-    type: trojan
-    server: "ir1.iobase.ir"
-    port: 443
-    password: "a6xjq4UD2t"
-    sni: "ir1.iobase.ir"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇮🇷_11"
-    type: ss
-    server: "185.188.107.10"
-    port: 443
-    cipher: "none"
-    password: "RSzEIkk2EsHEAVj15N5E/A=="
-    udp: true
-  - name: "🇮🇷_12"
-    type: ss
-    server: "185.188.104.10"
-    port: 443
-    cipher: "none"
-    password: "RSzEIkk2EsHEAVj15N5E/A=="
-    udp: true
-  - name: "🇮🇷_13"
-    type: ss
-    server: "185.188.107.10"
-    port: 443
-    cipher: "none"
-    password: "RSzEIkk2EsHEAVj15N5E/A=="
-    udp: true
-  - name: "🇮🇷_14"
-    type: ss
-    server: "185.188.104.10"
-    port: 443
-    cipher: "none"
-    password: "RSzEIkk2EsHEAVj15N5E/A=="
-    udp: true
-  - name: "🇮🇷_15"
-    type: ss
-    server: "82.38.31.57"
-    port: 443
-    cipher: "chacha20-ietf-poly1305"
-    password: "oZIoA69Q8yhcQV8ka3Pa3A"
-    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -227,16 +133,6 @@ proxy-groups:
       - "🇮🇷_3"
       - "🇮🇷_4"
       - "🇮🇷_5"
-      - "🇮🇷_6"
-      - "🇮🇷_7"
-      - "🇮🇷_8"
-      - "🇮🇷_9"
-      - "🇮🇷_10"
-      - "🇮🇷_11"
-      - "🇮🇷_12"
-      - "🇮🇷_13"
-      - "🇮🇷_14"
-      - "🇮🇷_15"
 
 
   - name: "Load Balance"
@@ -250,16 +146,6 @@ proxy-groups:
       - "🇮🇷_3"
       - "🇮🇷_4"
       - "🇮🇷_5"
-      - "🇮🇷_6"
-      - "🇮🇷_7"
-      - "🇮🇷_8"
-      - "🇮🇷_9"
-      - "🇮🇷_10"
-      - "🇮🇷_11"
-      - "🇮🇷_12"
-      - "🇮🇷_13"
-      - "🇮🇷_14"
-      - "🇮🇷_15"
 
 rules:
   - MATCH,PROXY

@@ -59,7 +59,29 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇨🇼_7"
+  - name: "🇨🇼_8"
+    type: vless
+    server: "88.216.67.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vms.lifetime05.workers.dev"
+  - name: "🇨🇼_9"
+    type: vless
+    server: "62.72.166.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vms.lifetime40.workers.dev"
+  - name: "🇨🇼_10"
     type: vless
     server: "92.60.74.123"
     port: 443
@@ -73,7 +95,7 @@ proxies:
       path: "Telegram-WangCai2"
       headers:
         Host: "notls.lukongtou.eu.org"
-  - name: "🇨🇼_8"
+  - name: "🇨🇼_11"
     type: vless
     server: "5.10.246.30"
     port: 8880
@@ -82,39 +104,6 @@ proxies:
     network: ws
     ws-opts:
       path: "/"
-      headers:
-        Host: "vms.lifetime05.workers.dev"
-  - name: "🇨🇼_9"
-    type: vless
-    server: "88.216.67.30"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "vms.lifetime05.workers.dev"
-  - name: "🇨🇼_10"
-    type: vless
-    server: "62.72.166.30"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "vms.lifetime40.workers.dev"
-  - name: "🇨🇼_11"
-    type: vless
-    server: "88.216.67.50"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/?ed=2560"
       headers:
         Host: "vms.lifetime05.workers.dev"
   - name: "🇨🇼_12"
@@ -128,6 +117,32 @@ proxies:
       path: "/"
       headers:
         Host: "vms.lifetime04.workers.dev"
+  - name: "🇨🇼_13"
+    type: vless
+    server: "88.216.67.50"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "vms.lifetime05.workers.dev"
+  - name: "🇨🇼_14"
+    type: vless
+    server: "88.216.67.7"
+    port: 8443
+    uuid: "7967bf59-57e3-4cde-9898-527b0fe60022"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "speed.dulacloud.store"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/dula?Telegram-WangCai2"
+      headers:
+        Host: "speed.dulacloud.store"
 
 proxy-groups:
   # ── Top-level selector ────────────────────────────────────────────────────
@@ -170,12 +185,13 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇨🇼_7"
       - "🇨🇼_8"
       - "🇨🇼_9"
       - "🇨🇼_10"
       - "🇨🇼_11"
       - "🇨🇼_12"
+      - "🇨🇼_13"
+      - "🇨🇼_14"
 
   - name: "LB-CDN"
     type: load-balance
@@ -185,12 +201,13 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇨🇼_7"
       - "🇨🇼_8"
       - "🇨🇼_9"
       - "🇨🇼_10"
       - "🇨🇼_11"
       - "🇨🇼_12"
+      - "🇨🇼_13"
+      - "🇨🇼_14"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -200,12 +217,13 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇨🇼_7"
       - "🇨🇼_8"
       - "🇨🇼_9"
       - "🇨🇼_10"
       - "🇨🇼_11"
       - "🇨🇼_12"
+      - "🇨🇼_13"
+      - "🇨🇼_14"
 
   - name: "FAST-CDN"
     type: url-test
@@ -214,12 +232,13 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇨🇼_7"
       - "🇨🇼_8"
       - "🇨🇼_9"
       - "🇨🇼_10"
       - "🇨🇼_11"
       - "🇨🇼_12"
+      - "🇨🇼_13"
+      - "🇨🇼_14"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -229,23 +248,25 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇨🇼_7"
       - "🇨🇼_8"
       - "🇨🇼_9"
       - "🇨🇼_10"
       - "🇨🇼_11"
       - "🇨🇼_12"
+      - "🇨🇼_13"
+      - "🇨🇼_14"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
-      - "🇨🇼_7"
       - "🇨🇼_8"
       - "🇨🇼_9"
       - "🇨🇼_10"
       - "🇨🇼_11"
       - "🇨🇼_12"
+      - "🇨🇼_13"
+      - "🇨🇼_14"
 
 rules:
   - MATCH,PROXY-BEST

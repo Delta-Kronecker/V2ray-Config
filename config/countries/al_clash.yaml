@@ -62,17 +62,17 @@ dns:
 proxies:
   - name: "🇦🇱_1"
     type: vless
-    server: "91.239.6.45"
+    server: "78.159.131.235"
     port: 443
-    uuid: "670decfe-68cc-499e-8cb1-22b39c20acbb"
+    uuid: "1f619326-cd93-4d6b-aebe-e0b5f8831d02"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "alban5.helper-internet.com"
+    servername: "yahoo.com"
     client-fingerprint: "firefox"
     reality-opts:
-      public-key: "W-zf_ncm9sYALF5EqvUsxqTkYGdAw-tQczT2SqwVMGE"
-      short-id: "ff776ff77be48b88"
+      public-key: "XZa7f7bABj7lY4HuLopVCBBBYTu-RB7QyIZ96njvYwo"
+      short-id: "7bcfc0bc"
     flow: "xtls-rprx-vision"
   - name: "🇦🇱_2"
     type: vless
@@ -102,13 +102,6 @@ proxies:
       public-key: "rCkSHJ7goy7ZvSlau4LfXF-QLloOJMNeMxpeeQtwtVs"
       short-id: "4fa44664f6a566d3"
     flow: "xtls-rprx-vision"
-  - name: "🇦🇱_4"
-    type: ss
-    server: "130.49.189.158"
-    port: 10792
-    cipher: "chacha20-ietf-poly1305"
-    password: "ccyfxXuwTj7yqCRJrGF1u0"
-    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -128,7 +121,6 @@ proxy-groups:
       - "🇦🇱_1"
       - "🇦🇱_2"
       - "🇦🇱_3"
-      - "🇦🇱_4"
 
 
   - name: "Load Balance"
@@ -140,7 +132,6 @@ proxy-groups:
       - "🇦🇱_1"
       - "🇦🇱_2"
       - "🇦🇱_3"
-      - "🇦🇱_4"
 
 rules:
   - MATCH,PROXY

@@ -62,11 +62,31 @@ dns:
 proxies:
   - name: "🇨🇳_1"
     type: vless
-    server: "120.227.1.43"
-    port: 12528
-    uuid: "f0169b08-43fd-4dc3-8195-18f6ad2fe39d"
+    server: "176.124.223.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
     udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vms.lifetime38.workers.dev"
   - name: "🇨🇳_2"
+    type: vless
+    server: "77.105.163.59"
+    port: 8443
+    uuid: "7a657573-2b15-7da4-f946-ea01958fc999"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "amz7goecubds.qiz56mebupbs.workers.dev"
+    client-fingerprint: "ios"
+    network: ws
+    ws-opts:
+      path: "/stream/PANEL_ZEUS/ea01958fc999/loc-0"
+      headers:
+        Host: "amz7goecubds.qiz56mebupbs.workers.dev"
+  - name: "🇨🇳_3"
     type: vless
     server: "77.105.163.59"
     port: 443
@@ -81,18 +101,17 @@ proxies:
       path: "/stream/PANEL_ZEUS/ea01958fc999/loc-0"
       headers:
         Host: "amz7goecubds.qiz56mebupbs.workers.dev"
-  - name: "🇨🇳_3"
-    type: vless
-    server: "176.124.223.30"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "vms.lifetime38.workers.dev"
   - name: "🇨🇳_4"
+    type: vless
+    server: "36.248.14.90"
+    port: 33102
+    uuid: "fb957ee2-2ca0-43f3-ab86-724a9ca0b628"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sgg.knhqf.com"
+    flow: "xtls-rprx-vision"
+  - name: "🇨🇳_5"
     type: trojan
     server: "117.149.198.190"
     port: 10051
@@ -120,6 +139,7 @@ proxy-groups:
       - "🇨🇳_2"
       - "🇨🇳_3"
       - "🇨🇳_4"
+      - "🇨🇳_5"
 
 
   - name: "Load Balance"
@@ -132,6 +152,7 @@ proxy-groups:
       - "🇨🇳_2"
       - "🇨🇳_3"
       - "🇨🇳_4"
+      - "🇨🇳_5"
 
 rules:
   - MATCH,PROXY

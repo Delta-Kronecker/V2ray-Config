@@ -62,30 +62,19 @@ dns:
 proxies:
   - name: "🇦🇹_1"
     type: vless
-    server: "212.183.88.30"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/?ed=2560"
-      headers:
-        Host: "vms.lifetime23.workers.dev"
-  - name: "🇦🇹_2"
-    type: vless
-    server: "152.53.114.186"
+    server: "31.76.69.40"
     port: 443
-    uuid: "ab7d5ea9-6eca-47c3-b14b-67378fc2d7c2"
+    uuid: "423b1d79-08c4-403f-9d5e-c541f791b55f"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "as.tunnelx.space"
-    client-fingerprint: "firefox"
+    servername: "eu-central.cendora.ru"
+    client-fingerprint: "qq"
     reality-opts:
-      public-key: "UO3EObgU3xUrhIGEE0gfCn5ZOz8YxNcwwW6ZaYzD3SA"
-      short-id: "4e9b0c2d1a3f5768"
+      public-key: "b-Cm9hX-3UHsS1L_lnUB6AMjuKhlN1IDdBbZ506itjI"
+      short-id: "00bca5982f82d083"
     flow: "xtls-rprx-vision"
-  - name: "🇦🇹_3"
+  - name: "🇦🇹_2"
     type: vless
     server: "31.76.69.40"
     port: 13443
@@ -99,20 +88,31 @@ proxies:
       public-key: "gc9oXe37KCCm3J1dJ03wdGsnxPBdeEkRPOvl_t-vfVM"
       short-id: "a7f3c91b2e6d84c0"
     flow: "xtls-rprx-vision"
-  - name: "🇦🇹_4"
+  - name: "🇦🇹_3"
     type: vless
-    server: "31.76.69.40"
+    server: "152.53.114.186"
     port: 443
-    uuid: "423b1d79-08c4-403f-9d5e-c541f791b55f"
+    uuid: "ab7d5ea9-6eca-47c3-b14b-67378fc2d7c2"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "eu-central.cendora.ru"
-    client-fingerprint: "qq"
+    servername: "as.tunnelx.space"
+    client-fingerprint: "firefox"
     reality-opts:
-      public-key: "b-Cm9hX-3UHsS1L_lnUB6AMjuKhlN1IDdBbZ506itjI"
-      short-id: "00bca5982f82d083"
+      public-key: "UO3EObgU3xUrhIGEE0gfCn5ZOz8YxNcwwW6ZaYzD3SA"
+      short-id: "4e9b0c2d1a3f5768"
     flow: "xtls-rprx-vision"
+  - name: "🇦🇹_4"
+    type: vless
+    server: "212.183.88.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "vms.lifetime23.workers.dev"
   - name: "🇦🇹_5"
     type: trojan
     server: "212.183.88.136"
@@ -126,32 +126,6 @@ proxies:
       path: "/assignment"
       headers:
         Host: "www.calmlunch.com"
-  - name: "🇦🇹_6"
-    type: ss
-    server: "130.195.222.215"
-    port: 443
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
-  - name: "🇦🇹_7"
-    type: ss
-    server: "130.195.222.215"
-    port: 443
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
 
 proxy-groups:
   - name: "PROXY"
@@ -173,8 +147,6 @@ proxy-groups:
       - "🇦🇹_3"
       - "🇦🇹_4"
       - "🇦🇹_5"
-      - "🇦🇹_6"
-      - "🇦🇹_7"
 
 
   - name: "Load Balance"
@@ -188,8 +160,6 @@ proxy-groups:
       - "🇦🇹_3"
       - "🇦🇹_4"
       - "🇦🇹_5"
-      - "🇦🇹_6"
-      - "🇦🇹_7"
 
 rules:
   - MATCH,PROXY

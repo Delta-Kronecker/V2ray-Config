@@ -62,13 +62,6 @@ dns:
 proxies:
   - name: "🇵🇭_1"
     type: ss
-    server: "149.104.109.252"
-    port: 8882
-    cipher: "aes-256-gcm"
-    password: "kDWvXYZoTBcGkC4"
-    udp: true
-  - name: "🇵🇭_2"
-    type: ss
     server: "38.54.80.160"
     port: 16292
     cipher: "chacha20-ietf-poly1305"
@@ -91,7 +84,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇵🇭_1"
-      - "🇵🇭_2"
 
 
   - name: "Load Balance"
@@ -101,7 +93,6 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇵🇭_1"
-      - "🇵🇭_2"
 
 rules:
   - MATCH,PROXY

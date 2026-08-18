@@ -59,46 +59,7 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇳🇴_10"
-    type: vless
-    server: "46.29.238.139"
-    port: 40443
-    uuid: "8384341b-cd89-4a21-a022-cc4bd4e648ca"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "deepl.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "7i4Y7v80NVAIi_4_9roDkqcXmexIHli87dfZuFaQMUI"
-      short-id: "68da"
-  - name: "🇳🇴_11"
-    type: vless
-    server: "54.240.174.87"
-    port: 443
-    uuid: "7ce54bb3-d612-4aa7-be08-089d3c461d53"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "d1yxsk0zprgivr.cloudfront.net"
-    client-fingerprint: "firefox"
-    network: ws
-    ws-opts:
-      path: "/"
-  - name: "🇳🇴_12"
-    type: vless
-    server: "54.240.174.40"
-    port: 443
-    uuid: "7ce54bb3-d612-4aa7-be08-089d3c461d53"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "d1yxsk0zprgivr.cloudfront.net"
-    client-fingerprint: "firefox"
-    network: ws
-    ws-opts:
-      path: "/"
-  - name: "🇳🇴_13"
+  - name: "🇳🇴_8"
     type: vless
     server: "54.240.174.44"
     port: 443
@@ -111,21 +72,7 @@ proxies:
     network: ws
     ws-opts:
       path: "/"
-  - name: "🇳🇴_14"
-    type: vless
-    server: "31.76.5.26"
-    port: 13443
-    uuid: "423b1d79-08c4-403f-9d5e-c541f791b55f"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "auto.cendora.ru"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "gc9oXe37KCCm3J1dJ03wdGsnxPBdeEkRPOvl_t-vfVM"
-      short-id: "a7f3c91b2e6d84c0"
-    flow: "xtls-rprx-vision"
-  - name: "🇳🇴_15"
+  - name: "🇳🇴_9"
     type: vless
     server: "31.76.5.26"
     port: 443
@@ -139,7 +86,7 @@ proxies:
       public-key: "YQTixaXzPVImuRc4TUbrFAekjIiaYV-t5S-HTKlH0AU"
       short-id: "2186a755ed67b034"
     flow: "xtls-rprx-vision"
-  - name: "🇳🇴_16"
+  - name: "🇳🇴_10"
     type: vless
     server: "54.240.174.77"
     port: 443
@@ -152,20 +99,59 @@ proxies:
     network: ws
     ws-opts:
       path: "/"
-  - name: "🇳🇴_17"
-    type: ss
-    server: "185.213.23.63"
-    port: 990
-    cipher: "chacha20-ietf-poly1305"
-    password: "ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44="
+  - name: "🇳🇴_11"
+    type: vless
+    server: "31.76.5.26"
+    port: 13443
+    uuid: "423b1d79-08c4-403f-9d5e-c541f791b55f"
     udp: true
-  - name: "🇳🇴_18"
-    type: ss
-    server: "185.213.23.63"
-    port: 990
-    cipher: "chacha20-ietf-poly1305"
-    password: "ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44="
+    tls: true
+    skip-cert-verify: true
+    servername: "auto.cendora.ru"
+    client-fingerprint: "qq"
+    reality-opts:
+      public-key: "gc9oXe37KCCm3J1dJ03wdGsnxPBdeEkRPOvl_t-vfVM"
+      short-id: "a7f3c91b2e6d84c0"
+    flow: "xtls-rprx-vision"
+  - name: "🇳🇴_12"
+    type: vless
+    server: "46.29.238.139"
+    port: 40443
+    uuid: "8384341b-cd89-4a21-a022-cc4bd4e648ca"
     udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "deepl.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "7i4Y7v80NVAIi_4_9roDkqcXmexIHli87dfZuFaQMUI"
+      short-id: "68da"
+  - name: "🇳🇴_13"
+    type: vless
+    server: "54.240.174.87"
+    port: 443
+    uuid: "7ce54bb3-d612-4aa7-be08-089d3c461d53"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "d1yxsk0zprgivr.cloudfront.net"
+    client-fingerprint: "firefox"
+    network: ws
+    ws-opts:
+      path: "/"
+  - name: "🇳🇴_14"
+    type: vless
+    server: "54.240.174.40"
+    port: 443
+    uuid: "7ce54bb3-d612-4aa7-be08-089d3c461d53"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "d1yxsk0zprgivr.cloudfront.net"
+    client-fingerprint: "firefox"
+    network: ws
+    ws-opts:
+      path: "/"
 
 proxy-groups:
   # ── Top-level selector ────────────────────────────────────────────────────
@@ -208,15 +194,13 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
+      - "🇳🇴_8"
+      - "🇳🇴_9"
       - "🇳🇴_10"
       - "🇳🇴_11"
       - "🇳🇴_12"
       - "🇳🇴_13"
       - "🇳🇴_14"
-      - "🇳🇴_15"
-      - "🇳🇴_16"
-      - "🇳🇴_17"
-      - "🇳🇴_18"
 
   - name: "LB-CDN"
     type: load-balance
@@ -226,15 +210,13 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
+      - "🇳🇴_8"
+      - "🇳🇴_9"
       - "🇳🇴_10"
       - "🇳🇴_11"
       - "🇳🇴_12"
       - "🇳🇴_13"
       - "🇳🇴_14"
-      - "🇳🇴_15"
-      - "🇳🇴_16"
-      - "🇳🇴_17"
-      - "🇳🇴_18"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -244,15 +226,13 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
+      - "🇳🇴_8"
+      - "🇳🇴_9"
       - "🇳🇴_10"
       - "🇳🇴_11"
       - "🇳🇴_12"
       - "🇳🇴_13"
       - "🇳🇴_14"
-      - "🇳🇴_15"
-      - "🇳🇴_16"
-      - "🇳🇴_17"
-      - "🇳🇴_18"
 
   - name: "FAST-CDN"
     type: url-test
@@ -261,15 +241,13 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
+      - "🇳🇴_8"
+      - "🇳🇴_9"
       - "🇳🇴_10"
       - "🇳🇴_11"
       - "🇳🇴_12"
       - "🇳🇴_13"
       - "🇳🇴_14"
-      - "🇳🇴_15"
-      - "🇳🇴_16"
-      - "🇳🇴_17"
-      - "🇳🇴_18"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -279,29 +257,25 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
+      - "🇳🇴_8"
+      - "🇳🇴_9"
       - "🇳🇴_10"
       - "🇳🇴_11"
       - "🇳🇴_12"
       - "🇳🇴_13"
       - "🇳🇴_14"
-      - "🇳🇴_15"
-      - "🇳🇴_16"
-      - "🇳🇴_17"
-      - "🇳🇴_18"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
+      - "🇳🇴_8"
+      - "🇳🇴_9"
       - "🇳🇴_10"
       - "🇳🇴_11"
       - "🇳🇴_12"
       - "🇳🇴_13"
       - "🇳🇴_14"
-      - "🇳🇴_15"
-      - "🇳🇴_16"
-      - "🇳🇴_17"
-      - "🇳🇴_18"
 
 rules:
   - MATCH,PROXY-BEST
