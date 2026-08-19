@@ -59,19 +59,19 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇰🇬_2"
+  - name: "🇲🇰_2"
     type: vless
-    server: "81.85.75.85"
+    server: "195.144.24.86"
     port: 443
-    uuid: "423b1d79-08c4-403f-9d5e-c541f791b55f"
+    uuid: "f202c7ca-17b7-416d-b3a2-ac71d35afe9c"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "baltic.cendora.ru"
-    client-fingerprint: "firefox"
+    servername: "mk.cdn-global.pro"
+    client-fingerprint: "edge"
     reality-opts:
-      public-key: "t_qv0VOfWhKZJV_giGC55-ipgHYWo44Yfvik_B8T8ik"
-      short-id: "4a46213c935e2ee4"
+      public-key: "BSPkA0yUFBZ7JS7rD69rLaTn_5QSAaPQZtO7HV_et30"
+      short-id: "b868b87c347a451e"
     flow: "xtls-rprx-vision"
 
 proxy-groups:
@@ -115,7 +115,7 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇰🇬_2"
+      - "🇲🇰_2"
 
   - name: "LB-CDN"
     type: load-balance
@@ -125,7 +125,7 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇰🇬_2"
+      - "🇲🇰_2"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -135,7 +135,7 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇰🇬_2"
+      - "🇲🇰_2"
 
   - name: "FAST-CDN"
     type: url-test
@@ -144,7 +144,7 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇰🇬_2"
+      - "🇲🇰_2"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -154,13 +154,13 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇰🇬_2"
+      - "🇲🇰_2"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
-      - "🇰🇬_2"
+      - "🇲🇰_2"
 
 rules:
   - MATCH,PROXY-BEST

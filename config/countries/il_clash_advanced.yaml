@@ -59,14 +59,20 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇲🇳_2"
-    type: trojan
-    server: "103.168.56.77"
-    port: 443
-    password: "4f2c305b-9a03-4493-b3e4-2dff2f1af8c9"
-    sni: "103.168.56.77"
-    skip-cert-verify: true
+  - name: "🇮🇱_2"
+    type: vless
+    server: "212.179.49.187"
+    port: 13443
+    uuid: "423b1d79-08c4-403f-9d5e-c541f791b55f"
     udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "auto.cendora.ru"
+    client-fingerprint: "qq"
+    reality-opts:
+      public-key: "gc9oXe37KCCm3J1dJ03wdGsnxPBdeEkRPOvl_t-vfVM"
+      short-id: "a7f3c91b2e6d84c0"
+    flow: "xtls-rprx-vision"
 
 proxy-groups:
   # ── Top-level selector ────────────────────────────────────────────────────
@@ -109,7 +115,7 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇲🇳_2"
+      - "🇮🇱_2"
 
   - name: "LB-CDN"
     type: load-balance
@@ -119,7 +125,7 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇲🇳_2"
+      - "🇮🇱_2"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -129,7 +135,7 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇲🇳_2"
+      - "🇮🇱_2"
 
   - name: "FAST-CDN"
     type: url-test
@@ -138,7 +144,7 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇲🇳_2"
+      - "🇮🇱_2"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -148,13 +154,13 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇲🇳_2"
+      - "🇮🇱_2"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
-      - "🇲🇳_2"
+      - "🇮🇱_2"
 
 rules:
   - MATCH,PROXY-BEST

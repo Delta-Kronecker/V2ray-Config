@@ -59,7 +59,21 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇩🇰_2"
+  - name: "🇩🇰_3"
+    type: vless
+    server: "46.29.235.9"
+    port: 443
+    uuid: "d67af820-f54c-48ab-862c-19086357f276"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "telegraf.lv"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "dhLgVSqPBDrdbhyTS2j60LWZDGEZh-smkcjUNSic-WI"
+      short-id: "a1b2c3d4"
+    flow: "xtls-rprx-vision"
+  - name: "🇩🇰_4"
     type: vless
     server: "144.31.242.1"
     port: 443
@@ -115,7 +129,8 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇩🇰_2"
+      - "🇩🇰_3"
+      - "🇩🇰_4"
 
   - name: "LB-CDN"
     type: load-balance
@@ -125,7 +140,8 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇩🇰_2"
+      - "🇩🇰_3"
+      - "🇩🇰_4"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -135,7 +151,8 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇩🇰_2"
+      - "🇩🇰_3"
+      - "🇩🇰_4"
 
   - name: "FAST-CDN"
     type: url-test
@@ -144,7 +161,8 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇩🇰_2"
+      - "🇩🇰_3"
+      - "🇩🇰_4"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -154,13 +172,15 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇩🇰_2"
+      - "🇩🇰_3"
+      - "🇩🇰_4"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
-      - "🇩🇰_2"
+      - "🇩🇰_3"
+      - "🇩🇰_4"
 
 rules:
   - MATCH,PROXY-BEST

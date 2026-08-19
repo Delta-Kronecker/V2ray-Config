@@ -59,22 +59,83 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇱🇹_8"
+  - name: "🇱🇹_9"
     type: vless
-    server: "88.216.69.30"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    server: "84.32.209.7"
+    port: 443
+    uuid: "f1c496bf-d2ab-45be-bc13-051d60d227b7"
     udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "dartsearch-cn.net"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "00n9LplaZ0VGvRS57548s7xe0deFC10pw2fkFHFPplM"
+      short-id: ""
+    flow: "xtls-rprx-vision"
+  - name: "🇱🇹_10"
+    type: vless
+    server: "31.76.83.114"
+    port: 443
+    uuid: "423b1d79-08c4-403f-9d5e-c541f791b55f"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "baltic.cendora.ru"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "t_qv0VOfWhKZJV_giGC55-ipgHYWo44Yfvik_B8T8ik"
+      short-id: "4a46213c935e2ee4"
+    flow: "xtls-rprx-vision"
+  - name: "🇱🇹_11"
+    type: vless
+    server: "185.237.185.182"
+    port: 2053
+    uuid: "c7e9c591-2764-423a-afca-efbd010fd396"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "forfreeuse.rtqa.ru"
+    client-fingerprint: "chrome"
     network: ws
     ws-opts:
       path: "/"
       headers:
-        Host: "vms.lifetime06.workers.dev"
-  - name: "🇱🇹_9"
+        Host: "forfreeuse.rtqa.ru"
+  - name: "🇱🇹_12"
     type: vless
-    server: "46.166.167.4"
+    server: "88.216.69.144"
     port: 443
-    uuid: "27b16a66-95e0-4c20-b00b-5dff91d9c9f5"
+    uuid: "50414e45-4c5f-5a45-5553-4d64f1370eeb"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "r5zenrelur2s.pqzdileiu8es.workers.dev"
+    client-fingerprint: "ios"
+    network: ws
+    ws-opts:
+      path: "/stream/PANEL_ZEUS/4d64f1370eeb/loc-0"
+      headers:
+        Host: "r5zenrelur2s.pqzdileiu8es.workers.dev"
+  - name: "🇱🇹_13"
+    type: vless
+    server: "144.31.243.148"
+    port: 443
+    uuid: "9e1d737e-f3c1-4757-84b2-3dcf66a468ed"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "dl.google.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "3wa3ZmMniymkL-58bPtY7baWPxdJ6n2UaJMG7YiLiGo"
+      short-id: ""
+    flow: "xtls-rprx-vision"
+  - name: "🇱🇹_14"
+    type: vless
+    server: "84.32.151.222"
+    port: 443
+    uuid: "2642342c-fa52-4f62-b44d-fb77de8f75e3"
     udp: true
     tls: true
     skip-cert-verify: true
@@ -82,11 +143,11 @@ proxies:
     client-fingerprint: "firefox"
     reality-opts:
       public-key: "C6nh6hqFTbtizgSH8vGmw2XUxsQAbAW3jPylpgGvfl4"
-      short-id: "8b6f2e4d7c1a5b9f"
+      short-id: "7c4b9a2e8d5f3c1b"
     network: grpc
     grpc-opts:
       grpc-service-name: "moktana.net.v1.StreamService"
-  - name: "🇱🇹_10"
+  - name: "🇱🇹_15"
     type: vless
     server: "84.32.151.222"
     port: 443
@@ -102,50 +163,7 @@ proxies:
     network: grpc
     grpc-opts:
       grpc-service-name: "moktana.net.v1.StreamService"
-  - name: "🇱🇹_11"
-    type: vless
-    server: "31.76.83.114"
-    port: 443
-    uuid: "423b1d79-08c4-403f-9d5e-c541f791b55f"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "baltic.cendora.ru"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "t_qv0VOfWhKZJV_giGC55-ipgHYWo44Yfvik_B8T8ik"
-      short-id: "4a46213c935e2ee4"
-    flow: "xtls-rprx-vision"
-  - name: "🇱🇹_12"
-    type: vless
-    server: "84.32.209.7"
-    port: 443
-    uuid: "f1c496bf-d2ab-45be-bc13-051d60d227b7"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "dartsearch-cn.net"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "00n9LplaZ0VGvRS57548s7xe0deFC10pw2fkFHFPplM"
-      short-id: ""
-    flow: "xtls-rprx-vision"
-  - name: "🇱🇹_13"
-    type: vless
-    server: "88.216.69.144"
-    port: 443
-    uuid: "50414e45-4c5f-5a45-5553-4d64f1370eeb"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "r5zenrelur2s.pqzdileiu8es.workers.dev"
-    client-fingerprint: "ios"
-    network: ws
-    ws-opts:
-      path: "/stream/PANEL_ZEUS/4d64f1370eeb/loc-0"
-      headers:
-        Host: "r5zenrelur2s.pqzdileiu8es.workers.dev"
-  - name: "🇱🇹_14"
+  - name: "🇱🇹_16"
     type: trojan
     server: "195.181.244.216"
     port: 443
@@ -200,13 +218,14 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇱🇹_8"
       - "🇱🇹_9"
       - "🇱🇹_10"
       - "🇱🇹_11"
       - "🇱🇹_12"
       - "🇱🇹_13"
       - "🇱🇹_14"
+      - "🇱🇹_15"
+      - "🇱🇹_16"
 
   - name: "LB-CDN"
     type: load-balance
@@ -216,13 +235,14 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇱🇹_8"
       - "🇱🇹_9"
       - "🇱🇹_10"
       - "🇱🇹_11"
       - "🇱🇹_12"
       - "🇱🇹_13"
       - "🇱🇹_14"
+      - "🇱🇹_15"
+      - "🇱🇹_16"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -232,13 +252,14 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇱🇹_8"
       - "🇱🇹_9"
       - "🇱🇹_10"
       - "🇱🇹_11"
       - "🇱🇹_12"
       - "🇱🇹_13"
       - "🇱🇹_14"
+      - "🇱🇹_15"
+      - "🇱🇹_16"
 
   - name: "FAST-CDN"
     type: url-test
@@ -247,13 +268,14 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇱🇹_8"
       - "🇱🇹_9"
       - "🇱🇹_10"
       - "🇱🇹_11"
       - "🇱🇹_12"
       - "🇱🇹_13"
       - "🇱🇹_14"
+      - "🇱🇹_15"
+      - "🇱🇹_16"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -263,25 +285,27 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇱🇹_8"
       - "🇱🇹_9"
       - "🇱🇹_10"
       - "🇱🇹_11"
       - "🇱🇹_12"
       - "🇱🇹_13"
       - "🇱🇹_14"
+      - "🇱🇹_15"
+      - "🇱🇹_16"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
-      - "🇱🇹_8"
       - "🇱🇹_9"
       - "🇱🇹_10"
       - "🇱🇹_11"
       - "🇱🇹_12"
       - "🇱🇹_13"
       - "🇱🇹_14"
+      - "🇱🇹_15"
+      - "🇱🇹_16"
 
 rules:
   - MATCH,PROXY-BEST

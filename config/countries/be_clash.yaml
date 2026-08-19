@@ -61,6 +61,33 @@ dns:
 
 proxies:
   - name: "🇧🇪_1"
+    type: vless
+    server: "be2.wba-pn.ru"
+    port: 443
+    uuid: "08f84d53-e262-459c-a15a-26213e7a07c9"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "be2.wba-pn.ru"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/"
+  - name: "🇧🇪_2"
+    type: vless
+    server: "79.127.224.183"
+    port: 443
+    uuid: "4b7a69d9-74cd-4ab2-bfb3-1d2093e8179f"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.bing.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "rwR7H9XhX1w-LjcPCZiDnzV_sUUyJRSJvGYhIYHmS3E"
+      short-id: "28bf2d7deea465ff"
+    flow: "xtls-rprx-vision"
+  - name: "🇧🇪_3"
     type: trojan
     server: "94.126.225.96"
     port: 443
@@ -85,6 +112,8 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇧🇪_1"
+      - "🇧🇪_2"
+      - "🇧🇪_3"
 
 
   - name: "Load Balance"
@@ -94,6 +123,8 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇧🇪_1"
+      - "🇧🇪_2"
+      - "🇧🇪_3"
 
 rules:
   - MATCH,PROXY

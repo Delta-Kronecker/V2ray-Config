@@ -1,0 +1,359 @@
+name: "Standard"
+mixed-port: 7890
+socks-port: 7891
+port: 7892
+allow-lan: true
+bind-address: '*'
+mode: global
+log-level: info
+ipv6: false
+external-controller: 127.0.0.1:9090
+external-ui: ui
+secret: ""
+unified-delay: true
+tcp-concurrent: true
+global-client-fingerprint: chrome
+find-process-mode: strict
+keep-alive-interval: 15
+
+fragment:
+  enable: true
+  size: "5-40"
+  sleep: "1-2"
+
+ttl: 5
+
+profile:
+  store-selected: true
+  store-fake-ip: false
+
+dns:
+  enable: true
+  ipv6: false
+  listen: 0.0.0.0:5353
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+    - '*.local'
+    - '*.lan'
+    - '*.localhost'
+    - '+.stun.*.*'
+    - '+.stun.*.*.*'
+    - 'time.*'
+    - 'time.*.com'
+    - 'connectivitycheck.gstatic.com'
+    - 'detectportal.firefox.com'
+    - 'captive.apple.com'
+    - 'www.msftncsi.com'
+    - 'cp.cloudflare.com'
+  default-nameserver:
+    - 1.1.1.1
+    - 8.8.8.8
+  nameserver:
+    - 1.1.1.1
+    - 1.0.0.1
+    - 8.8.8.8
+    - 8.8.4.4
+    - 9.9.9.9
+    - 149.112.112.112
+    - 208.67.222.222
+    - 208.67.220.220
+
+proxies:
+  - name: "🇬🇪_1"
+    type: vless
+    server: "russia.cloudpath.live"
+    port: 443
+    uuid: "b8783764-ad60-58bb-b2c9-349bfd373a72"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ads.x5.ru"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "FfcdBaTRPP5DDUiPmDRFOOghIw8h6-i9j_QyHQI3FUw"
+      short-id: "acc4dfcc"
+  - name: "🇬🇪_2"
+    type: vless
+    server: "uae.cloudpath.live"
+    port: 443
+    uuid: "b8783764-ad60-58bb-b2c9-349bfd373a72"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "microsoft.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "Sl6rz_F3tpxLqrahwUmETO79-BRkinyGzbp8GHE9jRk"
+      short-id: "803fa830"
+  - name: "🇬🇪_3"
+    type: vless
+    server: "switzerland.cloudpath.live"
+    port: 443
+    uuid: "b8783764-ad60-58bb-b2c9-349bfd373a72"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "microsoft.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "2BeyGQY-FGdPnNg9TwiQVAdAJivvkjEVb1qD_w8jCWs"
+      short-id: "e3c70a75"
+  - name: "🇬🇪_4"
+    type: vless
+    server: "ireland-new.cloudpath.live"
+    port: 443
+    uuid: "b8783764-ad60-58bb-b2c9-349bfd373a72"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "microsoft.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "odKePmfZFrZBXOKa4WN5pgbpLXF8J8PcQfb_v7N4Eyk"
+      short-id: "bb73233a"
+  - name: "🇬🇪_5"
+    type: vless
+    server: "nigeria.cloudpath.live"
+    port: 443
+    uuid: "b8783764-ad60-58bb-b2c9-349bfd373a72"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "microsoft.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "3G3tTbdRlEpLxnoYWbsgjg4r28-9wuIs66S4Xlf-lVM"
+      short-id: "46f679e8"
+  - name: "🇬🇪_6"
+    type: vless
+    server: "moldova.cloudpath.live"
+    port: 443
+    uuid: "b8783764-ad60-58bb-b2c9-349bfd373a72"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "microsoft.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "MkbY4kBZoLRigySb8Fanu2UdBGWmOSSXN8FcK6TATGw"
+      short-id: "421da338"
+  - name: "🇬🇪_7"
+    type: vless
+    server: "lithuania.cloudpath.live"
+    port: 443
+    uuid: "b8783764-ad60-58bb-b2c9-349bfd373a72"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "microsoft.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "PV6ot65xvrxlpsyZNF4I5s93OgDuxq3BXTjSKGjC4DQ"
+      short-id: "858166d8"
+  - name: "🇬🇪_8"
+    type: vless
+    server: "canada.cloudpath.live"
+    port: 443
+    uuid: "b8783764-ad60-58bb-b2c9-349bfd373a72"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "microsoft.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "w-Ol-9Ec9de1IDPNZCTS4NHB8uAhZz6ekjvL6oo2KFY"
+      short-id: "258e22e3"
+  - name: "🇬🇪_9"
+    type: vless
+    server: "japan.cloudpath.live"
+    port: 443
+    uuid: "b8783764-ad60-58bb-b2c9-349bfd373a72"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "microsoft.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "MAAoTRffKNpsyM8sYwOA7o_DtVyTCRYeBr9VcfxHaVE"
+      short-id: "095fdbd3"
+  - name: "🇬🇪_10"
+    type: vless
+    server: "portugal.cloudpath.live"
+    port: 443
+    uuid: "b8783764-ad60-58bb-b2c9-349bfd373a72"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "microsoft.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "ypuuTzPXRNn_eQnp8EY-1G7WB5X8XojivIdyN_bQTik"
+      short-id: "a2bc06f6"
+  - name: "🇬🇪_11"
+    type: vless
+    server: "serbia.cloudpath.live"
+    port: 443
+    uuid: "b8783764-ad60-58bb-b2c9-349bfd373a72"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "microsoft.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "ygeT98-hHpF0w9W1ezNSfRCBYw-oGRGAXA4CABDxcD4"
+      short-id: "307e079b"
+  - name: "🇬🇪_12"
+    type: vless
+    server: "argentina.cloudpath.live"
+    port: 443
+    uuid: "b8783764-ad60-58bb-b2c9-349bfd373a72"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "microsoft.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "wLLPLZLV4nYOG_yvjxIrZ2pztDjaJq5pzD81d24wgzY"
+      short-id: "def057f5"
+  - name: "🇬🇪_13"
+    type: vless
+    server: "czech-republic.cloudpath.live"
+    port: 443
+    uuid: "b8783764-ad60-58bb-b2c9-349bfd373a72"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "microsoft.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "0Kx5zQU_87SwVMBnidAFGHceqKAApqrgVL8NCB3Rtlw"
+      short-id: "229d7f58"
+  - name: "🇬🇪_14"
+    type: vless
+    server: "albania.cloudpath.live"
+    port: 443
+    uuid: "b8783764-ad60-58bb-b2c9-349bfd373a72"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "microsoft.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "Icoy9hpLcMz5dX3hrWqcyFskbiO3NT6ovb1E98HRuQk"
+      short-id: "0f33569b"
+  - name: "🇬🇪_15"
+    type: vless
+    server: "greece-new.cloudpath.live"
+    port: 443
+    uuid: "b8783764-ad60-58bb-b2c9-349bfd373a72"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "microsoft.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "IZBTRZIw_N3hBMqNvgP5cUnuEJ1dQ_rKA0BaTmgYWnc"
+      short-id: "e7e8b4be"
+  - name: "🇬🇪_16"
+    type: vless
+    server: "ukraine.cloudpath.live"
+    port: 443
+    uuid: "b8783764-ad60-58bb-b2c9-349bfd373a72"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "microsoft.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "7denN0_D66wlaJI9xFxSqsDvIBicttOyIGSNelMWbWY"
+      short-id: "636129bf"
+  - name: "🇬🇪_17"
+    type: vless
+    server: "singapore.cloudpath.live"
+    port: 443
+    uuid: "b8783764-ad60-58bb-b2c9-349bfd373a72"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "microsoft.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "Sa8PZ-InhoxXbkMzqKmTcmqRkDSYBa-i8MyUTfojAgc"
+      short-id: "e7117308"
+  - name: "🇬🇪_18"
+    type: vless
+    server: "turkey.cloudpath.live"
+    port: 443
+    uuid: "b8783764-ad60-58bb-b2c9-349bfd373a72"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "microsoft.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "XimszdLdXWYSfODURsloKP6Lbd2s_N-eGaEZwwK3ggw"
+      short-id: "dcf3a20a"
+
+proxy-groups:
+  - name: "PROXY"
+    type: select
+    proxies:
+      - "Auto"
+      - "Load Balance"
+
+      
+  - name: "Auto"
+    type: url-test
+    url: https://www.gstatic.com/generate_204
+    interval: 180
+    tolerance: 30
+    lazy: true
+    proxies:
+      - "🇬🇪_1"
+      - "🇬🇪_2"
+      - "🇬🇪_3"
+      - "🇬🇪_4"
+      - "🇬🇪_5"
+      - "🇬🇪_6"
+      - "🇬🇪_7"
+      - "🇬🇪_8"
+      - "🇬🇪_9"
+      - "🇬🇪_10"
+      - "🇬🇪_11"
+      - "🇬🇪_12"
+      - "🇬🇪_13"
+      - "🇬🇪_14"
+      - "🇬🇪_15"
+      - "🇬🇪_16"
+      - "🇬🇪_17"
+      - "🇬🇪_18"
+
+
+  - name: "Load Balance"
+    type: load-balance
+    strategy: round-robin
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+    proxies:
+      - "🇬🇪_1"
+      - "🇬🇪_2"
+      - "🇬🇪_3"
+      - "🇬🇪_4"
+      - "🇬🇪_5"
+      - "🇬🇪_6"
+      - "🇬🇪_7"
+      - "🇬🇪_8"
+      - "🇬🇪_9"
+      - "🇬🇪_10"
+      - "🇬🇪_11"
+      - "🇬🇪_12"
+      - "🇬🇪_13"
+      - "🇬🇪_14"
+      - "🇬🇪_15"
+      - "🇬🇪_16"
+      - "🇬🇪_17"
+      - "🇬🇪_18"
+
+rules:
+  - MATCH,PROXY

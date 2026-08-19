@@ -59,7 +59,22 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇦🇱_4"
+  - name: "🇦🇱_7"
+    type: vless
+    server: "nl6.unlockvpn.online"
+    port: 8445
+    uuid: "1f619326-cd93-4d6b-aebe-e0b5f8831d02"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "nl6.unlockvpn.online"
+    client-fingerprint: "firefox"
+    network: ws
+    ws-opts:
+      path: "/api/v1/devices/e1971f0b19/telemetry"
+      headers:
+        Host: "nl6.unlockvpn.online"
+  - name: "🇦🇱_8"
     type: vless
     server: "78.159.131.235"
     port: 443
@@ -73,21 +88,7 @@ proxies:
       public-key: "XZa7f7bABj7lY4HuLopVCBBBYTu-RB7QyIZ96njvYwo"
       short-id: "7bcfc0bc"
     flow: "xtls-rprx-vision"
-  - name: "🇦🇱_5"
-    type: vless
-    server: "78.159.131.235"
-    port: 443
-    uuid: "1da18def-6804-44c8-bb6d-83cff995f567"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "yahoo.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "XZa7f7bABj7lY4HuLopVCBBBYTu-RB7QyIZ96njvYwo"
-      short-id: "7bcfc0bc"
-    flow: "xtls-rprx-vision"
-  - name: "🇦🇱_6"
+  - name: "🇦🇱_9"
     type: vless
     server: "130.49.189.41"
     port: 443
@@ -101,6 +102,27 @@ proxies:
       public-key: "rCkSHJ7goy7ZvSlau4LfXF-QLloOJMNeMxpeeQtwtVs"
       short-id: "4fa44664f6a566d3"
     flow: "xtls-rprx-vision"
+  - name: "🇦🇱_10"
+    type: ss
+    server: "130.49.189.158"
+    port: 10792
+    cipher: "chacha20-ietf-poly1305"
+    password: "ccyfxXuwTj7yqCRJrGF1u0"
+    udp: true
+  - name: "🇦🇱_11"
+    type: ss
+    server: "130.49.189.158"
+    port: 10792
+    cipher: "chacha20-ietf-poly1305"
+    password: "W0omvcuyezhnRhn3xtLJRU"
+    udp: true
+  - name: "🇦🇱_12"
+    type: ss
+    server: "157.22.240.141"
+    port: 57925
+    cipher: "chacha20-ietf-poly1305"
+    password: "aV1HeVAHZsjj1GwmX22yOx"
+    udp: true
 
 proxy-groups:
   # ── Top-level selector ────────────────────────────────────────────────────
@@ -143,9 +165,12 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇦🇱_4"
-      - "🇦🇱_5"
-      - "🇦🇱_6"
+      - "🇦🇱_7"
+      - "🇦🇱_8"
+      - "🇦🇱_9"
+      - "🇦🇱_10"
+      - "🇦🇱_11"
+      - "🇦🇱_12"
 
   - name: "LB-CDN"
     type: load-balance
@@ -155,9 +180,12 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇦🇱_4"
-      - "🇦🇱_5"
-      - "🇦🇱_6"
+      - "🇦🇱_7"
+      - "🇦🇱_8"
+      - "🇦🇱_9"
+      - "🇦🇱_10"
+      - "🇦🇱_11"
+      - "🇦🇱_12"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -167,9 +195,12 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇦🇱_4"
-      - "🇦🇱_5"
-      - "🇦🇱_6"
+      - "🇦🇱_7"
+      - "🇦🇱_8"
+      - "🇦🇱_9"
+      - "🇦🇱_10"
+      - "🇦🇱_11"
+      - "🇦🇱_12"
 
   - name: "FAST-CDN"
     type: url-test
@@ -178,9 +209,12 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇦🇱_4"
-      - "🇦🇱_5"
-      - "🇦🇱_6"
+      - "🇦🇱_7"
+      - "🇦🇱_8"
+      - "🇦🇱_9"
+      - "🇦🇱_10"
+      - "🇦🇱_11"
+      - "🇦🇱_12"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -190,17 +224,23 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇦🇱_4"
-      - "🇦🇱_5"
-      - "🇦🇱_6"
+      - "🇦🇱_7"
+      - "🇦🇱_8"
+      - "🇦🇱_9"
+      - "🇦🇱_10"
+      - "🇦🇱_11"
+      - "🇦🇱_12"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
-      - "🇦🇱_4"
-      - "🇦🇱_5"
-      - "🇦🇱_6"
+      - "🇦🇱_7"
+      - "🇦🇱_8"
+      - "🇦🇱_9"
+      - "🇦🇱_10"
+      - "🇦🇱_11"
+      - "🇦🇱_12"
 
 rules:
   - MATCH,PROXY-BEST

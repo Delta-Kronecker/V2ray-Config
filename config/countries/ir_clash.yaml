@@ -62,26 +62,28 @@ dns:
 proxies:
   - name: "🇮🇷_1"
     type: vless
-    server: "45.131.4.192"
+    server: "mci.v2plus.ovh"
     port: 80
-    uuid: "5f4845b4-11dc-41d6-9508-4ff6a02e36c1"
+    uuid: "0c6c9627-95fe-418a-bd4c-50df888c44bd"
     udp: true
     network: ws
     ws-opts:
-      path: "/"
+      path: "/ffEt2nn4iTWiXfi8"
       headers:
-        Host: "silent-paper-fa57.fipiyag989.workers.dev"
+        Host: "worker3.bobiv63003.workers.dev"
   - name: "🇮🇷_2"
     type: vless
-    server: "45.131.4.115"
-    port: 80
-    uuid: "a7b22989-6c1f-4b59-b0f3-0605401813c4"
+    server: "188.121.123.147"
+    port: 46153
+    uuid: "4b9ac6db-3e71-409b-ad39-438b0c6027af"
     udp: true
-    network: ws
-    ws-opts:
-      path: "/eyJqdW5rIjoiQXoydFJwaWM0WSIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0="
-      headers:
-        Host: "worker3.gigak25604.workers.dev"
+    tls: true
+    skip-cert-verify: true
+    servername: "play.google.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "juzUXIxIbuFscz16cvvS0W7rKiK0P0shJLvKd4Oz-Ro"
+      short-id: "01c39f90eb0455e1"
   - name: "🇮🇷_3"
     type: vless
     server: "45.131.4.30"
@@ -95,23 +97,104 @@ proxies:
         Host: "vms.lifetime59.workers.dev"
   - name: "🇮🇷_4"
     type: trojan
+    server: "ir1.iobase.ir"
+    port: 443
+    password: "a6xjq4UD2t"
+    sni: "ir1.iobase.ir"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇮🇷_5"
+    type: trojan
     server: "193.151.134.182"
     port: 443
     password: "diCyRX1d"
     sni: "iprostable.enterprises"
     skip-cert-verify: true
     udp: true
-  - name: "🇮🇷_5"
-    type: trojan
-    server: "45.131.4.118"
+  - name: "🇮🇷_6"
+    type: ss
+    server: "185.188.106.10"
     port: 443
-    password: "f18d6149-e214-8554-e737-f7523c8b2eea"
-    sni: "0403.infinityconfig4.workers.dev"
-    skip-cert-verify: true
+    cipher: "none"
+    password: "RSzEIkk2EsHEAVj15N5E/A=="
     udp: true
-    network: ws
-    ws-opts:
-      path: "/sync"
+  - name: "🇮🇷_7"
+    type: ss
+    server: "185.188.107.10"
+    port: 443
+    cipher: "none"
+    password: "RSzEIkk2EsHEAVj15N5E/A=="
+    udp: true
+  - name: "🇮🇷_8"
+    type: ss
+    server: "185.188.106.10"
+    port: 443
+    cipher: "none"
+    password: "RSzEIkk2EsHEAVj15N5E/A=="
+    udp: true
+  - name: "🇮🇷_9"
+    type: ss
+    server: "185.188.105.10"
+    port: 443
+    cipher: "none"
+    password: "RSzEIkk2EsHEAVj15N5E/A=="
+    udp: true
+  - name: "🇮🇷_10"
+    type: ss
+    server: "185.188.105.11"
+    port: 443
+    cipher: "none"
+    password: "RSzEIkk2EsHEAVj15N5E/A=="
+    udp: true
+  - name: "🇮🇷_11"
+    type: ss
+    server: "185.188.104.10"
+    port: 443
+    cipher: "none"
+    password: "RSzEIkk2EsHEAVj15N5E/A=="
+    udp: true
+  - name: "🇮🇷_12"
+    type: ss
+    server: "dkstatics-public.digikala.com"
+    port: 443
+    cipher: "none"
+    password: "RSzEIkk2EsHEAVj15N5E/A=="
+    udp: true
+  - name: "🇮🇷_13"
+    type: ss
+    server: "185.188.107.10"
+    port: 443
+    cipher: "none"
+    password: "RSzEIkk2EsHEAVj15N5E/A=="
+    udp: true
+  - name: "🇮🇷_14"
+    type: ss
+    server: "185.188.105.10"
+    port: 443
+    cipher: "none"
+    password: "RSzEIkk2EsHEAVj15N5E/A=="
+    udp: true
+  - name: "🇮🇷_15"
+    type: ss
+    server: "185.188.104.10"
+    port: 443
+    cipher: "none"
+    password: "RSzEIkk2EsHEAVj15N5E/A=="
+    udp: true
+  - name: "🇮🇷_16"
+    type: ss
+    server: "dkstatics-public.digikala.com"
+    port: 443
+    cipher: "none"
+    password: "RSzEIkk2EsHEAVj15N5E/A=="
+    udp: true
+  - name: "🇮🇷_17"
+    type: ss
+    server: "185.188.105.11"
+    port: 443
+    cipher: "none"
+    password: "RSzEIkk2EsHEAVj15N5E/A=="
+    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -133,6 +216,18 @@ proxy-groups:
       - "🇮🇷_3"
       - "🇮🇷_4"
       - "🇮🇷_5"
+      - "🇮🇷_6"
+      - "🇮🇷_7"
+      - "🇮🇷_8"
+      - "🇮🇷_9"
+      - "🇮🇷_10"
+      - "🇮🇷_11"
+      - "🇮🇷_12"
+      - "🇮🇷_13"
+      - "🇮🇷_14"
+      - "🇮🇷_15"
+      - "🇮🇷_16"
+      - "🇮🇷_17"
 
 
   - name: "Load Balance"
@@ -146,6 +241,18 @@ proxy-groups:
       - "🇮🇷_3"
       - "🇮🇷_4"
       - "🇮🇷_5"
+      - "🇮🇷_6"
+      - "🇮🇷_7"
+      - "🇮🇷_8"
+      - "🇮🇷_9"
+      - "🇮🇷_10"
+      - "🇮🇷_11"
+      - "🇮🇷_12"
+      - "🇮🇷_13"
+      - "🇮🇷_14"
+      - "🇮🇷_15"
+      - "🇮🇷_16"
+      - "🇮🇷_17"
 
 rules:
   - MATCH,PROXY

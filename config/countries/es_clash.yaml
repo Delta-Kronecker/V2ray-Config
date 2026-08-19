@@ -62,43 +62,6 @@ dns:
 proxies:
   - name: "🇪🇸_1"
     type: vless
-    server: "185.18.250.50"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/?ed=2560"
-      headers:
-        Host: "vms.lifetime47.workers.dev"
-  - name: "🇪🇸_2"
-    type: vless
-    server: "185.18.250.245"
-    port: 443
-    uuid: "f77299ea-e13d-417d-8cdc-ce5566dfc94b"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "edu.ruangguru.com.r3xxe.eu.cc"
-    client-fingerprint: "chrome"
-    network: ws
-    ws-opts:
-      path: "/nl-tw"
-      headers:
-        Host: "edu.ruangguru.com.r3xxe.eu.cc"
-  - name: "🇪🇸_3"
-    type: vless
-    server: "185.18.250.30"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "vms.lifetime47.workers.dev"
-  - name: "🇪🇸_4"
-    type: vless
     server: "212.227.235.66"
     port: 2053
     uuid: "855d82bc-8cc6-4037-8da5-df0412f3c063"
@@ -110,7 +73,30 @@ proxies:
     reality-opts:
       public-key: "6huZliKELOkP6l-eOIFe7PKP5MCGK2p5KzUeXRiMi00"
       short-id: "13e0569248e98a05"
-  - name: "🇪🇸_5"
+  - name: "🇪🇸_2"
+    type: vless
+    server: "113.30.149.18"
+    port: 13443
+    uuid: "5238521b-c5dd-42af-870e-c174a2aaaafe"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "auto.cendora.ru"
+    client-fingerprint: "qq"
+    reality-opts:
+      public-key: "gc9oXe37KCCm3J1dJ03wdGsnxPBdeEkRPOvl_t-vfVM"
+      short-id: "a7f3c91b2e6d84c0"
+    flow: "xtls-rprx-vision"
+  - name: "🇪🇸_3"
+    type: vless
+    server: "85.90.217.42"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "85.90.217.42"
+  - name: "🇪🇸_4"
     type: vless
     server: "185.18.250.252"
     port: 443
@@ -125,16 +111,46 @@ proxies:
       path: "/nl-tw"
       headers:
         Host: "edu.ruangguru.com.r3xxe.eu.cc"
-  - name: "🇪🇸_6"
+  - name: "🇪🇸_5"
     type: vless
-    server: "85.90.217.42"
+    server: "185.18.250.245"
     port: 443
-    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    uuid: "f77299ea-e13d-417d-8cdc-ce5566dfc94b"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "85.90.217.42"
+    servername: "edu.ruangguru.com.r3xxe.eu.cc"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/nl-tw"
+      headers:
+        Host: "edu.ruangguru.com.r3xxe.eu.cc"
+  - name: "🇪🇸_6"
+    type: vless
+    server: "185.18.250.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vms.lifetime47.workers.dev"
   - name: "🇪🇸_7"
+    type: trojan
+    server: "185.18.250.252"
+    port: 443
+    password: "74480619-b6a8-4ab8-94e1-1132fc18b2fa"
+    sni: "unnes.ac.id.r3xxe.eu.cc"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/au-mt"
+      headers:
+        Host: "unnes.ac.id.r3xxe.eu.cc"
+  - name: "🇪🇸_8"
     type: trojan
     server: "185.114.72.31"
     port: 2053
@@ -147,7 +163,7 @@ proxies:
       path: "/assignment"
       headers:
         Host: "www.calmlunch.com"
-  - name: "🇪🇸_8"
+  - name: "🇪🇸_9"
     type: trojan
     server: "185.18.250.245"
     port: 443
@@ -158,26 +174,26 @@ proxies:
     network: ws
     ws-opts:
       path: "/assignment"
-  - name: "🇪🇸_9"
+  - name: "🇪🇸_10"
     type: ss
     server: "82.38.31.155"
     port: 8080
     cipher: "chacha20-ietf-poly1305"
     password: "oZIoA69Q8yhcQV8ka3Pa3A"
     udp: true
-  - name: "🇪🇸_10"
-    type: ss
-    server: "108.181.121.226"
-    port: 8388
-    cipher: "chacha20-ietf-poly1305"
-    password: "WSyL4XTwNsdv"
-    udp: true
   - name: "🇪🇸_11"
     type: ss
-    server: "108.181.121.226"
+    server: "140.174.184.5"
     port: 8388
     cipher: "chacha20-ietf-poly1305"
-    password: "WSyL4XTwNsdv"
+    password: "qItG8SueYQcP"
+    udp: true
+  - name: "🇪🇸_12"
+    type: ss
+    server: "140.174.184.5"
+    port: 8388
+    cipher: "chacha20-ietf-poly1305"
+    password: "qItG8SueYQcP"
     udp: true
 
 proxy-groups:
@@ -206,6 +222,7 @@ proxy-groups:
       - "🇪🇸_9"
       - "🇪🇸_10"
       - "🇪🇸_11"
+      - "🇪🇸_12"
 
 
   - name: "Load Balance"
@@ -225,6 +242,7 @@ proxy-groups:
       - "🇪🇸_9"
       - "🇪🇸_10"
       - "🇪🇸_11"
+      - "🇪🇸_12"
 
 rules:
   - MATCH,PROXY

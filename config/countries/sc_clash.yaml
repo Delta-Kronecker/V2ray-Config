@@ -62,7 +62,29 @@ dns:
 proxies:
   - name: "🇸🇨_1"
     type: vless
-    server: "45.130.125.200"
+    server: "200.165.228.78"
+    port: 2200
+    uuid: "215c2b34-6371-49c7-a90d-39a4fe5191c0"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/v1"
+      headers:
+        Host: "rzd.ru"
+  - name: "🇸🇨_2"
+    type: vless
+    server: "200.165.228.51"
+    port: 2200
+    uuid: "e3a625d4-5adb-463d-bbff-bbe06b8e2c5c"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/v1"
+      headers:
+        Host: "rzd.ru"
+  - name: "🇸🇨_3"
+    type: vless
+    server: "45.130.125.158"
     port: 2053
     uuid: "e7961655-9674-4cbd-a36f-ec0d5d7d660c"
     udp: true
@@ -73,32 +95,83 @@ proxies:
     network: ws
     ws-opts:
       path: "/"
-  - name: "🇸🇨_2"
+      headers:
+        Host: "po.fastbrokencompony.com"
+  - name: "🇸🇨_4"
+    type: vless
+    server: "45.130.125.158"
+    port: 443
+    uuid: "4311bd3f-4f66-4538-a624-221b87690b2c"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "mjtbknetmkhremge.ordak.qzz.io"
+    client-fingerprint: "ios"
+    network: ws
+    ws-opts:
+      path: "/fl?ed"
+      headers:
+        Host: "mjtbknetmkhremge.ordak.qzz.io"
+  - name: "🇸🇨_5"
+    type: vless
+    server: "45.130.125.207"
+    port: 80
+    uuid: "dc8eccdb-ecfa-435f-9ac1-5dc4882e7b51"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/http"
+      headers:
+        Host: "de.vpnbase.net"
+  - name: "🇸🇨_6"
+    type: vless
+    server: "200.165.234.62"
+    port: 4100
+    uuid: "5383fb97-1178-4709-9a25-b767b743e911"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/v1"
+      headers:
+        Host: "live.ok.ru"
+  - name: "🇸🇨_7"
+    type: vless
+    server: "200.165.228.51"
+    port: 4100
+    uuid: "e3a625d4-5adb-463d-bbff-bbe06b8e2c5c"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/v1"
+      headers:
+        Host: "live.ok.ru"
+  - name: "🇸🇨_8"
     type: vless
     server: "200.165.228.78"
-    port: 2200
+    port: 4100
     uuid: "215c2b34-6371-49c7-a90d-39a4fe5191c0"
     udp: true
     network: ws
     ws-opts:
       path: "/v1"
       headers:
-        Host: "rzd.ru"
-  - name: "🇸🇨_3"
+        Host: "live.ok.ru"
+  - name: "🇸🇨_9"
     type: vless
-    server: "45.130.125.114"
-    port: 8443
-    uuid: "f47ac10b-58cc-4372-a567-0e02b2c3d479"
+    server: "45.130.125.162"
+    port: 2053
+    uuid: "e7961655-9674-4cbd-a36f-ec0d5d7d660c"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "ssl.soren-app.com."
+    servername: "po.fastbrokencompony.com"
+    client-fingerprint: "ios"
     network: ws
     ws-opts:
       path: "/"
       headers:
-        Host: "free-hzr113-cdn.soren-app.com."
-  - name: "🇸🇨_4"
+        Host: "po.fastbrokencompony.com"
+  - name: "🇸🇨_10"
     type: vless
     server: "200.165.228.47"
     port: 4100
@@ -109,91 +182,22 @@ proxies:
       path: "/v1"
       headers:
         Host: "live.ok.ru"
-  - name: "🇸🇨_5"
-    type: vless
-    server: "200.165.228.51"
-    port: 4100
-    uuid: "e3a625d4-5adb-463d-bbff-bbe06b8e2c5c"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/v1"
-      headers:
-        Host: "live.ok.ru"
-  - name: "🇸🇨_6"
-    type: vless
-    server: "200.165.228.78"
-    port: 4100
-    uuid: "215c2b34-6371-49c7-a90d-39a4fe5191c0"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/v1"
-      headers:
-        Host: "live.ok.ru"
-  - name: "🇸🇨_7"
-    type: vless
-    server: "45.130.125.73"
-    port: 443
-    uuid: "50414e45-4c5f-5a45-5553-cea58e4acf49"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "web-app-aug8yr.app-f1qsy1.workers.dev"
-    client-fingerprint: "ios"
-    network: ws
-    ws-opts:
-      path: "/api/ws"
-      headers:
-        Host: "web-app-aug8yr.app-f1qsy1.workers.dev"
-  - name: "🇸🇨_8"
-    type: vless
-    server: "45.130.125.207"
-    port: 80
-    uuid: "dc8eccdb-ecfa-435f-9ac1-5dc4882e7b51"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/http"
-      headers:
-        Host: "de.vpnbase.net"
-  - name: "🇸🇨_9"
-    type: vless
-    server: "45.130.125.209"
-    port: 80
-    uuid: "dc8eccdb-ecfa-435f-9ac1-5dc4882e7b51"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/http"
-      headers:
-        Host: "de.vpnbase.net"
-  - name: "🇸🇨_10"
-    type: vless
-    server: "200.165.228.51"
-    port: 2200
-    uuid: "e3a625d4-5adb-463d-bbff-bbe06b8e2c5c"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/v1"
-      headers:
-        Host: "rzd.ru"
   - name: "🇸🇨_11"
     type: vless
-    server: "45.130.125.207"
-    port: 8443
-    uuid: "31aa0950-eb19-45ff-94a2-af416deb3b90"
+    server: "200.165.235.98"
+    port: 9892
+    uuid: "fd94a343-cb11-45e6-9882-72352d0a2b8f"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "SquarE-saLaD-EbDe.ZDFGVcCfgUUYgGG.wOrKeRS.DEV"
-    client-fingerprint: "chrome"
-    network: ws
-    ws-opts:
-      path: "/eyJqdW5rIjoiZm5INktPV0lGcHI1NjNSOSIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0"
-      headers:
-        Host: "square-salad-ebde.zdfgvccfguuyggg.workers.dev"
+    servername: "dl.google.com"
+    client-fingerprint: "qq"
+    reality-opts:
+      public-key: "Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0"
+      short-id: ""
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "grpc-tunnel"
   - name: "🇸🇨_12"
     type: vless
     server: "45.130.125.138"
@@ -209,98 +213,29 @@ proxies:
       path: "/"
   - name: "🇸🇨_13"
     type: vless
-    server: "45.130.125.158"
-    port: 443
-    uuid: "4311bd3f-4f66-4538-a624-221b87690b2c"
+    server: "45.130.125.200"
+    port: 2053
+    uuid: "e7961655-9674-4cbd-a36f-ec0d5d7d660c"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "mjtbknetmkhremge.ordak.qzz.io"
-    client-fingerprint: "ios"
+    servername: "po.fastbrokencompony.com"
+    client-fingerprint: "chrome"
     network: ws
     ws-opts:
-      path: "/fl?ed"
-      headers:
-        Host: "mjtbknetmkhremge.ordak.qzz.io"
+      path: "/"
   - name: "🇸🇨_14"
     type: vless
-    server: "45.130.125.158"
-    port: 2053
-    uuid: "e7961655-9674-4cbd-a36f-ec0d5d7d660c"
+    server: "45.130.125.209"
+    port: 80
+    uuid: "dc8eccdb-ecfa-435f-9ac1-5dc4882e7b51"
     udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "po.fastbrokencompony.com"
-    client-fingerprint: "chrome"
     network: ws
     ws-opts:
-      path: "/"
+      path: "/http"
       headers:
-        Host: "po.fastbrokencompony.com"
+        Host: "de.vpnbase.net"
   - name: "🇸🇨_15"
-    type: vless
-    server: "45.130.125.50"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/?ed=2560"
-      headers:
-        Host: "vms.lifetime58.workers.dev"
-  - name: "🇸🇨_16"
-    type: vless
-    server: "45.130.125.30"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "vms.lifetime58.workers.dev"
-  - name: "🇸🇨_17"
-    type: vless
-    server: "45.130.125.126"
-    port: 443
-    uuid: "b69b43d1-091d-4d7c-90b2-7a8bbad9d6a9"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "BItter-CreDIT-61b8.b76EbA0aBb.wORkerS.dEv"
-    client-fingerprint: "chrome"
-    network: ws
-    ws-opts:
-      path: "/eyJqdW5rIjoiY0U2T212Y21yeEhUZHRKYSIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0"
-      headers:
-        Host: "BItter-CreDIT-61b8.b76EbA0aBb.wORkerS.dEv"
-  - name: "🇸🇨_18"
-    type: vless
-    server: "45.130.125.162"
-    port: 2053
-    uuid: "e7961655-9674-4cbd-a36f-ec0d5d7d660c"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "po.fastbrokencompony.com"
-    client-fingerprint: "ios"
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "po.fastbrokencompony.com"
-  - name: "🇸🇨_19"
-    type: vless
-    server: "200.165.234.62"
-    port: 4100
-    uuid: "5383fb97-1178-4709-9a25-b767b743e911"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/v1"
-      headers:
-        Host: "live.ok.ru"
-  - name: "🇸🇨_20"
     type: trojan
     server: "45.130.125.75"
     port: 443
@@ -311,9 +246,9 @@ proxies:
     network: ws
     ws-opts:
       path: "/assignment"
-  - name: "🇸🇨_21"
+  - name: "🇸🇨_16"
     type: trojan
-    server: "45.130.125.126"
+    server: "45.130.125.76"
     port: 443
     password: "humanity"
     sni: "www.calmlunch.com"
@@ -322,9 +257,9 @@ proxies:
     network: ws
     ws-opts:
       path: "/assignment"
-  - name: "🇸🇨_22"
+  - name: "🇸🇨_17"
     type: trojan
-    server: "45.130.125.18"
+    server: "45.130.125.112"
     port: 443
     password: "humanity"
     sni: "www.calmlunch.com"
@@ -333,7 +268,7 @@ proxies:
     network: ws
     ws-opts:
       path: "/assignment"
-  - name: "🇸🇨_23"
+  - name: "🇸🇨_18"
     type: trojan
     server: "45.130.125.190"
     port: 443
@@ -346,17 +281,6 @@ proxies:
       path: "/assignment"
       headers:
         Host: "www.calmlunch.com"
-  - name: "🇸🇨_24"
-    type: trojan
-    server: "45.130.125.160"
-    port: 443
-    password: "humanity"
-    sni: "www.calmlunch.com"
-    skip-cert-verify: true
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/assignment"
 
 proxy-groups:
   - name: "PROXY"
@@ -391,12 +315,6 @@ proxy-groups:
       - "🇸🇨_16"
       - "🇸🇨_17"
       - "🇸🇨_18"
-      - "🇸🇨_19"
-      - "🇸🇨_20"
-      - "🇸🇨_21"
-      - "🇸🇨_22"
-      - "🇸🇨_23"
-      - "🇸🇨_24"
 
 
   - name: "Load Balance"
@@ -423,12 +341,6 @@ proxy-groups:
       - "🇸🇨_16"
       - "🇸🇨_17"
       - "🇸🇨_18"
-      - "🇸🇨_19"
-      - "🇸🇨_20"
-      - "🇸🇨_21"
-      - "🇸🇨_22"
-      - "🇸🇨_23"
-      - "🇸🇨_24"
 
 rules:
   - MATCH,PROXY

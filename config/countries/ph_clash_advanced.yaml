@@ -60,12 +60,19 @@ dns:
 
 proxies:
   - name: "🇵🇭_2"
-    type: ss
-    server: "38.54.80.160"
-    port: 16292
-    cipher: "chacha20-ietf-poly1305"
-    password: "r_NRe-+WRq2zVqMpCnJtTESlT8WyffHyFy"
+    type: vless
+    server: "66.253.10.22"
+    port: 443
+    uuid: "907a940c-bad0-4356-a280-7dec12f1479e"
     udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.bing.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "zVJVCkcnyPjMZvx-GMQnnbkEgNiws80sppKB6A0uqBY"
+      short-id: "83dee8596e65d99e"
+    flow: "xtls-rprx-vision"
 
 proxy-groups:
   # ── Top-level selector ────────────────────────────────────────────────────

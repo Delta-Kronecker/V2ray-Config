@@ -76,6 +76,33 @@ proxies:
     sni: "45.32.28.232"
     skip-cert-verify: true
     udp: true
+  - name: "🇲🇾_3"
+    type: ss
+    server: "96.126.190.196"
+    port: 443
+    cipher: "none"
+    password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "/59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
+  - name: "🇲🇾_4"
+    type: ss
+    server: "47.250.212.59"
+    port: 2053
+    cipher: "none"
+    password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
+    udp: true
+  - name: "🇲🇾_5"
+    type: ss
+    server: "47.250.212.59"
+    port: 2053
+    cipher: "none"
+    password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
+    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -94,6 +121,9 @@ proxy-groups:
     proxies:
       - "🇲🇾_1"
       - "🇲🇾_2"
+      - "🇲🇾_3"
+      - "🇲🇾_4"
+      - "🇲🇾_5"
 
 
   - name: "Load Balance"
@@ -104,6 +134,9 @@ proxy-groups:
     proxies:
       - "🇲🇾_1"
       - "🇲🇾_2"
+      - "🇲🇾_3"
+      - "🇲🇾_4"
+      - "🇲🇾_5"
 
 rules:
   - MATCH,PROXY
