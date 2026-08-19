@@ -59,35 +59,7 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇨🇿_10"
-    type: vless
-    server: "188.130.208.141"
-    port: 13443
-    uuid: "b80b392c-0cf4-42f9-ae54-9f862e3ba276"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "auto.cendora.ru"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "gc9oXe37KCCm3J1dJ03wdGsnxPBdeEkRPOvl_t-vfVM"
-      short-id: "a7f3c91b2e6d84c0"
-    flow: "xtls-rprx-vision"
-  - name: "🇨🇿_11"
-    type: vless
-    server: "103.119.19.208"
-    port: 443
-    uuid: "423b1d79-08c4-403f-9d5e-c541f791b55f"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "eu-central.cendora.ru"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "b-Cm9hX-3UHsS1L_lnUB6AMjuKhlN1IDdBbZ506itjI"
-      short-id: "00bca5982f82d083"
-    flow: "xtls-rprx-vision"
-  - name: "🇨🇿_12"
+  - name: "🇨🇿_7"
     type: vless
     server: "188.127.247.129"
     port: 443
@@ -101,7 +73,7 @@ proxies:
       public-key: "Kb0rDCu2kKhfnC6bsi0DMRxDej9S-Mu1vVza1H1l4U4"
       short-id: "0c"
     flow: "xtls-rprx-vision"
-  - name: "🇨🇿_13"
+  - name: "🇨🇿_8"
     type: vless
     server: "78.159.247.253"
     port: 2027
@@ -114,22 +86,15 @@ proxies:
       public-key: "ISa-DZOI4LRRb9DHMFYm5oFqBXDjYzz0hVWUfWvzLmo"
       short-id: "dc8109baf0f607ea"
     flow: "xtls-rprx-vision"
-  - name: "🇨🇿_14"
-    type: vless
-    server: "195.85.23.120"
+  - name: "🇨🇿_9"
+    type: trojan
+    server: "ch-2.bexum.fun"
     port: 443
-    uuid: "50414e45-4c5f-5a45-5553-fc68f701cca5"
-    udp: true
-    tls: true
+    password: "LYaEYwjN8LjWTRJdCCTzW7V6gK7atJVu"
+    sni: "ch-2.bexum.fun"
     skip-cert-verify: true
-    servername: "lwzw2revus0s.bikhabi.workers.dev"
-    client-fingerprint: "unsafe"
-    network: ws
-    ws-opts:
-      path: "/stream/PANEL_ZEUS/fc68f701cca5/loc-0"
-      headers:
-        Host: "lwzw2revus0s.bikhabi.workers.dev"
-  - name: "🇨🇿_15"
+    udp: true
+  - name: "🇨🇿_10"
     type: trojan
     server: "178.208.75.155"
     port: 2053
@@ -142,15 +107,7 @@ proxies:
       path: "/assignment"
       headers:
         Host: "www.calmlunch.com"
-  - name: "🇨🇿_16"
-    type: trojan
-    server: "46.8.113.142"
-    port: 443
-    password: "LYaEYwjN8LjWTRJdCCTzW7V6gK7atJVu"
-    sni: "ch-2.bexum.fun"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇨🇿_17"
+  - name: "🇨🇿_11"
     type: trojan
     server: "178.208.75.155"
     port: 8443
@@ -161,9 +118,9 @@ proxies:
     network: ws
     ws-opts:
       path: "/assignment"
-  - name: "🇨🇿_18"
+  - name: "🇨🇿_12"
     type: trojan
-    server: "ch-2.bexum.fun"
+    server: "46.8.113.142"
     port: 443
     password: "LYaEYwjN8LjWTRJdCCTzW7V6gK7atJVu"
     sni: "ch-2.bexum.fun"
@@ -211,15 +168,12 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
+      - "🇨🇿_7"
+      - "🇨🇿_8"
+      - "🇨🇿_9"
       - "🇨🇿_10"
       - "🇨🇿_11"
       - "🇨🇿_12"
-      - "🇨🇿_13"
-      - "🇨🇿_14"
-      - "🇨🇿_15"
-      - "🇨🇿_16"
-      - "🇨🇿_17"
-      - "🇨🇿_18"
 
   - name: "LB-CDN"
     type: load-balance
@@ -229,15 +183,12 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
+      - "🇨🇿_7"
+      - "🇨🇿_8"
+      - "🇨🇿_9"
       - "🇨🇿_10"
       - "🇨🇿_11"
       - "🇨🇿_12"
-      - "🇨🇿_13"
-      - "🇨🇿_14"
-      - "🇨🇿_15"
-      - "🇨🇿_16"
-      - "🇨🇿_17"
-      - "🇨🇿_18"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -247,15 +198,12 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
+      - "🇨🇿_7"
+      - "🇨🇿_8"
+      - "🇨🇿_9"
       - "🇨🇿_10"
       - "🇨🇿_11"
       - "🇨🇿_12"
-      - "🇨🇿_13"
-      - "🇨🇿_14"
-      - "🇨🇿_15"
-      - "🇨🇿_16"
-      - "🇨🇿_17"
-      - "🇨🇿_18"
 
   - name: "FAST-CDN"
     type: url-test
@@ -264,15 +212,12 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
+      - "🇨🇿_7"
+      - "🇨🇿_8"
+      - "🇨🇿_9"
       - "🇨🇿_10"
       - "🇨🇿_11"
       - "🇨🇿_12"
-      - "🇨🇿_13"
-      - "🇨🇿_14"
-      - "🇨🇿_15"
-      - "🇨🇿_16"
-      - "🇨🇿_17"
-      - "🇨🇿_18"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -282,29 +227,23 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
+      - "🇨🇿_7"
+      - "🇨🇿_8"
+      - "🇨🇿_9"
       - "🇨🇿_10"
       - "🇨🇿_11"
       - "🇨🇿_12"
-      - "🇨🇿_13"
-      - "🇨🇿_14"
-      - "🇨🇿_15"
-      - "🇨🇿_16"
-      - "🇨🇿_17"
-      - "🇨🇿_18"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
+      - "🇨🇿_7"
+      - "🇨🇿_8"
+      - "🇨🇿_9"
       - "🇨🇿_10"
       - "🇨🇿_11"
       - "🇨🇿_12"
-      - "🇨🇿_13"
-      - "🇨🇿_14"
-      - "🇨🇿_15"
-      - "🇨🇿_16"
-      - "🇨🇿_17"
-      - "🇨🇿_18"
 
 rules:
   - MATCH,PROXY-BEST

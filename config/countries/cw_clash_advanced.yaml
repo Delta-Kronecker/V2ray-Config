@@ -59,7 +59,22 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇨🇼_3"
+  - name: "🇨🇼_5"
+    type: vless
+    server: "5.10.244.7"
+    port: 8443
+    uuid: "7967bf59-57e3-4cde-9898-527b0fe60022"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "speed.dulacloud.store"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/dula?Telegram-WangCai2"
+      headers:
+        Host: "speed.dulacloud.store"
+  - name: "🇨🇼_6"
     type: vless
     server: "88.216.67.7"
     port: 8443
@@ -74,9 +89,24 @@ proxies:
       path: "/dula?Telegram-WangCai2"
       headers:
         Host: "speed.dulacloud.store"
-  - name: "🇨🇼_4"
+  - name: "🇨🇼_7"
     type: vless
-    server: "5.10.244.7"
+    server: "88.216.66.7"
+    port: 8443
+    uuid: "7967bf59-57e3-4cde-9898-527b0fe60022"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "speed.dulacloud.store"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/dula?Telegram-WangCai2"
+      headers:
+        Host: "speed.dulacloud.store"
+  - name: "🇨🇼_8"
+    type: vless
+    server: "62.72.166.7"
     port: 8443
     uuid: "7967bf59-57e3-4cde-9898-527b0fe60022"
     udp: true
@@ -131,8 +161,10 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇨🇼_3"
-      - "🇨🇼_4"
+      - "🇨🇼_5"
+      - "🇨🇼_6"
+      - "🇨🇼_7"
+      - "🇨🇼_8"
 
   - name: "LB-CDN"
     type: load-balance
@@ -142,8 +174,10 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇨🇼_3"
-      - "🇨🇼_4"
+      - "🇨🇼_5"
+      - "🇨🇼_6"
+      - "🇨🇼_7"
+      - "🇨🇼_8"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -153,8 +187,10 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇨🇼_3"
-      - "🇨🇼_4"
+      - "🇨🇼_5"
+      - "🇨🇼_6"
+      - "🇨🇼_7"
+      - "🇨🇼_8"
 
   - name: "FAST-CDN"
     type: url-test
@@ -163,8 +199,10 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇨🇼_3"
-      - "🇨🇼_4"
+      - "🇨🇼_5"
+      - "🇨🇼_6"
+      - "🇨🇼_7"
+      - "🇨🇼_8"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -174,15 +212,19 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇨🇼_3"
-      - "🇨🇼_4"
+      - "🇨🇼_5"
+      - "🇨🇼_6"
+      - "🇨🇼_7"
+      - "🇨🇼_8"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
-      - "🇨🇼_3"
-      - "🇨🇼_4"
+      - "🇨🇼_5"
+      - "🇨🇼_6"
+      - "🇨🇼_7"
+      - "🇨🇼_8"
 
 rules:
   - MATCH,PROXY-BEST

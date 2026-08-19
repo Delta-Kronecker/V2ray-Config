@@ -59,7 +59,7 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇻🇳_5"
+  - name: "🇻🇳_8"
     type: vless
     server: "216.133.158.108"
     port: 443
@@ -73,7 +73,21 @@ proxies:
       public-key: "Kh1-hdn9zTY5a1-3qP8L_6UTRL2iNZ1pIr_X8U94OQM"
       short-id: "872303cf1e28389f"
     flow: "xtls-rprx-vision"
-  - name: "🇻🇳_6"
+  - name: "🇻🇳_9"
+    type: vless
+    server: "wf1y-1o2rzho.rixora.top"
+    port: 443
+    uuid: "c08c499f-21bd-46ba-9146-5c770204342b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.apple.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "Kh1-hdn9zTY5a1-3qP8L_6UTRL2iNZ1pIr_X8U94OQM"
+      short-id: "872303cf1e28389f"
+    flow: "xtls-rprx-vision"
+  - name: "🇻🇳_10"
     type: vless
     server: "103.225.197.237"
     port: 443
@@ -87,7 +101,7 @@ proxies:
       public-key: "mCDHZBY0AYAeY7Aj7COGaegrm7QAwfueYYSC02vqbSY"
       short-id: "0d8ca7e0b3d26321"
     flow: "xtls-rprx-vision"
-  - name: "🇻🇳_7"
+  - name: "🇻🇳_11"
     type: trojan
     server: "36.50.134.29"
     port: 443
@@ -95,12 +109,28 @@ proxies:
     sni: "36.50.134.29"
     skip-cert-verify: true
     udp: true
-  - name: "🇻🇳_8"
+  - name: "🇻🇳_12"
+    type: trojan
+    server: "160.30.160.134"
+    port: 443
+    password: "25a0ffa0-725c-4d6f-b0d5-c74579753075"
+    sni: "cmc5.5gsieuvip.vn"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇻🇳_13"
     type: trojan
     server: "103.72.96.55"
     port: 443
     password: "c95357eb-2869-4511-8940-f0dc5e1ec9b1"
     sni: "hanoiidc2.5gsieutocdo.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇻🇳_14"
+    type: trojan
+    server: "103.9.77.6"
+    port: 443
+    password: "5a92d674-308c-4d95-b283-28383e63a59b"
+    sni: "103.9.77.6"
     skip-cert-verify: true
     udp: true
 
@@ -145,10 +175,13 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇻🇳_5"
-      - "🇻🇳_6"
-      - "🇻🇳_7"
       - "🇻🇳_8"
+      - "🇻🇳_9"
+      - "🇻🇳_10"
+      - "🇻🇳_11"
+      - "🇻🇳_12"
+      - "🇻🇳_13"
+      - "🇻🇳_14"
 
   - name: "LB-CDN"
     type: load-balance
@@ -158,10 +191,13 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇻🇳_5"
-      - "🇻🇳_6"
-      - "🇻🇳_7"
       - "🇻🇳_8"
+      - "🇻🇳_9"
+      - "🇻🇳_10"
+      - "🇻🇳_11"
+      - "🇻🇳_12"
+      - "🇻🇳_13"
+      - "🇻🇳_14"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -171,10 +207,13 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇻🇳_5"
-      - "🇻🇳_6"
-      - "🇻🇳_7"
       - "🇻🇳_8"
+      - "🇻🇳_9"
+      - "🇻🇳_10"
+      - "🇻🇳_11"
+      - "🇻🇳_12"
+      - "🇻🇳_13"
+      - "🇻🇳_14"
 
   - name: "FAST-CDN"
     type: url-test
@@ -183,10 +222,13 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇻🇳_5"
-      - "🇻🇳_6"
-      - "🇻🇳_7"
       - "🇻🇳_8"
+      - "🇻🇳_9"
+      - "🇻🇳_10"
+      - "🇻🇳_11"
+      - "🇻🇳_12"
+      - "🇻🇳_13"
+      - "🇻🇳_14"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -196,19 +238,25 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇻🇳_5"
-      - "🇻🇳_6"
-      - "🇻🇳_7"
       - "🇻🇳_8"
+      - "🇻🇳_9"
+      - "🇻🇳_10"
+      - "🇻🇳_11"
+      - "🇻🇳_12"
+      - "🇻🇳_13"
+      - "🇻🇳_14"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
-      - "🇻🇳_5"
-      - "🇻🇳_6"
-      - "🇻🇳_7"
       - "🇻🇳_8"
+      - "🇻🇳_9"
+      - "🇻🇳_10"
+      - "🇻🇳_11"
+      - "🇻🇳_12"
+      - "🇻🇳_13"
+      - "🇻🇳_14"
 
 rules:
   - MATCH,PROXY-BEST

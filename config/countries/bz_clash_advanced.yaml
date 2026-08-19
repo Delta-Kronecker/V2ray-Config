@@ -59,7 +59,22 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇧🇿_2"
+  - name: "🇧🇿_4"
+    type: vless
+    server: "45.131.7.7"
+    port: 8443
+    uuid: "7967bf59-57e3-4cde-9898-527b0fe60022"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "speed.dulacloud.store"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/dula?Telegram-WangCai2"
+      headers:
+        Host: "speed.dulacloud.store"
+  - name: "🇧🇿_5"
     type: vless
     server: "45.131.6.7"
     port: 8443
@@ -74,6 +89,20 @@ proxies:
       path: "/dula?Telegram-WangCai2"
       headers:
         Host: "speed.dulacloud.store"
+  - name: "🇧🇿_6"
+    type: vless
+    server: "45.131.7.2"
+    port: 443
+    uuid: "Telegram🇨🇳 @WangCai2"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "support.zoom.us.yxls.eu.cc"
+    network: ws
+    ws-opts:
+      path: "/sg-amz"
+      headers:
+        Host: "support.zoom.us.yxls.eu.cc"
 
 proxy-groups:
   # ── Top-level selector ────────────────────────────────────────────────────
@@ -116,7 +145,9 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇧🇿_2"
+      - "🇧🇿_4"
+      - "🇧🇿_5"
+      - "🇧🇿_6"
 
   - name: "LB-CDN"
     type: load-balance
@@ -126,7 +157,9 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇧🇿_2"
+      - "🇧🇿_4"
+      - "🇧🇿_5"
+      - "🇧🇿_6"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -136,7 +169,9 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇧🇿_2"
+      - "🇧🇿_4"
+      - "🇧🇿_5"
+      - "🇧🇿_6"
 
   - name: "FAST-CDN"
     type: url-test
@@ -145,7 +180,9 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇧🇿_2"
+      - "🇧🇿_4"
+      - "🇧🇿_5"
+      - "🇧🇿_6"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -155,13 +192,17 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇧🇿_2"
+      - "🇧🇿_4"
+      - "🇧🇿_5"
+      - "🇧🇿_6"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
-      - "🇧🇿_2"
+      - "🇧🇿_4"
+      - "🇧🇿_5"
+      - "🇧🇿_6"
 
 rules:
   - MATCH,PROXY-BEST

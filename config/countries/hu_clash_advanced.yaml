@@ -59,21 +59,6 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇭🇺_3"
-    type: vless
-    server: "141.11.202.7"
-    port: 8443
-    uuid: "7967bf59-57e3-4cde-9898-527b0fe60022"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "speed.dulacloud.store"
-    client-fingerprint: "chrome"
-    network: ws
-    ws-opts:
-      path: "/dula?Telegram-WangCai2"
-      headers:
-        Host: "speed.dulacloud.store"
   - name: "🇭🇺_4"
     type: vless
     server: "45.195.111.15"
@@ -88,6 +73,34 @@ proxies:
       public-key: "7zd9mJilgjOrg_ohtw23Vmio-pdnYqeP_r-kiWt87Cg"
       short-id: "f4b4a6365558ea2e"
     flow: "xtls-rprx-vision"
+  - name: "🇭🇺_5"
+    type: vless
+    server: "141.11.202.7"
+    port: 8443
+    uuid: "7967bf59-57e3-4cde-9898-527b0fe60022"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "speed.dulacloud.store"
+    client-fingerprint: "chrome"
+    network: ws
+    ws-opts:
+      path: "/dula?Telegram-WangCai2"
+      headers:
+        Host: "speed.dulacloud.store"
+  - name: "🇭🇺_6"
+    type: trojan
+    server: "185.225.68.232"
+    port: 443
+    password: "humanity"
+    sni: "www.calmlunch.com"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/assignment"
+      headers:
+        Host: "www.calmlunch.com"
 
 proxy-groups:
   # ── Top-level selector ────────────────────────────────────────────────────
@@ -130,8 +143,9 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇭🇺_3"
       - "🇭🇺_4"
+      - "🇭🇺_5"
+      - "🇭🇺_6"
 
   - name: "LB-CDN"
     type: load-balance
@@ -141,8 +155,9 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇭🇺_3"
       - "🇭🇺_4"
+      - "🇭🇺_5"
+      - "🇭🇺_6"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -152,8 +167,9 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇭🇺_3"
       - "🇭🇺_4"
+      - "🇭🇺_5"
+      - "🇭🇺_6"
 
   - name: "FAST-CDN"
     type: url-test
@@ -162,8 +178,9 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇭🇺_3"
       - "🇭🇺_4"
+      - "🇭🇺_5"
+      - "🇭🇺_6"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -173,15 +190,17 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇭🇺_3"
       - "🇭🇺_4"
+      - "🇭🇺_5"
+      - "🇭🇺_6"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
-      - "🇭🇺_3"
       - "🇭🇺_4"
+      - "🇭🇺_5"
+      - "🇭🇺_6"
 
 rules:
   - MATCH,PROXY-BEST

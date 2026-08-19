@@ -75,6 +75,20 @@ proxies:
       headers:
         Host: "speed.dulacloud.store"
   - name: "🇨🇷_2"
+    type: vless
+    server: "190.93.247.2"
+    port: 443
+    uuid: "Telegram🇨🇳 @WangCai2"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "support.zoom.us.yxls.eu.cc"
+    network: ws
+    ws-opts:
+      path: "/sg-amz"
+      headers:
+        Host: "support.zoom.us.yxls.eu.cc"
+  - name: "🇨🇷_3"
     type: trojan
     server: "190.93.247.7"
     port: 443
@@ -82,6 +96,30 @@ proxies:
     sni: "190.93.247.7"
     skip-cert-verify: true
     udp: true
+  - name: "🇨🇷_4"
+    type: ss
+    server: "190.93.246.16"
+    port: 443
+    cipher: "none"
+    password: "14b02e2a-8930-4afb-8412-ea4a4954ca5b"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "/14b02e2a-8930-4afb-8412-ea4a4954ca5b/?ed\\=2560"
+      host: "ylnhh.us.ci"
+  - name: "🇨🇷_5"
+    type: ss
+    server: "190.93.246.16"
+    port: 443
+    cipher: "none"
+    password: "14b02e2a-8930-4afb-8412-ea4a4954ca5b"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "/14b02e2a-8930-4afb-8412-ea4a4954ca5b/?ed\\=2560"
+      host: "ylnhh.us.ci"
 
 proxy-groups:
   - name: "PROXY"
@@ -100,6 +138,9 @@ proxy-groups:
     proxies:
       - "🇨🇷_1"
       - "🇨🇷_2"
+      - "🇨🇷_3"
+      - "🇨🇷_4"
+      - "🇨🇷_5"
 
 
   - name: "Load Balance"
@@ -110,6 +151,9 @@ proxy-groups:
     proxies:
       - "🇨🇷_1"
       - "🇨🇷_2"
+      - "🇨🇷_3"
+      - "🇨🇷_4"
+      - "🇨🇷_5"
 
 rules:
   - MATCH,PROXY

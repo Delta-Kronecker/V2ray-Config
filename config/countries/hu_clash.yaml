@@ -62,6 +62,20 @@ dns:
 proxies:
   - name: "🇭🇺_1"
     type: vless
+    server: "45.195.111.15"
+    port: 443
+    uuid: "82e209b2-97a6-4d67-a10b-72627b9f6702"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "storage.yandex.net"
+    client-fingerprint: "qq"
+    reality-opts:
+      public-key: "7zd9mJilgjOrg_ohtw23Vmio-pdnYqeP_r-kiWt87Cg"
+      short-id: "f4b4a6365558ea2e"
+    flow: "xtls-rprx-vision"
+  - name: "🇭🇺_2"
+    type: vless
     server: "141.11.202.7"
     port: 8443
     uuid: "7967bf59-57e3-4cde-9898-527b0fe60022"
@@ -75,20 +89,19 @@ proxies:
       path: "/dula?Telegram-WangCai2"
       headers:
         Host: "speed.dulacloud.store"
-  - name: "🇭🇺_2"
-    type: vless
-    server: "45.195.111.15"
+  - name: "🇭🇺_3"
+    type: trojan
+    server: "185.225.68.232"
     port: 443
-    uuid: "82e209b2-97a6-4d67-a10b-72627b9f6702"
-    udp: true
-    tls: true
+    password: "humanity"
+    sni: "www.calmlunch.com"
     skip-cert-verify: true
-    servername: "storage.yandex.net"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "7zd9mJilgjOrg_ohtw23Vmio-pdnYqeP_r-kiWt87Cg"
-      short-id: "f4b4a6365558ea2e"
-    flow: "xtls-rprx-vision"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/assignment"
+      headers:
+        Host: "www.calmlunch.com"
 
 proxy-groups:
   - name: "PROXY"
@@ -107,6 +120,7 @@ proxy-groups:
     proxies:
       - "🇭🇺_1"
       - "🇭🇺_2"
+      - "🇭🇺_3"
 
 
   - name: "Load Balance"
@@ -117,6 +131,7 @@ proxy-groups:
     proxies:
       - "🇭🇺_1"
       - "🇭🇺_2"
+      - "🇭🇺_3"
 
 rules:
   - MATCH,PROXY

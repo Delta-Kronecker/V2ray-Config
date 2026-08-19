@@ -75,26 +75,14 @@ proxies:
       short-id: "720148f2fea16d0f"
     flow: "xtls-rprx-vision"
   - name: "🇧🇬_2"
-    type: vless
-    server: "195.123.226.21"
+    type: trojan
+    server: "91.227.77.87"
     port: 443
-    uuid: "33851d53-ede0-45f7-9eb8-9aa961f7d200"
+    password: "bpb-trojan"
+    sni: "skwygx.top"
+    skip-cert-verify: true
     udp: true
-    network: ws
-    ws-opts:
-      path: "/vless"
   - name: "🇧🇬_3"
-    type: vless
-    server: "89.117.112.40"
-    port: 8880
-    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "vms.lifetime11.workers.dev"
-  - name: "🇧🇬_4"
     type: trojan
     server: "193.239.160.134"
     port: 443
@@ -107,14 +95,6 @@ proxies:
       path: "/assignment"
       headers:
         Host: "www.calmlunch.com"
-  - name: "🇧🇬_5"
-    type: trojan
-    server: "91.227.77.87"
-    port: 443
-    password: "bpb-trojan"
-    sni: "skwygx.top"
-    skip-cert-verify: true
-    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -134,8 +114,6 @@ proxy-groups:
       - "🇧🇬_1"
       - "🇧🇬_2"
       - "🇧🇬_3"
-      - "🇧🇬_4"
-      - "🇧🇬_5"
 
 
   - name: "Load Balance"
@@ -147,8 +125,6 @@ proxy-groups:
       - "🇧🇬_1"
       - "🇧🇬_2"
       - "🇧🇬_3"
-      - "🇧🇬_4"
-      - "🇧🇬_5"
 
 rules:
   - MATCH,PROXY

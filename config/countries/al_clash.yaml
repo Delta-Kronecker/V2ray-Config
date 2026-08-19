@@ -62,21 +62,6 @@ dns:
 proxies:
   - name: "🇦🇱_1"
     type: vless
-    server: "nl6.unlockvpn.online"
-    port: 8445
-    uuid: "1f619326-cd93-4d6b-aebe-e0b5f8831d02"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "nl6.unlockvpn.online"
-    client-fingerprint: "firefox"
-    network: ws
-    ws-opts:
-      path: "/api/v1/devices/e1971f0b19/telemetry"
-      headers:
-        Host: "nl6.unlockvpn.online"
-  - name: "🇦🇱_2"
-    type: vless
     server: "78.159.131.235"
     port: 443
     uuid: "1f619326-cd93-4d6b-aebe-e0b5f8831d02"
@@ -89,7 +74,7 @@ proxies:
       public-key: "XZa7f7bABj7lY4HuLopVCBBBYTu-RB7QyIZ96njvYwo"
       short-id: "7bcfc0bc"
     flow: "xtls-rprx-vision"
-  - name: "🇦🇱_3"
+  - name: "🇦🇱_2"
     type: vless
     server: "130.49.189.41"
     port: 443
@@ -103,27 +88,6 @@ proxies:
       public-key: "rCkSHJ7goy7ZvSlau4LfXF-QLloOJMNeMxpeeQtwtVs"
       short-id: "4fa44664f6a566d3"
     flow: "xtls-rprx-vision"
-  - name: "🇦🇱_4"
-    type: ss
-    server: "130.49.189.158"
-    port: 10792
-    cipher: "chacha20-ietf-poly1305"
-    password: "ccyfxXuwTj7yqCRJrGF1u0"
-    udp: true
-  - name: "🇦🇱_5"
-    type: ss
-    server: "130.49.189.158"
-    port: 10792
-    cipher: "chacha20-ietf-poly1305"
-    password: "W0omvcuyezhnRhn3xtLJRU"
-    udp: true
-  - name: "🇦🇱_6"
-    type: ss
-    server: "157.22.240.141"
-    port: 57925
-    cipher: "chacha20-ietf-poly1305"
-    password: "aV1HeVAHZsjj1GwmX22yOx"
-    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -142,10 +106,6 @@ proxy-groups:
     proxies:
       - "🇦🇱_1"
       - "🇦🇱_2"
-      - "🇦🇱_3"
-      - "🇦🇱_4"
-      - "🇦🇱_5"
-      - "🇦🇱_6"
 
 
   - name: "Load Balance"
@@ -156,10 +116,6 @@ proxy-groups:
     proxies:
       - "🇦🇱_1"
       - "🇦🇱_2"
-      - "🇦🇱_3"
-      - "🇦🇱_4"
-      - "🇦🇱_5"
-      - "🇦🇱_6"
 
 rules:
   - MATCH,PROXY

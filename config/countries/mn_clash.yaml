@@ -60,21 +60,14 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇲🇪_1"
-    type: vless
-    server: "178.83.110.32"
-    port: 7443
-    uuid: "9bb71136-2380-4b6a-97be-1d4ba11d5a55"
-    udp: true
-    tls: true
+  - name: "🇲🇳_1"
+    type: trojan
+    server: "103.168.56.77"
+    port: 443
+    password: "4f2c305b-9a03-4493-b3e4-2dff2f1af8c9"
+    sni: "103.168.56.77"
     skip-cert-verify: true
-    servername: "9-7u3b6e.wzkija0v0du4yhk6jfyfafml3nh22kne.workers.dev"
-    client-fingerprint: "chrome"
-    network: ws
-    ws-opts:
-      path: "/@Marisa_kristi"
-      headers:
-        Host: "9-7u3b6e.wzkija0v0du4yhk6jfyfafml3nh22kne.workers.dev"
+    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -91,7 +84,7 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇲🇪_1"
+      - "🇲🇳_1"
 
 
   - name: "Load Balance"
@@ -100,7 +93,7 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇲🇪_1"
+      - "🇲🇳_1"
 
 rules:
   - MATCH,PROXY
