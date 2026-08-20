@@ -170,7 +170,7 @@ func writeFargFiles(results []configResult) {
 		writeJSONArray(filepath.Join("config", "farg", "protocols", proto+".json"), entries)
 	}
 	numBatches := writeFargBatches(all)
-	fmt.Printf("📁 Farg: wrote %d xray configs into config/farg (all) + %d protocol files + %d batch files\n",
+	fmt.Printf(" Farg: wrote %d xray configs into config/farg (all) + %d protocol files + %d batch files\n",
 		len(all), len(byProto), numBatches)
 }
 
@@ -442,7 +442,7 @@ func buildFargRouting() fargRouting {
 func writeJSONArray(path string, entries any) {
 	f, err := os.Create(path)
 	if err != nil {
-		fmt.Printf("❌ Cannot write %s: %v\n", path, err)
+		fmt.Printf(" Cannot write %s: %v\n", path, err)
 		return
 	}
 	defer f.Close()
@@ -450,7 +450,7 @@ func writeJSONArray(path string, entries any) {
 	enc.SetIndent("", "    ")
 	enc.SetEscapeHTML(false)
 	if err := enc.Encode(entries); err != nil {
-		fmt.Printf("❌ Cannot encode %s: %v\n", path, err)
+		fmt.Printf(" Cannot encode %s: %v\n", path, err)
 	}
 }
 

@@ -31,6 +31,71 @@ func loadSubsFromFile(path string) []string {
 	return urls
 }
 
+// dedupSubFile removes duplicate URLs from sub.txt (case-insensitive).
+func dedupSubFile(path string) {
+	data, err := os.ReadFile(path)
+	if err != nil {
+		return
+	}
+
+	lines := strings.Split(string(data), "\n")
+	seen := make(map[string]bool)
+	var unique []string
+
+	for _, line := range lines {
+		trimmed := strings.TrimSpace(line)
+		if trimmed == "" || strings.HasPrefix(trimmed, "#") {
+			unique = append(unique, line)
+			continue
+		}
+		key := strings.ToLower(trimmed)
+		if !seen[key] {
+			seen[key] = true
+			unique = append(unique, line)
+		}
+	}
+
+	_ = os.WriteFile(path, []byte(strings.Join(unique, "\n")), 0644)
+}
+
+// cleanSubFile removes failed URLs from sub.txt.
+func cleanSubFile(path string, failedURLs []string) {
+	if len(failedURLs) == 0 {
+		return
+	}
+
+	data, err := os.ReadFile(path)
+	if err != nil {
+		return
+	}
+
+	failedSet := make(map[string]bool)
+	for _, u := range failedURLs {
+		failedSet[strings.TrimSpace(u)] = true
+	}
+
+	lines := strings.Split(string(data), "\n")
+	var kept []string
+	removed := 0
+	for _, line := range lines {
+		trimmed := strings.TrimSpace(line)
+		if trimmed == "" || strings.HasPrefix(trimmed, "#") {
+			kept = append(kept, line)
+			continue
+		}
+		if failedSet[trimmed] {
+			removed++
+			continue
+		}
+		kept = append(kept, line)
+	}
+
+	if removed > 0 {
+		_ = os.WriteFile(path, []byte(strings.Join(kept, "\n")), 0644)
+		fmt.Printf(" sub.txt: removed %d failed/duplicate URLs\n", removed)
+	}
+}
+
 // ── fetchAll (legacy base64/text links) ──────────────────────────────────────
 
 func fetchAll(base64Links, textLinks []string) ([]string, []string) {
@@ -58,7 +123,7 @@ func fetchAll(base64Links, textLinks []string) ([]string, []string) {
 
 	total := len(jobs)
 	numBatches := (total + batchSize - 1) / batchSize
-	fmt.Printf("📡 Fetching %d sources in %d batches of %d (timeout=%s  retries=%d)\n",
+	fmt.Printf(" Fetching %d sources in %d batches of %d (timeout=%s  retries=%d)\n",
 		total, numBatches, batchSize, fetchTimeout, retryCount)
 
 	var mu sync.Mutex
@@ -127,15 +192,15 @@ func fetchAll(base64Links, textLinks []string) ([]string, []string) {
 		}
 		mu.Unlock()
 	}
-	fmt.Printf("  ✅ Fetch done — ok=%d  fail=%d  total_lines=%d\n", okCount, failCount, len(lines))
+	fmt.Printf("   Fetch done — ok=%d  fail=%d  total_lines=%d\n", okCount, failCount, len(lines))
 	return lines, failed
 }
 
 // ── fetchAllFromSubs (sub.txt mode) ──────────────────────────────────────────
 
-func fetchAllFromSubs(subURLs []string) ([]string, []string) {
+func fetchAllFromSubs(subURLs []string) ([]string, []string, []string) {
 	const batchSize = 20
-	const fetchTimeout = 8 * time.Second
+	const fetchTimeout = 20 * time.Second
 
 	retryCount := cfg.Validation.FetchRetryCount
 	retryDelay := time.Duration(cfg.Validation.FetchRetryDelayMs) * time.Millisecond
@@ -148,79 +213,93 @@ func fetchAllFromSubs(subURLs []string) ([]string, []string) {
 
 	total := len(subURLs)
 	numBatches := (total + batchSize - 1) / batchSize
-	fmt.Printf("📡 Fetching %d sources in %d batches (timeout=%s  retries=%d)\n",
+	fmt.Printf(" Fetching %d sources in %d batches (timeout=%s  retries=%d)\n",
 		total, numBatches, fetchTimeout, retryCount)
 
-	var mu sync.Mutex
 	var lines []string
 	var failed []string
+	var failedURLs []string
 	var okCount, failCount int
 
-	for batchIdx := 0; batchIdx < numBatches; batchIdx++ {
-		start := batchIdx * batchSize
-		end := start + batchSize
-		if end > total {
-			end = total
-		}
-		batch := subURLs[start:end]
-
-		var wg sync.WaitGroup
-		type batchResult struct {
-			url    string
-			lines  []string
-			err    error
-			status int
-		}
-		results := make([]batchResult, len(batch))
-
-		for i, u := range batch {
-			wg.Add(1)
-			go func(idx int, rawURL string) {
-				defer wg.Done()
-				var fr fetchResult
-				for attempt := 0; attempt <= retryCount; attempt++ {
-					if attempt > 0 && retryDelay > 0 {
-						time.Sleep(retryDelay)
-					}
-					fr = fetchRaw(rawURL, fetchTimeout)
-					if fr.err == nil && fr.statusCode == http.StatusOK {
-						break
-					}
-				}
-				if fr.err != nil || fr.statusCode != http.StatusOK {
-					results[idx] = batchResult{url: rawURL, err: fr.err, status: fr.statusCode}
-					return
-				}
-				extracted := smartDecode(fr.content)
-				results[idx] = batchResult{url: rawURL, lines: extracted, status: fr.statusCode}
-			}(i, u)
-		}
-		wg.Wait()
-
-		mu.Lock()
-		for _, r := range results {
-			if r.err != nil || r.status != http.StatusOK {
-				status := "error"
-				if r.status > 0 {
-					status = fmt.Sprintf("HTTP %d", r.status)
-				}
-				failCount++
-				failed = append(failed, fmt.Sprintf("%s (%s)", r.url, status))
-				if gLog != nil {
-					gLog.writeLine(fmt.Sprintf("[FETCH] FAIL  %s  status=%s", r.url, status))
-				}
-				continue
+	fetchBatch := func(urls []string) (ok int, fail int, fURLs []string) {
+		bNumBatches := (len(urls) + batchSize - 1) / batchSize
+		for batchIdx := 0; batchIdx < bNumBatches; batchIdx++ {
+			start := batchIdx * batchSize
+			end := start + batchSize
+			if end > len(urls) {
+				end = len(urls)
 			}
-			okCount++
-			if gLog != nil {
-				gLog.writeLine(fmt.Sprintf("[FETCH] OK    %s  lines=%d", r.url, len(r.lines)))
+			batch := urls[start:end]
+
+			var wg sync.WaitGroup
+			type batchResult struct {
+				url    string
+				lines  []string
+				err    error
+				status int
 			}
-			lines = append(lines, r.lines...)
+			results := make([]batchResult, len(batch))
+
+			for i, u := range batch {
+				wg.Add(1)
+				go func(idx int, rawURL string) {
+					defer wg.Done()
+					var fr fetchResult
+					for attempt := 0; attempt <= retryCount; attempt++ {
+						if attempt > 0 && retryDelay > 0 {
+							time.Sleep(retryDelay)
+						}
+						fr = fetchRaw(rawURL, fetchTimeout)
+						if fr.err == nil && fr.statusCode == http.StatusOK {
+							break
+						}
+					}
+					if fr.err != nil || fr.statusCode != http.StatusOK {
+						results[idx] = batchResult{url: rawURL, err: fr.err, status: fr.statusCode}
+						return
+					}
+					extracted := smartDecode(fr.content)
+					results[idx] = batchResult{url: rawURL, lines: extracted, status: fr.statusCode}
+				}(i, u)
+			}
+			wg.Wait()
+
+			for _, r := range results {
+				if r.err != nil || r.status != http.StatusOK {
+					fail++
+					fURLs = append(fURLs, r.url)
+					continue
+				}
+				if len(r.lines) == 0 {
+					fail++
+					fURLs = append(fURLs, r.url)
+					continue
+				}
+				ok++
+				lines = append(lines, r.lines...)
+			}
 		}
-		mu.Unlock()
+		return
 	}
-	fmt.Printf("  ✅ Fetch done — ok=%d  fail=%d  total_lines=%d\n", okCount, failCount, len(lines))
-	return lines, failed
+
+	// ── First pass ──
+	okCount, failCount, failedURLs = fetchBatch(subURLs)
+	failed = failedURLs
+
+	// ── Retry passes ──
+	for pass := 0; pass < retryCount && len(failedURLs) > 0; pass++ {
+		fmt.Printf(" Retry pass %d — retrying %d failed sources (delay=%s)...\n",
+			pass+1, len(failedURLs), retryDelay)
+		time.Sleep(retryDelay)
+		retryOK, retryFail, retryFailed := fetchBatch(failedURLs)
+		okCount += retryOK
+		failCount += retryFail
+		failedURLs = retryFailed
+		failed = retryFailed
+	}
+
+	fmt.Printf("   Fetch done — ok=%d  fail=%d  total_lines=%d\n", okCount, failCount, len(lines))
+	return lines, failed, failedURLs
 }
 
 // ── fetchRaw ──────────────────────────────────────────────────────────────────

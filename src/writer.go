@@ -48,8 +48,7 @@ func generateUniqueName(base string) string {
 // ── Clash base content ────────────────────────────────────────────────────────
 
 type clashBase struct {
-	simple   string
-	advanced string
+	simple string
 }
 
 var gClash clashBase
@@ -60,15 +59,6 @@ func loadClashBase(path string) error {
 		return fmt.Errorf("clash_base.yaml: %w", err)
 	}
 	gClash.simple = string(data)
-	return nil
-}
-
-func loadClashBaseAdvanced(path string) error {
-	data, err := os.ReadFile(path)
-	if err != nil {
-		return fmt.Errorf("clash_base_advanced.yaml: %w", err)
-	}
-	gClash.advanced = string(data)
 	return nil
 }
 
@@ -100,18 +90,19 @@ func prepareOutputDirs() error {
 		cfg.Output.ProtocolsDir,
 		"config/batches/v2ray",
 		"config/batches/clash",
-		"config/batches/clash_advanced",
 		"config/sni",
 		"config/sni/protocols",
 		"config/batches/sni_v2ray",
 		"config/batches/sni_clash",
-		"config/batches/sni_clash_advanced",
 		"config/tcp-pass",
 		"config/tcp-pass-sni",
 		"config/countries",
 		"config/farg",
 		"config/farg/protocols",
 		"config/farg/batches",
+		"config/patt",
+		"config/patt/protocols",
+		"config/patt/batches",
 	}
 	for _, dir := range dirs {
 		if err := os.MkdirAll(dir, 0755); err != nil {
@@ -152,7 +143,7 @@ func writeOutputFiles(results []configResult, tcpFailedLines []string) {
 		byProto[r.proto] = append(byProto[r.proto], named)
 
 		// Per-country v2ray: store original for flag rename later
-		if r.country != "" {
+		if r.country != "" && !r.cdn && !isWSTransport(r.line, r.proto) {
 			byCountryV2ray[r.country] = append(byCountryV2ray[r.country], countryLine{r.line, r.flagEmoji, r.proto})
 			countryCounts[r.country]++
 		}
@@ -166,7 +157,7 @@ func writeOutputFiles(results []configResult, tcpFailedLines []string) {
 			byProtoClashNames[r.proto] = append(byProtoClashNames[r.proto], cname)
 
 			// Per-country clash: store original for flag rename later
-			if r.country != "" {
+			if r.country != "" && !r.cdn && !isWSTransport(r.line, r.proto) {
 				byCountryClash[r.country] = append(byCountryClash[r.country], countryLine{r.line, r.flagEmoji, r.proto})
 			}
 		}
@@ -199,12 +190,6 @@ func writeOutputFiles(results []configResult, tcpFailedLines []string) {
 			writeClashConfigSimple(filepath.Join(cfg.Output.ProtocolsDir, proto+"_clash.yaml"), entries, byProtoClashNames[proto])
 		}
 	}
-	if gClash.advanced != "" {
-		writeClashConfigAdvanced(filepath.Join(filepath.Dir(cfg.Output.MainFile), "clash_advanced.yaml"), allClash, allClashNames)
-		for proto, entries := range byProtoClash {
-			writeClashConfigAdvanced(filepath.Join(cfg.Output.ProtocolsDir, proto+"_clash_advanced.yaml"), entries, byProtoClashNames[proto])
-		}
-	}
 
 	// ── SNI output files ───────────────────────────────────────────────────────
 	sniDir := "config/sni"
@@ -221,16 +206,11 @@ func writeOutputFiles(results []configResult, tcpFailedLines []string) {
 			writeClashConfigSimple(filepath.Join(sniProtosDir, proto+"_clash_sni.yaml"), entries, bySNIProtoClashNames[proto])
 		}
 	}
-	if gClash.advanced != "" {
-		writeClashConfigAdvanced(filepath.Join(sniDir, "clash_advanced_sni.yaml"), allSNIClash, allSNIClashNames)
-		for proto, entries := range bySNIProtoClash {
-			writeClashConfigAdvanced(filepath.Join(sniProtosDir, proto+"_clash_advanced_sni.yaml"), entries, bySNIProtoClashNames[proto])
-		}
-	}
 
 	writeBatchFiles(all, allClash, allClashNames, allSNI, allSNIClash, allSNIClashNames)
 	writeTCPPassFiles(tcpFailedLines)
 	writeFargFiles(results)
+	writePattFiles(results)
 
 	// ── Per-country output files ───────────────────────────────────────────────
 	writeCountryFiles(byCountryV2ray, byCountryClash, countryCounts)
@@ -332,9 +312,6 @@ func writeBatchFiles(
 			if gClash.simple != "" {
 				writeClashConfigSimple(fmt.Sprintf("config/batches/clash/batch_%03d.yaml", batchIdx+1), entries, names)
 			}
-			if gClash.advanced != "" {
-				writeClashConfigAdvanced(fmt.Sprintf("config/batches/clash_advanced/batch_%03d.yaml", batchIdx+1), entries, names)
-			}
 		}
 	}
 
@@ -375,9 +352,6 @@ func writeBatchFiles(
 			if gClash.simple != "" {
 				writeClashConfigSimple(fmt.Sprintf("config/batches/sni_clash/batch_%03d.yaml", batchIdx+1), entries, names)
 			}
-			if gClash.advanced != "" {
-				writeClashConfigAdvanced(fmt.Sprintf("config/batches/sni_clash_advanced/batch_%03d.yaml", batchIdx+1), entries, names)
-			}
 		}
 	}
 }
@@ -393,7 +367,7 @@ func writeCountryFiles(
 		return
 	}
 
-	fmt.Printf("📁 Writing per-country files for %d countries...\n", len(countryCounts))
+	fmt.Printf(" Writing per-country files for %d countries...\n", len(countryCounts))
 
 	// Sort countries by count desc
 	type countryEntry struct {
@@ -443,22 +417,6 @@ func writeCountryFiles(
 			}
 		}
 
-		// Clash per-country (advanced): rename with flag emoji
-		if gClash.advanced != "" {
-			if cls, ok := byCountryClash[cc]; ok && len(cls) > 0 {
-				var entries []string
-				var names []string
-				for _, cl := range cls {
-					fname := generateUniqueName(cl.flag)
-					names = append(names, fname)
-					if e, ok := configToClashYAML(cl.origLine, cl.proto, fname); ok {
-						entries = append(entries, e)
-					}
-				}
-				writeClashConfigAdvanced(fmt.Sprintf("config/countries/%s_clash_advanced.yaml", safeCC), entries, names)
-			}
-		}
-
 		fmt.Printf("   %s %s: %d configs\n", flag, cc, entry.count)
 	}
 }
@@ -468,7 +426,7 @@ func writeCountryFiles(
 func writeFile(path string, lines []string) {
 	f, err := os.Create(path)
 	if err != nil {
-		fmt.Printf("❌ Cannot write %s: %v\n", path, err)
+		fmt.Printf(" Cannot write %s: %v\n", path, err)
 		return
 	}
 	defer f.Close()
@@ -486,23 +444,7 @@ func writeClashConfigSimple(path string, proxyEntries, proxyNames []string) {
 	content := injectClashProxies(gClash.simple, proxyEntries, proxyNames)
 	f, err := os.Create(path)
 	if err != nil {
-		fmt.Printf("❌ Cannot write %s: %v\n", path, err)
-		return
-	}
-	defer f.Close()
-	w := bufio.NewWriterSize(f, 512*1024)
-	defer w.Flush()
-	w.WriteString(content)
-}
-
-func writeClashConfigAdvanced(path string, proxyEntries, proxyNames []string) {
-	if len(proxyEntries) == 0 || gClash.advanced == "" {
-		return
-	}
-	content := injectClashProxies(gClash.advanced, proxyEntries, proxyNames)
-	f, err := os.Create(path)
-	if err != nil {
-		fmt.Printf("❌ Cannot write %s: %v\n", path, err)
+		fmt.Printf(" Cannot write %s: %v\n", path, err)
 		return
 	}
 	defer f.Close()
@@ -1595,7 +1537,7 @@ func writeTCPPassFiles(lines []string) {
 		}
 		writeFile(fmt.Sprintf("config/tcp-pass/batch_%03d.txt", i+1), named[start:end])
 	}
-	fmt.Printf("📁 TCP-Pass: wrote %d configs into %d files\n", total, numBatches)
+	fmt.Printf(" TCP-Pass: wrote %d configs into %d files\n", total, numBatches)
 
 	// write SNI batches
 	if len(sniNamed) > 0 {
@@ -1609,7 +1551,7 @@ func writeTCPPassFiles(lines []string) {
 			}
 			writeFile(fmt.Sprintf("config/tcp-pass-sni/batch_%03d.txt", i+1), sniNamed[start:end])
 		}
-		fmt.Printf("📁 TCP-Pass-SNI: wrote %d configs into %d files\n", sniTotal, sniNumBatches)
+		fmt.Printf(" TCP-Pass-SNI: wrote %d configs into %d files\n", sniTotal, sniNumBatches)
 	}
 }
 
@@ -1637,20 +1579,89 @@ func writeSummary(results []configResult, failedLinks []string, duration float64
 		}
 	}
 
-	// ── 0. Custom Batches ───────────────────────────────────────────────────────
-	customBatches := countBatchFiles("config/farg/batches")
-	if customBatches > 0 {
-		gen.WriteString("## Custom Batch\n\n")
-		for i := 1; i <= customBatches; i++ {
-			cnt := min500(i, fargCount)
-			fmt.Fprintf(&gen, "Custom Batch %03d (%d config):\n```\n%s/config/farg/batches/batch_%03d.json\n```\n\n",
-				i, cnt, repoBase, i)
+	// ── 1. V2ray ────────────────────────────────────────────────────────────────
+	gen.WriteString("<details>\n<summary><strong>V2ray</strong></summary>\n\n")
+	fmt.Fprintf(&gen, "V2ray All (%d config):\n```\n%s/config/all_configs.txt\n```\n\n", len(results), repoBase)
+	for _, p := range cfg.ProtocolOrder {
+		if n := byProtoOut[p]; n > 0 {
+			fmt.Fprintf(&gen, "V2ray %s (%d config):\n```\n%s/config/protocols/%s.txt\n```\n\n",
+				strings.ToUpper(p), n, repoBase, p)
 		}
 	}
+	gen.WriteString("</details>\n\n")
 
-	// ── 0. Custom ───────────────────────────────────────────────────────────────
+	// ── 2. V2ray Batches ────────────────────────────────────────────────────────
+	v2rayBatches := countBatchFiles("config/batches/v2ray")
+	if v2rayBatches > 0 {
+		gen.WriteString("<details>\n<summary><strong>V2ray Batches</strong></summary>\n\n")
+		for i := 1; i <= v2rayBatches; i++ {
+			cnt := min500(i, len(results))
+			fmt.Fprintf(&gen, "V2ray Batch %03d (%d config):\n```\n%s/config/batches/v2ray/batch_%03d.txt\n```\n\n",
+				i, cnt, repoBase, i)
+		}
+		gen.WriteString("</details>\n\n")
+	}
+
+	// ── 3. Clash ────────────────────────────────────────────────────────────────
+	gen.WriteString("<details>\n<summary><strong>Clash</strong></summary>\n\n")
+	fmt.Fprintf(&gen, "Clash All (%d config):\n```\n%s/config/clash.yaml\n```\n\n", len(results), repoBase)
+	for _, p := range cfg.ProtocolOrder {
+		if n := byProtoOut[p]; n > 0 {
+			fmt.Fprintf(&gen, "Clash %s (%d config):\n```\n%s/config/protocols/%s_clash.yaml\n```\n\n",
+				strings.ToUpper(p), n, repoBase, p)
+		}
+	}
+	gen.WriteString("</details>\n\n")
+
+	// ── 4. Clash Batches ────────────────────────────────────────────────────────
+	clashBatches := countBatchFiles("config/batches/clash")
+	if clashBatches > 0 {
+		gen.WriteString("<details>\n<summary><strong>Clash Batches</strong></summary>\n\n")
+		for i := 1; i <= clashBatches; i++ {
+			cnt := min500(i, len(results))
+			fmt.Fprintf(&gen, "Clash Batch %03d (%d config):\n```\n%s/config/batches/clash/batch_%03d.yaml\n```\n\n",
+				i, cnt, repoBase, i)
+		}
+		gen.WriteString("</details>\n\n")
+	}
+
+	// ── 5. Patt ─────────────────────────────────────────────────────────────────
+	pattSupported := map[string]bool{"vless": true, "trojan": true}
+	var pattTotal int
+	for _, r := range results {
+		if pattSupported[r.proto] && isWSTransport(r.line, r.proto) {
+			pattTotal++
+		}
+	}
+	if pattTotal > 0 {
+		gen.WriteString("<details>\n<summary><strong>Patt</strong></summary>\n\n")
+		fmt.Fprintf(&gen, "Patt All (%d config):\n```\n%s/config/patt/all.txt\n```\n\n", pattTotal, repoBase)
+		for _, p := range cfg.ProtocolOrder {
+			if pattSupported[p] {
+				if n := byProtoOut[p]; n > 0 {
+					fmt.Fprintf(&gen, "Patt %s (%d config):\n```\n%s/config/patt/protocols/%s.txt\n```\n\n",
+						strings.ToUpper(p), n, repoBase, p)
+				}
+			}
+		}
+		gen.WriteString("</details>\n\n")
+	}
+
+	// ── 6. Patt Batches ─────────────────────────────────────────────────────────
+	pattBatches := countBatchFiles("config/patt/batches")
+	if pattBatches > 0 {
+		gen.WriteString("<details>\n<summary><strong>Patt Batches</strong></summary>\n\n")
+		for i := 1; i <= pattBatches; i++ {
+			cnt := min500(i, pattTotal)
+			fmt.Fprintf(&gen, "Patt Batch %03d (%d config):\n```\n%s/config/patt/batches/batch_%03d.txt\n```\n\n",
+				i, cnt, repoBase, i)
+		}
+		gen.WriteString("</details>\n\n")
+	}
+
+	// ── 7. Custom (Fragment) ────────────────────────────────────────────────────
 	if fargCount > 0 {
-		gen.WriteString("## Custom\n\n")
+		gen.WriteString("<details>\n<summary><strong>Custom (Fragment)</strong></summary>\n\n")
 		fmt.Fprintf(&gen, "Custom All (%d config):\n```\n%s/config/farg/all_configs.json\n```\n\n", fargCount, repoBase)
 		for _, p := range cfg.ProtocolOrder {
 			if fargSupported[p] {
@@ -1660,104 +1671,77 @@ func writeSummary(results []configResult, failedLinks []string, duration float64
 				}
 			}
 		}
+		gen.WriteString("</details>\n\n")
 	}
 
-	// ── 1. V2ray ────────────────────────────────────────────────────────────────
-	gen.WriteString("## V2ray\n\n")
-	fmt.Fprintf(&gen, "V2ray All (%d config):\n```\n%s/config/all_configs.txt\n```\n\n", len(results), repoBase)
-	for _, p := range cfg.ProtocolOrder {
-		if n := byProtoOut[p]; n > 0 {
-			fmt.Fprintf(&gen, "V2ray %s (%d config):\n```\n%s/config/protocols/%s.txt\n```\n\n",
-				strings.ToUpper(p), n, repoBase, p)
-		}
-	}
-	gen.WriteString("WARP All:\n```\nhttps://github.com/Delta-Kronecker/WARP-Config/raw/refs/heads/main/ALL.txt\n```\n\n")
-
-	// ── 2. V2ray Batches ────────────────────────────────────────────────────────
-	v2rayBatches := countBatchFiles("config/batches/v2ray")
-	if v2rayBatches > 0 {
-		gen.WriteString("## V2ray Batches\n\n")
-		for i := 1; i <= v2rayBatches; i++ {
-			cnt := min500(i, len(results))
-			fmt.Fprintf(&gen, "V2ray Batch %03d (%d config):\n```\n%s/config/batches/v2ray/batch_%03d.txt\n```\n\n",
+	// ── 8. Custom Batches (Fragment) ────────────────────────────────────────────
+	customBatches := countBatchFiles("config/farg/batches")
+	if customBatches > 0 {
+		gen.WriteString("<details>\n<summary><strong>Custom Batches (Fragment)</strong></summary>\n\n")
+		for i := 1; i <= customBatches; i++ {
+			cnt := min500(i, fargCount)
+			fmt.Fprintf(&gen, "Custom Batch %03d (%d config):\n```\n%s/config/farg/batches/batch_%03d.json\n```\n\n",
 				i, cnt, repoBase, i)
 		}
+		gen.WriteString("</details>\n\n")
 	}
 
-	// ── 3. Clash ────────────────────────────────────────────────────────────────
-	gen.WriteString("## Clash\n\n")
-	fmt.Fprintf(&gen, "Clash All (%d config):\n```\n%s/config/clash.yaml\n```\n\n", len(results), repoBase)
+	// ── 9. Local ────────────────────────────────────────────────────────────────
+	gen.WriteString("<details>\n<summary><strong>Local</strong></summary>\n\n")
+	fmt.Fprintf(&gen, "Local All (%d config):\n```\n%s/config/sni/all_configs_sni.txt\n```\n\n", len(results), repoBase)
 	for _, p := range cfg.ProtocolOrder {
 		if n := byProtoOut[p]; n > 0 {
-			fmt.Fprintf(&gen, "Clash %s (%d config):\n```\n%s/config/protocols/%s_clash.yaml\n```\n\n",
+			fmt.Fprintf(&gen, "Local %s (%d config):\n```\n%s/config/sni/protocols/%s_sni.txt\n```\n\n",
 				strings.ToUpper(p), n, repoBase, p)
 		}
 	}
-	gen.WriteString("WARP All:\n```\nhttps://github.com/Delta-Kronecker/WARP-Config/raw/refs/heads/main/ALL.yaml\n```\n\n")
+	gen.WriteString("</details>\n\n")
 
-	// ── 4. Clash Batches ────────────────────────────────────────────────────────
-	clashBatches := countBatchFiles("config/batches/clash")
-	if clashBatches > 0 {
-		gen.WriteString("## Clash Batches\n\n")
-		for i := 1; i <= clashBatches; i++ {
-			cnt := min500(i, len(results))
-			fmt.Fprintf(&gen, "Clash Batch %03d (%d config):\n```\n%s/config/batches/clash/batch_%03d.yaml\n```\n\n",
-				i, cnt, repoBase, i)
-		}
-	}
-
-	// ── 5. 127.0.0.1:40443 ─────────────────────────────────────────────────────
-	gen.WriteString("## 127.0.0.1:40443\n\n")
-	fmt.Fprintf(&gen, "SNI All (%d config):\n```\n%s/config/sni/all_configs_sni.txt\n```\n\n", len(results), repoBase)
-	for _, p := range cfg.ProtocolOrder {
-		if n := byProtoOut[p]; n > 0 {
-			fmt.Fprintf(&gen, "SNI %s (%d config):\n```\n%s/config/sni/protocols/%s_sni.txt\n```\n\n",
-				strings.ToUpper(p), n, repoBase, p)
-		}
-	}
-
-	// ── 6. 127.0.0.1:40443 Batches ─────────────────────────────────────────────
+	// ── 10. Local Batches ───────────────────────────────────────────────────────
 	sniV2rayBatches := countBatchFiles("config/batches/sni_v2ray")
 	if sniV2rayBatches > 0 {
-		gen.WriteString("## 127.0.0.1:40443 Batches\n\n")
+		gen.WriteString("<details>\n<summary><strong>Local Batches</strong></summary>\n\n")
 		for i := 1; i <= sniV2rayBatches; i++ {
 			cnt := min500(i, len(results))
-			fmt.Fprintf(&gen, "SNI Batch %03d (%d config):\n```\n%s/config/batches/sni_v2ray/batch_%03d.txt\n```\n\n",
+			fmt.Fprintf(&gen, "Local Batch %03d (%d config):\n```\n%s/config/batches/sni_v2ray/batch_%03d.txt\n```\n\n",
 				i, cnt, repoBase, i)
 		}
+		gen.WriteString("</details>\n\n")
 	}
 
-	// ── 7. TCP Pass ─────────────────────────────────────────────────────────────
+	// ── 11. TCP Pass (for advanced users) ───────────────────────────────────────
 	onlyTCPBatches := countBatchFiles("config/tcp-pass")
 	if onlyTCPBatches > 0 {
-		gen.WriteString("## TCP Pass (for advanced users)\n\n")
+		gen.WriteString("<details>\n<summary><strong>TCP Pass (for advanced users)</strong></summary>\n\n")
 		fmt.Fprintf(&gen, "> All configs that passed TCP ping. Total: **%d**\n\n", onlyTCPPassCount)
 		for i := 1; i <= onlyTCPBatches; i++ {
 			fmt.Fprintf(&gen, "TCP Pass Batch %03d:\n```\n%s/config/tcp-pass/batch_%03d.txt\n```\n\n",
 				i, repoBase, i)
 		}
+		gen.WriteString("</details>\n\n")
 	}
 
-	// ── 8. TCP Pass 127.0.0.1:40443 ───────────────────────────────────────────
+	// ── 12. Local TCP Pass (for advanced users) ─────────────────────────────────
 	onlyTCPSNIBatches := countBatchFiles("config/tcp-pass-sni")
 	if onlyTCPSNIBatches > 0 {
-		gen.WriteString("## TCP Pass 127.0.0.1:40443 (for advanced users)\n\n")
+		gen.WriteString("<details>\n<summary><strong>Local TCP Pass (for advanced users)</strong></summary>\n\n")
 		fmt.Fprintf(&gen, "> SNI version of TCP Pass configs. Total: **%d**\n\n", onlyTCPPassCount)
 		for i := 1; i <= onlyTCPSNIBatches; i++ {
 			fmt.Fprintf(&gen, "TCP Pass SNI Batch %03d:\n```\n%s/config/tcp-pass-sni/batch_%03d.txt\n```\n\n",
 				i, repoBase, i)
 		}
+		gen.WriteString("</details>\n\n")
 	}
 
-	// ── 9. By Country ────────────────────────────────────────────────────────────
+	// ── 13. By Country ──────────────────────────────────────────────────────────
 	countryCount := make(map[string]int)
 	for _, r := range results {
-		if r.country != "" {
+		if r.country != "" && !r.cdn && !isWSTransport(r.line, r.proto) {
 			countryCount[r.country]++
 		}
 	}
 	if len(countryCount) > 0 {
-		gen.WriteString("## By Country\n\n")
+		gen.WriteString("<details>\n<summary><strong>By Country</strong></summary>\n\n")
 
 		type ccEntry struct {
 			code  string
@@ -1775,13 +1759,12 @@ func writeSummary(results []configResult, failedLinks []string, duration float64
 			}
 		}
 
-		// Build cell rows: each cell is "| Country | V2ray | Clash |"
 		type cell struct {
-			cc      string
-			v2rayN  int
-			v2rayF  string
-			clashN  int
-			clashF  string
+			cc     string
+			v2rayN int
+			v2rayF string
+			clashN int
+			clashF string
 		}
 		var cells []cell
 		for _, entry := range sorted {
@@ -1797,7 +1780,6 @@ func writeSummary(results []configResult, failedLinks []string, duration float64
 		}
 
 		const cols = 3
-		// Header
 		gen.WriteString("| Country | V2ray | Clash | Country | V2ray | Clash | Country | V2ray | Clash |\n")
 		gen.WriteString("|---------|-------|-------|---------|-------|-------|---------|-------|-------|\n")
 
@@ -1815,7 +1797,7 @@ func writeSummary(results []configResult, failedLinks []string, duration float64
 			}
 			gen.WriteString("|\n")
 		}
-		gen.WriteString("\n")
+		gen.WriteString("\n</details>\n\n")
 	}
 
 	existingContent := ""
@@ -1830,7 +1812,7 @@ func writeSummary(results []configResult, failedLinks []string, duration float64
 
 	f, err := os.Create("README.md")
 	if err != nil {
-		fmt.Printf("❌ Cannot write README.md: %v\n", err)
+		fmt.Printf(" Cannot write README.md: %v\n", err)
 		return
 	}
 	defer f.Close()
@@ -1844,7 +1826,216 @@ func writeSummary(results []configResult, failedLinks []string, duration float64
 	w.WriteString(gen.String())
 }
 
+// ── Daily archive ────────────────────────────────────────────────────────────
+
+func archiveDailyConfigs(lines []string) {
+	const maxDays = 7
+	archiveDir := filepath.Join("config", "archive")
+	os.MkdirAll(archiveDir, 0755)
+
+	today := time.Now().Format("2006-01-02")
+	archivePath := filepath.Join(archiveDir, "all_configs_"+today+".txt")
+	writeFile(archivePath, lines)
+	fmt.Printf(" Archived %d configs → %s\n", len(lines), archivePath)
+
+	entries, err := os.ReadDir(archiveDir)
+	if err != nil {
+		return
+	}
+
+	var archiveFiles []string
+	for _, e := range entries {
+		if !e.IsDir() && strings.HasPrefix(e.Name(), "all_configs_") && strings.HasSuffix(e.Name(), ".txt") {
+			archiveFiles = append(archiveFiles, e.Name())
+		}
+	}
+
+	if len(archiveFiles) > maxDays {
+		sort.Strings(archiveFiles)
+		for i := 0; i < len(archiveFiles)-maxDays; i++ {
+			oldPath := filepath.Join(archiveDir, archiveFiles[i])
+			os.Remove(oldPath)
+			fmt.Printf("  Removed old archive: %s\n", archiveFiles[i])
+		}
+	}
+}
+
+func loadArchiveConfigs() map[string]bool {
+	archiveDir := filepath.Join("config", "archive")
+	entries, err := os.ReadDir(archiveDir)
+	if err != nil {
+		return nil
+	}
+
+	known := make(map[string]bool)
+	for _, e := range entries {
+		if e.IsDir() || !strings.HasPrefix(e.Name(), "all_configs_") || !strings.HasSuffix(e.Name(), ".txt") {
+			continue
+		}
+		data, err := os.ReadFile(filepath.Join(archiveDir, e.Name()))
+		if err != nil {
+			continue
+		}
+		for _, line := range strings.Split(string(data), "\n") {
+			line = strings.TrimSpace(line)
+			if line != "" {
+				known[line] = true
+			}
+		}
+	}
+	return known
+}
+
+func writeNewConfigs(results []configResult, known map[string]bool) {
+	if len(known) == 0 {
+		writeFile("config/new.txt", nil)
+		fmt.Println(" new.txt: 0 new configs (no archive to compare)")
+		return
+	}
+
+	var newLines []string
+	for _, r := range results {
+		if !known[r.line] {
+			newLines = append(newLines, r.line)
+		}
+	}
+
+	writeFile("config/new.txt", newLines)
+	fmt.Printf(" new.txt: %d new configs (not in last 7 days archive)\n", len(newLines))
+}
+
+// ── Patt config (vless/trojan ws + fragment) ──────────────────────────────────
+
+var pattCipherSuites = strings.Join([]string{
+	"TLS_AES_256_GCM_SHA384",
+	"TLS_CHACHA20_POLY1305_SHA256",
+	"TLS_AES_128_GCM_SHA256",
+	"TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384",
+	"TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384",
+	"TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256",
+	"TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256",
+	"TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256",
+	"TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256",
+	"TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA",
+	"TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA",
+	"TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256",
+	"TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256",
+}, ":")
+
+var pattFmRaw = map[string]interface{}{
+	"tcp": []interface{}{
+		map[string]interface{}{
+			"type":     "fragment",
+			"settings": map[string]interface{}{"packets": "tlshello", "lengths": []interface{}{"5", "94", "1"}, "delays": []interface{}{"0"}, "maxSplit": "0"},
+		},
+		map[string]interface{}{
+			"type":     "fragment",
+			"settings": map[string]interface{}{"packets": "1-1", "lengths": []interface{}{"109", "1"}, "delays": []interface{}{"1"}, "maxSplit": "355"},
+		},
+	},
+}
+
+var pattFmEncoded string
+
+func init() {
+	fmJSON, _ := json.Marshal(pattFmRaw)
+	pattFmEncoded = url.QueryEscape(string(fmJSON))
+}
+
+func toPattConfig(line, proto string) string {
+	if proto != "vless" && proto != "trojan" {
+		return ""
+	}
+	if !isWSTransport(line, proto) {
+		return ""
+	}
+
+	frag := ""
+	hashIdx := strings.LastIndex(line, "#")
+	if hashIdx != -1 {
+		frag = line[hashIdx:]
+		line = line[:hashIdx]
+	}
+
+	queryIdx := strings.Index(line, "?")
+	if queryIdx == -1 {
+		return ""
+	}
+
+	q, _ := url.ParseQuery(line[queryIdx+1:])
+	q.Set("cs", pattCipherSuites)
+	q.Set("fm", pattFmEncoded)
+	q.Set("fp", "unsafe")
+
+	return line[:queryIdx+1] + q.Encode() + frag
+}
+
+func writePattFiles(results []configResult) {
+	byProto := make(map[string][]string)
+	byProtoNames := make(map[string][]string)
+	var all []string
+	var allNames []string
+
+	const fallbackName = "@DeltaKroneckerGithub"
+
+	for _, r := range results {
+		pattLine := toPattConfig(r.line, r.proto)
+		if pattLine == "" {
+			continue
+		}
+
+		named := renameTo(pattLine, r.proto, fallbackName)
+		all = append(all, named)
+		byProto[r.proto] = append(byProto[r.proto], named)
+
+		cname := generateUniqueName(fallbackName)
+		allNames = append(allNames, cname)
+		byProtoNames[r.proto] = append(byProtoNames[r.proto], cname)
+	}
+
+	if len(all) == 0 {
+		return
+	}
+
+	writeFile("config/patt/all.txt", all)
+	for proto, lines := range byProto {
+		writeFile(filepath.Join("config/patt/protocols", proto+".txt"), lines)
+	}
+
+	const batchSize = 500
+	rng := rand.New(rand.NewSource(time.Now().UnixNano()))
+
+	shuffled := make([]string, len(all))
+	copy(shuffled, all)
+	rng.Shuffle(len(shuffled), func(i, j int) { shuffled[i], shuffled[j] = shuffled[j], shuffled[i] })
+
+	for batchIdx := 0; batchIdx*batchSize < len(shuffled); batchIdx++ {
+		start := batchIdx * batchSize
+		end := start + batchSize
+		if end > len(shuffled) {
+			end = len(shuffled)
+		}
+		writeFile(fmt.Sprintf("config/patt/batches/batch_%03d.txt", batchIdx+1), shuffled[start:end])
+	}
+
+	fmt.Printf(" Patt: wrote %d configs (vless/trojan ws + fragment)\n", len(all))
+}
+
 // ── Helpers ───────────────────────────────────────────────────────────────────
+
+func readFileLines(path string) []string {
+	data, err := os.ReadFile(path)
+	if err != nil {
+		return nil
+	}
+	var lines []string
+	for _, line := range strings.Split(string(data), "\n") {
+		if line != "" {
+			lines = append(lines, line)
+		}
+	}
+	return lines
+}
 
 func yamlQuote(s string) string {
 	s = strings.ReplaceAll(s, `\`, `\\`)

@@ -162,11 +162,11 @@ func (l *Logger) logSummary(duration float64, results []configResult, failedLink
 	l.writeLine("\n  Output Files:")
 	for _, p := range cfg.ProtocolOrder {
 		if n := byProto[p]; n > 0 {
-			l.writeLine(fmt.Sprintf("    %-6s: %d → %s/%s.txt | %s/%s_clash.yaml | %s/%s_clash_advanced.yaml",
-				p, n, cfg.Output.ProtocolsDir, p, cfg.Output.ProtocolsDir, p, cfg.Output.ProtocolsDir, p))
+			l.writeLine(fmt.Sprintf("    %-6s: %d → %s/%s.txt | %s/%s_clash.yaml",
+				p, n, cfg.Output.ProtocolsDir, p, cfg.Output.ProtocolsDir, p))
 		}
 	}
-	l.writeLine(fmt.Sprintf("  Total  : %d → %s | clash.yaml | clash_advanced.yaml", len(results), cfg.Output.MainFile))
+	l.writeLine(fmt.Sprintf("  Total  : %d → %s | clash.yaml", len(results), cfg.Output.MainFile))
 	l.writeLine("==========================================================")
 }
 

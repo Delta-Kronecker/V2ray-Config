@@ -21,21 +21,18 @@ func main() {
 	gNameCountMu.Unlock()
 
 	if err := loadSettings("data/settings.json"); err != nil {
-		fmt.Printf("❌ Failed to load settings.json: %v\n", err)
+		fmt.Printf(" Failed to load settings.json: %v\n", err)
 		os.Exit(1)
 	}
 
 	if err := loadClashBase("templates/clash_base.yaml"); err != nil {
-		fmt.Printf("⚠️  clash_base.yaml: %v\n", err)
-	}
-	if err := loadClashBaseAdvanced("templates/clash_base_advanced.yaml"); err != nil {
-		fmt.Printf("⚠️  clash_base_advanced.yaml: %v\n", err)
+		fmt.Printf("  clash_base.yaml: %v\n", err)
 	}
 
 	var logErr error
 	gLog, logErr = newLogger("logs")
 	if logErr != nil {
-		fmt.Printf("⚠️  Log file error: %v\n", logErr)
+		fmt.Printf("  Log file error: %v\n", logErr)
 	}
 	if gLog != nil {
 		defer gLog.close()
@@ -43,8 +40,8 @@ func main() {
 
 	start := time.Now()
 	v := cfg.Validation
-	fmt.Println("🚀 Starting V2Ray config aggregator...")
-	fmt.Printf("⚙️  Workers=%d | Timeout=%.0fs | Retries=%d\n",
+	fmt.Println(" Starting V2Ray config aggregator...")
+	fmt.Printf("  Workers=%d | Timeout=%.0fs | Retries=%d\n",
 		v.NumWorkers, v.GlobalTimeoutSec, v.MaxRetries)
 
 	// TCP ping defaults info
@@ -56,45 +53,60 @@ func main() {
 	if tcpRetries < 0 {
 		tcpRetries = 0
 	}
-	fmt.Printf("🔌 TCP-Ping timeout=%dms | retries=%d\n", tcpTimeout, tcpRetries)
+	fmt.Printf(" TCP-Ping timeout=%dms | retries=%d\n", tcpTimeout, tcpRetries)
 
 	if err := prepareOutputDirs(); err != nil {
-		fmt.Printf("❌ Error creating directories: %v\n", err)
+		fmt.Printf(" Error creating directories: %v\n", err)
 		os.Exit(1)
 	}
 
-	fmt.Println("📡 Fetching configurations from sources...")
+	fmt.Println(" Fetching configurations from sources...")
 	var allConfigs []string
 	var failedLinks []string
+	dedupSubFile("data/sub.txt")
 	subURLs := loadSubsFromFile("data/sub.txt")
 	if len(subURLs) > 0 {
-		fmt.Printf("📋 Loaded %d sources from sub.txt\n", len(subURLs))
-		allConfigs, failedLinks = fetchAllFromSubs(subURLs)
+		fmt.Printf(" Loaded %d sources from sub.txt\n", len(subURLs))
+		var failedURLs []string
+		allConfigs, failedLinks, failedURLs = fetchAllFromSubs(subURLs)
+		if len(failedURLs) > 0 {
+			cleanSubFile("data/sub.txt", failedURLs)
+		}
 	} else {
-		fmt.Println("⚠️  sub.txt not found or empty — falling back to settings.json links")
+		fmt.Println("  sub.txt not found or empty — falling back to settings.json links")
 		allConfigs, failedLinks = fetchAll(cfg.Base64Links, cfg.TextLinks)
 	}
-	fmt.Printf("📊 Total fetched: %d | Failed sources: %d\n", len(allConfigs), len(failedLinks))
+	fmt.Printf(" Total fetched: %d | Failed sources: %d\n", len(allConfigs), len(failedLinks))
 
 	if gLog != nil {
 		gLog.logStart(len(allConfigs), len(failedLinks))
 	}
 
-	fmt.Println("🔍 Validating...")
+	fmt.Println(" Validating...")
 	results, onlyTCPPass := validateAll(allConfigs)
 
 	elapsed := time.Since(start).Seconds()
-	fmt.Printf("\n✅ Valid configurations: %d\n", len(results))
-	fmt.Printf("🔶 TCP Pass (advanced): %d\n", len(onlyTCPPass))
+	fmt.Printf("\n Valid configurations: %d\n", len(results))
+	fmt.Printf(" TCP Pass (advanced): %d\n", len(onlyTCPPass))
 
 	if gLog != nil {
 		gLog.logSummary(elapsed, results, failedLinks)
 	}
 
-	fmt.Println("🌍 Detecting server countries...")
+	fmt.Println(" Detecting server countries...")
 	results = enrichResultsWithGeoIP(results, cfg.Geo)
 
+	fmt.Println(" Detecting CDN configs...")
+	results = detectCDN(results)
+
+	results = verifyGeoIP(results)
+
 	writeOutputFiles(results, onlyTCPPass)
+
+	archiveDailyConfigs(readFileLines("config/all_configs.txt"))
+	archiveKnown := loadArchiveConfigs()
+	writeNewConfigs(results, archiveKnown)
+
 	writeSummary(results, failedLinks, elapsed, len(allConfigs), len(onlyTCPPass))
-	fmt.Println("✅ Done!")
+	fmt.Println(" Done!")
 }

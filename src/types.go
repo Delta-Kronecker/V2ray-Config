@@ -172,6 +172,7 @@ type configResult struct {
 	proto     string
 	country   string
 	flagEmoji string
+	cdn       bool
 }
 
 // ── Protocol stats ────────────────────────────────────────────────────────────

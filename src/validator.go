@@ -304,7 +304,7 @@ func validateAll(lines []string) ([]configResult, []string) {
 		}
 		numPingBatches := (len(protoLines) + effBatchSize - 1) / effBatchSize
 
-		fmt.Printf("\n🔌 [%s] TCP ping pre-check — %d configs | batches=%d batch_size=%d workers=%d timeout=%dms\n",
+		fmt.Printf("\n [%s] TCP ping pre-check — %d configs | batches=%d batch_size=%d workers=%d timeout=%dms\n",
 			strings.ToUpper(proto), len(protoLines), numPingBatches, effBatchSize, tcpWorkers, v.TCPPingTimeoutMs)
 
 		pingAllStart := time.Now()
@@ -324,7 +324,7 @@ func validateAll(lines []string) ([]configResult, []string) {
 			pingPassed = append(pingPassed, pbPassed...)
 			pingTotalFailed += pbFailed
 
-			fmt.Printf("   📡 Ping batch %d/%d  ✅%d ❌%d  in %.1fs\n",
+			fmt.Printf("    Ping batch %d/%d  %d %d  in %.1fs\n",
 				pb+1, numPingBatches, len(pbPassed), pbFailed, time.Since(t0).Seconds())
 
 			if pb < numPingBatches-1 && tcpBatchRest > 0 {
@@ -333,7 +333,7 @@ func validateAll(lines []string) ([]configResult, []string) {
 		}
 
 		pingElapsed := time.Since(pingAllStart).Seconds()
-		fmt.Printf("   ✅ TCP ping total: passed=%d  skipped=%d  in %.1fs\n",
+		fmt.Printf("    TCP ping total: passed=%d  skipped=%d  in %.1fs\n",
 			len(pingPassed), pingTotalFailed, pingElapsed)
 		if gLog != nil {
 			gLog.writeLine(fmt.Sprintf("[TCP_PING] proto=%-6s total=%d passed=%d failed=%d batches=%d elapsed=%.1fs",
@@ -346,7 +346,7 @@ func validateAll(lines []string) ([]configResult, []string) {
 		tcpAllFailedMu.Unlock()
 
 		if len(pingPassed) == 0 {
-			fmt.Printf("⚠️  [%s] No configs passed TCP ping — skipping full validation\n", strings.ToUpper(proto))
+			fmt.Printf("  [%s] No configs passed TCP ping — skipping full validation\n", strings.ToUpper(proto))
 			continue
 		}
 
@@ -370,10 +370,10 @@ func validateAll(lines []string) ([]configResult, []string) {
 			totalBatches := (len(currentConfigs) + batchSize - 1) / batchSize
 
 			if attempt == 0 {
-				fmt.Printf("🔵 [%s] Full validation — %d configs in %d batches of %d\n",
+				fmt.Printf(" [%s] Full validation — %d configs in %d batches of %d\n",
 					strings.ToUpper(proto), len(currentConfigs), totalBatches, batchSize)
 			} else {
-				fmt.Printf("🔄 [%s] Retry %d — %d configs in %d batches of %d\n",
+				fmt.Printf(" [%s] Retry %d — %d configs in %d batches of %d\n",
 					strings.ToUpper(proto), attempt, len(currentConfigs), totalBatches, batchSize)
 			}
 
@@ -432,10 +432,10 @@ func validateAll(lines []string) ([]configResult, []string) {
 				occupiedAfter := checkOccupiedPorts(v.BasePort, actualBatchSize)
 
 				if procsAfter > 0 || len(occupiedAfter) > 0 {
-					fmt.Printf("     ⚠️  After kill  — procs:%-3d  ports-busy:%-3d\n",
+					fmt.Printf("       After kill  — procs:%-3d  ports-busy:%-3d\n",
 						procsAfter, len(occupiedAfter))
 					if len(occupiedAfter) > 0 && len(occupiedAfter) <= 20 {
-						fmt.Printf("     ⚠️  Still-busy ports: %v\n", occupiedAfter)
+						fmt.Printf("       Still-busy ports: %v\n", occupiedAfter)
 					}
 				}
 
@@ -500,13 +500,13 @@ func validateAll(lines []string) ([]configResult, []string) {
 					totalDone = len(currentConfigs)
 				}
 
-				fmt.Printf("  📦 Batch %d/%d [%d configs]  ✅%d ❌%d  Rate:%.1f%%  Time:%.1fs\n",
+				fmt.Printf("   Batch %d/%d [%d configs]  %d %d  Rate:%.1f%%  Time:%.1fs\n",
 					batchIdx+1, totalBatches, actualBatchSize, bPassed, bFailed, batchPassRate, batchElapsed)
-				fmt.Printf("     Parse✗:%-5d  Start✗:%-5d  Conn✗:%-5d  Total:%d/%d\n",
+				fmt.Printf("     Parse:%-5d  Start:%-5d  Conn:%-5d  Total:%d/%d\n",
 					bParse, bStart, bConn, totalDone, len(currentConfigs))
 
 				if batchIdx < totalBatches-1 && v.BatchRestMs > 0 {
-					fmt.Printf("     💤 %dms rest...\n", v.BatchRestMs)
+					fmt.Printf("      %dms rest...\n", v.BatchRestMs)
 					time.Sleep(time.Duration(v.BatchRestMs) * time.Millisecond)
 				}
 			}
@@ -516,11 +516,11 @@ func validateAll(lines []string) ([]configResult, []string) {
 
 		protoElapsed := time.Since(protoStart).Seconds()
 		protoPassRate := float64(protoPassed) / float64(protoTotal) * 100
-		fmt.Printf("✅ [%s] Done — passed=%d/%d (%.1f%%) in %.1fs\n",
+		fmt.Printf(" [%s] Done — passed=%d/%d (%.1f%%) in %.1fs\n",
 			strings.ToUpper(proto), protoPassed, protoTotal, protoPassRate, protoElapsed)
 	}
 
-	fmt.Printf("\n📊 Tested=%d | Passed=%d | ParseFail=%d | StartFail=%d | ConnFail=%d\n",
+	fmt.Printf("\n Tested=%d | Passed=%d | ParseFail=%d | StartFail=%d | ConnFail=%d\n",
 		atomic.LoadInt64(&testedCount),
 		atomic.LoadInt64(&passedCount),
 		atomic.LoadInt64(&failedParse),
@@ -956,7 +956,7 @@ func printFailureReport(protoFails map[string]*failDetail, byProto map[string][]
 
 	fmt.Println()
 	fmt.Printf("  %-7s %7s %7s %6s  %9s %9s %9s %8s  %s\n",
-		"PROTO", "TOTAL", "PASSED", "PASS%", "PARSE✗", "START✗", "CONN✗", "OTHER✗", "PASS-RATE BAR")
+		"PROTO", "TOTAL", "PASSED", "PASS%", "PARSE", "START", "CONN", "OTHER", "PASS-RATE BAR")
 	fmt.Println("  " + strings.Repeat("─", W-2))
 	for _, row := range rows {
 		passRate := float64(row.passed) / float64(row.total) * 100
@@ -999,7 +999,7 @@ func printFailureReport(protoFails map[string]*failDetail, byProto map[string][]
 			total, passed, totalFails, passRate)
 
 		if totalFails == 0 {
-			fmt.Println("│  ✓ No failures recorded.")
+			fmt.Println("│   No failures recorded.")
 			fmt.Println("└" + strings.Repeat("─", W-1))
 			continue
 		}

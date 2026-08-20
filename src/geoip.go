@@ -2,14 +2,18 @@ package main
 
 import (
 	"bytes"
+	"context"
 	"encoding/json"
 	"fmt"
 	"io"
 	"net"
 	"net/http"
 	"net/url"
+	"os"
+	"os/exec"
 	"strings"
 	"sync"
+	"syscall"
 	"time"
 )
 
@@ -289,6 +293,238 @@ func lookupGeoIPBatch(ips []string, settings GeoSettings) map[string]geoResult {
 	return results
 }
 
+// ── CDN detection (Cloudflare CIDR) ──────────────────────────────────────────
+
+var cloudflareCIDRs = []string{
+	"173.245.48.0/20", "103.21.244.0/22", "103.22.200.0/22", "103.31.4.0/22",
+	"141.101.64.0/18", "108.162.192.0/18", "190.93.240.0/20", "188.114.96.0/20",
+	"197.234.240.0/22", "198.41.128.0/17", "162.158.0.0/15", "104.16.0.0/13",
+	"104.24.0.0/14", "172.64.0.0/13", "131.0.72.0/22",
+}
+
+type cidrRange struct {
+	network *net.IPNet
+}
+
+var parsedCIDRs []cidrRange
+
+func init() {
+	for _, cidr := range cloudflareCIDRs {
+		_, network, err := net.ParseCIDR(cidr)
+		if err == nil {
+			parsedCIDRs = append(parsedCIDRs, cidrRange{network: network})
+		}
+	}
+}
+
+func isCloudflareIP(ipStr string) bool {
+	ip := net.ParseIP(ipStr)
+	if ip == nil {
+		return false
+	}
+	for _, c := range parsedCIDRs {
+		if c.network.Contains(ip) {
+			return true
+		}
+	}
+	return false
+}
+
+func detectCDN(results []configResult) []configResult {
+	for i := range results {
+		host := extractServerHost(results[i].line, results[i].proto)
+		if host == "" {
+			continue
+		}
+		ip := resolveHost(host)
+		if ip != "" && isCloudflareIP(ip) {
+			results[i].cdn = true
+		}
+	}
+	return results
+}
+
+// ── Real GeoIP through proxy ──────────────────────────────────────────────────
+
+type realGeoIPResult struct {
+	line        string
+	countryCode string
+	err         error
+}
+
+func queryGeoIPThroughProxy(configURL, protocol string, port int) realGeoIPResult {
+	var result realGeoIPResult
+	result.line = configURL
+
+	outboundJSON, parseErr := toXrayOutbound(configURL, protocol)
+	if parseErr != "" {
+		result.err = fmt.Errorf("parse: %s", parseErr)
+		return result
+	}
+
+	fullConfig := buildXrayConfig(outboundJSON, port)
+
+	configFile, err := os.CreateTemp("", "geoip-*.json")
+	if err != nil {
+		result.err = err
+		return result
+	}
+	configPath := configFile.Name()
+	configFile.Close()
+	defer os.Remove(configPath)
+
+	if err := os.WriteFile(configPath, []byte(fullConfig), 0644); err != nil {
+		result.err = err
+		return result
+	}
+
+	ctx, cancel := context.WithTimeout(context.Background(), 30*time.Second)
+	defer cancel()
+
+	cmd := exec.CommandContext(ctx, xrayPath(), "run", "-c", configPath)
+	cmd.SysProcAttr = &syscall.SysProcAttr{Setpgid: true}
+	if err := cmd.Start(); err != nil {
+		result.err = err
+		return result
+	}
+	defer killGroup(cmd)
+
+	addr := fmt.Sprintf("127.0.0.1:%d", port)
+	if !waitForPort(addr, 8*time.Second, 200*time.Millisecond, 500*time.Millisecond) {
+		result.err = fmt.Errorf("xray did not start")
+		return result
+	}
+
+	proxyURL, _ := url.Parse("http://" + addr)
+	client := &http.Client{
+		Timeout: 15 * time.Second,
+		Transport: &http.Transport{
+			Proxy: http.ProxyURL(proxyURL),
+			DialContext: (&net.Dialer{
+				Timeout:   10 * time.Second,
+				KeepAlive: 0,
+			}).DialContext,
+			MaxIdleConns:          1,
+			MaxIdleConnsPerHost:   1,
+			DisableKeepAlives:     true,
+			ResponseHeaderTimeout: 10 * time.Second,
+		},
+	}
+
+	resp, err := client.Get("https://api.ip2location.io")
+	if err != nil {
+		result.err = err
+		return result
+	}
+	defer resp.Body.Close()
+
+	body, err := io.ReadAll(resp.Body)
+	if err != nil {
+		result.err = err
+		return result
+	}
+
+	var geoResp struct {
+		CountryCode string `json:"country_code"`
+		CountryName string `json:"country_name"`
+		IP          string `json:"ip"`
+	}
+	if err := json.Unmarshal(body, &geoResp); err != nil {
+		result.err = err
+		return result
+	}
+
+	if geoResp.CountryCode == "" {
+		result.err = fmt.Errorf("empty country code")
+		return result
+	}
+
+	result.countryCode = geoResp.CountryCode
+	return result
+}
+
+func verifyGeoIP(results []configResult) []configResult {
+	geoIPResults := make(chan realGeoIPResult, len(results))
+
+	var toCheck []struct {
+		idx   int
+		line  string
+		proto string
+	}
+	for i, r := range results {
+		if r.cdn {
+			continue
+		}
+		toCheck = append(toCheck, struct {
+			idx   int
+			line  string
+			proto string
+		}{i, r.line, r.proto})
+	}
+
+	if len(toCheck) == 0 {
+		return results
+	}
+
+	fmt.Printf(" Real GeoIP: verifying %d configs through proxy...\n", len(toCheck))
+
+	v := cfg.Validation
+	workers := 20
+	if workers > len(toCheck) {
+		workers = len(toCheck)
+	}
+
+	jobs := make(chan struct {
+		idx   int
+		line  string
+		proto string
+	}, len(toCheck))
+
+	for _, tc := range toCheck {
+		jobs <- tc
+	}
+	close(jobs)
+
+	var wg sync.WaitGroup
+	for w := 0; w < workers; w++ {
+		wg.Add(1)
+		go func(workerID int) {
+			defer wg.Done()
+			port := v.BasePort + 5000 + workerID
+			for job := range jobs {
+				r := queryGeoIPThroughProxy(job.line, job.proto, port)
+				geoIPResults <- r
+			}
+		}(w)
+	}
+
+	wg.Wait()
+	close(geoIPResults)
+
+	matchCount := 0
+	mismatchCount := 0
+	for r := range geoIPResults {
+		if r.err != nil {
+			continue
+		}
+		for i := range results {
+			if results[i].line == r.line {
+				oldCC := results[i].country
+				results[i].country = r.countryCode
+				results[i].flagEmoji = countryCodeToFlag(r.countryCode)
+				if oldCC != "" && oldCC != r.countryCode {
+					mismatchCount++
+				} else {
+					matchCount++
+				}
+				break
+			}
+		}
+	}
+
+	fmt.Printf(" Real GeoIP: %d matched, %d location corrected\n", matchCount, mismatchCount)
+	return results
+}
 // ── Main orchestrator ────────────────────────────────────────────────────────
 
 func enrichResultsWithGeoIP(results []configResult, settings GeoSettings) []configResult {
@@ -296,7 +532,7 @@ func enrichResultsWithGeoIP(results []configResult, settings GeoSettings) []conf
 		return results
 	}
 
-	fmt.Printf("🌍 GeoIP: resolving %d configs...\n", len(results))
+	fmt.Printf(" GeoIP: resolving %d configs...\n", len(results))
 
 	// Step 1: Extract unique hostnames and resolve to IPs
 	hostToIP := make(map[string]string)
@@ -330,10 +566,10 @@ func enrichResultsWithGeoIP(results []configResult, settings GeoSettings) []conf
 		}
 	}
 
-	fmt.Printf("🌍 GeoIP: %d unique hosts → %d unique IPs\n", len(hostToIP), len(uniqueIPs))
+	fmt.Printf(" GeoIP: %d unique hosts → %d unique IPs\n", len(hostToIP), len(uniqueIPs))
 
 	if len(uniqueIPs) == 0 {
-		fmt.Println("⚠️  GeoIP: no IPs to lookup")
+		fmt.Println("  GeoIP: no IPs to lookup")
 		return results
 	}
 
@@ -341,7 +577,7 @@ func enrichResultsWithGeoIP(results []configResult, settings GeoSettings) []conf
 	start := time.Now()
 	geoResults := lookupGeoIPBatch(uniqueIPs, settings)
 	elapsed := time.Since(start).Seconds()
-	fmt.Printf("🌍 GeoIP: got results for %d/%d IPs in %.1fs\n", len(geoResults), len(uniqueIPs), elapsed)
+	fmt.Printf(" GeoIP: got results for %d/%d IPs in %.1fs\n", len(geoResults), len(uniqueIPs), elapsed)
 
 	// Step 3: Build IP→country map
 	ipToCountry := make(map[string]string)
@@ -372,7 +608,7 @@ func enrichResultsWithGeoIP(results []configResult, settings GeoSettings) []conf
 		matched++
 	}
 
-	fmt.Printf("🌍 GeoIP: %d matched, %d unmatched\n", matched, unmatched)
+	fmt.Printf(" GeoIP: %d matched, %d unmatched\n", matched, unmatched)
 
 	// Print country distribution
 	countryCount := make(map[string]int)
@@ -384,7 +620,7 @@ func enrichResultsWithGeoIP(results []configResult, settings GeoSettings) []conf
 		}
 	}
 	if len(countryCount) > 0 {
-		fmt.Println("🌍 Country distribution:")
+		fmt.Println(" Country distribution:")
 		type ccEntry struct {
 			name  string
 			count int
