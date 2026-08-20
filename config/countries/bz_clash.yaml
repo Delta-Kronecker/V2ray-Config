@@ -62,6 +62,34 @@ dns:
 proxies:
   - name: "🇧🇿_1"
     type: vless
+    server: "45.131.6.123"
+    port: 443
+    uuid: "1d16c6e0-1bbe-435b-b661-90043fee999c"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "notls.lukongtou.eu.org"
+    network: ws
+    ws-opts:
+      path: "Telegram-WangCai2"
+      headers:
+        Host: "notls.lukongtou.eu.org"
+  - name: "🇧🇿_2"
+    type: vless
+    server: "45.131.7.2"
+    port: 443
+    uuid: "Telegram🇨🇳 @WangCai2"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "support.zoom.us.yxls.eu.cc"
+    network: ws
+    ws-opts:
+      path: "/sg-amz"
+      headers:
+        Host: "support.zoom.us.yxls.eu.cc"
+  - name: "🇧🇿_3"
+    type: vless
     server: "45.131.7.7"
     port: 8443
     uuid: "7967bf59-57e3-4cde-9898-527b0fe60022"
@@ -75,7 +103,62 @@ proxies:
       path: "/dula?Telegram-WangCai2"
       headers:
         Host: "speed.dulacloud.store"
-  - name: "🇧🇿_2"
+  - name: "🇧🇿_4"
+    type: vless
+    server: "45.131.7.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vms.lifetime02.workers.dev"
+  - name: "🇧🇿_5"
+    type: vless
+    server: "45.131.209.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vms.lifetime04.workers.dev"
+  - name: "🇧🇿_6"
+    type: vless
+    server: "45.131.211.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "vms.lifetime06.workers.dev"
+  - name: "🇧🇿_7"
+    type: vless
+    server: "45.131.6.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vms.lifetime61.workers.dev"
+  - name: "🇧🇿_8"
+    type: vless
+    server: "45.131.210.30"
+    port: 8880
+    uuid: "6202b230-417c-4d8e-b624-0f71afa9c75d"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "vms.lifetime05.workers.dev"
+  - name: "🇧🇿_9"
     type: vless
     server: "45.131.6.7"
     port: 8443
@@ -90,20 +173,6 @@ proxies:
       path: "/dula?Telegram-WangCai2"
       headers:
         Host: "speed.dulacloud.store"
-  - name: "🇧🇿_3"
-    type: vless
-    server: "45.131.7.2"
-    port: 443
-    uuid: "Telegram🇨🇳 @WangCai2"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "support.zoom.us.yxls.eu.cc"
-    network: ws
-    ws-opts:
-      path: "/sg-amz"
-      headers:
-        Host: "support.zoom.us.yxls.eu.cc"
 
 proxy-groups:
   - name: "PROXY"
@@ -123,6 +192,12 @@ proxy-groups:
       - "🇧🇿_1"
       - "🇧🇿_2"
       - "🇧🇿_3"
+      - "🇧🇿_4"
+      - "🇧🇿_5"
+      - "🇧🇿_6"
+      - "🇧🇿_7"
+      - "🇧🇿_8"
+      - "🇧🇿_9"
 
 
   - name: "Load Balance"
@@ -134,6 +209,12 @@ proxy-groups:
       - "🇧🇿_1"
       - "🇧🇿_2"
       - "🇧🇿_3"
+      - "🇧🇿_4"
+      - "🇧🇿_5"
+      - "🇧🇿_6"
+      - "🇧🇿_7"
+      - "🇧🇿_8"
+      - "🇧🇿_9"
 
 rules:
   - MATCH,PROXY

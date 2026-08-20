@@ -74,20 +74,6 @@ proxies:
       public-key: "XZa7f7bABj7lY4HuLopVCBBBYTu-RB7QyIZ96njvYwo"
       short-id: "7bcfc0bc"
     flow: "xtls-rprx-vision"
-  - name: "🇦🇱_2"
-    type: vless
-    server: "130.49.189.41"
-    port: 443
-    uuid: "d4cae7df-50a1-428c-bd62-881c8f3bbd90"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "youtube.superbuba.top"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "rCkSHJ7goy7ZvSlau4LfXF-QLloOJMNeMxpeeQtwtVs"
-      short-id: "4fa44664f6a566d3"
-    flow: "xtls-rprx-vision"
 
 proxy-groups:
   - name: "PROXY"
@@ -105,7 +91,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇦🇱_1"
-      - "🇦🇱_2"
 
 
   - name: "Load Balance"
@@ -115,7 +100,6 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇦🇱_1"
-      - "🇦🇱_2"
 
 rules:
   - MATCH,PROXY

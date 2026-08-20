@@ -76,6 +76,21 @@ proxies:
     flow: "xtls-rprx-vision"
   - name: "🇨🇿_2"
     type: vless
+    server: "195.85.23.120"
+    port: 443
+    uuid: "50414e45-4c5f-5a45-5553-fc68f701cca5"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "lwzw2revus0s.bikhabi.workers.dev"
+    client-fingerprint: "unsafe"
+    network: ws
+    ws-opts:
+      path: "/stream/PANEL_ZEUS/fc68f701cca5/loc-0"
+      headers:
+        Host: "lwzw2revus0s.bikhabi.workers.dev"
+  - name: "🇨🇿_3"
+    type: vless
     server: "78.159.247.253"
     port: 2027
     uuid: "851ed0d8-a37b-452d-8ef2-5b6c2d28a060"
@@ -87,14 +102,6 @@ proxies:
       public-key: "ISa-DZOI4LRRb9DHMFYm5oFqBXDjYzz0hVWUfWvzLmo"
       short-id: "dc8109baf0f607ea"
     flow: "xtls-rprx-vision"
-  - name: "🇨🇿_3"
-    type: trojan
-    server: "ch-2.bexum.fun"
-    port: 443
-    password: "LYaEYwjN8LjWTRJdCCTzW7V6gK7atJVu"
-    sni: "ch-2.bexum.fun"
-    skip-cert-verify: true
-    udp: true
   - name: "🇨🇿_4"
     type: trojan
     server: "178.208.75.155"
@@ -110,6 +117,14 @@ proxies:
         Host: "www.calmlunch.com"
   - name: "🇨🇿_5"
     type: trojan
+    server: "ch-2.bexum.fun"
+    port: 443
+    password: "LYaEYwjN8LjWTRJdCCTzW7V6gK7atJVu"
+    sni: "ch-2.bexum.fun"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇨🇿_6"
+    type: trojan
     server: "178.208.75.155"
     port: 8443
     password: "humanity"
@@ -119,7 +134,7 @@ proxies:
     network: ws
     ws-opts:
       path: "/assignment"
-  - name: "🇨🇿_6"
+  - name: "🇨🇿_7"
     type: trojan
     server: "46.8.113.142"
     port: 443
@@ -149,6 +164,7 @@ proxy-groups:
       - "🇨🇿_4"
       - "🇨🇿_5"
       - "🇨🇿_6"
+      - "🇨🇿_7"
 
 
   - name: "Load Balance"
@@ -163,6 +179,7 @@ proxy-groups:
       - "🇨🇿_4"
       - "🇨🇿_5"
       - "🇨🇿_6"
+      - "🇨🇿_7"
 
 rules:
   - MATCH,PROXY

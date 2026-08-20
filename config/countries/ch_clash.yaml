@@ -62,6 +62,30 @@ dns:
 proxies:
   - name: "🇨🇭_1"
     type: vless
+    server: "178.83.226.55"
+    port: 443
+    uuid: "2a77a470-315c-493d-b690-59b814a804cb"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sellflow.org"
+    reality-opts:
+      public-key: "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
+      short-id: ""
+    flow: "xtls-rprx-vision"
+  - name: "🇨🇭_2"
+    type: vless
+    server: "shop.magazinetut.online"
+    port: 443
+    uuid: "8f4d9689-c25d-40a7-ae8f-39b1681dce20"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "shop.magazinetut.online"
+    client-fingerprint: "chrome"
+    flow: "xtls-rprx-vision"
+  - name: "🇨🇭_3"
+    type: vless
     server: "193.151.108.186"
     port: 443
     uuid: "8f4d9689-c25d-40a7-ae8f-39b1681dce20"
@@ -71,21 +95,7 @@ proxies:
     servername: "shop.magazinetut.online"
     client-fingerprint: "chrome"
     flow: "xtls-rprx-vision"
-  - name: "🇨🇭_2"
-    type: vless
-    server: "31.76.4.103"
-    port: 443
-    uuid: "423b1d79-08c4-403f-9d5e-c541f791b55f"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "eu-central.cendora.ru"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "b-Cm9hX-3UHsS1L_lnUB6AMjuKhlN1IDdBbZ506itjI"
-      short-id: "00bca5982f82d083"
-    flow: "xtls-rprx-vision"
-  - name: "🇨🇭_3"
+  - name: "🇨🇭_4"
     type: vless
     server: "152.233.31.77"
     port: 443
@@ -99,22 +109,9 @@ proxies:
       public-key: "cFmHbKSQO1BQnCBGd26-EA0CU-zYmduwk0Wqu0fhuT0"
       short-id: "7e8d2954eb836947"
     flow: "xtls-rprx-vision"
-  - name: "🇨🇭_4"
-    type: vless
-    server: "178.83.226.55"
-    port: 443
-    uuid: "2a77a470-315c-493d-b690-59b814a804cb"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "sellflow.org"
-    reality-opts:
-      public-key: "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
-      short-id: ""
-    flow: "xtls-rprx-vision"
   - name: "🇨🇭_5"
     type: vless
-    server: "193.151.108.186"
+    server: "shop.magazinetut.online"
     port: 443
     uuid: "c245122a-f149-4e32-8eaa-e875e88a5ab6"
     udp: true
@@ -125,18 +122,23 @@ proxies:
     flow: "xtls-rprx-vision"
   - name: "🇨🇭_6"
     type: vless
-    server: "45.90.56.231"
+    server: "193.151.108.186"
     port: 443
-    uuid: "e2b8f727-c5ee-47e1-8f1b-7c5c61479ce0"
+    uuid: "c245122a-f149-4e32-8eaa-e875e88a5ab6"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "www.cloudflare.com"
+    servername: "shop.magazinetut.online"
     client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "KrFnWxAwVGL6tuj1JE0qpykLzY4aOFjyK3OaymF_hT0"
-      short-id: "e2e66f4537770cef"
     flow: "xtls-rprx-vision"
+  - name: "🇨🇭_7"
+    type: trojan
+    server: "tr-switzerlandgopota.unlimited-access.ru"
+    port: 443
+    password: "kxHw-Dk-e9dffgzYszMlEqLJ92AnY3Pi"
+    sni: "tr-switzerlandgopota.unlimited-access.ru"
+    skip-cert-verify: true
+    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -159,6 +161,7 @@ proxy-groups:
       - "🇨🇭_4"
       - "🇨🇭_5"
       - "🇨🇭_6"
+      - "🇨🇭_7"
 
 
   - name: "Load Balance"
@@ -173,6 +176,7 @@ proxy-groups:
       - "🇨🇭_4"
       - "🇨🇭_5"
       - "🇨🇭_6"
+      - "🇨🇭_7"
 
 rules:
   - MATCH,PROXY

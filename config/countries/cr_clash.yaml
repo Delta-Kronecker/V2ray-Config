@@ -89,14 +89,6 @@ proxies:
       headers:
         Host: "support.zoom.us.yxls.eu.cc"
   - name: "🇨🇷_3"
-    type: trojan
-    server: "190.93.247.7"
-    port: 443
-    password: "NISHIKUITAN111"
-    sni: "190.93.247.7"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇨🇷_4"
     type: ss
     server: "190.93.246.16"
     port: 443
@@ -108,7 +100,7 @@ proxies:
       mode: "websocket"
       path: "/14b02e2a-8930-4afb-8412-ea4a4954ca5b/?ed\\=2560"
       host: "ylnhh.us.ci"
-  - name: "🇨🇷_5"
+  - name: "🇨🇷_4"
     type: ss
     server: "190.93.246.16"
     port: 443
@@ -140,7 +132,6 @@ proxy-groups:
       - "🇨🇷_2"
       - "🇨🇷_3"
       - "🇨🇷_4"
-      - "🇨🇷_5"
 
 
   - name: "Load Balance"
@@ -153,7 +144,6 @@ proxy-groups:
       - "🇨🇷_2"
       - "🇨🇷_3"
       - "🇨🇷_4"
-      - "🇨🇷_5"
 
 rules:
   - MATCH,PROXY

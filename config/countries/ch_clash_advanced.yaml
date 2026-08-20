@@ -59,7 +59,31 @@ dns:
     - tls://94.140.14.14:853
 
 proxies:
-  - name: "🇨🇭_7"
+  - name: "🇨🇭_8"
+    type: vless
+    server: "178.83.226.55"
+    port: 443
+    uuid: "2a77a470-315c-493d-b690-59b814a804cb"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sellflow.org"
+    reality-opts:
+      public-key: "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
+      short-id: ""
+    flow: "xtls-rprx-vision"
+  - name: "🇨🇭_9"
+    type: vless
+    server: "shop.magazinetut.online"
+    port: 443
+    uuid: "8f4d9689-c25d-40a7-ae8f-39b1681dce20"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "shop.magazinetut.online"
+    client-fingerprint: "chrome"
+    flow: "xtls-rprx-vision"
+  - name: "🇨🇭_10"
     type: vless
     server: "193.151.108.186"
     port: 443
@@ -70,21 +94,7 @@ proxies:
     servername: "shop.magazinetut.online"
     client-fingerprint: "chrome"
     flow: "xtls-rprx-vision"
-  - name: "🇨🇭_8"
-    type: vless
-    server: "31.76.4.103"
-    port: 443
-    uuid: "423b1d79-08c4-403f-9d5e-c541f791b55f"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "eu-central.cendora.ru"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "b-Cm9hX-3UHsS1L_lnUB6AMjuKhlN1IDdBbZ506itjI"
-      short-id: "00bca5982f82d083"
-    flow: "xtls-rprx-vision"
-  - name: "🇨🇭_9"
+  - name: "🇨🇭_11"
     type: vless
     server: "152.233.31.77"
     port: 443
@@ -98,20 +108,18 @@ proxies:
       public-key: "cFmHbKSQO1BQnCBGd26-EA0CU-zYmduwk0Wqu0fhuT0"
       short-id: "7e8d2954eb836947"
     flow: "xtls-rprx-vision"
-  - name: "🇨🇭_10"
+  - name: "🇨🇭_12"
     type: vless
-    server: "178.83.226.55"
+    server: "shop.magazinetut.online"
     port: 443
-    uuid: "2a77a470-315c-493d-b690-59b814a804cb"
+    uuid: "c245122a-f149-4e32-8eaa-e875e88a5ab6"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "sellflow.org"
-    reality-opts:
-      public-key: "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
-      short-id: ""
+    servername: "shop.magazinetut.online"
+    client-fingerprint: "chrome"
     flow: "xtls-rprx-vision"
-  - name: "🇨🇭_11"
+  - name: "🇨🇭_13"
     type: vless
     server: "193.151.108.186"
     port: 443
@@ -122,20 +130,14 @@ proxies:
     servername: "shop.magazinetut.online"
     client-fingerprint: "chrome"
     flow: "xtls-rprx-vision"
-  - name: "🇨🇭_12"
-    type: vless
-    server: "45.90.56.231"
+  - name: "🇨🇭_14"
+    type: trojan
+    server: "tr-switzerlandgopota.unlimited-access.ru"
     port: 443
-    uuid: "e2b8f727-c5ee-47e1-8f1b-7c5c61479ce0"
-    udp: true
-    tls: true
+    password: "kxHw-Dk-e9dffgzYszMlEqLJ92AnY3Pi"
+    sni: "tr-switzerlandgopota.unlimited-access.ru"
     skip-cert-verify: true
-    servername: "www.cloudflare.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "KrFnWxAwVGL6tuj1JE0qpykLzY4aOFjyK3OaymF_hT0"
-      short-id: "e2e66f4537770cef"
-    flow: "xtls-rprx-vision"
+    udp: true
 
 proxy-groups:
   # ── Top-level selector ────────────────────────────────────────────────────
@@ -178,12 +180,13 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇨🇭_7"
       - "🇨🇭_8"
       - "🇨🇭_9"
       - "🇨🇭_10"
       - "🇨🇭_11"
       - "🇨🇭_12"
+      - "🇨🇭_13"
+      - "🇨🇭_14"
 
   - name: "LB-CDN"
     type: load-balance
@@ -193,12 +196,13 @@ proxy-groups:
     tolerance: 150
     lazy: true
     proxies:
-      - "🇨🇭_7"
       - "🇨🇭_8"
       - "🇨🇭_9"
       - "🇨🇭_10"
       - "🇨🇭_11"
       - "🇨🇭_12"
+      - "🇨🇭_13"
+      - "🇨🇭_14"
 
   # ── Fastest-proxy groups ──────────────────────────────────────────────────
   - name: "FAST-ALL"
@@ -208,12 +212,13 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇨🇭_7"
       - "🇨🇭_8"
       - "🇨🇭_9"
       - "🇨🇭_10"
       - "🇨🇭_11"
       - "🇨🇭_12"
+      - "🇨🇭_13"
+      - "🇨🇭_14"
 
   - name: "FAST-CDN"
     type: url-test
@@ -222,12 +227,13 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇨🇭_7"
       - "🇨🇭_8"
       - "🇨🇭_9"
       - "🇨🇭_10"
       - "🇨🇭_11"
       - "🇨🇭_12"
+      - "🇨🇭_13"
+      - "🇨🇭_14"
 
   # ── UDP group ─────────────────────────────────────────────────────────────
   - name: "UDP-BEST"
@@ -237,23 +243,25 @@ proxy-groups:
     tolerance: 50
     lazy: true
     proxies:
-      - "🇨🇭_7"
       - "🇨🇭_8"
       - "🇨🇭_9"
       - "🇨🇭_10"
       - "🇨🇭_11"
       - "🇨🇭_12"
+      - "🇨🇭_13"
+      - "🇨🇭_14"
 
   # ── Manual selector ───────────────────────────────────────────────────────
   - name: "MANUAL"
     type: select
     proxies:
-      - "🇨🇭_7"
       - "🇨🇭_8"
       - "🇨🇭_9"
       - "🇨🇭_10"
       - "🇨🇭_11"
       - "🇨🇭_12"
+      - "🇨🇭_13"
+      - "🇨🇭_14"
 
 rules:
   - MATCH,PROXY-BEST
