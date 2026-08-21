@@ -1895,10 +1895,12 @@ func writeNewConfigs(results []configResult, known map[string]bool) {
 		return
 	}
 
+	const fallbackName = "@DeltaKroneckerGithub"
 	var newLines []string
 	for _, r := range results {
 		if !known[r.line] {
-			newLines = append(newLines, r.line)
+			named := renameTo(r.line, r.proto, fallbackName)
+			newLines = append(newLines, named)
 		}
 	}
 
