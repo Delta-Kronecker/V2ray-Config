@@ -1933,6 +1933,10 @@ var pattParamOrder = []string{
 	"sni", "alpn", "fp", "cs", "fm", "flow", "headerType", "packetEncoding",
 }
 
+func pattEscape(s string) string {
+	return strings.ReplaceAll(url.QueryEscape(s), "+", "%20")
+}
+
 func toPattConfig(line, proto string) string {
 	if proto != "vless" && proto != "trojan" {
 		return ""
@@ -1962,13 +1966,13 @@ func toPattConfig(line, proto string) string {
 	seen := make(map[string]bool)
 	for _, key := range pattParamOrder {
 		if vals, ok := q[key]; ok && len(vals) > 0 {
-			parts = append(parts, url.QueryEscape(key)+"="+url.QueryEscape(vals[0]))
+			parts = append(parts, pattEscape(key)+"="+pattEscape(vals[0]))
 			seen[key] = true
 		}
 	}
 	for key, vals := range q {
 		if !seen[key] && len(vals) > 0 {
-			parts = append(parts, url.QueryEscape(key)+"="+url.QueryEscape(vals[0]))
+			parts = append(parts, pattEscape(key)+"="+pattEscape(vals[0]))
 		}
 	}
 
