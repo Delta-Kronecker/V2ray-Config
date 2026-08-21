@@ -62,47 +62,6 @@ dns:
 proxies:
   - name: "🇨🇭_1"
     type: vless
-    server: "178.83.226.55"
-    port: 443
-    uuid: "2a77a470-315c-493d-b690-59b814a804cb"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "sellflow.org"
-    reality-opts:
-      public-key: "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
-      short-id: ""
-    flow: "xtls-rprx-vision"
-  - name: "🇨🇭_2"
-    type: vless
-    server: "31.76.4.103"
-    port: 443
-    uuid: "423b1d79-08c4-403f-9d5e-c541f791b55f"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "eu-central.cendora.ru"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "b-Cm9hX-3UHsS1L_lnUB6AMjuKhlN1IDdBbZ506itjI"
-      short-id: "00bca5982f82d083"
-    flow: "xtls-rprx-vision"
-  - name: "🇨🇭_3"
-    type: vless
-    server: "152.233.31.77"
-    port: 443
-    uuid: "f04037b7-125e-4666-841f-4b6bdbc9823d"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.cloudflare.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "cFmHbKSQO1BQnCBGd26-EA0CU-zYmduwk0Wqu0fhuT0"
-      short-id: "7e8d2954eb836947"
-    flow: "xtls-rprx-vision"
-  - name: "🇨🇭_4"
-    type: vless
     server: "178.83.226.142"
     port: 8443
     uuid: "4cb63132-e084-4676-ac67-1ed6b60be05a"
@@ -115,7 +74,7 @@ proxies:
       public-key: "-x9vdxai-qKAzuhxV7H2RIbEmIh_ZgdiFxiUA5q0B1I"
       short-id: "aa6988d03cc11454"
     flow: "xtls-rprx-vision"
-  - name: "🇨🇭_5"
+  - name: "🇨🇭_2"
     type: vless
     server: "193.151.108.89"
     port: 13443
@@ -129,7 +88,62 @@ proxies:
       public-key: "gc9oXe37KCCm3J1dJ03wdGsnxPBdeEkRPOvl_t-vfVM"
       short-id: "a7f3c91b2e6d84c0"
     flow: "xtls-rprx-vision"
+  - name: "🇨🇭_3"
+    type: vless
+    server: "31.76.4.103"
+    port: 443
+    uuid: "423b1d79-08c4-403f-9d5e-c541f791b55f"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "eu-central.cendora.ru"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "b-Cm9hX-3UHsS1L_lnUB6AMjuKhlN1IDdBbZ506itjI"
+      short-id: "00bca5982f82d083"
+    flow: "xtls-rprx-vision"
+  - name: "🇨🇭_4"
+    type: vless
+    server: "178.83.226.55"
+    port: 443
+    uuid: "2a77a470-315c-493d-b690-59b814a804cb"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sellflow.org"
+    reality-opts:
+      public-key: "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
+      short-id: ""
+    flow: "xtls-rprx-vision"
+  - name: "🇨🇭_5"
+    type: vless
+    server: "jhmq-16fdqod.henghesoft.net"
+    port: 443
+    uuid: "f04037b7-125e-4666-841f-4b6bdbc9823d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.cloudflare.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "cFmHbKSQO1BQnCBGd26-EA0CU-zYmduwk0Wqu0fhuT0"
+      short-id: "7e8d2954eb836947"
+    flow: "xtls-rprx-vision"
   - name: "🇨🇭_6"
+    type: vless
+    server: "152.233.31.77"
+    port: 443
+    uuid: "f04037b7-125e-4666-841f-4b6bdbc9823d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.cloudflare.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "cFmHbKSQO1BQnCBGd26-EA0CU-zYmduwk0Wqu0fhuT0"
+      short-id: "7e8d2954eb836947"
+    flow: "xtls-rprx-vision"
+  - name: "🇨🇭_7"
     type: trojan
     server: "tr-switzerlandgopota.unlimited-access.ru"
     port: 443
@@ -159,6 +173,7 @@ proxy-groups:
       - "🇨🇭_4"
       - "🇨🇭_5"
       - "🇨🇭_6"
+      - "🇨🇭_7"
 
 
   - name: "Load Balance"
@@ -173,6 +188,7 @@ proxy-groups:
       - "🇨🇭_4"
       - "🇨🇭_5"
       - "🇨🇭_6"
+      - "🇨🇭_7"
 
 rules:
   - MATCH,PROXY

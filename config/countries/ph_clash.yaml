@@ -60,55 +60,20 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇦🇱_1"
+  - name: "🇵🇭_1"
     type: vless
-    server: "78.159.131.235"
-    port: 443
-    uuid: "1f619326-cd93-4d6b-aebe-e0b5f8831d02"
+    server: "92yqc126g8qwe6v23n01.haiyucloud.com"
+    port: 50567
+    uuid: "485717cf-e96c-40db-9bc1-624060b89f20"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "yahoo.com"
-    client-fingerprint: "firefox"
+    servername: "www.python.org"
+    client-fingerprint: "chrome"
     reality-opts:
-      public-key: "XZa7f7bABj7lY4HuLopVCBBBYTu-RB7QyIZ96njvYwo"
-      short-id: "7bcfc0bc"
+      public-key: "i0nN_0uLl5ha8pIf6gNNLeLQe7it-nXDFLC5eM1BHV4"
+      short-id: "bb9b8f5f"
     flow: "xtls-rprx-vision"
-  - name: "🇦🇱_2"
-    type: vless
-    server: "95.85.227.142"
-    port: 443
-    uuid: "a34b5e88-cf0d-4c01-8199-2d1002d3c787"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.wikihow.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "HKpd1sbrhBds8SJSL0d22MAq_QyTR6EP6y5b5DYol3U"
-      short-id: ""
-    flow: "xtls-rprx-vision"
-  - name: "🇦🇱_3"
-    type: vless
-    server: "95.85.224.51"
-    port: 443
-    uuid: "342ab7e4-5a89-0001-8809-304120d4aa83"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "max.ru"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "WWeAHWUVD-phmnjNJ823cer0c4CMIbEs08AhsuEZmDc"
-      short-id: "a696de84963656de"
-    flow: "xtls-rprx-vision"
-  - name: "🇦🇱_4"
-    type: ss
-    server: "157.22.240.141"
-    port: 57925
-    cipher: "chacha20-ietf-poly1305"
-    password: "THFFWv7np93DBLKZUvVm7u"
-    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -125,10 +90,7 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇦🇱_1"
-      - "🇦🇱_2"
-      - "🇦🇱_3"
-      - "🇦🇱_4"
+      - "🇵🇭_1"
 
 
   - name: "Load Balance"
@@ -137,10 +99,7 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇦🇱_1"
-      - "🇦🇱_2"
-      - "🇦🇱_3"
-      - "🇦🇱_4"
+      - "🇵🇭_1"
 
 rules:
   - MATCH,PROXY

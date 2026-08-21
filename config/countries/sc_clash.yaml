@@ -62,32 +62,15 @@ dns:
 proxies:
   - name: "🇸🇨_1"
     type: vless
-    server: "200.165.229.168"
-    port: 8448
-    uuid: "b3198f79-b4e6-4da0-9088-a9ec89e5f8d7"
+    server: "45.130.125.209"
+    port: 80
+    uuid: "dc8eccdb-ecfa-435f-9ac1-5dc4882e7b51"
     udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.rumedia-cdn.com"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "WvMqlTcY5BY7WbrsGCwtA4VzhXGaP-FkjoOHn-yMsSI"
-      short-id: "a94eb0e19d010373"
-    flow: "xtls-rprx-vision"
-  - name: "🇸🇨_2"
-    type: vless
-    server: "200.165.229.168"
-    port: 2084
-    uuid: "a95974c3-29ed-4548-ab42-b588b321a5ce"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.rumedia-cdn.com"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "mrsI2kSF8FmNnFKn_-bpDU8VS6Tews7wkABJGdwMUAg"
-      short-id: "3578bd8a4032dcab"
-    flow: "xtls-rprx-vision"
+    network: ws
+    ws-opts:
+      path: "/http"
+      headers:
+        Host: "de.vpnbase.net"
 
 proxy-groups:
   - name: "PROXY"
@@ -105,7 +88,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇸🇨_1"
-      - "🇸🇨_2"
 
 
   - name: "Load Balance"
@@ -115,7 +97,6 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇸🇨_1"
-      - "🇸🇨_2"
 
 rules:
   - MATCH,PROXY

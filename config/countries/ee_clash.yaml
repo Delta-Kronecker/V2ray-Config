@@ -76,15 +76,28 @@ proxies:
     flow: "xtls-rprx-vision"
   - name: "🇪🇪_2"
     type: vless
-    server: "94.183.170.135"
-    port: 8443
-    uuid: "06c4e938-2954-478f-a870-ca1b163e30e9"
+    server: "31.76.70.32"
+    port: 443
+    uuid: "423b1d79-08c4-403f-9d5e-c541f791b55f"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "estproxy4.lockdwn.com"
-    client-fingerprint: "firefox"
+    servername: "baltic.cendora.ru"
+    client-fingerprint: "qq"
+    reality-opts:
+      public-key: "t_qv0VOfWhKZJV_giGC55-ipgHYWo44Yfvik_B8T8ik"
+      short-id: "4a46213c935e2ee4"
+    flow: "xtls-rprx-vision"
   - name: "🇪🇪_3"
+    type: vless
+    server: "95.85.224.3"
+    port: 8443
+    uuid: "7e8f7489-e65f-4be6-93ed-867a74ec6759"
+    udp: true
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "grpc"
+  - name: "🇪🇪_4"
     type: vless
     server: "94.183.170.231"
     port: 8443
@@ -94,7 +107,7 @@ proxies:
     skip-cert-verify: true
     servername: "estproxy2.lockdwn.com"
     client-fingerprint: "firefox"
-  - name: "🇪🇪_4"
+  - name: "🇪🇪_5"
     type: vless
     server: "ee.dealfre.xyz"
     port: 443
@@ -110,7 +123,16 @@ proxies:
     network: grpc
     grpc-opts:
       grpc-service-name: ""
-  - name: "🇪🇪_5"
+  - name: "🇪🇪_6"
+    type: vless
+    server: "95.85.228.161"
+    port: 8443
+    uuid: "7e8f7489-e65f-4be6-93ed-867a74ec6759"
+    udp: true
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "grpc"
+  - name: "🇪🇪_7"
     type: vless
     server: "31.56.187.86"
     port: 443
@@ -126,49 +148,17 @@ proxies:
     network: grpc
     grpc-opts:
       grpc-service-name: ""
-  - name: "🇪🇪_6"
+  - name: "🇪🇪_8"
     type: vless
-    server: "estproxy4.lockdwn.com"
+    server: "94.183.170.135"
     port: 8443
     uuid: "06c4e938-2954-478f-a870-ca1b163e30e9"
     udp: true
     tls: true
     skip-cert-verify: true
     servername: "estproxy4.lockdwn.com"
-    client-fingerprint: "edge"
-  - name: "🇪🇪_7"
-    type: vless
-    server: "95.85.224.3"
-    port: 8443
-    uuid: "7e8f7489-e65f-4be6-93ed-867a74ec6759"
-    udp: true
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "grpc"
-  - name: "🇪🇪_8"
-    type: vless
-    server: "95.85.228.161"
-    port: 8443
-    uuid: "7e8f7489-e65f-4be6-93ed-867a74ec6759"
-    udp: true
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "grpc"
+    client-fingerprint: "firefox"
   - name: "🇪🇪_9"
-    type: vless
-    server: "31.76.70.32"
-    port: 443
-    uuid: "423b1d79-08c4-403f-9d5e-c541f791b55f"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "baltic.cendora.ru"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "t_qv0VOfWhKZJV_giGC55-ipgHYWo44Yfvik_B8T8ik"
-      short-id: "4a46213c935e2ee4"
-    flow: "xtls-rprx-vision"
-  - name: "🇪🇪_10"
     type: trojan
     server: "109.206.241.10"
     port: 449
@@ -201,7 +191,6 @@ proxy-groups:
       - "🇪🇪_7"
       - "🇪🇪_8"
       - "🇪🇪_9"
-      - "🇪🇪_10"
 
 
   - name: "Load Balance"
@@ -219,7 +208,6 @@ proxy-groups:
       - "🇪🇪_7"
       - "🇪🇪_8"
       - "🇪🇪_9"
-      - "🇪🇪_10"
 
 rules:
   - MATCH,PROXY
