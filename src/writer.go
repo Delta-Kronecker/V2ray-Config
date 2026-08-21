@@ -1926,33 +1926,11 @@ var pattCipherSuites = strings.Join([]string{
 	"TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256",
 }, ":")
 
-type pattFragment struct {
-	Type     string              `json:"type"`
-	Settings pattFragmentSettings `json:"settings"`
-}
+var pattFmRawJSON = `{"tcp": [{"type": "fragment", "settings": {"packets": "tlshello", "lengths": ["5", "94", "1"], "delays": ["0"], "maxSplit": "0"}},{"type": "fragment", "settings": {"packets": "1-1", "lengths": ["109", "1"], "delays": ["1"], "maxSplit": "355"}}]}`
 
-type pattFragmentSettings struct {
-	Packets  string   `json:"packets"`
-	Lengths  []string `json:"lengths"`
-	Delays   []string `json:"delays"`
-	MaxSplit string   `json:"maxSplit"`
-}
-
-type pattRoot struct {
-	TCP []pattFragment `json:"tcp"`
-}
-
-var pattFmRawJSON string
-
-func init() {
-	fm := pattRoot{
-		TCP: []pattFragment{
-			{Type: "fragment", Settings: pattFragmentSettings{Packets: "tlshello", Lengths: []string{"5", "94", "1"}, Delays: []string{"0"}, MaxSplit: "0"}},
-			{Type: "fragment", Settings: pattFragmentSettings{Packets: "1-1", Lengths: []string{"109", "1"}, Delays: []string{"1"}, MaxSplit: "355"}},
-		},
-	}
-	fmJSON, _ := json.Marshal(fm)
-	pattFmRawJSON = string(fmJSON)
+var pattParamOrder = []string{
+	"encryption", "security", "type", "host", "path", "serviceName", "mode",
+	"sni", "alpn", "fp", "cs", "fm", "flow", "headerType", "packetEncoding",
 }
 
 func toPattConfig(line, proto string) string {
@@ -1980,7 +1958,21 @@ func toPattConfig(line, proto string) string {
 	q.Set("fm", pattFmRawJSON)
 	q.Set("fp", "unsafe")
 
-	return line[:queryIdx+1] + q.Encode() + frag
+	var parts []string
+	seen := make(map[string]bool)
+	for _, key := range pattParamOrder {
+		if vals, ok := q[key]; ok && len(vals) > 0 {
+			parts = append(parts, url.QueryEscape(key)+"="+url.QueryEscape(vals[0]))
+			seen[key] = true
+		}
+	}
+	for key, vals := range q {
+		if !seen[key] && len(vals) > 0 {
+			parts = append(parts, url.QueryEscape(key)+"="+url.QueryEscape(vals[0]))
+		}
+	}
+
+	return line[:queryIdx+1] + strings.Join(parts, "&") + frag
 }
 
 func writePattFiles(results []configResult) {
