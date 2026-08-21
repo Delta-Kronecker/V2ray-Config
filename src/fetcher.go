@@ -185,6 +185,21 @@ func fetchAll(base64Links, textLinks []string) ([]string, []string) {
 			}
 			okCount++
 			extracted := smartDecode(r.content)
+			hasValid := false
+			for _, l := range extracted {
+				if hasProtoPrefix(l) {
+					hasValid = true
+					break
+				}
+			}
+			if !hasValid {
+				failCount++
+				failed = append(failed, fmt.Sprintf("%s (no valid configs)", r.url))
+				if gLog != nil {
+					gLog.writeLine(fmt.Sprintf("[FETCH] EMPTY %s", r.url))
+				}
+				continue
+			}
 			if gLog != nil {
 				gLog.writeLine(fmt.Sprintf("[FETCH] OK    %s  lines=%d", r.url, len(extracted)))
 			}
@@ -258,8 +273,19 @@ func fetchAllFromSubs(subURLs []string) ([]string, []string, []string) {
 						results[idx] = batchResult{url: rawURL, err: fr.err, status: fr.statusCode}
 						return
 					}
-					extracted := smartDecode(fr.content)
-					results[idx] = batchResult{url: rawURL, lines: extracted, status: fr.statusCode}
+				extracted := smartDecode(fr.content)
+				hasValid := false
+				for _, l := range extracted {
+					if hasProtoPrefix(l) {
+						hasValid = true
+						break
+					}
+				}
+				if !hasValid {
+					results[idx] = batchResult{url: rawURL, err: fmt.Errorf("no valid configs"), status: fr.statusCode}
+					return
+				}
+				results[idx] = batchResult{url: rawURL, lines: extracted, status: fr.statusCode}
 				}(i, u)
 			}
 			wg.Wait()

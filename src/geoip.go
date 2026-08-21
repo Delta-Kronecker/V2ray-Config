@@ -13,7 +13,6 @@ import (
 	"os/exec"
 	"strings"
 	"sync"
-	"syscall"
 	"time"
 )
 
@@ -382,7 +381,7 @@ func queryGeoIPThroughProxy(configURL, protocol string, port int) realGeoIPResul
 	defer cancel()
 
 	cmd := exec.CommandContext(ctx, xrayPath(), "run", "-c", configPath)
-	cmd.SysProcAttr = &syscall.SysProcAttr{Setpgid: true}
+	setProcessGroup(cmd)
 	if err := cmd.Start(); err != nil {
 		result.err = err
 		return result

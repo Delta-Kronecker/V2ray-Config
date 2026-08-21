@@ -1628,9 +1628,11 @@ func writeSummary(results []configResult, failedLinks []string, duration float64
 	// ── 5. Patt ─────────────────────────────────────────────────────────────────
 	pattSupported := map[string]bool{"vless": true, "trojan": true}
 	var pattTotal int
+	pattByProto := make(map[string]int)
 	for _, r := range results {
 		if pattSupported[r.proto] && isWSTransport(r.line, r.proto) {
 			pattTotal++
+			pattByProto[r.proto]++
 		}
 	}
 	if pattTotal > 0 {
@@ -1638,7 +1640,7 @@ func writeSummary(results []configResult, failedLinks []string, duration float64
 		fmt.Fprintf(&gen, "Patt All (%d config):\n```\n%s/config/patt/all.txt\n```\n\n", pattTotal, repoBase)
 		for _, p := range cfg.ProtocolOrder {
 			if pattSupported[p] {
-				if n := byProtoOut[p]; n > 0 {
+				if n := pattByProto[p]; n > 0 {
 					fmt.Fprintf(&gen, "Patt %s (%d config):\n```\n%s/config/patt/protocols/%s.txt\n```\n\n",
 						strings.ToUpper(p), n, repoBase, p)
 				}
@@ -1922,24 +1924,33 @@ var pattCipherSuites = strings.Join([]string{
 	"TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256",
 }, ":")
 
-var pattFmRaw = map[string]interface{}{
-	"tcp": []interface{}{
-		map[string]interface{}{
-			"type":     "fragment",
-			"settings": map[string]interface{}{"packets": "tlshello", "lengths": []interface{}{"5", "94", "1"}, "delays": []interface{}{"0"}, "maxSplit": "0"},
-		},
-		map[string]interface{}{
-			"type":     "fragment",
-			"settings": map[string]interface{}{"packets": "1-1", "lengths": []interface{}{"109", "1"}, "delays": []interface{}{"1"}, "maxSplit": "355"},
-		},
-	},
+type pattFragment struct {
+	Type     string              `json:"type"`
+	Settings pattFragmentSettings `json:"settings"`
 }
 
-var pattFmEncoded string
+type pattFragmentSettings struct {
+	Packets  string   `json:"packets"`
+	Lengths  []string `json:"lengths"`
+	Delays   []string `json:"delays"`
+	MaxSplit string   `json:"maxSplit"`
+}
+
+type pattRoot struct {
+	TCP []pattFragment `json:"tcp"`
+}
+
+var pattFmRawJSON string
 
 func init() {
-	fmJSON, _ := json.Marshal(pattFmRaw)
-	pattFmEncoded = url.QueryEscape(string(fmJSON))
+	fm := pattRoot{
+		TCP: []pattFragment{
+			{Type: "fragment", Settings: pattFragmentSettings{Packets: "tlshello", Lengths: []string{"5", "94", "1"}, Delays: []string{"0"}, MaxSplit: "0"}},
+			{Type: "fragment", Settings: pattFragmentSettings{Packets: "1-1", Lengths: []string{"109", "1"}, Delays: []string{"1"}, MaxSplit: "355"}},
+		},
+	}
+	fmJSON, _ := json.Marshal(fm)
+	pattFmRawJSON = string(fmJSON)
 }
 
 func toPattConfig(line, proto string) string {
@@ -1964,7 +1975,7 @@ func toPattConfig(line, proto string) string {
 
 	q, _ := url.ParseQuery(line[queryIdx+1:])
 	q.Set("cs", pattCipherSuites)
-	q.Set("fm", pattFmEncoded)
+	q.Set("fm", pattFmRawJSON)
 	q.Set("fp", "unsafe")
 
 	return line[:queryIdx+1] + q.Encode() + frag

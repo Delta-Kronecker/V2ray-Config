@@ -62,6 +62,20 @@ dns:
 proxies:
   - name: "🇧🇪_1"
     type: vless
+    server: "144.31.219.161"
+    port: 443
+    uuid: "423b1d79-08c4-403f-9d5e-c541f791b55f"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "eu-west.cendora.ru"
+    client-fingerprint: "qq"
+    reality-opts:
+      public-key: "m6RDw1b8R4lCaRUIzhHpy6TtX2Dhk6nyby8dWzeQqA0"
+      short-id: "dd3ff38418d29d22"
+    flow: "xtls-rprx-vision"
+  - name: "🇧🇪_2"
+    type: vless
     server: "79.127.224.183"
     port: 443
     uuid: "4b7a69d9-74cd-4ab2-bfb3-1d2093e8179f"
@@ -74,31 +88,7 @@ proxies:
       public-key: "rwR7H9XhX1w-LjcPCZiDnzV_sUUyJRSJvGYhIYHmS3E"
       short-id: "28bf2d7deea465ff"
     flow: "xtls-rprx-vision"
-  - name: "🇧🇪_2"
-    type: vless
-    server: "be2.wba-pn.ru"
-    port: 443
-    uuid: "08f84d53-e262-459c-a15a-26213e7a07c9"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "be2.wba-pn.ru"
-    network: ws
-    ws-opts:
-      path: "/"
   - name: "🇧🇪_3"
-    type: vless
-    server: "113.30.152.6"
-    port: 443
-    uuid: "08f84d53-e262-459c-a15a-26213e7a07c9"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "be2.wba-pn.ru"
-    network: ws
-    ws-opts:
-      path: "/"
-  - name: "🇧🇪_4"
     type: trojan
     server: "94.126.225.96"
     port: 443
@@ -125,7 +115,6 @@ proxy-groups:
       - "🇧🇪_1"
       - "🇧🇪_2"
       - "🇧🇪_3"
-      - "🇧🇪_4"
 
 
   - name: "Load Balance"
@@ -137,7 +126,6 @@ proxy-groups:
       - "🇧🇪_1"
       - "🇧🇪_2"
       - "🇧🇪_3"
-      - "🇧🇪_4"
 
 rules:
   - MATCH,PROXY

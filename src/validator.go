@@ -14,7 +14,6 @@ import (
 	"strings"
 	"sync"
 	"sync/atomic"
-	"syscall"
 	"time"
 )
 
@@ -583,7 +582,7 @@ func validateWithTracker(configURL, protocol string, localPorts chan int, bt *ba
 	var stderr bytes.Buffer
 	cmd := exec.CommandContext(ctx, xrayPath(), "run", "-c", configPath)
 	cmd.Stderr = &stderr
-	cmd.SysProcAttr = &syscall.SysProcAttr{Setpgid: true}
+	setProcessGroup(cmd)
 
 	if err := cmd.Start(); err != nil {
 		result.failReason = "START: " + err.Error()
