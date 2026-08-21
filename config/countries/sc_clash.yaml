@@ -60,33 +60,61 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇬🇪_1"
+  - name: "🇸🇨_1"
     type: vless
-    server: "84.23.54.213"
-    port: 443
-    uuid: "710fc22f-06b2-03f6-bb3e-f57c17b670a6"
+    server: "200.165.230.19"
+    port: 445
+    uuid: "d01d5a74-09fb-4e9e-b0d9-38b5fd77ad70"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "www.ray-balance.space"
-    client-fingerprint: "edge"
+    servername: "www.avito.ru"
+    client-fingerprint: "firefox"
     reality-opts:
-      public-key: "3tOekmYYkNW9IwHGuui6Y9bLmXoyiAmwAgtAdUAmDis"
-      short-id: ""
+      public-key: "iWxxH0TWB1Ciz6sEwtfjUVY61OcTDihou5IJfkt0O0Q"
+      short-id: "5b9d3e7f1a2c8406"
     flow: "xtls-rprx-vision"
-  - name: "🇬🇪_2"
+  - name: "🇸🇨_2"
     type: vless
-    server: "in-ru-vk-01.ray-balance.space"
-    port: 443
-    uuid: "710fc22f-06b2-03f6-bb3e-f57c17b670a6"
+    server: "200.165.229.168"
+    port: 8448
+    uuid: "b3198f79-b4e6-4da0-9088-a9ec89e5f8d7"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "www.ray-balance.space"
+    servername: "www.rumedia-cdn.com"
     client-fingerprint: "qq"
     reality-opts:
-      public-key: "3tOekmYYkNW9IwHGuui6Y9bLmXoyiAmwAgtAdUAmDis"
-      short-id: ""
+      public-key: "WvMqlTcY5BY7WbrsGCwtA4VzhXGaP-FkjoOHn-yMsSI"
+      short-id: "a94eb0e19d010373"
+    flow: "xtls-rprx-vision"
+  - name: "🇸🇨_3"
+    type: vless
+    server: "200.165.229.168"
+    port: 2084
+    uuid: "a95974c3-29ed-4548-ab42-b588b321a5ce"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.rumedia-cdn.com"
+    client-fingerprint: "qq"
+    reality-opts:
+      public-key: "mrsI2kSF8FmNnFKn_-bpDU8VS6Tews7wkABJGdwMUAg"
+      short-id: "3578bd8a4032dcab"
+    flow: "xtls-rprx-vision"
+  - name: "🇸🇨_4"
+    type: vless
+    server: "ru.lobbytech.ru"
+    port: 443
+    uuid: "d01d5a74-09fb-4e9e-b0d9-38b5fd77ad70"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.kinopoisk.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "iWxxH0TWB1Ciz6sEwtfjUVY61OcTDihou5IJfkt0O0Q"
+      short-id: "a3f8d21c4b907e56"
     flow: "xtls-rprx-vision"
 
 proxy-groups:
@@ -104,8 +132,10 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇬🇪_1"
-      - "🇬🇪_2"
+      - "🇸🇨_1"
+      - "🇸🇨_2"
+      - "🇸🇨_3"
+      - "🇸🇨_4"
 
 
   - name: "Load Balance"
@@ -114,8 +144,10 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇬🇪_1"
-      - "🇬🇪_2"
+      - "🇸🇨_1"
+      - "🇸🇨_2"
+      - "🇸🇨_3"
+      - "🇸🇨_4"
 
 rules:
   - MATCH,PROXY

@@ -62,16 +62,6 @@ dns:
 proxies:
   - name: "🇷🇴_1"
     type: vless
-    server: "45.13.151.46"
-    port: 48689
-    uuid: "e25486c7-3342-4777-a82d-89d485f844dc"
-    udp: true
-    network: httpupgrade
-    httpupgrade-opts:
-      path: "/host"
-      host: "www.filimo.com"
-  - name: "🇷🇴_2"
-    type: vless
     server: "82.117.255.87"
     port: 443
     uuid: "b748a230-b157-4401-8423-f8e44df31b5e"
@@ -84,6 +74,30 @@ proxies:
       public-key: "1xxZM10W-A8nuj6MOXFd1kA9lS7bEy-5SO5j-jrd_Cg"
       short-id: "b70076439f4a1340"
     flow: "xtls-rprx-vision"
+  - name: "🇷🇴_2"
+    type: vless
+    server: "35xkx2q3tm.philips.kweps.ru"
+    port: 443
+    uuid: "20df893e-dcf4-491d-8261-6dbb24f9566b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.philips.com"
+    client-fingerprint: "qq"
+    reality-opts:
+      public-key: "lrcvhYPvMfH_MpHC_PFYNb_bsw6vy2VR0yZxv3Pv8C4"
+      short-id: ""
+    flow: "xtls-rprx-vision"
+  - name: "🇷🇴_3"
+    type: vless
+    server: "45.13.151.46"
+    port: 48689
+    uuid: "e25486c7-3342-4777-a82d-89d485f844dc"
+    udp: true
+    network: httpupgrade
+    httpupgrade-opts:
+      path: "/host"
+      host: "www.filimo.com"
 
 proxy-groups:
   - name: "PROXY"
@@ -102,6 +116,7 @@ proxy-groups:
     proxies:
       - "🇷🇴_1"
       - "🇷🇴_2"
+      - "🇷🇴_3"
 
 
   - name: "Load Balance"
@@ -112,6 +127,7 @@ proxy-groups:
     proxies:
       - "🇷🇴_1"
       - "🇷🇴_2"
+      - "🇷🇴_3"
 
 rules:
   - MATCH,PROXY

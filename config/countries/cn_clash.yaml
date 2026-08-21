@@ -74,14 +74,6 @@ proxies:
     sni: "zz6.91js.pw"
     skip-cert-verify: true
     udp: true
-  - name: "🇨🇳_3"
-    type: vmess
-    server: "112.132.215.108"
-    port: 50002
-    uuid: "418048af-a293-4b99-9b0c-98ca3580dd24"
-    alterId: 64
-    cipher: "auto"
-    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -100,7 +92,6 @@ proxy-groups:
     proxies:
       - "🇨🇳_1"
       - "🇨🇳_2"
-      - "🇨🇳_3"
 
 
   - name: "Load Balance"
@@ -111,7 +102,6 @@ proxy-groups:
     proxies:
       - "🇨🇳_1"
       - "🇨🇳_2"
-      - "🇨🇳_3"
 
 rules:
   - MATCH,PROXY

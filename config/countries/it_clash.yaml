@@ -89,11 +89,24 @@ proxies:
       short-id: "5b8a942318178e7b"
   - name: "🇮🇹_3"
     type: vless
+    server: "ita.montago-shop.ir"
+    port: 443
+    uuid: "5e5d6b95-008a-4cc2-9542-5ccff41b222b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "amp-api-edge.apps.apple.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "PjR-SM4fOm2fY4mTqWoqZDRyxontvpailM0gBqUxlUQ"
+      short-id: "070a23aed243"
+  - name: "🇮🇹_4"
+    type: vless
     server: "204.216.216.23"
     port: 10086
     uuid: "9f0285ee-20ca-4953-bcdb-86a920652923"
     udp: true
-  - name: "🇮🇹_4"
+  - name: "🇮🇹_5"
     type: vless
     server: "150.241.73.137"
     port: 443
@@ -107,7 +120,7 @@ proxies:
       public-key: "b-Cm9hX-3UHsS1L_lnUB6AMjuKhlN1IDdBbZ506itjI"
       short-id: "00bca5982f82d083"
     flow: "xtls-rprx-vision"
-  - name: "🇮🇹_5"
+  - name: "🇮🇹_6"
     type: vless
     server: "204.216.216.23"
     port: 1114
@@ -121,7 +134,7 @@ proxies:
       public-key: "WfkCF0eEuIoO0MyJsKOddU89QrTzCZ4y2dzCJbH99CQ"
       short-id: "79a1e14b"
     flow: "xtls-rprx-vision"
-  - name: "🇮🇹_6"
+  - name: "🇮🇹_7"
     type: trojan
     server: "91.193.5.121"
     port: 8443
@@ -151,6 +164,7 @@ proxy-groups:
       - "🇮🇹_4"
       - "🇮🇹_5"
       - "🇮🇹_6"
+      - "🇮🇹_7"
 
 
   - name: "Load Balance"
@@ -165,6 +179,7 @@ proxy-groups:
       - "🇮🇹_4"
       - "🇮🇹_5"
       - "🇮🇹_6"
+      - "🇮🇹_7"
 
 rules:
   - MATCH,PROXY
