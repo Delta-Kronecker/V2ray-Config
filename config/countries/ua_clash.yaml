@@ -90,6 +90,17 @@ proxies:
     flow: "xtls-rprx-vision"
   - name: "🇺🇦_3"
     type: vless
+    server: "88.151.195.213"
+    port: 443
+    uuid: "41f4cb15-5a3f-3934-89fe-b4177146adf4"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "u643766ubdb325a3s274.kukuss.top"
+    client-fingerprint: "firefox"
+    flow: "xtls-rprx-vision"
+  - name: "🇺🇦_4"
+    type: vless
     server: "5.34.182.23"
     port: 443
     uuid: "423b1d79-08c4-403f-9d5e-c541f791b55f"
@@ -102,9 +113,9 @@ proxies:
       public-key: "b-Cm9hX-3UHsS1L_lnUB6AMjuKhlN1IDdBbZ506itjI"
       short-id: "00bca5982f82d083"
     flow: "xtls-rprx-vision"
-  - name: "🇺🇦_4"
+  - name: "🇺🇦_5"
     type: vless
-    server: "88.151.195.213"
+    server: "s281.gogocs.xyz"
     port: 443
     uuid: "41f4cb15-5a3f-3934-89fe-b4177146adf4"
     udp: true
@@ -113,7 +124,7 @@ proxies:
     servername: "u643766ubdb325a3s274.kukuss.top"
     client-fingerprint: "firefox"
     flow: "xtls-rprx-vision"
-  - name: "🇺🇦_5"
+  - name: "🇺🇦_6"
     type: trojan
     server: "130.0.236.88"
     port: 443
@@ -142,6 +153,7 @@ proxy-groups:
       - "🇺🇦_3"
       - "🇺🇦_4"
       - "🇺🇦_5"
+      - "🇺🇦_6"
 
 
   - name: "Load Balance"
@@ -155,6 +167,7 @@ proxy-groups:
       - "🇺🇦_3"
       - "🇺🇦_4"
       - "🇺🇦_5"
+      - "🇺🇦_6"
 
 rules:
   - MATCH,PROXY

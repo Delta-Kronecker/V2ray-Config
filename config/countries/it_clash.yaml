@@ -62,6 +62,19 @@ dns:
 proxies:
   - name: "🇮🇹_1"
     type: vless
+    server: "57.131.38.163"
+    port: 2053
+    uuid: "d4b08cd6-0903-411a-9dac-45dbdf5c9712"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.apple.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "Ej2H5ucT7qKegYcT8wODdlxa-cLHr7F4hDVUHzAhcnc"
+      short-id: "5b8a942318178e7b"
+  - name: "🇮🇹_2"
+    type: vless
     server: "150.241.73.177"
     port: 13443
     uuid: "b80b392c-0cf4-42f9-ae54-9f862e3ba276"
@@ -74,32 +87,20 @@ proxies:
       public-key: "gc9oXe37KCCm3J1dJ03wdGsnxPBdeEkRPOvl_t-vfVM"
       short-id: "a7f3c91b2e6d84c0"
     flow: "xtls-rprx-vision"
-  - name: "🇮🇹_2"
-    type: vless
-    server: "57.131.38.163"
-    port: 2053
-    uuid: "d4b08cd6-0903-411a-9dac-45dbdf5c9712"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.apple.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "Ej2H5ucT7qKegYcT8wODdlxa-cLHr7F4hDVUHzAhcnc"
-      short-id: "5b8a942318178e7b"
   - name: "🇮🇹_3"
     type: vless
-    server: "ita.montago-shop.ir"
-    port: 443
-    uuid: "5e5d6b95-008a-4cc2-9542-5ccff41b222b"
+    server: "204.216.216.23"
+    port: 1114
+    uuid: "6ba2eac6-0ec9-44ca-a42b-a8e23aafb530"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "amp-api-edge.apps.apple.com"
+    servername: "yahoo.com"
     client-fingerprint: "chrome"
     reality-opts:
-      public-key: "PjR-SM4fOm2fY4mTqWoqZDRyxontvpailM0gBqUxlUQ"
-      short-id: "070a23aed243"
+      public-key: "WfkCF0eEuIoO0MyJsKOddU89QrTzCZ4y2dzCJbH99CQ"
+      short-id: "79a1e14b"
+    flow: "xtls-rprx-vision"
   - name: "🇮🇹_4"
     type: vless
     server: "204.216.216.23"
@@ -122,19 +123,32 @@ proxies:
     flow: "xtls-rprx-vision"
   - name: "🇮🇹_6"
     type: vless
-    server: "204.216.216.23"
-    port: 1114
-    uuid: "6ba2eac6-0ec9-44ca-a42b-a8e23aafb530"
+    server: "ita.montago-shop.ir"
+    port: 443
+    uuid: "5e5d6b95-008a-4cc2-9542-5ccff41b222b"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "yahoo.com"
+    servername: "amp-api-edge.apps.apple.com"
     client-fingerprint: "chrome"
     reality-opts:
-      public-key: "WfkCF0eEuIoO0MyJsKOddU89QrTzCZ4y2dzCJbH99CQ"
-      short-id: "79a1e14b"
-    flow: "xtls-rprx-vision"
+      public-key: "PjR-SM4fOm2fY4mTqWoqZDRyxontvpailM0gBqUxlUQ"
+      short-id: "070a23aed243"
   - name: "🇮🇹_7"
+    type: vless
+    server: "92yqc126g8qwe6v23n01.haiyucloud.com"
+    port: 49475
+    uuid: "485717cf-e96c-40db-9bc1-624060b89f20"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.python.org"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "i0nN_0uLl5ha8pIf6gNNLeLQe7it-nXDFLC5eM1BHV4"
+      short-id: "bb9b8f5f"
+    flow: "xtls-rprx-vision"
+  - name: "🇮🇹_8"
     type: trojan
     server: "91.193.5.121"
     port: 8443
@@ -165,6 +179,7 @@ proxy-groups:
       - "🇮🇹_5"
       - "🇮🇹_6"
       - "🇮🇹_7"
+      - "🇮🇹_8"
 
 
   - name: "Load Balance"
@@ -180,6 +195,7 @@ proxy-groups:
       - "🇮🇹_5"
       - "🇮🇹_6"
       - "🇮🇹_7"
+      - "🇮🇹_8"
 
 rules:
   - MATCH,PROXY

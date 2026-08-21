@@ -62,33 +62,14 @@ dns:
 proxies:
   - name: "🇹🇷_1"
     type: vless
-    server: "193.124.45.154"
-    port: 443
-    uuid: "423b1d79-08c4-403f-9d5e-c541f791b55f"
+    server: "185.39.204.155"
+    port: 8443
+    uuid: "7e8f7489-e65f-4be6-93ed-867a74ec6759"
     udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "eu-central.cendora.ru"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "b-Cm9hX-3UHsS1L_lnUB6AMjuKhlN1IDdBbZ506itjI"
-      short-id: "00bca5982f82d083"
-    flow: "xtls-rprx-vision"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "grpc"
   - name: "🇹🇷_2"
-    type: vless
-    server: "45.12.5.171"
-    port: 443
-    uuid: "b85b1e90-b5ed-0002-b433-bf9d2eca0e42"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "ru9.aimodelhub.top"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "jwT3lcIzJQMjzBKRNsmyRGrgaa1qNfE7pQF_nAKu0GA"
-      short-id: "a73cf719b624"
-    flow: "xtls-rprx-vision"
-  - name: "🇹🇷_3"
     type: vless
     server: "151.241.226.201"
     port: 2053
@@ -101,7 +82,7 @@ proxies:
     reality-opts:
       public-key: "dUFJ3jZPMH9WvjtAnUc9wYhO_IX1czIi-CidF_HdFDA"
       short-id: "c267be657e1539ea"
-  - name: "🇹🇷_4"
+  - name: "🇹🇷_3"
     type: vless
     server: "212.64.193.42"
     port: 443
@@ -115,12 +96,34 @@ proxies:
       public-key: "_IBXb9NfhsnS21XbU9PIl73ExvrjXGXVLO0Za1ui5Fo"
       short-id: "f93c9d5127e622e4"
     flow: "xtls-rprx-vision"
+  - name: "🇹🇷_4"
+    type: vless
+    server: "45.12.5.171"
+    port: 443
+    uuid: "b85b1e90-b5ed-0002-b433-bf9d2eca0e42"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ru9.aimodelhub.top"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "jwT3lcIzJQMjzBKRNsmyRGrgaa1qNfE7pQF_nAKu0GA"
+      short-id: "a73cf719b624"
+    flow: "xtls-rprx-vision"
   - name: "🇹🇷_5"
     type: vless
-    server: "45.74.158.48"
-    port: 110
-    uuid: "ac162d21-ed9d-478d-8c0e-805a6adde4bd"
+    server: "pd1szg4oo9.v-one.click"
+    port: 443
+    uuid: "20df893e-dcf4-491d-8261-6dbb24f9566b"
     udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "v-one.click"
+    client-fingerprint: "qq"
+    reality-opts:
+      public-key: "FVTSrw9PURI_lAPdckwoV4Or7Jh7CoYth_KS1mrG63A"
+      short-id: ""
+    flow: "xtls-rprx-vision"
   - name: "🇹🇷_6"
     type: vless
     server: "46.229.251.93"
@@ -136,30 +139,6 @@ proxies:
       short-id: ""
     flow: "xtls-rprx-vision"
   - name: "🇹🇷_7"
-    type: vless
-    server: "mAiLgAtEWAy7-BAsEStREAM3-poRTnodehUb9.CloUDSYNC9.Com"
-    port: 443
-    uuid: "3ccbd6a4-bb95-4a93-bf7a-ad4a0bde9054"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "NodeLinkbAsE7-ApiWeBstREam3-daTAcOReNEt.cloUDsyNc9.Com"
-    client-fingerprint: "chrome"
-    network: ws
-    ws-opts:
-      path: "/pdpZR63Sn1BgoYh8"
-      headers:
-        Host: "noDeLiNKbaSe7-ApIWEBStreaM3-dATaCoreNET.cloUDsYnc9.COM"
-  - name: "🇹🇷_8"
-    type: vless
-    server: "185.39.204.155"
-    port: 8443
-    uuid: "7e8f7489-e65f-4be6-93ed-867a74ec6759"
-    udp: true
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "grpc"
-  - name: "🇹🇷_9"
     type: trojan
     server: "195.162.69.238"
     port: 9443
@@ -167,7 +146,7 @@ proxies:
     sni: "apple.com"
     skip-cert-verify: true
     udp: true
-  - name: "🇹🇷_10"
+  - name: "🇹🇷_8"
     type: ss
     server: "38.60.255.97"
     port: 11201
@@ -198,8 +177,6 @@ proxy-groups:
       - "🇹🇷_6"
       - "🇹🇷_7"
       - "🇹🇷_8"
-      - "🇹🇷_9"
-      - "🇹🇷_10"
 
 
   - name: "Load Balance"
@@ -216,8 +193,6 @@ proxy-groups:
       - "🇹🇷_6"
       - "🇹🇷_7"
       - "🇹🇷_8"
-      - "🇹🇷_9"
-      - "🇹🇷_10"
 
 rules:
   - MATCH,PROXY

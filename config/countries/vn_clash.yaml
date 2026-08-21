@@ -62,20 +62,6 @@ dns:
 proxies:
   - name: "🇻🇳_1"
     type: vless
-    server: "103.225.197.237"
-    port: 443
-    uuid: "432ab7a2-6e2b-4f0b-be4a-06bdcc714624"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.bing.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "mCDHZBY0AYAeY7Aj7COGaegrm7QAwfueYYSC02vqbSY"
-      short-id: "0d8ca7e0b3d26321"
-    flow: "xtls-rprx-vision"
-  - name: "🇻🇳_2"
-    type: vless
     server: "216.133.158.108"
     port: 443
     uuid: "c08c499f-21bd-46ba-9146-5c770204342b"
@@ -88,28 +74,54 @@ proxies:
       public-key: "Kh1-hdn9zTY5a1-3qP8L_6UTRL2iNZ1pIr_X8U94OQM"
       short-id: "872303cf1e28389f"
     flow: "xtls-rprx-vision"
-  - name: "🇻🇳_3"
-    type: trojan
-    server: "103.9.77.6"
+  - name: "🇻🇳_2"
+    type: vless
+    server: "bftu-stnbal.servora.top"
     port: 443
-    password: "5a92d674-308c-4d95-b283-28383e63a59b"
-    sni: "103.9.77.6"
-    skip-cert-verify: true
+    uuid: "432ab7a2-6e2b-4f0b-be4a-06bdcc714624"
     udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.bing.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "mCDHZBY0AYAeY7Aj7COGaegrm7QAwfueYYSC02vqbSY"
+      short-id: "0d8ca7e0b3d26321"
+    flow: "xtls-rprx-vision"
+  - name: "🇻🇳_3"
+    type: vless
+    server: "wf1y-1o2rzho.rixora.top"
+    port: 443
+    uuid: "c08c499f-21bd-46ba-9146-5c770204342b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.apple.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "Kh1-hdn9zTY5a1-3qP8L_6UTRL2iNZ1pIr_X8U94OQM"
+      short-id: "872303cf1e28389f"
+    flow: "xtls-rprx-vision"
   - name: "🇻🇳_4"
+    type: vless
+    server: "103.225.197.237"
+    port: 443
+    uuid: "432ab7a2-6e2b-4f0b-be4a-06bdcc714624"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.bing.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "mCDHZBY0AYAeY7Aj7COGaegrm7QAwfueYYSC02vqbSY"
+      short-id: "0d8ca7e0b3d26321"
+    flow: "xtls-rprx-vision"
+  - name: "🇻🇳_5"
     type: trojan
     server: "36.50.134.29"
     port: 443
     password: "94d219c9-1afc-4d42-b090-8b3794764380"
     sni: "36.50.134.29"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇻🇳_5"
-    type: trojan
-    server: "103.72.96.55"
-    port: 443
-    password: "c95357eb-2869-4511-8940-f0dc5e1ec9b1"
-    sni: "hanoiidc2.5gsieutocdo.com"
     skip-cert-verify: true
     udp: true
   - name: "🇻🇳_6"
@@ -118,6 +130,22 @@ proxies:
     port: 443
     password: "25a0ffa0-725c-4d6f-b0d5-c74579753075"
     sni: "cmc5.5gsieuvip.vn"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇻🇳_7"
+    type: trojan
+    server: "103.9.77.6"
+    port: 443
+    password: "5a92d674-308c-4d95-b283-28383e63a59b"
+    sni: "103.9.77.6"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇻🇳_8"
+    type: trojan
+    server: "103.72.96.55"
+    port: 443
+    password: "c95357eb-2869-4511-8940-f0dc5e1ec9b1"
+    sni: "hanoiidc2.5gsieutocdo.com"
     skip-cert-verify: true
     udp: true
 
@@ -142,6 +170,8 @@ proxy-groups:
       - "🇻🇳_4"
       - "🇻🇳_5"
       - "🇻🇳_6"
+      - "🇻🇳_7"
+      - "🇻🇳_8"
 
 
   - name: "Load Balance"
@@ -156,6 +186,8 @@ proxy-groups:
       - "🇻🇳_4"
       - "🇻🇳_5"
       - "🇻🇳_6"
+      - "🇻🇳_7"
+      - "🇻🇳_8"
 
 rules:
   - MATCH,PROXY
