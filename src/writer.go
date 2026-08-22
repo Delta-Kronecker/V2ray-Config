@@ -223,11 +223,13 @@ func isVlessReality(line string) bool {
 		return false
 	}
 	qIdx := strings.Index(line, "?")
-	hashIdx := strings.Index(line, "#")
 	if qIdx == -1 {
 		return false
 	}
-	query := line[qIdx+1 : hashIdx]
+	query := line[qIdx+1:]
+	if hashIdx := strings.Index(query, "#"); hashIdx != -1 {
+		query = query[:hashIdx]
+	}
 	for _, part := range strings.Split(query, "&") {
 		kv := strings.SplitN(part, "=", 2)
 		if len(kv) == 2 && kv[0] == "security" && kv[1] == "reality" {
