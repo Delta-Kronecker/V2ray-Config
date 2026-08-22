@@ -96,6 +96,7 @@ func prepareOutputDirs() error {
 		"config/batches/sni_clash",
 		"config/tcp-pass",
 		"config/tcp-pass-sni",
+		"config/reality",
 		"config/countries",
 		"config/farg",
 		"config/farg/protocols",
@@ -209,11 +210,31 @@ func writeOutputFiles(results []configResult, tcpFailedLines []string) {
 
 	writeBatchFiles(all, allClash, allClashNames, allSNI, allSNIClash, allSNIClashNames)
 	writeTCPPassFiles(tcpFailedLines)
+	writeRealityFiles(results)
 	writeFargFiles(results)
 	writePattFiles(results)
 
 	// ── Per-country output files ───────────────────────────────────────────────
 	writeCountryFiles(byCountryV2ray, byCountryClash, countryCounts)
+}
+
+func isVlessReality(line string) bool {
+	if !strings.HasPrefix(line, "vless://") {
+		return false
+	}
+	qIdx := strings.Index(line, "?")
+	hashIdx := strings.Index(line, "#")
+	if qIdx == -1 {
+		return false
+	}
+	query := line[qIdx+1 : hashIdx]
+	for _, part := range strings.Split(query, "&") {
+		kv := strings.SplitN(part, "=", 2)
+		if len(kv) == 2 && kv[0] == "security" && kv[1] == "reality" {
+			return true
+		}
+	}
+	return false
 }
 
 func isWSTransport(line, proto string) bool {
@@ -1500,6 +1521,37 @@ func detectProto(line string) string {
 	return ""
 }
 
+// ── writeRealityFiles ────────────────────────────────────────────────────────
+
+func writeRealityFiles(results []configResult) {
+	const fallbackName = "@DeltaKroneckerGithub"
+	var v2rayLines []string
+	var clashEntries []string
+	var clashNames []string
+
+	for _, r := range results {
+		if r.proto != "vless" || !isVlessReality(r.line) {
+			continue
+		}
+		named := renameTo(r.line, r.proto, fallbackName)
+		v2rayLines = append(v2rayLines, named)
+		cname := generateUniqueName(fallbackName)
+		if entry, ok := configToClashYAML(r.line, r.proto, cname); ok {
+			clashEntries = append(clashEntries, entry)
+			clashNames = append(clashNames, cname)
+		}
+	}
+
+	if len(v2rayLines) == 0 {
+		return
+	}
+	writeFile("config/reality/reality.txt", v2rayLines)
+	if gClash.simple != "" && len(clashEntries) > 0 {
+		writeClashConfigSimple("config/reality/reality.yaml", clashEntries, clashNames)
+	}
+	fmt.Printf(" Reality: wrote %d vless reality configs\n", len(v2rayLines))
+}
+
 // ── writeOnlyTCPPassFiles ────────────────────────────────────────────────────
 // Writes configs that passed TCP ping but failed xray validation
 // into 10000-line batches under config/tcp-pass/ and config/tcp-pass-sni/
@@ -1538,6 +1590,19 @@ func writeTCPPassFiles(lines []string) {
 		writeFile(fmt.Sprintf("config/tcp-pass/batch_%03d.txt", i+1), named[start:end])
 	}
 	fmt.Printf(" TCP-Pass: wrote %d configs into %d files\n", total, numBatches)
+
+	// write reality-only txt (no yaml)
+	var realityLines []string
+	for _, line := range lines {
+		proto := detectProto(line)
+		if proto == "vless" && isVlessReality(line) {
+			realityLines = append(realityLines, renameTo(line, proto, fixedName))
+		}
+	}
+	if len(realityLines) > 0 {
+		writeFile("config/tcp-pass/reality.txt", realityLines)
+		fmt.Printf(" TCP-Pass Reality: wrote %d vless reality configs\n", len(realityLines))
+	}
 
 	// write SNI batches
 	if len(sniNamed) > 0 {
