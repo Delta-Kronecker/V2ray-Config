@@ -12,7 +12,7 @@
     "http_response_timeout_ms": 14000,
 
     "max_retries": 0,
-    "validation_retries": 1,
+    "validation_retries": 0,
 
     "base_port": 10000,
 
@@ -20,24 +20,22 @@
     "process_kill_wait_ms": 1500,
 
 
-    "fetch_retry_count": 1,
+    "fetch_retry_count": 5,
     "fetch_retry_delay_ms": 1000,
     "vless_specific_timeout_ms": 0,
 
     "tcp_ping_timeout_ms": 2000,
     "tcp_ping_retries": 3,
-    "tcp_ping_workers": 4000,
-    "tcp_ping_batch_size": 4000,
+    "tcp_ping_workers": 2000,
+    "tcp_ping_batch_size": 2000,
     "tcp_ping_batch_rest_ms": 300,
     
     "test_urls": [
-      "http://www.gstatic.com/generate_204",
-      "http://cp.cloudflare.com",
-      "http://captive.apple.com/hotspot-detect.html"
+      "http://www.gstatic.com/generate_204"
     ]
   },
-  "protocols": ["vless", "trojan", "ss", "hy", "hy2"],
-  "protocol_order": ["vless", "trojan", "ss", "hy", "hy2"],
+  "protocols": ["vless", "trojan", "ss", "vmess"],
+  "protocol_order": ["vless", "trojan", "ss", "vmess"],
   "base64_links": [],
   "text_links": [],
   "output": {
