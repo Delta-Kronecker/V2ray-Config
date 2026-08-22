@@ -99,6 +99,7 @@ jobs:
             # Add freshly generated files
             git add config/ 2>/dev/null || true
             git add README.md 2>/dev/null || true
+            git add data/sub.txt 2>/dev/null || true
             
             # Only commit if there are changes
             if ! git diff --staged --quiet; then
