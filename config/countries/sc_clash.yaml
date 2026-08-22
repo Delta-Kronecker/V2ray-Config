@@ -62,15 +62,32 @@ dns:
 proxies:
   - name: "🇸🇨_1"
     type: vless
-    server: "45.130.125.209"
-    port: 80
-    uuid: "dc8eccdb-ecfa-435f-9ac1-5dc4882e7b51"
+    server: "200.165.229.168"
+    port: 8443
+    uuid: "a237ca49-48d5-466f-aee5-c44f728a99ab"
     udp: true
-    network: ws
-    ws-opts:
-      path: "/http"
-      headers:
-        Host: "de.vpnbase.net"
+    tls: true
+    skip-cert-verify: true
+    servername: "www.rumedia-cdn.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "Z3dT5WeVvmrbBtZycHfI3kO6kyoLH3tAqpT_ReaMaxI"
+      short-id: "4f676caa93313eab"
+    flow: "xtls-rprx-vision"
+  - name: "🇸🇨_2"
+    type: vless
+    server: "200.165.230.19"
+    port: 443
+    uuid: "d01d5a74-09fb-4e9e-b0d9-38b5fd77ad70"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.kinopoisk.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "iWxxH0TWB1Ciz6sEwtfjUVY61OcTDihou5IJfkt0O0Q"
+      short-id: "a3f8d21c4b907e56"
+    flow: "xtls-rprx-vision"
 
 proxy-groups:
   - name: "PROXY"
@@ -88,6 +105,7 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇸🇨_1"
+      - "🇸🇨_2"
 
 
   - name: "Load Balance"
@@ -97,6 +115,7 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇸🇨_1"
+      - "🇸🇨_2"
 
 rules:
   - MATCH,PROXY

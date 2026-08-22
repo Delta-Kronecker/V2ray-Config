@@ -62,6 +62,20 @@ dns:
 proxies:
   - name: "🇮🇹_1"
     type: vless
+    server: "150.241.73.137"
+    port: 443
+    uuid: "423b1d79-08c4-403f-9d5e-c541f791b55f"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "eu-central.cendora.ru"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "b-Cm9hX-3UHsS1L_lnUB6AMjuKhlN1IDdBbZ506itjI"
+      short-id: "00bca5982f82d083"
+    flow: "xtls-rprx-vision"
+  - name: "🇮🇹_2"
+    type: vless
     server: "150.241.73.177"
     port: 13443
     uuid: "b80b392c-0cf4-42f9-ae54-9f862e3ba276"
@@ -74,7 +88,7 @@ proxies:
       public-key: "gc9oXe37KCCm3J1dJ03wdGsnxPBdeEkRPOvl_t-vfVM"
       short-id: "a7f3c91b2e6d84c0"
     flow: "xtls-rprx-vision"
-  - name: "🇮🇹_2"
+  - name: "🇮🇹_3"
     type: vless
     server: "57.131.38.163"
     port: 2053
@@ -87,27 +101,27 @@ proxies:
     reality-opts:
       public-key: "Ej2H5ucT7qKegYcT8wODdlxa-cLHr7F4hDVUHzAhcnc"
       short-id: "5b8a942318178e7b"
-  - name: "🇮🇹_3"
+  - name: "🇮🇹_4"
     type: vless
     server: "204.216.216.23"
     port: 10086
     uuid: "9f0285ee-20ca-4953-bcdb-86a920652923"
     udp: true
-  - name: "🇮🇹_4"
+  - name: "🇮🇹_5"
     type: vless
-    server: "92yqc126g8qwe6v23n01.haiyucloud.com"
-    port: 49475
-    uuid: "485717cf-e96c-40db-9bc1-624060b89f20"
+    server: "31.76.113.64"
+    port: 443
+    uuid: "33c150b7-c0ca-4133-9a52-6f1207da9b8b"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "www.python.org"
-    client-fingerprint: "chrome"
+    servername: "deepl.com"
+    client-fingerprint: "firefox"
     reality-opts:
-      public-key: "i0nN_0uLl5ha8pIf6gNNLeLQe7it-nXDFLC5eM1BHV4"
-      short-id: "bb9b8f5f"
+      public-key: "vnjp7zIK2H3CGdjSis_79KXqS6IG-opmpbETPUD-EC8"
+      short-id: "15affa0af66dfc79"
     flow: "xtls-rprx-vision"
-  - name: "🇮🇹_5"
+  - name: "🇮🇹_6"
     type: vless
     server: "204.216.216.23"
     port: 1114
@@ -121,21 +135,21 @@ proxies:
       public-key: "WfkCF0eEuIoO0MyJsKOddU89QrTzCZ4y2dzCJbH99CQ"
       short-id: "79a1e14b"
     flow: "xtls-rprx-vision"
-  - name: "🇮🇹_6"
+  - name: "🇮🇹_7"
     type: vless
-    server: "150.241.73.137"
-    port: 443
-    uuid: "423b1d79-08c4-403f-9d5e-c541f791b55f"
+    server: "92yqc126g8qwe6v23n01.haiyucloud.com"
+    port: 49475
+    uuid: "485717cf-e96c-40db-9bc1-624060b89f20"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "eu-central.cendora.ru"
+    servername: "www.python.org"
     client-fingerprint: "chrome"
     reality-opts:
-      public-key: "b-Cm9hX-3UHsS1L_lnUB6AMjuKhlN1IDdBbZ506itjI"
-      short-id: "00bca5982f82d083"
+      public-key: "i0nN_0uLl5ha8pIf6gNNLeLQe7it-nXDFLC5eM1BHV4"
+      short-id: "bb9b8f5f"
     flow: "xtls-rprx-vision"
-  - name: "🇮🇹_7"
+  - name: "🇮🇹_8"
     type: trojan
     server: "91.193.5.121"
     port: 8443
@@ -166,6 +180,7 @@ proxy-groups:
       - "🇮🇹_5"
       - "🇮🇹_6"
       - "🇮🇹_7"
+      - "🇮🇹_8"
 
 
   - name: "Load Balance"
@@ -181,6 +196,7 @@ proxy-groups:
       - "🇮🇹_5"
       - "🇮🇹_6"
       - "🇮🇹_7"
+      - "🇮🇹_8"
 
 rules:
   - MATCH,PROXY

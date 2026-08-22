@@ -74,6 +74,20 @@ proxies:
       public-key: "i0nN_0uLl5ha8pIf6gNNLeLQe7it-nXDFLC5eM1BHV4"
       short-id: "bb9b8f5f"
     flow: "xtls-rprx-vision"
+  - name: "🇵🇭_2"
+    type: vless
+    server: "211.76.176.156"
+    port: 50567
+    uuid: "485717cf-e96c-40db-9bc1-624060b89f20"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.python.org"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "i0nN_0uLl5ha8pIf6gNNLeLQe7it-nXDFLC5eM1BHV4"
+      short-id: "bb9b8f5f"
+    flow: "xtls-rprx-vision"
 
 proxy-groups:
   - name: "PROXY"
@@ -91,6 +105,7 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇵🇭_1"
+      - "🇵🇭_2"
 
 
   - name: "Load Balance"
@@ -100,6 +115,7 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇵🇭_1"
+      - "🇵🇭_2"
 
 rules:
   - MATCH,PROXY
