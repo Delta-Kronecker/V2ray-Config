@@ -62,18 +62,20 @@ dns:
 proxies:
   - name: "🇦🇹_1"
     type: vless
-    server: "as.tunnelx.space"
-    port: 443
-    uuid: "ab7d5ea9-6eca-47c3-b14b-67378fc2d7c2"
+    server: "free04.tunnely.space"
+    port: 2096
+    uuid: "083904ab-f303-4292-b8d7-958ce296387a"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "as.tunnelx.space"
+    servername: "free04.tunnely.space"
     client-fingerprint: "firefox"
     reality-opts:
-      public-key: "UO3EObgU3xUrhIGEE0gfCn5ZOz8YxNcwwW6ZaYzD3SA"
-      short-id: "4e9b0c2d1a3f5768"
-    flow: "xtls-rprx-vision"
+      public-key: "mChFHtaRmeuO2aDuDPqZvBFaCz6f34sVJIKuJcAR130"
+      short-id: "2e40144ddc07e8e1"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "grpc"
   - name: "🇦🇹_2"
     type: vless
     server: "152.53.114.186"
@@ -89,6 +91,36 @@ proxies:
       short-id: "4e9b0c2d1a3f5768"
     flow: "xtls-rprx-vision"
   - name: "🇦🇹_3"
+    type: vless
+    server: "as.tunnelx.space"
+    port: 443
+    uuid: "ab7d5ea9-6eca-47c3-b14b-67378fc2d7c2"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "as.tunnelx.space"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "UO3EObgU3xUrhIGEE0gfCn5ZOz8YxNcwwW6ZaYzD3SA"
+      short-id: "4e9b0c2d1a3f5768"
+    flow: "xtls-rprx-vision"
+  - name: "🇦🇹_4"
+    type: vless
+    server: "130.49.219.24"
+    port: 2096
+    uuid: "083904ab-f303-4292-b8d7-958ce296387a"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "free04.tunnely.space"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "mChFHtaRmeuO2aDuDPqZvBFaCz6f34sVJIKuJcAR130"
+      short-id: "2e40144ddc07e8e1"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "grpc"
+  - name: "🇦🇹_5"
     type: ss
     server: "130.195.222.215"
     port: 443
@@ -101,7 +133,20 @@ proxies:
       path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
       host: "woshinidie-et3.pages.dev"
       tls: true
-  - name: "🇦🇹_4"
+  - name: "🇦🇹_6"
+    type: ss
+    server: "130.195.222.215"
+    port: 443
+    cipher: "none"
+    password: "https://t.me/WangCai2🇨🇳"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
+  - name: "🇦🇹_7"
     type: ss
     server: "130.195.222.215"
     port: 443
@@ -134,6 +179,9 @@ proxy-groups:
       - "🇦🇹_2"
       - "🇦🇹_3"
       - "🇦🇹_4"
+      - "🇦🇹_5"
+      - "🇦🇹_6"
+      - "🇦🇹_7"
 
 
   - name: "Load Balance"
@@ -146,6 +194,9 @@ proxy-groups:
       - "🇦🇹_2"
       - "🇦🇹_3"
       - "🇦🇹_4"
+      - "🇦🇹_5"
+      - "🇦🇹_6"
+      - "🇦🇹_7"
 
 rules:
   - MATCH,PROXY

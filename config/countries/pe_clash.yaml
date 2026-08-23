@@ -62,6 +62,20 @@ dns:
 proxies:
   - name: "🇵🇪_1"
     type: vless
+    server: "107.151.250.183"
+    port: 443
+    uuid: "4caaaae0-516b-4026-b2b2-69fea69df19a"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.bing.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "LDpWYUJjGRJomvaN-gfgY96EJOF2DDHiFcNPEBLtoW0"
+      short-id: "9019bbea8ff8781e"
+    flow: "xtls-rprx-vision"
+  - name: "🇵🇪_2"
+    type: vless
     server: "107.151.250.68"
     port: 443
     uuid: "055dce30-0ee3-44c3-b680-be1c95b8d6e7"
@@ -74,21 +88,21 @@ proxies:
       public-key: "g5UW6bf2soPSDNx7j0wanW_uLAtvTgQ8_lfztTJaP0k"
       short-id: "7025c954ff913b4c"
     flow: "xtls-rprx-vision"
-  - name: "🇵🇪_2"
+  - name: "🇵🇪_3"
     type: vless
-    server: "sfsk-tuq150.consultra.top"
+    server: "5r86-tuq187.operix.top"
     port: 443
-    uuid: "055dce30-0ee3-44c3-b680-be1c95b8d6e7"
+    uuid: "4caaaae0-516b-4026-b2b2-69fea69df19a"
     udp: true
     tls: true
     skip-cert-verify: true
     servername: "www.bing.com"
     client-fingerprint: "chrome"
     reality-opts:
-      public-key: "g5UW6bf2soPSDNx7j0wanW_uLAtvTgQ8_lfztTJaP0k"
-      short-id: "7025c954ff913b4c"
+      public-key: "LDpWYUJjGRJomvaN-gfgY96EJOF2DDHiFcNPEBLtoW0"
+      short-id: "9019bbea8ff8781e"
     flow: "xtls-rprx-vision"
-  - name: "🇵🇪_3"
+  - name: "🇵🇪_4"
     type: trojan
     server: "38.180.173.150"
     port: 443
@@ -115,6 +129,7 @@ proxy-groups:
       - "🇵🇪_1"
       - "🇵🇪_2"
       - "🇵🇪_3"
+      - "🇵🇪_4"
 
 
   - name: "Load Balance"
@@ -126,6 +141,7 @@ proxy-groups:
       - "🇵🇪_1"
       - "🇵🇪_2"
       - "🇵🇪_3"
+      - "🇵🇪_4"
 
 rules:
   - MATCH,PROXY

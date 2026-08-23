@@ -61,6 +61,20 @@ dns:
 
 proxies:
   - name: "🇪🇸_1"
+    type: vless
+    server: "154.23.242.96"
+    port: 10047
+    uuid: "7aecb4a5-f0a4-32a0-aabe-c9d5241e313f"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.adobe.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "xnLREvR2BJGCu7teEqJej7qshkveyHNFwn1qKGgrAjA"
+      short-id: "c5f8d3e8d4"
+    flow: "xtls-rprx-vision"
+  - name: "🇪🇸_2"
     type: trojan
     server: "65.20.102.54"
     port: 443
@@ -68,26 +82,20 @@ proxies:
     sni: "www.gpt123.one"
     skip-cert-verify: true
     udp: true
-  - name: "🇪🇸_2"
-    type: ss
-    server: "140.174.184.5"
-    port: 8388
-    cipher: "chacha20-ietf-poly1305"
-    password: "qItG8SueYQcP"
-    udp: true
   - name: "🇪🇸_3"
-    type: ss
-    server: "140.174.184.5"
-    port: 8388
-    cipher: "chacha20-ietf-poly1305"
-    password: "qItG8SueYQcP"
+    type: trojan
+    server: "gfw.cmcuct.com"
+    port: 50837
+    password: "6fbda1e2-85e5-48dc-9fa0-21be0651aa47"
+    sni: "cos.ap-hongkong.myqcloud.com"
+    skip-cert-verify: true
     udp: true
   - name: "🇪🇸_4"
     type: ss
-    server: "108.181.121.226"
+    server: "140.174.184.5"
     port: 8388
     cipher: "chacha20-ietf-poly1305"
-    password: "WSyL4XTwNsdv"
+    password: "qItG8SueYQcP"
     udp: true
   - name: "🇪🇸_5"
     type: ss
@@ -95,6 +103,28 @@ proxies:
     port: 8388
     cipher: "chacha20-ietf-poly1305"
     password: "WSyL4XTwNsdv"
+    udp: true
+  - name: "🇪🇸_6"
+    type: ss
+    server: "140.174.184.5"
+    port: 8388
+    cipher: "chacha20-ietf-poly1305"
+    password: "qItG8SueYQcP"
+    udp: true
+  - name: "🇪🇸_7"
+    type: ss
+    server: "108.181.121.226"
+    port: 8388
+    cipher: "chacha20-ietf-poly1305"
+    password: "WSyL4XTwNsdv"
+    udp: true
+  - name: "🇪🇸_8"
+    type: vmess
+    server: "85.90.217.42"
+    port: 22324
+    uuid: "04621bae-ab36-11ec-b909-0242ac120002"
+    alterId: 0
+    cipher: "auto"
     udp: true
 
 proxy-groups:
@@ -117,6 +147,9 @@ proxy-groups:
       - "🇪🇸_3"
       - "🇪🇸_4"
       - "🇪🇸_5"
+      - "🇪🇸_6"
+      - "🇪🇸_7"
+      - "🇪🇸_8"
 
 
   - name: "Load Balance"
@@ -130,6 +163,9 @@ proxy-groups:
       - "🇪🇸_3"
       - "🇪🇸_4"
       - "🇪🇸_5"
+      - "🇪🇸_6"
+      - "🇪🇸_7"
+      - "🇪🇸_8"
 
 rules:
   - MATCH,PROXY

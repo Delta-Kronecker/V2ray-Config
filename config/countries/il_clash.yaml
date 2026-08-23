@@ -60,12 +60,13 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇺🇿_1"
-    type: ss
-    server: "81.85.49.120"
-    port: 1080
-    cipher: "chacha20-ietf-poly1305"
-    password: "CM-lXWY7YkMOFGZyIHxhnQ"
+  - name: "🇮🇱_1"
+    type: trojan
+    server: "gfw.cmcuct.com"
+    port: 22227
+    password: "6fbda1e2-85e5-48dc-9fa0-21be0651aa47"
+    sni: "cos.ap-hongkong.myqcloud.com"
+    skip-cert-verify: true
     udp: true
 
 proxy-groups:
@@ -83,7 +84,7 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇺🇿_1"
+      - "🇮🇱_1"
 
 
   - name: "Load Balance"
@@ -92,7 +93,7 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇺🇿_1"
+      - "🇮🇱_1"
 
 rules:
   - MATCH,PROXY
