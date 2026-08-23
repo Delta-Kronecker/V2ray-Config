@@ -62,6 +62,48 @@ dns:
 proxies:
   - name: "🇦🇱_1"
     type: vless
+    server: "alban2.freeinternat.com"
+    port: 443
+    uuid: "fbb74aa8-b89a-4f20-9504-6b25aadf6681"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "alban2.freeinternat.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "bZpzmeWiEJyJQy0W2hHc34Nr6BuFXj1UDd80Cbwh1Fk"
+      short-id: "ff776ff77be48b88"
+    flow: "xtls-rprx-vision"
+  - name: "🇦🇱_2"
+    type: vless
+    server: "meow-warsaw.nethcloud.top"
+    port: 443
+    uuid: "a34b5e88-cf0d-4c01-8199-2d1002d3c787"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.wikihow.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "HKpd1sbrhBds8SJSL0d22MAq_QyTR6EP6y5b5DYol3U"
+      short-id: ""
+    flow: "xtls-rprx-vision"
+  - name: "🇦🇱_3"
+    type: vless
+    server: "91.239.6.19"
+    port: 443
+    uuid: "fbb74aa8-b89a-4f20-9504-6b25aadf6681"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "alban2.freeinternat.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "bZpzmeWiEJyJQy0W2hHc34Nr6BuFXj1UDd80Cbwh1Fk"
+      short-id: "ff776ff77be48b88"
+    flow: "xtls-rprx-vision"
+  - name: "🇦🇱_4"
+    type: vless
     server: "78.159.131.235"
     port: 443
     uuid: "1f619326-cd93-4d6b-aebe-e0b5f8831d02"
@@ -74,7 +116,7 @@ proxies:
       public-key: "XZa7f7bABj7lY4HuLopVCBBBYTu-RB7QyIZ96njvYwo"
       short-id: "7bcfc0bc"
     flow: "xtls-rprx-vision"
-  - name: "🇦🇱_2"
+  - name: "🇦🇱_5"
     type: vless
     server: "95.85.224.51"
     port: 443
@@ -88,21 +130,7 @@ proxies:
       public-key: "WWeAHWUVD-phmnjNJ823cer0c4CMIbEs08AhsuEZmDc"
       short-id: "a696de84963656de"
     flow: "xtls-rprx-vision"
-  - name: "🇦🇱_3"
-    type: vless
-    server: "95.85.227.142"
-    port: 443
-    uuid: "a34b5e88-cf0d-4c01-8199-2d1002d3c787"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.wikihow.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "HKpd1sbrhBds8SJSL0d22MAq_QyTR6EP6y5b5DYol3U"
-      short-id: ""
-    flow: "xtls-rprx-vision"
-  - name: "🇦🇱_4"
+  - name: "🇦🇱_6"
     type: ss
     server: "157.22.240.141"
     port: 57925
@@ -129,6 +157,8 @@ proxy-groups:
       - "🇦🇱_2"
       - "🇦🇱_3"
       - "🇦🇱_4"
+      - "🇦🇱_5"
+      - "🇦🇱_6"
 
 
   - name: "Load Balance"
@@ -141,6 +171,8 @@ proxy-groups:
       - "🇦🇱_2"
       - "🇦🇱_3"
       - "🇦🇱_4"
+      - "🇦🇱_5"
+      - "🇦🇱_6"
 
 rules:
   - MATCH,PROXY

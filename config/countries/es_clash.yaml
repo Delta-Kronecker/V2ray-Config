@@ -61,37 +61,6 @@ dns:
 
 proxies:
   - name: "🇪🇸_1"
-    type: vless
-    server: "85.90.217.42"
-    port: 443
-    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "85.90.217.42"
-  - name: "🇪🇸_2"
-    type: vless
-    server: "76.164.201.164"
-    port: 443
-    uuid: "20df893e-dcf4-491d-8261-6dbb24f9566b"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "api.v-one.click"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "KdTNB-nAu9Sd9WdysLIg8BRwsYG7DN6xqgCZiOsv0XA"
-      short-id: ""
-    flow: "xtls-rprx-vision"
-  - name: "🇪🇸_3"
-    type: trojan
-    server: "172.233.115.40"
-    port: 5443
-    password: "fg20mtCFHy"
-    sni: "www.bing.com"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇪🇸_4"
     type: trojan
     server: "65.20.102.54"
     port: 443
@@ -99,28 +68,28 @@ proxies:
     sni: "www.gpt123.one"
     skip-cert-verify: true
     udp: true
-  - name: "🇪🇸_5"
+  - name: "🇪🇸_2"
     type: ss
     server: "140.174.184.5"
     port: 8388
     cipher: "chacha20-ietf-poly1305"
     password: "qItG8SueYQcP"
     udp: true
-  - name: "🇪🇸_6"
+  - name: "🇪🇸_3"
     type: ss
     server: "140.174.184.5"
     port: 8388
     cipher: "chacha20-ietf-poly1305"
     password: "qItG8SueYQcP"
     udp: true
-  - name: "🇪🇸_7"
+  - name: "🇪🇸_4"
     type: ss
     server: "108.181.121.226"
     port: 8388
     cipher: "chacha20-ietf-poly1305"
     password: "WSyL4XTwNsdv"
     udp: true
-  - name: "🇪🇸_8"
+  - name: "🇪🇸_5"
     type: ss
     server: "108.181.121.226"
     port: 8388
@@ -148,9 +117,6 @@ proxy-groups:
       - "🇪🇸_3"
       - "🇪🇸_4"
       - "🇪🇸_5"
-      - "🇪🇸_6"
-      - "🇪🇸_7"
-      - "🇪🇸_8"
 
 
   - name: "Load Balance"
@@ -164,9 +130,6 @@ proxy-groups:
       - "🇪🇸_3"
       - "🇪🇸_4"
       - "🇪🇸_5"
-      - "🇪🇸_6"
-      - "🇪🇸_7"
-      - "🇪🇸_8"
 
 rules:
   - MATCH,PROXY

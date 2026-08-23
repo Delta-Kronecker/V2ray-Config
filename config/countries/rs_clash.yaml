@@ -60,14 +60,20 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇮🇪_1"
-    type: trojan
-    server: "37.202.231.202"
-    port: 2376
-    password: "xrVEJA7RH7AKaJfOUVfsLA"
-    sni: "pish-data-03.myket.ir"
-    skip-cert-verify: true
+  - name: "🇷🇸_1"
+    type: vless
+    server: "2.27.57.154"
+    port: 8888
+    uuid: "0a11d3b4-682c-4bfb-afb0-820b8285cb4b"
     udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ubuntu.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "6LSBBaOUWujvSovACjcP7m-DI9u9R584qdJxNYnu-24"
+      short-id: "d5021eb1b04c37dd"
+    flow: "xtls-rprx-vision"
 
 proxy-groups:
   - name: "PROXY"
@@ -84,7 +90,7 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇮🇪_1"
+      - "🇷🇸_1"
 
 
   - name: "Load Balance"
@@ -93,7 +99,7 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇮🇪_1"
+      - "🇷🇸_1"
 
 rules:
   - MATCH,PROXY

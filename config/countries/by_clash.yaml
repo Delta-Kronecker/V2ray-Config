@@ -76,6 +76,20 @@ proxies:
     flow: "xtls-rprx-vision"
   - name: "🇧🇾_2"
     type: vless
+    server: "2.27.57.154"
+    port: 21
+    uuid: "0a11d3b4-682c-4bfb-afb0-820b8285cb4b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ubuntu.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "6LSBBaOUWujvSovACjcP7m-DI9u9R584qdJxNYnu-24"
+      short-id: "bf3b5029b2295481"
+    flow: "xtls-rprx-vision"
+  - name: "🇧🇾_3"
+    type: vless
     server: "189.74.124.42"
     port: 443
     uuid: "423b1d79-08c4-403f-9d5e-c541f791b55f"
@@ -106,6 +120,7 @@ proxy-groups:
     proxies:
       - "🇧🇾_1"
       - "🇧🇾_2"
+      - "🇧🇾_3"
 
 
   - name: "Load Balance"
@@ -116,6 +131,7 @@ proxy-groups:
     proxies:
       - "🇧🇾_1"
       - "🇧🇾_2"
+      - "🇧🇾_3"
 
 rules:
   - MATCH,PROXY

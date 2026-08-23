@@ -67,12 +67,34 @@ proxies:
     uuid: "f0169b08-43fd-4dc3-8195-18f6ad2fe39d"
     udp: true
   - name: "🇨🇳_2"
+    type: vless
+    server: "45.131.212.57"
+    port: 443
+    uuid: "5322390f-20ee-49e4-9b38-51fc1b5a1758"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "abuse.sellflow.org"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
+      short-id: ""
+    flow: "xtls-rprx-vision"
+  - name: "🇨🇳_3"
     type: trojan
     server: "117.149.198.190"
     port: 10051
     password: "a13820c547fa34c5c45515c12f0cd576"
     sni: "zz6.91js.pw"
     skip-cert-verify: true
+    udp: true
+  - name: "🇨🇳_4"
+    type: vmess
+    server: "112.132.215.108"
+    port: 50002
+    uuid: "418048af-a293-4b99-9b0c-98ca3580dd24"
+    alterId: 64
+    cipher: "auto"
     udp: true
 
 proxy-groups:
@@ -92,6 +114,8 @@ proxy-groups:
     proxies:
       - "🇨🇳_1"
       - "🇨🇳_2"
+      - "🇨🇳_3"
+      - "🇨🇳_4"
 
 
   - name: "Load Balance"
@@ -102,6 +126,8 @@ proxy-groups:
     proxies:
       - "🇨🇳_1"
       - "🇨🇳_2"
+      - "🇨🇳_3"
+      - "🇨🇳_4"
 
 rules:
   - MATCH,PROXY

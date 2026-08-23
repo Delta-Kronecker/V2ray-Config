@@ -61,13 +61,27 @@ dns:
 
 proxies:
   - name: "🇹🇭_1"
+    type: vless
+    server: "family.bucket.8.kfc-520.com"
+    port: 10032
+    uuid: "7aecb4a5-f0a4-32a0-aabe-c9d5241e313f"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.hp.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "yXxDl06l9pXXT4_1kqpdgOyfAhORcsfPgLTxHu50zQM"
+      short-id: "f9275dbb5a"
+    flow: "xtls-rprx-vision"
+  - name: "🇹🇭_2"
     type: ss
     server: "102.129.229.85"
     port: 31700
     cipher: "chacha20-ietf-poly1305"
     password: "d7zh2lMrXNH5+8+8pKzlxiCU9NN022ih+uAyxj5d4qo="
     udp: true
-  - name: "🇹🇭_2"
+  - name: "🇹🇭_3"
     type: ss
     server: "102.129.229.85"
     port: 31700
@@ -92,6 +106,7 @@ proxy-groups:
     proxies:
       - "🇹🇭_1"
       - "🇹🇭_2"
+      - "🇹🇭_3"
 
 
   - name: "Load Balance"
@@ -102,6 +117,7 @@ proxy-groups:
     proxies:
       - "🇹🇭_1"
       - "🇹🇭_2"
+      - "🇹🇭_3"
 
 rules:
   - MATCH,PROXY

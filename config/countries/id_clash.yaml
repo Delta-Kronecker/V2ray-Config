@@ -61,6 +61,20 @@ dns:
 
 proxies:
   - name: "🇮🇩_1"
+    type: vless
+    server: "family.bucket.9.kfc-520.com"
+    port: 10053
+    uuid: "7aecb4a5-f0a4-32a0-aabe-c9d5241e313f"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.amd.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "o-ud3x7exNVYmknsVseZyUGMyK_680Nub0Cf6W4KiRw"
+      short-id: "cbbf64"
+    flow: "xtls-rprx-vision"
+  - name: "🇮🇩_2"
     type: trojan
     server: "172.232.250.160"
     port: 443
@@ -85,6 +99,7 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇮🇩_1"
+      - "🇮🇩_2"
 
 
   - name: "Load Balance"
@@ -94,6 +109,7 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇮🇩_1"
+      - "🇮🇩_2"
 
 rules:
   - MATCH,PROXY

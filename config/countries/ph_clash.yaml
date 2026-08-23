@@ -88,6 +88,19 @@ proxies:
       public-key: "i0nN_0uLl5ha8pIf6gNNLeLQe7it-nXDFLC5eM1BHV4"
       short-id: "bb9b8f5f"
     flow: "xtls-rprx-vision"
+  - name: "🇵🇭_3"
+    type: vmess
+    server: "61.245.11.60"
+    port: 80
+    uuid: "a3e3a710-79f8-4ae0-b83c-607aab40d197"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/vmess/"
+      headers:
+        Host: "61.245.11.60"
 
 proxy-groups:
   - name: "PROXY"
@@ -106,6 +119,7 @@ proxy-groups:
     proxies:
       - "🇵🇭_1"
       - "🇵🇭_2"
+      - "🇵🇭_3"
 
 
   - name: "Load Balance"
@@ -116,6 +130,7 @@ proxy-groups:
     proxies:
       - "🇵🇭_1"
       - "🇵🇭_2"
+      - "🇵🇭_3"
 
 rules:
   - MATCH,PROXY
