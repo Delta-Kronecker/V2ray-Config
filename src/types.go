@@ -27,7 +27,8 @@ type GeoSettings struct {
 }
 
 type ValidationSettings struct {
-	NumWorkers             int      `json:"num_workers"`
+	CleanFailedSubs         bool     `json:"clean_failed_subs"`
+	NumWorkers              int      `json:"num_workers"`
 	GlobalTimeoutSec       float64  `json:"global_timeout_sec"`
 	XrayStartTimeoutMs    int      `json:"xray_start_timeout_ms"`
 	XrayStartIntervalMs   int      `json:"xray_start_interval_ms"`

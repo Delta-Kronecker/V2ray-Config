@@ -69,7 +69,7 @@ func main() {
 		fmt.Printf(" Loaded %d sources from sub.txt\n", len(subURLs))
 		var failedURLs []string
 		allConfigs, failedLinks, failedURLs = fetchAllFromSubs(subURLs)
-		if len(failedURLs) > 0 {
+		if len(failedURLs) > 0 && cfg.Validation.CleanFailedSubs {
 			cleanSubFile("data/sub.txt", failedURLs)
 		}
 	} else {

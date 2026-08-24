@@ -84,7 +84,16 @@ func injectClashProxies(baseContent string, proxyEntries []string, proxyNames []
 // ── prepareOutputDirs ─────────────────────────────────────────────────────────
 
 func prepareOutputDirs() error {
+	archiveDir := filepath.Join("config", "archive")
+	tmpArchive := filepath.Join("config", ".archive_tmp")
+	if _, err := os.Stat(archiveDir); err == nil {
+		os.Rename(archiveDir, tmpArchive)
+	}
 	os.RemoveAll("config")
+	if _, err := os.Stat(tmpArchive); err == nil {
+		os.MkdirAll(archiveDir, 0755)
+		os.Rename(tmpArchive, archiveDir)
+	}
 	dirs := []string{
 		"config",
 		cfg.Output.ProtocolsDir,
