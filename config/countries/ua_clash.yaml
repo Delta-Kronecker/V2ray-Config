@@ -62,27 +62,19 @@ dns:
 proxies:
   - name: "🇺🇦_1"
     type: vless
-    server: "s281.gogocs.xyz"
+    server: "5.34.182.23"
     port: 443
-    uuid: "41f4cb15-5a3f-3934-89fe-b4177146adf4"
+    uuid: "423b1d79-08c4-403f-9d5e-c541f791b55f"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "u643766ubdb325a3s274.kukuss.top"
-    client-fingerprint: "firefox"
+    servername: "eu-central.cendora.ru"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "b-Cm9hX-3UHsS1L_lnUB6AMjuKhlN1IDdBbZ506itjI"
+      short-id: "00bca5982f82d083"
     flow: "xtls-rprx-vision"
   - name: "🇺🇦_2"
-    type: vless
-    server: "88.151.195.241"
-    port: 443
-    uuid: "41f4cb15-5a3f-3934-89fe-b4177146adf4"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "u643766ubdb325a3s274.kukuss.top"
-    client-fingerprint: "firefox"
-    flow: "xtls-rprx-vision"
-  - name: "🇺🇦_3"
     type: vless
     server: "193.238.153.15"
     port: 443
@@ -96,32 +88,7 @@ proxies:
       public-key: "dzknsuwujuOacNHTXzdPxBLNUEJfEImiwLinPPNFmwU"
       short-id: "1ea21a140beaecc5"
     flow: "xtls-rprx-vision"
-  - name: "🇺🇦_4"
-    type: vless
-    server: "5.34.182.23"
-    port: 13443
-    uuid: "5238521b-c5dd-42af-870e-c174a2aaaafe"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "auto.cendora.ru"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "gc9oXe37KCCm3J1dJ03wdGsnxPBdeEkRPOvl_t-vfVM"
-      short-id: "a7f3c91b2e6d84c0"
-    flow: "xtls-rprx-vision"
-  - name: "🇺🇦_5"
-    type: vless
-    server: "s282.wagahaha.xyz"
-    port: 443
-    uuid: "41f4cb15-5a3f-3934-89fe-b4177146adf4"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "u643766ubdb325a3s274.kukuss.top"
-    client-fingerprint: "firefox"
-    flow: "xtls-rprx-vision"
-  - name: "🇺🇦_6"
+  - name: "🇺🇦_3"
     type: trojan
     server: "130.0.236.88"
     port: 443
@@ -148,9 +115,6 @@ proxy-groups:
       - "🇺🇦_1"
       - "🇺🇦_2"
       - "🇺🇦_3"
-      - "🇺🇦_4"
-      - "🇺🇦_5"
-      - "🇺🇦_6"
 
 
   - name: "Load Balance"
@@ -162,9 +126,6 @@ proxy-groups:
       - "🇺🇦_1"
       - "🇺🇦_2"
       - "🇺🇦_3"
-      - "🇺🇦_4"
-      - "🇺🇦_5"
-      - "🇺🇦_6"
 
 rules:
   - MATCH,PROXY

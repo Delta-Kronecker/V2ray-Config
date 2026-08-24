@@ -60,17 +60,28 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇳🇿_1"
-    type: vless
-    server: "185.121.179.11"
+  - name: "🇮🇪_1"
+    type: trojan
+    server: "3.253.78.205"
     port: 443
-    uuid: "9647129d-57ff-4fe2-bbd8-4a49d622612a"
-    udp: true
-    tls: true
+    password: "FH72359861"
+    sni: "balanced-heron.rooster465.autos"
     skip-cert-verify: true
-    servername: "de-01.atlanta-api.com"
-    client-fingerprint: "edge"
-    flow: "xtls-rprx-vision"
+    udp: true
+  - name: "🇮🇪_2"
+    type: ss
+    server: "94.245.92.85"
+    port: 443
+    cipher: "chacha20-ietf-poly1305"
+    password: "rKE5OchHqTrkamzx"
+    udp: true
+  - name: "🇮🇪_3"
+    type: ss
+    server: "94.245.92.85"
+    port: 443
+    cipher: "chacha20-ietf-poly1305"
+    password: "rKE5OchHqTrkamzx"
+    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -87,7 +98,9 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇳🇿_1"
+      - "🇮🇪_1"
+      - "🇮🇪_2"
+      - "🇮🇪_3"
 
 
   - name: "Load Balance"
@@ -96,7 +109,9 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇳🇿_1"
+      - "🇮🇪_1"
+      - "🇮🇪_2"
+      - "🇮🇪_3"
 
 rules:
   - MATCH,PROXY

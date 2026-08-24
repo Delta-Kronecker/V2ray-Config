@@ -60,14 +60,20 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇮🇱_1"
-    type: trojan
-    server: "gfw.cmcuct.com"
-    port: 22227
-    password: "6fbda1e2-85e5-48dc-9fa0-21be0651aa47"
-    sni: "cos.ap-hongkong.myqcloud.com"
-    skip-cert-verify: true
+  - name: "🇸🇾_1"
+    type: vless
+    server: "45.131.212.57"
+    port: 443
+    uuid: "5322390f-20ee-49e4-9b38-51fc1b5a1758"
     udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "abuse.sellflow.org"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
+      short-id: ""
+    flow: "xtls-rprx-vision"
 
 proxy-groups:
   - name: "PROXY"
@@ -84,7 +90,7 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇮🇱_1"
+      - "🇸🇾_1"
 
 
   - name: "Load Balance"
@@ -93,7 +99,7 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇮🇱_1"
+      - "🇸🇾_1"
 
 rules:
   - MATCH,PROXY

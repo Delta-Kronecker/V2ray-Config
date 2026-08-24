@@ -62,34 +62,6 @@ dns:
 proxies:
   - name: "🇭🇺_1"
     type: vless
-    server: "45.195.111.108"
-    port: 443
-    uuid: "66824c94-7ba9-4113-908e-bd793f296852"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "storage.yandex.net"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "7zd9mJilgjOrg_ohtw23Vmio-pdnYqeP_r-kiWt87Cg"
-      short-id: "2715592069f36fe7"
-    flow: "xtls-rprx-vision"
-  - name: "🇭🇺_2"
-    type: vless
-    server: "hu10.levikogjgfdd.ir"
-    port: 443
-    uuid: "66824c94-7ba9-4113-908e-bd793f296852"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "storage.yandex.net"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "7zd9mJilgjOrg_ohtw23Vmio-pdnYqeP_r-kiWt87Cg"
-      short-id: "2715592069f36fe7"
-    flow: "xtls-rprx-vision"
-  - name: "🇭🇺_3"
-    type: vless
     server: "45.195.111.15"
     port: 443
     uuid: "82e209b2-97a6-4d67-a10b-72627b9f6702"
@@ -119,8 +91,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇭🇺_1"
-      - "🇭🇺_2"
-      - "🇭🇺_3"
 
 
   - name: "Load Balance"
@@ -130,8 +100,6 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇭🇺_1"
-      - "🇭🇺_2"
-      - "🇭🇺_3"
 
 rules:
   - MATCH,PROXY
