@@ -62,7 +62,7 @@ dns:
 proxies:
   - name: "🇻🇮_1"
     type: vless
-    server: "2.27.27.29"
+    server: "2.27.27.30"
     port: 443
     uuid: "710fc22f-06b2-4b6d-bb3e-f57c17b670a6"
     udp: true
@@ -76,6 +76,20 @@ proxies:
     flow: "xtls-rprx-vision"
   - name: "🇻🇮_2"
     type: vless
+    server: "2.27.27.29"
+    port: 443
+    uuid: "710fc22f-06b2-4b6d-bb3e-f57c17b670a6"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.ray-balance.space"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "d1NlaZfnsYjWfxRTqIBk1ldBUmdE-kRTEQ_sWd1JYwI"
+      short-id: ""
+    flow: "xtls-rprx-vision"
+  - name: "🇻🇮_3"
+    type: vless
     server: "84.23.54.213"
     port: 443
     uuid: "710fc22f-06b2-03ef-bb3e-f57c17b670a6"
@@ -88,21 +102,21 @@ proxies:
       public-key: "3tOekmYYkNW9IwHGuui6Y9bLmXoyiAmwAgtAdUAmDis"
       short-id: ""
     flow: "xtls-rprx-vision"
-  - name: "🇻🇮_3"
+  - name: "🇻🇮_4"
     type: vless
-    server: "2.27.27.30"
+    server: "in-ru-vk-01.ray-balance.space"
     port: 443
-    uuid: "710fc22f-06b2-4b6d-bb3e-f57c17b670a6"
+    uuid: "710fc22f-06b2-03ef-bb3e-f57c17b670a6"
     udp: true
     tls: true
     skip-cert-verify: true
     servername: "www.ray-balance.space"
     client-fingerprint: "firefox"
     reality-opts:
-      public-key: "d1NlaZfnsYjWfxRTqIBk1ldBUmdE-kRTEQ_sWd1JYwI"
+      public-key: "3tOekmYYkNW9IwHGuui6Y9bLmXoyiAmwAgtAdUAmDis"
       short-id: ""
     flow: "xtls-rprx-vision"
-  - name: "🇻🇮_4"
+  - name: "🇻🇮_5"
     type: vless
     server: "bc-us-hn-vi.ray-balance.space"
     port: 443
@@ -136,6 +150,7 @@ proxy-groups:
       - "🇻🇮_2"
       - "🇻🇮_3"
       - "🇻🇮_4"
+      - "🇻🇮_5"
 
 
   - name: "Load Balance"
@@ -148,6 +163,7 @@ proxy-groups:
       - "🇻🇮_2"
       - "🇻🇮_3"
       - "🇻🇮_4"
+      - "🇻🇮_5"
 
 rules:
   - MATCH,PROXY

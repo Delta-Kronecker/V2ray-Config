@@ -61,26 +61,19 @@ dns:
 
 proxies:
   - name: "🇹🇭_1"
-    type: trojan
-    server: "kkvlvvq-a.catcat321.com"
-    port: 20006
-    password: "a126f35c-e832-4115-8593-b723ade3f7be"
-    sni: "hk.catxstar.com"
-    skip-cert-verify: true
+    type: ss
+    server: "102.129.229.85"
+    port: 31700
+    cipher: "chacha20-ietf-poly1305"
+    password: "d7zh2lMrXNH5+8+8pKzlxiCU9NN022ih+uAyxj5d4qo="
     udp: true
   - name: "🇹🇭_2"
-    type: ss
-    server: "102.129.229.85"
-    port: 31700
-    cipher: "chacha20-ietf-poly1305"
-    password: "d7zh2lMrXNH5+8+8pKzlxiCU9NN022ih+uAyxj5d4qo="
-    udp: true
-  - name: "🇹🇭_3"
-    type: ss
-    server: "102.129.229.85"
-    port: 31700
-    cipher: "chacha20-ietf-poly1305"
-    password: "d7zh2lMrXNH5+8+8pKzlxiCU9NN022ih+uAyxj5d4qo="
+    type: vmess
+    server: "119.46.51.45"
+    port: 37515
+    uuid: "9b76bc31-17a5-4454-934a-8d5fb602cd70"
+    alterId: 0
+    cipher: "auto"
     udp: true
 
 proxy-groups:
@@ -100,7 +93,6 @@ proxy-groups:
     proxies:
       - "🇹🇭_1"
       - "🇹🇭_2"
-      - "🇹🇭_3"
 
 
   - name: "Load Balance"
@@ -111,7 +103,6 @@ proxy-groups:
     proxies:
       - "🇹🇭_1"
       - "🇹🇭_2"
-      - "🇹🇭_3"
 
 rules:
   - MATCH,PROXY

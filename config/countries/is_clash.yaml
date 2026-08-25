@@ -60,14 +60,20 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇵🇭_1"
-    type: trojan
-    server: "tr-at-pautina.unlimited-access.ru"
-    port: 443
-    password: "kxHw-Dk-e9dffgzYszMlEqLJ92AnY3Pi"
-    sni: "tr-at-pautina.unlimited-access.ru"
-    skip-cert-verify: true
+  - name: "🇮🇸_1"
+    type: vless
+    server: "151.236.24.67"
+    port: 8443
+    uuid: "85cc845e-644c-0045-8288-f0c03c83c1ec"
     udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "auto.quattro-tech.ru"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "10rVZPoOUP1TlQviIAsQ_jAROX0fRQxH0C92nq_zGQc"
+      short-id: "43dcff53849b81e6"
+    flow: "xtls-rprx-vision"
 
 proxy-groups:
   - name: "PROXY"
@@ -84,7 +90,7 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇵🇭_1"
+      - "🇮🇸_1"
 
 
   - name: "Load Balance"
@@ -93,7 +99,7 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇵🇭_1"
+      - "🇮🇸_1"
 
 rules:
   - MATCH,PROXY

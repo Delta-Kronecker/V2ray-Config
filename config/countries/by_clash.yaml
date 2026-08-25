@@ -88,6 +88,17 @@ proxies:
       public-key: "YQTixaXzPVImuRc4TUbrFAekjIiaYV-t5S-HTKlH0AU"
       short-id: "2186a755ed67b034"
     flow: "xtls-rprx-vision"
+  - name: "🇧🇾_3"
+    type: trojan
+    server: "by01.botovod.space"
+    port: 500
+    password: "8qCNZU2XdtefT7uB4uPxgRR839btqMG8"
+    sni: "by01.botovod.space"
+    skip-cert-verify: true
+    udp: true
+    network: grpc
+    grpc-opts:
+      grpc-service-name: ""
 
 proxy-groups:
   - name: "PROXY"
@@ -106,6 +117,7 @@ proxy-groups:
     proxies:
       - "🇧🇾_1"
       - "🇧🇾_2"
+      - "🇧🇾_3"
 
 
   - name: "Load Balance"
@@ -116,6 +128,7 @@ proxy-groups:
     proxies:
       - "🇧🇾_1"
       - "🇧🇾_2"
+      - "🇧🇾_3"
 
 rules:
   - MATCH,PROXY

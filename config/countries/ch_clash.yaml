@@ -62,19 +62,32 @@ dns:
 proxies:
   - name: "🇨🇭_1"
     type: vless
-    server: "193.151.108.89"
-    port: 13443
-    uuid: "423b1d79-08c4-403f-9d5e-c541f791b55f"
+    server: "45.196.193.100"
+    port: 443
+    uuid: "219762a7-b918-4e2b-8a3d-d309ef98bb61"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "auto.cendora.ru"
-    client-fingerprint: "qq"
+    servername: "storage.yandex.net"
+    client-fingerprint: "firefox"
     reality-opts:
-      public-key: "gc9oXe37KCCm3J1dJ03wdGsnxPBdeEkRPOvl_t-vfVM"
-      short-id: "a7f3c91b2e6d84c0"
+      public-key: "IdqrygjwHBEMCOamBl7a504TVk6uMAtTRj0xLWcFcxY"
+      short-id: "40ce08cf20c67003"
     flow: "xtls-rprx-vision"
   - name: "🇨🇭_2"
+    type: vless
+    server: "45.134.38.204"
+    port: 8059
+    uuid: "a88e2744-3555-4a0a-9635-0aae23e038f8"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.amd.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "hjJ1VN2xwcl1n7vrwvOspB2NFWrXNySUNPexutOVvAM"
+      short-id: "d3aea86e1949"
+  - name: "🇨🇭_3"
     type: vless
     server: "193.151.108.89"
     port: 13443
@@ -88,35 +101,50 @@ proxies:
       public-key: "gc9oXe37KCCm3J1dJ03wdGsnxPBdeEkRPOvl_t-vfVM"
       short-id: "a7f3c91b2e6d84c0"
     flow: "xtls-rprx-vision"
-  - name: "🇨🇭_3"
+  - name: "🇨🇭_4"
     type: vless
-    server: "178.83.226.142"
-    port: 8443
-    uuid: "4cb63132-e084-4676-ac67-1ed6b60be05a"
+    server: "80.78.246.205"
+    port: 9882
+    uuid: "14777bd9-56a5-46f6-a94f-826b4800dc05"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "refersion.com"
-    client-fingerprint: "firefox"
+    servername: "dl.google.com"
+    client-fingerprint: "qq"
     reality-opts:
-      public-key: "-x9vdxai-qKAzuhxV7H2RIbEmIh_ZgdiFxiUA5q0B1I"
-      short-id: "aa6988d03cc11454"
-    flow: "xtls-rprx-vision"
-  - name: "🇨🇭_4"
+      public-key: "bnRIb3Er1i-K6NGGByCO9UbGfOvu43ZoiK7ulPd1SzU"
+      short-id: ""
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "grpc-tunnel"
+  - name: "🇨🇭_5"
     type: vless
-    server: "31.76.4.103"
+    server: "178.83.226.55"
     port: 443
+    uuid: "2a77a470-315c-493d-b690-59b814a804cb"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sellflow.org"
+    reality-opts:
+      public-key: "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
+      short-id: ""
+    flow: "xtls-rprx-vision"
+  - name: "🇨🇭_6"
+    type: vless
+    server: "193.151.108.89"
+    port: 13443
     uuid: "423b1d79-08c4-403f-9d5e-c541f791b55f"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "eu-central.cendora.ru"
-    client-fingerprint: "chrome"
+    servername: "auto.cendora.ru"
+    client-fingerprint: "qq"
     reality-opts:
-      public-key: "b-Cm9hX-3UHsS1L_lnUB6AMjuKhlN1IDdBbZ506itjI"
-      short-id: "00bca5982f82d083"
+      public-key: "gc9oXe37KCCm3J1dJ03wdGsnxPBdeEkRPOvl_t-vfVM"
+      short-id: "a7f3c91b2e6d84c0"
     flow: "xtls-rprx-vision"
-  - name: "🇨🇭_5"
+  - name: "🇨🇭_7"
     type: vless
     server: "45.195.2.133"
     port: 8443
@@ -130,20 +158,29 @@ proxies:
       public-key: "8qHRGcCezzSu4S-Cz9l19BNRLWm4MkaSwZV3dNrLEwc"
       short-id: "445ab326fc7c90ac"
     flow: "xtls-rprx-vision"
-  - name: "🇨🇭_6"
+  - name: "🇨🇭_8"
     type: vless
-    server: "178.83.226.55"
+    server: "31.76.4.103"
     port: 443
-    uuid: "2a77a470-315c-493d-b690-59b814a804cb"
+    uuid: "423b1d79-08c4-403f-9d5e-c541f791b55f"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "sellflow.org"
+    servername: "eu-central.cendora.ru"
+    client-fingerprint: "chrome"
     reality-opts:
-      public-key: "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
-      short-id: ""
+      public-key: "b-Cm9hX-3UHsS1L_lnUB6AMjuKhlN1IDdBbZ506itjI"
+      short-id: "00bca5982f82d083"
     flow: "xtls-rprx-vision"
-  - name: "🇨🇭_7"
+  - name: "🇨🇭_9"
+    type: trojan
+    server: "tr-switzerlandgopota.unlimited-access.ru"
+    port: 443
+    password: "kxHw-Dk-e9dffgzYszMlEqLJ92AnY3Pi"
+    sni: "tr-switzerlandgopota.unlimited-access.ru"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇨🇭_10"
     type: trojan
     server: "45.95.232.189"
     port: 443
@@ -151,13 +188,19 @@ proxies:
     sni: "tr-switzerlandgopota.unlimited-access.ru"
     skip-cert-verify: true
     udp: true
-  - name: "🇨🇭_8"
-    type: trojan
-    server: "tr-switzerlandgopota.unlimited-access.ru"
-    port: 443
-    password: "kxHw-Dk-e9dffgzYszMlEqLJ92AnY3Pi"
-    sni: "tr-switzerlandgopota.unlimited-access.ru"
-    skip-cert-verify: true
+  - name: "🇨🇭_11"
+    type: ss
+    server: "140.238.175.124"
+    port: 33345
+    cipher: "chacha20-ietf-poly1305"
+    password: "5d79906d-89ab-430b-acbc-3327568a5be3"
+    udp: true
+  - name: "🇨🇭_12"
+    type: ss
+    server: "140.238.175.124"
+    port: 33345
+    cipher: "chacha20-ietf-poly1305"
+    password: "5d79906d-89ab-430b-acbc-3327568a5be3"
     udp: true
 
 proxy-groups:
@@ -183,6 +226,10 @@ proxy-groups:
       - "🇨🇭_6"
       - "🇨🇭_7"
       - "🇨🇭_8"
+      - "🇨🇭_9"
+      - "🇨🇭_10"
+      - "🇨🇭_11"
+      - "🇨🇭_12"
 
 
   - name: "Load Balance"
@@ -199,6 +246,10 @@ proxy-groups:
       - "🇨🇭_6"
       - "🇨🇭_7"
       - "🇨🇭_8"
+      - "🇨🇭_9"
+      - "🇨🇭_10"
+      - "🇨🇭_11"
+      - "🇨🇭_12"
 
 rules:
   - MATCH,PROXY
