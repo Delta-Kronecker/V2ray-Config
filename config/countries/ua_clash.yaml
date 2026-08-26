@@ -62,19 +62,6 @@ dns:
 proxies:
   - name: "🇺🇦_1"
     type: vless
-    server: "ukrnoad.whooisthebest.ir"
-    port: 22216
-    uuid: "5c5619e4-0577-48d4-8d0c-6ad9c5cc0ecf"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "amp-api-edge.apps.apple.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "sTE0YXI6Pv6OQUNbM-hNpNOhzon0_m2YUd7B1_g-JAU"
-      short-id: "0f4412d42129f080"
-  - name: "🇺🇦_2"
-    type: vless
     server: "5.34.182.23"
     port: 443
     uuid: "423b1d79-08c4-403f-9d5e-c541f791b55f"
@@ -87,11 +74,11 @@ proxies:
       public-key: "b-Cm9hX-3UHsS1L_lnUB6AMjuKhlN1IDdBbZ506itjI"
       short-id: "00bca5982f82d083"
     flow: "xtls-rprx-vision"
-  - name: "🇺🇦_3"
+  - name: "🇺🇦_2"
     type: vless
     server: "nl1.miyazono-kaori.com"
     port: 443
-    uuid: "1ea63dfb-03cc-41d1-8b73-9b7e172fed7d"
+    uuid: "4de7e224-99ef-43ff-8dbb-abfc0807f5cb"
     udp: true
     tls: true
     skip-cert-verify: true
@@ -101,7 +88,7 @@ proxies:
       public-key: "AFQAIB5u9Uu6nf9fkP1BdcSHivSuUv97l4FH-LoFYgw"
       short-id: "92dca6"
     flow: "xtls-rprx-vision"
-  - name: "🇺🇦_4"
+  - name: "🇺🇦_3"
     type: vless
     server: "193.238.153.15"
     port: 443
@@ -115,7 +102,7 @@ proxies:
       public-key: "dzknsuwujuOacNHTXzdPxBLNUEJfEImiwLinPPNFmwU"
       short-id: "1ea21a140beaecc5"
     flow: "xtls-rprx-vision"
-  - name: "🇺🇦_5"
+  - name: "🇺🇦_4"
     type: trojan
     server: "hkdcrtc-e.catcat321.com"
     port: 20066
@@ -143,7 +130,6 @@ proxy-groups:
       - "🇺🇦_2"
       - "🇺🇦_3"
       - "🇺🇦_4"
-      - "🇺🇦_5"
 
 
   - name: "Load Balance"
@@ -156,7 +142,6 @@ proxy-groups:
       - "🇺🇦_2"
       - "🇺🇦_3"
       - "🇺🇦_4"
-      - "🇺🇦_5"
 
 rules:
   - MATCH,PROXY

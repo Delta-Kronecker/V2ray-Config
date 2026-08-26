@@ -73,6 +73,14 @@ proxies:
       public-key: "J5ITJbg5FQFembAfkogKHHQB6DigsFXQxK7xu-QMWUs"
       short-id: "a20d3ed244c76426"
     flow: "xtls-rprx-vision"
+  - name: "🇲🇩_2"
+    type: trojan
+    server: "france.metricpipe.space"
+    port: 9443
+    password: "4LR1nTjdxRQs2JGmzJnsRefgqQUYFEfo"
+    sni: "france.metricpipe.space"
+    skip-cert-verify: true
+    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -90,6 +98,7 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇲🇩_1"
+      - "🇲🇩_2"
 
 
   - name: "Load Balance"
@@ -99,6 +108,7 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇲🇩_1"
+      - "🇲🇩_2"
 
 rules:
   - MATCH,PROXY

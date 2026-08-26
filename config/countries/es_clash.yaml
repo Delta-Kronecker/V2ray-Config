@@ -62,34 +62,6 @@ dns:
 proxies:
   - name: "🇪🇸_1"
     type: vless
-    server: "bc-es-hn.ray-balance.space"
-    port: 443
-    uuid: "710fc22f-06b2-4b6d-bb3e-f57c17b670a6"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.ray-balance.space"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "d1NlaZfnsYjWfxRTqIBk1ldBUmdE-kRTEQ_sWd1JYwI"
-      short-id: ""
-    flow: "xtls-rprx-vision"
-  - name: "🇪🇸_2"
-    type: vless
-    server: "es.monkeyvillage.pro"
-    port: 443
-    uuid: "63b1d3af-d214-418c-9b9d-e4d31434a805"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "es.monkeyvillage.pro"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "Q7-sRiaAcmlJ_iwqiA46kDKso_r2kJ7X1mrVjL2illo"
-      short-id: "11a646ca6678c507"
-    flow: "xtls-rprx-vision"
-  - name: "🇪🇸_3"
-    type: vless
     server: "2.27.26.49"
     port: 443
     uuid: "710fc22f-06b2-4b6d-bb3e-f57c17b670a6"
@@ -102,20 +74,49 @@ proxies:
       public-key: "d1NlaZfnsYjWfxRTqIBk1ldBUmdE-kRTEQ_sWd1JYwI"
       short-id: ""
     flow: "xtls-rprx-vision"
+  - name: "🇪🇸_2"
+    type: vless
+    server: "bc-es-hn.ray-balance.space"
+    port: 443
+    uuid: "710fc22f-06b2-4b6d-bb3e-f57c17b670a6"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.ray-balance.space"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "d1NlaZfnsYjWfxRTqIBk1ldBUmdE-kRTEQ_sWd1JYwI"
+      short-id: ""
+    flow: "xtls-rprx-vision"
+  - name: "🇪🇸_3"
+    type: vless
+    server: "193.238.154.18"
+    port: 443
+    uuid: "2297ea1f-2415-4a2c-be20-4a3a978283a2"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "es1.hat.onl"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "V3uMWEfDQAPFP6o5ED8Jtk0rJBPs7IlOLf_Wh8w_jXc"
+      short-id: "76132b3b39704c44"
+    flow: "xtls-rprx-vision"
   - name: "🇪🇸_4"
+    type: trojan
+    server: "swenhy2.metricpipe.space"
+    port: 9443
+    password: "4LR1nTjdxRQs2JGmzJnsRefgqQUYFEfo"
+    sni: "swenhy2.metricpipe.space"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇪🇸_5"
     type: trojan
     server: "65.20.102.54"
     port: 443
     password: "842b5f9dd11e458d8613c907c4cc5723"
     sni: "www.gpt123.one"
     skip-cert-verify: true
-    udp: true
-  - name: "🇪🇸_5"
-    type: ss
-    server: "108.181.121.226"
-    port: 8388
-    cipher: "chacha20-ietf-poly1305"
-    password: "WSyL4XTwNsdv"
     udp: true
   - name: "🇪🇸_6"
     type: ss
@@ -137,6 +138,13 @@ proxies:
     port: 8388
     cipher: "chacha20-ietf-poly1305"
     password: "qItG8SueYQcP"
+    udp: true
+  - name: "🇪🇸_9"
+    type: ss
+    server: "108.181.121.226"
+    port: 8388
+    cipher: "chacha20-ietf-poly1305"
+    password: "WSyL4XTwNsdv"
     udp: true
 
 proxy-groups:
@@ -162,6 +170,7 @@ proxy-groups:
       - "🇪🇸_6"
       - "🇪🇸_7"
       - "🇪🇸_8"
+      - "🇪🇸_9"
 
 
   - name: "Load Balance"
@@ -178,6 +187,7 @@ proxy-groups:
       - "🇪🇸_6"
       - "🇪🇸_7"
       - "🇪🇸_8"
+      - "🇪🇸_9"
 
 rules:
   - MATCH,PROXY

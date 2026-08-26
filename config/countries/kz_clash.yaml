@@ -62,30 +62,34 @@ dns:
 proxies:
   - name: "🇰🇿_1"
     type: vless
-    server: "5.180.40.9"
+    server: "91.224.87.22"
+    port: 9882
+    uuid: "064a967e-0862-4cea-bdbd-9458cb7b6070"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "dl.google.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "bnRIb3Er1i-K6NGGByCO9UbGfOvu43ZoiK7ulPd1SzU"
+      short-id: "aa"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "grpc-tunnel"
+  - name: "🇰🇿_2"
+    type: vless
+    server: "5.180.42.85"
     port: 443
     uuid: "5e19b3c8-c1dc-4163-95e2-895319c15d6c"
     udp: true
     tls: true
     skip-cert-verify: true
     servername: "cloud.mail.ru"
-    client-fingerprint: "chrome"
+    client-fingerprint: "firefox"
     reality-opts:
       public-key: "06GvG7PU5F3Hgq-vUH24tU0tpsbGMCCt26BSvlaBNUE"
       short-id: "dfbfa87e9f37f1f0"
     flow: "xtls-rprx-vision"
-  - name: "🇰🇿_2"
-    type: vless
-    server: "178.236.16.98"
-    port: 35728
-    uuid: "a00d89f6-ab7e-4e30-a5e5-54c701d62c93"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "yahoo.com"
-    reality-opts:
-      public-key: "vhUFNoFcvtZAVMo8y5K5eU2V43m5q6yjmWIhp5RkFng"
-      short-id: "69a2"
   - name: "🇰🇿_3"
     type: vless
     server: "83.222.23.81"
@@ -101,87 +105,6 @@ proxies:
       short-id: "fa"
   - name: "🇰🇿_4"
     type: vless
-    server: "77.73.232.61"
-    port: 19747
-    uuid: "2a9ed01e-5455-44b4-a66a-76ee8165f0ac"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "yahoo.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "ZO9dTeg1slvTXgVsBsaJ1BDvz_YUImTLJjbHs-GdVyM"
-      short-id: "2001"
-  - name: "🇰🇿_5"
-    type: vless
-    server: "193.124.204.145"
-    port: 49853
-    uuid: "5ed7b151-b781-4dba-800d-e3f824f1416f"
-    udp: true
-  - name: "🇰🇿_6"
-    type: vless
-    server: "176.109.111.113"
-    port: 9882
-    uuid: "14777bd9-56a5-46f6-a94f-826b4800dc05"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "dl.google.com"
-    client-fingerprint: "ios"
-    reality-opts:
-      public-key: "bnRIb3Er1i-K6NGGByCO9UbGfOvu43ZoiK7ulPd1SzU"
-      short-id: ""
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "grpc-tunnel"
-  - name: "🇰🇿_7"
-    type: vless
-    server: "5.180.42.85"
-    port: 443
-    uuid: "5e19b3c8-c1dc-4163-95e2-895319c15d6c"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "cloud.mail.ru"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "06GvG7PU5F3Hgq-vUH24tU0tpsbGMCCt26BSvlaBNUE"
-      short-id: "dfbfa87e9f37f1f0"
-    flow: "xtls-rprx-vision"
-  - name: "🇰🇿_8"
-    type: vless
-    server: "111.88.143.139"
-    port: 51940
-    uuid: "03464802-b517-404b-b15c-7750ffc5e78f"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "yahoo.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "uPHvFb_vZ3DKL-8Et_e9OliZskdSV5U1NZ66tHfC-2Y"
-      short-id: "fd7f"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: ""
-  - name: "🇰🇿_9"
-    type: vless
-    server: "91.224.87.22"
-    port: 9882
-    uuid: "14777bd9-56a5-46f6-a94f-826b4800dc05"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "dl.google.com"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "bnRIb3Er1i-K6NGGByCO9UbGfOvu43ZoiK7ulPd1SzU"
-      short-id: "aa"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "grpc-tunnel"
-  - name: "🇰🇿_10"
-    type: vless
     server: "5.180.42.210"
     port: 443
     uuid: "423b1d79-08c4-403f-9d5e-c541f791b55f"
@@ -194,38 +117,104 @@ proxies:
       public-key: "YQTixaXzPVImuRc4TUbrFAekjIiaYV-t5S-HTKlH0AU"
       short-id: "2186a755ed67b034"
     flow: "xtls-rprx-vision"
-  - name: "🇰🇿_11"
+  - name: "🇰🇿_5"
     type: vless
-    server: "188.130.234.239"
-    port: 443
-    uuid: "308cf8e0-e922-49bb-9b68-203e5aafcc97"
+    server: "91.224.87.22"
+    port: 9882
+    uuid: "76186f1e-3062-4a2b-98c2-fab3c61a9511"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "kz.node.goidanet.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "xXxqDpB8gQjBddOHSOFb52xVS2Odmb63z1PYhMqe0Uo"
-      short-id: "1a55b8fd25417fbf"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: ""
-  - name: "🇰🇿_12"
-    type: vless
-    server: "kz.node.goidanet.com"
-    port: 443
-    uuid: "308cf8e0-e922-49bb-9b68-203e5aafcc97"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "kz.node.goidanet.com"
+    servername: "dl.google.com"
     client-fingerprint: "firefox"
     reality-opts:
-      public-key: "xXxqDpB8gQjBddOHSOFb52xVS2Odmb63z1PYhMqe0Uo"
-      short-id: "1a55b8fd25417fbf"
+      public-key: "bnRIb3Er1i-K6NGGByCO9UbGfOvu43ZoiK7ulPd1SzU"
+      short-id: "aabb"
     network: grpc
     grpc-opts:
-      grpc-service-name: ""
+      grpc-service-name: "grpc-tunnel"
+  - name: "🇰🇿_6"
+    type: vless
+    server: "kz2.freeinternat.com"
+    port: 443
+    uuid: "dabb9a19-03ab-4cdf-8963-d3c45eb0f80d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "kz2.freeinternat.com"
+    client-fingerprint: "random"
+    reality-opts:
+      public-key: "bZpzmeWiEJyJQy0W2hHc34Nr6BuFXj1UDd80Cbwh1Fk"
+      short-id: "ff776ff77be48b88"
+    flow: "xtls-rprx-vision"
+  - name: "🇰🇿_7"
+    type: vless
+    server: "195.49.215.98"
+    port: 443
+    uuid: "dabb9a19-03ab-4cdf-8963-d3c45eb0f80d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "kz2.freeinternat.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "bZpzmeWiEJyJQy0W2hHc34Nr6BuFXj1UDd80Cbwh1Fk"
+      short-id: "ff776ff77be48b88"
+    flow: "xtls-rprx-vision"
+  - name: "🇰🇿_8"
+    type: vless
+    server: "178.236.16.98"
+    port: 35728
+    uuid: "a00d89f6-ab7e-4e30-a5e5-54c701d62c93"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "yahoo.com"
+    reality-opts:
+      public-key: "vhUFNoFcvtZAVMo8y5K5eU2V43m5q6yjmWIhp5RkFng"
+      short-id: "69a2"
+  - name: "🇰🇿_9"
+    type: vless
+    server: "111.88.143.139"
+    port: 8443
+    uuid: "2b8c0574-ff6f-4975-8a06-e24ebefa1d1c"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.cloudflare.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "Ao_imnCEIGAaL1DZnjOK1SSPpjQOw_XJcgMpNLEZwg0"
+      short-id: "ac4b582e"
+    flow: "xtls-rprx-vision"
+  - name: "🇰🇿_10"
+    type: vless
+    server: "5.180.40.9"
+    port: 443
+    uuid: "5e19b3c8-c1dc-4163-95e2-895319c15d6c"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "cloud.mail.ru"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "06GvG7PU5F3Hgq-vUH24tU0tpsbGMCCt26BSvlaBNUE"
+      short-id: "dfbfa87e9f37f1f0"
+    flow: "xtls-rprx-vision"
+  - name: "🇰🇿_11"
+    type: vless
+    server: "kz2.techdatacloud.org"
+    port: 443
+    uuid: "5e19b3c8-c1dc-4163-95e2-895319c15d6c"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "cloud.mail.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "06GvG7PU5F3Hgq-vUH24tU0tpsbGMCCt26BSvlaBNUE"
+      short-id: "dfbfa87e9f37f1f0"
+    flow: "xtls-rprx-vision"
 
 proxy-groups:
   - name: "PROXY"
@@ -253,7 +242,6 @@ proxy-groups:
       - "🇰🇿_9"
       - "🇰🇿_10"
       - "🇰🇿_11"
-      - "🇰🇿_12"
 
 
   - name: "Load Balance"
@@ -273,7 +261,6 @@ proxy-groups:
       - "🇰🇿_9"
       - "🇰🇿_10"
       - "🇰🇿_11"
-      - "🇰🇿_12"
 
 rules:
   - MATCH,PROXY

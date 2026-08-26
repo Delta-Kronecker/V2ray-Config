@@ -62,20 +62,6 @@ dns:
 proxies:
   - name: "🇻🇳_1"
     type: vless
-    server: "bc-vn-hn.ray-balance.space"
-    port: 443
-    uuid: "710fc22f-06b2-4b6d-bb3e-f57c17b670a6"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.ray-balance.space"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "d1NlaZfnsYjWfxRTqIBk1ldBUmdE-kRTEQ_sWd1JYwI"
-      short-id: ""
-    flow: "xtls-rprx-vision"
-  - name: "🇻🇳_2"
-    type: vless
     server: "2.27.27.98"
     port: 443
     uuid: "710fc22f-06b2-4b6d-bb3e-f57c17b670a6"
@@ -88,7 +74,63 @@ proxies:
       public-key: "d1NlaZfnsYjWfxRTqIBk1ldBUmdE-kRTEQ_sWd1JYwI"
       short-id: ""
     flow: "xtls-rprx-vision"
+  - name: "🇻🇳_2"
+    type: vless
+    server: "bc-vn-hn.ray-balance.space"
+    port: 443
+    uuid: "710fc22f-06b2-4b6d-bb3e-f57c17b670a6"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.ray-balance.space"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "d1NlaZfnsYjWfxRTqIBk1ldBUmdE-kRTEQ_sWd1JYwI"
+      short-id: ""
+    flow: "xtls-rprx-vision"
   - name: "🇻🇳_3"
+    type: vless
+    server: "84.23.54.213"
+    port: 443
+    uuid: "bc6a863f-f482-03f5-a950-3dc3d3b17249"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.ray-balance.space"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "3tOekmYYkNW9IwHGuui6Y9bLmXoyiAmwAgtAdUAmDis"
+      short-id: ""
+    flow: "xtls-rprx-vision"
+  - name: "🇻🇳_4"
+    type: vless
+    server: "in-ru-vk-01.ray-balance.space"
+    port: 443
+    uuid: "bc6a863f-f482-03f5-a950-3dc3d3b17249"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.ray-balance.space"
+    client-fingerprint: "ios"
+    reality-opts:
+      public-key: "3tOekmYYkNW9IwHGuui6Y9bLmXoyiAmwAgtAdUAmDis"
+      short-id: ""
+    flow: "xtls-rprx-vision"
+  - name: "🇻🇳_5"
+    type: vless
+    server: "hkshun.hgcfvgu.online"
+    port: 35352
+    uuid: "8d05cda5-c9ba-43cf-846e-b9521b872c71"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "addons.mozilla.org"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "GnLh9Cc0jj9BMW81u6stEYKe1xu6pf8DDpXHI9AmvFk"
+      short-id: "545525c503fd5b"
+    flow: "xtls-rprx-vision"
+  - name: "🇻🇳_6"
     type: trojan
     server: "103.72.96.55"
     port: 443
@@ -96,7 +138,7 @@ proxies:
     sni: "hanoiidc2.5gsieutocdo.com"
     skip-cert-verify: true
     udp: true
-  - name: "🇻🇳_4"
+  - name: "🇻🇳_7"
     type: trojan
     server: "103.9.77.6"
     port: 443
@@ -104,20 +146,20 @@ proxies:
     sni: "103.9.77.6"
     skip-cert-verify: true
     udp: true
-  - name: "🇻🇳_5"
-    type: trojan
-    server: "160.30.160.134"
-    port: 443
-    password: "25a0ffa0-725c-4d6f-b0d5-c74579753075"
-    sni: "cmc5.5gsieuvip.vn"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇻🇳_6"
+  - name: "🇻🇳_8"
     type: trojan
     server: "36.50.134.29"
     port: 443
     password: "94d219c9-1afc-4d42-b090-8b3794764380"
     sni: "36.50.134.29"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇻🇳_9"
+    type: trojan
+    server: "160.30.160.134"
+    port: 443
+    password: "25a0ffa0-725c-4d6f-b0d5-c74579753075"
+    sni: "cmc5.5gsieuvip.vn"
     skip-cert-verify: true
     udp: true
 
@@ -142,6 +184,9 @@ proxy-groups:
       - "🇻🇳_4"
       - "🇻🇳_5"
       - "🇻🇳_6"
+      - "🇻🇳_7"
+      - "🇻🇳_8"
+      - "🇻🇳_9"
 
 
   - name: "Load Balance"
@@ -156,6 +201,9 @@ proxy-groups:
       - "🇻🇳_4"
       - "🇻🇳_5"
       - "🇻🇳_6"
+      - "🇻🇳_7"
+      - "🇻🇳_8"
+      - "🇻🇳_9"
 
 rules:
   - MATCH,PROXY

@@ -64,7 +64,7 @@ proxies:
     type: trojan
     server: "108.131.117.154"
     port: 443
-    password: "IQ68037294"
+    password: "NQ26071394"
     sni: "funky-opossum.rooster465.autos"
     skip-cert-verify: true
     udp: true
@@ -72,11 +72,27 @@ proxies:
     type: trojan
     server: "108.131.117.154"
     port: 443
-    password: "NQ26071394"
+    password: "IQ68037294"
     sni: "funky-opossum.rooster465.autos"
     skip-cert-verify: true
     udp: true
   - name: "🇮🇪_3"
+    type: trojan
+    server: "52.212.156.233"
+    port: 443
+    password: "IQ68037294"
+    sni: "wired-tick.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇮🇪_4"
+    type: trojan
+    server: "52.212.156.233"
+    port: 443
+    password: "OD90375861"
+    sni: "wired-tick.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇮🇪_5"
     type: trojan
     server: "3.253.78.205"
     port: 443
@@ -103,6 +119,8 @@ proxy-groups:
       - "🇮🇪_1"
       - "🇮🇪_2"
       - "🇮🇪_3"
+      - "🇮🇪_4"
+      - "🇮🇪_5"
 
 
   - name: "Load Balance"
@@ -114,6 +132,8 @@ proxy-groups:
       - "🇮🇪_1"
       - "🇮🇪_2"
       - "🇮🇪_3"
+      - "🇮🇪_4"
+      - "🇮🇪_5"
 
 rules:
   - MATCH,PROXY

@@ -71,6 +71,19 @@ proxies:
       path: "/http"
       headers:
         Host: "de.vpnbase.net"
+  - name: "🇸🇨_2"
+    type: vless
+    server: "45.134.38.204"
+    port: 8050
+    uuid: "a88e2744-3555-4a0a-9635-0aae23e038f8"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.amd.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "hjJ1VN2xwcl1n7vrwvOspB2NFWrXNySUNPexutOVvAM"
+      short-id: "4bdfc3394f"
 
 proxy-groups:
   - name: "PROXY"
@@ -88,6 +101,7 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇸🇨_1"
+      - "🇸🇨_2"
 
 
   - name: "Load Balance"
@@ -97,6 +111,7 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇸🇨_1"
+      - "🇸🇨_2"
 
 rules:
   - MATCH,PROXY
