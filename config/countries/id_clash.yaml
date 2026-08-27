@@ -68,14 +68,6 @@ proxies:
     sni: "172.232.250.160"
     skip-cert-verify: true
     udp: true
-  - name: "🇮🇩_2"
-    type: trojan
-    server: "157.254.38.210"
-    port: 20056
-    password: "a126f35c-e832-4115-8593-b723ade3f7be"
-    sni: "hk.catxstar.com"
-    skip-cert-verify: true
-    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -93,7 +85,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇮🇩_1"
-      - "🇮🇩_2"
 
 
   - name: "Load Balance"
@@ -103,7 +94,6 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇮🇩_1"
-      - "🇮🇩_2"
 
 rules:
   - MATCH,PROXY

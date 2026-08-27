@@ -60,48 +60,19 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇻🇮_1"
+  - name: "🇦🇪_1"
     type: vless
-    server: "2.27.27.29"
-    port: 443
-    uuid: "710fc22f-06b2-4b6d-bb3e-f57c17b670a6"
+    server: "emirates-sgood.wopd.butnorwa.butter.silicore.ir"
+    port: 10000
+    uuid: "8ad85ca5-7572-4ee7-8a42-a2e5c9a0e479"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "www.ray-balance.space"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "d1NlaZfnsYjWfxRTqIBk1ldBUmdE-kRTEQ_sWd1JYwI"
-      short-id: ""
-    flow: "xtls-rprx-vision"
-  - name: "🇻🇮_2"
-    type: vless
-    server: "2.27.27.30"
-    port: 443
-    uuid: "710fc22f-06b2-4b6d-bb3e-f57c17b670a6"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.ray-balance.space"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "d1NlaZfnsYjWfxRTqIBk1ldBUmdE-kRTEQ_sWd1JYwI"
-      short-id: ""
-    flow: "xtls-rprx-vision"
-  - name: "🇻🇮_3"
-    type: vless
-    server: "bc-us-hn-vi.ray-balance.space"
-    port: 443
-    uuid: "710fc22f-06b2-4b6d-bb3e-f57c17b670a6"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.ray-balance.space"
+    servername: "amp-api-edge.apps.apple.com"
     client-fingerprint: "chrome"
     reality-opts:
-      public-key: "d1NlaZfnsYjWfxRTqIBk1ldBUmdE-kRTEQ_sWd1JYwI"
-      short-id: ""
-    flow: "xtls-rprx-vision"
+      public-key: "Du5pk4KuMNA1sRcSpmuoLuC0HmxDBmFljFNfUzqxKiM"
+      short-id: "cd0a1986719e44c8"
 
 proxy-groups:
   - name: "PROXY"
@@ -118,9 +89,7 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇻🇮_1"
-      - "🇻🇮_2"
-      - "🇻🇮_3"
+      - "🇦🇪_1"
 
 
   - name: "Load Balance"
@@ -129,9 +98,7 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇻🇮_1"
-      - "🇻🇮_2"
-      - "🇻🇮_3"
+      - "🇦🇪_1"
 
 rules:
   - MATCH,PROXY

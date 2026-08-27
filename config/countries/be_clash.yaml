@@ -61,48 +61,6 @@ dns:
 
 proxies:
   - name: "🇧🇪_1"
-    type: vless
-    server: "144.31.219.161"
-    port: 443
-    uuid: "423b1d79-08c4-403f-9d5e-c541f791b55f"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "eu-west.cendora.ru"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "m6RDw1b8R4lCaRUIzhHpy6TtX2Dhk6nyby8dWzeQqA0"
-      short-id: "dd3ff38418d29d22"
-    flow: "xtls-rprx-vision"
-  - name: "🇧🇪_2"
-    type: vless
-    server: "45.198.96.250"
-    port: 443
-    uuid: "219762a7-b918-4e2b-8a3d-d309ef98bb61"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "storage.yandex.net"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "9Y-_jCI3Z1x6SXK2tHdZ6V1CN9IJPNPnoxSW0cbXxD8"
-      short-id: "764f497dda21c4fc"
-    flow: "xtls-rprx-vision"
-  - name: "🇧🇪_3"
-    type: vless
-    server: "45.198.96.210"
-    port: 443
-    uuid: "19b64e79-73b4-4478-bbfc-fb57737b94f8"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "storage.yandex.net"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "9Y-_jCI3Z1x6SXK2tHdZ6V1CN9IJPNPnoxSW0cbXxD8"
-      short-id: "764f497dda21c4fc"
-    flow: "xtls-rprx-vision"
-  - name: "🇧🇪_4"
     type: trojan
     server: "94.126.225.96"
     port: 443
@@ -127,9 +85,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇧🇪_1"
-      - "🇧🇪_2"
-      - "🇧🇪_3"
-      - "🇧🇪_4"
 
 
   - name: "Load Balance"
@@ -139,9 +94,6 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇧🇪_1"
-      - "🇧🇪_2"
-      - "🇧🇪_3"
-      - "🇧🇪_4"
 
 rules:
   - MATCH,PROXY
