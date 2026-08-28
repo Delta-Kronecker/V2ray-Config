@@ -62,6 +62,20 @@ dns:
 proxies:
   - name: "🇸🇪_1"
     type: vless
+    server: "84.32.106.178"
+    port: 443
+    uuid: "4928c901-be72-4f81-8d59-091ce9e01692"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sw.api-yandex.net"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "pU7ElcbPMVObHoWqGThioVD4i5ux_phWFwElN97aDSQ"
+      short-id: "0f4dacf89993e21f"
+    flow: "xtls-rprx-vision"
+  - name: "🇸🇪_2"
+    type: vless
     server: "31.76.34.102"
     port: 443
     uuid: "423b1d79-08c4-0002-9d5e-c541f791b55f"
@@ -74,36 +88,20 @@ proxies:
       public-key: "ZXi0bwZwOe9e5CMticA2-bU7qamHgs_sN-2kHygbDyk"
       short-id: "e91da98020a38be9"
     flow: "xtls-rprx-vision"
-  - name: "🇸🇪_2"
-    type: vless
-    server: "84.238.133.104"
-    port: 443
-    uuid: "ae8e0f7d-b661-41ca-b55d-d8c383adb2f8"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "swed2.helper-internet.com"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "pgG2grngQEtOFJImLfz0AEm-O2IodM2jCY4aMCYQI1U"
-      short-id: "6aa2d2e950441a9a"
-    flow: "xtls-rprx-vision"
   - name: "🇸🇪_3"
     type: vless
-    server: "95.85.241.208"
+    server: "lv03.tranzit-net.ru"
     port: 443
-    uuid: "54a33907-c356-40fa-b6f3-844b3e6a8b7c"
+    uuid: "618acefa-2ff1-41b0-a295-f8a08858a897"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "dl.google.com"
+    servername: "d.tranzit-net.ru"
     client-fingerprint: "firefox"
     reality-opts:
-      public-key: "6CHUluOn_Tdab7JOfUArmcfQPVEd4PbEQJMPvKWElhw"
+      public-key: "IAdOYYmEMPFAhpVUhqfML58AVtYPdAb71R_HAPf0N0k"
       short-id: ""
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "grpc-tunnel"
+    flow: "xtls-rprx-vision"
   - name: "🇸🇪_4"
     type: vless
     server: "2.27.244.159"
@@ -133,22 +131,75 @@ proxies:
       short-id: "e3daad69"
     flow: "xtls-rprx-vision"
   - name: "🇸🇪_6"
-    type: trojan
-    server: "194.87.77.91"
+    type: vless
+    server: "84.238.133.104"
     port: 443
-    password: "1234567890"
-    sni: "kfm-bn0.pages.dev"
-    skip-cert-verify: true
+    uuid: "ae8e0f7d-b661-41ca-b55d-d8c383adb2f8"
     udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "swed2.helper-internet.com"
+    client-fingerprint: "qq"
+    reality-opts:
+      public-key: "pgG2grngQEtOFJImLfz0AEm-O2IodM2jCY4aMCYQI1U"
+      short-id: "6aa2d2e950441a9a"
+    flow: "xtls-rprx-vision"
   - name: "🇸🇪_7"
-    type: trojan
-    server: "70.34.206.32"
+    type: vless
+    server: "84.238.133.186"
     port: 443
-    password: "Bw5Mz7QkVp"
-    sni: "z-v2-077787.kailib.com"
-    skip-cert-verify: true
+    uuid: "ae8e0f7d-b661-41ca-b55d-d8c383adb2f8"
     udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "swed2.helper-internet.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "pgG2grngQEtOFJImLfz0AEm-O2IodM2jCY4aMCYQI1U"
+      short-id: "6aa2d2e950441a9a"
+    flow: "xtls-rprx-vision"
   - name: "🇸🇪_8"
+    type: vless
+    server: "157.173.3.171"
+    port: 443
+    uuid: "d8463649-fed0-46a8-85b3-631fd7e90e4a"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ncgb2di0o45t.bosfiles.net"
+    client-fingerprint: "firefox"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "grpc"
+  - name: "🇸🇪_9"
+    type: vless
+    server: "lv02.tranzit-net.ru"
+    port: 443
+    uuid: "618acefa-2ff1-41b0-a295-f8a08858a897"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "d.tranzit-net.ru"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "IAdOYYmEMPFAhpVUhqfML58AVtYPdAb71R_HAPf0N0k"
+      short-id: ""
+    flow: "xtls-rprx-vision"
+  - name: "🇸🇪_10"
+    type: vless
+    server: "2.26.101.64"
+    port: 443
+    uuid: "423b1d79-08c4-403f-9d5e-c541f791b55f"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "nordic.cendora.ru"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "YQTixaXzPVImuRc4TUbrFAekjIiaYV-t5S-HTKlH0AU"
+      short-id: "2186a755ed67b034"
+    flow: "xtls-rprx-vision"
+  - name: "🇸🇪_11"
     type: trojan
     server: "45.91.171.116"
     port: 443
@@ -156,12 +207,36 @@ proxies:
     sni: "sto.freeguard.org"
     skip-cert-verify: true
     udp: true
-  - name: "🇸🇪_9"
+  - name: "🇸🇪_12"
+    type: trojan
+    server: "5.180.21.146"
+    port: 4443
+    password: "owefv0_92Z540k2F_nx83245_J9130oS_tY"
+    sni: "borat-hopp.bumbleshrimp.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇸🇪_13"
     type: trojan
     server: "65.20.113.246"
     port: 443
     password: "Bw5Mz7QkVp"
     sni: "z-v2-074389.kailib.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇸🇪_14"
+    type: trojan
+    server: "194.87.77.91"
+    port: 443
+    password: "1234567890"
+    sni: "kfm-bn0.pages.dev"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇸🇪_15"
+    type: trojan
+    server: "70.34.206.32"
+    port: 443
+    password: "Bw5Mz7QkVp"
+    sni: "z-v2-077787.kailib.com"
     skip-cert-verify: true
     udp: true
 
@@ -189,6 +264,12 @@ proxy-groups:
       - "🇸🇪_7"
       - "🇸🇪_8"
       - "🇸🇪_9"
+      - "🇸🇪_10"
+      - "🇸🇪_11"
+      - "🇸🇪_12"
+      - "🇸🇪_13"
+      - "🇸🇪_14"
+      - "🇸🇪_15"
 
 
   - name: "Load Balance"
@@ -206,6 +287,12 @@ proxy-groups:
       - "🇸🇪_7"
       - "🇸🇪_8"
       - "🇸🇪_9"
+      - "🇸🇪_10"
+      - "🇸🇪_11"
+      - "🇸🇪_12"
+      - "🇸🇪_13"
+      - "🇸🇪_14"
+      - "🇸🇪_15"
 
 rules:
   - MATCH,PROXY

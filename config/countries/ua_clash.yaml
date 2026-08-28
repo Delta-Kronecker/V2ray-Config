@@ -75,49 +75,11 @@ proxies:
       short-id: "00bca5982f82d083"
     flow: "xtls-rprx-vision"
   - name: "🇺🇦_2"
-    type: vless
-    server: "5.34.182.23"
-    port: 13443
-    uuid: "5238521b-c5dd-42af-870e-c174a2aaaafe"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "auto.cendora.ru"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "gc9oXe37KCCm3J1dJ03wdGsnxPBdeEkRPOvl_t-vfVM"
-      short-id: "a7f3c91b2e6d84c0"
-    flow: "xtls-rprx-vision"
-  - name: "🇺🇦_3"
-    type: trojan
-    server: "157.254.38.210"
-    port: 20066
-    password: "a126f35c-e832-4115-8593-b723ade3f7be"
-    sni: "hk.catxstar.com"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇺🇦_4"
     type: trojan
     server: "130.0.236.88"
     port: 443
     password: "d2adff89-5143-4d67-921f-3478464de5bb"
     sni: "ua.freeguard.org"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇺🇦_5"
-    type: trojan
-    server: "hkdcrtc-e.catcat321.com"
-    port: 20066
-    password: "a126f35c-e832-4115-8593-b723ade3f7be"
-    sni: "hk.catxstar.com"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇺🇦_6"
-    type: trojan
-    server: "kkvlvvq-a.catcat321.com"
-    port: 20066
-    password: "a126f35c-e832-4115-8593-b723ade3f7be"
-    sni: "hk.catxstar.com"
     skip-cert-verify: true
     udp: true
 
@@ -138,10 +100,6 @@ proxy-groups:
     proxies:
       - "🇺🇦_1"
       - "🇺🇦_2"
-      - "🇺🇦_3"
-      - "🇺🇦_4"
-      - "🇺🇦_5"
-      - "🇺🇦_6"
 
 
   - name: "Load Balance"
@@ -152,10 +110,6 @@ proxy-groups:
     proxies:
       - "🇺🇦_1"
       - "🇺🇦_2"
-      - "🇺🇦_3"
-      - "🇺🇦_4"
-      - "🇺🇦_5"
-      - "🇺🇦_6"
 
 rules:
   - MATCH,PROXY

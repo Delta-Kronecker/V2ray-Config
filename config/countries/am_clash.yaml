@@ -73,6 +73,20 @@ proxies:
     reality-opts:
       public-key: "nWQ7b9l9X6N3PrXLgIzOvMM8iSYrqjVHEb9ikWxqYSg"
       short-id: "0e"
+  - name: "🇦🇲_2"
+    type: vless
+    server: "88.218.94.6"
+    port: 443
+    uuid: "423b1d79-08c4-403f-9d5e-c541f791b55f"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "nordic.cendora.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "YQTixaXzPVImuRc4TUbrFAekjIiaYV-t5S-HTKlH0AU"
+      short-id: "2186a755ed67b034"
+    flow: "xtls-rprx-vision"
 
 proxy-groups:
   - name: "PROXY"
@@ -90,6 +104,7 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇦🇲_1"
+      - "🇦🇲_2"
 
 
   - name: "Load Balance"
@@ -99,6 +114,7 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇦🇲_1"
+      - "🇦🇲_2"
 
 rules:
   - MATCH,PROXY
