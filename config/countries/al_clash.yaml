@@ -62,7 +62,7 @@ dns:
 proxies:
   - name: "🇦🇱_1"
     type: vless
-    server: "193.108.112.245"
+    server: "alban.freeinternat.com"
     port: 443
     uuid: "dabb9a19-03ab-4cdf-8963-d3c45eb0f80d"
     udp: true
@@ -76,19 +76,33 @@ proxies:
     flow: "xtls-rprx-vision"
   - name: "🇦🇱_2"
     type: vless
-    server: "meow-warsaw.nethcloud.top"
+    server: "95.85.224.51"
     port: 443
-    uuid: "a34b5e88-cf0d-4c01-8199-2d1002d3c787"
+    uuid: "342ab7e4-5a89-0001-8809-304120d4aa83"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "www.wikihow.com"
-    client-fingerprint: "chrome"
+    servername: "max.ru"
+    client-fingerprint: "qq"
     reality-opts:
-      public-key: "HKpd1sbrhBds8SJSL0d22MAq_QyTR6EP6y5b5DYol3U"
-      short-id: ""
+      public-key: "WWeAHWUVD-phmnjNJ823cer0c4CMIbEs08AhsuEZmDc"
+      short-id: "a696de84963656de"
     flow: "xtls-rprx-vision"
   - name: "🇦🇱_3"
+    type: vless
+    server: "193.108.112.245"
+    port: 443
+    uuid: "dabb9a19-03ab-4cdf-8963-d3c45eb0f80d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "alban.freeinternat.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "bZpzmeWiEJyJQy0W2hHc34Nr6BuFXj1UDd80Cbwh1Fk"
+      short-id: "ff776ff77be48b88"
+    flow: "xtls-rprx-vision"
+  - name: "🇦🇱_4"
     type: vless
     server: "95.85.227.142"
     port: 443
@@ -102,34 +116,27 @@ proxies:
       public-key: "HKpd1sbrhBds8SJSL0d22MAq_QyTR6EP6y5b5DYol3U"
       short-id: ""
     flow: "xtls-rprx-vision"
-  - name: "🇦🇱_4"
-    type: vless
-    server: "alban.freeinternat.com"
-    port: 443
-    uuid: "dabb9a19-03ab-4cdf-8963-d3c45eb0f80d"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "alban.freeinternat.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "bZpzmeWiEJyJQy0W2hHc34Nr6BuFXj1UDd80Cbwh1Fk"
-      short-id: "ff776ff77be48b88"
-    flow: "xtls-rprx-vision"
   - name: "🇦🇱_5"
     type: vless
-    server: "95.85.224.51"
+    server: "meow-warsaw.nethcloud.top"
     port: 443
-    uuid: "342ab7e4-5a89-0001-8809-304120d4aa83"
+    uuid: "a34b5e88-cf0d-4c01-8199-2d1002d3c787"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "max.ru"
-    client-fingerprint: "qq"
+    servername: "www.wikihow.com"
+    client-fingerprint: "chrome"
     reality-opts:
-      public-key: "WWeAHWUVD-phmnjNJ823cer0c4CMIbEs08AhsuEZmDc"
-      short-id: "a696de84963656de"
+      public-key: "HKpd1sbrhBds8SJSL0d22MAq_QyTR6EP6y5b5DYol3U"
+      short-id: ""
     flow: "xtls-rprx-vision"
+  - name: "🇦🇱_6"
+    type: ss
+    server: "130.49.189.158"
+    port: 10792
+    cipher: "chacha20-ietf-poly1305"
+    password: "ywnqwonyK1LRGwJibFQ0aM"
+    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -151,6 +158,7 @@ proxy-groups:
       - "🇦🇱_3"
       - "🇦🇱_4"
       - "🇦🇱_5"
+      - "🇦🇱_6"
 
 
   - name: "Load Balance"
@@ -164,6 +172,7 @@ proxy-groups:
       - "🇦🇱_3"
       - "🇦🇱_4"
       - "🇦🇱_5"
+      - "🇦🇱_6"
 
 rules:
   - MATCH,PROXY

@@ -61,39 +61,15 @@ dns:
 
 proxies:
   - name: "🇷🇴_1"
-    type: vless
-    server: "45.13.151.46"
-    port: 48689
-    uuid: "e25486c7-3342-4777-a82d-89d485f844dc"
-    udp: true
-    network: httpupgrade
-    httpupgrade-opts:
-      path: "/host"
-      host: "www.filimo.com"
-  - name: "🇷🇴_2"
-    type: vless
-    server: "82.117.255.26"
-    port: 443
-    uuid: "ee9e2135-c444-4adb-aaa5-a0efa1a74fdf"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.cloudflare.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "gMcijHp0RNZF6l556BaOxu1bKNIFON0_JjXhJzpioAk"
-      short-id: "b395baf965957d93"
-    flow: "xtls-rprx-vision"
-  - name: "🇷🇴_3"
     type: ss
-    server: "bogging-eyeteeth-fly.freesocks.work"
+    server: "154.46.31.106"
     port: 443
     cipher: "chacha20-ietf-poly1305"
     password: "QFWzCw2uX9B9i6qAYeFBIE"
     udp: true
-  - name: "🇷🇴_4"
+  - name: "🇷🇴_2"
     type: ss
-    server: "154.46.31.106"
+    server: "bogging-eyeteeth-fly.freesocks.work"
     port: 443
     cipher: "chacha20-ietf-poly1305"
     password: "QFWzCw2uX9B9i6qAYeFBIE"
@@ -116,8 +92,6 @@ proxy-groups:
     proxies:
       - "🇷🇴_1"
       - "🇷🇴_2"
-      - "🇷🇴_3"
-      - "🇷🇴_4"
 
 
   - name: "Load Balance"
@@ -128,8 +102,6 @@ proxy-groups:
     proxies:
       - "🇷🇴_1"
       - "🇷🇴_2"
-      - "🇷🇴_3"
-      - "🇷🇴_4"
 
 rules:
   - MATCH,PROXY

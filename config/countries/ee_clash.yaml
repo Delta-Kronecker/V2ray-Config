@@ -72,16 +72,6 @@ proxies:
     client-fingerprint: "firefox"
   - name: "🇪🇪_2"
     type: vless
-    server: "estproxy4.lockdwn.com"
-    port: 8443
-    uuid: "06c4e938-2954-478f-a870-ca1b163e30e9"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "estproxy4.lockdwn.com"
-    client-fingerprint: "edge"
-  - name: "🇪🇪_3"
-    type: vless
     server: "31.76.70.32"
     port: 443
     uuid: "423b1d79-08c4-403f-9d5e-c541f791b55f"
@@ -90,6 +80,20 @@ proxies:
     skip-cert-verify: true
     servername: "baltic.cendora.ru"
     client-fingerprint: "qq"
+    reality-opts:
+      public-key: "t_qv0VOfWhKZJV_giGC55-ipgHYWo44Yfvik_B8T8ik"
+      short-id: "4a46213c935e2ee4"
+    flow: "xtls-rprx-vision"
+  - name: "🇪🇪_3"
+    type: vless
+    server: "31.76.70.31"
+    port: 443
+    uuid: "423b1d79-08c4-403f-9d5e-c541f791b55f"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "baltic.cendora.ru"
+    client-fingerprint: "edge"
     reality-opts:
       public-key: "t_qv0VOfWhKZJV_giGC55-ipgHYWo44Yfvik_B8T8ik"
       short-id: "4a46213c935e2ee4"
@@ -106,27 +110,31 @@ proxies:
     client-fingerprint: "firefox"
   - name: "🇪🇪_5"
     type: vless
-    server: "31.76.70.31"
-    port: 443
-    uuid: "423b1d79-08c4-403f-9d5e-c541f791b55f"
+    server: "estproxy4.lockdwn.com"
+    port: 8443
+    uuid: "06c4e938-2954-478f-a870-ca1b163e30e9"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "baltic.cendora.ru"
+    servername: "estproxy4.lockdwn.com"
     client-fingerprint: "edge"
-    reality-opts:
-      public-key: "t_qv0VOfWhKZJV_giGC55-ipgHYWo44Yfvik_B8T8ik"
-      short-id: "4a46213c935e2ee4"
-    flow: "xtls-rprx-vision"
   - name: "🇪🇪_6"
     type: trojan
-    server: "109.206.241.10"
-    port: 449
-    password: "oiiaB38ywjEHCWRs_O_a_1113_Il_KeyyyHop_Bes1"
-    sni: "russiapower.accesscam.org"
+    server: "ee-1.kamediorg.com"
+    port: 443
+    password: "wQz5G4ybA9eC3BQDkd"
+    sni: "ee-1.kamediorg.com"
     skip-cert-verify: true
     udp: true
   - name: "🇪🇪_7"
+    type: trojan
+    server: "45.139.194.60"
+    port: 443
+    password: "pjqRC5wfEFhYTyiaKF"
+    sni: "ee-1.tr202604.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇪🇪_8"
     type: trojan
     server: "ee-1.tr202604.com"
     port: 443
@@ -134,15 +142,15 @@ proxies:
     sni: "ee-1.tr202604.com"
     skip-cert-verify: true
     udp: true
-  - name: "🇪🇪_8"
+  - name: "🇪🇪_9"
     type: trojan
-    server: "ee-1.kamediorg.com"
-    port: 443
-    password: "GUGm7DHtpSx7SuPyUD"
-    sni: "ee-1.kamediorg.com"
+    server: "109.206.241.10"
+    port: 449
+    password: "oiiaB38ywjEHCWRs_O_a_1113_Il_KeyyyHop_Bes1"
+    sni: "russiapower.accesscam.org"
     skip-cert-verify: true
     udp: true
-  - name: "🇪🇪_9"
+  - name: "🇪🇪_10"
     type: trojan
     server: "ee-1.tr202604.com"
     port: 443
@@ -150,11 +158,22 @@ proxies:
     sni: "ee-1.tr202604.com"
     skip-cert-verify: true
     udp: true
-  - name: "🇪🇪_10"
+  - name: "🇪🇪_11"
+    type: trojan
+    server: "185.36.141.81"
+    port: 443
+    password: "humanity"
+    sni: "www.calmlunch.com"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/assignment"
+  - name: "🇪🇪_12"
     type: trojan
     server: "ee-1.kamediorg.com"
     port: 443
-    password: "wQz5G4ybA9eC3BQDkd"
+    password: "GUGm7DHtpSx7SuPyUD"
     sni: "ee-1.kamediorg.com"
     skip-cert-verify: true
     udp: true
@@ -184,6 +203,8 @@ proxy-groups:
       - "🇪🇪_8"
       - "🇪🇪_9"
       - "🇪🇪_10"
+      - "🇪🇪_11"
+      - "🇪🇪_12"
 
 
   - name: "Load Balance"
@@ -202,6 +223,8 @@ proxy-groups:
       - "🇪🇪_8"
       - "🇪🇪_9"
       - "🇪🇪_10"
+      - "🇪🇪_11"
+      - "🇪🇪_12"
 
 rules:
   - MATCH,PROXY

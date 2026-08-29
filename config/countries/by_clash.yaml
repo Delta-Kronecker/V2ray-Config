@@ -61,6 +61,20 @@ dns:
 
 proxies:
   - name: "🇧🇾_1"
+    type: vless
+    server: "45.134.26.97"
+    port: 443
+    uuid: "423b1d79-08c4-403f-9d5e-c541f791b55f"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "nordic.cendora.ru"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "YQTixaXzPVImuRc4TUbrFAekjIiaYV-t5S-HTKlH0AU"
+      short-id: "2186a755ed67b034"
+    flow: "xtls-rprx-vision"
+  - name: "🇧🇾_2"
     type: trojan
     server: "by01.botovod.space"
     port: 500
@@ -88,6 +102,7 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇧🇾_1"
+      - "🇧🇾_2"
 
 
   - name: "Load Balance"
@@ -97,6 +112,7 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇧🇾_1"
+      - "🇧🇾_2"
 
 rules:
   - MATCH,PROXY
