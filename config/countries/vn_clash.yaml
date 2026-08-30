@@ -61,16 +61,6 @@ dns:
 
 proxies:
   - name: "🇻🇳_1"
-    type: vless
-    server: "s592.wagahaha.xyz"
-    port: 18443
-    uuid: "41f4cb15-5a3f-3934-89fe-b4177146adf4"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "u643766ubcccc2bas591.csgfw.top"
-    flow: "xtls-rprx-vision"
-  - name: "🇻🇳_2"
     type: trojan
     server: "103.72.96.55"
     port: 443
@@ -78,15 +68,7 @@ proxies:
     sni: "hanoiidc2.5gsieutocdo.com"
     skip-cert-verify: true
     udp: true
-  - name: "🇻🇳_3"
-    type: trojan
-    server: "36.50.134.29"
-    port: 443
-    password: "94d219c9-1afc-4d42-b090-8b3794764380"
-    sni: "36.50.134.29"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇻🇳_4"
+  - name: "🇻🇳_2"
     type: trojan
     server: "160.30.160.134"
     port: 443
@@ -94,12 +76,20 @@ proxies:
     sni: "cmc5.5gsieuvip.vn"
     skip-cert-verify: true
     udp: true
-  - name: "🇻🇳_5"
+  - name: "🇻🇳_3"
     type: trojan
     server: "103.9.77.6"
     port: 443
     password: "5a92d674-308c-4d95-b283-28383e63a59b"
     sni: "103.9.77.6"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇻🇳_4"
+    type: trojan
+    server: "36.50.134.29"
+    port: 443
+    password: "94d219c9-1afc-4d42-b090-8b3794764380"
+    sni: "36.50.134.29"
     skip-cert-verify: true
     udp: true
 
@@ -122,7 +112,6 @@ proxy-groups:
       - "🇻🇳_2"
       - "🇻🇳_3"
       - "🇻🇳_4"
-      - "🇻🇳_5"
 
 
   - name: "Load Balance"
@@ -135,7 +124,6 @@ proxy-groups:
       - "🇻🇳_2"
       - "🇻🇳_3"
       - "🇻🇳_4"
-      - "🇻🇳_5"
 
 rules:
   - MATCH,PROXY

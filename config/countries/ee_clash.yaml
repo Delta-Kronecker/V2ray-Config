@@ -62,16 +62,6 @@ dns:
 proxies:
   - name: "🇪🇪_1"
     type: vless
-    server: "94.183.170.231"
-    port: 8443
-    uuid: "19f54e37-5fae-47f6-bc10-e71ccbc58389"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "estproxy2.lockdwn.com"
-    client-fingerprint: "firefox"
-  - name: "🇪🇪_2"
-    type: vless
     server: "31.76.70.32"
     port: 443
     uuid: "423b1d79-08c4-403f-9d5e-c541f791b55f"
@@ -84,7 +74,27 @@ proxies:
       public-key: "t_qv0VOfWhKZJV_giGC55-ipgHYWo44Yfvik_B8T8ik"
       short-id: "4a46213c935e2ee4"
     flow: "xtls-rprx-vision"
+  - name: "🇪🇪_2"
+    type: vless
+    server: "estproxy4.lockdwn.com"
+    port: 8443
+    uuid: "06c4e938-2954-478f-a870-ca1b163e30e9"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "estproxy4.lockdwn.com"
+    client-fingerprint: "edge"
   - name: "🇪🇪_3"
+    type: vless
+    server: "94.183.170.135"
+    port: 8443
+    uuid: "06c4e938-2954-478f-a870-ca1b163e30e9"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "estproxy4.lockdwn.com"
+    client-fingerprint: "firefox"
+  - name: "🇪🇪_4"
     type: vless
     server: "31.76.70.31"
     port: 443
@@ -98,26 +108,16 @@ proxies:
       public-key: "t_qv0VOfWhKZJV_giGC55-ipgHYWo44Yfvik_B8T8ik"
       short-id: "4a46213c935e2ee4"
     flow: "xtls-rprx-vision"
-  - name: "🇪🇪_4"
-    type: vless
-    server: "94.183.170.135"
-    port: 8443
-    uuid: "06c4e938-2954-478f-a870-ca1b163e30e9"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "estproxy4.lockdwn.com"
-    client-fingerprint: "firefox"
   - name: "🇪🇪_5"
     type: vless
-    server: "estproxy4.lockdwn.com"
+    server: "94.183.170.231"
     port: 8443
-    uuid: "06c4e938-2954-478f-a870-ca1b163e30e9"
+    uuid: "19f54e37-5fae-47f6-bc10-e71ccbc58389"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "estproxy4.lockdwn.com"
-    client-fingerprint: "edge"
+    servername: "estproxy2.lockdwn.com"
+    client-fingerprint: "firefox"
   - name: "🇪🇪_6"
     type: trojan
     server: "ee-1.kamediorg.com"
@@ -128,26 +128,26 @@ proxies:
     udp: true
   - name: "🇪🇪_7"
     type: trojan
-    server: "45.139.194.60"
+    server: "45.139.194.66"
     port: 443
-    password: "pjqRC5wfEFhYTyiaKF"
-    sni: "ee-1.tr202604.com"
+    password: "AG4yPUSazj57DBFnKG"
+    sni: "45.139.194.66"
     skip-cert-verify: true
     udp: true
   - name: "🇪🇪_8"
+    type: trojan
+    server: "45.139.194.80"
+    port: 443
+    password: "GUGm7DHtpSx7SuPyUD"
+    sni: "45.139.194.80"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇪🇪_9"
     type: trojan
     server: "ee-1.tr202604.com"
     port: 443
     password: "AG4yPUSazj57DBFnKG"
     sni: "ee-1.tr202604.com"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇪🇪_9"
-    type: trojan
-    server: "109.206.241.10"
-    port: 449
-    password: "oiiaB38ywjEHCWRs_O_a_1113_Il_KeyyyHop_Bes1"
-    sni: "russiapower.accesscam.org"
     skip-cert-verify: true
     udp: true
   - name: "🇪🇪_10"
@@ -160,21 +160,34 @@ proxies:
     udp: true
   - name: "🇪🇪_11"
     type: trojan
-    server: "185.36.141.81"
+    server: "45.139.194.60"
     port: 443
-    password: "humanity"
-    sni: "www.calmlunch.com"
+    password: "pjqRC5wfEFhYTyiaKF"
+    sni: "ee-1.tr202604.com"
     skip-cert-verify: true
     udp: true
-    network: ws
-    ws-opts:
-      path: "/assignment"
   - name: "🇪🇪_12"
+    type: trojan
+    server: "109.206.241.10"
+    port: 449
+    password: "oiiaB38ywjEHCWRs_O_a_1113_Il_KeyyyHop_Bes1"
+    sni: "russiapower.accesscam.org"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇪🇪_13"
     type: trojan
     server: "ee-1.kamediorg.com"
     port: 443
     password: "GUGm7DHtpSx7SuPyUD"
     sni: "ee-1.kamediorg.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇪🇪_14"
+    type: trojan
+    server: "45.139.194.66"
+    port: 443
+    password: "pjqRC5wfEFhYTyiaKF"
+    sni: "45.139.194.66"
     skip-cert-verify: true
     udp: true
 
@@ -205,6 +218,8 @@ proxy-groups:
       - "🇪🇪_10"
       - "🇪🇪_11"
       - "🇪🇪_12"
+      - "🇪🇪_13"
+      - "🇪🇪_14"
 
 
   - name: "Load Balance"
@@ -225,6 +240,8 @@ proxy-groups:
       - "🇪🇪_10"
       - "🇪🇪_11"
       - "🇪🇪_12"
+      - "🇪🇪_13"
+      - "🇪🇪_14"
 
 rules:
   - MATCH,PROXY

@@ -62,20 +62,6 @@ dns:
 proxies:
   - name: "🇮🇹_1"
     type: vless
-    server: "31.76.71.130"
-    port: 443
-    uuid: "75079a7f-75b5-418b-8a65-f7b2f438cd4a"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "dl.google.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "eNvO4-6_VFngHHC6D5AhcCpCpOdi5gY7-Srimhh-6Xw"
-      short-id: ""
-    flow: "xtls-rprx-vision"
-  - name: "🇮🇹_2"
-    type: vless
     server: "172.238.232.239"
     port: 32833
     uuid: "167ed405-7de9-4bff-b1ea-6e3d49c76b0b"
@@ -88,35 +74,59 @@ proxies:
       public-key: "PaTDdYBrlh1xBixdI0igvRRkf0vnUwMRzi-4oDyfS20"
       short-id: "a0a305ccc8e94aa8"
     flow: "xtls-rprx-vision"
-  - name: "🇮🇹_3"
+  - name: "🇮🇹_2"
     type: vless
-    server: "31.76.71.130"
-    port: 443
+    server: "31.76.113.251"
+    port: 2054
     uuid: "82d145c1-d691-4eef-9de1-9c316db4859a"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "dl.google.com"
+    servername: "www.ibm.com"
     client-fingerprint: "firefox"
     reality-opts:
-      public-key: "eNvO4-6_VFngHHC6D5AhcCpCpOdi5gY7-Srimhh-6Xw"
+      public-key: "pNAMCV4TVg05HMs3xyPV_xMc8dhpcc4kAdoy1y0mTm0"
       short-id: ""
-    flow: "xtls-rprx-vision"
-  - name: "🇮🇹_4"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "grpc-tunnel"
+  - name: "🇮🇹_3"
     type: vless
-    server: "31.76.71.130"
-    port: 443
-    uuid: "d900a139-8b5f-4758-8a32-389c6f36fc86"
+    server: "31.76.113.251"
+    port: 2054
+    uuid: "75079a7f-75b5-418b-8a65-f7b2f438cd4a"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "dl.google.com"
+    servername: "www.ibm.com"
     client-fingerprint: "firefox"
     reality-opts:
-      public-key: "eNvO4-6_VFngHHC6D5AhcCpCpOdi5gY7-Srimhh-6Xw"
+      public-key: "pNAMCV4TVg05HMs3xyPV_xMc8dhpcc4kAdoy1y0mTm0"
       short-id: ""
-    flow: "xtls-rprx-vision"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "grpc-tunnel"
+  - name: "🇮🇹_4"
+    type: vless
+    server: "204.216.216.23"
+    port: 10086
+    uuid: "9f0285ee-20ca-4953-bcdb-86a920652923"
+    udp: true
   - name: "🇮🇹_5"
+    type: vless
+    server: "172.232.196.241"
+    port: 32396
+    uuid: "bd6ebd72-25cd-4209-a418-a8c72946da90"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.sony.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "Pj1XWo01sxdH8jKJ_8DoJiZDFANHFKRAqOncP8RNkwU"
+      short-id: "dd6ce6af95001a"
+    flow: "xtls-rprx-vision"
+  - name: "🇮🇹_6"
     type: vless
     server: "57.131.38.163"
     port: 2053
@@ -129,7 +139,34 @@ proxies:
     reality-opts:
       public-key: "Ej2H5ucT7qKegYcT8wODdlxa-cLHr7F4hDVUHzAhcnc"
       short-id: "5b8a942318178e7b"
-  - name: "🇮🇹_6"
+  - name: "🇮🇹_7"
+    type: vless
+    server: "202.165.67.16"
+    port: 8443
+    uuid: "d53f098c-c146-4c16-b8fc-263743fdb6b3"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "mila.4ch.pro"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "vSwth-8n5PZiAc27bkA_6qlxhuPOC0uBft7F2DWrPXs"
+      short-id: "5ecd85141e301108"
+  - name: "🇮🇹_8"
+    type: vless
+    server: "150.241.73.137"
+    port: 443
+    uuid: "423b1d79-08c4-403f-9d5e-c541f791b55f"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "eu-central.cendora.ru"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "b-Cm9hX-3UHsS1L_lnUB6AMjuKhlN1IDdBbZ506itjI"
+      short-id: "00bca5982f82d083"
+    flow: "xtls-rprx-vision"
+  - name: "🇮🇹_9"
     type: trojan
     server: "91.193.5.121"
     port: 8443
@@ -137,26 +174,26 @@ proxies:
     sni: "ngepz.ambercc.filegear-sg.me"
     skip-cert-verify: true
     udp: true
-  - name: "🇮🇹_7"
+  - name: "🇮🇹_10"
     type: ss
     server: "57.131.48.45"
     port: 8388
     cipher: "aes-256-gcm"
     password: "itzvpn@321"
     udp: true
-  - name: "🇮🇹_8"
+  - name: "🇮🇹_11"
     type: ss
     server: "57.131.48.45"
     port: 8388
     cipher: "aes-256-gcm"
     password: "itzvpn@321"
     udp: true
-  - name: "🇮🇹_9"
+  - name: "🇮🇹_12"
     type: ss
-    server: "194.87.47.204"
-    port: 10901
+    server: "57.131.48.45"
+    port: 8388
     cipher: "aes-256-gcm"
-    password: "d1fa2f4b98a38bc8"
+    password: "itzvpn@321"
     udp: true
 
 proxy-groups:
@@ -183,6 +220,9 @@ proxy-groups:
       - "🇮🇹_7"
       - "🇮🇹_8"
       - "🇮🇹_9"
+      - "🇮🇹_10"
+      - "🇮🇹_11"
+      - "🇮🇹_12"
 
 
   - name: "Load Balance"
@@ -200,6 +240,9 @@ proxy-groups:
       - "🇮🇹_7"
       - "🇮🇹_8"
       - "🇮🇹_9"
+      - "🇮🇹_10"
+      - "🇮🇹_11"
+      - "🇮🇹_12"
 
 rules:
   - MATCH,PROXY
