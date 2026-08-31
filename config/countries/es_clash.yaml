@@ -62,31 +62,31 @@ dns:
 proxies:
   - name: "🇪🇸_1"
     type: vless
-    server: "193.238.154.39"
-    port: 443
-    uuid: "4c1b7e3f-6a2d-493f-b6c4-4ef37db6fcfc"
+    server: "93.189.94.67"
+    port: 48296
+    uuid: "898537d9-ce3a-4937-bbef-c0fa61c07791"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "www.cloudflare.com"
-    client-fingerprint: "firefox"
+    servername: "www.sony.com"
+    client-fingerprint: "chrome"
     reality-opts:
-      public-key: "G7hjy9PEKopcPUP4mQXhwIaKIO9TCra_5LHZWuM_RjM"
-      short-id: "641a87d5ecdfaeb3"
+      public-key: "ga1wUMMknP4pwJfUNOOvD9I35XV4q3c73byXPYbRxBE"
+      short-id: "109657bb2dbe99"
     flow: "xtls-rprx-vision"
   - name: "🇪🇸_2"
     type: vless
-    server: "185.254.205.79"
-    port: 19842
-    uuid: "43c23116-1115-4af4-a0f0-56f02841a605"
+    server: "185.253.152.198"
+    port: 34710
+    uuid: "dd7429eb-b77b-4a8d-be86-c34cac86faf7"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "www.tesla.com"
-    client-fingerprint: "chrome"
+    servername: "www.nvidia.com"
+    client-fingerprint: "firefox"
     reality-opts:
-      public-key: "sfOfuQeJBlKfDnPL_EMWUxMIiFAN8BNKjtWDUvlsjzM"
-      short-id: "25ebc9e0a912"
+      public-key: "MXOVePed0T2SVOfYSEtecn2yApnsVC12dJ6nkujWTVU"
+      short-id: "14b0eb7919eb7d"
     flow: "xtls-rprx-vision"
   - name: "🇪🇸_3"
     type: vless
@@ -104,17 +104,17 @@ proxies:
     flow: "xtls-rprx-vision"
   - name: "🇪🇸_4"
     type: vless
-    server: "185.253.152.198"
-    port: 34710
-    uuid: "dd7429eb-b77b-4a8d-be86-c34cac86faf7"
+    server: "185.254.205.79"
+    port: 19842
+    uuid: "43c23116-1115-4af4-a0f0-56f02841a605"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "www.nvidia.com"
-    client-fingerprint: "firefox"
+    servername: "www.tesla.com"
+    client-fingerprint: "chrome"
     reality-opts:
-      public-key: "MXOVePed0T2SVOfYSEtecn2yApnsVC12dJ6nkujWTVU"
-      short-id: "14b0eb7919eb7d"
+      public-key: "sfOfuQeJBlKfDnPL_EMWUxMIiFAN8BNKjtWDUvlsjzM"
+      short-id: "25ebc9e0a912"
     flow: "xtls-rprx-vision"
   - name: "🇪🇸_5"
     type: vless
@@ -126,26 +126,18 @@ proxies:
     skip-cert-verify: true
     servername: "85.90.217.42"
   - name: "🇪🇸_6"
-    type: vless
-    server: "93.189.94.67"
-    port: 48296
-    uuid: "898537d9-ce3a-4937-bbef-c0fa61c07791"
+    type: ss
+    server: "140.174.184.5"
+    port: 8388
+    cipher: "chacha20-ietf-poly1305"
+    password: "qItG8SueYQcP"
     udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.sony.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "ga1wUMMknP4pwJfUNOOvD9I35XV4q3c73byXPYbRxBE"
-      short-id: "109657bb2dbe99"
-    flow: "xtls-rprx-vision"
   - name: "🇪🇸_7"
-    type: trojan
-    server: "65.20.102.54"
-    port: 443
-    password: "842b5f9dd11e458d8613c907c4cc5723"
-    sni: "www.gpt123.one"
-    skip-cert-verify: true
+    type: ss
+    server: "108.181.121.226"
+    port: 8388
+    cipher: "chacha20-ietf-poly1305"
+    password: "WSyL4XTwNsdv"
     udp: true
   - name: "🇪🇸_8"
     type: ss
@@ -176,20 +168,6 @@ proxies:
     password: "qItG8SueYQcP"
     udp: true
   - name: "🇪🇸_12"
-    type: ss
-    server: "108.181.121.226"
-    port: 8388
-    cipher: "chacha20-ietf-poly1305"
-    password: "WSyL4XTwNsdv"
-    udp: true
-  - name: "🇪🇸_13"
-    type: ss
-    server: "140.174.184.5"
-    port: 8388
-    cipher: "chacha20-ietf-poly1305"
-    password: "qItG8SueYQcP"
-    udp: true
-  - name: "🇪🇸_14"
     type: vmess
     server: "85.90.217.42"
     port: 22324
@@ -225,8 +203,6 @@ proxy-groups:
       - "🇪🇸_10"
       - "🇪🇸_11"
       - "🇪🇸_12"
-      - "🇪🇸_13"
-      - "🇪🇸_14"
 
 
   - name: "Load Balance"
@@ -247,8 +223,6 @@ proxy-groups:
       - "🇪🇸_10"
       - "🇪🇸_11"
       - "🇪🇸_12"
-      - "🇪🇸_13"
-      - "🇪🇸_14"
 
 rules:
   - MATCH,PROXY

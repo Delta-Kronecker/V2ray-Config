@@ -62,34 +62,6 @@ dns:
 proxies:
   - name: "🇧🇬_1"
     type: vless
-    server: "82.118.18.224"
-    port: 443
-    uuid: "bfb66910-f920-42c6-b52a-5f56e1dabcb4"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.cloudflare.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "mx0NhP2x4HYUumJ1r0RV411imRCjKQDfDf5ApSz5cCE"
-      short-id: "63499b2eceaee61e"
-    flow: "xtls-rprx-vision"
-  - name: "🇧🇬_2"
-    type: vless
-    server: "195.123.226.114"
-    port: 443
-    uuid: "423b1d79-08c4-403f-9d5e-c541f791b55f"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "eu-central.cendora.ru"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "b-Cm9hX-3UHsS1L_lnUB6AMjuKhlN1IDdBbZ506itjI"
-      short-id: "00bca5982f82d083"
-    flow: "xtls-rprx-vision"
-  - name: "🇧🇬_3"
-    type: vless
     server: "82.118.18.202"
     port: 443
     uuid: "316dda83-17f1-4f29-a05f-b84b7f991b82"
@@ -102,35 +74,21 @@ proxies:
       public-key: "HDiwGAN66V77CrlCWrDZupEiSQk204dkWRjJok0zYhk"
       short-id: "720148f2fea16d0f"
     flow: "xtls-rprx-vision"
-  - name: "🇧🇬_4"
+  - name: "🇧🇬_2"
     type: vless
-    server: "bul2.helper-internet.com"
+    server: "82.118.18.224"
     port: 443
-    uuid: "ae8e0f7d-b661-41ca-b55d-d8c383adb2f8"
+    uuid: "bfb66910-f920-42c6-b52a-5f56e1dabcb4"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "bul2.helper-internet.com"
-    client-fingerprint: "random"
-    reality-opts:
-      public-key: "W-zf_ncm9sYALF5EqvUsxqTkYGdAw-tQczT2SqwVMGE"
-      short-id: "ff776ff77be48b88"
-    flow: "xtls-rprx-vision"
-  - name: "🇧🇬_5"
-    type: vless
-    server: "131.123.42.150"
-    port: 443
-    uuid: "ae8e0f7d-b661-41ca-b55d-d8c383adb2f8"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "bul2.helper-internet.com"
+    servername: "www.cloudflare.com"
     client-fingerprint: "chrome"
     reality-opts:
-      public-key: "W-zf_ncm9sYALF5EqvUsxqTkYGdAw-tQczT2SqwVMGE"
-      short-id: "ff776ff77be48b88"
+      public-key: "mx0NhP2x4HYUumJ1r0RV411imRCjKQDfDf5ApSz5cCE"
+      short-id: "63499b2eceaee61e"
     flow: "xtls-rprx-vision"
-  - name: "🇧🇬_6"
+  - name: "🇧🇬_3"
     type: trojan
     server: "91.227.77.87"
     port: 443
@@ -157,9 +115,6 @@ proxy-groups:
       - "🇧🇬_1"
       - "🇧🇬_2"
       - "🇧🇬_3"
-      - "🇧🇬_4"
-      - "🇧🇬_5"
-      - "🇧🇬_6"
 
 
   - name: "Load Balance"
@@ -171,9 +126,6 @@ proxy-groups:
       - "🇧🇬_1"
       - "🇧🇬_2"
       - "🇧🇬_3"
-      - "🇧🇬_4"
-      - "🇧🇬_5"
-      - "🇧🇬_6"
 
 rules:
   - MATCH,PROXY

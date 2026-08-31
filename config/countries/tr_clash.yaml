@@ -62,6 +62,12 @@ dns:
 proxies:
   - name: "🇹🇷_1"
     type: vless
+    server: "91.228.227.172"
+    port: 443
+    uuid: "96172b09-2ec8-418d-a539-7e9fb118caf8"
+    udp: true
+  - name: "🇹🇷_2"
+    type: vless
     server: "turj2.surup.shop"
     port: 46142
     uuid: "255386a8-aec5-4425-bfe7-ca49b7448deb"
@@ -73,7 +79,7 @@ proxies:
     reality-opts:
       public-key: "l-OE7EwER1Z_jAifGE_UZ3FqHDMGzaR0jQHFYj5RNAk"
       short-id: "39feeba3085c"
-  - name: "🇹🇷_2"
+  - name: "🇹🇷_3"
     type: vless
     server: "151.241.226.201"
     port: 2053
@@ -86,53 +92,7 @@ proxies:
     reality-opts:
       public-key: "dUFJ3jZPMH9WvjtAnUc9wYhO_IX1czIi-CidF_HdFDA"
       short-id: "c267be657e1539ea"
-  - name: "🇹🇷_3"
-    type: vless
-    server: "138.249.20.37"
-    port: 8443
-    uuid: "423b1d79-08c4-403f-9d5e-c541f791b55f"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "auto.cendora.ru"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "gc9oXe37KCCm3J1dJ03wdGsnxPBdeEkRPOvl_t-vfVM"
-      short-id: "a7f3c91b2e6d84c0"
-    flow: "xtls-rprx-vision"
   - name: "🇹🇷_4"
-    type: vless
-    server: "tr1p.soundfiy.ir"
-    port: 1824
-    uuid: "c39d7cc3-d6e9-4591-a9b6-16d0e8f9fcd0"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "amp-api-edge.apps.apple.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "JIv_D-Lpo1cosiCUgu-qzGSJwOCGciyXSZ8ucNn6aBo"
-      short-id: "8390ee7a5996648b"
-  - name: "🇹🇷_5"
-    type: vless
-    server: "dl1.musicworldtg.com"
-    port: 2018
-    uuid: "834e5553-d80e-4078-8d7e-482fafe9bbaf"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "play.google.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "WVMnbAqUyFuFcCViAkF77B845SamrstLOBlQVkXVTCk"
-      short-id: "2f509d5d2fb55b37"
-  - name: "🇹🇷_6"
-    type: vless
-    server: "212.87.199.122"
-    port: 58416
-    uuid: "5626ce32-dad0-468b-952c-e53d609100f1"
-    udp: true
-  - name: "🇹🇷_7"
     type: vless
     server: "144.225.65.111"
     port: 46142
@@ -145,6 +105,62 @@ proxies:
     reality-opts:
       public-key: "l-OE7EwER1Z_jAifGE_UZ3FqHDMGzaR0jQHFYj5RNAk"
       short-id: "39feeba3085c"
+  - name: "🇹🇷_5"
+    type: vless
+    server: "156.67.63.231"
+    port: 443
+    uuid: "b052df40-d51c-456c-9bd6-57af01a87e4e"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sync-bridge.org"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "PTqeBbbr2xJ1L3V1PyYjKjxanMKKqJHU-wtnpYmFQCI"
+      short-id: "5606d4a25c99e7af"
+    flow: "xtls-rprx-vision"
+  - name: "🇹🇷_6"
+    type: vless
+    server: "185.123.100.56"
+    port: 8443
+    uuid: "78eb4455-0d07-4bc2-93e3-7c8654f11d74"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.apple.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "EltWI8AOqkN8lMjRycweRRoFRah5hu6xiKtgBmQOdE8"
+      short-id: ""
+    flow: "xtls-rprx-vision"
+  - name: "🇹🇷_7"
+    type: vless
+    server: "premium-tr.geodema.network"
+    port: 8443
+    uuid: "78eb4455-0d07-4bc2-93e3-7c8654f11d74"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.apple.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "EltWI8AOqkN8lMjRycweRRoFRah5hu6xiKtgBmQOdE8"
+      short-id: ""
+    flow: "xtls-rprx-vision"
+  - name: "🇹🇷_8"
+    type: vless
+    server: "212.87.199.122"
+    port: 58416
+    uuid: "5626ce32-dad0-468b-952c-e53d609100f1"
+    udp: true
+  - name: "🇹🇷_9"
+    type: trojan
+    server: "195.162.69.238"
+    port: 9443
+    password: "ac8ae2c29cd149eb85cae990572f0d59"
+    sni: "apple.com"
+    skip-cert-verify: true
+    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -168,6 +184,8 @@ proxy-groups:
       - "🇹🇷_5"
       - "🇹🇷_6"
       - "🇹🇷_7"
+      - "🇹🇷_8"
+      - "🇹🇷_9"
 
 
   - name: "Load Balance"
@@ -183,6 +201,8 @@ proxy-groups:
       - "🇹🇷_5"
       - "🇹🇷_6"
       - "🇹🇷_7"
+      - "🇹🇷_8"
+      - "🇹🇷_9"
 
 rules:
   - MATCH,PROXY

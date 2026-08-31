@@ -68,6 +68,30 @@ proxies:
     sni: "hl-freedom-1.undef.network"
     skip-cert-verify: true
     udp: true
+  - name: "🇧🇪_2"
+    type: vmess
+    server: "dog-hk.kunlun01dns.com"
+    port: 21018
+    uuid: "9464ca40-dd75-3742-a628-d931a9f413b2"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+  - name: "🇧🇪_3"
+    type: vmess
+    server: "dog-hk.kunlun01dns.com"
+    port: 21022
+    uuid: "9464ca40-dd75-3742-a628-d931a9f413b2"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+  - name: "🇧🇪_4"
+    type: vmess
+    server: "dog-hk.kunlun01dns.com"
+    port: 21020
+    uuid: "9464ca40-dd75-3742-a628-d931a9f413b2"
+    alterId: 0
+    cipher: "auto"
+    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -85,6 +109,9 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇧🇪_1"
+      - "🇧🇪_2"
+      - "🇧🇪_3"
+      - "🇧🇪_4"
 
 
   - name: "Load Balance"
@@ -94,6 +121,9 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇧🇪_1"
+      - "🇧🇪_2"
+      - "🇧🇪_3"
+      - "🇧🇪_4"
 
 rules:
   - MATCH,PROXY

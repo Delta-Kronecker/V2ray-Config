@@ -62,6 +62,20 @@ dns:
 proxies:
   - name: "🇮🇳_1"
     type: vless
+    server: "172.237.44.80"
+    port: 19567
+    uuid: "0faaa1ee-f3d2-49ec-92af-3228329f3000"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.nvidia.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "tzm4xWHOerooioq4QQkI7VCvIapECgody_vJGDzX3UI"
+      short-id: "87714fc3c52a"
+    flow: "xtls-rprx-vision"
+  - name: "🇮🇳_2"
+    type: vless
     server: "5.253.42.164"
     port: 40443
     uuid: "e99ba96d-dec8-42eb-be53-19e71eef7cab"
@@ -74,7 +88,34 @@ proxies:
       public-key: "g77ZJbm18JEotapmVRjaXi133MzkbhkU2lxhVeXx8zw"
       short-id: "68a8"
     flow: "xtls-rprx-vision"
-  - name: "🇮🇳_2"
+  - name: "🇮🇳_3"
+    type: vless
+    server: "5.253.42.163"
+    port: 40443
+    uuid: "15fd22d1-8931-4d41-af37-8ba6711e93fe"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "deepl.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "d1gJntekIStCHyAwgJCuv-N4_BBx5dDQ7K6CeWmpMRo"
+      short-id: "84fc"
+    flow: "xtls-rprx-vision"
+  - name: "🇮🇳_4"
+    type: vless
+    server: "194.61.31.126"
+    port: 2053
+    uuid: "0bf89828-484f-4710-9581-12aa961e3bf1"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.apple.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "Gy6W0bXf2bpxoG1k3szp8X0ekzoyXlEtzT8V4mYQ3EE"
+      short-id: "29fe4205ddc971a8"
+  - name: "🇮🇳_5"
     type: vless
     server: "148.113.5.44"
     port: 443
@@ -88,46 +129,6 @@ proxies:
       public-key: "QLjTpkXRB453R9fXhJzKkc_q_gSm2MZrIOuxW4uW-mI"
       short-id: "221873918e0bb74d"
     flow: "xtls-rprx-vision"
-  - name: "🇮🇳_3"
-    type: vless
-    server: "172.237.44.80"
-    port: 19567
-    uuid: "0faaa1ee-f3d2-49ec-92af-3228329f3000"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.nvidia.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "tzm4xWHOerooioq4QQkI7VCvIapECgody_vJGDzX3UI"
-      short-id: "87714fc3c52a"
-    flow: "xtls-rprx-vision"
-  - name: "🇮🇳_4"
-    type: vless
-    server: "65.20.84.60"
-    port: 443
-    uuid: "OwLimbo"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "amp-api-edge.apps.apple.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "rW32mnGIawfF0HfU6-NYsue8jXVfGIBgEwgIEHC-FBY"
-      short-id: "485c0fafd745"
-  - name: "🇮🇳_5"
-    type: vless
-    server: "194.61.31.126"
-    port: 2053
-    uuid: "0bf89828-484f-4710-9581-12aa961e3bf1"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.apple.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "Gy6W0bXf2bpxoG1k3szp8X0ekzoyXlEtzT8V4mYQ3EE"
-      short-id: "29fe4205ddc971a8"
   - name: "🇮🇳_6"
     type: vless
     server: "preview.netraidly.ru"
@@ -143,68 +144,6 @@ proxies:
       short-id: "84fc"
     flow: "xtls-rprx-vision"
   - name: "🇮🇳_7"
-    type: vless
-    server: "5.253.42.163"
-    port: 40443
-    uuid: "15fd22d1-8931-4d41-af37-8ba6711e93fe"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "deepl.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "d1gJntekIStCHyAwgJCuv-N4_BBx5dDQ7K6CeWmpMRo"
-      short-id: "84fc"
-    flow: "xtls-rprx-vision"
-  - name: "🇮🇳_8"
-    type: trojan
-    server: "143.110.246.228"
-    port: 443
-    password: "3bcd9e33-8377-4b32-af33-217158577ff3"
-    sni: "kdlsupport.zendesk.com"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇮🇳_9"
-    type: trojan
-    server: "hyfuuf6.wsone.icu"
-    port: 443
-    password: "M7v%w11Se*"
-    sni: "hyfuuf6.wsone.icu"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇮🇳_10"
-    type: trojan
-    server: "64.227.131.19"
-    port: 443
-    password: "21c6c7cb-332b-4a0c-9ad7-dff9c3111442"
-    sni: "us02web.zoom.us"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇮🇳_11"
-    type: trojan
-    server: "185.67.125.119"
-    port: 443
-    password: "3747000103274291200"
-    sni: "oriented-pug.adder289.quest"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇮🇳_12"
-    type: trojan
-    server: "34.131.228.210"
-    port: 443
-    password: "M7v%w11Se*"
-    sni: "hyfuuf6.wsone.icu"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇮🇳_13"
-    type: trojan
-    server: "185.67.125.147"
-    port: 443
-    password: "3747000103274291200"
-    sni: "polished-collie.adder289.quest"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇮🇳_14"
     type: trojan
     server: "185.67.125.147"
     port: 443
@@ -212,13 +151,60 @@ proxies:
     sni: "optimal-owl.goat627.mom"
     skip-cert-verify: true
     udp: true
-  - name: "🇮🇳_15"
+  - name: "🇮🇳_8"
+    type: trojan
+    server: "34.131.228.210"
+    port: 443
+    password: "M7v%w11Se*"
+    sni: "hyfuuf6.wsone.icu"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇮🇳_9"
+    type: trojan
+    server: "64.227.131.19"
+    port: 443
+    password: "21c6c7cb-332b-4a0c-9ad7-dff9c3111442"
+    sni: "us02web.zoom.us"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇮🇳_10"
+    type: trojan
+    server: "143.110.246.228"
+    port: 443
+    password: "3bcd9e33-8377-4b32-af33-217158577ff3"
+    sni: "kdlsupport.zendesk.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇮🇳_11"
     type: trojan
     server: "65.20.82.177"
     port: 443
     password: "Tg3RnK7Xp8B1"
     sni: "ash.d50f6225-23b4-3a7b-9f15-a0fb2fc16803.kailib.com"
     skip-cert-verify: true
+    udp: true
+  - name: "🇮🇳_12"
+    type: trojan
+    server: "185.67.125.147"
+    port: 443
+    password: "3747000103274291200"
+    sni: "polished-collie.adder289.quest"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇮🇳_13"
+    type: trojan
+    server: "185.67.125.119"
+    port: 443
+    password: "3747000103274291200"
+    sni: "oriented-pug.adder289.quest"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇮🇳_14"
+    type: ss
+    server: "172.105.39.124"
+    port: 7002
+    cipher: "aes-256-gcm"
+    password: "RexnBgU7EV5ADxG"
     udp: true
 
 proxy-groups:
@@ -250,7 +236,6 @@ proxy-groups:
       - "🇮🇳_12"
       - "🇮🇳_13"
       - "🇮🇳_14"
-      - "🇮🇳_15"
 
 
   - name: "Load Balance"
@@ -273,7 +258,6 @@ proxy-groups:
       - "🇮🇳_12"
       - "🇮🇳_13"
       - "🇮🇳_14"
-      - "🇮🇳_15"
 
 rules:
   - MATCH,PROXY

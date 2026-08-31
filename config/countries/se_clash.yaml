@@ -62,6 +62,22 @@ dns:
 proxies:
   - name: "🇸🇪_1"
     type: vless
+    server: "31.77.111.11"
+    port: 43439
+    uuid: "428e923f-e608-412b-9e51-3b09ffab551f"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "cdn.higames.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "b4n1pcO8ST3JkGtj8YymXVrW17LEe2EHec5wY7hMMR4"
+      short-id: "39ad36226f3abec8"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "streaming"
+  - name: "🇸🇪_2"
+    type: vless
     server: "84.238.133.186"
     port: 443
     uuid: "ae8e0f7d-b661-41ca-b55d-d8c383adb2f8"
@@ -74,35 +90,7 @@ proxies:
       public-key: "pgG2grngQEtOFJImLfz0AEm-O2IodM2jCY4aMCYQI1U"
       short-id: "6aa2d2e950441a9a"
     flow: "xtls-rprx-vision"
-  - name: "🇸🇪_2"
-    type: vless
-    server: "84.238.133.104"
-    port: 443
-    uuid: "ae8e0f7d-b661-41ca-b55d-d8c383adb2f8"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "swed2.helper-internet.com"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "pgG2grngQEtOFJImLfz0AEm-O2IodM2jCY4aMCYQI1U"
-      short-id: "6aa2d2e950441a9a"
-    flow: "xtls-rprx-vision"
   - name: "🇸🇪_3"
-    type: vless
-    server: "2.26.101.64"
-    port: 443
-    uuid: "423b1d79-08c4-403f-9d5e-c541f791b55f"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "nordic.cendora.ru"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "YQTixaXzPVImuRc4TUbrFAekjIiaYV-t5S-HTKlH0AU"
-      short-id: "2186a755ed67b034"
-    flow: "xtls-rprx-vision"
-  - name: "🇸🇪_4"
     type: vless
     server: "193.148.59.178"
     port: 443
@@ -116,21 +104,49 @@ proxies:
       public-key: "-GMpCber8qtrKzJbwvpLcwlIhOy-5zS66u_x9lLvIjE"
       short-id: "e3daad69"
     flow: "xtls-rprx-vision"
-  - name: "🇸🇪_5"
+  - name: "🇸🇪_4"
     type: vless
-    server: "2.27.23.115"
+    server: "31.207.7.157"
     port: 443
-    uuid: "d53f098c-c146-4c16-b8fc-263743fdb6b3"
+    uuid: "16c77fca-1dfa-43b3-8ecb-5a8a5ce71347"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "swplay.tgflow.me"
+    servername: "d3-se1.cloud-cdn.xyz"
+    client-fingerprint: "qq"
+    reality-opts:
+      public-key: "zWDvtTWK-cWWwHDMHMXcOpQy4k3EKp7yw-5e0wTZAUM"
+      short-id: "5efa80b939612291"
+    flow: "xtls-rprx-vision"
+  - name: "🇸🇪_5"
+    type: vless
+    server: "185.189.47.107"
+    port: 443
+    uuid: "f10d83e0-976a-4b02-81a9-1c89044ff728"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "edge-se.mystatic-cdn.ru"
     client-fingerprint: "firefox"
     reality-opts:
-      public-key: "qoahUemfDpTEl1IMf8gMj4RIDILO2dT0MKWVMvRCrU4"
-      short-id: "b0982475784c64cc"
+      public-key: "4HizFUAIvYp3wzM4p1_VcbhLWsRVHzG53XZG4f7oWiY"
+      short-id: "b21f41e79ecbac55"
     flow: "xtls-rprx-vision"
   - name: "🇸🇪_6"
+    type: vless
+    server: "2.26.101.64"
+    port: 443
+    uuid: "423b1d79-08c4-403f-9d5e-c541f791b55f"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "nordic.cendora.ru"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "YQTixaXzPVImuRc4TUbrFAekjIiaYV-t5S-HTKlH0AU"
+      short-id: "2186a755ed67b034"
+    flow: "xtls-rprx-vision"
+  - name: "🇸🇪_7"
     type: vless
     server: "31.76.81.9"
     port: 443
@@ -144,36 +160,36 @@ proxies:
       public-key: "diw5L3O4EkRQGWDSfdpQooPUc3zBTItooeOQ_fIDFWI"
       short-id: "7f2e9c4b1a8d6e53"
     flow: "xtls-rprx-vision"
-  - name: "🇸🇪_7"
-    type: trojan
-    server: "45.91.171.116"
-    port: 443
-    password: "2ee85121-31de-4581-a492-eb00f606e392"
-    sni: "sto.freeguard.org"
-    skip-cert-verify: true
-    udp: true
   - name: "🇸🇪_8"
-    type: trojan
-    server: "5.180.21.146"
-    port: 4443
-    password: "owefv0_92Z540k2F_nx83245_J9130oS_tY"
-    sni: "borat-hopp.bumbleshrimp.com"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇸🇪_9"
-    type: trojan
-    server: "70.34.206.32"
+    type: vless
+    server: "185.189.46.63"
     port: 443
-    password: "Bw5Mz7QkVp"
-    sni: "z-v2-077787.kailib.com"
-    skip-cert-verify: true
+    uuid: "04d17971-314f-4922-8e91-d03dc2303353"
     udp: true
-  - name: "🇸🇪_10"
+    tls: true
+    skip-cert-verify: true
+    servername: "swe.denditop.site"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "HZiMehwH6sQf4bDkLiXJ0KslpYqz0mNFwBr34-e6RRM"
+      short-id: "9c2378562188c3cb"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: ""
+  - name: "🇸🇪_9"
     type: trojan
     server: "65.20.113.246"
     port: 443
     password: "Bw5Mz7QkVp"
     sni: "z-v2-074389.kailib.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇸🇪_10"
+    type: trojan
+    server: "45.91.171.116"
+    port: 443
+    password: "2ee85121-31de-4581-a492-eb00f606e392"
+    sni: "sto.freeguard.org"
     skip-cert-verify: true
     udp: true
 

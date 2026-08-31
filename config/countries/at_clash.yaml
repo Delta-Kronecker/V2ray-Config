@@ -62,23 +62,20 @@ dns:
 proxies:
   - name: "🇦🇹_1"
     type: vless
-    server: "159.195.244.171"
-    port: 2054
-    uuid: "75079a7f-75b5-418b-8a65-f7b2f438cd4a"
+    server: "150.241.72.5"
+    port: 443
+    uuid: "fc1b3bda-b226-452a-8c5c-b0e36a1f8f88"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "www.ibm.com"
-    client-fingerprint: "firefox"
+    servername: "eu-central.cendora.ru"
     reality-opts:
-      public-key: "0-HIOsSIQTrTYc5PdFT0OSKGBiBUiGrJzgV6ctal8Fg"
-      short-id: ""
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "grpc-tunnel"
+      public-key: "b-Cm9hX-3UHsS1L_lnUB6AMjuKhlN1IDdBbZ506itjI"
+      short-id: "00bca5982f82d083"
+    flow: "xtls-rprx-vision"
   - name: "🇦🇹_2"
     type: vless
-    server: "152.53.114.186"
+    server: "as.tunnelx.space"
     port: 443
     uuid: "ab7d5ea9-6eca-47c3-b14b-67378fc2d7c2"
     udp: true
@@ -91,49 +88,6 @@ proxies:
       short-id: "4e9b0c2d1a3f5768"
     flow: "xtls-rprx-vision"
   - name: "🇦🇹_3"
-    type: vless
-    server: "152.53.1.40"
-    port: 443
-    uuid: "edde565e-41f5-400e-84ea-7b87a3e84488"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "at.quattro-tech.ru"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "10rVZPoOUP1TlQviIAsQ_jAROX0fRQxH0C92nq_zGQc"
-      short-id: "43dcff53849b81e6"
-    flow: "xtls-rprx-vision"
-  - name: "🇦🇹_4"
-    type: vless
-    server: "130.49.219.24"
-    port: 2096
-    uuid: "821bb7e0-b1b1-4893-8493-df3f3fb9e5c3"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "free04.tunnely.space"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "mChFHtaRmeuO2aDuDPqZvBFaCz6f34sVJIKuJcAR130"
-      short-id: "2e40144ddc07e8e1"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "grpc"
-  - name: "🇦🇹_5"
-    type: vless
-    server: "150.241.72.5"
-    port: 443
-    uuid: "fc1b3bda-b226-452a-8c5c-b0e36a1f8f88"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "eu-central.cendora.ru"
-    reality-opts:
-      public-key: "b-Cm9hX-3UHsS1L_lnUB6AMjuKhlN1IDdBbZ506itjI"
-      short-id: "00bca5982f82d083"
-    flow: "xtls-rprx-vision"
-  - name: "🇦🇹_6"
     type: vless
     server: "91.224.86.107"
     port: 9830
@@ -149,7 +103,7 @@ proxies:
     network: grpc
     grpc-opts:
       grpc-service-name: "grpc-tunnel"
-  - name: "🇦🇹_7"
+  - name: "🇦🇹_4"
     type: vless
     server: "31.76.69.40"
     port: 443
@@ -163,77 +117,81 @@ proxies:
       public-key: "b-Cm9hX-3UHsS1L_lnUB6AMjuKhlN1IDdBbZ506itjI"
       short-id: "00bca5982f82d083"
     flow: "xtls-rprx-vision"
+  - name: "🇦🇹_5"
+    type: vless
+    server: "152.53.1.40"
+    port: 443
+    uuid: "edde565e-41f5-400e-84ea-7b87a3e84488"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "at.quattro-tech.ru"
+    client-fingerprint: "qq"
+    reality-opts:
+      public-key: "10rVZPoOUP1TlQviIAsQ_jAROX0fRQxH0C92nq_zGQc"
+      short-id: "43dcff53849b81e6"
+    flow: "xtls-rprx-vision"
+  - name: "🇦🇹_6"
+    type: vless
+    server: "152.53.114.186"
+    port: 443
+    uuid: "ab7d5ea9-6eca-47c3-b14b-67378fc2d7c2"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "as.tunnelx.space"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "UO3EObgU3xUrhIGEE0gfCn5ZOz8YxNcwwW6ZaYzD3SA"
+      short-id: "4e9b0c2d1a3f5768"
+    flow: "xtls-rprx-vision"
+  - name: "🇦🇹_7"
+    type: ss
+    server: "130.195.222.215"
+    port: 443
+    cipher: "none"
+    password: "https://t.me/WangCai2🇨🇳"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
   - name: "🇦🇹_8"
-    type: vless
-    server: "free04.tunnely.space"
-    port: 2096
-    uuid: "6e7a0be3-e5d1-4245-99be-a99d4df5aed1"
+    type: ss
+    server: "130.195.222.215"
+    port: 443
+    cipher: "none"
+    password: "https://t.me/WangCai2🇨🇳"
     udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "free04.tunnely.space"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "mChFHtaRmeuO2aDuDPqZvBFaCz6f34sVJIKuJcAR130"
-      short-id: "2e40144ddc07e8e1"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "grpc"
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
   - name: "🇦🇹_9"
-    type: vless
-    server: "130.49.219.24"
-    port: 2096
-    uuid: "6e7a0be3-e5d1-4245-99be-a99d4df5aed1"
+    type: ss
+    server: "130.195.222.215"
+    port: 443
+    cipher: "none"
+    password: "https://t.me/WangCai2🇨🇳"
     udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "free04.tunnely.space"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "mChFHtaRmeuO2aDuDPqZvBFaCz6f34sVJIKuJcAR130"
-      short-id: "2e40144ddc07e8e1"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "grpc"
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
   - name: "🇦🇹_10"
-    type: ss
-    server: "130.195.222.215"
-    port: 443
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
+    type: vmess
+    server: "zfd-boardv2.kunlun01dns.com"
+    port: 16308
+    uuid: "0802ac03-7973-39ef-a019-ba02de6c01e1"
+    alterId: 0
+    cipher: "auto"
     udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
-  - name: "🇦🇹_11"
-    type: ss
-    server: "130.195.222.215"
-    port: 443
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
-  - name: "🇦🇹_12"
-    type: ss
-    server: "130.195.222.215"
-    port: 443
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
 
 proxy-groups:
   - name: "PROXY"
@@ -260,8 +218,6 @@ proxy-groups:
       - "🇦🇹_8"
       - "🇦🇹_9"
       - "🇦🇹_10"
-      - "🇦🇹_11"
-      - "🇦🇹_12"
 
 
   - name: "Load Balance"
@@ -280,8 +236,6 @@ proxy-groups:
       - "🇦🇹_8"
       - "🇦🇹_9"
       - "🇦🇹_10"
-      - "🇦🇹_11"
-      - "🇦🇹_12"
 
 rules:
   - MATCH,PROXY

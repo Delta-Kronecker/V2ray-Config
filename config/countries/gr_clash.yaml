@@ -62,20 +62,6 @@ dns:
 proxies:
   - name: "🇬🇷_1"
     type: vless
-    server: "217.12.194.226"
-    port: 443
-    uuid: "b8cff836-8a21-4b72-a77d-231c8678c711"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.cloudflare.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "oOp4xgD1R9MGm17qYp4XIHiq1dAfTaknr39UvhOv8Gc"
-      short-id: "ab55ed2e71e8f58e"
-    flow: "xtls-rprx-vision"
-  - name: "🇬🇷_2"
-    type: vless
     server: "85.90.197.91"
     port: 443
     uuid: "dabb9a19-03ab-4cdf-8963-d3c45eb0f80d"
@@ -88,7 +74,7 @@ proxies:
       public-key: "bZpzmeWiEJyJQy0W2hHc34Nr6BuFXj1UDd80Cbwh1Fk"
       short-id: "ff776ff77be48b88"
     flow: "xtls-rprx-vision"
-  - name: "🇬🇷_3"
+  - name: "🇬🇷_2"
     type: vless
     server: "gr.freeinternat.com"
     port: 443
@@ -120,7 +106,6 @@ proxy-groups:
     proxies:
       - "🇬🇷_1"
       - "🇬🇷_2"
-      - "🇬🇷_3"
 
 
   - name: "Load Balance"
@@ -131,7 +116,6 @@ proxy-groups:
     proxies:
       - "🇬🇷_1"
       - "🇬🇷_2"
-      - "🇬🇷_3"
 
 rules:
   - MATCH,PROXY

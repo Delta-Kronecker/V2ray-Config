@@ -60,17 +60,20 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇸🇨_1"
+  - name: "🇹🇭_1"
     type: vless
-    server: "200.165.234.119"
-    port: 4100
-    uuid: "099f0859-cb81-4a57-b6d8-2c8e18030627"
+    server: "a8zv5ntr2kxm7c4jhs9afsgt.beupsip.com"
+    port: 40856
+    uuid: "e765764a-5f3c-403e-9e53-05f541309f67"
     udp: true
-    network: ws
-    ws-opts:
-      path: "/v1"
-      headers:
-        Host: "live.ok.ru"
+    tls: true
+    skip-cert-verify: true
+    servername: "www.python.org"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "OgbAhQpciw6lM7etNl0Z6gPfJ7l0p_Oq8FGv2nDamh4"
+      short-id: "8d26d7af"
+    flow: "xtls-rprx-vision"
 
 proxy-groups:
   - name: "PROXY"
@@ -87,7 +90,7 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇸🇨_1"
+      - "🇹🇭_1"
 
 
   - name: "Load Balance"
@@ -96,7 +99,7 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇸🇨_1"
+      - "🇹🇭_1"
 
 rules:
   - MATCH,PROXY
