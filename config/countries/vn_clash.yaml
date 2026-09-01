@@ -62,55 +62,18 @@ dns:
 proxies:
   - name: "🇻🇳_1"
     type: vless
-    server: "wwa.zzymyc.eu.cc"
-    port: 443
-    uuid: "a44367a4-e8a2-4951-a5e2-0731635b6bbd"
+    server: "165.154.55.105"
+    port: 20984
+    uuid: "e0aafde7-37e2-486b-eb30-efa71166bf7e"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "huddles.amazon.com"
-    client-fingerprint: "firefox"
+    servername: "dl.google.com"
+    client-fingerprint: "chrome"
     reality-opts:
-      public-key: "HE_JCZ2OcEDYb4zeKTEfSHu5pxkXP-ZdKtKi_dNgVW8"
-      short-id: "914ffda13a"
-    flow: "xtls-rprx-vision"
+      public-key: "Ns3J1Dc0WBSu560uhGwDfn1kic7IZm3ZHggSpExhyRo"
+      short-id: ""
   - name: "🇻🇳_2"
-    type: vless
-    server: "a8zv5ntr2kxm7c4jhs9afsgt.beupsip.com"
-    port: 51542
-    uuid: "e765764a-5f3c-403e-9e53-05f541309f67"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.python.org"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "OgbAhQpciw6lM7etNl0Z6gPfJ7l0p_Oq8FGv2nDamh4"
-      short-id: "8d26d7af"
-    flow: "xtls-rprx-vision"
-  - name: "🇻🇳_3"
-    type: vless
-    server: "a8zv5ntr2kxm7c4jhs9afsgt.beupsip.com"
-    port: 32388
-    uuid: "e765764a-5f3c-403e-9e53-05f541309f67"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.python.org"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "OgbAhQpciw6lM7etNl0Z6gPfJ7l0p_Oq8FGv2nDamh4"
-      short-id: "8d26d7af"
-    flow: "xtls-rprx-vision"
-  - name: "🇻🇳_4"
-    type: trojan
-    server: "160.30.160.134"
-    port: 443
-    password: "25a0ffa0-725c-4d6f-b0d5-c74579753075"
-    sni: "cmc5.5gsieuvip.vn"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇻🇳_5"
     type: trojan
     server: "103.72.96.55"
     port: 443
@@ -118,20 +81,28 @@ proxies:
     sni: "hanoiidc2.5gsieutocdo.com"
     skip-cert-verify: true
     udp: true
-  - name: "🇻🇳_6"
+  - name: "🇻🇳_3"
     type: trojan
-    server: "36.50.134.29"
+    server: "160.30.160.134"
     port: 443
-    password: "94d219c9-1afc-4d42-b090-8b3794764380"
-    sni: "36.50.134.29"
+    password: "25a0ffa0-725c-4d6f-b0d5-c74579753075"
+    sni: "cmc5.5gsieuvip.vn"
     skip-cert-verify: true
     udp: true
-  - name: "🇻🇳_7"
+  - name: "🇻🇳_4"
     type: trojan
     server: "103.9.77.6"
     port: 443
     password: "5a92d674-308c-4d95-b283-28383e63a59b"
     sni: "103.9.77.6"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇻🇳_5"
+    type: trojan
+    server: "36.50.134.29"
+    port: 443
+    password: "94d219c9-1afc-4d42-b090-8b3794764380"
+    sni: "36.50.134.29"
     skip-cert-verify: true
     udp: true
 
@@ -155,8 +126,6 @@ proxy-groups:
       - "🇻🇳_3"
       - "🇻🇳_4"
       - "🇻🇳_5"
-      - "🇻🇳_6"
-      - "🇻🇳_7"
 
 
   - name: "Load Balance"
@@ -170,8 +139,6 @@ proxy-groups:
       - "🇻🇳_3"
       - "🇻🇳_4"
       - "🇻🇳_5"
-      - "🇻🇳_6"
-      - "🇻🇳_7"
 
 rules:
   - MATCH,PROXY

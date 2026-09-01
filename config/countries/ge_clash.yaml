@@ -60,47 +60,33 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇯🇪_1"
+  - name: "🇬🇪_1"
     type: vless
-    server: "82.145.55.75"
-    port: 443
-    uuid: "f8bfa488-1e06-427e-b9e0-b014d175d570"
+    server: "167.17.191.2"
+    port: 8443
+    uuid: "e8badfe0-eaaa-4664-9b32-7a53a501aefa"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "strapi.io"
+    servername: "westondigita.cloud"
     client-fingerprint: "firefox"
     reality-opts:
-      public-key: "SiSky02wHz-S0TDHKFTdYhnrlT8Y3CfRsekZlcdLXDY"
-      short-id: "fd55b698ee8c3629"
+      public-key: "cynncQk7kKzEQaExg-FN7pMqFaZPSXEi_Ggy7AXXmVg"
+      short-id: "2356d1ae4b"
     flow: "xtls-rprx-vision"
-  - name: "🇯🇪_2"
+  - name: "🇬🇪_2"
     type: vless
-    server: "82.145.55.75"
-    port: 443
-    uuid: "8b20bab5-3088-4b1d-b308-667d358fe825"
+    server: "lb20.westondigita.cloud"
+    port: 8443
+    uuid: "e8badfe0-eaaa-4664-9b32-7a53a501aefa"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "strapi.io"
-    client-fingerprint: "firefox"
+    servername: "westondigita.cloud"
+    client-fingerprint: "chrome"
     reality-opts:
-      public-key: "SiSky02wHz-S0TDHKFTdYhnrlT8Y3CfRsekZlcdLXDY"
-      short-id: "fd55b698ee8c3629"
-    flow: "xtls-rprx-vision"
-  - name: "🇯🇪_3"
-    type: vless
-    server: "82.145.55.75"
-    port: 443
-    uuid: "dd484313-d506-4923-81f9-ef6c16776f62"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "strapi.io"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "SiSky02wHz-S0TDHKFTdYhnrlT8Y3CfRsekZlcdLXDY"
-      short-id: "fd55b698ee8c3629"
+      public-key: "cynncQk7kKzEQaExg-FN7pMqFaZPSXEi_Ggy7AXXmVg"
+      short-id: "2356d1ae4b"
     flow: "xtls-rprx-vision"
 
 proxy-groups:
@@ -118,9 +104,8 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇯🇪_1"
-      - "🇯🇪_2"
-      - "🇯🇪_3"
+      - "🇬🇪_1"
+      - "🇬🇪_2"
 
 
   - name: "Load Balance"
@@ -129,9 +114,8 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇯🇪_1"
-      - "🇯🇪_2"
-      - "🇯🇪_3"
+      - "🇬🇪_1"
+      - "🇬🇪_2"
 
 rules:
   - MATCH,PROXY

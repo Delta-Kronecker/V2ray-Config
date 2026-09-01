@@ -70,25 +70,9 @@ proxies:
     udp: true
   - name: "🇧🇪_2"
     type: vmess
-    server: "dog-hk.kunlun01dns.com"
-    port: 21018
-    uuid: "9464ca40-dd75-3742-a628-d931a9f413b2"
-    alterId: 0
-    cipher: "auto"
-    udp: true
-  - name: "🇧🇪_3"
-    type: vmess
-    server: "dog-hk.kunlun01dns.com"
-    port: 21022
-    uuid: "9464ca40-dd75-3742-a628-d931a9f413b2"
-    alterId: 0
-    cipher: "auto"
-    udp: true
-  - name: "🇧🇪_4"
-    type: vmess
-    server: "dog-hk.kunlun01dns.com"
-    port: 21020
-    uuid: "9464ca40-dd75-3742-a628-d931a9f413b2"
+    server: "zfd-hkv2.kunlun01dns.com"
+    port: 16115
+    uuid: "0802ac03-7973-39ef-a019-ba02de6c01e1"
     alterId: 0
     cipher: "auto"
     udp: true
@@ -110,8 +94,6 @@ proxy-groups:
     proxies:
       - "🇧🇪_1"
       - "🇧🇪_2"
-      - "🇧🇪_3"
-      - "🇧🇪_4"
 
 
   - name: "Load Balance"
@@ -122,8 +104,6 @@ proxy-groups:
     proxies:
       - "🇧🇪_1"
       - "🇧🇪_2"
-      - "🇧🇪_3"
-      - "🇧🇪_4"
 
 rules:
   - MATCH,PROXY

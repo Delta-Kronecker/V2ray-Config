@@ -62,39 +62,22 @@ dns:
 proxies:
   - name: "🇨🇴_1"
     type: vless
-    server: "157.137.214.227"
+    server: "157.137.228.153"
     port: 62145
     uuid: "8fb65472-5957-4f64-ba2d-b5812b2f155a"
     udp: true
   - name: "🇨🇴_2"
     type: vless
-    server: "149.130.175.159"
+    server: "149.130.179.13"
     port: 62145
     uuid: "8fb65472-5957-4f64-ba2d-b5812b2f155a"
     udp: true
   - name: "🇨🇴_3"
-    type: vless
-    server: "149.130.172.177"
-    port: 62145
-    uuid: "8fb65472-5957-4f64-ba2d-b5812b2f155a"
-    udp: true
-  - name: "🇨🇴_4"
-    type: vless
-    server: "149.130.179.41"
-    port: 62145
-    uuid: "8fb65472-5957-4f64-ba2d-b5812b2f155a"
-    udp: true
-  - name: "🇨🇴_5"
-    type: vless
-    server: "157.137.233.220"
-    port: 62145
-    uuid: "8fb65472-5957-4f64-ba2d-b5812b2f155a"
-    udp: true
-  - name: "🇨🇴_6"
-    type: vless
-    server: "157.137.218.132"
-    port: 62145
-    uuid: "8fb65472-5957-4f64-ba2d-b5812b2f155a"
+    type: ss
+    server: "149.104.107.41"
+    port: 8090
+    cipher: "aes-256-gcm"
+    password: "PCnnH6SQSnfoS27"
     udp: true
 
 proxy-groups:
@@ -115,9 +98,6 @@ proxy-groups:
       - "🇨🇴_1"
       - "🇨🇴_2"
       - "🇨🇴_3"
-      - "🇨🇴_4"
-      - "🇨🇴_5"
-      - "🇨🇴_6"
 
 
   - name: "Load Balance"
@@ -129,9 +109,6 @@ proxy-groups:
       - "🇨🇴_1"
       - "🇨🇴_2"
       - "🇨🇴_3"
-      - "🇨🇴_4"
-      - "🇨🇴_5"
-      - "🇨🇴_6"
 
 rules:
   - MATCH,PROXY
