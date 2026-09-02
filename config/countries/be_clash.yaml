@@ -68,14 +68,6 @@ proxies:
     sni: "hl-freedom-1.undef.network"
     skip-cert-verify: true
     udp: true
-  - name: "🇧🇪_2"
-    type: vmess
-    server: "zfd-hkv2.kunlun01dns.com"
-    port: 16115
-    uuid: "0802ac03-7973-39ef-a019-ba02de6c01e1"
-    alterId: 0
-    cipher: "auto"
-    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -93,7 +85,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇧🇪_1"
-      - "🇧🇪_2"
 
 
   - name: "Load Balance"
@@ -103,7 +94,6 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇧🇪_1"
-      - "🇧🇪_2"
 
 rules:
   - MATCH,PROXY

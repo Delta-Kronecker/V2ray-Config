@@ -61,20 +61,6 @@ dns:
 
 proxies:
   - name: "🇺🇦_1"
-    type: vless
-    server: "5.34.182.23"
-    port: 443
-    uuid: "423b1d79-08c4-403f-9d5e-c541f791b55f"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "eu-central.cendora.ru"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "b-Cm9hX-3UHsS1L_lnUB6AMjuKhlN1IDdBbZ506itjI"
-      short-id: "00bca5982f82d083"
-    flow: "xtls-rprx-vision"
-  - name: "🇺🇦_2"
     type: trojan
     server: "130.0.236.88"
     port: 443
@@ -99,7 +85,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇺🇦_1"
-      - "🇺🇦_2"
 
 
   - name: "Load Balance"
@@ -109,7 +94,6 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇺🇦_1"
-      - "🇺🇦_2"
 
 rules:
   - MATCH,PROXY

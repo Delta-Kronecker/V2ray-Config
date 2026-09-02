@@ -97,11 +97,12 @@ proxies:
     skip-cert-verify: true
     udp: true
   - name: "🇲🇾_4"
-    type: ss
-    server: "47.250.212.59"
-    port: 2053
-    cipher: "none"
-    password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
+    type: trojan
+    server: "202.43.102.57"
+    port: 443
+    password: "6e1b9a65-884f-3aa9-9469-bf6ec0f08610"
+    sni: "45.32.28.232"
+    skip-cert-verify: true
     udp: true
   - name: "🇲🇾_5"
     type: ss
@@ -136,6 +137,13 @@ proxies:
       path: "/59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
       host: "woshinidie-et3.pages.dev"
       tls: true
+  - name: "🇲🇾_8"
+    type: ss
+    server: "47.250.212.59"
+    port: 2053
+    cipher: "none"
+    password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
+    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -159,6 +167,7 @@ proxy-groups:
       - "🇲🇾_5"
       - "🇲🇾_6"
       - "🇲🇾_7"
+      - "🇲🇾_8"
 
 
   - name: "Load Balance"
@@ -174,6 +183,7 @@ proxy-groups:
       - "🇲🇾_5"
       - "🇲🇾_6"
       - "🇲🇾_7"
+      - "🇲🇾_8"
 
 rules:
   - MATCH,PROXY

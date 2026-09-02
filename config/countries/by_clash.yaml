@@ -61,31 +61,6 @@ dns:
 
 proxies:
   - name: "🇧🇾_1"
-    type: vless
-    server: "144.31.129.2"
-    port: 443
-    uuid: "91eb52ec-e3f5-4ab9-90da-43104995aef7"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "by1.un1.pro"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "y3EIsxDGDJrBGk3j4YmjI5R_8jiCsEDRDMeL4bv5TTI"
-      short-id: "6ba85179e30d4fc2"
-    flow: "xtls-rprx-vision"
-  - name: "🇧🇾_2"
-    type: trojan
-    server: "178.172.227.178"
-    port: 500
-    password: "8qCNZU2XdtefT7uB4uPxgRR839btqMG8"
-    sni: "by01.botovod.space"
-    skip-cert-verify: true
-    udp: true
-    network: grpc
-    grpc-opts:
-      grpc-service-name: ""
-  - name: "🇧🇾_3"
     type: trojan
     server: "by01.botovod.space"
     port: 500
@@ -113,8 +88,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇧🇾_1"
-      - "🇧🇾_2"
-      - "🇧🇾_3"
 
 
   - name: "Load Balance"
@@ -124,8 +97,6 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇧🇾_1"
-      - "🇧🇾_2"
-      - "🇧🇾_3"
 
 rules:
   - MATCH,PROXY
