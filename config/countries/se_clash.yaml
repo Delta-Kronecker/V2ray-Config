@@ -62,33 +62,21 @@ dns:
 proxies:
   - name: "🇸🇪_1"
     type: vless
-    server: "89.22.228.241"
-    port: 8443
-    uuid: "dd45cc4b-9c64-4cc0-b475-3f98c66052cf"
+    server: "31.77.111.11"
+    port: 43439
+    uuid: "428e923f-e608-412b-9e51-3b09ffab551f"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "max.ru"
-    client-fingerprint: "chrome"
+    servername: "cdn.higames.ru"
+    client-fingerprint: "firefox"
     reality-opts:
-      public-key: "uXZLBd0Oo4whnPdrpByupJq_3hdTvly9kIaGtAWSKyE"
-      short-id: "d713844be494"
-    flow: "xtls-rprx-vision"
+      public-key: "b4n1pcO8ST3JkGtj8YymXVrW17LEe2EHec5wY7hMMR4"
+      short-id: "39ad36226f3abec8"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "streaming"
   - name: "🇸🇪_2"
-    type: vless
-    server: "node5.boomvpn.ru"
-    port: 443
-    uuid: "30dab345-4de9-4b70-ad9f-8ebd5c66686f"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "cdn.jsdelivr.net"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "GRxGFwibgoUjG9OL5Dl1OLyK56yw8WaG5BdFP8ifVgQ"
-      short-id: "26f7082dd0e36ca1"
-    flow: "xtls-rprx-vision"
-  - name: "🇸🇪_3"
     type: vless
     server: "31.76.81.9"
     port: 443
@@ -102,20 +90,29 @@ proxies:
       public-key: "diw5L3O4EkRQGWDSfdpQooPUc3zBTItooeOQ_fIDFWI"
       short-id: "7f2e9c4b1a8d6e53"
     flow: "xtls-rprx-vision"
-  - name: "🇸🇪_4"
+  - name: "🇸🇪_3"
     type: vless
-    server: "89.127.204.17"
-    port: 8443
-    uuid: "0cfc585b-26f2-4597-9b70-e1bb1095a2f2"
+    server: "185.189.47.107"
+    port: 443
+    uuid: "252f7811-d86f-4dc2-97e0-83d3172ef4b8"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "yandex.aero"
-    client-fingerprint: "chrome"
+    servername: "edge-se.mystatic-cdn.ru"
+    client-fingerprint: "firefox"
     reality-opts:
-      public-key: "o8nHj0HmBGPkdRVTSrWd1r2eXPH5YRKDNfKY1FKvRCY"
-      short-id: "dfc3"
+      public-key: "4HizFUAIvYp3wzM4p1_VcbhLWsRVHzG53XZG4f7oWiY"
+      short-id: "b21f41e79ecbac55"
     flow: "xtls-rprx-vision"
+  - name: "🇸🇪_4"
+    type: vless
+    server: "secdn-107.zak-rkp.net"
+    port: 443
+    uuid: "c7748dfa-5918-42f4-8133-a8b99eae8da3"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "secdn-107.zak-rkp.net"
   - name: "🇸🇪_5"
     type: vless
     server: "193.148.59.178"
@@ -131,33 +128,21 @@ proxies:
       short-id: "e3daad69"
     flow: "xtls-rprx-vision"
   - name: "🇸🇪_6"
-    type: vless
-    server: "185.189.47.107"
+    type: trojan
+    server: "65.20.113.246"
     port: 443
-    uuid: "252f7811-d86f-4dc2-97e0-83d3172ef4b8"
-    udp: true
-    tls: true
+    password: "Bw5Mz7QkVp"
+    sni: "z-v2-074389.kailib.com"
     skip-cert-verify: true
-    servername: "edge-se.mystatic-cdn.ru"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "4HizFUAIvYp3wzM4p1_VcbhLWsRVHzG53XZG4f7oWiY"
-      short-id: "b21f41e79ecbac55"
-    flow: "xtls-rprx-vision"
+    udp: true
   - name: "🇸🇪_7"
-    type: vless
-    server: "2.26.124.85"
+    type: trojan
+    server: "45.91.171.116"
     port: 443
-    uuid: "30dab345-4de9-4b70-ad9f-8ebd5c66686f"
-    udp: true
-    tls: true
+    password: "2ee85121-31de-4581-a492-eb00f606e392"
+    sni: "sto.freeguard.org"
     skip-cert-verify: true
-    servername: "cdn.jsdelivr.net"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "GRxGFwibgoUjG9OL5Dl1OLyK56yw8WaG5BdFP8ifVgQ"
-      short-id: "26f7082dd0e36ca1"
-    flow: "xtls-rprx-vision"
+    udp: true
   - name: "🇸🇪_8"
     type: trojan
     server: "70.34.206.32"
@@ -167,20 +152,18 @@ proxies:
     skip-cert-verify: true
     udp: true
   - name: "🇸🇪_9"
-    type: trojan
-    server: "65.20.113.246"
-    port: 443
-    password: "Bw5Mz7QkVp"
-    sni: "z-v2-074389.kailib.com"
-    skip-cert-verify: true
+    type: ss
+    server: "84.32.99.238"
+    port: 20146
+    cipher: "2022-blake3-aes-256-gcm"
+    password: "MGM1NGM2NmQ2NTg5NDg3Y2EyNTZjNGJiNmU4YjA0Mzc=:YmQxYjRiZDJhMzEyNDMzZGFlN2JkNWQyOGY1MGFmMmE="
     udp: true
   - name: "🇸🇪_10"
-    type: trojan
-    server: "45.91.171.116"
-    port: 443
-    password: "2ee85121-31de-4581-a492-eb00f606e392"
-    sni: "sto.freeguard.org"
-    skip-cert-verify: true
+    type: ss
+    server: "84.32.99.238"
+    port: 20146
+    cipher: "2022-blake3-aes-256-gcm"
+    password: "MGM1NGM2NmQ2NTg5NDg3Y2EyNTZjNGJiNmU4YjA0Mzc=:YmQxYjRiZDJhMzEyNDMzZGFlN2JkNWQyOGY1MGFmMmE="
     udp: true
   - name: "🇸🇪_11"
     type: ss

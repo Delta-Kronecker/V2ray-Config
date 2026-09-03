@@ -90,6 +90,48 @@ proxies:
     flow: "xtls-rprx-vision"
   - name: "🇨🇿_3"
     type: vless
+    server: "78.159.247.166"
+    port: 7444
+    uuid: "0764541b-3e57-4b47-954b-51e996fae5fc"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "akamai.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "-P8DgKISSG4jnLuj6ihZDqZs1_zt-juBrhVhTylHiAo"
+      short-id: ""
+    flow: "xtls-rprx-vision"
+  - name: "🇨🇿_4"
+    type: vless
+    server: "5.39.202.127"
+    port: 443
+    uuid: "dabb9a19-03ab-4cdf-8963-d3c45eb0f80d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "czek1.kovsh.lol"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "crRdG3Hd_QtGCJi9fd1rtHpDIB7vnCx1Yexfu6XkIzU"
+      short-id: "2cec07a8614696e5"
+    flow: "xtls-rprx-vision"
+  - name: "🇨🇿_5"
+    type: vless
+    server: "78.159.247.123"
+    port: 7444
+    uuid: "0764541b-3e57-4b47-954b-51e996fae5fc"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "akamai.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "-P8DgKISSG4jnLuj6ihZDqZs1_zt-juBrhVhTylHiAo"
+      short-id: ""
+    flow: "xtls-rprx-vision"
+  - name: "🇨🇿_6"
+    type: vless
     server: "212.102.38.25"
     port: 443
     uuid: "b34a52cb-cd52-49a8-9362-b8e97c151d49"
@@ -102,7 +144,21 @@ proxies:
       public-key: "23cb4W9THzBKsrECsLh-A_FcKZfkAtUONoDze8-GnQE"
       short-id: "e90360ec7cc61b20"
     flow: "xtls-rprx-vision"
-  - name: "🇨🇿_4"
+  - name: "🇨🇿_7"
+    type: vless
+    server: "czek1.kovsh.lol"
+    port: 443
+    uuid: "dabb9a19-03ab-4cdf-8963-d3c45eb0f80d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "czek1.kovsh.lol"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "crRdG3Hd_QtGCJi9fd1rtHpDIB7vnCx1Yexfu6XkIzU"
+      short-id: "2cec07a8614696e5"
+    flow: "xtls-rprx-vision"
+  - name: "🇨🇿_8"
     type: trojan
     server: "46.8.113.142"
     port: 443
@@ -110,7 +166,7 @@ proxies:
     sni: "ch-2.bexum.fun"
     skip-cert-verify: true
     udp: true
-  - name: "🇨🇿_5"
+  - name: "🇨🇿_9"
     type: trojan
     server: "ch-2.bexum.fun"
     port: 443
@@ -139,6 +195,10 @@ proxy-groups:
       - "🇨🇿_3"
       - "🇨🇿_4"
       - "🇨🇿_5"
+      - "🇨🇿_6"
+      - "🇨🇿_7"
+      - "🇨🇿_8"
+      - "🇨🇿_9"
 
 
   - name: "Load Balance"
@@ -152,6 +212,10 @@ proxy-groups:
       - "🇨🇿_3"
       - "🇨🇿_4"
       - "🇨🇿_5"
+      - "🇨🇿_6"
+      - "🇨🇿_7"
+      - "🇨🇿_8"
+      - "🇨🇿_9"
 
 rules:
   - MATCH,PROXY
