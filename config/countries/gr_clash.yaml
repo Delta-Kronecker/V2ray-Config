@@ -62,20 +62,6 @@ dns:
 proxies:
   - name: "🇬🇷_1"
     type: vless
-    server: "gr.freeinternat.com"
-    port: 443
-    uuid: "dabb9a19-03ab-4cdf-8963-d3c45eb0f80d"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "gr.freeinternat.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "bZpzmeWiEJyJQy0W2hHc34Nr6BuFXj1UDd80Cbwh1Fk"
-      short-id: "ff776ff77be48b88"
-    flow: "xtls-rprx-vision"
-  - name: "🇬🇷_2"
-    type: vless
     server: "85.90.197.91"
     port: 443
     uuid: "dabb9a19-03ab-4cdf-8963-d3c45eb0f80d"
@@ -88,21 +74,21 @@ proxies:
       public-key: "bZpzmeWiEJyJQy0W2hHc34Nr6BuFXj1UDd80Cbwh1Fk"
       short-id: "ff776ff77be48b88"
     flow: "xtls-rprx-vision"
-  - name: "🇬🇷_3"
+  - name: "🇬🇷_2"
     type: vless
-    server: "217.12.194.226"
+    server: "gr.freeinternat.com"
     port: 443
-    uuid: "b8cff836-8a21-4b72-a77d-231c8678c711"
+    uuid: "dabb9a19-03ab-4cdf-8963-d3c45eb0f80d"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "www.cloudflare.com"
-    client-fingerprint: "firefox"
+    servername: "gr.freeinternat.com"
+    client-fingerprint: "chrome"
     reality-opts:
-      public-key: "oOp4xgD1R9MGm17qYp4XIHiq1dAfTaknr39UvhOv8Gc"
-      short-id: "ab55ed2e71e8f58e"
+      public-key: "bZpzmeWiEJyJQy0W2hHc34Nr6BuFXj1UDd80Cbwh1Fk"
+      short-id: "ff776ff77be48b88"
     flow: "xtls-rprx-vision"
-  - name: "🇬🇷_4"
+  - name: "🇬🇷_3"
     type: vless
     server: "185.126.238.87"
     port: 2083
@@ -130,7 +116,6 @@ proxy-groups:
       - "🇬🇷_1"
       - "🇬🇷_2"
       - "🇬🇷_3"
-      - "🇬🇷_4"
 
 
   - name: "Load Balance"
@@ -142,7 +127,6 @@ proxy-groups:
       - "🇬🇷_1"
       - "🇬🇷_2"
       - "🇬🇷_3"
-      - "🇬🇷_4"
 
 rules:
   - MATCH,PROXY

@@ -61,6 +61,22 @@ dns:
 
 proxies:
   - name: "🇺🇦_1"
+    type: vless
+    server: "91.224.86.107"
+    port: 9830
+    uuid: "76186f1e-3062-4a2b-98c2-fab3c61a9511"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "dl.google.com"
+    client-fingerprint: "qq"
+    reality-opts:
+      public-key: "bnRIb3Er1i-K6NGGByCO9UbGfOvu43ZoiK7ulPd1SzU"
+      short-id: "aabbccdd"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "grpc-tunnel"
+  - name: "🇺🇦_2"
     type: trojan
     server: "130.0.236.88"
     port: 443
@@ -85,6 +101,7 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇺🇦_1"
+      - "🇺🇦_2"
 
 
   - name: "Load Balance"
@@ -94,6 +111,7 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇺🇦_1"
+      - "🇺🇦_2"
 
 rules:
   - MATCH,PROXY

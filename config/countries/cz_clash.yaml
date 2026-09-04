@@ -62,48 +62,6 @@ dns:
 proxies:
   - name: "🇨🇿_1"
     type: vless
-    server: "188.127.247.129"
-    port: 443
-    uuid: "33aa2b47-484b-49f6-8f23-fb34602d221f"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "yahoo.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "Kb0rDCu2kKhfnC6bsi0DMRxDej9S-Mu1vVza1H1l4U4"
-      short-id: "0c"
-    flow: "xtls-rprx-vision"
-  - name: "🇨🇿_2"
-    type: vless
-    server: "46.28.70.12"
-    port: 443
-    uuid: "aaf8343d-1e78-49f9-92a2-f33136d6f636"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.cloudflare.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "HlbEJFdMTNcNofda44mGt2RFxnWN0iO6toeMoqiwyF4"
-      short-id: "1c44e37b4134d40f"
-    flow: "xtls-rprx-vision"
-  - name: "🇨🇿_3"
-    type: vless
-    server: "78.159.247.166"
-    port: 7444
-    uuid: "0764541b-3e57-4b47-954b-51e996fae5fc"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "akamai.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "-P8DgKISSG4jnLuj6ihZDqZs1_zt-juBrhVhTylHiAo"
-      short-id: ""
-    flow: "xtls-rprx-vision"
-  - name: "🇨🇿_4"
-    type: vless
     server: "5.39.202.127"
     port: 443
     uuid: "dabb9a19-03ab-4cdf-8963-d3c45eb0f80d"
@@ -116,21 +74,7 @@ proxies:
       public-key: "crRdG3Hd_QtGCJi9fd1rtHpDIB7vnCx1Yexfu6XkIzU"
       short-id: "2cec07a8614696e5"
     flow: "xtls-rprx-vision"
-  - name: "🇨🇿_5"
-    type: vless
-    server: "78.159.247.123"
-    port: 7444
-    uuid: "0764541b-3e57-4b47-954b-51e996fae5fc"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "akamai.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "-P8DgKISSG4jnLuj6ihZDqZs1_zt-juBrhVhTylHiAo"
-      short-id: ""
-    flow: "xtls-rprx-vision"
-  - name: "🇨🇿_6"
+  - name: "🇨🇿_2"
     type: vless
     server: "212.102.38.25"
     port: 443
@@ -144,7 +88,23 @@ proxies:
       public-key: "23cb4W9THzBKsrECsLh-A_FcKZfkAtUONoDze8-GnQE"
       short-id: "e90360ec7cc61b20"
     flow: "xtls-rprx-vision"
-  - name: "🇨🇿_7"
+  - name: "🇨🇿_3"
+    type: vless
+    server: "212.41.11.31"
+    port: 9891
+    uuid: "76186f1e-3062-4a2b-98c2-fab3c61a9511"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "dl.google.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0"
+      short-id: ""
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "grpc-tunnel"
+  - name: "🇨🇿_4"
     type: vless
     server: "czek1.kovsh.lol"
     port: 443
@@ -158,17 +118,17 @@ proxies:
       public-key: "crRdG3Hd_QtGCJi9fd1rtHpDIB7vnCx1Yexfu6XkIzU"
       short-id: "2cec07a8614696e5"
     flow: "xtls-rprx-vision"
-  - name: "🇨🇿_8"
+  - name: "🇨🇿_5"
     type: trojan
-    server: "46.8.113.142"
+    server: "ch-2.bexum.fun"
     port: 443
     password: "LYaEYwjN8LjWTRJdCCTzW7V6gK7atJVu"
     sni: "ch-2.bexum.fun"
     skip-cert-verify: true
     udp: true
-  - name: "🇨🇿_9"
+  - name: "🇨🇿_6"
     type: trojan
-    server: "ch-2.bexum.fun"
+    server: "46.8.113.142"
     port: 443
     password: "LYaEYwjN8LjWTRJdCCTzW7V6gK7atJVu"
     sni: "ch-2.bexum.fun"
@@ -196,9 +156,6 @@ proxy-groups:
       - "🇨🇿_4"
       - "🇨🇿_5"
       - "🇨🇿_6"
-      - "🇨🇿_7"
-      - "🇨🇿_8"
-      - "🇨🇿_9"
 
 
   - name: "Load Balance"
@@ -213,9 +170,6 @@ proxy-groups:
       - "🇨🇿_4"
       - "🇨🇿_5"
       - "🇨🇿_6"
-      - "🇨🇿_7"
-      - "🇨🇿_8"
-      - "🇨🇿_9"
 
 rules:
   - MATCH,PROXY

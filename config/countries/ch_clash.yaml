@@ -62,47 +62,21 @@ dns:
 proxies:
   - name: "🇨🇭_1"
     type: vless
-    server: "45.90.56.231"
-    port: 443
-    uuid: "e2b8f727-c5ee-47e1-8f1b-7c5c61479ce0"
+    server: "212.41.11.31"
+    port: 9882
+    uuid: "76186f1e-3062-4a2b-98c2-fab3c61a9511"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "www.cloudflare.com"
-    client-fingerprint: "chrome"
+    servername: "dl.google.com"
+    client-fingerprint: "edge"
     reality-opts:
-      public-key: "KrFnWxAwVGL6tuj1JE0qpykLzY4aOFjyK3OaymF_hT0"
-      short-id: "e2e66f4537770cef"
-    flow: "xtls-rprx-vision"
+      public-key: "bnRIb3Er1i-K6NGGByCO9UbGfOvu43ZoiK7ulPd1SzU"
+      short-id: "aa"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "grpc-tunnel"
   - name: "🇨🇭_2"
-    type: vless
-    server: "31.77.220.163"
-    port: 13443
-    uuid: "6379673b-197f-4944-ba81-a45c66aefe9c"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "kinopoisk.ru"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "oo5V9WHh_7YUFrbq0yQC19FYbq9kKf1ig1-IiLXvbHk"
-      short-id: "a1b2c3d4"
-    flow: "xtls-rprx-vision"
-  - name: "🇨🇭_3"
-    type: vless
-    server: "45.90.58.216"
-    port: 443
-    uuid: "2e8077d9-7bd9-444b-b2e3-de940d2eb35e"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.cloudflare.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "PMYLdOtnvW-ca8Zf6u7CFgGXoGXCvmCMPerPjGY3AAc"
-      short-id: "77d7abe2c55892f1"
-    flow: "xtls-rprx-vision"
-  - name: "🇨🇭_4"
     type: trojan
     server: "83.228.224.161"
     port: 443
@@ -128,8 +102,6 @@ proxy-groups:
     proxies:
       - "🇨🇭_1"
       - "🇨🇭_2"
-      - "🇨🇭_3"
-      - "🇨🇭_4"
 
 
   - name: "Load Balance"
@@ -140,8 +112,6 @@ proxy-groups:
     proxies:
       - "🇨🇭_1"
       - "🇨🇭_2"
-      - "🇨🇭_3"
-      - "🇨🇭_4"
 
 rules:
   - MATCH,PROXY

@@ -62,6 +62,26 @@ dns:
 proxies:
   - name: "🇮🇹_1"
     type: vless
+    server: "204.216.216.23"
+    port: 10086
+    uuid: "9f0285ee-20ca-4953-bcdb-86a920652923"
+    udp: true
+  - name: "🇮🇹_2"
+    type: vless
+    server: "204.216.216.23"
+    port: 1114
+    uuid: "6ba2eac6-0ec9-44ca-a42b-a8e23aafb530"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "yahoo.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "WfkCF0eEuIoO0MyJsKOddU89QrTzCZ4y2dzCJbH99CQ"
+      short-id: "79a1e14b"
+    flow: "xtls-rprx-vision"
+  - name: "🇮🇹_3"
+    type: vless
     server: "57.131.38.163"
     port: 2053
     uuid: "d4b08cd6-0903-411a-9dac-45dbdf5c9712"
@@ -73,21 +93,7 @@ proxies:
     reality-opts:
       public-key: "Ej2H5ucT7qKegYcT8wODdlxa-cLHr7F4hDVUHzAhcnc"
       short-id: "5b8a942318178e7b"
-  - name: "🇮🇹_2"
-    type: vless
-    server: "82.118.16.20"
-    port: 443
-    uuid: "bbc82487-c90c-4c14-8ceb-93d62ad497fc"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.cloudflare.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "j0A43i0wgMyM0118jBsy9s8XJ36oK2rr8aj1egLjfCc"
-      short-id: "c1c9554e0a86a3a7"
-    flow: "xtls-rprx-vision"
-  - name: "🇮🇹_3"
+  - name: "🇮🇹_4"
     type: vless
     server: "172.238.232.239"
     port: 32833
@@ -101,7 +107,7 @@ proxies:
       public-key: "PaTDdYBrlh1xBixdI0igvRRkf0vnUwMRzi-4oDyfS20"
       short-id: "a0a305ccc8e94aa8"
     flow: "xtls-rprx-vision"
-  - name: "🇮🇹_4"
+  - name: "🇮🇹_5"
     type: trojan
     server: "91.193.5.121"
     port: 8443
@@ -109,14 +115,14 @@ proxies:
     sni: "ngepz.ambercc.filegear-sg.me"
     skip-cert-verify: true
     udp: true
-  - name: "🇮🇹_5"
+  - name: "🇮🇹_6"
     type: ss
     server: "57.131.48.45"
     port: 8388
     cipher: "aes-256-gcm"
     password: "itzvpn@321"
     udp: true
-  - name: "🇮🇹_6"
+  - name: "🇮🇹_7"
     type: ss
     server: "57.131.48.45"
     port: 8388
@@ -145,6 +151,7 @@ proxy-groups:
       - "🇮🇹_4"
       - "🇮🇹_5"
       - "🇮🇹_6"
+      - "🇮🇹_7"
 
 
   - name: "Load Balance"
@@ -159,6 +166,7 @@ proxy-groups:
       - "🇮🇹_4"
       - "🇮🇹_5"
       - "🇮🇹_6"
+      - "🇮🇹_7"
 
 rules:
   - MATCH,PROXY

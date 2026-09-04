@@ -62,34 +62,19 @@ dns:
 proxies:
   - name: "🇰🇿_1"
     type: vless
-    server: "91.224.87.22"
-    port: 9882
-    uuid: "76186f1e-3062-4a2b-98c2-fab3c61a9511"
+    server: "111.88.143.139"
+    port: 8443
+    uuid: "2b8c0574-ff6f-4975-8a06-e24ebefa1d1c"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "dl.google.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "bnRIb3Er1i-K6NGGByCO9UbGfOvu43ZoiK7ulPd1SzU"
-      short-id: "aabb"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "grpc-tunnel"
-  - name: "🇰🇿_2"
-    type: vless
-    server: "109.248.170.119"
-    port: 13447
-    uuid: "b573cefb-7bc7-4a42-b407-b8b534e66773"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "yahoo.com"
+    servername: "www.cloudflare.com"
     client-fingerprint: "chrome"
     reality-opts:
-      public-key: "_0wM2ep44eAcrgf5PflKaBivknCWT6kMvQBQUoScCkE"
-      short-id: "83"
-  - name: "🇰🇿_3"
+      public-key: "Ao_imnCEIGAaL1DZnjOK1SSPpjQOw_XJcgMpNLEZwg0"
+      short-id: "ac4b582e"
+    flow: "xtls-rprx-vision"
+  - name: "🇰🇿_2"
     type: vless
     server: "83.222.23.81"
     port: 38065
@@ -102,7 +87,7 @@ proxies:
     reality-opts:
       public-key: "dSSDPTK6AHfAdRAXD9i4rzqcNIY65RxlF25UyCKdiyo"
       short-id: "fa"
-  - name: "🇰🇿_4"
+  - name: "🇰🇿_3"
     type: vless
     server: "111.88.143.139"
     port: 51940
@@ -118,6 +103,19 @@ proxies:
     network: grpc
     grpc-opts:
       grpc-service-name: ""
+  - name: "🇰🇿_4"
+    type: vless
+    server: "178.236.16.98"
+    port: 35728
+    uuid: "a00d89f6-ab7e-4e30-a5e5-54c701d62c93"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "yahoo.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "vhUFNoFcvtZAVMo8y5K5eU2V43m5q6yjmWIhp5RkFng"
+      short-id: "69a2"
   - name: "🇰🇿_5"
     type: vless
     server: "77.73.232.61"
@@ -133,121 +131,49 @@ proxies:
       short-id: "2001"
   - name: "🇰🇿_6"
     type: vless
-    server: "111.88.143.139"
-    port: 8443
-    uuid: "2b8c0574-ff6f-4975-8a06-e24ebefa1d1c"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.cloudflare.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "Ao_imnCEIGAaL1DZnjOK1SSPpjQOw_XJcgMpNLEZwg0"
-      short-id: "ac4b582e"
-    flow: "xtls-rprx-vision"
-  - name: "🇰🇿_7"
-    type: vless
-    server: "46.16.36.222"
-    port: 11448
-    uuid: "d7430ae7-320c-4658-808b-3006d0627d82"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "mageia.ubuntuhosting.host"
-    client-fingerprint: "safari"
-    reality-opts:
-      public-key: "gUU8rOYxXtE2ENvQ-RLrmaON2lw2L9lObStu-EaJxhs"
-      short-id: "b34f41089f1e"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "gun"
-  - name: "🇰🇿_8"
-    type: vless
-    server: "kz2.techdatacloud.org"
-    port: 443
-    uuid: "5e19b3c8-c1dc-4163-95e2-895319c15d6c"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "cloud.mail.ru"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "06GvG7PU5F3Hgq-vUH24tU0tpsbGMCCt26BSvlaBNUE"
-      short-id: "dfbfa87e9f37f1f0"
-    flow: "xtls-rprx-vision"
-  - name: "🇰🇿_9"
-    type: vless
-    server: "5.180.42.85"
-    port: 443
-    uuid: "5e19b3c8-c1dc-4163-95e2-895319c15d6c"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "cloud.mail.ru"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "06GvG7PU5F3Hgq-vUH24tU0tpsbGMCCt26BSvlaBNUE"
-      short-id: "dfbfa87e9f37f1f0"
-    flow: "xtls-rprx-vision"
-  - name: "🇰🇿_10"
-    type: vless
-    server: "5.180.40.9"
-    port: 443
-    uuid: "5e19b3c8-c1dc-4163-95e2-895319c15d6c"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "cloud.mail.ru"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "06GvG7PU5F3Hgq-vUH24tU0tpsbGMCCt26BSvlaBNUE"
-      short-id: "dfbfa87e9f37f1f0"
-    flow: "xtls-rprx-vision"
-  - name: "🇰🇿_11"
-    type: vless
-    server: "178.236.16.98"
-    port: 35728
-    uuid: "a00d89f6-ab7e-4e30-a5e5-54c701d62c93"
+    server: "109.248.170.119"
+    port: 13447
+    uuid: "b573cefb-7bc7-4a42-b407-b8b534e66773"
     udp: true
     tls: true
     skip-cert-verify: true
     servername: "yahoo.com"
     client-fingerprint: "chrome"
     reality-opts:
-      public-key: "vhUFNoFcvtZAVMo8y5K5eU2V43m5q6yjmWIhp5RkFng"
-      short-id: "69a2"
-  - name: "🇰🇿_12"
+      public-key: "_0wM2ep44eAcrgf5PflKaBivknCWT6kMvQBQUoScCkE"
+      short-id: "83"
+  - name: "🇰🇿_7"
     type: vless
-    server: "109.248.18.208"
-    port: 443
-    uuid: "d7430ae7-320c-4658-808b-3006d0627d82"
+    server: "82.202.157.181"
+    port: 9882
+    uuid: "76186f1e-3062-4a2b-98c2-fab3c61a9511"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "garuda.ubuntuhosting.host"
+    servername: "dl.google.com"
     client-fingerprint: "firefox"
     reality-opts:
-      public-key: "QJW15WZWLNjA8KEpe4GqSdOe4rfW8KgqjjVmKxPk-ng"
-      short-id: "3fa234ea9feaa048"
+      public-key: "bnRIb3Er1i-K6NGGByCO9UbGfOvu43ZoiK7ulPd1SzU"
+      short-id: "aa"
     network: grpc
     grpc-opts:
-      grpc-service-name: "gun"
-  - name: "🇰🇿_13"
+      grpc-service-name: "grpc-tunnel"
+  - name: "🇰🇿_8"
     type: vless
-    server: "garuda.ubuntuhosting.host"
-    port: 443
-    uuid: "d7430ae7-320c-4658-808b-3006d0627d82"
+    server: "91.224.87.22"
+    port: 9882
+    uuid: "76186f1e-3062-4a2b-98c2-fab3c61a9511"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "garuda.ubuntuhosting.host"
-    client-fingerprint: "chrome"
+    servername: "dl.google.com"
+    client-fingerprint: "firefox"
     reality-opts:
-      public-key: "QJW15WZWLNjA8KEpe4GqSdOe4rfW8KgqjjVmKxPk-ng"
-      short-id: "3fa234ea9feaa048"
+      public-key: "bnRIb3Er1i-K6NGGByCO9UbGfOvu43ZoiK7ulPd1SzU"
+      short-id: "aabb"
     network: grpc
     grpc-opts:
-      grpc-service-name: "gun"
+      grpc-service-name: "grpc-tunnel"
 
 proxy-groups:
   - name: "PROXY"
@@ -272,11 +198,6 @@ proxy-groups:
       - "🇰🇿_6"
       - "🇰🇿_7"
       - "🇰🇿_8"
-      - "🇰🇿_9"
-      - "🇰🇿_10"
-      - "🇰🇿_11"
-      - "🇰🇿_12"
-      - "🇰🇿_13"
 
 
   - name: "Load Balance"
@@ -293,11 +214,6 @@ proxy-groups:
       - "🇰🇿_6"
       - "🇰🇿_7"
       - "🇰🇿_8"
-      - "🇰🇿_9"
-      - "🇰🇿_10"
-      - "🇰🇿_11"
-      - "🇰🇿_12"
-      - "🇰🇿_13"
 
 rules:
   - MATCH,PROXY

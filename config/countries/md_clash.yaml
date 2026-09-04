@@ -62,47 +62,19 @@ dns:
 proxies:
   - name: "🇲🇩_1"
     type: vless
-    server: "31.77.220.184"
-    port: 7443
-    uuid: "5a92a9d2-3067-49cd-bfc5-989bbdfc5d52"
+    server: "mold.freeinternat.com"
+    port: 443
+    uuid: "dabb9a19-03ab-4cdf-8963-d3c45eb0f80d"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "hotcoals.aeternavpn.space"
+    servername: "mold.freeinternat.com"
     client-fingerprint: "firefox"
     reality-opts:
-      public-key: "RWu6ktBE4DFbUz_prmz-5KuolLhO53ehh19mNxhP-wI"
-      short-id: "a1b2c3d4"
+      public-key: "bZpzmeWiEJyJQy0W2hHc34Nr6BuFXj1UDd80Cbwh1Fk"
+      short-id: "ff776ff77be48b88"
     flow: "xtls-rprx-vision"
   - name: "🇲🇩_2"
-    type: vless
-    server: "80.96.109.223"
-    port: 443
-    uuid: "6379673b-197f-4944-ba81-a45c66aefe9c"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "hotcoals.aeternavpn.space"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "RWu6ktBE4DFbUz_prmz-5KuolLhO53ehh19mNxhP-wI"
-      short-id: "a1b2c3d4"
-    flow: "xtls-rprx-vision"
-  - name: "🇲🇩_3"
-    type: vless
-    server: "31.77.220.183"
-    port: 2443
-    uuid: "6379673b-197f-4944-ba81-a45c66aefe9c"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "hotcoals.aeternavpn.space"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "RWu6ktBE4DFbUz_prmz-5KuolLhO53ehh19mNxhP-wI"
-      short-id: "a1b2c3d4"
-    flow: "xtls-rprx-vision"
-  - name: "🇲🇩_4"
     type: vless
     server: "85.120.252.15"
     port: 443
@@ -116,24 +88,24 @@ proxies:
       public-key: "bZpzmeWiEJyJQy0W2hHc34Nr6BuFXj1UDd80Cbwh1Fk"
       short-id: "ff776ff77be48b88"
     flow: "xtls-rprx-vision"
-  - name: "🇲🇩_5"
-    type: vless
-    server: "mold.freeinternat.com"
-    port: 443
-    uuid: "dabb9a19-03ab-4cdf-8963-d3c45eb0f80d"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "mold.freeinternat.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "bZpzmeWiEJyJQy0W2hHc34Nr6BuFXj1UDd80Cbwh1Fk"
-      short-id: "ff776ff77be48b88"
-    flow: "xtls-rprx-vision"
-  - name: "🇲🇩_6"
+  - name: "🇲🇩_3"
     type: vless
     server: "31.77.220.183"
     port: 2443
+    uuid: "5a92a9d2-3067-49cd-bfc5-989bbdfc5d52"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "hotcoals.aeternavpn.space"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "RWu6ktBE4DFbUz_prmz-5KuolLhO53ehh19mNxhP-wI"
+      short-id: "a1b2c3d4"
+    flow: "xtls-rprx-vision"
+  - name: "🇲🇩_4"
+    type: vless
+    server: "31.77.220.184"
+    port: 7443
     uuid: "5a92a9d2-3067-49cd-bfc5-989bbdfc5d52"
     udp: true
     tls: true
@@ -164,8 +136,6 @@ proxy-groups:
       - "🇲🇩_2"
       - "🇲🇩_3"
       - "🇲🇩_4"
-      - "🇲🇩_5"
-      - "🇲🇩_6"
 
 
   - name: "Load Balance"
@@ -178,8 +148,6 @@ proxy-groups:
       - "🇲🇩_2"
       - "🇲🇩_3"
       - "🇲🇩_4"
-      - "🇲🇩_5"
-      - "🇲🇩_6"
 
 rules:
   - MATCH,PROXY

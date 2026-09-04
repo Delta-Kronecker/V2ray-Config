@@ -60,26 +60,27 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇵🇭_1"
+  - name: "🇧🇪_1"
     type: vless
-    server: "8.212.177.111"
+    server: "141.227.164.161"
     port: 443
-    uuid: "38e1c7e8-fdcd-4396-a84c-550b05737308"
+    uuid: "0bc31c7f-1ee2-4dd3-929b-b61ae780eb3c"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "ph1.hat.onl"
+    servername: "at.sellflow.org"
     client-fingerprint: "firefox"
     reality-opts:
-      public-key: "me6tyn-I8IolkgJK4sggSsC9sinhkLPBdPwtVlPk5TI"
-      short-id: "0d6903ea350815e1"
+      public-key: "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
+      short-id: ""
     flow: "xtls-rprx-vision"
-  - name: "🇵🇭_2"
-    type: ss
-    server: "149.104.109.252"
-    port: 8882
-    cipher: "aes-256-gcm"
-    password: "kDWvXYZoTBcGkC4"
+  - name: "🇧🇪_2"
+    type: trojan
+    server: "94.126.225.96"
+    port: 443
+    password: "JaFKnqNcvnBT63t3rquidGsln"
+    sni: "hl-freedom-1.undef.network"
+    skip-cert-verify: true
     udp: true
 
 proxy-groups:
@@ -97,8 +98,8 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇵🇭_1"
-      - "🇵🇭_2"
+      - "🇧🇪_1"
+      - "🇧🇪_2"
 
 
   - name: "Load Balance"
@@ -107,8 +108,8 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇵🇭_1"
-      - "🇵🇭_2"
+      - "🇧🇪_1"
+      - "🇧🇪_2"
 
 rules:
   - MATCH,PROXY

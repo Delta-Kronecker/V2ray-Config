@@ -61,13 +61,51 @@ dns:
 
 proxies:
   - name: "🇮🇩_1"
+    type: trojan
+    server: "172.232.250.160"
+    port: 443
+    password: "788f2b96-47e2-4302-a417-511b6fd7d09c"
+    sni: "172.232.250.160"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇮🇩_2"
+    type: trojan
+    server: "34.101.126.150"
+    port: 443
+    password: "M7v%w11Se*"
+    sni: "qfdfsg.wsone.icu"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇮🇩_3"
+    type: trojan
+    server: "qfdfsg.wsone.icu"
+    port: 443
+    password: "M7v%w11Se*"
+    sni: "qfdfsg.wsone.icu"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇮🇩_4"
     type: ss
     server: "103.160.63.199"
     port: 31348
     cipher: "chacha20-ietf-poly1305"
     password: "8C5valhOd8vfwaTXUSZ6Zyb0Ip34lRR5z7P8az"
     udp: true
-  - name: "🇮🇩_2"
+  - name: "🇮🇩_5"
+    type: ss
+    server: "103.160.63.199"
+    port: 31348
+    cipher: "chacha20-ietf-poly1305"
+    password: "8C5valhOd8vfwaTXUSZ6Zyb0Ip34lRR5z7P8az"
+    udp: true
+  - name: "🇮🇩_6"
+    type: ss
+    server: "103.160.63.199"
+    port: 31348
+    cipher: "chacha20-ietf-poly1305"
+    password: "8C5valhOd8vfwaTXUSZ6Zyb0Ip34lRR5z7P8az"
+    udp: true
+  - name: "🇮🇩_7"
     type: ss
     server: "103.160.63.199"
     port: 31348
@@ -92,6 +130,11 @@ proxy-groups:
     proxies:
       - "🇮🇩_1"
       - "🇮🇩_2"
+      - "🇮🇩_3"
+      - "🇮🇩_4"
+      - "🇮🇩_5"
+      - "🇮🇩_6"
+      - "🇮🇩_7"
 
 
   - name: "Load Balance"
@@ -102,6 +145,11 @@ proxy-groups:
     proxies:
       - "🇮🇩_1"
       - "🇮🇩_2"
+      - "🇮🇩_3"
+      - "🇮🇩_4"
+      - "🇮🇩_5"
+      - "🇮🇩_6"
+      - "🇮🇩_7"
 
 rules:
   - MATCH,PROXY

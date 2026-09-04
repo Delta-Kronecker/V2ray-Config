@@ -61,34 +61,6 @@ dns:
 
 proxies:
   - name: "🇧🇬_1"
-    type: vless
-    server: "82.118.18.224"
-    port: 443
-    uuid: "bfb66910-f920-42c6-b52a-5f56e1dabcb4"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.cloudflare.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "mx0NhP2x4HYUumJ1r0RV411imRCjKQDfDf5ApSz5cCE"
-      short-id: "63499b2eceaee61e"
-    flow: "xtls-rprx-vision"
-  - name: "🇧🇬_2"
-    type: vless
-    server: "82.118.18.202"
-    port: 443
-    uuid: "316dda83-17f1-4f29-a05f-b84b7f991b82"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.cloudflare.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "HDiwGAN66V77CrlCWrDZupEiSQk204dkWRjJok0zYhk"
-      short-id: "720148f2fea16d0f"
-    flow: "xtls-rprx-vision"
-  - name: "🇧🇬_3"
     type: trojan
     server: "91.227.77.87"
     port: 443
@@ -113,8 +85,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇧🇬_1"
-      - "🇧🇬_2"
-      - "🇧🇬_3"
 
 
   - name: "Load Balance"
@@ -124,8 +94,6 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇧🇬_1"
-      - "🇧🇬_2"
-      - "🇧🇬_3"
 
 rules:
   - MATCH,PROXY

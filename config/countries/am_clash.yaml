@@ -73,15 +73,6 @@ proxies:
     reality-opts:
       public-key: "nWQ7b9l9X6N3PrXLgIzOvMM8iSYrqjVHEb9ikWxqYSg"
       short-id: "0e"
-  - name: "🇦🇲_2"
-    type: vless
-    server: "aucdn2.zak-rkp.net"
-    port: 443
-    uuid: "c7748dfa-5918-42f4-8133-a8b99eae8da3"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "aucdn2.zak-rkp.net"
 
 proxy-groups:
   - name: "PROXY"
@@ -99,7 +90,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇦🇲_1"
-      - "🇦🇲_2"
 
 
   - name: "Load Balance"
@@ -109,7 +99,6 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇦🇲_1"
-      - "🇦🇲_2"
 
 rules:
   - MATCH,PROXY

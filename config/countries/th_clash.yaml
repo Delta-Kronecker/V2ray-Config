@@ -68,17 +68,6 @@ proxies:
     alterId: 0
     cipher: "auto"
     udp: true
-  - name: "🇹🇭_2"
-    type: vmess
-    server: "118.193.57.167"
-    port: 49667
-    uuid: "d46bf492-45f4-4c33-82d1-ea2a1cb54eb6"
-    alterId: 0
-    cipher: "auto"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/d46bf492"
 
 proxy-groups:
   - name: "PROXY"
@@ -96,7 +85,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇹🇭_1"
-      - "🇹🇭_2"
 
 
   - name: "Load Balance"
@@ -106,7 +94,6 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇹🇭_1"
-      - "🇹🇭_2"
 
 rules:
   - MATCH,PROXY
