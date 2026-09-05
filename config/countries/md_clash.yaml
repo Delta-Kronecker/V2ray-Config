@@ -62,7 +62,7 @@ dns:
 proxies:
   - name: "🇲🇩_1"
     type: vless
-    server: "mold.freeinternat.com"
+    server: "85.120.252.15"
     port: 443
     uuid: "dabb9a19-03ab-4cdf-8963-d3c45eb0f80d"
     udp: true
@@ -76,7 +76,7 @@ proxies:
     flow: "xtls-rprx-vision"
   - name: "🇲🇩_2"
     type: vless
-    server: "85.120.252.15"
+    server: "mold.freeinternat.com"
     port: 443
     uuid: "dabb9a19-03ab-4cdf-8963-d3c45eb0f80d"
     udp: true
@@ -89,20 +89,6 @@ proxies:
       short-id: "ff776ff77be48b88"
     flow: "xtls-rprx-vision"
   - name: "🇲🇩_3"
-    type: vless
-    server: "31.77.220.183"
-    port: 2443
-    uuid: "5a92a9d2-3067-49cd-bfc5-989bbdfc5d52"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "hotcoals.aeternavpn.space"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "RWu6ktBE4DFbUz_prmz-5KuolLhO53ehh19mNxhP-wI"
-      short-id: "a1b2c3d4"
-    flow: "xtls-rprx-vision"
-  - name: "🇲🇩_4"
     type: vless
     server: "31.77.220.184"
     port: 7443
@@ -135,7 +121,6 @@ proxy-groups:
       - "🇲🇩_1"
       - "🇲🇩_2"
       - "🇲🇩_3"
-      - "🇲🇩_4"
 
 
   - name: "Load Balance"
@@ -147,7 +132,6 @@ proxy-groups:
       - "🇲🇩_1"
       - "🇲🇩_2"
       - "🇲🇩_3"
-      - "🇲🇩_4"
 
 rules:
   - MATCH,PROXY

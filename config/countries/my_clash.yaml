@@ -62,20 +62,6 @@ dns:
 proxies:
   - name: "🇲🇾_1"
     type: vless
-    server: "56.69.159.191"
-    port: 53271
-    uuid: "e8358eb5-7210-4cf8-982f-68af141b7694"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.tesla.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "1P58ZYmo81kPDnL4U7SnEUA-aT2R86l-o6dbFXoeDjc"
-      short-id: "0a9bd9db19578964"
-    flow: "xtls-rprx-vision"
-  - name: "🇲🇾_2"
-    type: vless
     server: "43.217.16.8"
     port: 21874
     uuid: "85dd8227-0f12-4826-a712-6313211774b5"
@@ -88,15 +74,21 @@ proxies:
       public-key: "75sTDYJk8ylA97-aBhAlF1tU4OaCfdOaOSIBshPW7Bs"
       short-id: "42e853a5559e1032"
     flow: "xtls-rprx-vision"
-  - name: "🇲🇾_3"
-    type: trojan
-    server: "my.singaporenodeserverone.kyiv.ua"
-    port: 443
-    password: "6e1b9a65-884f-3aa9-9469-bf6ec0f08610"
-    sni: "45.32.28.232"
-    skip-cert-verify: true
+  - name: "🇲🇾_2"
+    type: vless
+    server: "56.69.159.191"
+    port: 53271
+    uuid: "e8358eb5-7210-4cf8-982f-68af141b7694"
     udp: true
-  - name: "🇲🇾_4"
+    tls: true
+    skip-cert-verify: true
+    servername: "www.tesla.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "1P58ZYmo81kPDnL4U7SnEUA-aT2R86l-o6dbFXoeDjc"
+      short-id: "0a9bd9db19578964"
+    flow: "xtls-rprx-vision"
+  - name: "🇲🇾_3"
     type: trojan
     server: "47.250.84.25"
     port: 443
@@ -104,7 +96,7 @@ proxies:
     sni: "moltbot.doctoroyy.net"
     skip-cert-verify: true
     udp: true
-  - name: "🇲🇾_5"
+  - name: "🇲🇾_4"
     type: trojan
     server: "202.43.102.57"
     port: 443
@@ -112,13 +104,27 @@ proxies:
     sni: "45.32.28.232"
     skip-cert-verify: true
     udp: true
+  - name: "🇲🇾_5"
+    type: trojan
+    server: "my.singaporenodeserverone.kyiv.ua"
+    port: 443
+    password: "6e1b9a65-884f-3aa9-9469-bf6ec0f08610"
+    sni: "45.32.28.232"
+    skip-cert-verify: true
+    udp: true
   - name: "🇲🇾_6"
     type: ss
-    server: "47.250.212.59"
-    port: 2053
+    server: "96.126.190.196"
+    port: 443
     cipher: "none"
     password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
     udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "/59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
   - name: "🇲🇾_7"
     type: ss
     server: "96.126.190.196"
@@ -134,31 +140,17 @@ proxies:
       tls: true
   - name: "🇲🇾_8"
     type: ss
-    server: "96.126.190.196"
-    port: 443
+    server: "47.250.212.59"
+    port: 2053
     cipher: "none"
     password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
     udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "/59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
   - name: "🇲🇾_9"
     type: ss
     server: "47.250.212.59"
     port: 2053
     cipher: "none"
     password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
-    udp: true
-  - name: "🇲🇾_10"
-    type: vmess
-    server: "47.250.135.244"
-    port: 10000
-    uuid: "aedc66b8-99d7-4a21-8310-61870e7f870d"
-    alterId: 0
-    cipher: "auto"
     udp: true
 
 proxy-groups:
@@ -185,7 +177,6 @@ proxy-groups:
       - "🇲🇾_7"
       - "🇲🇾_8"
       - "🇲🇾_9"
-      - "🇲🇾_10"
 
 
   - name: "Load Balance"
@@ -203,7 +194,6 @@ proxy-groups:
       - "🇲🇾_7"
       - "🇲🇾_8"
       - "🇲🇾_9"
-      - "🇲🇾_10"
 
 rules:
   - MATCH,PROXY

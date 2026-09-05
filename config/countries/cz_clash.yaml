@@ -62,6 +62,20 @@ dns:
 proxies:
   - name: "🇨🇿_1"
     type: vless
+    server: "45.129.142.41"
+    port: 49325
+    uuid: "68f7465d-6edb-4317-a1a9-ffe87e3a7c38"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "addons.mozilla.org"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "T0RmoxSgAtx71kYW_ENHcU1cMHXpz0IzFJYHOn9WZm8"
+      short-id: "886921b120b2"
+    flow: "xtls-rprx-vision"
+  - name: "🇨🇿_2"
+    type: vless
     server: "5.39.202.127"
     port: 443
     uuid: "dabb9a19-03ab-4cdf-8963-d3c45eb0f80d"
@@ -74,37 +88,7 @@ proxies:
       public-key: "crRdG3Hd_QtGCJi9fd1rtHpDIB7vnCx1Yexfu6XkIzU"
       short-id: "2cec07a8614696e5"
     flow: "xtls-rprx-vision"
-  - name: "🇨🇿_2"
-    type: vless
-    server: "212.102.38.25"
-    port: 443
-    uuid: "b34a52cb-cd52-49a8-9362-b8e97c151d49"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "udemy.com"
-    client-fingerprint: "ios"
-    reality-opts:
-      public-key: "23cb4W9THzBKsrECsLh-A_FcKZfkAtUONoDze8-GnQE"
-      short-id: "e90360ec7cc61b20"
-    flow: "xtls-rprx-vision"
   - name: "🇨🇿_3"
-    type: vless
-    server: "212.41.11.31"
-    port: 9891
-    uuid: "76186f1e-3062-4a2b-98c2-fab3c61a9511"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "dl.google.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0"
-      short-id: ""
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "grpc-tunnel"
-  - name: "🇨🇿_4"
     type: vless
     server: "czek1.kovsh.lol"
     port: 443
@@ -118,7 +102,7 @@ proxies:
       public-key: "crRdG3Hd_QtGCJi9fd1rtHpDIB7vnCx1Yexfu6XkIzU"
       short-id: "2cec07a8614696e5"
     flow: "xtls-rprx-vision"
-  - name: "🇨🇿_5"
+  - name: "🇨🇿_4"
     type: trojan
     server: "ch-2.bexum.fun"
     port: 443
@@ -126,13 +110,27 @@ proxies:
     sni: "ch-2.bexum.fun"
     skip-cert-verify: true
     udp: true
-  - name: "🇨🇿_6"
+  - name: "🇨🇿_5"
     type: trojan
     server: "46.8.113.142"
     port: 443
     password: "LYaEYwjN8LjWTRJdCCTzW7V6gK7atJVu"
     sni: "ch-2.bexum.fun"
     skip-cert-verify: true
+    udp: true
+  - name: "🇨🇿_6"
+    type: ss
+    server: "45.129.142.41"
+    port: 47425
+    cipher: "chacha20-ietf-poly1305"
+    password: "lIoNSMeYLX8QGHnOp0DTBR0W91/CHVDEjPqjMDuYcdQ="
+    udp: true
+  - name: "🇨🇿_7"
+    type: ss
+    server: "45.129.142.41"
+    port: 47425
+    cipher: "chacha20-ietf-poly1305"
+    password: "lIoNSMeYLX8QGHnOp0DTBR0W91/CHVDEjPqjMDuYcdQ="
     udp: true
 
 proxy-groups:
@@ -156,6 +154,7 @@ proxy-groups:
       - "🇨🇿_4"
       - "🇨🇿_5"
       - "🇨🇿_6"
+      - "🇨🇿_7"
 
 
   - name: "Load Balance"
@@ -170,6 +169,7 @@ proxy-groups:
       - "🇨🇿_4"
       - "🇨🇿_5"
       - "🇨🇿_6"
+      - "🇨🇿_7"
 
 rules:
   - MATCH,PROXY

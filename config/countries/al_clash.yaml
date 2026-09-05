@@ -62,20 +62,6 @@ dns:
 proxies:
   - name: "🇦🇱_1"
     type: vless
-    server: "95.85.224.51"
-    port: 443
-    uuid: "342ab7e4-5a89-0001-8809-304120d4aa83"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "max.ru"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "WWeAHWUVD-phmnjNJ823cer0c4CMIbEs08AhsuEZmDc"
-      short-id: "a696de84963656de"
-    flow: "xtls-rprx-vision"
-  - name: "🇦🇱_2"
-    type: vless
     server: "45.82.13.150"
     port: 8443
     uuid: "51231507-67c3-4141-ab08-a69eb121c716"
@@ -88,21 +74,21 @@ proxies:
       public-key: "B0S7A-ceRt0c3aRqbeQG69FVSkK-si6NWLBEM_QuC3U"
       short-id: "1688"
     flow: "xtls-rprx-vision"
+  - name: "🇦🇱_2"
+    type: vless
+    server: "95.85.224.51"
+    port: 443
+    uuid: "342ab7e4-5a89-0001-8809-304120d4aa83"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "max.ru"
+    client-fingerprint: "qq"
+    reality-opts:
+      public-key: "WWeAHWUVD-phmnjNJ823cer0c4CMIbEs08AhsuEZmDc"
+      short-id: "a696de84963656de"
+    flow: "xtls-rprx-vision"
   - name: "🇦🇱_3"
-    type: ss
-    server: "130.49.189.158"
-    port: 43558
-    cipher: "chacha20-ietf-poly1305"
-    password: "nEefHwLLpCcvZliayaa1+t/VHJgVt8nP7TxiPOJM6IE="
-    udp: true
-  - name: "🇦🇱_4"
-    type: ss
-    server: "130.49.189.158"
-    port: 43558
-    cipher: "chacha20-ietf-poly1305"
-    password: "nEefHwLLpCcvZliayaa1+t/VHJgVt8nP7TxiPOJM6IE="
-    udp: true
-  - name: "🇦🇱_5"
     type: ss
     server: "130.49.189.158"
     port: 43558
@@ -128,8 +114,6 @@ proxy-groups:
       - "🇦🇱_1"
       - "🇦🇱_2"
       - "🇦🇱_3"
-      - "🇦🇱_4"
-      - "🇦🇱_5"
 
 
   - name: "Load Balance"
@@ -141,8 +125,6 @@ proxy-groups:
       - "🇦🇱_1"
       - "🇦🇱_2"
       - "🇦🇱_3"
-      - "🇦🇱_4"
-      - "🇦🇱_5"
 
 rules:
   - MATCH,PROXY

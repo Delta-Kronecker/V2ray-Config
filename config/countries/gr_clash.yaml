@@ -76,6 +76,15 @@ proxies:
     flow: "xtls-rprx-vision"
   - name: "🇬🇷_2"
     type: vless
+    server: "185.126.238.87"
+    port: 2083
+    uuid: "7668f678-faee-40cc-9b56-9c39dc773388"
+    udp: true
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "security.debian.org"
+  - name: "🇬🇷_3"
+    type: vless
     server: "gr.freeinternat.com"
     port: 443
     uuid: "dabb9a19-03ab-4cdf-8963-d3c45eb0f80d"
@@ -88,15 +97,6 @@ proxies:
       public-key: "bZpzmeWiEJyJQy0W2hHc34Nr6BuFXj1UDd80Cbwh1Fk"
       short-id: "ff776ff77be48b88"
     flow: "xtls-rprx-vision"
-  - name: "🇬🇷_3"
-    type: vless
-    server: "185.126.238.87"
-    port: 2083
-    uuid: "7668f678-faee-40cc-9b56-9c39dc773388"
-    udp: true
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "security.debian.org"
 
 proxy-groups:
   - name: "PROXY"

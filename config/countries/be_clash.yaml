@@ -61,20 +61,6 @@ dns:
 
 proxies:
   - name: "🇧🇪_1"
-    type: vless
-    server: "141.227.164.161"
-    port: 443
-    uuid: "0bc31c7f-1ee2-4dd3-929b-b61ae780eb3c"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "at.sellflow.org"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
-      short-id: ""
-    flow: "xtls-rprx-vision"
-  - name: "🇧🇪_2"
     type: trojan
     server: "94.126.225.96"
     port: 443
@@ -99,7 +85,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇧🇪_1"
-      - "🇧🇪_2"
 
 
   - name: "Load Balance"
@@ -109,7 +94,6 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇧🇪_1"
-      - "🇧🇪_2"
 
 rules:
   - MATCH,PROXY
