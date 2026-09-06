@@ -70,13 +70,21 @@ proxies:
     udp: true
   - name: "🇨🇳_2"
     type: trojan
-    server: "118.253.167.243"
+    server: "ja262.magiclampcloud.cn"
     port: 59443
-    password: "14bac0e43c849123ccb0fd0690f24316"
-    sni: "tyy129.magiclampcloud.com"
+    password: "6edc9363c16bb2f7861bc1ab96edd69f"
+    sni: "ja262.magiclampcloud.cn"
     skip-cert-verify: true
     udp: true
   - name: "🇨🇳_3"
+    type: trojan
+    server: "ja304.magiclampcloud.cn"
+    port: 59443
+    password: "1a4dbf8b75346468b85c8d7f70c0cc75"
+    sni: "ja304.magiclampcloud.cn"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇨🇳_4"
     type: trojan
     server: "ja304.magiclampcloud.cn"
     port: 59443
@@ -84,23 +92,7 @@ proxies:
     sni: "ja304.magiclampcloud.cn"
     skip-cert-verify: true
     udp: true
-  - name: "🇨🇳_4"
-    type: trojan
-    server: "117.149.198.190"
-    port: 10051
-    password: "a13820c547fa34c5c45515c12f0cd576"
-    sni: "zz6.91js.pw"
-    skip-cert-verify: true
-    udp: true
   - name: "🇨🇳_5"
-    type: trojan
-    server: "tyy129.magiclampcloud.com"
-    port: 59443
-    password: "4c1511d220e1437b234fa40571c43810"
-    sni: "tyy129.magiclampcloud.com"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇨🇳_6"
     type: trojan
     server: "tyy129.magiclampcloud.com"
     port: 59443
@@ -108,15 +100,31 @@ proxies:
     sni: "tyy129.magiclampcloud.com"
     skip-cert-verify: true
     udp: true
+  - name: "🇨🇳_6"
+    type: trojan
+    server: "tyy129.magiclampcloud.com"
+    port: 59443
+    password: "4c1511d220e1437b234fa40571c43810"
+    sni: "tyy129.magiclampcloud.com"
+    skip-cert-verify: true
+    udp: true
   - name: "🇨🇳_7"
     type: trojan
-    server: "ja262.magiclampcloud.cn"
-    port: 59443
-    password: "6edc9363c16bb2f7861bc1ab96edd69f"
-    sni: "ja262.magiclampcloud.cn"
+    server: "117.149.198.190"
+    port: 10051
+    password: "a13820c547fa34c5c45515c12f0cd576"
+    sni: "zz6.91js.pw"
     skip-cert-verify: true
     udp: true
   - name: "🇨🇳_8"
+    type: trojan
+    server: "118.253.167.243"
+    port: 59443
+    password: "14bac0e43c849123ccb0fd0690f24316"
+    sni: "tyy129.magiclampcloud.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇨🇳_9"
     type: vmess
     server: "150.242.244.116"
     port: 2648
@@ -124,7 +132,7 @@ proxies:
     alterId: 0
     cipher: "auto"
     udp: true
-  - name: "🇨🇳_9"
+  - name: "🇨🇳_10"
     type: vmess
     server: "112.132.215.108"
     port: 50002
@@ -157,6 +165,7 @@ proxy-groups:
       - "🇨🇳_7"
       - "🇨🇳_8"
       - "🇨🇳_9"
+      - "🇨🇳_10"
 
 
   - name: "Load Balance"
@@ -174,6 +183,7 @@ proxy-groups:
       - "🇨🇳_7"
       - "🇨🇳_8"
       - "🇨🇳_9"
+      - "🇨🇳_10"
 
 rules:
   - MATCH,PROXY

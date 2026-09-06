@@ -62,45 +62,46 @@ dns:
 proxies:
   - name: "🇰🇿_1"
     type: vless
-    server: "178.236.16.98"
-    port: 35728
-    uuid: "a00d89f6-ab7e-4e30-a5e5-54c701d62c93"
+    server: "109.248.170.119"
+    port: 13447
+    uuid: "b573cefb-7bc7-4a42-b407-b8b534e66773"
     udp: true
     tls: true
     skip-cert-verify: true
     servername: "yahoo.com"
     client-fingerprint: "chrome"
     reality-opts:
-      public-key: "vhUFNoFcvtZAVMo8y5K5eU2V43m5q6yjmWIhp5RkFng"
-      short-id: "69a2"
+      public-key: "_0wM2ep44eAcrgf5PflKaBivknCWT6kMvQBQUoScCkE"
+      short-id: "83"
   - name: "🇰🇿_2"
     type: vless
-    server: "45.144.175.185"
-    port: 443
-    uuid: "0dc1fc26-b8e9-4296-9870-0996de3c2333"
+    server: "111.88.143.139"
+    port: 51940
+    uuid: "03464802-b517-404b-b15c-7750ffc5e78f"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "kz-1.kihsuyhf8jkiugsxb.cfd"
+    servername: "yahoo.com"
     client-fingerprint: "chrome"
     reality-opts:
-      public-key: "arLt1yI09Y_wf0u-CO1SrZ6FXlDkyC-CuvXMqeRZ_XU"
-      short-id: ""
-    flow: "xtls-rprx-vision"
+      public-key: "uPHvFb_vZ3DKL-8Et_e9OliZskdSV5U1NZ66tHfC-2Y"
+      short-id: "fd7f"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: ""
   - name: "🇰🇿_3"
     type: vless
-    server: "111.88.143.139"
-    port: 8443
-    uuid: "2b8c0574-ff6f-4975-8a06-e24ebefa1d1c"
+    server: "77.73.232.61"
+    port: 19747
+    uuid: "2a9ed01e-5455-44b4-a66a-76ee8165f0ac"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "www.cloudflare.com"
+    servername: "yahoo.com"
     client-fingerprint: "chrome"
     reality-opts:
-      public-key: "Ao_imnCEIGAaL1DZnjOK1SSPpjQOw_XJcgMpNLEZwg0"
-      short-id: "ac4b582e"
-    flow: "xtls-rprx-vision"
+      public-key: "ZO9dTeg1slvTXgVsBsaJ1BDvz_YUImTLJjbHs-GdVyM"
+      short-id: "2001"
   - name: "🇰🇿_4"
     type: vless
     server: "83.222.23.81"
@@ -117,45 +118,30 @@ proxies:
   - name: "🇰🇿_5"
     type: vless
     server: "111.88.143.139"
-    port: 51940
-    uuid: "03464802-b517-404b-b15c-7750ffc5e78f"
+    port: 8443
+    uuid: "2b8c0574-ff6f-4975-8a06-e24ebefa1d1c"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "yahoo.com"
+    servername: "www.cloudflare.com"
     client-fingerprint: "chrome"
     reality-opts:
-      public-key: "uPHvFb_vZ3DKL-8Et_e9OliZskdSV5U1NZ66tHfC-2Y"
-      short-id: "fd7f"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: ""
+      public-key: "Ao_imnCEIGAaL1DZnjOK1SSPpjQOw_XJcgMpNLEZwg0"
+      short-id: "ac4b582e"
+    flow: "xtls-rprx-vision"
   - name: "🇰🇿_6"
     type: vless
-    server: "77.73.232.61"
-    port: 19747
-    uuid: "2a9ed01e-5455-44b4-a66a-76ee8165f0ac"
+    server: "178.236.16.98"
+    port: 35728
+    uuid: "a00d89f6-ab7e-4e30-a5e5-54c701d62c93"
     udp: true
     tls: true
     skip-cert-verify: true
     servername: "yahoo.com"
     client-fingerprint: "chrome"
     reality-opts:
-      public-key: "ZO9dTeg1slvTXgVsBsaJ1BDvz_YUImTLJjbHs-GdVyM"
-      short-id: "2001"
-  - name: "🇰🇿_7"
-    type: vless
-    server: "109.248.170.119"
-    port: 13447
-    uuid: "b573cefb-7bc7-4a42-b407-b8b534e66773"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "yahoo.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "_0wM2ep44eAcrgf5PflKaBivknCWT6kMvQBQUoScCkE"
-      short-id: "83"
+      public-key: "vhUFNoFcvtZAVMo8y5K5eU2V43m5q6yjmWIhp5RkFng"
+      short-id: "69a2"
 
 proxy-groups:
   - name: "PROXY"
@@ -178,7 +164,6 @@ proxy-groups:
       - "🇰🇿_4"
       - "🇰🇿_5"
       - "🇰🇿_6"
-      - "🇰🇿_7"
 
 
   - name: "Load Balance"
@@ -193,7 +178,6 @@ proxy-groups:
       - "🇰🇿_4"
       - "🇰🇿_5"
       - "🇰🇿_6"
-      - "🇰🇿_7"
 
 rules:
   - MATCH,PROXY

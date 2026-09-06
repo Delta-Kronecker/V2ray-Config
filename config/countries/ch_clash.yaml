@@ -61,47 +61,13 @@ dns:
 
 proxies:
   - name: "🇨🇭_1"
-    type: vless
-    server: "194.154.29.149"
+    type: trojan
+    server: "83.228.224.161"
     port: 443
-    uuid: "0dc1fc26-b8e9-4296-9870-0996de3c2333"
-    udp: true
-    tls: true
+    password: "SoftNetConnect"
+    sni: "83.228.224.161"
     skip-cert-verify: true
-    servername: "ch-1.kihsuyhf8jkiugsxb.cfd"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "bnUUlOHnKSj_dwJQP-zMTTVjJ9IierDOleYNKA_kpn4"
-      short-id: ""
-    flow: "xtls-rprx-vision"
-  - name: "🇨🇭_2"
-    type: vless
-    server: "176.65.144.178"
-    port: 443
-    uuid: "1b5e85e9-fda3-4738-8ff1-1696b2bc994d"
     udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "google.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "Cve6RU_xmFPAsLiW2eIucli0lwEZyf7XFj6_rR8LukI"
-      short-id: "671047edbaa38eef"
-    flow: "xtls-rprx-vision"
-  - name: "🇨🇭_3"
-    type: vless
-    server: "ch-1.kihsuyhf8jkiugsxb.cfd"
-    port: 443
-    uuid: "0dc1fc26-b8e9-4296-9870-0996de3c2333"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "ch-1.kihsuyhf8jkiugsxb.cfd"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "bnUUlOHnKSj_dwJQP-zMTTVjJ9IierDOleYNKA_kpn4"
-      short-id: ""
-    flow: "xtls-rprx-vision"
 
 proxy-groups:
   - name: "PROXY"
@@ -119,8 +85,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇨🇭_1"
-      - "🇨🇭_2"
-      - "🇨🇭_3"
 
 
   - name: "Load Balance"
@@ -130,8 +94,6 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇨🇭_1"
-      - "🇨🇭_2"
-      - "🇨🇭_3"
 
 rules:
   - MATCH,PROXY

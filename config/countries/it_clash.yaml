@@ -62,11 +62,46 @@ dns:
 proxies:
   - name: "🇮🇹_1"
     type: vless
-    server: "204.216.216.23"
-    port: 10086
-    uuid: "9f0285ee-20ca-4953-bcdb-86a920652923"
+    server: "31.76.113.212"
+    port: 443
+    uuid: "d4cae7df-50a1-428c-bd62-881c8f3bbd90"
     udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "it.superbuba.top"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "G2U8_BvRAgcOw0sX8u_0yYdVAlD8CWLSi-uYjvH07hw"
+      short-id: "4fa44664f6a566d3"
+    flow: "xtls-rprx-vision"
   - name: "🇮🇹_2"
+    type: vless
+    server: "57.131.38.163"
+    port: 2053
+    uuid: "d4b08cd6-0903-411a-9dac-45dbdf5c9712"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.apple.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "Ej2H5ucT7qKegYcT8wODdlxa-cLHr7F4hDVUHzAhcnc"
+      short-id: "5b8a942318178e7b"
+  - name: "🇮🇹_3"
+    type: vless
+    server: "31.76.113.231"
+    port: 443
+    uuid: "d4cae7df-50a1-428c-bd62-881c8f3bbd90"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "it.superbuba.top"
+    client-fingerprint: "edge"
+    reality-opts:
+      public-key: "G2U8_BvRAgcOw0sX8u_0yYdVAlD8CWLSi-uYjvH07hw"
+      short-id: "4fa44664f6a566d3"
+    flow: "xtls-rprx-vision"
+  - name: "🇮🇹_4"
     type: vless
     server: "172.238.232.239"
     port: 32833
@@ -80,20 +115,21 @@ proxies:
       public-key: "PaTDdYBrlh1xBixdI0igvRRkf0vnUwMRzi-4oDyfS20"
       short-id: "a0a305ccc8e94aa8"
     flow: "xtls-rprx-vision"
-  - name: "🇮🇹_3"
+  - name: "🇮🇹_5"
     type: vless
-    server: "57.131.38.163"
-    port: 2053
-    uuid: "d4b08cd6-0903-411a-9dac-45dbdf5c9712"
+    server: "31.77.201.33"
+    port: 443
+    uuid: "d4cae7df-50a1-428c-bd62-881c8f3bbd90"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "www.apple.com"
+    servername: "it.superbuba.top"
     client-fingerprint: "firefox"
     reality-opts:
-      public-key: "Ej2H5ucT7qKegYcT8wODdlxa-cLHr7F4hDVUHzAhcnc"
-      short-id: "5b8a942318178e7b"
-  - name: "🇮🇹_4"
+      public-key: "G2U8_BvRAgcOw0sX8u_0yYdVAlD8CWLSi-uYjvH07hw"
+      short-id: "4fa44664f6a566d3"
+    flow: "xtls-rprx-vision"
+  - name: "🇮🇹_6"
     type: trojan
     server: "91.193.5.121"
     port: 8443
@@ -101,14 +137,14 @@ proxies:
     sni: "ngepz.ambercc.filegear-sg.me"
     skip-cert-verify: true
     udp: true
-  - name: "🇮🇹_5"
+  - name: "🇮🇹_7"
     type: ss
     server: "57.131.48.45"
     port: 8388
     cipher: "aes-256-gcm"
     password: "itzvpn@321"
     udp: true
-  - name: "🇮🇹_6"
+  - name: "🇮🇹_8"
     type: ss
     server: "57.131.48.45"
     port: 8388
@@ -137,6 +173,8 @@ proxy-groups:
       - "🇮🇹_4"
       - "🇮🇹_5"
       - "🇮🇹_6"
+      - "🇮🇹_7"
+      - "🇮🇹_8"
 
 
   - name: "Load Balance"
@@ -151,6 +189,8 @@ proxy-groups:
       - "🇮🇹_4"
       - "🇮🇹_5"
       - "🇮🇹_6"
+      - "🇮🇹_7"
+      - "🇮🇹_8"
 
 rules:
   - MATCH,PROXY

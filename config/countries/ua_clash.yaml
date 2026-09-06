@@ -61,38 +61,6 @@ dns:
 
 proxies:
   - name: "🇺🇦_1"
-    type: vless
-    server: "91.224.86.107"
-    port: 9830
-    uuid: "86221972-81a1-41f4-a48c-c512af05777c"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "dl.google.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "bnRIb3Er1i-K6NGGByCO9UbGfOvu43ZoiK7ulPd1SzU"
-      short-id: "aa"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "grpc-tunnel"
-  - name: "🇺🇦_2"
-    type: vless
-    server: "91.224.86.107"
-    port: 9830
-    uuid: "f4685d27-73e3-4588-9622-add50b84046a"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "dl.google.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "bnRIb3Er1i-K6NGGByCO9UbGfOvu43ZoiK7ulPd1SzU"
-      short-id: "aabbccdd"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "grpc-tunnel"
-  - name: "🇺🇦_3"
     type: trojan
     server: "130.0.236.88"
     port: 443
@@ -117,8 +85,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇺🇦_1"
-      - "🇺🇦_2"
-      - "🇺🇦_3"
 
 
   - name: "Load Balance"
@@ -128,8 +94,6 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇺🇦_1"
-      - "🇺🇦_2"
-      - "🇺🇦_3"
 
 rules:
   - MATCH,PROXY

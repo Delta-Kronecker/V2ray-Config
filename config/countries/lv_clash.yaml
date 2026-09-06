@@ -62,46 +62,6 @@ dns:
 proxies:
   - name: "🇱🇻_1"
     type: vless
-    server: "laoye.in-gect.fun"
-    port: 2083
-    uuid: "70e20b2e-3b1f-4c25-9a3d-9240570391bb"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "laoye.in-gect.fun"
-    client-fingerprint: "chrome"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "grpc"
-  - name: "🇱🇻_2"
-    type: vless
-    server: "89.36.161.222"
-    port: 2083
-    uuid: "70e20b2e-3b1f-4c25-9a3d-9240570391bb"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "laoye.in-gect.fun"
-    client-fingerprint: "ios"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "grpc"
-  - name: "🇱🇻_3"
-    type: vless
-    server: "89.36.161.222"
-    port: 2053
-    uuid: "70e20b2e-3b1f-4c25-9a3d-9240570391bb"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "vk.ru"
-    client-fingerprint: "edge"
-    reality-opts:
-      public-key: "cGVu5j95KoeHBkWXveyTKolORbdvZm9g1T6yyo64ZBg"
-      short-id: "d26f4703cdd30f4e"
-    flow: "xtls-rprx-vision"
-  - name: "🇱🇻_4"
-    type: vless
     server: "138.124.180.137"
     port: 443
     uuid: "5234b2b7-5e07-422c-8159-d62a676c00c6"
@@ -114,7 +74,33 @@ proxies:
       public-key: "GBdkyDLfr0LIZo_94Xv8ycAKOmkjArYzwJAEMhuXX2c"
       short-id: "33acba1b"
     flow: "xtls-rprx-vision"
-  - name: "🇱🇻_5"
+  - name: "🇱🇻_2"
+    type: vless
+    server: "laoye.in-gect.fun"
+    port: 2083
+    uuid: "70e20b2e-3b1f-4c25-9a3d-9240570391bb"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "laoye.in-gect.fun"
+    client-fingerprint: "chrome"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "grpc"
+  - name: "🇱🇻_3"
+    type: vless
+    server: "89.36.161.222"
+    port: 2083
+    uuid: "70e20b2e-3b1f-4c25-9a3d-9240570391bb"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "laoye.in-gect.fun"
+    client-fingerprint: "ios"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "grpc"
+  - name: "🇱🇻_4"
     type: vless
     server: "laoye.in-gect.fun"
     port: 2053
@@ -128,7 +114,7 @@ proxies:
       public-key: "cGVu5j95KoeHBkWXveyTKolORbdvZm9g1T6yyo64ZBg"
       short-id: "d26f4703cdd30f4e"
     flow: "xtls-rprx-vision"
-  - name: "🇱🇻_6"
+  - name: "🇱🇻_5"
     type: trojan
     server: "31.57.61.76"
     port: 2053
@@ -136,7 +122,7 @@ proxies:
     sni: "Koma-YT.PAGeS.Dev"
     skip-cert-verify: true
     udp: true
-  - name: "🇱🇻_7"
+  - name: "🇱🇻_6"
     type: trojan
     server: "tr-latvia1.unlimited-access.ru"
     port: 443
@@ -144,7 +130,7 @@ proxies:
     sni: "tr-latvia1.unlimited-access.ru"
     skip-cert-verify: true
     udp: true
-  - name: "🇱🇻_8"
+  - name: "🇱🇻_7"
     type: trojan
     server: "138.124.63.106"
     port: 443
@@ -175,7 +161,6 @@ proxy-groups:
       - "🇱🇻_5"
       - "🇱🇻_6"
       - "🇱🇻_7"
-      - "🇱🇻_8"
 
 
   - name: "Load Balance"
@@ -191,7 +176,6 @@ proxy-groups:
       - "🇱🇻_5"
       - "🇱🇻_6"
       - "🇱🇻_7"
-      - "🇱🇻_8"
 
 rules:
   - MATCH,PROXY

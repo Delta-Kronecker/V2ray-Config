@@ -62,20 +62,6 @@ dns:
 proxies:
   - name: "🇪🇸_1"
     type: vless
-    server: "185.254.205.79"
-    port: 19842
-    uuid: "43c23116-1115-4af4-a0f0-56f02841a605"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.tesla.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "sfOfuQeJBlKfDnPL_EMWUxMIiFAN8BNKjtWDUvlsjzM"
-      short-id: "25ebc9e0a912"
-    flow: "xtls-rprx-vision"
-  - name: "🇪🇸_2"
-    type: vless
     server: "93.189.94.67"
     port: 48296
     uuid: "898537d9-ce3a-4937-bbef-c0fa61c07791"
@@ -88,7 +74,7 @@ proxies:
       public-key: "ga1wUMMknP4pwJfUNOOvD9I35XV4q3c73byXPYbRxBE"
       short-id: "109657bb2dbe99"
     flow: "xtls-rprx-vision"
-  - name: "🇪🇸_3"
+  - name: "🇪🇸_2"
     type: vless
     server: "193.238.154.18"
     port: 443
@@ -102,26 +88,34 @@ proxies:
       public-key: "V3uMWEfDQAPFP6o5ED8Jtk0rJBPs7IlOLf_Wh8w_jXc"
       short-id: "76132b3b39704c44"
     flow: "xtls-rprx-vision"
+  - name: "🇪🇸_3"
+    type: trojan
+    server: "65.20.102.54"
+    port: 443
+    password: "842b5f9dd11e458d8613c907c4cc5723"
+    sni: "www.gpt123.one"
+    skip-cert-verify: true
+    udp: true
   - name: "🇪🇸_4"
+    type: ss
+    server: "140.174.184.5"
+    port: 8388
+    cipher: "chacha20-ietf-poly1305"
+    password: "qItG8SueYQcP"
+    udp: true
+  - name: "🇪🇸_5"
     type: ss
     server: "108.181.121.226"
     port: 8388
     cipher: "chacha20-ietf-poly1305"
     password: "WSyL4XTwNsdv"
     udp: true
-  - name: "🇪🇸_5"
-    type: ss
-    server: "140.174.184.5"
-    port: 8388
-    cipher: "chacha20-ietf-poly1305"
-    password: "qItG8SueYQcP"
-    udp: true
   - name: "🇪🇸_6"
     type: ss
-    server: "140.174.184.5"
+    server: "108.181.121.226"
     port: 8388
     cipher: "chacha20-ietf-poly1305"
-    password: "qItG8SueYQcP"
+    password: "WSyL4XTwNsdv"
     udp: true
   - name: "🇪🇸_7"
     type: ss
@@ -139,10 +133,10 @@ proxies:
     udp: true
   - name: "🇪🇸_9"
     type: ss
-    server: "108.181.121.226"
+    server: "140.174.184.5"
     port: 8388
     cipher: "chacha20-ietf-poly1305"
-    password: "WSyL4XTwNsdv"
+    password: "qItG8SueYQcP"
     udp: true
 
 proxy-groups:

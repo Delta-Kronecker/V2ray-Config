@@ -60,48 +60,22 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇲🇩_1"
-    type: vless
-    server: "85.120.252.15"
-    port: 443
-    uuid: "dabb9a19-03ab-4cdf-8963-d3c45eb0f80d"
-    udp: true
-    tls: true
+  - name: "🇶🇦_1"
+    type: trojan
+    server: "z-jp2.251313.xyz"
+    port: 10008
+    password: "ultra@kWZdAzt_IH593eGLRjdxnBZ0"
+    sni: "www.cloudflare.com"
     skip-cert-verify: true
-    servername: "mold.freeinternat.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "bZpzmeWiEJyJQy0W2hHc34Nr6BuFXj1UDd80Cbwh1Fk"
-      short-id: "ff776ff77be48b88"
-    flow: "xtls-rprx-vision"
-  - name: "🇲🇩_2"
-    type: vless
-    server: "mold.freeinternat.com"
-    port: 443
-    uuid: "dabb9a19-03ab-4cdf-8963-d3c45eb0f80d"
     udp: true
-    tls: true
+  - name: "🇶🇦_2"
+    type: trojan
+    server: "z-jp1.251313.xyz"
+    port: 10008
+    password: "ultra@kWZdAzt_IH593eGLRjdxnBZ0"
+    sni: "www.cloudflare.com"
     skip-cert-verify: true
-    servername: "mold.freeinternat.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "bZpzmeWiEJyJQy0W2hHc34Nr6BuFXj1UDd80Cbwh1Fk"
-      short-id: "ff776ff77be48b88"
-    flow: "xtls-rprx-vision"
-  - name: "🇲🇩_3"
-    type: vless
-    server: "31.77.220.184"
-    port: 7443
-    uuid: "5a92a9d2-3067-49cd-bfc5-989bbdfc5d52"
     udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "hotcoals.aeternavpn.space"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "RWu6ktBE4DFbUz_prmz-5KuolLhO53ehh19mNxhP-wI"
-      short-id: "a1b2c3d4"
-    flow: "xtls-rprx-vision"
 
 proxy-groups:
   - name: "PROXY"
@@ -118,9 +92,8 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇲🇩_1"
-      - "🇲🇩_2"
-      - "🇲🇩_3"
+      - "🇶🇦_1"
+      - "🇶🇦_2"
 
 
   - name: "Load Balance"
@@ -129,9 +102,8 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇲🇩_1"
-      - "🇲🇩_2"
-      - "🇲🇩_3"
+      - "🇶🇦_1"
+      - "🇶🇦_2"
 
 rules:
   - MATCH,PROXY
