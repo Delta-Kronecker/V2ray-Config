@@ -60,21 +60,13 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇸🇩_1"
-    type: trojan
-    server: "z-jp2.251313.xyz"
-    port: 10012
-    password: "ultra@kWZdAzt_IH593eGLRjdxnBZ0"
-    sni: "www.cloudflare.com"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇸🇩_2"
-    type: trojan
-    server: "z-jp1.251313.xyz"
-    port: 10012
-    password: "ultra@kWZdAzt_IH593eGLRjdxnBZ0"
-    sni: "www.cloudflare.com"
-    skip-cert-verify: true
+  - name: "🇦🇪_1"
+    type: vmess
+    server: "109.61.18.188"
+    port: 80
+    uuid: "c1122444-af45-4b6b-bc27-ef8de60ba7e2"
+    alterId: 0
+    cipher: "auto"
     udp: true
 
 proxy-groups:
@@ -92,8 +84,7 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇸🇩_1"
-      - "🇸🇩_2"
+      - "🇦🇪_1"
 
 
   - name: "Load Balance"
@@ -102,8 +93,7 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇸🇩_1"
-      - "🇸🇩_2"
+      - "🇦🇪_1"
 
 rules:
   - MATCH,PROXY

@@ -61,6 +61,12 @@ dns:
 
 proxies:
   - name: "🇧🇪_1"
+    type: vless
+    server: "91.218.230.240"
+    port: 20443
+    uuid: "d4719d52-c3fc-4651-98e1-535dbd77dbcf"
+    udp: true
+  - name: "🇧🇪_2"
     type: trojan
     server: "94.126.225.96"
     port: 443
@@ -85,6 +91,7 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇧🇪_1"
+      - "🇧🇪_2"
 
 
   - name: "Load Balance"
@@ -94,6 +101,7 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇧🇪_1"
+      - "🇧🇪_2"
 
 rules:
   - MATCH,PROXY

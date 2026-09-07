@@ -62,17 +62,17 @@ dns:
 proxies:
   - name: "🇪🇸_1"
     type: vless
-    server: "93.189.94.67"
-    port: 48296
-    uuid: "898537d9-ce3a-4937-bbef-c0fa61c07791"
+    server: "185.254.205.79"
+    port: 19842
+    uuid: "43c23116-1115-4af4-a0f0-56f02841a605"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "www.sony.com"
+    servername: "www.tesla.com"
     client-fingerprint: "chrome"
     reality-opts:
-      public-key: "ga1wUMMknP4pwJfUNOOvD9I35XV4q3c73byXPYbRxBE"
-      short-id: "109657bb2dbe99"
+      public-key: "sfOfuQeJBlKfDnPL_EMWUxMIiFAN8BNKjtWDUvlsjzM"
+      short-id: "25ebc9e0a912"
     flow: "xtls-rprx-vision"
   - name: "🇪🇸_2"
     type: vless
@@ -89,26 +89,39 @@ proxies:
       short-id: "76132b3b39704c44"
     flow: "xtls-rprx-vision"
   - name: "🇪🇸_3"
-    type: trojan
-    server: "65.20.102.54"
+    type: vless
+    server: "107.189.19.27"
     port: 443
-    password: "842b5f9dd11e458d8613c907c4cc5723"
-    sni: "www.gpt123.one"
-    skip-cert-verify: true
+    uuid: "813a385c-f26f-48b5-9bbb-53204a9c5bcc"
     udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "cdn.dodostatic.net"
+    client-fingerprint: "qq"
+    reality-opts:
+      public-key: "Sgocj9v63XdHU04TV3-Pk141YPIT_E-UgLr9u4OkE0E"
+      short-id: "d27201f7bf5874f9"
+    flow: "xtls-rprx-vision"
   - name: "🇪🇸_4"
+    type: vless
+    server: "93.189.94.67"
+    port: 48296
+    uuid: "898537d9-ce3a-4937-bbef-c0fa61c07791"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.sony.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "ga1wUMMknP4pwJfUNOOvD9I35XV4q3c73byXPYbRxBE"
+      short-id: "109657bb2dbe99"
+    flow: "xtls-rprx-vision"
+  - name: "🇪🇸_5"
     type: ss
     server: "140.174.184.5"
     port: 8388
     cipher: "chacha20-ietf-poly1305"
     password: "qItG8SueYQcP"
-    udp: true
-  - name: "🇪🇸_5"
-    type: ss
-    server: "108.181.121.226"
-    port: 8388
-    cipher: "chacha20-ietf-poly1305"
-    password: "WSyL4XTwNsdv"
     udp: true
   - name: "🇪🇸_6"
     type: ss
@@ -133,10 +146,25 @@ proxies:
     udp: true
   - name: "🇪🇸_9"
     type: ss
+    server: "108.181.121.226"
+    port: 8388
+    cipher: "chacha20-ietf-poly1305"
+    password: "WSyL4XTwNsdv"
+    udp: true
+  - name: "🇪🇸_10"
+    type: ss
     server: "140.174.184.5"
     port: 8388
     cipher: "chacha20-ietf-poly1305"
     password: "qItG8SueYQcP"
+    udp: true
+  - name: "🇪🇸_11"
+    type: vmess
+    server: "85.90.217.42"
+    port: 22324
+    uuid: "04621bae-ab36-11ec-b909-0242ac120002"
+    alterId: 0
+    cipher: "auto"
     udp: true
 
 proxy-groups:
@@ -163,6 +191,8 @@ proxy-groups:
       - "🇪🇸_7"
       - "🇪🇸_8"
       - "🇪🇸_9"
+      - "🇪🇸_10"
+      - "🇪🇸_11"
 
 
   - name: "Load Balance"
@@ -180,6 +210,8 @@ proxy-groups:
       - "🇪🇸_7"
       - "🇪🇸_8"
       - "🇪🇸_9"
+      - "🇪🇸_10"
+      - "🇪🇸_11"
 
 rules:
   - MATCH,PROXY

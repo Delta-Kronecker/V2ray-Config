@@ -61,6 +61,12 @@ dns:
 
 proxies:
   - name: "🇨🇴_1"
+    type: vless
+    server: "149.130.188.248"
+    port: 62145
+    uuid: "8fb65472-5957-4f64-ba2d-b5812b2f155a"
+    udp: true
+  - name: "🇨🇴_2"
     type: ss
     server: "149.104.107.41"
     port: 8090
@@ -84,6 +90,7 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇨🇴_1"
+      - "🇨🇴_2"
 
 
   - name: "Load Balance"
@@ -93,6 +100,7 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇨🇴_1"
+      - "🇨🇴_2"
 
 rules:
   - MATCH,PROXY
