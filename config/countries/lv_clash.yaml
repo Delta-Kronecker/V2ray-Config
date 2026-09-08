@@ -89,19 +89,32 @@ proxies:
       grpc-service-name: "grpc"
   - name: "🇱🇻_3"
     type: vless
-    server: "31.76.62.250"
-    port: 443
-    uuid: "14409b0c-2091-4bc7-9845-2485a31ac38a"
+    server: "laoye.in-gect.fun"
+    port: 2053
+    uuid: "70e20b2e-3b1f-4c25-9a3d-9240570391bb"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "latin.roastedtoad.best"
+    servername: "vk.ru"
     client-fingerprint: "edge"
     reality-opts:
-      public-key: "bZpzmeWiEJyJQy0W2hHc34Nr6BuFXj1UDd80Cbwh1Fk"
-      short-id: "ff776ff77be48b88"
+      public-key: "cGVu5j95KoeHBkWXveyTKolORbdvZm9g1T6yyo64ZBg"
+      short-id: "d26f4703cdd30f4e"
     flow: "xtls-rprx-vision"
   - name: "🇱🇻_4"
+    type: vless
+    server: "laoye.in-gect.fun"
+    port: 2083
+    uuid: "70e20b2e-3b1f-4c25-9a3d-9240570391bb"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "laoye.in-gect.fun"
+    client-fingerprint: "chrome"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "grpc"
+  - name: "🇱🇻_5"
     type: vless
     server: "138.124.180.137"
     port: 443
@@ -115,33 +128,14 @@ proxies:
       public-key: "GBdkyDLfr0LIZo_94Xv8ycAKOmkjArYzwJAEMhuXX2c"
       short-id: "33acba1b"
     flow: "xtls-rprx-vision"
-  - name: "🇱🇻_5"
-    type: vless
-    server: "laoye.in-gect.fun"
-    port: 2083
-    uuid: "70e20b2e-3b1f-4c25-9a3d-9240570391bb"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "laoye.in-gect.fun"
-    client-fingerprint: "chrome"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "grpc"
   - name: "🇱🇻_6"
-    type: vless
-    server: "laoye.in-gect.fun"
-    port: 2053
-    uuid: "70e20b2e-3b1f-4c25-9a3d-9240570391bb"
-    udp: true
-    tls: true
+    type: trojan
+    server: "138.124.63.106"
+    port: 443
+    password: "kxHw-Dk-e9dffgzYszMlEqLJ92AnY3Pi"
+    sni: "tr-latvia1.unlimited-access.ru"
     skip-cert-verify: true
-    servername: "vk.ru"
-    client-fingerprint: "edge"
-    reality-opts:
-      public-key: "cGVu5j95KoeHBkWXveyTKolORbdvZm9g1T6yyo64ZBg"
-      short-id: "d26f4703cdd30f4e"
-    flow: "xtls-rprx-vision"
+    udp: true
   - name: "🇱🇻_7"
     type: trojan
     server: "31.57.61.76"
@@ -151,14 +145,6 @@ proxies:
     skip-cert-verify: true
     udp: true
   - name: "🇱🇻_8"
-    type: trojan
-    server: "138.124.63.106"
-    port: 443
-    password: "kxHw-Dk-e9dffgzYszMlEqLJ92AnY3Pi"
-    sni: "tr-latvia1.unlimited-access.ru"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇱🇻_9"
     type: trojan
     server: "tr-latvia1.unlimited-access.ru"
     port: 443
@@ -190,7 +176,6 @@ proxy-groups:
       - "🇱🇻_6"
       - "🇱🇻_7"
       - "🇱🇻_8"
-      - "🇱🇻_9"
 
 
   - name: "Load Balance"
@@ -207,7 +192,6 @@ proxy-groups:
       - "🇱🇻_6"
       - "🇱🇻_7"
       - "🇱🇻_8"
-      - "🇱🇻_9"
 
 rules:
   - MATCH,PROXY

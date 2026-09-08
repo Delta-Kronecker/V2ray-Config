@@ -62,6 +62,20 @@ dns:
 proxies:
   - name: "🇦🇱_1"
     type: vless
+    server: "95.85.241.209"
+    port: 443
+    uuid: "14f4be39-cb89-4f2b-8200-704666b6fa4e"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "google.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "vZ22ThhkpXUd5-tY-v5TTrouLHjgYYmeQgqeLt7HRz0"
+      short-id: ""
+    flow: "xtls-rprx-vision"
+  - name: "🇦🇱_2"
+    type: vless
     server: "95.85.224.51"
     port: 443
     uuid: "342ab7e4-5a89-0001-8809-304120d4aa83"
@@ -91,6 +105,7 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇦🇱_1"
+      - "🇦🇱_2"
 
 
   - name: "Load Balance"
@@ -100,6 +115,7 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇦🇱_1"
+      - "🇦🇱_2"
 
 rules:
   - MATCH,PROXY

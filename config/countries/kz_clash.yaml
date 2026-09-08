@@ -62,32 +62,6 @@ dns:
 proxies:
   - name: "🇰🇿_1"
     type: vless
-    server: "109.248.170.119"
-    port: 13447
-    uuid: "b573cefb-7bc7-4a42-b407-b8b534e66773"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "yahoo.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "_0wM2ep44eAcrgf5PflKaBivknCWT6kMvQBQUoScCkE"
-      short-id: "83"
-  - name: "🇰🇿_2"
-    type: vless
-    server: "83.222.23.81"
-    port: 38065
-    uuid: "4b9063e0-3288-44e9-9aac-80fbfce323a0"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "yahoo.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "dSSDPTK6AHfAdRAXD9i4rzqcNIY65RxlF25UyCKdiyo"
-      short-id: "fa"
-  - name: "🇰🇿_3"
-    type: vless
     server: "111.88.143.139"
     port: 51940
     uuid: "03464802-b517-404b-b15c-7750ffc5e78f"
@@ -102,20 +76,7 @@ proxies:
     network: grpc
     grpc-opts:
       grpc-service-name: ""
-  - name: "🇰🇿_4"
-    type: vless
-    server: "77.73.232.61"
-    port: 19747
-    uuid: "2a9ed01e-5455-44b4-a66a-76ee8165f0ac"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "yahoo.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "ZO9dTeg1slvTXgVsBsaJ1BDvz_YUImTLJjbHs-GdVyM"
-      short-id: "2001"
-  - name: "🇰🇿_5"
+  - name: "🇰🇿_2"
     type: vless
     server: "178.236.16.98"
     port: 35728
@@ -128,7 +89,20 @@ proxies:
     reality-opts:
       public-key: "vhUFNoFcvtZAVMo8y5K5eU2V43m5q6yjmWIhp5RkFng"
       short-id: "69a2"
-  - name: "🇰🇿_6"
+  - name: "🇰🇿_3"
+    type: vless
+    server: "83.222.23.81"
+    port: 38065
+    uuid: "4b9063e0-3288-44e9-9aac-80fbfce323a0"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "yahoo.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "dSSDPTK6AHfAdRAXD9i4rzqcNIY65RxlF25UyCKdiyo"
+      short-id: "fa"
+  - name: "🇰🇿_4"
     type: vless
     server: "111.88.143.139"
     port: 8443
@@ -142,6 +116,19 @@ proxies:
       public-key: "Ao_imnCEIGAaL1DZnjOK1SSPpjQOw_XJcgMpNLEZwg0"
       short-id: "ac4b582e"
     flow: "xtls-rprx-vision"
+  - name: "🇰🇿_5"
+    type: vless
+    server: "77.73.232.61"
+    port: 19747
+    uuid: "2a9ed01e-5455-44b4-a66a-76ee8165f0ac"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "yahoo.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "ZO9dTeg1slvTXgVsBsaJ1BDvz_YUImTLJjbHs-GdVyM"
+      short-id: "2001"
 
 proxy-groups:
   - name: "PROXY"
@@ -163,7 +150,6 @@ proxy-groups:
       - "🇰🇿_3"
       - "🇰🇿_4"
       - "🇰🇿_5"
-      - "🇰🇿_6"
 
 
   - name: "Load Balance"
@@ -177,7 +163,6 @@ proxy-groups:
       - "🇰🇿_3"
       - "🇰🇿_4"
       - "🇰🇿_5"
-      - "🇰🇿_6"
 
 rules:
   - MATCH,PROXY
