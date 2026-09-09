@@ -61,34 +61,6 @@ dns:
 
 proxies:
   - name: "🇭🇺_1"
-    type: vless
-    server: "45.9.168.17"
-    port: 443
-    uuid: "5d4a87fa-16f1-4b65-b217-225a31e36239"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "hu.convert-flow.net"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "8ZYjmjb0b2QJKCGMrcdhQNV28jZZPCKgIQbIdqChQ0w"
-      short-id: "00a61d55a07de885"
-    flow: "xtls-rprx-vision"
-  - name: "🇭🇺_2"
-    type: vless
-    server: "2.26.139.66"
-    port: 443
-    uuid: "90546412-d9c5-4442-831b-e9b7ca3643de"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "kukuruza.mycdn-me.ru"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "-qRasoN1QIcSdRL937b6s-Y2qOb-9OFmlaHBi7UcOSM"
-      short-id: "e17b4d9a8c1f3526"
-    flow: "xtls-rprx-vision"
-  - name: "🇭🇺_3"
     type: trojan
     server: "hu2.vpnjantit.com"
     port: 4443
@@ -113,8 +85,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇭🇺_1"
-      - "🇭🇺_2"
-      - "🇭🇺_3"
 
 
   - name: "Load Balance"
@@ -124,8 +94,6 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇭🇺_1"
-      - "🇭🇺_2"
-      - "🇭🇺_3"
 
 rules:
   - MATCH,PROXY

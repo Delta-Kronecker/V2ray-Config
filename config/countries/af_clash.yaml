@@ -60,20 +60,22 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇮🇶_1"
-    type: vless
-    server: "51.161.204.242"
-    port: 443
-    uuid: "a14b736b-a92a-48d6-a596-5d31f7378ded"
-    udp: true
-    tls: true
+  - name: "🇦🇫_1"
+    type: trojan
+    server: "z-jp1.1card.cc"
+    port: 10009
+    password: "ultra@kWZdAzt_IH593eGLRjdxnBZ0"
+    sni: "www.cloudflare.com"
     skip-cert-verify: true
-    servername: "www.cloudflare.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "a2qGjvUPq6Nz5FTbn_MSHp-055q2h8YXqIL5VIJ5zwE"
-      short-id: "d15c17cef9b2e456"
-    flow: "xtls-rprx-vision"
+    udp: true
+  - name: "🇦🇫_2"
+    type: trojan
+    server: "z-jp2.1card.cc"
+    port: 10009
+    password: "ultra@kWZdAzt_IH593eGLRjdxnBZ0"
+    sni: "www.cloudflare.com"
+    skip-cert-verify: true
+    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -90,7 +92,8 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇮🇶_1"
+      - "🇦🇫_1"
+      - "🇦🇫_2"
 
 
   - name: "Load Balance"
@@ -99,7 +102,8 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇮🇶_1"
+      - "🇦🇫_1"
+      - "🇦🇫_2"
 
 rules:
   - MATCH,PROXY

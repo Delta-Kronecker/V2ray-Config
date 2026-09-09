@@ -126,24 +126,24 @@ proxies:
     udp: true
   - name: "🇪🇸_6"
     type: ss
-    server: "64.177.32.29"
-    port: 8388
-    cipher: "aes-256-gcm"
-    password: "wBYiDjDDyFqcBnNl"
-    udp: true
-  - name: "🇪🇸_7"
-    type: ss
     server: "140.174.184.5"
     port: 8388
     cipher: "chacha20-ietf-poly1305"
     password: "qItG8SueYQcP"
     udp: true
-  - name: "🇪🇸_8"
+  - name: "🇪🇸_7"
     type: ss
     server: "108.181.121.226"
     port: 8388
     cipher: "chacha20-ietf-poly1305"
     password: "WSyL4XTwNsdv"
+    udp: true
+  - name: "🇪🇸_8"
+    type: ss
+    server: "140.174.184.5"
+    port: 8388
+    cipher: "chacha20-ietf-poly1305"
+    password: "qItG8SueYQcP"
     udp: true
   - name: "🇪🇸_9"
     type: ss
@@ -154,24 +154,17 @@ proxies:
     udp: true
   - name: "🇪🇸_10"
     type: ss
+    server: "140.174.184.5"
+    port: 8388
+    cipher: "chacha20-ietf-poly1305"
+    password: "qItG8SueYQcP"
+    udp: true
+  - name: "🇪🇸_11"
+    type: ss
     server: "108.181.121.226"
     port: 8388
     cipher: "chacha20-ietf-poly1305"
     password: "WSyL4XTwNsdv"
-    udp: true
-  - name: "🇪🇸_11"
-    type: ss
-    server: "140.174.184.5"
-    port: 8388
-    cipher: "chacha20-ietf-poly1305"
-    password: "qItG8SueYQcP"
-    udp: true
-  - name: "🇪🇸_12"
-    type: ss
-    server: "140.174.184.5"
-    port: 8388
-    cipher: "chacha20-ietf-poly1305"
-    password: "qItG8SueYQcP"
     udp: true
 
 proxy-groups:
@@ -200,7 +193,6 @@ proxy-groups:
       - "🇪🇸_9"
       - "🇪🇸_10"
       - "🇪🇸_11"
-      - "🇪🇸_12"
 
 
   - name: "Load Balance"
@@ -220,7 +212,6 @@ proxy-groups:
       - "🇪🇸_9"
       - "🇪🇸_10"
       - "🇪🇸_11"
-      - "🇪🇸_12"
 
 rules:
   - MATCH,PROXY

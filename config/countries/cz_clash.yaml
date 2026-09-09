@@ -62,27 +62,14 @@ dns:
 proxies:
   - name: "🇨🇿_1"
     type: vless
-    server: "node.cz.teleserch.ru"
-    port: 443
-    uuid: "cec9a167-6381-4752-9828-a92ab6e6ebdd"
+    server: "194.87.59.9"
+    port: 2085
+    uuid: "ffa722c8-da3f-4371-a0e0-6afcc9f3f93b"
     udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "node.cz.teleserch.ru"
-    client-fingerprint: "chrome"
-    flow: "xtls-rprx-vision"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "vless"
   - name: "🇨🇿_2"
-    type: vless
-    server: "195.133.35.197"
-    port: 443
-    uuid: "cec9a167-6381-4752-9828-a92ab6e6ebdd"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "node.cz.teleserch.ru"
-    client-fingerprint: "firefox"
-    flow: "xtls-rprx-vision"
-  - name: "🇨🇿_3"
     type: trojan
     server: "46.8.113.142"
     port: 443
@@ -90,7 +77,7 @@ proxies:
     sni: "ch-2.bexum.fun"
     skip-cert-verify: true
     udp: true
-  - name: "🇨🇿_4"
+  - name: "🇨🇿_3"
     type: trojan
     server: "ch-2.bexum.fun"
     port: 443
@@ -117,7 +104,6 @@ proxy-groups:
       - "🇨🇿_1"
       - "🇨🇿_2"
       - "🇨🇿_3"
-      - "🇨🇿_4"
 
 
   - name: "Load Balance"
@@ -129,7 +115,6 @@ proxy-groups:
       - "🇨🇿_1"
       - "🇨🇿_2"
       - "🇨🇿_3"
-      - "🇨🇿_4"
 
 rules:
   - MATCH,PROXY
