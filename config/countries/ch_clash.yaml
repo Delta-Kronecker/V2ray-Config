@@ -61,6 +61,34 @@ dns:
 
 proxies:
   - name: "🇨🇭_1"
+    type: vless
+    server: "131.123.34.42"
+    port: 443
+    uuid: "54ee5e59-55a3-4599-83ff-0c67b3f411b2"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sheetpeek.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "pX9uknHGLC9I26TT5kq4bIAljtX2AGWLK23EMgn6xFo"
+      short-id: "84be686ea1d16478"
+    flow: "xtls-rprx-vision"
+  - name: "🇨🇭_2"
+    type: vless
+    server: "45.90.59.15"
+    port: 443
+    uuid: "3950b45e-740d-4dca-ac95-505ec8534592"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.cloudflare.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "P7S4UPFlQbmiBr4txyy8NZIMTrmO3UdxyH16WBU-YzY"
+      short-id: "19253fae84102271"
+    flow: "xtls-rprx-vision"
+  - name: "🇨🇭_3"
     type: trojan
     server: "83.228.224.161"
     port: 443
@@ -85,6 +113,8 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇨🇭_1"
+      - "🇨🇭_2"
+      - "🇨🇭_3"
 
 
   - name: "Load Balance"
@@ -94,6 +124,8 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇨🇭_1"
+      - "🇨🇭_2"
+      - "🇨🇭_3"
 
 rules:
   - MATCH,PROXY

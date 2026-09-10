@@ -76,6 +76,34 @@ proxies:
     flow: "xtls-rprx-vision"
   - name: "🇲🇾_2"
     type: vless
+    server: "my1.miyazono-kaori.com"
+    port: 443
+    uuid: "e98cb2e2-4c82-4704-84ca-ac47d00c3e32"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.setel.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "t3HU7p5iYjE9Lcq2-QHTXZFhpAvoXljTNDgmFkFN-Tc"
+      short-id: "99f8972e3dd5ed"
+    flow: "xtls-rprx-vision"
+  - name: "🇲🇾_3"
+    type: vless
+    server: "my2.miyazono-kaori.com"
+    port: 443
+    uuid: "e98cb2e2-4c82-4704-84ca-ac47d00c3e32"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.setel.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "R6q8qhMxgq3ynJPUgudaRkcDXj0qgoc_UU1N0SWGLwM"
+      short-id: "ed77ac35a310"
+    flow: "xtls-rprx-vision"
+  - name: "🇲🇾_4"
+    type: vless
     server: "56.69.159.191"
     port: 53271
     uuid: "e8358eb5-7210-4cf8-982f-68af141b7694"
@@ -88,22 +116,6 @@ proxies:
       public-key: "1P58ZYmo81kPDnL4U7SnEUA-aT2R86l-o6dbFXoeDjc"
       short-id: "0a9bd9db19578964"
     flow: "xtls-rprx-vision"
-  - name: "🇲🇾_3"
-    type: trojan
-    server: "202.43.102.57"
-    port: 443
-    password: "6e1b9a65-884f-3aa9-9469-bf6ec0f08610"
-    sni: "45.32.28.232"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇲🇾_4"
-    type: trojan
-    server: "47.250.84.25"
-    port: 443
-    password: "5931134d1cde66bf83a54acdfebe7ab2"
-    sni: "moltbot.doctoroyy.net"
-    skip-cert-verify: true
-    udp: true
   - name: "🇲🇾_5"
     type: trojan
     server: "my.singaporenodeserverone.kyiv.ua"
@@ -113,33 +125,42 @@ proxies:
     skip-cert-verify: true
     udp: true
   - name: "🇲🇾_6"
-    type: ss
-    server: "96.126.190.196"
+    type: trojan
+    server: "47.250.84.25"
     port: 443
-    cipher: "none"
-    password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
+    password: "5931134d1cde66bf83a54acdfebe7ab2"
+    sni: "moltbot.doctoroyy.net"
+    skip-cert-verify: true
     udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "/59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
   - name: "🇲🇾_7"
-    type: ss
-    server: "47.250.212.59"
-    port: 2053
-    cipher: "none"
-    password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
+    type: trojan
+    server: "202.43.102.57"
+    port: 443
+    password: "6e1b9a65-884f-3aa9-9469-bf6ec0f08610"
+    sni: "45.32.28.232"
+    skip-cert-verify: true
     udp: true
   - name: "🇲🇾_8"
     type: ss
+    server: "96.126.190.196"
+    port: 443
+    cipher: "none"
+    password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "/59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
+  - name: "🇲🇾_9"
+    type: ss
     server: "47.250.212.59"
     port: 2053
     cipher: "none"
     password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
     udp: true
-  - name: "🇲🇾_9"
+  - name: "🇲🇾_10"
     type: ss
     server: "96.126.190.196"
     port: 443
@@ -152,6 +173,21 @@ proxies:
       path: "/59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
       host: "woshinidie-et3.pages.dev"
       tls: true
+  - name: "🇲🇾_11"
+    type: ss
+    server: "47.250.212.59"
+    port: 2053
+    cipher: "none"
+    password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
+    udp: true
+  - name: "🇲🇾_12"
+    type: vmess
+    server: "47.250.135.244"
+    port: 10000
+    uuid: "aedc66b8-99d7-4a21-8310-61870e7f870d"
+    alterId: 0
+    cipher: "auto"
+    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -177,6 +213,9 @@ proxy-groups:
       - "🇲🇾_7"
       - "🇲🇾_8"
       - "🇲🇾_9"
+      - "🇲🇾_10"
+      - "🇲🇾_11"
+      - "🇲🇾_12"
 
 
   - name: "Load Balance"
@@ -194,6 +233,9 @@ proxy-groups:
       - "🇲🇾_7"
       - "🇲🇾_8"
       - "🇲🇾_9"
+      - "🇲🇾_10"
+      - "🇲🇾_11"
+      - "🇲🇾_12"
 
 rules:
   - MATCH,PROXY

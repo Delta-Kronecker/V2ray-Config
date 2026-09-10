@@ -62,27 +62,28 @@ dns:
 proxies:
   - name: "🇨🇦_1"
     type: vless
-    server: "37.221.110.245"
-    port: 2085
-    uuid: "02c05088-fcb4-4366-b8d3-98d68c7bdb98"
-    udp: true
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "vless"
-  - name: "🇨🇦_2"
-    type: vless
-    server: "130.107.73.148"
-    port: 41373
-    uuid: "a71c8954-66a8-4321-bedb-2336230d81ce"
+    server: "158.69.112.254"
+    port: 443
+    uuid: "661f395d-b153-4199-a04b-693f5fe7f261"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "google.com"
+    servername: "www.speedtest.net"
     client-fingerprint: "chrome"
     reality-opts:
-      public-key: "m0GsZOAwvAJEaqh9aH6qfOmBKo0KW0jY_tJEC6KaDEU"
-      short-id: "0e"
+      public-key: "wo417FrFdjy7ZhccQ-VWGZEKcoCHSEfyWcJT1pIVc1Y"
+      short-id: "3d3c1e645f763ee3"
     flow: "xtls-rprx-vision"
+  - name: "🇨🇦_2"
+    type: vless
+    server: "lizca2.footballfantasyforum.com"
+    port: 443
+    uuid: "716426fa-bcb7-4eb9-b460-36399ebf740d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "lizca2.footballfantasyforum.com"
+    client-fingerprint: "chrome"
   - name: "🇨🇦_3"
     type: vless
     server: "66.70.179.198"
@@ -98,19 +99,23 @@ proxies:
       short-id: "bb437dca4f03116e"
   - name: "🇨🇦_4"
     type: vless
-    server: "158.69.112.254"
+    server: "37.221.110.245"
+    port: 2085
+    uuid: "02c05088-fcb4-4366-b8d3-98d68c7bdb98"
+    udp: true
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "vless"
+  - name: "🇨🇦_5"
+    type: vless
+    server: "184.107.106.68"
     port: 443
-    uuid: "661f395d-b153-4199-a04b-693f5fe7f261"
+    uuid: "716426fa-bcb7-4eb9-b460-36399ebf740d"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "www.speedtest.net"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "wo417FrFdjy7ZhccQ-VWGZEKcoCHSEfyWcJT1pIVc1Y"
-      short-id: "3d3c1e645f763ee3"
-    flow: "xtls-rprx-vision"
-  - name: "🇨🇦_5"
+    servername: "lizca2.footballfantasyforum.com"
+  - name: "🇨🇦_6"
     type: vless
     server: "216.152.147.28"
     port: 443
@@ -124,24 +129,20 @@ proxies:
       public-key: "kjiuPmjM4IutdZudHfcPZHEwcrBEFY4qBLlvfC6A_Ss"
       short-id: "b9f8d3f8"
     flow: "xtls-rprx-vision"
-  - name: "🇨🇦_6"
+  - name: "🇨🇦_7"
     type: vless
-    server: "184.107.106.68"
-    port: 443
-    uuid: "716426fa-bcb7-4eb9-b460-36399ebf740d"
+    server: "130.107.73.148"
+    port: 41373
+    uuid: "a71c8954-66a8-4321-bedb-2336230d81ce"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "lizca2.footballfantasyforum.com"
-  - name: "🇨🇦_7"
-    type: vless
-    server: "37.221.110.167"
-    port: 2085
-    uuid: "0880bb53-58fc-47fe-a3ba-7fb9dd192e02"
-    udp: true
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "vless"
+    servername: "google.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "m0GsZOAwvAJEaqh9aH6qfOmBKo0KW0jY_tJEC6KaDEU"
+      short-id: "0e"
+    flow: "xtls-rprx-vision"
   - name: "🇨🇦_8"
     type: vless
     server: "209.200.246.148"
@@ -157,21 +158,19 @@ proxies:
       short-id: "f98843107912e782"
     flow: "xtls-rprx-vision"
   - name: "🇨🇦_9"
-    type: vless
-    server: "lizca2.footballfantasyforum.com"
+    type: trojan
+    server: "216.128.184.4"
     port: 443
-    uuid: "716426fa-bcb7-4eb9-b460-36399ebf740d"
-    udp: true
-    tls: true
+    password: "qr5nXh3P7K6T"
+    sni: "ash.d22e0961-e0a7-49b8-8259-eac71e24d27b.kailib.com"
     skip-cert-verify: true
-    servername: "lizca2.footballfantasyforum.com"
-    client-fingerprint: "chrome"
+    udp: true
   - name: "🇨🇦_10"
     type: trojan
-    server: "159.203.22.227"
+    server: "137.184.172.228"
     port: 443
-    password: "acfef609-b3c7-4e52-b292-8921d5fca90d"
-    sni: "ca-full.privateip.net"
+    password: "5392c4d3-b13e-456f-a0e5-8eaf52b7fc1d"
+    sni: "termux.com"
     skip-cert-verify: true
     udp: true
   - name: "🇨🇦_11"
@@ -192,47 +191,46 @@ proxies:
     udp: true
   - name: "🇨🇦_13"
     type: trojan
-    server: "216.128.184.4"
+    server: "159.203.22.227"
     port: 443
-    password: "qr5nXh3P7K6T"
-    sni: "ash.d22e0961-e0a7-49b8-8259-eac71e24d27b.kailib.com"
+    password: "acfef609-b3c7-4e52-b292-8921d5fca90d"
+    sni: "ca-full.privateip.net"
     skip-cert-verify: true
     udp: true
   - name: "🇨🇦_14"
-    type: trojan
-    server: "137.184.172.228"
-    port: 443
-    password: "5392c4d3-b13e-456f-a0e5-8eaf52b7fc1d"
-    sni: "termux.com"
-    skip-cert-verify: true
+    type: ss
+    server: "51.222.155.113"
+    port: 5601
+    cipher: "aes-256-gcm"
+    password: "Y6R9pAtvxxzmGC"
     udp: true
   - name: "🇨🇦_15"
+    type: ss
+    server: "51.222.107.43"
+    port: 2083
+    cipher: "2022-blake3-aes-256-gcm"
+    password: "cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:HWFFJN19JkvbTKo/79AfnbRBK9uHUUaFNZJyLjEoJGs="
+    udp: true
+  - name: "🇨🇦_16"
+    type: ss
+    server: "ca225.vpnbook.com"
+    port: 443
+    cipher: "chacha20-ietf-poly1305"
+    password: "3ssumf2"
+    udp: true
+  - name: "🇨🇦_17"
     type: ss
     server: "51.222.200.165"
     port: 5000
     cipher: "aes-256-gcm"
     password: "Y6R9pAtvxxzmGC"
     udp: true
-  - name: "🇨🇦_16"
-    type: ss
-    server: "51.222.141.125"
-    port: 445
-    cipher: "aes-256-gcm"
-    password: "zDNVedRFPQexG9v"
-    udp: true
-  - name: "🇨🇦_17"
-    type: ss
-    server: "51.222.12.127"
-    port: 445
-    cipher: "aes-256-gcm"
-    password: "zDNVedRFPQexG9v"
-    udp: true
   - name: "🇨🇦_18"
     type: ss
-    server: "51.222.155.113"
-    port: 5601
-    cipher: "aes-256-gcm"
-    password: "Y6R9pAtvxxzmGC"
+    server: "15.235.75.71"
+    port: 8388
+    cipher: "chacha20-ietf-poly1305"
+    password: "FD3rCuOsxOay"
     udp: true
   - name: "🇨🇦_19"
     type: ss
@@ -250,38 +248,38 @@ proxies:
     udp: true
   - name: "🇨🇦_21"
     type: ss
-    server: "51.222.136.236"
-    port: 8882
+    server: "51.222.200.165"
+    port: 5000
     cipher: "aes-256-gcm"
-    password: "kDWvXYZoTBcGkC4"
+    password: "Y6R9pAtvxxzmGC"
     udp: true
   - name: "🇨🇦_22"
     type: ss
-    server: "51.79.85.185"
-    port: 8118
+    server: "51.79.64.198"
+    port: 8119
     cipher: "aes-256-gcm"
     password: "cdBIDV42DCwnfIN"
     udp: true
   - name: "🇨🇦_23"
+    type: ss
+    server: "51.222.141.125"
+    port: 445
+    cipher: "aes-256-gcm"
+    password: "zDNVedRFPQexG9v"
+    udp: true
+  - name: "🇨🇦_24"
     type: ss
     server: "15.235.75.71"
     port: 8388
     cipher: "chacha20-ietf-poly1305"
     password: "FD3rCuOsxOay"
     udp: true
-  - name: "🇨🇦_24"
-    type: ss
-    server: "51.222.200.165"
-    port: 5000
-    cipher: "aes-256-gcm"
-    password: "Y6R9pAtvxxzmGC"
-    udp: true
   - name: "🇨🇦_25"
     type: ss
-    server: "51.222.107.43"
-    port: 2083
-    cipher: "2022-blake3-aes-256-gcm"
-    password: "cOiC+3JhAXMwdGV5exnrMSorJU0Rl5qlLCbCAuDlWY4=:HWFFJN19JkvbTKo/79AfnbRBK9uHUUaFNZJyLjEoJGs="
+    server: "51.222.155.113"
+    port: 5601
+    cipher: "aes-256-gcm"
+    password: "Y6R9pAtvxxzmGC"
     udp: true
   - name: "🇨🇦_26"
     type: ss
@@ -292,63 +290,63 @@ proxies:
     udp: true
   - name: "🇨🇦_27"
     type: ss
-    server: "51.79.49.116"
+    server: "51.222.136.236"
     port: 8882
     cipher: "aes-256-gcm"
     password: "kDWvXYZoTBcGkC4"
     udp: true
   - name: "🇨🇦_28"
     type: ss
-    server: "ca225.vpnbook.com"
-    port: 443
-    cipher: "chacha20-ietf-poly1305"
-    password: "3ssumf2"
-    udp: true
-  - name: "🇨🇦_29"
-    type: ss
     server: "51.222.12.127"
     port: 445
     cipher: "aes-256-gcm"
     password: "zDNVedRFPQexG9v"
     udp: true
-  - name: "🇨🇦_30"
-    type: ss
-    server: "51.79.64.198"
-    port: 8119
-    cipher: "aes-256-gcm"
-    password: "cdBIDV42DCwnfIN"
-    udp: true
-  - name: "🇨🇦_31"
+  - name: "🇨🇦_29"
     type: ss
     server: "51.79.49.116"
     port: 8882
     cipher: "aes-256-gcm"
     password: "kDWvXYZoTBcGkC4"
     udp: true
+  - name: "🇨🇦_30"
+    type: ss
+    server: "51.222.155.32"
+    port: 5003
+    cipher: "aes-256-gcm"
+    password: "g5MeD6Ft3CWlJId"
+    udp: true
+  - name: "🇨🇦_31"
+    type: ss
+    server: "51.79.85.185"
+    port: 8118
+    cipher: "aes-256-gcm"
+    password: "cdBIDV42DCwnfIN"
+    udp: true
   - name: "🇨🇦_32"
     type: ss
-    server: "51.222.155.113"
-    port: 5601
-    cipher: "aes-256-gcm"
-    password: "Y6R9pAtvxxzmGC"
+    server: "15.235.75.71"
+    port: 8388
+    cipher: "chacha20-ietf-poly1305"
+    password: "FD3rCuOsxOay"
     udp: true
   - name: "🇨🇦_33"
     type: ss
-    server: "15.235.75.71"
-    port: 8388
-    cipher: "chacha20-ietf-poly1305"
-    password: "FD3rCuOsxOay"
+    server: "51.222.12.127"
+    port: 445
+    cipher: "aes-256-gcm"
+    password: "zDNVedRFPQexG9v"
     udp: true
   - name: "🇨🇦_34"
     type: ss
-    server: "15.235.75.71"
-    port: 8388
-    cipher: "chacha20-ietf-poly1305"
-    password: "FD3rCuOsxOay"
+    server: "51.79.49.116"
+    port: 8882
+    cipher: "aes-256-gcm"
+    password: "kDWvXYZoTBcGkC4"
     udp: true
   - name: "🇨🇦_35"
     type: vmess
-    server: "23.162.200.198"
+    server: "134.195.196.211"
     port: 18000
     uuid: "f8c8dc3d-0d37-46b0-8b34-a7232882fcfe"
     alterId: 0
@@ -356,7 +354,7 @@ proxies:
     udp: true
   - name: "🇨🇦_36"
     type: vmess
-    server: "134.195.196.211"
+    server: "23.162.200.198"
     port: 18000
     uuid: "f8c8dc3d-0d37-46b0-8b34-a7232882fcfe"
     alterId: 0
