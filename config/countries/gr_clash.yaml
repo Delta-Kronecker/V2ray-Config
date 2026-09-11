@@ -69,6 +69,33 @@ proxies:
     network: grpc
     grpc-opts:
       grpc-service-name: "security.debian.org"
+  - name: "🇬🇷_2"
+    type: vless
+    server: "85.90.197.91"
+    port: 443
+    uuid: "dabb9a19-03ab-4cdf-8963-d3c45eb0f80d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "gr.freeinternat.com"
+    reality-opts:
+      public-key: "bZpzmeWiEJyJQy0W2hHc34Nr6BuFXj1UDd80Cbwh1Fk"
+      short-id: "ff776ff77be48b88"
+    flow: "xtls-rprx-vision"
+  - name: "🇬🇷_3"
+    type: vless
+    server: "gr.freeinternat.com"
+    port: 443
+    uuid: "dabb9a19-03ab-4cdf-8963-d3c45eb0f80d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "gr.freeinternat.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "bZpzmeWiEJyJQy0W2hHc34Nr6BuFXj1UDd80Cbwh1Fk"
+      short-id: "ff776ff77be48b88"
+    flow: "xtls-rprx-vision"
 
 proxy-groups:
   - name: "PROXY"
@@ -86,6 +113,8 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇬🇷_1"
+      - "🇬🇷_2"
+      - "🇬🇷_3"
 
 
   - name: "Load Balance"
@@ -95,6 +124,8 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇬🇷_1"
+      - "🇬🇷_2"
+      - "🇬🇷_3"
 
 rules:
   - MATCH,PROXY

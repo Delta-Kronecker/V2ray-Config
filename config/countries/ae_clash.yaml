@@ -60,20 +60,32 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇲🇨_1"
+  - name: "🇦🇪_1"
     type: vless
-    server: "107.189.27.184"
-    port: 443
-    uuid: "a1394087-75fb-489d-bdd0-0c9a70884e68"
+    server: "emirates-sgood.wopd.butnorwa.butter.whooisthebest.ir"
+    port: 33353
+    uuid: "d40a6aad-5fbd-48af-9374-1bbebf09a212"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "cdn.dodostatic.net"
-    client-fingerprint: "qq"
+    servername: "play.google.com"
+    client-fingerprint: "chrome"
     reality-opts:
-      public-key: "T9qoEHG1hmfKvnhVytiNuFnAbrNLdYLFjpJJJZhJOzY"
-      short-id: "02234b3f83a8251c"
-    flow: "xtls-rprx-vision"
+      public-key: "lrJShu6JVnQQ54hKEmKWnj5DUcwalnWBbN_HjGFOeB8"
+      short-id: "ad51aa0889b8da46"
+  - name: "🇦🇪_2"
+    type: vless
+    server: "Emirates-sgood.wopd.butnorwa.butter.whooisthebest.ir"
+    port: 33353
+    uuid: "d40a6aad-5fbd-48af-9374-1bbebf09a212"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "play.google.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "lrJShu6JVnQQ54hKEmKWnj5DUcwalnWBbN_HjGFOeB8"
+      short-id: "ad51aa0889b8da46"
 
 proxy-groups:
   - name: "PROXY"
@@ -90,7 +102,8 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇲🇨_1"
+      - "🇦🇪_1"
+      - "🇦🇪_2"
 
 
   - name: "Load Balance"
@@ -99,7 +112,8 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇲🇨_1"
+      - "🇦🇪_1"
+      - "🇦🇪_2"
 
 rules:
   - MATCH,PROXY

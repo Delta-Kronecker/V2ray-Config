@@ -62,19 +62,27 @@ dns:
 proxies:
   - name: "🇦🇹_1"
     type: vless
-    server: "152.53.1.40"
+    server: "50.7.184.122"
     port: 443
-    uuid: "edde565e-41f5-400e-84ea-7b87a3e84488"
+    uuid: "cd3bb7d9-7df3-4644-ac05-c260990ac277"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "at.quattro-tech.ru"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "10rVZPoOUP1TlQviIAsQ_jAROX0fRQxH0C92nq_zGQc"
-      short-id: "43dcff53849b81e6"
+    servername: "at3.moritech.net"
+    client-fingerprint: "firefox"
     flow: "xtls-rprx-vision"
   - name: "🇦🇹_2"
+    type: vless
+    server: "50.7.36.26"
+    port: 443
+    uuid: "cd3bb7d9-7df3-4644-ac05-c260990ac277"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "at2.moritech.net"
+    client-fingerprint: "firefox"
+    flow: "xtls-rprx-vision"
+  - name: "🇦🇹_3"
     type: vless
     server: "91.224.86.107"
     port: 9830
@@ -90,73 +98,7 @@ proxies:
     network: grpc
     grpc-opts:
       grpc-service-name: "grpc-tunnel"
-  - name: "🇦🇹_3"
-    type: vless
-    server: "viper-8.moriarty-web.com"
-    port: 443
-    uuid: "cd3bb7d9-7df3-4644-ac05-c260990ac277"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "viper-8.moriarty-web.com"
-    client-fingerprint: "firefox"
-    flow: "xtls-rprx-vision"
   - name: "🇦🇹_4"
-    type: vless
-    server: "50.7.37.154"
-    port: 443
-    uuid: "cd3bb7d9-7df3-4644-ac05-c260990ac277"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "at1.moritech.net"
-    client-fingerprint: "firefox"
-    flow: "xtls-rprx-vision"
-  - name: "🇦🇹_5"
-    type: vless
-    server: "viper-7.moriarty-web.com"
-    port: 443
-    uuid: "cd3bb7d9-7df3-4644-ac05-c260990ac277"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "viper-7.moriarty-web.com"
-    client-fingerprint: "firefox"
-    flow: "xtls-rprx-vision"
-  - name: "🇦🇹_6"
-    type: vless
-    server: "50.7.36.26"
-    port: 443
-    uuid: "cd3bb7d9-7df3-4644-ac05-c260990ac277"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "at2.moritech.net"
-    client-fingerprint: "firefox"
-    flow: "xtls-rprx-vision"
-  - name: "🇦🇹_7"
-    type: vless
-    server: "at-new-ded2.moritech.net"
-    port: 443
-    uuid: "cd3bb7d9-7df3-4644-ac05-c260990ac277"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "at-new-ded2.moritech.net"
-    client-fingerprint: "firefox"
-    flow: "xtls-rprx-vision"
-  - name: "🇦🇹_8"
-    type: vless
-    server: "viper-5.moriarty-web.com"
-    port: 443
-    uuid: "cd3bb7d9-7df3-4644-ac05-c260990ac277"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "viper-5.moriarty-web.com"
-    client-fingerprint: "firefox"
-    flow: "xtls-rprx-vision"
-  - name: "🇦🇹_9"
     type: vless
     server: "viper-6.moriarty-web.com"
     port: 443
@@ -167,26 +109,84 @@ proxies:
     servername: "viper-6.moriarty-web.com"
     client-fingerprint: "firefox"
     flow: "xtls-rprx-vision"
-  - name: "🇦🇹_10"
+  - name: "🇦🇹_5"
     type: vless
-    server: "at-new.moritech.net"
+    server: "viper-8.moriarty-web.com"
     port: 443
     uuid: "cd3bb7d9-7df3-4644-ac05-c260990ac277"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "at-new.moritech.net"
+    servername: "viper-8.moriarty-web.com"
+    client-fingerprint: "firefox"
+    flow: "xtls-rprx-vision"
+  - name: "🇦🇹_6"
+    type: vless
+    server: "viper-5.moriarty-web.com"
+    port: 443
+    uuid: "cd3bb7d9-7df3-4644-ac05-c260990ac277"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "viper-5.moriarty-web.com"
+    client-fingerprint: "firefox"
+    flow: "xtls-rprx-vision"
+  - name: "🇦🇹_7"
+    type: vless
+    server: "150.241.72.225"
+    port: 443
+    uuid: "cd3bb7d9-7df3-4644-ac05-c260990ac277"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "viper-7.moriarty-web.com"
+    client-fingerprint: "firefox"
+    flow: "xtls-rprx-vision"
+  - name: "🇦🇹_8"
+    type: vless
+    server: "152.53.1.40"
+    port: 443
+    uuid: "edde565e-41f5-400e-84ea-7b87a3e84488"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "at.quattro-tech.ru"
+    client-fingerprint: "qq"
+    reality-opts:
+      public-key: "10rVZPoOUP1TlQviIAsQ_jAROX0fRQxH0C92nq_zGQc"
+      short-id: "43dcff53849b81e6"
+    flow: "xtls-rprx-vision"
+  - name: "🇦🇹_9"
+    type: vless
+    server: "50.7.37.154"
+    port: 443
+    uuid: "cd3bb7d9-7df3-4644-ac05-c260990ac277"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "at1.moritech.net"
+    client-fingerprint: "firefox"
+    flow: "xtls-rprx-vision"
+  - name: "🇦🇹_10"
+    type: vless
+    server: "50.7.36.27"
+    port: 443
+    uuid: "cd3bb7d9-7df3-4644-ac05-c260990ac277"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "at-new-ded2.moritech.net"
     client-fingerprint: "firefox"
     flow: "xtls-rprx-vision"
   - name: "🇦🇹_11"
     type: vless
-    server: "at-new-ded.moritech.net"
+    server: "viper-7.moriarty-web.com"
     port: 443
     uuid: "cd3bb7d9-7df3-4644-ac05-c260990ac277"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "at-new-ded.moritech.net"
+    servername: "viper-7.moriarty-web.com"
     client-fingerprint: "firefox"
     flow: "xtls-rprx-vision"
   - name: "🇦🇹_12"

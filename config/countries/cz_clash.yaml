@@ -61,16 +61,72 @@ dns:
 
 proxies:
   - name: "🇨🇿_1"
+    type: vless
+    server: "ch1.oshost.network"
+    port: 443
+    uuid: "ea34d4d1-8b87-4a2a-b23e-9927d7c83f46"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ch1.oshost.network"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "b1BnLq44zu_t3K9yEwN9QAIMRdJQxgWINdg6s9Q5v38"
+      short-id: "f55f421274a36f31"
+    flow: "xtls-rprx-vision"
+  - name: "🇨🇿_2"
+    type: vless
+    server: "czre1.w-mebel.pro"
+    port: 443
+    uuid: "3c48b5f5-7766-4896-874e-b3ba1860e83a"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "w-mebel.pro"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "R7NfFaabgh-0a2KR0Bfmn3a-O6mDT550OgXUDygDKBs"
+      short-id: "c603efb3ddaf633d"
+    flow: "xtls-rprx-vision"
+  - name: "🇨🇿_3"
+    type: vless
+    server: "46.8.113.141"
+    port: 443
+    uuid: "ea34d4d1-8b87-4a2a-b23e-9927d7c83f46"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ch1.oshost.network"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "b1BnLq44zu_t3K9yEwN9QAIMRdJQxgWINdg6s9Q5v38"
+      short-id: "f55f421274a36f31"
+    flow: "xtls-rprx-vision"
+  - name: "🇨🇿_4"
+    type: vless
+    server: "cze-01.node.lumixnet.com"
+    port: 443
+    uuid: "abca037b-bee5-41cc-a888-0668e4c66176"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "cze-01.node.lumixnet.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "vEXgvoW9iQo6iiKT71cNt1CC3cAB4IWswAn-cScDz1A"
+      short-id: "bd8a588cebc3395a"
+    flow: "xtls-rprx-vision"
+  - name: "🇨🇿_5"
     type: trojan
-    server: "46.8.113.142"
+    server: "ch-2.bexum.fun"
     port: 443
     password: "LYaEYwjN8LjWTRJdCCTzW7V6gK7atJVu"
     sni: "ch-2.bexum.fun"
     skip-cert-verify: true
     udp: true
-  - name: "🇨🇿_2"
+  - name: "🇨🇿_6"
     type: trojan
-    server: "ch-2.bexum.fun"
+    server: "46.8.113.142"
     port: 443
     password: "LYaEYwjN8LjWTRJdCCTzW7V6gK7atJVu"
     sni: "ch-2.bexum.fun"
@@ -94,6 +150,10 @@ proxy-groups:
     proxies:
       - "🇨🇿_1"
       - "🇨🇿_2"
+      - "🇨🇿_3"
+      - "🇨🇿_4"
+      - "🇨🇿_5"
+      - "🇨🇿_6"
 
 
   - name: "Load Balance"
@@ -104,6 +164,10 @@ proxy-groups:
     proxies:
       - "🇨🇿_1"
       - "🇨🇿_2"
+      - "🇨🇿_3"
+      - "🇨🇿_4"
+      - "🇨🇿_5"
+      - "🇨🇿_6"
 
 rules:
   - MATCH,PROXY

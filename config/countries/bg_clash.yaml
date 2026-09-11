@@ -61,6 +61,20 @@ dns:
 
 proxies:
   - name: "🇧🇬_1"
+    type: vless
+    server: "131.123.39.226"
+    port: 443
+    uuid: "418a1c58-7f25-421b-a82f-650c04d049a4"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "bgg.milas.click"
+    client-fingerprint: "qq"
+    reality-opts:
+      public-key: "aM4vZdtYChEHhzfzGIxz2yBCr8wsG-SEAY9c2z7-M28"
+      short-id: "4fa44664f6a566d3"
+    flow: "xtls-rprx-vision"
+  - name: "🇧🇬_2"
     type: trojan
     server: "91.227.77.87"
     port: 443
@@ -85,6 +99,7 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇧🇬_1"
+      - "🇧🇬_2"
 
 
   - name: "Load Balance"
@@ -94,6 +109,7 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇧🇬_1"
+      - "🇧🇬_2"
 
 rules:
   - MATCH,PROXY
