@@ -62,30 +62,48 @@ dns:
 proxies:
   - name: "🇦🇪_1"
     type: vless
-    server: "emirates-sgood.wopd.butnorwa.butter.whooisthebest.ir"
-    port: 33353
-    uuid: "d40a6aad-5fbd-48af-9374-1bbebf09a212"
+    server: "89.47.55.8"
+    port: 8443
+    uuid: "3f9f2bda-0b9c-8469-7381-a73de2255619"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "play.google.com"
+    servername: "www.canon.com"
     client-fingerprint: "chrome"
     reality-opts:
-      public-key: "lrJShu6JVnQQ54hKEmKWnj5DUcwalnWBbN_HjGFOeB8"
-      short-id: "ad51aa0889b8da46"
+      public-key: "iVDh09Vm2DqZMNQoUdf-LCZ6TqVGb9mLXnClAK2LRj4"
+      short-id: ""
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "TunService"
   - name: "🇦🇪_2"
-    type: vless
-    server: "Emirates-sgood.wopd.butnorwa.butter.whooisthebest.ir"
-    port: 33353
-    uuid: "d40a6aad-5fbd-48af-9374-1bbebf09a212"
+    type: ss
+    server: "188.208.110.58"
+    port: 8444
+    cipher: "chacha20-ietf-poly1305"
+    password: "tunnel-astrovpn_official"
     udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "play.google.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "lrJShu6JVnQQ54hKEmKWnj5DUcwalnWBbN_HjGFOeB8"
-      short-id: "ad51aa0889b8da46"
+  - name: "🇦🇪_3"
+    type: ss
+    server: "188.208.110.58"
+    port: 8444
+    cipher: "chacha20-ietf-poly1305"
+    password: "tunnel-astrovpn_official"
+    udp: true
+  - name: "🇦🇪_4"
+    type: ss
+    server: "188.208.110.58"
+    port: 8444
+    cipher: "chacha20-ietf-poly1305"
+    password: "tunnel-astrovpn_official"
+    udp: true
+  - name: "🇦🇪_5"
+    type: ss
+    server: "188.208.110.58"
+    port: 8444
+    cipher: "chacha20-ietf-poly1305"
+    password: "tunnel-astrovpn_official"
+    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -104,6 +122,9 @@ proxy-groups:
     proxies:
       - "🇦🇪_1"
       - "🇦🇪_2"
+      - "🇦🇪_3"
+      - "🇦🇪_4"
+      - "🇦🇪_5"
 
 
   - name: "Load Balance"
@@ -114,6 +135,9 @@ proxy-groups:
     proxies:
       - "🇦🇪_1"
       - "🇦🇪_2"
+      - "🇦🇪_3"
+      - "🇦🇪_4"
+      - "🇦🇪_5"
 
 rules:
   - MATCH,PROXY

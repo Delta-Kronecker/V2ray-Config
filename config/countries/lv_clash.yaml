@@ -62,20 +62,6 @@ dns:
 proxies:
   - name: "🇱🇻_1"
     type: vless
-    server: "95.182.90.226"
-    port: 443
-    uuid: "2b2ea9d8-501e-4b79-8fd9-19bff6ed5cf5"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "nl.cloudtechone.org"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "_IBXb9NfhsnS21XbU9PIl73ExvrjXGXVLO0Za1ui5Fo"
-      short-id: "f93c9d5127e622e4"
-    flow: "xtls-rprx-vision"
-  - name: "🇱🇻_2"
-    type: vless
     server: "195.123.213.28"
     port: 443
     uuid: "02fcc1a4-ee90-4970-8bbb-4ffaa8109d24"
@@ -88,7 +74,7 @@ proxies:
       public-key: "NMgy1XgCSXExOg6Tg8xG9lCWttMF6sjdpB41lZy6FWo"
       short-id: "5c256336e3b673fa"
     flow: "xtls-rprx-vision"
-  - name: "🇱🇻_3"
+  - name: "🇱🇻_2"
     type: vless
     server: "138.124.180.137"
     port: 443
@@ -102,21 +88,18 @@ proxies:
       public-key: "GBdkyDLfr0LIZo_94Xv8ycAKOmkjArYzwJAEMhuXX2c"
       short-id: "33acba1b"
     flow: "xtls-rprx-vision"
-  - name: "🇱🇻_4"
+  - name: "🇱🇻_3"
     type: vless
-    server: "nl.cloudtechone.org"
-    port: 443
-    uuid: "2b2ea9d8-501e-4b79-8fd9-19bff6ed5cf5"
+    server: "169.40.1.62"
+    port: 1443
+    uuid: "773251ef-4691-453e-b062-27e3ed3ed784"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "nl.cloudtechone.org"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "_IBXb9NfhsnS21XbU9PIl73ExvrjXGXVLO0Za1ui5Fo"
-      short-id: "f93c9d5127e622e4"
+    servername: "lv.pawnet.ink"
+    client-fingerprint: "chrome"
     flow: "xtls-rprx-vision"
-  - name: "🇱🇻_5"
+  - name: "🇱🇻_4"
     type: trojan
     server: "tr-latvia1.unlimited-access.ru"
     port: 443
@@ -124,15 +107,7 @@ proxies:
     sni: "tr-latvia1.unlimited-access.ru"
     skip-cert-verify: true
     udp: true
-  - name: "🇱🇻_6"
-    type: trojan
-    server: "138.124.63.106"
-    port: 443
-    password: "kxHw-Dk-e9dffgzYszMlEqLJ92AnY3Pi"
-    sni: "tr-latvia1.unlimited-access.ru"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇱🇻_7"
+  - name: "🇱🇻_5"
     type: trojan
     server: "31.57.61.76"
     port: 2053
@@ -161,8 +136,6 @@ proxy-groups:
       - "🇱🇻_3"
       - "🇱🇻_4"
       - "🇱🇻_5"
-      - "🇱🇻_6"
-      - "🇱🇻_7"
 
 
   - name: "Load Balance"
@@ -176,8 +149,6 @@ proxy-groups:
       - "🇱🇻_3"
       - "🇱🇻_4"
       - "🇱🇻_5"
-      - "🇱🇻_6"
-      - "🇱🇻_7"
 
 rules:
   - MATCH,PROXY

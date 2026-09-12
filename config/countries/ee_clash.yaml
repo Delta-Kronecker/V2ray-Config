@@ -62,30 +62,6 @@ dns:
 proxies:
   - name: "🇪🇪_1"
     type: vless
-    server: "138.124.100.21"
-    port: 443
-    uuid: "418a1c58-7f25-421b-a82f-650c04d049a4"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "estonia.milas.click"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "DoZSKLwNQjogQMlE7oEEuB8TqpNa-umXzG-2Q6dTTEY"
-      short-id: "4fa44664f6a566d3"
-    flow: "xtls-rprx-vision"
-  - name: "🇪🇪_2"
-    type: vless
-    server: "94.183.170.135"
-    port: 8443
-    uuid: "06c4e938-2954-478f-a870-ca1b163e30e9"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "estproxy4.lockdwn.com"
-    client-fingerprint: "chrome"
-  - name: "🇪🇪_3"
-    type: vless
     server: "150.241.101.80"
     port: 8443
     uuid: "47d9b534-8a0a-4bd2-90f1-1d6ade14427e"
@@ -98,25 +74,52 @@ proxies:
       public-key: "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
       short-id: "6ba85179e30d4fc2"
     flow: "xtls-rprx-vision"
+  - name: "🇪🇪_2"
+    type: vless
+    server: "46.22.211.99"
+    port: 443
+    uuid: "52d1d193-7a49-4d2e-9d52-c2615704034b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ei.baboon.digital"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "tfexhuu4WxxFCJJ1WKgaDUm-3WQW_dK9UTsSCWqxDiE"
+      short-id: "380705b1fcb54f4e"
+    flow: "xtls-rprx-vision"
+  - name: "🇪🇪_3"
+    type: vless
+    server: "94.183.170.135"
+    port: 8443
+    uuid: "06c4e938-2954-478f-a870-ca1b163e30e9"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "estproxy4.lockdwn.com"
+    client-fingerprint: "chrome"
   - name: "🇪🇪_4"
     type: trojan
-    server: "109.206.241.10"
-    port: 449
-    password: "oiiaB38ywjEHCWRs_O_a_1113_Il_KeyyyHop_Bes1"
-    sni: "russiapower.accesscam.org"
+    server: "ee-1.kamediorg.com"
+    port: 443
+    password: "wQz5G4ybA9eC3BQDkd"
+    sni: "ee-1.kamediorg.com"
     skip-cert-verify: true
     udp: true
   - name: "🇪🇪_5"
     type: trojan
-    server: "ee-1.tr202604.com"
+    server: "185.36.141.81"
     port: 443
-    password: "pjqRC5wfEFhYTyiaKF"
-    sni: "ee-1.tr202604.com"
+    password: "humanity"
+    sni: "www.calmlunch.com"
     skip-cert-verify: true
     udp: true
+    network: ws
+    ws-opts:
+      path: "/assignment"
   - name: "🇪🇪_6"
     type: trojan
-    server: "45.139.194.60"
+    server: "ee-1.tr202604.com"
     port: 443
     password: "pjqRC5wfEFhYTyiaKF"
     sni: "ee-1.tr202604.com"
@@ -124,13 +127,29 @@ proxies:
     udp: true
   - name: "🇪🇪_7"
     type: trojan
+    server: "ee-1.kamediorg.com"
+    port: 443
+    password: "GUGm7DHtpSx7SuPyUD"
+    sni: "ee-1.kamediorg.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇪🇪_8"
+    type: trojan
+    server: "109.206.241.10"
+    port: 449
+    password: "oiiaB38ywjEHCWRs_O_a_1113_Il_KeyyyHop_Bes1"
+    sni: "russiapower.accesscam.org"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇪🇪_9"
+    type: trojan
     server: "45.139.194.66"
     port: 443
     password: "AG4yPUSazj57DBFnKG"
     sni: "45.139.194.66"
     skip-cert-verify: true
     udp: true
-  - name: "🇪🇪_8"
+  - name: "🇪🇪_10"
     type: trojan
     server: "ee-1.tr202604.com"
     port: 443
@@ -138,20 +157,12 @@ proxies:
     sni: "ee-1.tr202604.com"
     skip-cert-verify: true
     udp: true
-  - name: "🇪🇪_9"
+  - name: "🇪🇪_11"
     type: trojan
-    server: "ee-1.kamediorg.com"
+    server: "45.139.194.60"
     port: 443
-    password: "GUGm7DHtpSx7SuPyUD"
-    sni: "ee-1.kamediorg.com"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇪🇪_10"
-    type: trojan
-    server: "ee-1.kamediorg.com"
-    port: 443
-    password: "wQz5G4ybA9eC3BQDkd"
-    sni: "ee-1.kamediorg.com"
+    password: "pjqRC5wfEFhYTyiaKF"
+    sni: "ee-1.tr202604.com"
     skip-cert-verify: true
     udp: true
 
@@ -180,6 +191,7 @@ proxy-groups:
       - "🇪🇪_8"
       - "🇪🇪_9"
       - "🇪🇪_10"
+      - "🇪🇪_11"
 
 
   - name: "Load Balance"
@@ -198,6 +210,7 @@ proxy-groups:
       - "🇪🇪_8"
       - "🇪🇪_9"
       - "🇪🇪_10"
+      - "🇪🇪_11"
 
 rules:
   - MATCH,PROXY

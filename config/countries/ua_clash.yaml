@@ -61,13 +61,18 @@ dns:
 
 proxies:
   - name: "🇺🇦_1"
-    type: trojan
-    server: "130.0.236.88"
-    port: 443
-    password: "d2adff89-5143-4d67-921f-3478464de5bb"
-    sni: "ua.freeguard.org"
-    skip-cert-verify: true
+    type: vless
+    server: "ukraine-sgood.wopd.butnorwa.butter.silicore.ir"
+    port: 9000
+    uuid: "b33e4571-de3f-4249-b246-b2acf3db2f36"
     udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sheets.google.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "Du5pk4KuMNA1sRcSpmuoLuC0HmxDBmFljFNfUzqxKiM"
+      short-id: "cd0a1986719e44c8"
 
 proxy-groups:
   - name: "PROXY"

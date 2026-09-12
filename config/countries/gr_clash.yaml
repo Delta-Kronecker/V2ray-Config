@@ -71,30 +71,17 @@ proxies:
       grpc-service-name: "security.debian.org"
   - name: "🇬🇷_2"
     type: vless
-    server: "85.90.197.91"
+    server: "85.90.197.220"
     port: 443
-    uuid: "dabb9a19-03ab-4cdf-8963-d3c45eb0f80d"
+    uuid: "8f704ed6-9a1a-4d04-94dd-1bff501716de"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "gr.freeinternat.com"
-    reality-opts:
-      public-key: "bZpzmeWiEJyJQy0W2hHc34Nr6BuFXj1UDd80Cbwh1Fk"
-      short-id: "ff776ff77be48b88"
-    flow: "xtls-rprx-vision"
-  - name: "🇬🇷_3"
-    type: vless
-    server: "gr.freeinternat.com"
-    port: 443
-    uuid: "dabb9a19-03ab-4cdf-8963-d3c45eb0f80d"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "gr.freeinternat.com"
+    servername: "www.cloudflare.com"
     client-fingerprint: "chrome"
     reality-opts:
-      public-key: "bZpzmeWiEJyJQy0W2hHc34Nr6BuFXj1UDd80Cbwh1Fk"
-      short-id: "ff776ff77be48b88"
+      public-key: "biNcdU5mywtNw-KyPpLHindBxdEyAolT1WJ26N0b7y4"
+      short-id: "94acb54627612d43"
     flow: "xtls-rprx-vision"
 
 proxy-groups:
@@ -114,7 +101,6 @@ proxy-groups:
     proxies:
       - "🇬🇷_1"
       - "🇬🇷_2"
-      - "🇬🇷_3"
 
 
   - name: "Load Balance"
@@ -125,7 +111,6 @@ proxy-groups:
     proxies:
       - "🇬🇷_1"
       - "🇬🇷_2"
-      - "🇬🇷_3"
 
 rules:
   - MATCH,PROXY

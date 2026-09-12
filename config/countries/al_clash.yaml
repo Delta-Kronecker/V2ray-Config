@@ -74,20 +74,6 @@ proxies:
       public-key: "WWeAHWUVD-phmnjNJ823cer0c4CMIbEs08AhsuEZmDc"
       short-id: "a696de84963656de"
     flow: "xtls-rprx-vision"
-  - name: "🇦🇱_2"
-    type: ss
-    server: "130.49.189.158"
-    port: 43558
-    cipher: "chacha20-ietf-poly1305"
-    password: "/63vp7pdl1GXaTpa6kkWd2+3tq3/szSAWueVKo26xM8="
-    udp: true
-  - name: "🇦🇱_3"
-    type: ss
-    server: "130.49.189.158"
-    port: 43558
-    cipher: "chacha20-ietf-poly1305"
-    password: "/63vp7pdl1GXaTpa6kkWd2+3tq3/szSAWueVKo26xM8="
-    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -105,8 +91,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇦🇱_1"
-      - "🇦🇱_2"
-      - "🇦🇱_3"
 
 
   - name: "Load Balance"
@@ -116,8 +100,6 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇦🇱_1"
-      - "🇦🇱_2"
-      - "🇦🇱_3"
 
 rules:
   - MATCH,PROXY

@@ -60,22 +60,20 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇷🇸_1"
+  - name: "🇮🇶_1"
     type: vless
-    server: "95.143.191.98"
-    port: 9889
-    uuid: "5d16ac22-6eea-426f-b778-6f4c2961faef"
+    server: "51.161.204.242"
+    port: 443
+    uuid: "a14b736b-a92a-48d6-a596-5d31f7378ded"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "dl.google.com"
-    client-fingerprint: "safari"
+    servername: "www.cloudflare.com"
+    client-fingerprint: "chrome"
     reality-opts:
-      public-key: "ycPIUcY6ci2yi7YA_OHc20e4gzxEdJTqpmeShxSuHRU"
-      short-id: "aabb"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "grpc-tunnel"
+      public-key: "a2qGjvUPq6Nz5FTbn_MSHp-055q2h8YXqIL5VIJ5zwE"
+      short-id: "d15c17cef9b2e456"
+    flow: "xtls-rprx-vision"
 
 proxy-groups:
   - name: "PROXY"
@@ -92,7 +90,7 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇷🇸_1"
+      - "🇮🇶_1"
 
 
   - name: "Load Balance"
@@ -101,7 +99,7 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇷🇸_1"
+      - "🇮🇶_1"
 
 rules:
   - MATCH,PROXY
