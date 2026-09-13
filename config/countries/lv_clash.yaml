@@ -62,20 +62,6 @@ dns:
 proxies:
   - name: "🇱🇻_1"
     type: vless
-    server: "195.123.213.28"
-    port: 443
-    uuid: "02fcc1a4-ee90-4970-8bbb-4ffaa8109d24"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.cloudflare.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "NMgy1XgCSXExOg6Tg8xG9lCWttMF6sjdpB41lZy6FWo"
-      short-id: "5c256336e3b673fa"
-    flow: "xtls-rprx-vision"
-  - name: "🇱🇻_2"
-    type: vless
     server: "138.124.180.137"
     port: 443
     uuid: "5234b2b7-5e07-422c-8159-d62a676c00c6"
@@ -88,17 +74,28 @@ proxies:
       public-key: "GBdkyDLfr0LIZo_94Xv8ycAKOmkjArYzwJAEMhuXX2c"
       short-id: "33acba1b"
     flow: "xtls-rprx-vision"
-  - name: "🇱🇻_3"
+  - name: "🇱🇻_2"
     type: vless
-    server: "169.40.1.62"
-    port: 1443
-    uuid: "773251ef-4691-453e-b062-27e3ed3ed784"
+    server: "195.123.213.28"
+    port: 443
+    uuid: "02fcc1a4-ee90-4970-8bbb-4ffaa8109d24"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "lv.pawnet.ink"
+    servername: "www.cloudflare.com"
     client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "NMgy1XgCSXExOg6Tg8xG9lCWttMF6sjdpB41lZy6FWo"
+      short-id: "5c256336e3b673fa"
     flow: "xtls-rprx-vision"
+  - name: "🇱🇻_3"
+    type: trojan
+    server: "138.124.63.106"
+    port: 443
+    password: "kxHw-Dk-e9dffgzYszMlEqLJ92AnY3Pi"
+    sni: "tr-latvia1.unlimited-access.ru"
+    skip-cert-verify: true
+    udp: true
   - name: "🇱🇻_4"
     type: trojan
     server: "tr-latvia1.unlimited-access.ru"

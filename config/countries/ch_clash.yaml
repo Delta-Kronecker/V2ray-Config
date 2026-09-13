@@ -62,22 +62,6 @@ dns:
 proxies:
   - name: "🇨🇭_1"
     type: vless
-    server: "188.68.216.38"
-    port: 9882
-    uuid: "5d16ac22-6eea-426f-b778-6f4c2961faef"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "dl.google.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "bnRIb3Er1i-K6NGGByCO9UbGfOvu43ZoiK7ulPd1SzU"
-      short-id: "aa"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "grpc-tunnel"
-  - name: "🇨🇭_2"
-    type: vless
     server: "45.90.59.15"
     port: 443
     uuid: "3950b45e-740d-4dca-ac95-505ec8534592"
@@ -89,6 +73,20 @@ proxies:
     reality-opts:
       public-key: "P7S4UPFlQbmiBr4txyy8NZIMTrmO3UdxyH16WBU-YzY"
       short-id: "19253fae84102271"
+    flow: "xtls-rprx-vision"
+  - name: "🇨🇭_2"
+    type: vless
+    server: "132.243.162.30"
+    port: 46280
+    uuid: "12af43c3-84b4-4248-878b-b75f35835487"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "amp-api-edge.apps.apple.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "3xEvhIbjIvO9bJSqHEF3D91YZEYaA3fWzb2JpxW0XmQ"
+      short-id: "e53690af52736850"
     flow: "xtls-rprx-vision"
   - name: "🇨🇭_3"
     type: trojan

@@ -75,20 +75,6 @@ proxies:
       short-id: "d2061bb1"
     flow: "xtls-rprx-vision"
   - name: "🇨🇿_2"
-    type: vless
-    server: "141.133.172.23"
-    port: 443
-    uuid: "3c48b5f5-7766-4896-874e-b3ba1860e83a"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "w-mebel.pro"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "R7NfFaabgh-0a2KR0Bfmn3a-O6mDT550OgXUDygDKBs"
-      short-id: "c603efb3ddaf633d"
-    flow: "xtls-rprx-vision"
-  - name: "🇨🇿_3"
     type: trojan
     server: "ch-2.bexum.fun"
     port: 443
@@ -96,7 +82,7 @@ proxies:
     sni: "ch-2.bexum.fun"
     skip-cert-verify: true
     udp: true
-  - name: "🇨🇿_4"
+  - name: "🇨🇿_3"
     type: trojan
     server: "46.8.113.142"
     port: 443
@@ -123,7 +109,6 @@ proxy-groups:
       - "🇨🇿_1"
       - "🇨🇿_2"
       - "🇨🇿_3"
-      - "🇨🇿_4"
 
 
   - name: "Load Balance"
@@ -135,7 +120,6 @@ proxy-groups:
       - "🇨🇿_1"
       - "🇨🇿_2"
       - "🇨🇿_3"
-      - "🇨🇿_4"
 
 rules:
   - MATCH,PROXY

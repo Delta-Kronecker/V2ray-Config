@@ -76,44 +76,19 @@ proxies:
     flow: "xtls-rprx-vision"
   - name: "🇪🇸_2"
     type: vless
-    server: "185.254.205.79"
-    port: 19842
-    uuid: "43c23116-1115-4af4-a0f0-56f02841a605"
+    server: "46.28.71.247"
+    port: 443
+    uuid: "12c53e32-e589-47d6-b857-e4132294f767"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "www.tesla.com"
-    client-fingerprint: "chrome"
+    servername: "www.cloudflare.com"
+    client-fingerprint: "firefox"
     reality-opts:
-      public-key: "sfOfuQeJBlKfDnPL_EMWUxMIiFAN8BNKjtWDUvlsjzM"
-      short-id: "25ebc9e0a912"
+      public-key: "v4MuZIvFrTPT5GHMSaPryUAbIZlLstmsUTzmC1E-JTE"
+      short-id: "0dfc23fe80778c00"
     flow: "xtls-rprx-vision"
   - name: "🇪🇸_3"
-    type: vless
-    server: "170.168.97.8"
-    port: 8443
-    uuid: "3f9f2bda-0b9c-8469-7381-a73de2255619"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "download.nvidia.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "D2SXHZRRYM0WcFChGWd57XB-U73aIsGfMpe2-Gq5XSs"
-      short-id: ""
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "TunService"
-  - name: "🇪🇸_4"
-    type: vless
-    server: "85.90.217.42"
-    port: 443
-    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "85.90.217.42"
-  - name: "🇪🇸_5"
     type: trojan
     server: "65.20.102.54"
     port: 443
@@ -121,12 +96,26 @@ proxies:
     sni: "www.gpt123.one"
     skip-cert-verify: true
     udp: true
-  - name: "🇪🇸_6"
+  - name: "🇪🇸_4"
     type: ss
     server: "108.181.121.226"
     port: 8388
     cipher: "chacha20-ietf-poly1305"
     password: "WSyL4XTwNsdv"
+    udp: true
+  - name: "🇪🇸_5"
+    type: ss
+    server: "108.181.121.226"
+    port: 8388
+    cipher: "chacha20-ietf-poly1305"
+    password: "WSyL4XTwNsdv"
+    udp: true
+  - name: "🇪🇸_6"
+    type: ss
+    server: "140.174.184.5"
+    port: 8388
+    cipher: "chacha20-ietf-poly1305"
+    password: "qItG8SueYQcP"
     udp: true
   - name: "🇪🇸_7"
     type: ss
@@ -137,10 +126,10 @@ proxies:
     udp: true
   - name: "🇪🇸_8"
     type: ss
-    server: "140.174.184.5"
+    server: "108.181.121.226"
     port: 8388
     cipher: "chacha20-ietf-poly1305"
-    password: "qItG8SueYQcP"
+    password: "WSyL4XTwNsdv"
     udp: true
   - name: "🇪🇸_9"
     type: ss
@@ -150,18 +139,12 @@ proxies:
     password: "qItG8SueYQcP"
     udp: true
   - name: "🇪🇸_10"
-    type: ss
-    server: "108.181.121.226"
-    port: 8388
-    cipher: "chacha20-ietf-poly1305"
-    password: "WSyL4XTwNsdv"
-    udp: true
-  - name: "🇪🇸_11"
-    type: ss
-    server: "108.181.121.226"
-    port: 8388
-    cipher: "chacha20-ietf-poly1305"
-    password: "WSyL4XTwNsdv"
+    type: vmess
+    server: "85.90.217.42"
+    port: 22324
+    uuid: "04621bae-ab36-11ec-b909-0242ac120002"
+    alterId: 0
+    cipher: "auto"
     udp: true
 
 proxy-groups:
@@ -189,7 +172,6 @@ proxy-groups:
       - "🇪🇸_8"
       - "🇪🇸_9"
       - "🇪🇸_10"
-      - "🇪🇸_11"
 
 
   - name: "Load Balance"
@@ -208,7 +190,6 @@ proxy-groups:
       - "🇪🇸_8"
       - "🇪🇸_9"
       - "🇪🇸_10"
-      - "🇪🇸_11"
 
 rules:
   - MATCH,PROXY
