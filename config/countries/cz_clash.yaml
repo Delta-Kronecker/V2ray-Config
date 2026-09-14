@@ -75,6 +75,34 @@ proxies:
       short-id: "d2061bb1"
     flow: "xtls-rprx-vision"
   - name: "🇨🇿_2"
+    type: vless
+    server: "edge-cz1.lovely.ceo"
+    port: 443
+    uuid: "08b6dd4b-08df-4aa2-9580-92a3360cf07c"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "edge-cz1.lovely.ceo"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "x_sc52Wgwr7bsogvKRA5hHHS5PJpdocqZNW_Up1mty8"
+      short-id: "59ab2fc39ec55bc7"
+    flow: "xtls-rprx-vision"
+  - name: "🇨🇿_3"
+    type: vless
+    server: "188.130.208.210"
+    port: 443
+    uuid: "08b6dd4b-08df-4aa2-9580-92a3360cf07c"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "edge-cz1.lovely.ceo"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "x_sc52Wgwr7bsogvKRA5hHHS5PJpdocqZNW_Up1mty8"
+      short-id: "59ab2fc39ec55bc7"
+    flow: "xtls-rprx-vision"
+  - name: "🇨🇿_4"
     type: trojan
     server: "ch-2.bexum.fun"
     port: 443
@@ -82,7 +110,7 @@ proxies:
     sni: "ch-2.bexum.fun"
     skip-cert-verify: true
     udp: true
-  - name: "🇨🇿_3"
+  - name: "🇨🇿_5"
     type: trojan
     server: "46.8.113.142"
     port: 443
@@ -109,6 +137,8 @@ proxy-groups:
       - "🇨🇿_1"
       - "🇨🇿_2"
       - "🇨🇿_3"
+      - "🇨🇿_4"
+      - "🇨🇿_5"
 
 
   - name: "Load Balance"
@@ -120,6 +150,8 @@ proxy-groups:
       - "🇨🇿_1"
       - "🇨🇿_2"
       - "🇨🇿_3"
+      - "🇨🇿_4"
+      - "🇨🇿_5"
 
 rules:
   - MATCH,PROXY

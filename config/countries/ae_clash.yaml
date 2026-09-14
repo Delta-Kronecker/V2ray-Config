@@ -60,14 +60,38 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇲🇳_1"
-    type: trojan
-    server: "103.168.56.77"
-    port: 443
-    password: "4f2c305b-9a03-4493-b3e4-2dff2f1af8c9"
-    sni: "103.168.56.77"
-    skip-cert-verify: true
+  - name: "🇦🇪_1"
+    type: vless
+    server: "89.47.55.8"
+    port: 8443
+    uuid: "4350213a-b4e7-262a-0bd7-bd16957cf71a"
     udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "download.nvidia.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "WtLZK1KyhSpI3K-R4M3sLAHWPOgGPMgkL6RneL0OfCY"
+      short-id: ""
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "TunService"
+  - name: "🇦🇪_2"
+    type: vless
+    server: "89.47.55.8"
+    port: 8443
+    uuid: "dca76b88-b038-e82b-45e1-1d76b476d7ca"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.canon.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "iVDh09Vm2DqZMNQoUdf-LCZ6TqVGb9mLXnClAK2LRj4"
+      short-id: ""
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "TunService"
 
 proxy-groups:
   - name: "PROXY"
@@ -84,7 +108,8 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇲🇳_1"
+      - "🇦🇪_1"
+      - "🇦🇪_2"
 
 
   - name: "Load Balance"
@@ -93,7 +118,8 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇲🇳_1"
+      - "🇦🇪_1"
+      - "🇦🇪_2"
 
 rules:
   - MATCH,PROXY

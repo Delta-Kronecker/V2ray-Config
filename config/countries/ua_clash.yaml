@@ -61,6 +61,15 @@ dns:
 
 proxies:
   - name: "🇺🇦_1"
+    type: vless
+    server: "104.143.223.63"
+    port: 2085
+    uuid: "94248dca-e56b-424a-9232-401178a4f8f9"
+    udp: true
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "vless"
+  - name: "🇺🇦_2"
     type: trojan
     server: "130.0.236.88"
     port: 443
@@ -85,6 +94,7 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇺🇦_1"
+      - "🇺🇦_2"
 
 
   - name: "Load Balance"
@@ -94,6 +104,7 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇺🇦_1"
+      - "🇺🇦_2"
 
 rules:
   - MATCH,PROXY
