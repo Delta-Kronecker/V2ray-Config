@@ -60,22 +60,13 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇵🇰_1"
-    type: vless
-    server: "64.49.38.9"
-    port: 8443
-    uuid: "4350213a-b4e7-262a-0bd7-bd16957cf71a"
+  - name: "🇵🇭_1"
+    type: ss
+    server: "149.104.109.252"
+    port: 8882
+    cipher: "aes-256-gcm"
+    password: "kDWvXYZoTBcGkC4"
     udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "download.nvidia.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "JeVpfwIwteGa8xfysPJUzrbHgmOPyLGomRqyH8Pi7W0"
-      short-id: ""
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "TunService"
 
 proxy-groups:
   - name: "PROXY"
@@ -92,7 +83,7 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇵🇰_1"
+      - "🇵🇭_1"
 
 
   - name: "Load Balance"
@@ -101,7 +92,7 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇵🇰_1"
+      - "🇵🇭_1"
 
 rules:
   - MATCH,PROXY

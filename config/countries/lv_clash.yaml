@@ -89,28 +89,14 @@ proxies:
       short-id: "5c256336e3b673fa"
     flow: "xtls-rprx-vision"
   - name: "🇱🇻_3"
-    type: vless
-    server: "89.105.206.123"
-    port: 443
-    uuid: "3a22ca95-bd99-01ac-a799-f8f73930ea05"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "nl.convert-flow.net"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "8ZYjmjb0b2QJKCGMrcdhQNV28jZZPCKgIQbIdqChQ0w"
-      short-id: "00a61d55a07de885"
-    flow: "xtls-rprx-vision"
-  - name: "🇱🇻_4"
     type: trojan
-    server: "31.57.61.76"
-    port: 2053
-    password: "8r<[9'l6hAO#8ZQi"
-    sni: "Koma-YT.PAGeS.Dev"
+    server: "138.124.63.106"
+    port: 443
+    password: "kxHw-Dk-e9dffgzYszMlEqLJ92AnY3Pi"
+    sni: "tr-latvia1.unlimited-access.ru"
     skip-cert-verify: true
     udp: true
-  - name: "🇱🇻_5"
+  - name: "🇱🇻_4"
     type: trojan
     server: "tr-latvia1.unlimited-access.ru"
     port: 443
@@ -118,12 +104,12 @@ proxies:
     sni: "tr-latvia1.unlimited-access.ru"
     skip-cert-verify: true
     udp: true
-  - name: "🇱🇻_6"
+  - name: "🇱🇻_5"
     type: trojan
-    server: "138.124.63.106"
-    port: 443
-    password: "kxHw-Dk-e9dffgzYszMlEqLJ92AnY3Pi"
-    sni: "tr-latvia1.unlimited-access.ru"
+    server: "31.57.61.76"
+    port: 2053
+    password: "8r<[9'l6hAO#8ZQi"
+    sni: "Koma-YT.PAGeS.Dev"
     skip-cert-verify: true
     udp: true
 
@@ -147,7 +133,6 @@ proxy-groups:
       - "🇱🇻_3"
       - "🇱🇻_4"
       - "🇱🇻_5"
-      - "🇱🇻_6"
 
 
   - name: "Load Balance"
@@ -161,7 +146,6 @@ proxy-groups:
       - "🇱🇻_3"
       - "🇱🇻_4"
       - "🇱🇻_5"
-      - "🇱🇻_6"
 
 rules:
   - MATCH,PROXY

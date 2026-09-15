@@ -60,19 +60,19 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇮🇶_1"
+  - name: "🇭🇺_1"
     type: vless
-    server: "51.161.204.242"
+    server: "45.9.168.17"
     port: 443
-    uuid: "a14b736b-a92a-48d6-a596-5d31f7378ded"
+    uuid: "4360f941-b541-43d4-8507-2de3763e0cfd"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "www.cloudflare.com"
-    client-fingerprint: "chrome"
+    servername: "hu.convert-flow.net"
+    client-fingerprint: "qq"
     reality-opts:
-      public-key: "a2qGjvUPq6Nz5FTbn_MSHp-055q2h8YXqIL5VIJ5zwE"
-      short-id: "d15c17cef9b2e456"
+      public-key: "8ZYjmjb0b2QJKCGMrcdhQNV28jZZPCKgIQbIdqChQ0w"
+      short-id: "00a61d55a07de885"
     flow: "xtls-rprx-vision"
 
 proxy-groups:
@@ -90,7 +90,7 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇮🇶_1"
+      - "🇭🇺_1"
 
 
   - name: "Load Balance"
@@ -99,7 +99,7 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇮🇶_1"
+      - "🇭🇺_1"
 
 rules:
   - MATCH,PROXY

@@ -88,63 +88,6 @@ proxies:
       short-id: "fa"
   - name: "🇰🇿_3"
     type: vless
-    server: "109.248.170.119"
-    port: 13447
-    uuid: "b573cefb-7bc7-4a42-b407-b8b534e66773"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "yahoo.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "_0wM2ep44eAcrgf5PflKaBivknCWT6kMvQBQUoScCkE"
-      short-id: "83"
-  - name: "🇰🇿_4"
-    type: vless
-    server: "131.123.25.3"
-    port: 443
-    uuid: "3a22ca95-bd99-018e-a799-f8f73930ea05"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "fr.convert-flow.net"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "8ZYjmjb0b2QJKCGMrcdhQNV28jZZPCKgIQbIdqChQ0w"
-      short-id: "00a61d55a07de885"
-    flow: "xtls-rprx-vision"
-  - name: "🇰🇿_5"
-    type: vless
-    server: "89.105.206.123"
-    port: 443
-    uuid: "3a22ca95-bd99-018e-a799-f8f73930ea05"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "nl.convert-flow.net"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "8ZYjmjb0b2QJKCGMrcdhQNV28jZZPCKgIQbIdqChQ0w"
-      short-id: "00a61d55a07de885"
-    flow: "xtls-rprx-vision"
-  - name: "🇰🇿_6"
-    type: vless
-    server: "91.224.87.22"
-    port: 9882
-    uuid: "5d16ac22-6eea-426f-b778-6f4c2961faef"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "dl.google.com"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "bnRIb3Er1i-K6NGGByCO9UbGfOvu43ZoiK7ulPd1SzU"
-      short-id: "aa"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "grpc-tunnel"
-  - name: "🇰🇿_7"
-    type: vless
     server: "77.73.232.61"
     port: 19747
     uuid: "2a9ed01e-5455-44b4-a66a-76ee8165f0ac"
@@ -156,6 +99,19 @@ proxies:
     reality-opts:
       public-key: "ZO9dTeg1slvTXgVsBsaJ1BDvz_YUImTLJjbHs-GdVyM"
       short-id: "2001"
+  - name: "🇰🇿_4"
+    type: vless
+    server: "109.248.170.119"
+    port: 13447
+    uuid: "b573cefb-7bc7-4a42-b407-b8b534e66773"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "yahoo.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "_0wM2ep44eAcrgf5PflKaBivknCWT6kMvQBQUoScCkE"
+      short-id: "83"
 
 proxy-groups:
   - name: "PROXY"
@@ -176,9 +132,6 @@ proxy-groups:
       - "🇰🇿_2"
       - "🇰🇿_3"
       - "🇰🇿_4"
-      - "🇰🇿_5"
-      - "🇰🇿_6"
-      - "🇰🇿_7"
 
 
   - name: "Load Balance"
@@ -191,9 +144,6 @@ proxy-groups:
       - "🇰🇿_2"
       - "🇰🇿_3"
       - "🇰🇿_4"
-      - "🇰🇿_5"
-      - "🇰🇿_6"
-      - "🇰🇿_7"
 
 rules:
   - MATCH,PROXY

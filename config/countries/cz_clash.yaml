@@ -62,6 +62,34 @@ dns:
 proxies:
   - name: "🇨🇿_1"
     type: vless
+    server: "31.76.7.80"
+    port: 443
+    uuid: "56ae4ec4-6705-43d0-bf3a-bc36ab3b3545"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "cze-02.node.lumixnet.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "vEXgvoW9iQo6iiKT71cNt1CC3cAB4IWswAn-cScDz1A"
+      short-id: "bd8a588cebc3395a"
+    flow: "xtls-rprx-vision"
+  - name: "🇨🇿_2"
+    type: vless
+    server: "cze-01.node.lumixnet.com"
+    port: 443
+    uuid: "8645697d-51c1-4e90-aca5-ba63a0392f11"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "cze-01.node.lumixnet.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "vEXgvoW9iQo6iiKT71cNt1CC3cAB4IWswAn-cScDz1A"
+      short-id: "bd8a588cebc3395a"
+    flow: "xtls-rprx-vision"
+  - name: "🇨🇿_3"
+    type: vless
     server: "31.76.7.154"
     port: 7443
     uuid: "d7cad038-0c3f-4cce-8f8a-36464aaf66c0"
@@ -74,35 +102,21 @@ proxies:
       public-key: "1MLoHw7RVkGefh7XUyuGg4ndxwv4vDU9en-f9JxpXRQ"
       short-id: "d2061bb1"
     flow: "xtls-rprx-vision"
-  - name: "🇨🇿_2"
-    type: vless
-    server: "edge-cz1.lovely.ceo"
-    port: 443
-    uuid: "08b6dd4b-08df-4aa2-9580-92a3360cf07c"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "edge-cz1.lovely.ceo"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "x_sc52Wgwr7bsogvKRA5hHHS5PJpdocqZNW_Up1mty8"
-      short-id: "59ab2fc39ec55bc7"
-    flow: "xtls-rprx-vision"
-  - name: "🇨🇿_3"
-    type: vless
-    server: "188.130.208.210"
-    port: 443
-    uuid: "08b6dd4b-08df-4aa2-9580-92a3360cf07c"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "edge-cz1.lovely.ceo"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "x_sc52Wgwr7bsogvKRA5hHHS5PJpdocqZNW_Up1mty8"
-      short-id: "59ab2fc39ec55bc7"
-    flow: "xtls-rprx-vision"
   - name: "🇨🇿_4"
+    type: vless
+    server: "cze-02.node.lumixnet.com"
+    port: 443
+    uuid: "56ae4ec4-6705-43d0-bf3a-bc36ab3b3545"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "cze-02.node.lumixnet.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "vEXgvoW9iQo6iiKT71cNt1CC3cAB4IWswAn-cScDz1A"
+      short-id: "bd8a588cebc3395a"
+    flow: "xtls-rprx-vision"
+  - name: "🇨🇿_5"
     type: trojan
     server: "ch-2.bexum.fun"
     port: 443
@@ -110,7 +124,7 @@ proxies:
     sni: "ch-2.bexum.fun"
     skip-cert-verify: true
     udp: true
-  - name: "🇨🇿_5"
+  - name: "🇨🇿_6"
     type: trojan
     server: "46.8.113.142"
     port: 443
@@ -139,6 +153,7 @@ proxy-groups:
       - "🇨🇿_3"
       - "🇨🇿_4"
       - "🇨🇿_5"
+      - "🇨🇿_6"
 
 
   - name: "Load Balance"
@@ -152,6 +167,7 @@ proxy-groups:
       - "🇨🇿_3"
       - "🇨🇿_4"
       - "🇨🇿_5"
+      - "🇨🇿_6"
 
 rules:
   - MATCH,PROXY

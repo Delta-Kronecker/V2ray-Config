@@ -33,30 +33,311 @@
         ],
         "outbounds": [
             {
-                "protocol": "vless",
+                "protocol": "trojan",
                 "settings": {
-                    "vnext": [
+                    "servers": [
                         {
-                            "address": "104.26.13.140",
+                            "address": "official.seoulcitygovernment.com.ua",
                             "port": 8443,
-                            "users": [
-                                {
-                                    "id": "767b6340-96dc-4aa0-8013-a8af7513d920",
-                                    "encryption": "none"
-                                }
-                            ]
+                            "password": "96983eb4-c8f1-316e-ab00-500014ed3d8b"
                         }
                     ]
                 },
                 "streamSettings": {
-                    "network": "ws",
-                    "wsSettings": {
-                        "host": "c7dabe95.proxy-978.pages.dev",
-                        "path": "/"
-                    },
                     "security": "tls",
                     "tlsSettings": {
-                        "serverName": "c7dabe95.proxy-978.pages.dev",
+                        "serverName": "official.seoulcitygovernment.com.ua",
+                        "fingerprint": "chrome",
+                        "alpn": [
+                            "http/1.1"
+                        ]
+                    },
+                    "sockopt": {
+                        "domainStrategy": "UseIP"
+                    },
+                    "finalmask": {
+                        "tcp": [
+                            {
+                                "type": "fragment",
+                                "settings": {
+                                    "packets": "1-3",
+                                    "length": "5-40",
+                                    "delay": "1",
+                                    "maxSplit": "5"
+                                }
+                            }
+                        ]
+                    }
+                },
+                "tag": "proxy"
+            },
+            {
+                "protocol": "freedom",
+                "tag": "direct"
+            }
+        ],
+        "routing": {
+            "domainStrategy": "IPIfNonMatch",
+            "rules": [
+                {
+                    "domain": [
+                        "geosite:private"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                },
+                {
+                    "ip": [
+                        "geoip:private"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                }
+            ]
+        }
+    },
+    {
+        "dns": {
+            "servers": [
+                "fakedns",
+                {
+                    "address": "https://8.8.8.8/dns-query",
+                    "tag": "remote-dns"
+                }
+            ],
+            "queryStrategy": "UseIP"
+        },
+        "inbounds": [
+            {
+                "listen": "127.0.0.1",
+                "port": 10808,
+                "protocol": "mixed",
+                "settings": {
+                    "auth": "noauth",
+                    "udp": true
+                },
+                "sniffing": {
+                    "destOverride": [
+                        "http",
+                        "tls",
+                        "fakedns"
+                    ],
+                    "enabled": true,
+                    "routeOnly": true
+                },
+                "tag": "mixed-in"
+            }
+        ],
+        "outbounds": [
+            {
+                "protocol": "trojan",
+                "settings": {
+                    "servers": [
+                        {
+                            "address": "topical-shark.rooster465.autos",
+                            "port": 443,
+                            "password": "NQ26071394"
+                        }
+                    ]
+                },
+                "streamSettings": {
+                    "security": "tls",
+                    "tlsSettings": {
+                        "serverName": "topical-shark.rooster465.autos",
+                        "fingerprint": "chrome",
+                        "alpn": [
+                            "http/1.1"
+                        ]
+                    },
+                    "sockopt": {
+                        "domainStrategy": "UseIP"
+                    },
+                    "finalmask": {
+                        "tcp": [
+                            {
+                                "type": "fragment",
+                                "settings": {
+                                    "packets": "1-3",
+                                    "length": "5-40",
+                                    "delay": "1",
+                                    "maxSplit": "5"
+                                }
+                            }
+                        ]
+                    }
+                },
+                "tag": "proxy"
+            },
+            {
+                "protocol": "freedom",
+                "tag": "direct"
+            }
+        ],
+        "routing": {
+            "domainStrategy": "IPIfNonMatch",
+            "rules": [
+                {
+                    "domain": [
+                        "geosite:private"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                },
+                {
+                    "ip": [
+                        "geoip:private"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                }
+            ]
+        }
+    },
+    {
+        "dns": {
+            "servers": [
+                "fakedns",
+                {
+                    "address": "https://8.8.8.8/dns-query",
+                    "tag": "remote-dns"
+                }
+            ],
+            "queryStrategy": "UseIP"
+        },
+        "inbounds": [
+            {
+                "listen": "127.0.0.1",
+                "port": 10808,
+                "protocol": "mixed",
+                "settings": {
+                    "auth": "noauth",
+                    "udp": true
+                },
+                "sniffing": {
+                    "destOverride": [
+                        "http",
+                        "tls",
+                        "fakedns"
+                    ],
+                    "enabled": true,
+                    "routeOnly": true
+                },
+                "tag": "mixed-in"
+            }
+        ],
+        "outbounds": [
+            {
+                "protocol": "trojan",
+                "settings": {
+                    "servers": [
+                        {
+                            "address": "137.184.172.228",
+                            "port": 443,
+                            "password": "5392c4d3-b13e-456f-a0e5-8eaf52b7fc1d"
+                        }
+                    ]
+                },
+                "streamSettings": {
+                    "security": "tls",
+                    "tlsSettings": {
+                        "serverName": "termux.com",
+                        "fingerprint": "chrome",
+                        "alpn": [
+                            "http/1.1"
+                        ]
+                    },
+                    "sockopt": {
+                        "domainStrategy": "UseIP"
+                    },
+                    "finalmask": {
+                        "tcp": [
+                            {
+                                "type": "fragment",
+                                "settings": {
+                                    "packets": "1-3",
+                                    "length": "5-40",
+                                    "delay": "1",
+                                    "maxSplit": "5"
+                                }
+                            }
+                        ]
+                    }
+                },
+                "tag": "proxy"
+            },
+            {
+                "protocol": "freedom",
+                "tag": "direct"
+            }
+        ],
+        "routing": {
+            "domainStrategy": "IPIfNonMatch",
+            "rules": [
+                {
+                    "domain": [
+                        "geosite:private"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                },
+                {
+                    "ip": [
+                        "geoip:private"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                }
+            ]
+        }
+    },
+    {
+        "dns": {
+            "servers": [
+                "fakedns",
+                {
+                    "address": "https://8.8.8.8/dns-query",
+                    "tag": "remote-dns"
+                }
+            ],
+            "queryStrategy": "UseIP"
+        },
+        "inbounds": [
+            {
+                "listen": "127.0.0.1",
+                "port": 10808,
+                "protocol": "mixed",
+                "settings": {
+                    "auth": "noauth",
+                    "udp": true
+                },
+                "sniffing": {
+                    "destOverride": [
+                        "http",
+                        "tls",
+                        "fakedns"
+                    ],
+                    "enabled": true,
+                    "routeOnly": true
+                },
+                "tag": "mixed-in"
+            }
+        ],
+        "outbounds": [
+            {
+                "protocol": "trojan",
+                "settings": {
+                    "servers": [
+                        {
+                            "address": "casual-bee.rooster465.autos",
+                            "port": 443,
+                            "password": "ND91608427"
+                        }
+                    ]
+                },
+                "streamSettings": {
+                    "security": "tls",
+                    "tlsSettings": {
+                        "serverName": "casual-bee.rooster465.autos",
                         "fingerprint": "chrome",
                         "alpn": [
                             "http/1.1"
@@ -144,7 +425,1174 @@
                 "settings": {
                     "vnext": [
                         {
-                            "address": "150.241.72.226",
+                            "address": "172.64.144.198",
+                            "port": 443,
+                            "users": [
+                                {
+                                    "id": "5dc15e15-f285-4a9d-959b-0e4fbdd77b63",
+                                    "encryption": "none"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "streamSettings": {
+                    "network": "ws",
+                    "wsSettings": {
+                        "host": "powered-by-surena.configfarsi695fcfe8a2e58.workers.dev",
+                        "path": "/"
+                    },
+                    "security": "tls",
+                    "tlsSettings": {
+                        "serverName": "powered-by-surena.configfarsi695fcfe8a2e58.workers.dev",
+                        "fingerprint": "chrome",
+                        "alpn": [
+                            "http/1.1"
+                        ]
+                    },
+                    "sockopt": {
+                        "domainStrategy": "UseIP"
+                    },
+                    "finalmask": {
+                        "tcp": [
+                            {
+                                "type": "fragment",
+                                "settings": {
+                                    "packets": "1-3",
+                                    "length": "5-40",
+                                    "delay": "1",
+                                    "maxSplit": "5"
+                                }
+                            }
+                        ]
+                    }
+                },
+                "tag": "proxy"
+            },
+            {
+                "protocol": "freedom",
+                "tag": "direct"
+            }
+        ],
+        "routing": {
+            "domainStrategy": "IPIfNonMatch",
+            "rules": [
+                {
+                    "domain": [
+                        "geosite:private"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                },
+                {
+                    "ip": [
+                        "geoip:private"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                }
+            ]
+        }
+    },
+    {
+        "dns": {
+            "servers": [
+                "fakedns",
+                {
+                    "address": "https://8.8.8.8/dns-query",
+                    "tag": "remote-dns"
+                }
+            ],
+            "queryStrategy": "UseIP"
+        },
+        "inbounds": [
+            {
+                "listen": "127.0.0.1",
+                "port": 10808,
+                "protocol": "mixed",
+                "settings": {
+                    "auth": "noauth",
+                    "udp": true
+                },
+                "sniffing": {
+                    "destOverride": [
+                        "http",
+                        "tls",
+                        "fakedns"
+                    ],
+                    "enabled": true,
+                    "routeOnly": true
+                },
+                "tag": "mixed-in"
+            }
+        ],
+        "outbounds": [
+            {
+                "protocol": "trojan",
+                "settings": {
+                    "servers": [
+                        {
+                            "address": "45.91.171.116",
+                            "port": 443,
+                            "password": "2ee85121-31de-4581-a492-eb00f606e392"
+                        }
+                    ]
+                },
+                "streamSettings": {
+                    "security": "tls",
+                    "tlsSettings": {
+                        "serverName": "sto.freeguard.org",
+                        "fingerprint": "chrome",
+                        "alpn": [
+                            "http/1.1"
+                        ]
+                    },
+                    "sockopt": {
+                        "domainStrategy": "UseIP"
+                    },
+                    "finalmask": {
+                        "tcp": [
+                            {
+                                "type": "fragment",
+                                "settings": {
+                                    "packets": "1-3",
+                                    "length": "5-40",
+                                    "delay": "1",
+                                    "maxSplit": "5"
+                                }
+                            }
+                        ]
+                    }
+                },
+                "tag": "proxy"
+            },
+            {
+                "protocol": "freedom",
+                "tag": "direct"
+            }
+        ],
+        "routing": {
+            "domainStrategy": "IPIfNonMatch",
+            "rules": [
+                {
+                    "domain": [
+                        "geosite:private"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                },
+                {
+                    "ip": [
+                        "geoip:private"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                }
+            ]
+        }
+    },
+    {
+        "dns": {
+            "servers": [
+                "fakedns",
+                {
+                    "address": "https://8.8.8.8/dns-query",
+                    "tag": "remote-dns"
+                }
+            ],
+            "queryStrategy": "UseIP"
+        },
+        "inbounds": [
+            {
+                "listen": "127.0.0.1",
+                "port": 10808,
+                "protocol": "mixed",
+                "settings": {
+                    "auth": "noauth",
+                    "udp": true
+                },
+                "sniffing": {
+                    "destOverride": [
+                        "http",
+                        "tls",
+                        "fakedns"
+                    ],
+                    "enabled": true,
+                    "routeOnly": true
+                },
+                "tag": "mixed-in"
+            }
+        ],
+        "outbounds": [
+            {
+                "protocol": "vmess",
+                "settings": {
+                    "vnext": [
+                        {
+                            "address": "82.198.246.97",
+                            "port": 180,
+                            "users": [
+                                {
+                                    "id": "d13fc2f5-3e05-4795-81eb-44143a09e552",
+                                    "alterId": 0,
+                                    "security": "auto"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "streamSettings": {
+                    "sockopt": {
+                        "domainStrategy": "UseIP"
+                    },
+                    "finalmask": {
+                        "tcp": [
+                            {
+                                "type": "fragment",
+                                "settings": {
+                                    "packets": "1-3",
+                                    "length": "5-40",
+                                    "delay": "1",
+                                    "maxSplit": "5"
+                                }
+                            }
+                        ]
+                    }
+                },
+                "tag": "proxy"
+            },
+            {
+                "protocol": "freedom",
+                "tag": "direct"
+            }
+        ],
+        "routing": {
+            "domainStrategy": "IPIfNonMatch",
+            "rules": [
+                {
+                    "domain": [
+                        "geosite:private"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                },
+                {
+                    "ip": [
+                        "geoip:private"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                }
+            ]
+        }
+    },
+    {
+        "dns": {
+            "servers": [
+                "fakedns",
+                {
+                    "address": "https://8.8.8.8/dns-query",
+                    "tag": "remote-dns"
+                }
+            ],
+            "queryStrategy": "UseIP"
+        },
+        "inbounds": [
+            {
+                "listen": "127.0.0.1",
+                "port": 10808,
+                "protocol": "mixed",
+                "settings": {
+                    "auth": "noauth",
+                    "udp": true
+                },
+                "sniffing": {
+                    "destOverride": [
+                        "http",
+                        "tls",
+                        "fakedns"
+                    ],
+                    "enabled": true,
+                    "routeOnly": true
+                },
+                "tag": "mixed-in"
+            }
+        ],
+        "outbounds": [
+            {
+                "protocol": "vless",
+                "settings": {
+                    "vnext": [
+                        {
+                            "address": "time.is",
+                            "port": 2096,
+                            "users": [
+                                {
+                                    "id": "c49a0981-6d37-4ec0-9a01-1b63ccc07e4f",
+                                    "encryption": "none"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "streamSettings": {
+                    "network": "ws",
+                    "wsSettings": {
+                        "host": "peekconfig.hamrahfree1.workers.dev",
+                        "path": "/eyJqdW5rIjoiZHlCcVpqeEYiLCJwcm90b2NvbCI6InZsIiwibW9kZSI6InByZWZpeCIsInBhbmVsSVBzIjpbIlsyYTAyOjg5ODoxNDY6NjQ6Ol0iLCJbMjYwMjpmYzU5OjExOjY0OjpdIiwiWzI2MDI6ZmM1OTpiMDo2NDo6XSJdfQ==?ed=2560"
+                    },
+                    "security": "tls",
+                    "tlsSettings": {
+                        "serverName": "pEeKcOnFig.haMRaHfREe1.wOrKerS.DEv",
+                        "fingerprint": "chrome",
+                        "alpn": [
+                            "h3",
+                            "h2",
+                            "http/1.1"
+                        ]
+                    },
+                    "sockopt": {
+                        "domainStrategy": "UseIP"
+                    },
+                    "finalmask": {
+                        "tcp": [
+                            {
+                                "type": "fragment",
+                                "settings": {
+                                    "packets": "1-3",
+                                    "length": "5-40",
+                                    "delay": "1",
+                                    "maxSplit": "5"
+                                }
+                            }
+                        ]
+                    }
+                },
+                "tag": "proxy"
+            },
+            {
+                "protocol": "freedom",
+                "tag": "direct"
+            }
+        ],
+        "routing": {
+            "domainStrategy": "IPIfNonMatch",
+            "rules": [
+                {
+                    "domain": [
+                        "geosite:private"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                },
+                {
+                    "ip": [
+                        "geoip:private"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                }
+            ]
+        }
+    },
+    {
+        "dns": {
+            "servers": [
+                "fakedns",
+                {
+                    "address": "https://8.8.8.8/dns-query",
+                    "tag": "remote-dns"
+                }
+            ],
+            "queryStrategy": "UseIP"
+        },
+        "inbounds": [
+            {
+                "listen": "127.0.0.1",
+                "port": 10808,
+                "protocol": "mixed",
+                "settings": {
+                    "auth": "noauth",
+                    "udp": true
+                },
+                "sniffing": {
+                    "destOverride": [
+                        "http",
+                        "tls",
+                        "fakedns"
+                    ],
+                    "enabled": true,
+                    "routeOnly": true
+                },
+                "tag": "mixed-in"
+            }
+        ],
+        "outbounds": [
+            {
+                "protocol": "trojan",
+                "settings": {
+                    "servers": [
+                        {
+                            "address": "star-cheetah.rooster465.autos",
+                            "port": 443,
+                            "password": "EQ30679154"
+                        }
+                    ]
+                },
+                "streamSettings": {
+                    "security": "tls",
+                    "tlsSettings": {
+                        "serverName": "star-cheetah.rooster465.autos",
+                        "fingerprint": "chrome",
+                        "alpn": [
+                            "http/1.1"
+                        ]
+                    },
+                    "sockopt": {
+                        "domainStrategy": "UseIP"
+                    },
+                    "finalmask": {
+                        "tcp": [
+                            {
+                                "type": "fragment",
+                                "settings": {
+                                    "packets": "1-3",
+                                    "length": "5-40",
+                                    "delay": "1",
+                                    "maxSplit": "5"
+                                }
+                            }
+                        ]
+                    }
+                },
+                "tag": "proxy"
+            },
+            {
+                "protocol": "freedom",
+                "tag": "direct"
+            }
+        ],
+        "routing": {
+            "domainStrategy": "IPIfNonMatch",
+            "rules": [
+                {
+                    "domain": [
+                        "geosite:private"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                },
+                {
+                    "ip": [
+                        "geoip:private"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                }
+            ]
+        }
+    },
+    {
+        "dns": {
+            "servers": [
+                "fakedns",
+                {
+                    "address": "https://8.8.8.8/dns-query",
+                    "tag": "remote-dns"
+                }
+            ],
+            "queryStrategy": "UseIP"
+        },
+        "inbounds": [
+            {
+                "listen": "127.0.0.1",
+                "port": 10808,
+                "protocol": "mixed",
+                "settings": {
+                    "auth": "noauth",
+                    "udp": true
+                },
+                "sniffing": {
+                    "destOverride": [
+                        "http",
+                        "tls",
+                        "fakedns"
+                    ],
+                    "enabled": true,
+                    "routeOnly": true
+                },
+                "tag": "mixed-in"
+            }
+        ],
+        "outbounds": [
+            {
+                "protocol": "shadowsocks",
+                "settings": {
+                    "servers": [
+                        {
+                            "address": "45.40.154.16",
+                            "port": 443,
+                            "password": "14b02e2a-8930-4afb-8412-ea4a4954ca5b",
+                            "method": "none"
+                        }
+                    ]
+                },
+                "streamSettings": {
+                    "sockopt": {
+                        "domainStrategy": "UseIP"
+                    },
+                    "finalmask": {
+                        "tcp": [
+                            {
+                                "type": "fragment",
+                                "settings": {
+                                    "packets": "1-3",
+                                    "length": "5-40",
+                                    "delay": "1",
+                                    "maxSplit": "5"
+                                }
+                            }
+                        ]
+                    }
+                },
+                "tag": "proxy"
+            },
+            {
+                "protocol": "freedom",
+                "tag": "direct"
+            }
+        ],
+        "routing": {
+            "domainStrategy": "IPIfNonMatch",
+            "rules": [
+                {
+                    "domain": [
+                        "geosite:private"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                },
+                {
+                    "ip": [
+                        "geoip:private"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                }
+            ]
+        }
+    },
+    {
+        "dns": {
+            "servers": [
+                "fakedns",
+                {
+                    "address": "https://8.8.8.8/dns-query",
+                    "tag": "remote-dns"
+                }
+            ],
+            "queryStrategy": "UseIP"
+        },
+        "inbounds": [
+            {
+                "listen": "127.0.0.1",
+                "port": 10808,
+                "protocol": "mixed",
+                "settings": {
+                    "auth": "noauth",
+                    "udp": true
+                },
+                "sniffing": {
+                    "destOverride": [
+                        "http",
+                        "tls",
+                        "fakedns"
+                    ],
+                    "enabled": true,
+                    "routeOnly": true
+                },
+                "tag": "mixed-in"
+            }
+        ],
+        "outbounds": [
+            {
+                "protocol": "shadowsocks",
+                "settings": {
+                    "servers": [
+                        {
+                            "address": "82.38.31.155",
+                            "port": 8080,
+                            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
+                            "method": "chacha20-ietf-poly1305"
+                        }
+                    ]
+                },
+                "streamSettings": {
+                    "sockopt": {
+                        "domainStrategy": "UseIP"
+                    },
+                    "finalmask": {
+                        "tcp": [
+                            {
+                                "type": "fragment",
+                                "settings": {
+                                    "packets": "1-3",
+                                    "length": "5-40",
+                                    "delay": "1",
+                                    "maxSplit": "5"
+                                }
+                            }
+                        ]
+                    }
+                },
+                "tag": "proxy"
+            },
+            {
+                "protocol": "freedom",
+                "tag": "direct"
+            }
+        ],
+        "routing": {
+            "domainStrategy": "IPIfNonMatch",
+            "rules": [
+                {
+                    "domain": [
+                        "geosite:private"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                },
+                {
+                    "ip": [
+                        "geoip:private"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                }
+            ]
+        }
+    },
+    {
+        "dns": {
+            "servers": [
+                "fakedns",
+                {
+                    "address": "https://8.8.8.8/dns-query",
+                    "tag": "remote-dns"
+                }
+            ],
+            "queryStrategy": "UseIP"
+        },
+        "inbounds": [
+            {
+                "listen": "127.0.0.1",
+                "port": 10808,
+                "protocol": "mixed",
+                "settings": {
+                    "auth": "noauth",
+                    "udp": true
+                },
+                "sniffing": {
+                    "destOverride": [
+                        "http",
+                        "tls",
+                        "fakedns"
+                    ],
+                    "enabled": true,
+                    "routeOnly": true
+                },
+                "tag": "mixed-in"
+            }
+        ],
+        "outbounds": [
+            {
+                "protocol": "vless",
+                "settings": {
+                    "vnext": [
+                        {
+                            "address": "shrill-cell-cca7.158-6fa.workers.dev",
+                            "port": 8880,
+                            "users": [
+                                {
+                                    "id": "3e7bb66e-d7c6-4711-aa05-e4ab0ec58c6d",
+                                    "encryption": "none"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "streamSettings": {
+                    "network": "ws",
+                    "wsSettings": {
+                        "path": "/pyip=ProxyIP.SG.CMLiussss.net"
+                    },
+                    "sockopt": {
+                        "domainStrategy": "UseIP"
+                    },
+                    "finalmask": {
+                        "tcp": [
+                            {
+                                "type": "fragment",
+                                "settings": {
+                                    "packets": "1-3",
+                                    "length": "5-40",
+                                    "delay": "1",
+                                    "maxSplit": "5"
+                                }
+                            }
+                        ]
+                    }
+                },
+                "tag": "proxy"
+            },
+            {
+                "protocol": "freedom",
+                "tag": "direct"
+            }
+        ],
+        "routing": {
+            "domainStrategy": "IPIfNonMatch",
+            "rules": [
+                {
+                    "domain": [
+                        "geosite:private"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                },
+                {
+                    "ip": [
+                        "geoip:private"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                }
+            ]
+        }
+    },
+    {
+        "dns": {
+            "servers": [
+                "fakedns",
+                {
+                    "address": "https://8.8.8.8/dns-query",
+                    "tag": "remote-dns"
+                }
+            ],
+            "queryStrategy": "UseIP"
+        },
+        "inbounds": [
+            {
+                "listen": "127.0.0.1",
+                "port": 10808,
+                "protocol": "mixed",
+                "settings": {
+                    "auth": "noauth",
+                    "udp": true
+                },
+                "sniffing": {
+                    "destOverride": [
+                        "http",
+                        "tls",
+                        "fakedns"
+                    ],
+                    "enabled": true,
+                    "routeOnly": true
+                },
+                "tag": "mixed-in"
+            }
+        ],
+        "outbounds": [
+            {
+                "protocol": "vmess",
+                "settings": {
+                    "vnext": [
+                        {
+                            "address": "82.198.246.97",
+                            "port": 180,
+                            "users": [
+                                {
+                                    "id": "d13fc2f5-3e05-4795-81eb-44143a09e552",
+                                    "alterId": 0,
+                                    "security": "auto"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "streamSettings": {
+                    "sockopt": {
+                        "domainStrategy": "UseIP"
+                    },
+                    "finalmask": {
+                        "tcp": [
+                            {
+                                "type": "fragment",
+                                "settings": {
+                                    "packets": "1-3",
+                                    "length": "5-40",
+                                    "delay": "1",
+                                    "maxSplit": "5"
+                                }
+                            }
+                        ]
+                    }
+                },
+                "tag": "proxy"
+            },
+            {
+                "protocol": "freedom",
+                "tag": "direct"
+            }
+        ],
+        "routing": {
+            "domainStrategy": "IPIfNonMatch",
+            "rules": [
+                {
+                    "domain": [
+                        "geosite:private"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                },
+                {
+                    "ip": [
+                        "geoip:private"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                }
+            ]
+        }
+    },
+    {
+        "dns": {
+            "servers": [
+                "fakedns",
+                {
+                    "address": "https://8.8.8.8/dns-query",
+                    "tag": "remote-dns"
+                }
+            ],
+            "queryStrategy": "UseIP"
+        },
+        "inbounds": [
+            {
+                "listen": "127.0.0.1",
+                "port": 10808,
+                "protocol": "mixed",
+                "settings": {
+                    "auth": "noauth",
+                    "udp": true
+                },
+                "sniffing": {
+                    "destOverride": [
+                        "http",
+                        "tls",
+                        "fakedns"
+                    ],
+                    "enabled": true,
+                    "routeOnly": true
+                },
+                "tag": "mixed-in"
+            }
+        ],
+        "outbounds": [
+            {
+                "protocol": "trojan",
+                "settings": {
+                    "servers": [
+                        {
+                            "address": "211.20.156.191",
+                            "port": 28160,
+                            "password": "i99Cef"
+                        }
+                    ]
+                },
+                "streamSettings": {
+                    "security": "tls",
+                    "tlsSettings": {
+                        "serverName": "download.windowsupdate.com",
+                        "fingerprint": "chrome",
+                        "alpn": [
+                            "http/1.1"
+                        ]
+                    },
+                    "sockopt": {
+                        "domainStrategy": "UseIP"
+                    },
+                    "finalmask": {
+                        "tcp": [
+                            {
+                                "type": "fragment",
+                                "settings": {
+                                    "packets": "1-3",
+                                    "length": "5-40",
+                                    "delay": "1",
+                                    "maxSplit": "5"
+                                }
+                            }
+                        ]
+                    }
+                },
+                "tag": "proxy"
+            },
+            {
+                "protocol": "freedom",
+                "tag": "direct"
+            }
+        ],
+        "routing": {
+            "domainStrategy": "IPIfNonMatch",
+            "rules": [
+                {
+                    "domain": [
+                        "geosite:private"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                },
+                {
+                    "ip": [
+                        "geoip:private"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                }
+            ]
+        }
+    },
+    {
+        "dns": {
+            "servers": [
+                "fakedns",
+                {
+                    "address": "https://8.8.8.8/dns-query",
+                    "tag": "remote-dns"
+                }
+            ],
+            "queryStrategy": "UseIP"
+        },
+        "inbounds": [
+            {
+                "listen": "127.0.0.1",
+                "port": 10808,
+                "protocol": "mixed",
+                "settings": {
+                    "auth": "noauth",
+                    "udp": true
+                },
+                "sniffing": {
+                    "destOverride": [
+                        "http",
+                        "tls",
+                        "fakedns"
+                    ],
+                    "enabled": true,
+                    "routeOnly": true
+                },
+                "tag": "mixed-in"
+            }
+        ],
+        "outbounds": [
+            {
+                "protocol": "vless",
+                "settings": {
+                    "vnext": [
+                        {
+                            "address": "31.58.50.200",
+                            "port": 8443,
+                            "users": [
+                                {
+                                    "id": "b5f27d9a-4d7a-4fa3-a45a-09bfd3e8a248",
+                                    "encryption": "none",
+                                    "flow": "xtls-rprx-vision"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "streamSettings": {
+                    "security": "reality",
+                    "realitySettings": {
+                        "serverName": "tradingview.com",
+                        "fingerprint": "firefox",
+                        "publicKey": "mr5AF0LFyDzYDRoYAwH6QNcHXL77-LoiwRx50ZzU8QU",
+                        "shortId": ""
+                    },
+                    "sockopt": {
+                        "domainStrategy": "UseIP"
+                    },
+                    "finalmask": {
+                        "tcp": [
+                            {
+                                "type": "fragment",
+                                "settings": {
+                                    "packets": "1-3",
+                                    "length": "5-40",
+                                    "delay": "1",
+                                    "maxSplit": "5"
+                                }
+                            }
+                        ]
+                    }
+                },
+                "tag": "proxy"
+            },
+            {
+                "protocol": "freedom",
+                "tag": "direct"
+            }
+        ],
+        "routing": {
+            "domainStrategy": "IPIfNonMatch",
+            "rules": [
+                {
+                    "domain": [
+                        "geosite:private"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                },
+                {
+                    "ip": [
+                        "geoip:private"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                }
+            ]
+        }
+    },
+    {
+        "dns": {
+            "servers": [
+                "fakedns",
+                {
+                    "address": "https://8.8.8.8/dns-query",
+                    "tag": "remote-dns"
+                }
+            ],
+            "queryStrategy": "UseIP"
+        },
+        "inbounds": [
+            {
+                "listen": "127.0.0.1",
+                "port": 10808,
+                "protocol": "mixed",
+                "settings": {
+                    "auth": "noauth",
+                    "udp": true
+                },
+                "sniffing": {
+                    "destOverride": [
+                        "http",
+                        "tls",
+                        "fakedns"
+                    ],
+                    "enabled": true,
+                    "routeOnly": true
+                },
+                "tag": "mixed-in"
+            }
+        ],
+        "outbounds": [
+            {
+                "protocol": "shadowsocks",
+                "settings": {
+                    "servers": [
+                        {
+                            "address": "82.38.31.210",
+                            "port": 8080,
+                            "password": "k1dBOmOB4oqi7Ump37a1bQ",
+                            "method": "chacha20-ietf-poly1305"
+                        }
+                    ]
+                },
+                "streamSettings": {
+                    "sockopt": {
+                        "domainStrategy": "UseIP"
+                    },
+                    "finalmask": {
+                        "tcp": [
+                            {
+                                "type": "fragment",
+                                "settings": {
+                                    "packets": "1-3",
+                                    "length": "5-40",
+                                    "delay": "1",
+                                    "maxSplit": "5"
+                                }
+                            }
+                        ]
+                    }
+                },
+                "tag": "proxy"
+            },
+            {
+                "protocol": "freedom",
+                "tag": "direct"
+            }
+        ],
+        "routing": {
+            "domainStrategy": "IPIfNonMatch",
+            "rules": [
+                {
+                    "domain": [
+                        "geosite:private"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                },
+                {
+                    "ip": [
+                        "geoip:private"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                }
+            ]
+        }
+    },
+    {
+        "dns": {
+            "servers": [
+                "fakedns",
+                {
+                    "address": "https://8.8.8.8/dns-query",
+                    "tag": "remote-dns"
+                }
+            ],
+            "queryStrategy": "UseIP"
+        },
+        "inbounds": [
+            {
+                "listen": "127.0.0.1",
+                "port": 10808,
+                "protocol": "mixed",
+                "settings": {
+                    "auth": "noauth",
+                    "udp": true
+                },
+                "sniffing": {
+                    "destOverride": [
+                        "http",
+                        "tls",
+                        "fakedns"
+                    ],
+                    "enabled": true,
+                    "routeOnly": true
+                },
+                "tag": "mixed-in"
+            }
+        ],
+        "outbounds": [
+            {
+                "protocol": "vless",
+                "settings": {
+                    "vnext": [
+                        {
+                            "address": "norway-4.moritech.net",
                             "port": 443,
                             "users": [
                                 {
@@ -159,10 +1607,1057 @@
                 "streamSettings": {
                     "security": "tls",
                     "tlsSettings": {
-                        "serverName": "viper-8.moriarty-web.com",
+                        "serverName": "norway-4.moritech.net",
                         "fingerprint": "firefox",
                         "alpn": [
-                            "v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus"
+                            "http/1.1"
+                        ]
+                    },
+                    "sockopt": {
+                        "domainStrategy": "UseIP"
+                    },
+                    "finalmask": {
+                        "tcp": [
+                            {
+                                "type": "fragment",
+                                "settings": {
+                                    "packets": "1-3",
+                                    "length": "5-40",
+                                    "delay": "1",
+                                    "maxSplit": "5"
+                                }
+                            }
+                        ]
+                    }
+                },
+                "tag": "proxy"
+            },
+            {
+                "protocol": "freedom",
+                "tag": "direct"
+            }
+        ],
+        "routing": {
+            "domainStrategy": "IPIfNonMatch",
+            "rules": [
+                {
+                    "domain": [
+                        "geosite:private"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                },
+                {
+                    "ip": [
+                        "geoip:private"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                }
+            ]
+        }
+    },
+    {
+        "dns": {
+            "servers": [
+                "fakedns",
+                {
+                    "address": "https://8.8.8.8/dns-query",
+                    "tag": "remote-dns"
+                }
+            ],
+            "queryStrategy": "UseIP"
+        },
+        "inbounds": [
+            {
+                "listen": "127.0.0.1",
+                "port": 10808,
+                "protocol": "mixed",
+                "settings": {
+                    "auth": "noauth",
+                    "udp": true
+                },
+                "sniffing": {
+                    "destOverride": [
+                        "http",
+                        "tls",
+                        "fakedns"
+                    ],
+                    "enabled": true,
+                    "routeOnly": true
+                },
+                "tag": "mixed-in"
+            }
+        ],
+        "outbounds": [
+            {
+                "protocol": "vmess",
+                "settings": {
+                    "vnext": [
+                        {
+                            "address": "82.198.246.97",
+                            "port": 180,
+                            "users": [
+                                {
+                                    "id": "d13fc2f5-3e05-4795-81eb-44143a09e552",
+                                    "alterId": 0,
+                                    "security": "auto"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "streamSettings": {
+                    "sockopt": {
+                        "domainStrategy": "UseIP"
+                    },
+                    "finalmask": {
+                        "tcp": [
+                            {
+                                "type": "fragment",
+                                "settings": {
+                                    "packets": "1-3",
+                                    "length": "5-40",
+                                    "delay": "1",
+                                    "maxSplit": "5"
+                                }
+                            }
+                        ]
+                    }
+                },
+                "tag": "proxy"
+            },
+            {
+                "protocol": "freedom",
+                "tag": "direct"
+            }
+        ],
+        "routing": {
+            "domainStrategy": "IPIfNonMatch",
+            "rules": [
+                {
+                    "domain": [
+                        "geosite:private"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                },
+                {
+                    "ip": [
+                        "geoip:private"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                }
+            ]
+        }
+    },
+    {
+        "dns": {
+            "servers": [
+                "fakedns",
+                {
+                    "address": "https://8.8.8.8/dns-query",
+                    "tag": "remote-dns"
+                }
+            ],
+            "queryStrategy": "UseIP"
+        },
+        "inbounds": [
+            {
+                "listen": "127.0.0.1",
+                "port": 10808,
+                "protocol": "mixed",
+                "settings": {
+                    "auth": "noauth",
+                    "udp": true
+                },
+                "sniffing": {
+                    "destOverride": [
+                        "http",
+                        "tls",
+                        "fakedns"
+                    ],
+                    "enabled": true,
+                    "routeOnly": true
+                },
+                "tag": "mixed-in"
+            }
+        ],
+        "outbounds": [
+            {
+                "protocol": "shadowsocks",
+                "settings": {
+                    "servers": [
+                        {
+                            "address": "82.38.31.155",
+                            "port": 8080,
+                            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
+                            "method": "chacha20-ietf-poly1305"
+                        }
+                    ]
+                },
+                "streamSettings": {
+                    "sockopt": {
+                        "domainStrategy": "UseIP"
+                    },
+                    "finalmask": {
+                        "tcp": [
+                            {
+                                "type": "fragment",
+                                "settings": {
+                                    "packets": "1-3",
+                                    "length": "5-40",
+                                    "delay": "1",
+                                    "maxSplit": "5"
+                                }
+                            }
+                        ]
+                    }
+                },
+                "tag": "proxy"
+            },
+            {
+                "protocol": "freedom",
+                "tag": "direct"
+            }
+        ],
+        "routing": {
+            "domainStrategy": "IPIfNonMatch",
+            "rules": [
+                {
+                    "domain": [
+                        "geosite:private"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                },
+                {
+                    "ip": [
+                        "geoip:private"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                }
+            ]
+        }
+    },
+    {
+        "dns": {
+            "servers": [
+                "fakedns",
+                {
+                    "address": "https://8.8.8.8/dns-query",
+                    "tag": "remote-dns"
+                }
+            ],
+            "queryStrategy": "UseIP"
+        },
+        "inbounds": [
+            {
+                "listen": "127.0.0.1",
+                "port": 10808,
+                "protocol": "mixed",
+                "settings": {
+                    "auth": "noauth",
+                    "udp": true
+                },
+                "sniffing": {
+                    "destOverride": [
+                        "http",
+                        "tls",
+                        "fakedns"
+                    ],
+                    "enabled": true,
+                    "routeOnly": true
+                },
+                "tag": "mixed-in"
+            }
+        ],
+        "outbounds": [
+            {
+                "protocol": "shadowsocks",
+                "settings": {
+                    "servers": [
+                        {
+                            "address": "132.145.91.181",
+                            "port": 8443,
+                            "password": "59fc5f8c-5697-4eb8-acf2-8ae363f203a2",
+                            "method": "none"
+                        }
+                    ]
+                },
+                "streamSettings": {
+                    "sockopt": {
+                        "domainStrategy": "UseIP"
+                    },
+                    "finalmask": {
+                        "tcp": [
+                            {
+                                "type": "fragment",
+                                "settings": {
+                                    "packets": "1-3",
+                                    "length": "5-40",
+                                    "delay": "1",
+                                    "maxSplit": "5"
+                                }
+                            }
+                        ]
+                    }
+                },
+                "tag": "proxy"
+            },
+            {
+                "protocol": "freedom",
+                "tag": "direct"
+            }
+        ],
+        "routing": {
+            "domainStrategy": "IPIfNonMatch",
+            "rules": [
+                {
+                    "domain": [
+                        "geosite:private"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                },
+                {
+                    "ip": [
+                        "geoip:private"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                }
+            ]
+        }
+    },
+    {
+        "dns": {
+            "servers": [
+                "fakedns",
+                {
+                    "address": "https://8.8.8.8/dns-query",
+                    "tag": "remote-dns"
+                }
+            ],
+            "queryStrategy": "UseIP"
+        },
+        "inbounds": [
+            {
+                "listen": "127.0.0.1",
+                "port": 10808,
+                "protocol": "mixed",
+                "settings": {
+                    "auth": "noauth",
+                    "udp": true
+                },
+                "sniffing": {
+                    "destOverride": [
+                        "http",
+                        "tls",
+                        "fakedns"
+                    ],
+                    "enabled": true,
+                    "routeOnly": true
+                },
+                "tag": "mixed-in"
+            }
+        ],
+        "outbounds": [
+            {
+                "protocol": "trojan",
+                "settings": {
+                    "servers": [
+                        {
+                            "address": "grown-rhino.rooster465.autos",
+                            "port": 443,
+                            "password": "WG39087154"
+                        }
+                    ]
+                },
+                "streamSettings": {
+                    "security": "tls",
+                    "tlsSettings": {
+                        "serverName": "grown-rhino.rooster465.autos",
+                        "fingerprint": "chrome",
+                        "alpn": [
+                            "http/1.1"
+                        ]
+                    },
+                    "sockopt": {
+                        "domainStrategy": "UseIP"
+                    },
+                    "finalmask": {
+                        "tcp": [
+                            {
+                                "type": "fragment",
+                                "settings": {
+                                    "packets": "1-3",
+                                    "length": "5-40",
+                                    "delay": "1",
+                                    "maxSplit": "5"
+                                }
+                            }
+                        ]
+                    }
+                },
+                "tag": "proxy"
+            },
+            {
+                "protocol": "freedom",
+                "tag": "direct"
+            }
+        ],
+        "routing": {
+            "domainStrategy": "IPIfNonMatch",
+            "rules": [
+                {
+                    "domain": [
+                        "geosite:private"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                },
+                {
+                    "ip": [
+                        "geoip:private"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                }
+            ]
+        }
+    },
+    {
+        "dns": {
+            "servers": [
+                "fakedns",
+                {
+                    "address": "https://8.8.8.8/dns-query",
+                    "tag": "remote-dns"
+                }
+            ],
+            "queryStrategy": "UseIP"
+        },
+        "inbounds": [
+            {
+                "listen": "127.0.0.1",
+                "port": 10808,
+                "protocol": "mixed",
+                "settings": {
+                    "auth": "noauth",
+                    "udp": true
+                },
+                "sniffing": {
+                    "destOverride": [
+                        "http",
+                        "tls",
+                        "fakedns"
+                    ],
+                    "enabled": true,
+                    "routeOnly": true
+                },
+                "tag": "mixed-in"
+            }
+        ],
+        "outbounds": [
+            {
+                "protocol": "vless",
+                "settings": {
+                    "vnext": [
+                        {
+                            "address": "15.204.97.216",
+                            "port": 23576,
+                            "users": [
+                                {
+                                    "id": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
+                                    "encryption": "none",
+                                    "flow": "xtls-rprx-vision"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "streamSettings": {
+                    "security": "reality",
+                    "realitySettings": {
+                        "serverName": "fuck.rkn",
+                        "fingerprint": "chrome",
+                        "publicKey": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
+                        "shortId": "01"
+                    },
+                    "sockopt": {
+                        "domainStrategy": "UseIP"
+                    },
+                    "finalmask": {
+                        "tcp": [
+                            {
+                                "type": "fragment",
+                                "settings": {
+                                    "packets": "1-3",
+                                    "length": "5-40",
+                                    "delay": "1",
+                                    "maxSplit": "5"
+                                }
+                            }
+                        ]
+                    }
+                },
+                "tag": "proxy"
+            },
+            {
+                "protocol": "freedom",
+                "tag": "direct"
+            }
+        ],
+        "routing": {
+            "domainStrategy": "IPIfNonMatch",
+            "rules": [
+                {
+                    "domain": [
+                        "geosite:private"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                },
+                {
+                    "ip": [
+                        "geoip:private"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                }
+            ]
+        }
+    },
+    {
+        "dns": {
+            "servers": [
+                "fakedns",
+                {
+                    "address": "https://8.8.8.8/dns-query",
+                    "tag": "remote-dns"
+                }
+            ],
+            "queryStrategy": "UseIP"
+        },
+        "inbounds": [
+            {
+                "listen": "127.0.0.1",
+                "port": 10808,
+                "protocol": "mixed",
+                "settings": {
+                    "auth": "noauth",
+                    "udp": true
+                },
+                "sniffing": {
+                    "destOverride": [
+                        "http",
+                        "tls",
+                        "fakedns"
+                    ],
+                    "enabled": true,
+                    "routeOnly": true
+                },
+                "tag": "mixed-in"
+            }
+        ],
+        "outbounds": [
+            {
+                "protocol": "shadowsocks",
+                "settings": {
+                    "servers": [
+                        {
+                            "address": "156.146.38.169",
+                            "port": 443,
+                            "password": "shadowsocks",
+                            "method": "aes-128-gcm"
+                        }
+                    ]
+                },
+                "streamSettings": {
+                    "sockopt": {
+                        "domainStrategy": "UseIP"
+                    },
+                    "finalmask": {
+                        "tcp": [
+                            {
+                                "type": "fragment",
+                                "settings": {
+                                    "packets": "1-3",
+                                    "length": "5-40",
+                                    "delay": "1",
+                                    "maxSplit": "5"
+                                }
+                            }
+                        ]
+                    }
+                },
+                "tag": "proxy"
+            },
+            {
+                "protocol": "freedom",
+                "tag": "direct"
+            }
+        ],
+        "routing": {
+            "domainStrategy": "IPIfNonMatch",
+            "rules": [
+                {
+                    "domain": [
+                        "geosite:private"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                },
+                {
+                    "ip": [
+                        "geoip:private"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                }
+            ]
+        }
+    },
+    {
+        "dns": {
+            "servers": [
+                "fakedns",
+                {
+                    "address": "https://8.8.8.8/dns-query",
+                    "tag": "remote-dns"
+                }
+            ],
+            "queryStrategy": "UseIP"
+        },
+        "inbounds": [
+            {
+                "listen": "127.0.0.1",
+                "port": 10808,
+                "protocol": "mixed",
+                "settings": {
+                    "auth": "noauth",
+                    "udp": true
+                },
+                "sniffing": {
+                    "destOverride": [
+                        "http",
+                        "tls",
+                        "fakedns"
+                    ],
+                    "enabled": true,
+                    "routeOnly": true
+                },
+                "tag": "mixed-in"
+            }
+        ],
+        "outbounds": [
+            {
+                "protocol": "trojan",
+                "settings": {
+                    "servers": [
+                        {
+                            "address": "in-oriole.rooster465.autos",
+                            "port": 443,
+                            "password": "CF68213490"
+                        }
+                    ]
+                },
+                "streamSettings": {
+                    "security": "tls",
+                    "tlsSettings": {
+                        "serverName": "in-oriole.rooster465.autos",
+                        "fingerprint": "chrome",
+                        "alpn": [
+                            "http/1.1"
+                        ]
+                    },
+                    "sockopt": {
+                        "domainStrategy": "UseIP"
+                    },
+                    "finalmask": {
+                        "tcp": [
+                            {
+                                "type": "fragment",
+                                "settings": {
+                                    "packets": "1-3",
+                                    "length": "5-40",
+                                    "delay": "1",
+                                    "maxSplit": "5"
+                                }
+                            }
+                        ]
+                    }
+                },
+                "tag": "proxy"
+            },
+            {
+                "protocol": "freedom",
+                "tag": "direct"
+            }
+        ],
+        "routing": {
+            "domainStrategy": "IPIfNonMatch",
+            "rules": [
+                {
+                    "domain": [
+                        "geosite:private"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                },
+                {
+                    "ip": [
+                        "geoip:private"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                }
+            ]
+        }
+    },
+    {
+        "dns": {
+            "servers": [
+                "fakedns",
+                {
+                    "address": "https://8.8.8.8/dns-query",
+                    "tag": "remote-dns"
+                }
+            ],
+            "queryStrategy": "UseIP"
+        },
+        "inbounds": [
+            {
+                "listen": "127.0.0.1",
+                "port": 10808,
+                "protocol": "mixed",
+                "settings": {
+                    "auth": "noauth",
+                    "udp": true
+                },
+                "sniffing": {
+                    "destOverride": [
+                        "http",
+                        "tls",
+                        "fakedns"
+                    ],
+                    "enabled": true,
+                    "routeOnly": true
+                },
+                "tag": "mixed-in"
+            }
+        ],
+        "outbounds": [
+            {
+                "protocol": "vmess",
+                "settings": {
+                    "vnext": [
+                        {
+                            "address": "82.198.246.233",
+                            "port": 180,
+                            "users": [
+                                {
+                                    "id": "d13fc2f5-3e05-4795-81eb-44143a09e552",
+                                    "alterId": 0,
+                                    "security": "auto"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "streamSettings": {
+                    "sockopt": {
+                        "domainStrategy": "UseIP"
+                    },
+                    "finalmask": {
+                        "tcp": [
+                            {
+                                "type": "fragment",
+                                "settings": {
+                                    "packets": "1-3",
+                                    "length": "5-40",
+                                    "delay": "1",
+                                    "maxSplit": "5"
+                                }
+                            }
+                        ]
+                    }
+                },
+                "tag": "proxy"
+            },
+            {
+                "protocol": "freedom",
+                "tag": "direct"
+            }
+        ],
+        "routing": {
+            "domainStrategy": "IPIfNonMatch",
+            "rules": [
+                {
+                    "domain": [
+                        "geosite:private"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                },
+                {
+                    "ip": [
+                        "geoip:private"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                }
+            ]
+        }
+    },
+    {
+        "dns": {
+            "servers": [
+                "fakedns",
+                {
+                    "address": "https://8.8.8.8/dns-query",
+                    "tag": "remote-dns"
+                }
+            ],
+            "queryStrategy": "UseIP"
+        },
+        "inbounds": [
+            {
+                "listen": "127.0.0.1",
+                "port": 10808,
+                "protocol": "mixed",
+                "settings": {
+                    "auth": "noauth",
+                    "udp": true
+                },
+                "sniffing": {
+                    "destOverride": [
+                        "http",
+                        "tls",
+                        "fakedns"
+                    ],
+                    "enabled": true,
+                    "routeOnly": true
+                },
+                "tag": "mixed-in"
+            }
+        ],
+        "outbounds": [
+            {
+                "protocol": "trojan",
+                "settings": {
+                    "servers": [
+                        {
+                            "address": "bursting-dolphin.rooster465.autos",
+                            "port": 443,
+                            "password": "EQ30679154"
+                        }
+                    ]
+                },
+                "streamSettings": {
+                    "security": "tls",
+                    "tlsSettings": {
+                        "serverName": "bursting-dolphin.rooster465.autos",
+                        "fingerprint": "chrome",
+                        "alpn": [
+                            "http/1.1"
+                        ]
+                    },
+                    "sockopt": {
+                        "domainStrategy": "UseIP"
+                    },
+                    "finalmask": {
+                        "tcp": [
+                            {
+                                "type": "fragment",
+                                "settings": {
+                                    "packets": "1-3",
+                                    "length": "5-40",
+                                    "delay": "1",
+                                    "maxSplit": "5"
+                                }
+                            }
+                        ]
+                    }
+                },
+                "tag": "proxy"
+            },
+            {
+                "protocol": "freedom",
+                "tag": "direct"
+            }
+        ],
+        "routing": {
+            "domainStrategy": "IPIfNonMatch",
+            "rules": [
+                {
+                    "domain": [
+                        "geosite:private"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                },
+                {
+                    "ip": [
+                        "geoip:private"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                }
+            ]
+        }
+    },
+    {
+        "dns": {
+            "servers": [
+                "fakedns",
+                {
+                    "address": "https://8.8.8.8/dns-query",
+                    "tag": "remote-dns"
+                }
+            ],
+            "queryStrategy": "UseIP"
+        },
+        "inbounds": [
+            {
+                "listen": "127.0.0.1",
+                "port": 10808,
+                "protocol": "mixed",
+                "settings": {
+                    "auth": "noauth",
+                    "udp": true
+                },
+                "sniffing": {
+                    "destOverride": [
+                        "http",
+                        "tls",
+                        "fakedns"
+                    ],
+                    "enabled": true,
+                    "routeOnly": true
+                },
+                "tag": "mixed-in"
+            }
+        ],
+        "outbounds": [
+            {
+                "protocol": "trojan",
+                "settings": {
+                    "servers": [
+                        {
+                            "address": "moved-meerkat.rooster465.autos",
+                            "port": 443,
+                            "password": "EQ30679154"
+                        }
+                    ]
+                },
+                "streamSettings": {
+                    "security": "tls",
+                    "tlsSettings": {
+                        "serverName": "moved-meerkat.rooster465.autos",
+                        "fingerprint": "chrome",
+                        "alpn": [
+                            "http/1.1"
+                        ]
+                    },
+                    "sockopt": {
+                        "domainStrategy": "UseIP"
+                    },
+                    "finalmask": {
+                        "tcp": [
+                            {
+                                "type": "fragment",
+                                "settings": {
+                                    "packets": "1-3",
+                                    "length": "5-40",
+                                    "delay": "1",
+                                    "maxSplit": "5"
+                                }
+                            }
+                        ]
+                    }
+                },
+                "tag": "proxy"
+            },
+            {
+                "protocol": "freedom",
+                "tag": "direct"
+            }
+        ],
+        "routing": {
+            "domainStrategy": "IPIfNonMatch",
+            "rules": [
+                {
+                    "domain": [
+                        "geosite:private"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                },
+                {
+                    "ip": [
+                        "geoip:private"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                }
+            ]
+        }
+    },
+    {
+        "dns": {
+            "servers": [
+                "fakedns",
+                {
+                    "address": "https://8.8.8.8/dns-query",
+                    "tag": "remote-dns"
+                }
+            ],
+            "queryStrategy": "UseIP"
+        },
+        "inbounds": [
+            {
+                "listen": "127.0.0.1",
+                "port": 10808,
+                "protocol": "mixed",
+                "settings": {
+                    "auth": "noauth",
+                    "udp": true
+                },
+                "sniffing": {
+                    "destOverride": [
+                        "http",
+                        "tls",
+                        "fakedns"
+                    ],
+                    "enabled": true,
+                    "routeOnly": true
+                },
+                "tag": "mixed-in"
+            }
+        ],
+        "outbounds": [
+            {
+                "protocol": "trojan",
+                "settings": {
+                    "servers": [
+                        {
+                            "address": "clear-heron.rooster465.autos",
+                            "port": 443,
+                            "password": "AE62539071"
+                        }
+                    ]
+                },
+                "streamSettings": {
+                    "security": "tls",
+                    "tlsSettings": {
+                        "serverName": "clear-heron.rooster465.autos",
+                        "fingerprint": "chrome",
+                        "alpn": [
+                            "http/1.1"
                         ]
                     },
                     "sockopt": {
@@ -333,316 +2828,105 @@
         ],
         "outbounds": [
             {
-                "protocol": "trojan",
+                "protocol": "shadowsocks",
                 "settings": {
                     "servers": [
                         {
-                            "address": "kind-unicorn.rooster465.autos",
+                            "address": "82.38.31.155",
+                            "port": 8080,
+                            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
+                            "method": "chacha20-ietf-poly1305"
+                        }
+                    ]
+                },
+                "streamSettings": {
+                    "sockopt": {
+                        "domainStrategy": "UseIP"
+                    },
+                    "finalmask": {
+                        "tcp": [
+                            {
+                                "type": "fragment",
+                                "settings": {
+                                    "packets": "1-3",
+                                    "length": "5-40",
+                                    "delay": "1",
+                                    "maxSplit": "5"
+                                }
+                            }
+                        ]
+                    }
+                },
+                "tag": "proxy"
+            },
+            {
+                "protocol": "freedom",
+                "tag": "direct"
+            }
+        ],
+        "routing": {
+            "domainStrategy": "IPIfNonMatch",
+            "rules": [
+                {
+                    "domain": [
+                        "geosite:private"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                },
+                {
+                    "ip": [
+                        "geoip:private"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                }
+            ]
+        }
+    },
+    {
+        "dns": {
+            "servers": [
+                "fakedns",
+                {
+                    "address": "https://8.8.8.8/dns-query",
+                    "tag": "remote-dns"
+                }
+            ],
+            "queryStrategy": "UseIP"
+        },
+        "inbounds": [
+            {
+                "listen": "127.0.0.1",
+                "port": 10808,
+                "protocol": "mixed",
+                "settings": {
+                    "auth": "noauth",
+                    "udp": true
+                },
+                "sniffing": {
+                    "destOverride": [
+                        "http",
+                        "tls",
+                        "fakedns"
+                    ],
+                    "enabled": true,
+                    "routeOnly": true
+                },
+                "tag": "mixed-in"
+            }
+        ],
+        "outbounds": [
+            {
+                "protocol": "vless",
+                "settings": {
+                    "vnext": [
+                        {
+                            "address": "43.160.241.174",
                             "port": 443,
-                            "password": "EQ30679154"
-                        }
-                    ]
-                },
-                "streamSettings": {
-                    "security": "tls",
-                    "tlsSettings": {
-                        "serverName": "kind-unicorn.rooster465.autos",
-                        "fingerprint": "chrome",
-                        "alpn": [
-                            "http/1.1"
-                        ]
-                    },
-                    "sockopt": {
-                        "domainStrategy": "UseIP"
-                    },
-                    "finalmask": {
-                        "tcp": [
-                            {
-                                "type": "fragment",
-                                "settings": {
-                                    "packets": "1-3",
-                                    "length": "5-40",
-                                    "delay": "1",
-                                    "maxSplit": "5"
-                                }
-                            }
-                        ]
-                    }
-                },
-                "tag": "proxy"
-            },
-            {
-                "protocol": "freedom",
-                "tag": "direct"
-            }
-        ],
-        "routing": {
-            "domainStrategy": "IPIfNonMatch",
-            "rules": [
-                {
-                    "domain": [
-                        "geosite:private"
-                    ],
-                    "outboundTag": "direct",
-                    "type": "field"
-                },
-                {
-                    "ip": [
-                        "geoip:private"
-                    ],
-                    "outboundTag": "direct",
-                    "type": "field"
-                }
-            ]
-        }
-    },
-    {
-        "dns": {
-            "servers": [
-                "fakedns",
-                {
-                    "address": "https://8.8.8.8/dns-query",
-                    "tag": "remote-dns"
-                }
-            ],
-            "queryStrategy": "UseIP"
-        },
-        "inbounds": [
-            {
-                "listen": "127.0.0.1",
-                "port": 10808,
-                "protocol": "mixed",
-                "settings": {
-                    "auth": "noauth",
-                    "udp": true
-                },
-                "sniffing": {
-                    "destOverride": [
-                        "http",
-                        "tls",
-                        "fakedns"
-                    ],
-                    "enabled": true,
-                    "routeOnly": true
-                },
-                "tag": "mixed-in"
-            }
-        ],
-        "outbounds": [
-            {
-                "protocol": "vless",
-                "settings": {
-                    "vnext": [
-                        {
-                            "address": "37.221.110.245",
-                            "port": 2085,
                             "users": [
                                 {
-                                    "id": "128314f6-f09a-426f-b758-b8e559c38ddb",
-                                    "encryption": "none"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                "streamSettings": {
-                    "network": "grpc",
-                    "grpcSettings": {
-                        "serviceName": "vless"
-                    },
-                    "sockopt": {
-                        "domainStrategy": "UseIP"
-                    },
-                    "finalmask": {
-                        "tcp": [
-                            {
-                                "type": "fragment",
-                                "settings": {
-                                    "packets": "1-3",
-                                    "length": "5-40",
-                                    "delay": "1",
-                                    "maxSplit": "5"
-                                }
-                            }
-                        ]
-                    }
-                },
-                "tag": "proxy"
-            },
-            {
-                "protocol": "freedom",
-                "tag": "direct"
-            }
-        ],
-        "routing": {
-            "domainStrategy": "IPIfNonMatch",
-            "rules": [
-                {
-                    "domain": [
-                        "geosite:private"
-                    ],
-                    "outboundTag": "direct",
-                    "type": "field"
-                },
-                {
-                    "ip": [
-                        "geoip:private"
-                    ],
-                    "outboundTag": "direct",
-                    "type": "field"
-                }
-            ]
-        }
-    },
-    {
-        "dns": {
-            "servers": [
-                "fakedns",
-                {
-                    "address": "https://8.8.8.8/dns-query",
-                    "tag": "remote-dns"
-                }
-            ],
-            "queryStrategy": "UseIP"
-        },
-        "inbounds": [
-            {
-                "listen": "127.0.0.1",
-                "port": 10808,
-                "protocol": "mixed",
-                "settings": {
-                    "auth": "noauth",
-                    "udp": true
-                },
-                "sniffing": {
-                    "destOverride": [
-                        "http",
-                        "tls",
-                        "fakedns"
-                    ],
-                    "enabled": true,
-                    "routeOnly": true
-                },
-                "tag": "mixed-in"
-            }
-        ],
-        "outbounds": [
-            {
-                "protocol": "vless",
-                "settings": {
-                    "vnext": [
-                        {
-                            "address": "srv-21bac9.vless.monster",
-                            "port": 2087,
-                            "users": [
-                                {
-                                    "id": "df9f5aca-eda0-428f-a752-e53866153d12",
-                                    "encryption": "none"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                "streamSettings": {
-                    "network": "grpc",
-                    "grpcSettings": {
-                        "serviceName": "freegrpc"
-                    },
-                    "security": "tls",
-                    "tlsSettings": {
-                        "serverName": "srv-21bac9.vless.monster",
-                        "fingerprint": "firefox",
-                        "alpn": [
-                            "h2"
-                        ]
-                    },
-                    "sockopt": {
-                        "domainStrategy": "UseIP"
-                    },
-                    "finalmask": {
-                        "tcp": [
-                            {
-                                "type": "fragment",
-                                "settings": {
-                                    "packets": "1-3",
-                                    "length": "5-40",
-                                    "delay": "1",
-                                    "maxSplit": "5"
-                                }
-                            }
-                        ]
-                    }
-                },
-                "tag": "proxy"
-            },
-            {
-                "protocol": "freedom",
-                "tag": "direct"
-            }
-        ],
-        "routing": {
-            "domainStrategy": "IPIfNonMatch",
-            "rules": [
-                {
-                    "domain": [
-                        "geosite:private"
-                    ],
-                    "outboundTag": "direct",
-                    "type": "field"
-                },
-                {
-                    "ip": [
-                        "geoip:private"
-                    ],
-                    "outboundTag": "direct",
-                    "type": "field"
-                }
-            ]
-        }
-    },
-    {
-        "dns": {
-            "servers": [
-                "fakedns",
-                {
-                    "address": "https://8.8.8.8/dns-query",
-                    "tag": "remote-dns"
-                }
-            ],
-            "queryStrategy": "UseIP"
-        },
-        "inbounds": [
-            {
-                "listen": "127.0.0.1",
-                "port": 10808,
-                "protocol": "mixed",
-                "settings": {
-                    "auth": "noauth",
-                    "udp": true
-                },
-                "sniffing": {
-                    "destOverride": [
-                        "http",
-                        "tls",
-                        "fakedns"
-                    ],
-                    "enabled": true,
-                    "routeOnly": true
-                },
-                "tag": "mixed-in"
-            }
-        ],
-        "outbounds": [
-            {
-                "protocol": "vless",
-                "settings": {
-                    "vnext": [
-                        {
-                            "address": "104.18.34.14",
-                            "port": 80,
-                            "users": [
-                                {
-                                    "id": "47fcef29-ab4e-4aa6-932b-d95a18f28a4e",
+                                    "id": "3db635e4-f9ec-42d6-8aba-e23df8b0e6da",
                                     "encryption": "none"
                                 }
                             ]
@@ -652,505 +2936,12 @@
                 "streamSettings": {
                     "network": "ws",
                     "wsSettings": {
-                        "host": "8nj2r.2k8t.f88.hh.vavava.kdns.fr",
-                        "path": "/?ed=2560security=tls"
-                    },
-                    "sockopt": {
-                        "domainStrategy": "UseIP"
-                    },
-                    "finalmask": {
-                        "tcp": [
-                            {
-                                "type": "fragment",
-                                "settings": {
-                                    "packets": "1-3",
-                                    "length": "5-40",
-                                    "delay": "1",
-                                    "maxSplit": "5"
-                                }
-                            }
-                        ]
-                    }
-                },
-                "tag": "proxy"
-            },
-            {
-                "protocol": "freedom",
-                "tag": "direct"
-            }
-        ],
-        "routing": {
-            "domainStrategy": "IPIfNonMatch",
-            "rules": [
-                {
-                    "domain": [
-                        "geosite:private"
-                    ],
-                    "outboundTag": "direct",
-                    "type": "field"
-                },
-                {
-                    "ip": [
-                        "geoip:private"
-                    ],
-                    "outboundTag": "direct",
-                    "type": "field"
-                }
-            ]
-        }
-    },
-    {
-        "dns": {
-            "servers": [
-                "fakedns",
-                {
-                    "address": "https://8.8.8.8/dns-query",
-                    "tag": "remote-dns"
-                }
-            ],
-            "queryStrategy": "UseIP"
-        },
-        "inbounds": [
-            {
-                "listen": "127.0.0.1",
-                "port": 10808,
-                "protocol": "mixed",
-                "settings": {
-                    "auth": "noauth",
-                    "udp": true
-                },
-                "sniffing": {
-                    "destOverride": [
-                        "http",
-                        "tls",
-                        "fakedns"
-                    ],
-                    "enabled": true,
-                    "routeOnly": true
-                },
-                "tag": "mixed-in"
-            }
-        ],
-        "outbounds": [
-            {
-                "protocol": "trojan",
-                "settings": {
-                    "servers": [
-                        {
-                            "address": "casual-emu.rooster465.autos",
-                            "port": 443,
-                            "password": "PD07395842"
-                        }
-                    ]
-                },
-                "streamSettings": {
-                    "security": "tls",
-                    "tlsSettings": {
-                        "serverName": "casual-emu.rooster465.autos",
-                        "fingerprint": "chrome",
-                        "alpn": [
-                            "http/1.1"
-                        ]
-                    },
-                    "sockopt": {
-                        "domainStrategy": "UseIP"
-                    },
-                    "finalmask": {
-                        "tcp": [
-                            {
-                                "type": "fragment",
-                                "settings": {
-                                    "packets": "1-3",
-                                    "length": "5-40",
-                                    "delay": "1",
-                                    "maxSplit": "5"
-                                }
-                            }
-                        ]
-                    }
-                },
-                "tag": "proxy"
-            },
-            {
-                "protocol": "freedom",
-                "tag": "direct"
-            }
-        ],
-        "routing": {
-            "domainStrategy": "IPIfNonMatch",
-            "rules": [
-                {
-                    "domain": [
-                        "geosite:private"
-                    ],
-                    "outboundTag": "direct",
-                    "type": "field"
-                },
-                {
-                    "ip": [
-                        "geoip:private"
-                    ],
-                    "outboundTag": "direct",
-                    "type": "field"
-                }
-            ]
-        }
-    },
-    {
-        "dns": {
-            "servers": [
-                "fakedns",
-                {
-                    "address": "https://8.8.8.8/dns-query",
-                    "tag": "remote-dns"
-                }
-            ],
-            "queryStrategy": "UseIP"
-        },
-        "inbounds": [
-            {
-                "listen": "127.0.0.1",
-                "port": 10808,
-                "protocol": "mixed",
-                "settings": {
-                    "auth": "noauth",
-                    "udp": true
-                },
-                "sniffing": {
-                    "destOverride": [
-                        "http",
-                        "tls",
-                        "fakedns"
-                    ],
-                    "enabled": true,
-                    "routeOnly": true
-                },
-                "tag": "mixed-in"
-            }
-        ],
-        "outbounds": [
-            {
-                "protocol": "trojan",
-                "settings": {
-                    "servers": [
-                        {
-                            "address": "211.22.180.227",
-                            "port": 443,
-                            "password": "2613bb74-d727-4b4b-8e61-29bada971316"
-                        }
-                    ]
-                },
-                "streamSettings": {
-                    "security": "tls",
-                    "tlsSettings": {
-                        "serverName": "tls.microsoft-orgwly.vip",
-                        "fingerprint": "chrome",
-                        "alpn": [
-                            "http/1.1"
-                        ]
-                    },
-                    "sockopt": {
-                        "domainStrategy": "UseIP"
-                    },
-                    "finalmask": {
-                        "tcp": [
-                            {
-                                "type": "fragment",
-                                "settings": {
-                                    "packets": "1-3",
-                                    "length": "5-40",
-                                    "delay": "1",
-                                    "maxSplit": "5"
-                                }
-                            }
-                        ]
-                    }
-                },
-                "tag": "proxy"
-            },
-            {
-                "protocol": "freedom",
-                "tag": "direct"
-            }
-        ],
-        "routing": {
-            "domainStrategy": "IPIfNonMatch",
-            "rules": [
-                {
-                    "domain": [
-                        "geosite:private"
-                    ],
-                    "outboundTag": "direct",
-                    "type": "field"
-                },
-                {
-                    "ip": [
-                        "geoip:private"
-                    ],
-                    "outboundTag": "direct",
-                    "type": "field"
-                }
-            ]
-        }
-    },
-    {
-        "dns": {
-            "servers": [
-                "fakedns",
-                {
-                    "address": "https://8.8.8.8/dns-query",
-                    "tag": "remote-dns"
-                }
-            ],
-            "queryStrategy": "UseIP"
-        },
-        "inbounds": [
-            {
-                "listen": "127.0.0.1",
-                "port": 10808,
-                "protocol": "mixed",
-                "settings": {
-                    "auth": "noauth",
-                    "udp": true
-                },
-                "sniffing": {
-                    "destOverride": [
-                        "http",
-                        "tls",
-                        "fakedns"
-                    ],
-                    "enabled": true,
-                    "routeOnly": true
-                },
-                "tag": "mixed-in"
-            }
-        ],
-        "outbounds": [
-            {
-                "protocol": "trojan",
-                "settings": {
-                    "servers": [
-                        {
-                            "address": "fond-chipmunk.rooster465.autos",
-                            "port": 443,
-                            "password": "PD07395842"
-                        }
-                    ]
-                },
-                "streamSettings": {
-                    "security": "tls",
-                    "tlsSettings": {
-                        "serverName": "fond-chipmunk.rooster465.autos",
-                        "fingerprint": "chrome",
-                        "alpn": [
-                            "http/1.1"
-                        ]
-                    },
-                    "sockopt": {
-                        "domainStrategy": "UseIP"
-                    },
-                    "finalmask": {
-                        "tcp": [
-                            {
-                                "type": "fragment",
-                                "settings": {
-                                    "packets": "1-3",
-                                    "length": "5-40",
-                                    "delay": "1",
-                                    "maxSplit": "5"
-                                }
-                            }
-                        ]
-                    }
-                },
-                "tag": "proxy"
-            },
-            {
-                "protocol": "freedom",
-                "tag": "direct"
-            }
-        ],
-        "routing": {
-            "domainStrategy": "IPIfNonMatch",
-            "rules": [
-                {
-                    "domain": [
-                        "geosite:private"
-                    ],
-                    "outboundTag": "direct",
-                    "type": "field"
-                },
-                {
-                    "ip": [
-                        "geoip:private"
-                    ],
-                    "outboundTag": "direct",
-                    "type": "field"
-                }
-            ]
-        }
-    },
-    {
-        "dns": {
-            "servers": [
-                "fakedns",
-                {
-                    "address": "https://8.8.8.8/dns-query",
-                    "tag": "remote-dns"
-                }
-            ],
-            "queryStrategy": "UseIP"
-        },
-        "inbounds": [
-            {
-                "listen": "127.0.0.1",
-                "port": 10808,
-                "protocol": "mixed",
-                "settings": {
-                    "auth": "noauth",
-                    "udp": true
-                },
-                "sniffing": {
-                    "destOverride": [
-                        "http",
-                        "tls",
-                        "fakedns"
-                    ],
-                    "enabled": true,
-                    "routeOnly": true
-                },
-                "tag": "mixed-in"
-            }
-        ],
-        "outbounds": [
-            {
-                "protocol": "vmess",
-                "settings": {
-                    "vnext": [
-                        {
-                            "address": "168.100.9.81",
-                            "port": 443,
-                            "users": [
-                                {
-                                    "id": "db50a20e-7ff5-4e70-948f-17cc9ca7c154",
-                                    "alterId": 0,
-                                    "security": "auto"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                "streamSettings": {
-                    "network": "ws",
-                    "wsSettings": {
-                        "host": "renderer-stream-2-62.mirra.now",
-                        "path": "/api/v1/gpu-stream/socket"
+                        "host": "mia11.pages.dev",
+                        "path": "/TG:@MiaChatChannel"
                     },
                     "security": "tls",
                     "tlsSettings": {
-                        "serverName": "renderer-stream-2-62.mirra.now",
-                        "fingerprint": "chrome",
-                        "alpn": [
-                            "http/1.1"
-                        ]
-                    },
-                    "sockopt": {
-                        "domainStrategy": "UseIP"
-                    },
-                    "finalmask": {
-                        "tcp": [
-                            {
-                                "type": "fragment",
-                                "settings": {
-                                    "packets": "1-3",
-                                    "length": "5-40",
-                                    "delay": "1",
-                                    "maxSplit": "5"
-                                }
-                            }
-                        ]
-                    }
-                },
-                "tag": "proxy"
-            },
-            {
-                "protocol": "freedom",
-                "tag": "direct"
-            }
-        ],
-        "routing": {
-            "domainStrategy": "IPIfNonMatch",
-            "rules": [
-                {
-                    "domain": [
-                        "geosite:private"
-                    ],
-                    "outboundTag": "direct",
-                    "type": "field"
-                },
-                {
-                    "ip": [
-                        "geoip:private"
-                    ],
-                    "outboundTag": "direct",
-                    "type": "field"
-                }
-            ]
-        }
-    },
-    {
-        "dns": {
-            "servers": [
-                "fakedns",
-                {
-                    "address": "https://8.8.8.8/dns-query",
-                    "tag": "remote-dns"
-                }
-            ],
-            "queryStrategy": "UseIP"
-        },
-        "inbounds": [
-            {
-                "listen": "127.0.0.1",
-                "port": 10808,
-                "protocol": "mixed",
-                "settings": {
-                    "auth": "noauth",
-                    "udp": true
-                },
-                "sniffing": {
-                    "destOverride": [
-                        "http",
-                        "tls",
-                        "fakedns"
-                    ],
-                    "enabled": true,
-                    "routeOnly": true
-                },
-                "tag": "mixed-in"
-            }
-        ],
-        "outbounds": [
-            {
-                "protocol": "trojan",
-                "settings": {
-                    "servers": [
-                        {
-                            "address": "104.21.24.95",
-                            "port": 443,
-                            "password": "Telegram_healer_config"
-                        }
-                    ]
-                },
-                "streamSettings": {
-                    "network": "ws",
-                    "wsSettings": {
-                        "host": "1v95v6tjywcytbahl7f7lx8b27g.l4495eycqmse9he0yvoemjfc4ibyf-4.workers.dev",
-                        "path": "/tr/zJi4ccv7FeEo780U?ed=2560"
-                    },
-                    "security": "tls",
-                    "tlsSettings": {
-                        "serverName": "1v95v6tjywcytbahl7f7lx8b27g.l4495eycqmse9he0yvoemjfc4ibyf-4.workers.dev",
+                        "serverName": "mia11.pages.dev",
                         "fingerprint": "chrome",
                         "alpn": [
                             "http/1.1"
@@ -1238,113 +3029,11 @@
                 "settings": {
                     "vnext": [
                         {
-                            "address": "206.251.54.34",
-                            "port": 55596,
+                            "address": "time.is",
+                            "port": 443,
                             "users": [
                                 {
-                                    "id": "9fc6444b-987a-41d5-9bf5-195d147e0a05",
-                                    "encryption": "none",
-                                    "flow": "xtls-rprx-vision"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                "streamSettings": {
-                    "security": "reality",
-                    "realitySettings": {
-                        "serverName": "www.amd.com",
-                        "fingerprint": "firefox",
-                        "publicKey": "QQUHUyF5Wb3XeRRrky-WOaRTxBtHokNaMec02HURWSI",
-                        "shortId": "6ac09686189038"
-                    },
-                    "sockopt": {
-                        "domainStrategy": "UseIP"
-                    },
-                    "finalmask": {
-                        "tcp": [
-                            {
-                                "type": "fragment",
-                                "settings": {
-                                    "packets": "1-3",
-                                    "length": "5-40",
-                                    "delay": "1",
-                                    "maxSplit": "5"
-                                }
-                            }
-                        ]
-                    }
-                },
-                "tag": "proxy"
-            },
-            {
-                "protocol": "freedom",
-                "tag": "direct"
-            }
-        ],
-        "routing": {
-            "domainStrategy": "IPIfNonMatch",
-            "rules": [
-                {
-                    "domain": [
-                        "geosite:private"
-                    ],
-                    "outboundTag": "direct",
-                    "type": "field"
-                },
-                {
-                    "ip": [
-                        "geoip:private"
-                    ],
-                    "outboundTag": "direct",
-                    "type": "field"
-                }
-            ]
-        }
-    },
-    {
-        "dns": {
-            "servers": [
-                "fakedns",
-                {
-                    "address": "https://8.8.8.8/dns-query",
-                    "tag": "remote-dns"
-                }
-            ],
-            "queryStrategy": "UseIP"
-        },
-        "inbounds": [
-            {
-                "listen": "127.0.0.1",
-                "port": 10808,
-                "protocol": "mixed",
-                "settings": {
-                    "auth": "noauth",
-                    "udp": true
-                },
-                "sniffing": {
-                    "destOverride": [
-                        "http",
-                        "tls",
-                        "fakedns"
-                    ],
-                    "enabled": true,
-                    "routeOnly": true
-                },
-                "tag": "mixed-in"
-            }
-        ],
-        "outbounds": [
-            {
-                "protocol": "vless",
-                "settings": {
-                    "vnext": [
-                        {
-                            "address": "162.159.48.32",
-                            "port": 80,
-                            "users": [
-                                {
-                                    "id": "47fcef29-ab4e-4aa6-932b-d95a18f28a4e",
+                                    "id": "d195909a-eff4-489d-a261-955b904894cb",
                                     "encryption": "none"
                                 }
                             ]
@@ -1354,8 +3043,18 @@
                 "streamSettings": {
                     "network": "ws",
                     "wsSettings": {
-                        "host": "8nj2r.2k8t.f88.hh.vavava.kdns.fr",
-                        "path": "/?ed=2560security=tls"
+                        "host": "free.server6peekconfig.workers.dev.",
+                        "path": "/eyJqdW5rIjoieUhYMWhoZEVEIiwicHJvdG9jb2wiOiJ2bCIsIm1vZGUiOiJwcmVmaXgiLCJwYW5lbElQcyI6WyJbMmEwMjo4OTg6MTQ2OjY0OjpdIl19?ed=2560"
+                    },
+                    "security": "tls",
+                    "tlsSettings": {
+                        "serverName": "fREE.sERVer6PeeKCOnFIG.wOrkErs.dEv.",
+                        "fingerprint": "chrome",
+                        "alpn": [
+                            "h3",
+                            "h2",
+                            "http/1.1"
+                        ]
                     },
                     "sockopt": {
                         "domainStrategy": "UseIP"
@@ -1439,10 +3138,10 @@
                 "settings": {
                     "servers": [
                         {
-                            "address": "85.149.211.166",
-                            "port": 443,
-                            "password": "YWJhNmUwZDI5NGE4YTZkOA==:NGUzNjViMzctYzk0ZC00YQ==",
-                            "method": "2022-blake3-aes-128-gcm"
+                            "address": "82.38.31.155",
+                            "port": 8080,
+                            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
+                            "method": "chacha20-ietf-poly1305"
                         }
                     ]
                 },
@@ -1529,11 +3228,11 @@
                 "settings": {
                     "vnext": [
                         {
-                            "address": "172.235.38.85",
-                            "port": 42942,
+                            "address": "media-dan1.team-pluss.ir",
+                            "port": 12345,
                             "users": [
                                 {
-                                    "id": "bca46025-bf43-40c0-895b-054a6fbcfd32",
+                                    "id": "202996ee-ba6c-41f7-b303-073b9dc28cb8",
                                     "encryption": "none",
                                     "flow": "xtls-rprx-vision"
                                 }
@@ -1544,10 +3243,10 @@
                 "streamSettings": {
                     "security": "reality",
                     "realitySettings": {
-                        "serverName": "www.tesla.com",
+                        "serverName": "sheets.google.com",
                         "fingerprint": "firefox",
-                        "publicKey": "JmkfJoDWpAqt6gj4cbc4_cwItsdryMlV7joAGfNTKQU",
-                        "shortId": "a56d7d8da977f860"
+                        "publicKey": "1N8CIM6v_TgbIDNneyEPNQ92hyq5Eyh_irJWOXKDBDw",
+                        "shortId": "2b368990a94e8cbb"
                     },
                     "sockopt": {
                         "domainStrategy": "UseIP"
@@ -1631,201 +3330,7 @@
                 "settings": {
                     "servers": [
                         {
-                            "address": "pure-ghoul.rooster465.autos",
-                            "port": 443,
-                            "password": "NQ26071394"
-                        }
-                    ]
-                },
-                "streamSettings": {
-                    "security": "tls",
-                    "tlsSettings": {
-                        "serverName": "pure-ghoul.rooster465.autos",
-                        "fingerprint": "chrome",
-                        "alpn": [
-                            "http/1.1"
-                        ]
-                    },
-                    "sockopt": {
-                        "domainStrategy": "UseIP"
-                    },
-                    "finalmask": {
-                        "tcp": [
-                            {
-                                "type": "fragment",
-                                "settings": {
-                                    "packets": "1-3",
-                                    "length": "5-40",
-                                    "delay": "1",
-                                    "maxSplit": "5"
-                                }
-                            }
-                        ]
-                    }
-                },
-                "tag": "proxy"
-            },
-            {
-                "protocol": "freedom",
-                "tag": "direct"
-            }
-        ],
-        "routing": {
-            "domainStrategy": "IPIfNonMatch",
-            "rules": [
-                {
-                    "domain": [
-                        "geosite:private"
-                    ],
-                    "outboundTag": "direct",
-                    "type": "field"
-                },
-                {
-                    "ip": [
-                        "geoip:private"
-                    ],
-                    "outboundTag": "direct",
-                    "type": "field"
-                }
-            ]
-        }
-    },
-    {
-        "dns": {
-            "servers": [
-                "fakedns",
-                {
-                    "address": "https://8.8.8.8/dns-query",
-                    "tag": "remote-dns"
-                }
-            ],
-            "queryStrategy": "UseIP"
-        },
-        "inbounds": [
-            {
-                "listen": "127.0.0.1",
-                "port": 10808,
-                "protocol": "mixed",
-                "settings": {
-                    "auth": "noauth",
-                    "udp": true
-                },
-                "sniffing": {
-                    "destOverride": [
-                        "http",
-                        "tls",
-                        "fakedns"
-                    ],
-                    "enabled": true,
-                    "routeOnly": true
-                },
-                "tag": "mixed-in"
-            }
-        ],
-        "outbounds": [
-            {
-                "protocol": "trojan",
-                "settings": {
-                    "servers": [
-                        {
-                            "address": "settling-grouper.rooster465.autos",
-                            "port": 443,
-                            "password": "HW85960347"
-                        }
-                    ]
-                },
-                "streamSettings": {
-                    "security": "tls",
-                    "tlsSettings": {
-                        "serverName": "settling-grouper.rooster465.autos",
-                        "fingerprint": "chrome",
-                        "alpn": [
-                            "http/1.1"
-                        ]
-                    },
-                    "sockopt": {
-                        "domainStrategy": "UseIP"
-                    },
-                    "finalmask": {
-                        "tcp": [
-                            {
-                                "type": "fragment",
-                                "settings": {
-                                    "packets": "1-3",
-                                    "length": "5-40",
-                                    "delay": "1",
-                                    "maxSplit": "5"
-                                }
-                            }
-                        ]
-                    }
-                },
-                "tag": "proxy"
-            },
-            {
-                "protocol": "freedom",
-                "tag": "direct"
-            }
-        ],
-        "routing": {
-            "domainStrategy": "IPIfNonMatch",
-            "rules": [
-                {
-                    "domain": [
-                        "geosite:private"
-                    ],
-                    "outboundTag": "direct",
-                    "type": "field"
-                },
-                {
-                    "ip": [
-                        "geoip:private"
-                    ],
-                    "outboundTag": "direct",
-                    "type": "field"
-                }
-            ]
-        }
-    },
-    {
-        "dns": {
-            "servers": [
-                "fakedns",
-                {
-                    "address": "https://8.8.8.8/dns-query",
-                    "tag": "remote-dns"
-                }
-            ],
-            "queryStrategy": "UseIP"
-        },
-        "inbounds": [
-            {
-                "listen": "127.0.0.1",
-                "port": 10808,
-                "protocol": "mixed",
-                "settings": {
-                    "auth": "noauth",
-                    "udp": true
-                },
-                "sniffing": {
-                    "destOverride": [
-                        "http",
-                        "tls",
-                        "fakedns"
-                    ],
-                    "enabled": true,
-                    "routeOnly": true
-                },
-                "tag": "mixed-in"
-            }
-        ],
-        "outbounds": [
-            {
-                "protocol": "trojan",
-                "settings": {
-                    "servers": [
-                        {
-                            "address": "bursting-dolphin.rooster465.autos",
+                            "address": "stable-python.rooster465.autos",
                             "port": 443,
                             "password": "ON38567014"
                         }
@@ -1834,7 +3339,7 @@
                 "streamSettings": {
                     "security": "tls",
                     "tlsSettings": {
-                        "serverName": "bursting-dolphin.rooster465.autos",
+                        "serverName": "stable-python.rooster465.autos",
                         "fingerprint": "chrome",
                         "alpn": [
                             "http/1.1"
@@ -1922,201 +3427,7 @@
                 "settings": {
                     "servers": [
                         {
-                            "address": "well-jennet.rooster465.autos",
-                            "port": 443,
-                            "password": "AE62539071"
-                        }
-                    ]
-                },
-                "streamSettings": {
-                    "security": "tls",
-                    "tlsSettings": {
-                        "serverName": "well-jennet.rooster465.autos",
-                        "fingerprint": "chrome",
-                        "alpn": [
-                            "http/1.1"
-                        ]
-                    },
-                    "sockopt": {
-                        "domainStrategy": "UseIP"
-                    },
-                    "finalmask": {
-                        "tcp": [
-                            {
-                                "type": "fragment",
-                                "settings": {
-                                    "packets": "1-3",
-                                    "length": "5-40",
-                                    "delay": "1",
-                                    "maxSplit": "5"
-                                }
-                            }
-                        ]
-                    }
-                },
-                "tag": "proxy"
-            },
-            {
-                "protocol": "freedom",
-                "tag": "direct"
-            }
-        ],
-        "routing": {
-            "domainStrategy": "IPIfNonMatch",
-            "rules": [
-                {
-                    "domain": [
-                        "geosite:private"
-                    ],
-                    "outboundTag": "direct",
-                    "type": "field"
-                },
-                {
-                    "ip": [
-                        "geoip:private"
-                    ],
-                    "outboundTag": "direct",
-                    "type": "field"
-                }
-            ]
-        }
-    },
-    {
-        "dns": {
-            "servers": [
-                "fakedns",
-                {
-                    "address": "https://8.8.8.8/dns-query",
-                    "tag": "remote-dns"
-                }
-            ],
-            "queryStrategy": "UseIP"
-        },
-        "inbounds": [
-            {
-                "listen": "127.0.0.1",
-                "port": 10808,
-                "protocol": "mixed",
-                "settings": {
-                    "auth": "noauth",
-                    "udp": true
-                },
-                "sniffing": {
-                    "destOverride": [
-                        "http",
-                        "tls",
-                        "fakedns"
-                    ],
-                    "enabled": true,
-                    "routeOnly": true
-                },
-                "tag": "mixed-in"
-            }
-        ],
-        "outbounds": [
-            {
-                "protocol": "trojan",
-                "settings": {
-                    "servers": [
-                        {
-                            "address": "211.20.156.191",
-                            "port": 28158,
-                            "password": "i99Cef"
-                        }
-                    ]
-                },
-                "streamSettings": {
-                    "security": "tls",
-                    "tlsSettings": {
-                        "serverName": "download.windowsupdate.com",
-                        "fingerprint": "chrome",
-                        "alpn": [
-                            "http/1.1"
-                        ]
-                    },
-                    "sockopt": {
-                        "domainStrategy": "UseIP"
-                    },
-                    "finalmask": {
-                        "tcp": [
-                            {
-                                "type": "fragment",
-                                "settings": {
-                                    "packets": "1-3",
-                                    "length": "5-40",
-                                    "delay": "1",
-                                    "maxSplit": "5"
-                                }
-                            }
-                        ]
-                    }
-                },
-                "tag": "proxy"
-            },
-            {
-                "protocol": "freedom",
-                "tag": "direct"
-            }
-        ],
-        "routing": {
-            "domainStrategy": "IPIfNonMatch",
-            "rules": [
-                {
-                    "domain": [
-                        "geosite:private"
-                    ],
-                    "outboundTag": "direct",
-                    "type": "field"
-                },
-                {
-                    "ip": [
-                        "geoip:private"
-                    ],
-                    "outboundTag": "direct",
-                    "type": "field"
-                }
-            ]
-        }
-    },
-    {
-        "dns": {
-            "servers": [
-                "fakedns",
-                {
-                    "address": "https://8.8.8.8/dns-query",
-                    "tag": "remote-dns"
-                }
-            ],
-            "queryStrategy": "UseIP"
-        },
-        "inbounds": [
-            {
-                "listen": "127.0.0.1",
-                "port": 10808,
-                "protocol": "mixed",
-                "settings": {
-                    "auth": "noauth",
-                    "udp": true
-                },
-                "sniffing": {
-                    "destOverride": [
-                        "http",
-                        "tls",
-                        "fakedns"
-                    ],
-                    "enabled": true,
-                    "routeOnly": true
-                },
-                "tag": "mixed-in"
-            }
-        ],
-        "outbounds": [
-            {
-                "protocol": "trojan",
-                "settings": {
-                    "servers": [
-                        {
-                            "address": "202.78.163.113",
+                            "address": "normal-elk.rooster465.autos",
                             "port": 443,
                             "password": "FC60532879"
                         }
@@ -2125,509 +3436,7 @@
                 "streamSettings": {
                     "security": "tls",
                     "tlsSettings": {
-                        "serverName": "distinct-ibex.rooster465.autos",
-                        "fingerprint": "chrome",
-                        "alpn": [
-                            "http/1.1"
-                        ]
-                    },
-                    "sockopt": {
-                        "domainStrategy": "UseIP"
-                    },
-                    "finalmask": {
-                        "tcp": [
-                            {
-                                "type": "fragment",
-                                "settings": {
-                                    "packets": "1-3",
-                                    "length": "5-40",
-                                    "delay": "1",
-                                    "maxSplit": "5"
-                                }
-                            }
-                        ]
-                    }
-                },
-                "tag": "proxy"
-            },
-            {
-                "protocol": "freedom",
-                "tag": "direct"
-            }
-        ],
-        "routing": {
-            "domainStrategy": "IPIfNonMatch",
-            "rules": [
-                {
-                    "domain": [
-                        "geosite:private"
-                    ],
-                    "outboundTag": "direct",
-                    "type": "field"
-                },
-                {
-                    "ip": [
-                        "geoip:private"
-                    ],
-                    "outboundTag": "direct",
-                    "type": "field"
-                }
-            ]
-        }
-    },
-    {
-        "dns": {
-            "servers": [
-                "fakedns",
-                {
-                    "address": "https://8.8.8.8/dns-query",
-                    "tag": "remote-dns"
-                }
-            ],
-            "queryStrategy": "UseIP"
-        },
-        "inbounds": [
-            {
-                "listen": "127.0.0.1",
-                "port": 10808,
-                "protocol": "mixed",
-                "settings": {
-                    "auth": "noauth",
-                    "udp": true
-                },
-                "sniffing": {
-                    "destOverride": [
-                        "http",
-                        "tls",
-                        "fakedns"
-                    ],
-                    "enabled": true,
-                    "routeOnly": true
-                },
-                "tag": "mixed-in"
-            }
-        ],
-        "outbounds": [
-            {
-                "protocol": "shadowsocks",
-                "settings": {
-                    "servers": [
-                        {
-                            "address": "sub.danfeng.eu.org",
-                            "port": 443,
-                            "password": "3e96ef7d-8637-42c2-ac73-75182196e755",
-                            "method": "none"
-                        }
-                    ]
-                },
-                "streamSettings": {
-                    "sockopt": {
-                        "domainStrategy": "UseIP"
-                    },
-                    "finalmask": {
-                        "tcp": [
-                            {
-                                "type": "fragment",
-                                "settings": {
-                                    "packets": "1-3",
-                                    "length": "5-40",
-                                    "delay": "1",
-                                    "maxSplit": "5"
-                                }
-                            }
-                        ]
-                    }
-                },
-                "tag": "proxy"
-            },
-            {
-                "protocol": "freedom",
-                "tag": "direct"
-            }
-        ],
-        "routing": {
-            "domainStrategy": "IPIfNonMatch",
-            "rules": [
-                {
-                    "domain": [
-                        "geosite:private"
-                    ],
-                    "outboundTag": "direct",
-                    "type": "field"
-                },
-                {
-                    "ip": [
-                        "geoip:private"
-                    ],
-                    "outboundTag": "direct",
-                    "type": "field"
-                }
-            ]
-        }
-    },
-    {
-        "dns": {
-            "servers": [
-                "fakedns",
-                {
-                    "address": "https://8.8.8.8/dns-query",
-                    "tag": "remote-dns"
-                }
-            ],
-            "queryStrategy": "UseIP"
-        },
-        "inbounds": [
-            {
-                "listen": "127.0.0.1",
-                "port": 10808,
-                "protocol": "mixed",
-                "settings": {
-                    "auth": "noauth",
-                    "udp": true
-                },
-                "sniffing": {
-                    "destOverride": [
-                        "http",
-                        "tls",
-                        "fakedns"
-                    ],
-                    "enabled": true,
-                    "routeOnly": true
-                },
-                "tag": "mixed-in"
-            }
-        ],
-        "outbounds": [
-            {
-                "protocol": "vless",
-                "settings": {
-                    "vnext": [
-                        {
-                            "address": "84.22.150.39",
-                            "port": 7443,
-                            "users": [
-                                {
-                                    "id": "9d5cbb90-876b-448d-9874-27ab35bae6e7",
-                                    "encryption": "none"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                "streamSettings": {
-                    "network": "ws",
-                    "wsSettings": {
-                        "host": "woc0zvrf11w2endu.dphdlc1u77bs3y4kvussbuap4p576f1ws7igthq8zbf3.workers.dev",
-                        "path": "/@Marisa_kristi"
-                    },
-                    "security": "tls",
-                    "tlsSettings": {
-                        "serverName": "woc0zvrf11w2endu.dphdlc1u77bs3y4kvussbuap4p576f1ws7igthq8zbf3.workers.dev",
-                        "fingerprint": "chrome",
-                        "alpn": [
-                            "http/1.1"
-                        ]
-                    },
-                    "sockopt": {
-                        "domainStrategy": "UseIP"
-                    },
-                    "finalmask": {
-                        "tcp": [
-                            {
-                                "type": "fragment",
-                                "settings": {
-                                    "packets": "1-3",
-                                    "length": "5-40",
-                                    "delay": "1",
-                                    "maxSplit": "5"
-                                }
-                            }
-                        ]
-                    }
-                },
-                "tag": "proxy"
-            },
-            {
-                "protocol": "freedom",
-                "tag": "direct"
-            }
-        ],
-        "routing": {
-            "domainStrategy": "IPIfNonMatch",
-            "rules": [
-                {
-                    "domain": [
-                        "geosite:private"
-                    ],
-                    "outboundTag": "direct",
-                    "type": "field"
-                },
-                {
-                    "ip": [
-                        "geoip:private"
-                    ],
-                    "outboundTag": "direct",
-                    "type": "field"
-                }
-            ]
-        }
-    },
-    {
-        "dns": {
-            "servers": [
-                "fakedns",
-                {
-                    "address": "https://8.8.8.8/dns-query",
-                    "tag": "remote-dns"
-                }
-            ],
-            "queryStrategy": "UseIP"
-        },
-        "inbounds": [
-            {
-                "listen": "127.0.0.1",
-                "port": 10808,
-                "protocol": "mixed",
-                "settings": {
-                    "auth": "noauth",
-                    "udp": true
-                },
-                "sniffing": {
-                    "destOverride": [
-                        "http",
-                        "tls",
-                        "fakedns"
-                    ],
-                    "enabled": true,
-                    "routeOnly": true
-                },
-                "tag": "mixed-in"
-            }
-        ],
-        "outbounds": [
-            {
-                "protocol": "vless",
-                "settings": {
-                    "vnext": [
-                        {
-                            "address": "47.238.210.5",
-                            "port": 13779,
-                            "users": [
-                                {
-                                    "id": "928e6cce-8ced-4243-9a48-a6642edd09b0",
-                                    "encryption": "none"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                "streamSettings": {
-                    "security": "reality",
-                    "realitySettings": {
-                        "serverName": "tesla.com",
-                        "fingerprint": "chrome",
-                        "publicKey": "llTyp52oRXnJmQ3I9UUrmlwbMA79B-wLCRHCu-8dLGg",
-                        "shortId": "af1bdd293097b664"
-                    },
-                    "sockopt": {
-                        "domainStrategy": "UseIP"
-                    },
-                    "finalmask": {
-                        "tcp": [
-                            {
-                                "type": "fragment",
-                                "settings": {
-                                    "packets": "1-3",
-                                    "length": "5-40",
-                                    "delay": "1",
-                                    "maxSplit": "5"
-                                }
-                            }
-                        ]
-                    }
-                },
-                "tag": "proxy"
-            },
-            {
-                "protocol": "freedom",
-                "tag": "direct"
-            }
-        ],
-        "routing": {
-            "domainStrategy": "IPIfNonMatch",
-            "rules": [
-                {
-                    "domain": [
-                        "geosite:private"
-                    ],
-                    "outboundTag": "direct",
-                    "type": "field"
-                },
-                {
-                    "ip": [
-                        "geoip:private"
-                    ],
-                    "outboundTag": "direct",
-                    "type": "field"
-                }
-            ]
-        }
-    },
-    {
-        "dns": {
-            "servers": [
-                "fakedns",
-                {
-                    "address": "https://8.8.8.8/dns-query",
-                    "tag": "remote-dns"
-                }
-            ],
-            "queryStrategy": "UseIP"
-        },
-        "inbounds": [
-            {
-                "listen": "127.0.0.1",
-                "port": 10808,
-                "protocol": "mixed",
-                "settings": {
-                    "auth": "noauth",
-                    "udp": true
-                },
-                "sniffing": {
-                    "destOverride": [
-                        "http",
-                        "tls",
-                        "fakedns"
-                    ],
-                    "enabled": true,
-                    "routeOnly": true
-                },
-                "tag": "mixed-in"
-            }
-        ],
-        "outbounds": [
-            {
-                "protocol": "trojan",
-                "settings": {
-                    "servers": [
-                        {
-                            "address": "sensible-haddock.rooster465.autos",
-                            "port": 443,
-                            "password": "FC60532879"
-                        }
-                    ]
-                },
-                "streamSettings": {
-                    "security": "tls",
-                    "tlsSettings": {
-                        "serverName": "sensible-haddock.rooster465.autos",
-                        "fingerprint": "chrome",
-                        "alpn": [
-                            "http/1.1"
-                        ]
-                    },
-                    "sockopt": {
-                        "domainStrategy": "UseIP"
-                    },
-                    "finalmask": {
-                        "tcp": [
-                            {
-                                "type": "fragment",
-                                "settings": {
-                                    "packets": "1-3",
-                                    "length": "5-40",
-                                    "delay": "1",
-                                    "maxSplit": "5"
-                                }
-                            }
-                        ]
-                    }
-                },
-                "tag": "proxy"
-            },
-            {
-                "protocol": "freedom",
-                "tag": "direct"
-            }
-        ],
-        "routing": {
-            "domainStrategy": "IPIfNonMatch",
-            "rules": [
-                {
-                    "domain": [
-                        "geosite:private"
-                    ],
-                    "outboundTag": "direct",
-                    "type": "field"
-                },
-                {
-                    "ip": [
-                        "geoip:private"
-                    ],
-                    "outboundTag": "direct",
-                    "type": "field"
-                }
-            ]
-        }
-    },
-    {
-        "dns": {
-            "servers": [
-                "fakedns",
-                {
-                    "address": "https://8.8.8.8/dns-query",
-                    "tag": "remote-dns"
-                }
-            ],
-            "queryStrategy": "UseIP"
-        },
-        "inbounds": [
-            {
-                "listen": "127.0.0.1",
-                "port": 10808,
-                "protocol": "mixed",
-                "settings": {
-                    "auth": "noauth",
-                    "udp": true
-                },
-                "sniffing": {
-                    "destOverride": [
-                        "http",
-                        "tls",
-                        "fakedns"
-                    ],
-                    "enabled": true,
-                    "routeOnly": true
-                },
-                "tag": "mixed-in"
-            }
-        ],
-        "outbounds": [
-            {
-                "protocol": "vless",
-                "settings": {
-                    "vnext": [
-                        {
-                            "address": "server15.peekconf1-741.workers.dev",
-                            "port": 443,
-                            "users": [
-                                {
-                                    "id": "78b9ac78-ebdf-4e51-8114-f6b0cd6d2169",
-                                    "encryption": "none"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                "streamSettings": {
-                    "network": "ws",
-                    "wsSettings": {
-                        "host": "server15.peekconf1-741.workers.dev",
-                        "path": "/eyJqdW5rIjoiOUZIcXVMV3FlbnoiLCJwcm90b2NvbCI6InZsIiwibW9kZSI6InByZWZpeCIsInBhbmVsSVBzIjpbIlsyYTAyOjg5ODoxNDY6NjQ6Ol0iLCJbMjYwMjpmYzU5OjExOjY0OjpdIiwiWzI2MDI6ZmM1OTpiMDo2NDo6XSJdfQ==?ed=2560"
-                    },
-                    "security": "tls",
-                    "tlsSettings": {
-                        "serverName": "sErVER15.PEeKCOnF1-741.wOrkErs.Dev",
+                        "serverName": "normal-elk.rooster465.autos",
                         "fingerprint": "chrome",
                         "alpn": [
                             "http/1.1"
@@ -2715,16 +3524,16 @@
                 "settings": {
                     "servers": [
                         {
-                            "address": "liberal-salmon.rooster465.autos",
-                            "port": 443,
-                            "password": "WG39087154"
+                            "address": "a12.taipeicitygovernment.org.ua",
+                            "port": 3462,
+                            "password": "6e1b9a65-884f-3aa9-9469-bf6ec0f08610"
                         }
                     ]
                 },
                 "streamSettings": {
                     "security": "tls",
                     "tlsSettings": {
-                        "serverName": "liberal-salmon.rooster465.autos",
+                        "serverName": "45.32.28.232",
                         "fingerprint": "chrome",
                         "alpn": [
                             "http/1.1"
@@ -2808,23 +3617,25 @@
         ],
         "outbounds": [
             {
-                "protocol": "vmess",
+                "protocol": "trojan",
                 "settings": {
-                    "vnext": [
+                    "servers": [
                         {
-                            "address": "82.198.246.37",
-                            "port": 180,
-                            "users": [
-                                {
-                                    "id": "d13fc2f5-3e05-4795-81eb-44143a09e552",
-                                    "alterId": 0,
-                                    "security": "auto"
-                                }
-                            ]
+                            "address": "brief-hare.rooster465.autos",
+                            "port": 443,
+                            "password": "NQ26071394"
                         }
                     ]
                 },
                 "streamSettings": {
+                    "security": "tls",
+                    "tlsSettings": {
+                        "serverName": "brief-hare.rooster465.autos",
+                        "fingerprint": "chrome",
+                        "alpn": [
+                            "http/1.1"
+                        ]
+                    },
                     "sockopt": {
                         "domainStrategy": "UseIP"
                     },
@@ -2903,23 +3714,25 @@
         ],
         "outbounds": [
             {
-                "protocol": "vmess",
+                "protocol": "trojan",
                 "settings": {
-                    "vnext": [
+                    "servers": [
                         {
-                            "address": "146.56.112.110",
-                            "port": 8888,
-                            "users": [
-                                {
-                                    "id": "e7c302f3-90d6-42dd-9d7d-94a3683a3707",
-                                    "alterId": 0,
-                                    "security": "auto"
-                                }
-                            ]
+                            "address": "full-ox.rooster465.autos",
+                            "port": 443,
+                            "password": "IQ68037294"
                         }
                     ]
                 },
                 "streamSettings": {
+                    "security": "tls",
+                    "tlsSettings": {
+                        "serverName": "full-ox.rooster465.autos",
+                        "fingerprint": "chrome",
+                        "alpn": [
+                            "http/1.1"
+                        ]
+                    },
                     "sockopt": {
                         "domainStrategy": "UseIP"
                     },
@@ -3006,7 +3819,7 @@
                             "port": 8080,
                             "users": [
                                 {
-                                    "id": "d6828805-5608-44d7-a44b-976d4c3ac2d0",
+                                    "id": "2388e166-3890-33ae-f77e-efac00000002",
                                     "encryption": "none"
                                 }
                             ]
@@ -3016,8 +3829,8 @@
                 "streamSettings": {
                     "network": "ws",
                     "wsSettings": {
-                        "host": "0LG3u92i0exN577l3Mc637Ycba3.SfgsfgSfGFSGSf-4630.wOrkeRS.dEv",
-                        "path": "/vl/5ibXbgAYxWzwbOtkXJWUtvKMKOYjh?ed"
+                        "host": "netlivpn4813.ddhshhshs.workers.dev",
+                        "path": "/NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN"
                     },
                     "sockopt": {
                         "domainStrategy": "UseIP"
@@ -3097,122 +3910,18 @@
         ],
         "outbounds": [
             {
-                "protocol": "trojan",
+                "protocol": "shadowsocks",
                 "settings": {
                     "servers": [
                         {
-                            "address": "humorous-parakeet.rooster465.autos",
-                            "port": 443,
-                            "password": "AE62539071"
+                            "address": "82.38.31.155",
+                            "port": 8080,
+                            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
+                            "method": "chacha20-ietf-poly1305"
                         }
                     ]
                 },
                 "streamSettings": {
-                    "security": "tls",
-                    "tlsSettings": {
-                        "serverName": "humorous-parakeet.rooster465.autos",
-                        "fingerprint": "chrome",
-                        "alpn": [
-                            "http/1.1"
-                        ]
-                    },
-                    "sockopt": {
-                        "domainStrategy": "UseIP"
-                    },
-                    "finalmask": {
-                        "tcp": [
-                            {
-                                "type": "fragment",
-                                "settings": {
-                                    "packets": "1-3",
-                                    "length": "5-40",
-                                    "delay": "1",
-                                    "maxSplit": "5"
-                                }
-                            }
-                        ]
-                    }
-                },
-                "tag": "proxy"
-            },
-            {
-                "protocol": "freedom",
-                "tag": "direct"
-            }
-        ],
-        "routing": {
-            "domainStrategy": "IPIfNonMatch",
-            "rules": [
-                {
-                    "domain": [
-                        "geosite:private"
-                    ],
-                    "outboundTag": "direct",
-                    "type": "field"
-                },
-                {
-                    "ip": [
-                        "geoip:private"
-                    ],
-                    "outboundTag": "direct",
-                    "type": "field"
-                }
-            ]
-        }
-    },
-    {
-        "dns": {
-            "servers": [
-                "fakedns",
-                {
-                    "address": "https://8.8.8.8/dns-query",
-                    "tag": "remote-dns"
-                }
-            ],
-            "queryStrategy": "UseIP"
-        },
-        "inbounds": [
-            {
-                "listen": "127.0.0.1",
-                "port": 10808,
-                "protocol": "mixed",
-                "settings": {
-                    "auth": "noauth",
-                    "udp": true
-                },
-                "sniffing": {
-                    "destOverride": [
-                        "http",
-                        "tls",
-                        "fakedns"
-                    ],
-                    "enabled": true,
-                    "routeOnly": true
-                },
-                "tag": "mixed-in"
-            }
-        ],
-        "outbounds": [
-            {
-                "protocol": "trojan",
-                "settings": {
-                    "servers": [
-                        {
-                            "address": "51.38.65.155",
-                            "port": 443,
-                            "password": "9518fb90-f389-11ef-bc5a-1239d0255272"
-                        }
-                    ]
-                },
-                "streamSettings": {
-                    "security": "tls",
-                    "tlsSettings": {
-                        "serverName": "uk1.test3.net",
-                        "fingerprint": "chrome",
-                        "alpn": [
-                            "http/1.1"
-                        ]
-                    },
                     "sockopt": {
                         "domainStrategy": "UseIP"
                     },
@@ -3295,11 +4004,11 @@
                 "settings": {
                     "vnext": [
                         {
-                            "address": "109.120.150.185",
-                            "port": 11261,
+                            "address": "116.204.164.27",
+                            "port": 7443,
                             "users": [
                                 {
-                                    "id": "a2eab2e7-af9e-4ea9-a603-05e83aa7bbea",
+                                    "id": "67ad6de6-ac67-4af7-8209-98ba3bd88834",
                                     "encryption": "none"
                                 }
                             ]
@@ -3309,12 +4018,12 @@
                 "streamSettings": {
                     "network": "ws",
                     "wsSettings": {
-                        "host": "sxyyvihkektlx4rjxsdj.pkc73phpweu4rbxbatm444.workers.dev",
+                        "host": "bapj1qapjk4.0sds0li1bwcz0i76it0gjxv1.workers.dev",
                         "path": "/@Marisa_kristi"
                     },
                     "security": "tls",
                     "tlsSettings": {
-                        "serverName": "sxyyvihkektlx4rjxsdj.pkc73phpweu4rbxbatm444.workers.dev",
+                        "serverName": "bapj1qapjk4.0sds0li1bwcz0i76it0gjxv1.workers.dev",
                         "fingerprint": "chrome",
                         "alpn": [
                             "http/1.1"
@@ -3398,29 +4107,412 @@
         ],
         "outbounds": [
             {
-                "protocol": "trojan",
+                "protocol": "shadowsocks",
                 "settings": {
                     "servers": [
                         {
-                            "address": "185.220.238.77",
-                            "port": 11543,
-                            "password": "HutaoCloud"
+                            "address": "82.38.31.62",
+                            "port": 8080,
+                            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
+                            "method": "chacha20-ietf-poly1305"
+                        }
+                    ]
+                },
+                "streamSettings": {
+                    "sockopt": {
+                        "domainStrategy": "UseIP"
+                    },
+                    "finalmask": {
+                        "tcp": [
+                            {
+                                "type": "fragment",
+                                "settings": {
+                                    "packets": "1-3",
+                                    "length": "5-40",
+                                    "delay": "1",
+                                    "maxSplit": "5"
+                                }
+                            }
+                        ]
+                    }
+                },
+                "tag": "proxy"
+            },
+            {
+                "protocol": "freedom",
+                "tag": "direct"
+            }
+        ],
+        "routing": {
+            "domainStrategy": "IPIfNonMatch",
+            "rules": [
+                {
+                    "domain": [
+                        "geosite:private"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                },
+                {
+                    "ip": [
+                        "geoip:private"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                }
+            ]
+        }
+    },
+    {
+        "dns": {
+            "servers": [
+                "fakedns",
+                {
+                    "address": "https://8.8.8.8/dns-query",
+                    "tag": "remote-dns"
+                }
+            ],
+            "queryStrategy": "UseIP"
+        },
+        "inbounds": [
+            {
+                "listen": "127.0.0.1",
+                "port": 10808,
+                "protocol": "mixed",
+                "settings": {
+                    "auth": "noauth",
+                    "udp": true
+                },
+                "sniffing": {
+                    "destOverride": [
+                        "http",
+                        "tls",
+                        "fakedns"
+                    ],
+                    "enabled": true,
+                    "routeOnly": true
+                },
+                "tag": "mixed-in"
+            }
+        ],
+        "outbounds": [
+            {
+                "protocol": "vless",
+                "settings": {
+                    "vnext": [
+                        {
+                            "address": "104.16.10.100",
+                            "port": 443,
+                            "users": [
+                                {
+                                    "id": "44eae030-290b-4083-8102-6f8bab05701b",
+                                    "encryption": "none"
+                                }
+                            ]
                         }
                     ]
                 },
                 "streamSettings": {
                     "network": "ws",
                     "wsSettings": {
-                        "path": "/api"
+                        "host": "cfvvv-ev1.pages.dev",
+                        "path": "/"
                     },
                     "security": "tls",
                     "tlsSettings": {
-                        "serverName": "185.220.238.77",
-                        "fingerprint": "chrome",
+                        "serverName": "cfvvv-ev1.pages.dev",
+                        "fingerprint": "unsafe",
                         "alpn": [
                             "http/1.1"
                         ]
                     },
+                    "sockopt": {
+                        "domainStrategy": "UseIP"
+                    },
+                    "finalmask": {
+                        "tcp": [
+                            {
+                                "type": "fragment",
+                                "settings": {
+                                    "packets": "1-3",
+                                    "length": "5-40",
+                                    "delay": "1",
+                                    "maxSplit": "5"
+                                }
+                            }
+                        ]
+                    }
+                },
+                "tag": "proxy"
+            },
+            {
+                "protocol": "freedom",
+                "tag": "direct"
+            }
+        ],
+        "routing": {
+            "domainStrategy": "IPIfNonMatch",
+            "rules": [
+                {
+                    "domain": [
+                        "geosite:private"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                },
+                {
+                    "ip": [
+                        "geoip:private"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                }
+            ]
+        }
+    },
+    {
+        "dns": {
+            "servers": [
+                "fakedns",
+                {
+                    "address": "https://8.8.8.8/dns-query",
+                    "tag": "remote-dns"
+                }
+            ],
+            "queryStrategy": "UseIP"
+        },
+        "inbounds": [
+            {
+                "listen": "127.0.0.1",
+                "port": 10808,
+                "protocol": "mixed",
+                "settings": {
+                    "auth": "noauth",
+                    "udp": true
+                },
+                "sniffing": {
+                    "destOverride": [
+                        "http",
+                        "tls",
+                        "fakedns"
+                    ],
+                    "enabled": true,
+                    "routeOnly": true
+                },
+                "tag": "mixed-in"
+            }
+        ],
+        "outbounds": [
+            {
+                "protocol": "shadowsocks",
+                "settings": {
+                    "servers": [
+                        {
+                            "address": "82.38.31.155",
+                            "port": 8080,
+                            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
+                            "method": "chacha20-ietf-poly1305"
+                        }
+                    ]
+                },
+                "streamSettings": {
+                    "sockopt": {
+                        "domainStrategy": "UseIP"
+                    },
+                    "finalmask": {
+                        "tcp": [
+                            {
+                                "type": "fragment",
+                                "settings": {
+                                    "packets": "1-3",
+                                    "length": "5-40",
+                                    "delay": "1",
+                                    "maxSplit": "5"
+                                }
+                            }
+                        ]
+                    }
+                },
+                "tag": "proxy"
+            },
+            {
+                "protocol": "freedom",
+                "tag": "direct"
+            }
+        ],
+        "routing": {
+            "domainStrategy": "IPIfNonMatch",
+            "rules": [
+                {
+                    "domain": [
+                        "geosite:private"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                },
+                {
+                    "ip": [
+                        "geoip:private"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                }
+            ]
+        }
+    },
+    {
+        "dns": {
+            "servers": [
+                "fakedns",
+                {
+                    "address": "https://8.8.8.8/dns-query",
+                    "tag": "remote-dns"
+                }
+            ],
+            "queryStrategy": "UseIP"
+        },
+        "inbounds": [
+            {
+                "listen": "127.0.0.1",
+                "port": 10808,
+                "protocol": "mixed",
+                "settings": {
+                    "auth": "noauth",
+                    "udp": true
+                },
+                "sniffing": {
+                    "destOverride": [
+                        "http",
+                        "tls",
+                        "fakedns"
+                    ],
+                    "enabled": true,
+                    "routeOnly": true
+                },
+                "tag": "mixed-in"
+            }
+        ],
+        "outbounds": [
+            {
+                "protocol": "vless",
+                "settings": {
+                    "vnext": [
+                        {
+                            "address": "104.21.89.41",
+                            "port": 443,
+                            "users": [
+                                {
+                                    "id": "44eae030-290b-4083-8102-6f8bab05701b",
+                                    "encryption": "none"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "streamSettings": {
+                    "network": "ws",
+                    "wsSettings": {
+                        "host": "cfvvv-ev1.pages.dev",
+                        "path": "/"
+                    },
+                    "security": "tls",
+                    "tlsSettings": {
+                        "serverName": "cfvvv-ev1.pages.dev",
+                        "fingerprint": "unsafe",
+                        "alpn": [
+                            "http/1.1"
+                        ]
+                    },
+                    "sockopt": {
+                        "domainStrategy": "UseIP"
+                    },
+                    "finalmask": {
+                        "tcp": [
+                            {
+                                "type": "fragment",
+                                "settings": {
+                                    "packets": "1-3",
+                                    "length": "5-40",
+                                    "delay": "1",
+                                    "maxSplit": "5"
+                                }
+                            }
+                        ]
+                    }
+                },
+                "tag": "proxy"
+            },
+            {
+                "protocol": "freedom",
+                "tag": "direct"
+            }
+        ],
+        "routing": {
+            "domainStrategy": "IPIfNonMatch",
+            "rules": [
+                {
+                    "domain": [
+                        "geosite:private"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                },
+                {
+                    "ip": [
+                        "geoip:private"
+                    ],
+                    "outboundTag": "direct",
+                    "type": "field"
+                }
+            ]
+        }
+    },
+    {
+        "dns": {
+            "servers": [
+                "fakedns",
+                {
+                    "address": "https://8.8.8.8/dns-query",
+                    "tag": "remote-dns"
+                }
+            ],
+            "queryStrategy": "UseIP"
+        },
+        "inbounds": [
+            {
+                "listen": "127.0.0.1",
+                "port": 10808,
+                "protocol": "mixed",
+                "settings": {
+                    "auth": "noauth",
+                    "udp": true
+                },
+                "sniffing": {
+                    "destOverride": [
+                        "http",
+                        "tls",
+                        "fakedns"
+                    ],
+                    "enabled": true,
+                    "routeOnly": true
+                },
+                "tag": "mixed-in"
+            }
+        ],
+        "outbounds": [
+            {
+                "protocol": "shadowsocks",
+                "settings": {
+                    "servers": [
+                        {
+                            "address": "108.181.57.93",
+                            "port": 8388,
+                            "password": "RSo52SbxW40r",
+                            "method": "chacha20-ietf-poly1305"
+                        }
+                    ]
+                },
+                "streamSettings": {
                     "sockopt": {
                         "domainStrategy": "UseIP"
                     },

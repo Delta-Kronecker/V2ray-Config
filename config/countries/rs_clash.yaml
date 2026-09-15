@@ -60,20 +60,20 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇲🇽_1"
-    type: ss
-    server: "64.177.90.30"
-    port: 8388
-    cipher: "aes-256-gcm"
-    password: "BWyPPTusFKhGgzKh"
+  - name: "🇷🇸_1"
+    type: vless
+    server: "150.40.126.28"
+    port: 443
+    uuid: "4360f941-b541-43d4-8507-2de3763e0cfd"
     udp: true
-  - name: "🇲🇽_2"
-    type: ss
-    server: "64.177.90.30"
-    port: 8388
-    cipher: "aes-256-gcm"
-    password: "BWyPPTusFKhGgzKh"
-    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "rs.convert-flow.net"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "8ZYjmjb0b2QJKCGMrcdhQNV28jZZPCKgIQbIdqChQ0w"
+      short-id: "00a61d55a07de885"
+    flow: "xtls-rprx-vision"
 
 proxy-groups:
   - name: "PROXY"
@@ -90,8 +90,7 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇲🇽_1"
-      - "🇲🇽_2"
+      - "🇷🇸_1"
 
 
   - name: "Load Balance"
@@ -100,8 +99,7 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇲🇽_1"
-      - "🇲🇽_2"
+      - "🇷🇸_1"
 
 rules:
   - MATCH,PROXY
