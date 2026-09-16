@@ -62,6 +62,15 @@ dns:
 proxies:
   - name: "🇬🇷_1"
     type: vless
+    server: "185.126.238.87"
+    port: 2083
+    uuid: "7668f678-faee-40cc-9b56-9c39dc773388"
+    udp: true
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "security.debian.org"
+  - name: "🇬🇷_2"
+    type: vless
     server: "85.90.197.220"
     port: 443
     uuid: "8f704ed6-9a1a-4d04-94dd-1bff501716de"
@@ -91,6 +100,7 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇬🇷_1"
+      - "🇬🇷_2"
 
 
   - name: "Load Balance"
@@ -100,6 +110,7 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇬🇷_1"
+      - "🇬🇷_2"
 
 rules:
   - MATCH,PROXY

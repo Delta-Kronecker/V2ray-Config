@@ -62,6 +62,19 @@ dns:
 proxies:
   - name: "🇹🇷_1"
     type: vless
+    server: "tr.x8lab.org"
+    port: 443
+    uuid: "88a247b9-3e0b-4c0e-ba88-61fc63a9c5d1"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.w3.org"
+    client-fingerprint: "safari"
+    reality-opts:
+      public-key: "k9BuzZPnzofDcPTaa7ROHNIc9ww2jy3tLAJ04GuKvAQ"
+      short-id: "cd0b563c7e0ea754"
+  - name: "🇹🇷_2"
+    type: vless
     server: "194.87.59.6"
     port: 2085
     uuid: "ffa722c8-da3f-4371-a0e0-6afcc9f3f93b"
@@ -69,20 +82,6 @@ proxies:
     network: grpc
     grpc-opts:
       grpc-service-name: "vless"
-  - name: "🇹🇷_2"
-    type: vless
-    server: "31.214.152.140"
-    port: 443
-    uuid: "ad297a2b-ae17-4d2d-8fce-e2eafb89b145"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "dw.b-cdn.net"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "bjqOUjqNQMF6NZ2kRis0NTNTcpdLBrr7CvZjFATrhg8"
-      short-id: "08"
-    flow: "xtls-rprx-vision"
   - name: "🇹🇷_3"
     type: vless
     server: "tr.curry-load.rutube.info"
@@ -112,46 +111,13 @@ proxies:
       short-id: "5606d4a25c99e7af"
     flow: "xtls-rprx-vision"
   - name: "🇹🇷_5"
-    type: vless
-    server: "107.161.174.26"
+    type: trojan
+    server: "194.146.26.40"
     port: 443
-    uuid: "069ba4cf-e8af-4561-b11e-18bd07b0dbd3"
-    udp: true
-    tls: true
+    password: "2ea5fc44-bd38-4fb0-a9b9-88c83fc56622"
+    sni: "4-193-105-141.nhost.00cdn.com"
     skip-cert-verify: true
-    servername: "books.blackbigdog.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "N8tPKh6gTyc6L5GOmBn_3wIy707a-5QYB0FrF2HigUc"
-      short-id: ""
-    flow: "xtls-rprx-vision"
-  - name: "🇹🇷_6"
-    type: vless
-    server: "151.241.226.201"
-    port: 2053
-    uuid: "0eed6293-8cf1-4e77-ac10-9c3d50d0b2f8"
     udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.apple.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "bYW_MmB_CUHrsyoCAUKviI2LZdHf63yY2yOPXbih104"
-      short-id: "9e419c0759b54d6f"
-  - name: "🇹🇷_7"
-    type: vless
-    server: "13.143.137.164"
-    port: 9443
-    uuid: "953358cb-82ba-4296-960d-6d2ec3468f4c"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "plaincanvas.videoclothing.xyz"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "dZ0rhO_PL67-Ciwc6CHQgtde3a5EUUuReA7M-lRNCDQ"
-      short-id: "e336c9a786fae301"
-    flow: "xtls-rprx-vision"
 
 proxy-groups:
   - name: "PROXY"
@@ -173,8 +139,6 @@ proxy-groups:
       - "🇹🇷_3"
       - "🇹🇷_4"
       - "🇹🇷_5"
-      - "🇹🇷_6"
-      - "🇹🇷_7"
 
 
   - name: "Load Balance"
@@ -188,8 +152,6 @@ proxy-groups:
       - "🇹🇷_3"
       - "🇹🇷_4"
       - "🇹🇷_5"
-      - "🇹🇷_6"
-      - "🇹🇷_7"
 
 rules:
   - MATCH,PROXY
