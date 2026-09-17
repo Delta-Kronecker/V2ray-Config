@@ -62,21 +62,29 @@ dns:
 proxies:
   - name: "🇪🇪_1"
     type: vless
-    server: "85.158.108.125"
-    port: 9462
-    uuid: "b3a11068-1a7e-4643-85de-7c82cce46943"
+    server: "94.183.170.135"
+    port: 8443
+    uuid: "06c4e938-2954-478f-a870-ca1b163e30e9"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "www.google.com"
+    servername: "estproxy4.lockdwn.com"
+    client-fingerprint: "chrome"
+  - name: "🇪🇪_2"
+    type: vless
+    server: "89.106.88.22"
+    port: 20443
+    uuid: "ad297a2b-ae17-4d2d-8fce-e2eafb89b145"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "dest1.cdn-update.rutube.info"
     client-fingerprint: "firefox"
     reality-opts:
-      public-key: "wGMBs7bvzyzA0-OUiwSkOOTDEMdxEOsSdRzxiP8GGQY"
-      short-id: ""
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "TunService"
-  - name: "🇪🇪_2"
+      public-key: "-AdhgMZeNHR2zAmGWa5peg7Ni0-e4IVMoSzydC9n7C4"
+      short-id: "08"
+    flow: "xtls-rprx-vision"
+  - name: "🇪🇪_3"
     type: vless
     server: "94.183.170.147"
     port: 8443
@@ -92,33 +100,7 @@ proxies:
     network: grpc
     grpc-opts:
       grpc-service-name: "9d30d49278"
-  - name: "🇪🇪_3"
-    type: vless
-    server: "ee.shamanapp.online"
-    port: 443
-    uuid: "b3a11068-1a7e-4643-85de-7c82cce46943"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.google.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "wGMBs7bvzyzA0-OUiwSkOOTDEMdxEOsSdRzxiP8GGQY"
-      short-id: ""
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "TunService"
   - name: "🇪🇪_4"
-    type: vless
-    server: "94.183.170.135"
-    port: 8443
-    uuid: "06c4e938-2954-478f-a870-ca1b163e30e9"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "estproxy4.lockdwn.com"
-    client-fingerprint: "chrome"
-  - name: "🇪🇪_5"
     type: vless
     server: "150.241.101.80"
     port: 8443
@@ -132,7 +114,65 @@ proxies:
       public-key: "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
       short-id: "6ba85179e30d4fc2"
     flow: "xtls-rprx-vision"
+  - name: "🇪🇪_5"
+    type: vless
+    server: "95.85.224.154"
+    port: 8443
+    uuid: "52ecaf96-9c28-4cad-a132-13898f2bbb29"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "fota-cloud-dn.ospserver.net"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "BX8CqIiZTbjfp--_TsYmp5pPQzzIZZ6rW9ly5HxDM3E"
+      short-id: "8c554321"
+    flow: "xtls-rprx-vision"
   - name: "🇪🇪_6"
+    type: vless
+    server: "94.183.170.147"
+    port: 8443
+    uuid: "66ac188b-bd8d-4218-b9ba-0bad0e152cd0"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.cloudflare.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "s2uiu3GQA2SlZzsr86Z5Dav97eAFTPf7Nvr-zqzzRgg"
+      short-id: "72ccd4a7563c2953"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "9d30d49278"
+  - name: "🇪🇪_7"
+    type: vless
+    server: "est1313.ggisopi.su"
+    port: 443
+    uuid: "f3e762c5-a4ca-4569-b8c8-1d29cb8d5683"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "est1313.ggisopi.su"
+    client-fingerprint: "edge"
+    reality-opts:
+      public-key: "SB1uC0OEveYjSiS_Nuw9Ld-uVVXWqi794OGnldthY3I"
+      short-id: ""
+    flow: "xtls-rprx-vision"
+  - name: "🇪🇪_8"
+    type: vless
+    server: "89.106.88.6"
+    port: 20443
+    uuid: "ad297a2b-ae17-4d2d-8fce-e2eafb89b145"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "dest1.cdn-update.rutube.info"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "-AdhgMZeNHR2zAmGWa5peg7Ni0-e4IVMoSzydC9n7C4"
+      short-id: "08"
+    flow: "xtls-rprx-vision"
+  - name: "🇪🇪_9"
     type: vless
     server: "185.174.135.250"
     port: 443
@@ -148,30 +188,6 @@ proxies:
     network: grpc
     grpc-opts:
       grpc-service-name: "TunService"
-  - name: "🇪🇪_7"
-    type: trojan
-    server: "45.139.194.66"
-    port: 443
-    password: "AG4yPUSazj57DBFnKG"
-    sni: "45.139.194.66"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇪🇪_8"
-    type: trojan
-    server: "ee-1.kamediorg.com"
-    port: 443
-    password: "wQz5G4ybA9eC3BQDkd"
-    sni: "ee-1.kamediorg.com"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇪🇪_9"
-    type: trojan
-    server: "109.206.241.10"
-    port: 449
-    password: "oiiaB38ywjEHCWRs_O_a_1113_Il_KeyyyHop_Bes1"
-    sni: "russiapower.accesscam.org"
-    skip-cert-verify: true
-    udp: true
   - name: "🇪🇪_10"
     type: trojan
     server: "45.139.194.60"
@@ -192,7 +208,7 @@ proxies:
     type: trojan
     server: "ee-1.kamediorg.com"
     port: 443
-    password: "GUGm7DHtpSx7SuPyUD"
+    password: "wQz5G4ybA9eC3BQDkd"
     sni: "ee-1.kamediorg.com"
     skip-cert-verify: true
     udp: true
@@ -202,6 +218,30 @@ proxies:
     port: 443
     password: "AG4yPUSazj57DBFnKG"
     sni: "ee-1.tr202604.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇪🇪_14"
+    type: trojan
+    server: "109.206.241.10"
+    port: 449
+    password: "oiiaB38ywjEHCWRs_O_a_1113_Il_KeyyyHop_Bes1"
+    sni: "russiapower.accesscam.org"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇪🇪_15"
+    type: trojan
+    server: "ee-1.kamediorg.com"
+    port: 443
+    password: "GUGm7DHtpSx7SuPyUD"
+    sni: "ee-1.kamediorg.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇪🇪_16"
+    type: trojan
+    server: "45.139.194.66"
+    port: 443
+    password: "AG4yPUSazj57DBFnKG"
+    sni: "45.139.194.66"
     skip-cert-verify: true
     udp: true
 
@@ -233,6 +273,9 @@ proxy-groups:
       - "🇪🇪_11"
       - "🇪🇪_12"
       - "🇪🇪_13"
+      - "🇪🇪_14"
+      - "🇪🇪_15"
+      - "🇪🇪_16"
 
 
   - name: "Load Balance"
@@ -254,6 +297,9 @@ proxy-groups:
       - "🇪🇪_11"
       - "🇪🇪_12"
       - "🇪🇪_13"
+      - "🇪🇪_14"
+      - "🇪🇪_15"
+      - "🇪🇪_16"
 
 rules:
   - MATCH,PROXY

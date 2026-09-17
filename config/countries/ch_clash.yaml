@@ -75,6 +75,19 @@ proxies:
       short-id: "19253fae84102271"
     flow: "xtls-rprx-vision"
   - name: "🇨🇭_2"
+    type: vless
+    server: "ch1.h1cloud.net"
+    port: 25720
+    uuid: "be83425f-74c5-4b03-9c4b-20aa16322698"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.samsung.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "OueudVX2rTpyeEb2bNW3Jx3WtgSX4zFERs6yt8Szv0E"
+      short-id: "fddf99d4a4f55a48"
+  - name: "🇨🇭_3"
     type: trojan
     server: "83.228.224.161"
     port: 443
@@ -100,6 +113,7 @@ proxy-groups:
     proxies:
       - "🇨🇭_1"
       - "🇨🇭_2"
+      - "🇨🇭_3"
 
 
   - name: "Load Balance"
@@ -110,6 +124,7 @@ proxy-groups:
     proxies:
       - "🇨🇭_1"
       - "🇨🇭_2"
+      - "🇨🇭_3"
 
 rules:
   - MATCH,PROXY

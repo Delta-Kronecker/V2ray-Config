@@ -75,15 +75,6 @@ proxies:
       short-id: "0dfc23fe80778c00"
     flow: "xtls-rprx-vision"
   - name: "🇪🇸_2"
-    type: vless
-    server: "85.90.217.42"
-    port: 443
-    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "85.90.217.42"
-  - name: "🇪🇸_3"
     type: trojan
     server: "65.20.102.54"
     port: 443
@@ -91,19 +82,26 @@ proxies:
     sni: "www.gpt123.one"
     skip-cert-verify: true
     udp: true
-  - name: "🇪🇸_4"
+  - name: "🇪🇸_3"
     type: ss
     server: "108.181.121.226"
     port: 8388
     cipher: "chacha20-ietf-poly1305"
     password: "WSyL4XTwNsdv"
     udp: true
-  - name: "🇪🇸_5"
+  - name: "🇪🇸_4"
     type: ss
-    server: "108.181.121.226"
+    server: "140.174.184.5"
     port: 8388
     cipher: "chacha20-ietf-poly1305"
-    password: "WSyL4XTwNsdv"
+    password: "qItG8SueYQcP"
+    udp: true
+  - name: "🇪🇸_5"
+    type: ss
+    server: "140.174.184.5"
+    port: 8388
+    cipher: "chacha20-ietf-poly1305"
+    password: "qItG8SueYQcP"
     udp: true
   - name: "🇪🇸_6"
     type: ss
@@ -114,10 +112,10 @@ proxies:
     udp: true
   - name: "🇪🇸_7"
     type: ss
-    server: "140.174.184.5"
+    server: "108.181.121.226"
     port: 8388
     cipher: "chacha20-ietf-poly1305"
-    password: "qItG8SueYQcP"
+    password: "WSyL4XTwNsdv"
     udp: true
   - name: "🇪🇸_8"
     type: ss
@@ -125,13 +123,6 @@ proxies:
     port: 8388
     cipher: "chacha20-ietf-poly1305"
     password: "WSyL4XTwNsdv"
-    udp: true
-  - name: "🇪🇸_9"
-    type: ss
-    server: "140.174.184.5"
-    port: 8388
-    cipher: "chacha20-ietf-poly1305"
-    password: "qItG8SueYQcP"
     udp: true
 
 proxy-groups:
@@ -157,7 +148,6 @@ proxy-groups:
       - "🇪🇸_6"
       - "🇪🇸_7"
       - "🇪🇸_8"
-      - "🇪🇸_9"
 
 
   - name: "Load Balance"
@@ -174,7 +164,6 @@ proxy-groups:
       - "🇪🇸_6"
       - "🇪🇸_7"
       - "🇪🇸_8"
-      - "🇪🇸_9"
 
 rules:
   - MATCH,PROXY

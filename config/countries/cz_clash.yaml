@@ -61,6 +61,20 @@ dns:
 
 proxies:
   - name: "🇨🇿_1"
+    type: vless
+    server: "31.76.7.154"
+    port: 7443
+    uuid: "d7cad038-0c3f-4cce-8f8a-36464aaf66c0"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ya.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "1MLoHw7RVkGefh7XUyuGg4ndxwv4vDU9en-f9JxpXRQ"
+      short-id: "d2061bb1"
+    flow: "xtls-rprx-vision"
+  - name: "🇨🇿_2"
     type: trojan
     server: "ch-2.bexum.fun"
     port: 443
@@ -68,7 +82,7 @@ proxies:
     sni: "ch-2.bexum.fun"
     skip-cert-verify: true
     udp: true
-  - name: "🇨🇿_2"
+  - name: "🇨🇿_3"
     type: trojan
     server: "46.8.113.142"
     port: 443
@@ -94,6 +108,7 @@ proxy-groups:
     proxies:
       - "🇨🇿_1"
       - "🇨🇿_2"
+      - "🇨🇿_3"
 
 
   - name: "Load Balance"
@@ -104,6 +119,7 @@ proxy-groups:
     proxies:
       - "🇨🇿_1"
       - "🇨🇿_2"
+      - "🇨🇿_3"
 
 rules:
   - MATCH,PROXY

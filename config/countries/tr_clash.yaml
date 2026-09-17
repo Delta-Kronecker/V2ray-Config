@@ -62,41 +62,18 @@ dns:
 proxies:
   - name: "🇹🇷_1"
     type: vless
-    server: "tr.x8lab.org"
-    port: 443
-    uuid: "88a247b9-3e0b-4c0e-ba88-61fc63a9c5d1"
+    server: "151.241.226.201"
+    port: 2053
+    uuid: "0eed6293-8cf1-4e77-ac10-9c3d50d0b2f8"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "www.w3.org"
-    client-fingerprint: "safari"
-    reality-opts:
-      public-key: "k9BuzZPnzofDcPTaa7ROHNIc9ww2jy3tLAJ04GuKvAQ"
-      short-id: "cd0b563c7e0ea754"
-  - name: "🇹🇷_2"
-    type: vless
-    server: "194.87.59.6"
-    port: 2085
-    uuid: "ffa722c8-da3f-4371-a0e0-6afcc9f3f93b"
-    udp: true
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "vless"
-  - name: "🇹🇷_3"
-    type: vless
-    server: "tr.curry-load.rutube.info"
-    port: 443
-    uuid: "ad297a2b-ae17-4d2d-8fce-e2eafb89b145"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "dw.b-cdn.net"
+    servername: "www.apple.com"
     client-fingerprint: "firefox"
     reality-opts:
-      public-key: "bjqOUjqNQMF6NZ2kRis0NTNTcpdLBrr7CvZjFATrhg8"
-      short-id: "08"
-    flow: "xtls-rprx-vision"
-  - name: "🇹🇷_4"
+      public-key: "bYW_MmB_CUHrsyoCAUKviI2LZdHf63yY2yOPXbih104"
+      short-id: "9e419c0759b54d6f"
+  - name: "🇹🇷_2"
     type: vless
     server: "156.67.63.231"
     port: 443
@@ -110,7 +87,7 @@ proxies:
       public-key: "PTqeBbbr2xJ1L3V1PyYjKjxanMKKqJHU-wtnpYmFQCI"
       short-id: "5606d4a25c99e7af"
     flow: "xtls-rprx-vision"
-  - name: "🇹🇷_5"
+  - name: "🇹🇷_3"
     type: trojan
     server: "194.146.26.40"
     port: 443
@@ -137,8 +114,6 @@ proxy-groups:
       - "🇹🇷_1"
       - "🇹🇷_2"
       - "🇹🇷_3"
-      - "🇹🇷_4"
-      - "🇹🇷_5"
 
 
   - name: "Load Balance"
@@ -150,8 +125,6 @@ proxy-groups:
       - "🇹🇷_1"
       - "🇹🇷_2"
       - "🇹🇷_3"
-      - "🇹🇷_4"
-      - "🇹🇷_5"
 
 rules:
   - MATCH,PROXY
