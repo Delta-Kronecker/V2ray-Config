@@ -75,19 +75,21 @@ proxies:
       short-id: "0dfc23fe80778c00"
     flow: "xtls-rprx-vision"
   - name: "🇪🇸_2"
+    type: vless
+    server: "85.90.217.42"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "85.90.217.42"
+  - name: "🇪🇸_3"
     type: trojan
     server: "65.20.102.54"
     port: 443
     password: "842b5f9dd11e458d8613c907c4cc5723"
     sni: "www.gpt123.one"
     skip-cert-verify: true
-    udp: true
-  - name: "🇪🇸_3"
-    type: ss
-    server: "108.181.121.226"
-    port: 8388
-    cipher: "chacha20-ietf-poly1305"
-    password: "WSyL4XTwNsdv"
     udp: true
   - name: "🇪🇸_4"
     type: ss
@@ -124,6 +126,21 @@ proxies:
     cipher: "chacha20-ietf-poly1305"
     password: "WSyL4XTwNsdv"
     udp: true
+  - name: "🇪🇸_9"
+    type: ss
+    server: "108.181.121.226"
+    port: 8388
+    cipher: "chacha20-ietf-poly1305"
+    password: "WSyL4XTwNsdv"
+    udp: true
+  - name: "🇪🇸_10"
+    type: vmess
+    server: "85.90.217.42"
+    port: 22324
+    uuid: "04621bae-ab36-11ec-b909-0242ac120002"
+    alterId: 0
+    cipher: "auto"
+    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -148,6 +165,8 @@ proxy-groups:
       - "🇪🇸_6"
       - "🇪🇸_7"
       - "🇪🇸_8"
+      - "🇪🇸_9"
+      - "🇪🇸_10"
 
 
   - name: "Load Balance"
@@ -164,6 +183,8 @@ proxy-groups:
       - "🇪🇸_6"
       - "🇪🇸_7"
       - "🇪🇸_8"
+      - "🇪🇸_9"
+      - "🇪🇸_10"
 
 rules:
   - MATCH,PROXY

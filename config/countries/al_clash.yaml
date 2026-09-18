@@ -62,20 +62,6 @@ dns:
 proxies:
   - name: "🇦🇱_1"
     type: vless
-    server: "95.85.224.51"
-    port: 443
-    uuid: "342ab7e4-5a89-0001-8809-304120d4aa83"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "max.ru"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "WWeAHWUVD-phmnjNJ823cer0c4CMIbEs08AhsuEZmDc"
-      short-id: "a696de84963656de"
-    flow: "xtls-rprx-vision"
-  - name: "🇦🇱_2"
-    type: vless
     server: "95.85.245.163"
     port: 442
     uuid: "2c070f10-57e8-442b-b6cb-ff39b35d929d"
@@ -88,19 +74,40 @@ proxies:
       public-key: "urhSusjL1QqHdmlCrvbC9yBftecrgQMuhWmfGh0CUFg"
       short-id: "ab"
     flow: "xtls-rprx-vision"
-  - name: "🇦🇱_3"
-    type: ss
-    server: "130.49.189.158"
-    port: 43558
-    cipher: "chacha20-ietf-poly1305"
-    password: "/QFycb02d87cByC9+5ZRSygI1avHiPXkgYG2yc+TnGA="
+  - name: "🇦🇱_2"
+    type: vless
+    server: "95.85.224.51"
+    port: 443
+    uuid: "342ab7e4-5a89-0001-8809-304120d4aa83"
     udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "max.ru"
+    client-fingerprint: "qq"
+    reality-opts:
+      public-key: "WWeAHWUVD-phmnjNJ823cer0c4CMIbEs08AhsuEZmDc"
+      short-id: "a696de84963656de"
+    flow: "xtls-rprx-vision"
+  - name: "🇦🇱_3"
+    type: vless
+    server: "130.49.189.158"
+    port: 45433
+    uuid: "4ea67585-c211-4358-9173-cbdff7a6aede"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "addons.mozilla.org"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "dfJb8gJq6IRsE1KMsfZp5tNLiwBNQMbSl5NF1z5dq3c"
+      short-id: "5e101cd5"
+    flow: "xtls-rprx-vision"
   - name: "🇦🇱_4"
     type: ss
     server: "130.49.189.158"
     port: 43558
     cipher: "chacha20-ietf-poly1305"
-    password: "/QFycb02d87cByC9+5ZRSygI1avHiPXkgYG2yc+TnGA="
+    password: "5dLyPJpSV+QyXFRj+S0dt6xFKHxtcXEkRO/TzJGzryU="
     udp: true
 
 proxy-groups:

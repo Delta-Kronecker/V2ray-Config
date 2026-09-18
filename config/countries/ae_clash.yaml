@@ -62,18 +62,20 @@ dns:
 proxies:
   - name: "🇦🇪_1"
     type: vless
-    server: "sa-18cf795a50985ad9.sr-fa525e02d0951c2f.r.vpvpn.club"
-    port: 443
-    uuid: "0c597b0d-99d7-4c27-befe-6c5d339d7dbe"
+    server: "45.88.13.5"
+    port: 8443
+    uuid: "2bb8b13c-b3f0-2552-da05-d0929bfb36db"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "baeb.edge-static.space"
-    client-fingerprint: "firefox"
+    servername: "download.nvidia.com"
+    client-fingerprint: "chrome"
     reality-opts:
-      public-key: "fJnm6-PhJGSwHaAdJOzXkYOfCPPCWSlaZrtfm1XsqhA"
+      public-key: "FOQzn10eHqu4F5xOxiXW2bTDG8lH4TdOXP6A5rDqKFk"
       short-id: ""
-    flow: "xtls-rprx-vision"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "TunService"
 
 proxy-groups:
   - name: "PROXY"

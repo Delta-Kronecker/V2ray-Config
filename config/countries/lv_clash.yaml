@@ -75,19 +75,13 @@ proxies:
       short-id: "33acba1b"
     flow: "xtls-rprx-vision"
   - name: "🇱🇻_2"
-    type: vless
-    server: "195.123.213.28"
+    type: trojan
+    server: "138.124.63.106"
     port: 443
-    uuid: "02fcc1a4-ee90-4970-8bbb-4ffaa8109d24"
-    udp: true
-    tls: true
+    password: "kxHw-Dk-e9dffgzYszMlEqLJ92AnY3Pi"
+    sni: "tr-latvia1.unlimited-access.ru"
     skip-cert-verify: true
-    servername: "www.cloudflare.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "NMgy1XgCSXExOg6Tg8xG9lCWttMF6sjdpB41lZy6FWo"
-      short-id: "5c256336e3b673fa"
-    flow: "xtls-rprx-vision"
+    udp: true
   - name: "🇱🇻_3"
     type: trojan
     server: "31.57.61.76"
@@ -97,14 +91,6 @@ proxies:
     skip-cert-verify: true
     udp: true
   - name: "🇱🇻_4"
-    type: trojan
-    server: "138.124.63.106"
-    port: 443
-    password: "kxHw-Dk-e9dffgzYszMlEqLJ92AnY3Pi"
-    sni: "tr-latvia1.unlimited-access.ru"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇱🇻_5"
     type: trojan
     server: "tr-latvia1.unlimited-access.ru"
     port: 443
@@ -132,7 +118,6 @@ proxy-groups:
       - "🇱🇻_2"
       - "🇱🇻_3"
       - "🇱🇻_4"
-      - "🇱🇻_5"
 
 
   - name: "Load Balance"
@@ -145,7 +130,6 @@ proxy-groups:
       - "🇱🇻_2"
       - "🇱🇻_3"
       - "🇱🇻_4"
-      - "🇱🇻_5"
 
 rules:
   - MATCH,PROXY

@@ -60,30 +60,16 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇧🇪_1"
-    type: vmess
-    server: "zfd-hkv1.kunlun01dns.com"
-    port: 16113
-    uuid: "0802ac03-7973-39ef-a019-ba02de6c01e1"
-    alterId: 0
-    cipher: "auto"
+  - name: "🇱🇰_1"
+    type: vless
+    server: "free.sahanwickramasinghe.me"
+    port: 443
+    uuid: "3d08ed67-5a47-42d3-a948-ebc7d2eb21f7"
     udp: true
-  - name: "🇧🇪_2"
-    type: vmess
-    server: "zfd-hkv2.kunlun01dns.com"
-    port: 16116
-    uuid: "0802ac03-7973-39ef-a019-ba02de6c01e1"
-    alterId: 0
-    cipher: "auto"
-    udp: true
-  - name: "🇧🇪_3"
-    type: vmess
-    server: "dog-hk.kunlun01dns.com"
-    port: 21019
-    uuid: "9464ca40-dd75-3742-a628-d931a9f413b2"
-    alterId: 0
-    cipher: "auto"
-    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "zoom.us"
+    client-fingerprint: "chrome"
 
 proxy-groups:
   - name: "PROXY"
@@ -100,9 +86,7 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇧🇪_1"
-      - "🇧🇪_2"
-      - "🇧🇪_3"
+      - "🇱🇰_1"
 
 
   - name: "Load Balance"
@@ -111,9 +95,7 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇧🇪_1"
-      - "🇧🇪_2"
-      - "🇧🇪_3"
+      - "🇱🇰_1"
 
 rules:
   - MATCH,PROXY

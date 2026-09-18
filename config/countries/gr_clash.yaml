@@ -70,13 +70,19 @@ proxies:
     grpc-opts:
       grpc-service-name: "security.debian.org"
   - name: "🇬🇷_2"
-    type: vmess
-    server: "zfd-boardv2.kunlun01dns.com"
-    port: 16310
-    uuid: "0802ac03-7973-39ef-a019-ba02de6c01e1"
-    alterId: 0
-    cipher: "auto"
+    type: vless
+    server: "85.90.197.220"
+    port: 443
+    uuid: "8f704ed6-9a1a-4d04-94dd-1bff501716de"
     udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.cloudflare.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "biNcdU5mywtNw-KyPpLHindBxdEyAolT1WJ26N0b7y4"
+      short-id: "94acb54627612d43"
+    flow: "xtls-rprx-vision"
 
 proxy-groups:
   - name: "PROXY"

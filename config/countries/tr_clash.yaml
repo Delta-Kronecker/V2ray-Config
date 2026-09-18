@@ -75,6 +75,20 @@ proxies:
       short-id: "9e419c0759b54d6f"
   - name: "🇹🇷_2"
     type: vless
+    server: "78.135.73.47"
+    port: 443
+    uuid: "25e16692-d097-4e69-9e2d-8415609c1968"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.datadoghq.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "sZAJkAu23wp1WKY-qeaeiwR38izP5OyfhumoE9xhbB8"
+      short-id: "f46cd3ea3d1eb72d"
+    flow: "xtls-rprx-vision"
+  - name: "🇹🇷_3"
+    type: vless
     server: "156.67.63.231"
     port: 443
     uuid: "b052df40-d51c-456c-9bd6-57af01a87e4e"
@@ -87,13 +101,28 @@ proxies:
       public-key: "PTqeBbbr2xJ1L3V1PyYjKjxanMKKqJHU-wtnpYmFQCI"
       short-id: "5606d4a25c99e7af"
     flow: "xtls-rprx-vision"
-  - name: "🇹🇷_3"
+  - name: "🇹🇷_4"
     type: trojan
     server: "194.146.26.40"
     port: 443
     password: "2ea5fc44-bd38-4fb0-a9b9-88c83fc56622"
     sni: "4-193-105-141.nhost.00cdn.com"
     skip-cert-verify: true
+    udp: true
+  - name: "🇹🇷_5"
+    type: ss
+    server: "153.52.92.81"
+    port: 1080
+    cipher: "chacha20-ietf-poly1305"
+    password: "IXa3ylzS_jBOAsQy071tIQ"
+    udp: true
+  - name: "🇹🇷_6"
+    type: vmess
+    server: "91.228.227.211"
+    port: 23957
+    uuid: "92987ab8-0a53-4a16-8d6c-295d5df86404"
+    alterId: 0
+    cipher: "auto"
     udp: true
 
 proxy-groups:
@@ -114,6 +143,9 @@ proxy-groups:
       - "🇹🇷_1"
       - "🇹🇷_2"
       - "🇹🇷_3"
+      - "🇹🇷_4"
+      - "🇹🇷_5"
+      - "🇹🇷_6"
 
 
   - name: "Load Balance"
@@ -125,6 +157,9 @@ proxy-groups:
       - "🇹🇷_1"
       - "🇹🇷_2"
       - "🇹🇷_3"
+      - "🇹🇷_4"
+      - "🇹🇷_5"
+      - "🇹🇷_6"
 
 rules:
   - MATCH,PROXY

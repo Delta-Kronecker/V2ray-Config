@@ -76,6 +76,19 @@ proxies:
     flow: "xtls-rprx-vision"
   - name: "🇨🇭_2"
     type: vless
+    server: "94.26.35.139"
+    port: 25720
+    uuid: "be83425f-74c5-4b03-9c4b-20aa16322698"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.samsung.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "OueudVX2rTpyeEb2bNW3Jx3WtgSX4zFERs6yt8Szv0E"
+      short-id: "fddf99d4a4f55a48"
+  - name: "🇨🇭_3"
+    type: vless
     server: "ch1.h1cloud.net"
     port: 25720
     uuid: "be83425f-74c5-4b03-9c4b-20aa16322698"
@@ -87,13 +100,20 @@ proxies:
     reality-opts:
       public-key: "OueudVX2rTpyeEb2bNW3Jx3WtgSX4zFERs6yt8Szv0E"
       short-id: "fddf99d4a4f55a48"
-  - name: "🇨🇭_3"
+  - name: "🇨🇭_4"
     type: trojan
     server: "83.228.224.161"
     port: 443
     password: "SoftNetConnect"
     sni: "83.228.224.161"
     skip-cert-verify: true
+    udp: true
+  - name: "🇨🇭_5"
+    type: ss
+    server: "132.243.175.144"
+    port: 8388
+    cipher: "chacha20-ietf-poly1305"
+    password: "e8KgS8fD0yDqYFpgN4G5piCOt9aFyqA3"
     udp: true
 
 proxy-groups:
@@ -114,6 +134,8 @@ proxy-groups:
       - "🇨🇭_1"
       - "🇨🇭_2"
       - "🇨🇭_3"
+      - "🇨🇭_4"
+      - "🇨🇭_5"
 
 
   - name: "Load Balance"
@@ -125,6 +147,8 @@ proxy-groups:
       - "🇨🇭_1"
       - "🇨🇭_2"
       - "🇨🇭_3"
+      - "🇨🇭_4"
+      - "🇨🇭_5"
 
 rules:
   - MATCH,PROXY

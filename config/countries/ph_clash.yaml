@@ -60,24 +60,12 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇹🇭_1"
-    type: vmess
-    server: "118.193.57.167"
-    port: 49667
-    uuid: "d46bf492-45f4-4c33-82d1-ea2a1cb54eb6"
-    alterId: 0
-    cipher: "auto"
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/d46bf492"
-  - name: "🇹🇭_2"
-    type: vmess
-    server: "119.46.51.45"
-    port: 37515
-    uuid: "9b76bc31-17a5-4454-934a-8d5fb602cd70"
-    alterId: 0
-    cipher: "auto"
+  - name: "🇵🇭_1"
+    type: ss
+    server: "149.104.109.252"
+    port: 8882
+    cipher: "aes-256-gcm"
+    password: "kDWvXYZoTBcGkC4"
     udp: true
 
 proxy-groups:
@@ -95,8 +83,7 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇹🇭_1"
-      - "🇹🇭_2"
+      - "🇵🇭_1"
 
 
   - name: "Load Balance"
@@ -105,8 +92,7 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇹🇭_1"
-      - "🇹🇭_2"
+      - "🇵🇭_1"
 
 rules:
   - MATCH,PROXY
