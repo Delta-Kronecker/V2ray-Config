@@ -60,14 +60,22 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇵🇪_1"
-    type: trojan
-    server: "38.180.173.150"
-    port: 443
-    password: "af4b064a9c39472fb34ad8b113acdc6b"
-    sni: "38.180.173.150"
-    skip-cert-verify: true
+  - name: "🇸🇨_1"
+    type: vless
+    server: "103.175.79.4"
+    port: 8443
+    uuid: "b2141c97-76af-ff6f-839b-70a53e23aad9"
     udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "download.autodesk.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "92KJ-ibs1qTy8nODGrHTW8T0b_trG7McLYv8My9o2EE"
+      short-id: ""
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "TunService"
 
 proxy-groups:
   - name: "PROXY"
@@ -84,7 +92,7 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇵🇪_1"
+      - "🇸🇨_1"
 
 
   - name: "Load Balance"
@@ -93,7 +101,7 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇵🇪_1"
+      - "🇸🇨_1"
 
 rules:
   - MATCH,PROXY

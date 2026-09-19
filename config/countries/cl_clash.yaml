@@ -60,12 +60,45 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇵🇭_1"
+  - name: "🇨🇱_1"
+    type: vless
+    server: "34.176.98.128"
+    port: 443
+    uuid: "4fe7ceb2-160c-4564-89e6-8f5fd0b05cd5"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.cloudflare.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "3ekBKAuIIAOjtkKJ0T-qpC7uJsqsY2fVLRB6C70A5hw"
+      short-id: "d7676b6a468a03b3"
+  - name: "🇨🇱_2"
+    type: vless
+    server: "34.176.137.90"
+    port: 443
+    uuid: "ad5325f8-f0b3-41c4-a561-113529b60e70"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.cloudflare.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "HnHVuSObMrldWGzq1-Eb93fwgu6QQRp6H0_8LX3ikDc"
+      short-id: "2c2d919f5183d0b7"
+  - name: "🇨🇱_3"
     type: ss
-    server: "149.104.109.252"
-    port: 8882
+    server: "64.176.2.21"
+    port: 8388
     cipher: "aes-256-gcm"
-    password: "kDWvXYZoTBcGkC4"
+    password: "xBStBEVqvGwHPocc"
+    udp: true
+  - name: "🇨🇱_4"
+    type: ss
+    server: "64.176.2.21"
+    port: 8388
+    cipher: "aes-256-gcm"
+    password: "xBStBEVqvGwHPocc"
     udp: true
 
 proxy-groups:
@@ -83,7 +116,10 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇵🇭_1"
+      - "🇨🇱_1"
+      - "🇨🇱_2"
+      - "🇨🇱_3"
+      - "🇨🇱_4"
 
 
   - name: "Load Balance"
@@ -92,7 +128,10 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇵🇭_1"
+      - "🇨🇱_1"
+      - "🇨🇱_2"
+      - "🇨🇱_3"
+      - "🇨🇱_4"
 
 rules:
   - MATCH,PROXY

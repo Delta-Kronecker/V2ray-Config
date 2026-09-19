@@ -60,16 +60,20 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇱🇰_1"
+  - name: "🇲🇩_1"
     type: vless
-    server: "free.sahanwickramasinghe.me"
-    port: 443
-    uuid: "3d08ed67-5a47-42d3-a948-ebc7d2eb21f7"
+    server: "moldova.cdn-europe.org"
+    port: 4443
+    uuid: "d7c94b82-657a-4bb7-9b24-2ae566669835"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "zoom.us"
-    client-fingerprint: "chrome"
+    servername: "moldova.cdn-europe.org"
+    client-fingerprint: "random"
+    reality-opts:
+      public-key: "cYwrRCz_hKgT_JE8WywuLE3XOkAEqCTuBiUvXAaEjn8"
+      short-id: "694ee64512cfcbef"
+    flow: "xtls-rprx-vision"
 
 proxy-groups:
   - name: "PROXY"
@@ -86,7 +90,7 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇱🇰_1"
+      - "🇲🇩_1"
 
 
   - name: "Load Balance"
@@ -95,7 +99,7 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇱🇰_1"
+      - "🇲🇩_1"
 
 rules:
   - MATCH,PROXY

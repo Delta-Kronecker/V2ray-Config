@@ -61,13 +61,33 @@ dns:
 
 proxies:
   - name: "🇧🇬_1"
-    type: trojan
-    server: "91.227.77.87"
+    type: vless
+    server: "131.123.39.29"
     port: 443
-    password: "bpb-trojan"
-    sni: "skwygx.top"
-    skip-cert-verify: true
+    uuid: "54ee5e59-55a3-4599-83ff-0c67b3f411b2"
     udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sheetpeek.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "pX9uknHGLC9I26TT5kq4bIAljtX2AGWLK23EMgn6xFo"
+      short-id: "84be686ea1d16478"
+    flow: "xtls-rprx-vision"
+  - name: "🇧🇬_2"
+    type: vless
+    server: "131.123.41.18"
+    port: 443
+    uuid: "54ee5e59-55a3-4599-83ff-0c67b3f411b2"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sheetpeek.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "pX9uknHGLC9I26TT5kq4bIAljtX2AGWLK23EMgn6xFo"
+      short-id: "84be686ea1d16478"
+    flow: "xtls-rprx-vision"
 
 proxy-groups:
   - name: "PROXY"
@@ -85,6 +105,7 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇧🇬_1"
+      - "🇧🇬_2"
 
 
   - name: "Load Balance"
@@ -94,6 +115,7 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇧🇬_1"
+      - "🇧🇬_2"
 
 rules:
   - MATCH,PROXY

@@ -62,20 +62,6 @@ dns:
 proxies:
   - name: "🇦🇲_1"
     type: vless
-    server: "am.c2horizon.app"
-    port: 443
-    uuid: "d097ade5-225a-4a50-9f0e-fae258aa4d0c"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "am.c2horizon.app"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "IuvAXlAWBpeXehmEk0P-FIGTctUhny2H3UilbWWfJC0"
-      short-id: "122218f4c1f172e4"
-    flow: "xtls-rprx-vision"
-  - name: "🇦🇲_2"
-    type: vless
     server: "aotocon.ggisopi.su"
     port: 443
     uuid: "d0f0a880-0df1-48c9-bdf1-5669fb9483ce"
@@ -88,7 +74,7 @@ proxies:
       public-key: "SB1uC0OEveYjSiS_Nuw9Ld-uVVXWqi794OGnldthY3I"
       short-id: ""
     flow: "xtls-rprx-vision"
-  - name: "🇦🇲_3"
+  - name: "🇦🇲_2"
     type: vless
     server: "77.91.68.70"
     port: 55983
@@ -119,7 +105,6 @@ proxy-groups:
     proxies:
       - "🇦🇲_1"
       - "🇦🇲_2"
-      - "🇦🇲_3"
 
 
   - name: "Load Balance"
@@ -130,7 +115,6 @@ proxy-groups:
     proxies:
       - "🇦🇲_1"
       - "🇦🇲_2"
-      - "🇦🇲_3"
 
 rules:
   - MATCH,PROXY

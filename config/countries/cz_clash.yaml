@@ -82,14 +82,6 @@ proxies:
     sni: "ch-2.bexum.fun"
     skip-cert-verify: true
     udp: true
-  - name: "🇨🇿_3"
-    type: trojan
-    server: "46.8.113.142"
-    port: 443
-    password: "LYaEYwjN8LjWTRJdCCTzW7V6gK7atJVu"
-    sni: "ch-2.bexum.fun"
-    skip-cert-verify: true
-    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -108,7 +100,6 @@ proxy-groups:
     proxies:
       - "🇨🇿_1"
       - "🇨🇿_2"
-      - "🇨🇿_3"
 
 
   - name: "Load Balance"
@@ -119,7 +110,6 @@ proxy-groups:
     proxies:
       - "🇨🇿_1"
       - "🇨🇿_2"
-      - "🇨🇿_3"
 
 rules:
   - MATCH,PROXY
