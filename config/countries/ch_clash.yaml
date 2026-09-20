@@ -62,31 +62,18 @@ dns:
 proxies:
   - name: "🇨🇭_1"
     type: vless
-    server: "34.158.23.115"
+    server: "ch.cache-4d8a.com"
     port: 443
-    uuid: "a18f08dc-76ae-453a-98f5-d41eab7e649b"
+    uuid: "ddf09ad0-02dc-485b-9048-1038de5bebf0"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "www.cloudflare.com"
-    client-fingerprint: "chrome"
+    servername: "ch.cache-4d8a.com"
     reality-opts:
-      public-key: "f8aV8naD8NKt_mLKaOou0qUrIM1Ge25kJNxywpF3OB0"
-      short-id: "d016c76007f78038"
+      public-key: "lYVz8iVZI2XjTCw_XS9wi08P1DLXO0c7jQo-_xyw2xY"
+      short-id: "9d84de9d9f7b85e9"
+    flow: "xtls-rprx-vision"
   - name: "🇨🇭_2"
-    type: vless
-    server: "34.65.191.159"
-    port: 443
-    uuid: "bd93a117-2e9d-4e1e-b9b9-69d8d7089bdb"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.cloudflare.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "DE-S0R0KYYTuBsuQmT-iip6rJ2QsuH6z3SJYlsNyUUI"
-      short-id: "5214a92cad4ad90e"
-  - name: "🇨🇭_3"
     type: vless
     server: "45.90.59.15"
     port: 443
@@ -100,13 +87,26 @@ proxies:
       public-key: "P7S4UPFlQbmiBr4txyy8NZIMTrmO3UdxyH16WBU-YzY"
       short-id: "19253fae84102271"
     flow: "xtls-rprx-vision"
-  - name: "🇨🇭_4"
-    type: trojan
-    server: "83.228.224.161"
+  - name: "🇨🇭_3"
+    type: vless
+    server: "179.43.162.252"
     port: 443
-    password: "SoftNetConnect"
-    sni: "83.228.224.161"
+    uuid: "ddf09ad0-02dc-485b-9048-1038de5bebf0"
+    udp: true
+    tls: true
     skip-cert-verify: true
+    servername: "ch.cache-4d8a.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "lYVz8iVZI2XjTCw_XS9wi08P1DLXO0c7jQo-_xyw2xY"
+      short-id: "9d84de9d9f7b85e9"
+    flow: "xtls-rprx-vision"
+  - name: "🇨🇭_4"
+    type: ss
+    server: "132.243.175.144"
+    port: 8388
+    cipher: "chacha20-ietf-poly1305"
+    password: "e8KgS8fD0yDqYFpgN4G5piCOt9aFyqA3"
     udp: true
   - name: "🇨🇭_5"
     type: ss
@@ -123,6 +123,13 @@ proxies:
     password: "e8KgS8fD0yDqYFpgN4G5piCOt9aFyqA3"
     udp: true
   - name: "🇨🇭_7"
+    type: ss
+    server: "132.243.175.144"
+    port: 8388
+    cipher: "chacha20-ietf-poly1305"
+    password: "e8KgS8fD0yDqYFpgN4G5piCOt9aFyqA3"
+    udp: true
+  - name: "🇨🇭_8"
     type: ss
     server: "132.243.175.144"
     port: 8388
@@ -152,6 +159,7 @@ proxy-groups:
       - "🇨🇭_5"
       - "🇨🇭_6"
       - "🇨🇭_7"
+      - "🇨🇭_8"
 
 
   - name: "Load Balance"
@@ -167,6 +175,7 @@ proxy-groups:
       - "🇨🇭_5"
       - "🇨🇭_6"
       - "🇨🇭_7"
+      - "🇨🇭_8"
 
 rules:
   - MATCH,PROXY

@@ -75,13 +75,41 @@ proxies:
       short-id: "d2061bb1"
     flow: "xtls-rprx-vision"
   - name: "🇨🇿_2"
-    type: trojan
-    server: "ch-2.bexum.fun"
-    port: 443
-    password: "LYaEYwjN8LjWTRJdCCTzW7V6gK7atJVu"
-    sni: "ch-2.bexum.fun"
-    skip-cert-verify: true
+    type: vless
+    server: "153.76.185.79"
+    port: 3090
+    uuid: "613fc411-78e1-4d68-a663-6abeb46a97e7"
     udp: true
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "vless"
+  - name: "🇨🇿_3"
+    type: vless
+    server: "153.76.185.188"
+    port: 3090
+    uuid: "f579aee6-d850-4dd8-87de-4ae4b5df9d94"
+    udp: true
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "vless"
+  - name: "🇨🇿_4"
+    type: vless
+    server: "153.76.185.84"
+    port: 3090
+    uuid: "995b4d19-8c0d-4f81-a199-35a4f1d7744e"
+    udp: true
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "vless"
+  - name: "🇨🇿_5"
+    type: vless
+    server: "153.76.185.92"
+    port: 3090
+    uuid: "e6e669e0-9cf2-4ce8-99ab-01c393e6a01d"
+    udp: true
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "vless"
 
 proxy-groups:
   - name: "PROXY"
@@ -100,6 +128,9 @@ proxy-groups:
     proxies:
       - "🇨🇿_1"
       - "🇨🇿_2"
+      - "🇨🇿_3"
+      - "🇨🇿_4"
+      - "🇨🇿_5"
 
 
   - name: "Load Balance"
@@ -110,6 +141,9 @@ proxy-groups:
     proxies:
       - "🇨🇿_1"
       - "🇨🇿_2"
+      - "🇨🇿_3"
+      - "🇨🇿_4"
+      - "🇨🇿_5"
 
 rules:
   - MATCH,PROXY

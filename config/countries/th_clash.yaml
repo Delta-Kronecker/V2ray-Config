@@ -73,19 +73,6 @@ proxies:
     reality-opts:
       public-key: "LklWoqMQz_TWiuLCUNRwHAKX1adVRSGMhtbo98fbDxw"
       short-id: "ca672c53fbbac555"
-  - name: "🇹🇭_2"
-    type: vless
-    server: "34.15.144.211"
-    port: 443
-    uuid: "742dc674-a491-4a42-a551-b3ea6dd2f447"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.cloudflare.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "Euq607wb-KZNjbuOMQ1h646C3dm_Q-ntd7yxZ52jj0U"
-      short-id: "856c0a3cd1426a5c"
 
 proxy-groups:
   - name: "PROXY"
@@ -103,7 +90,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇹🇭_1"
-      - "🇹🇭_2"
 
 
   - name: "Load Balance"
@@ -113,7 +99,6 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇹🇭_1"
-      - "🇹🇭_2"
 
 rules:
   - MATCH,PROXY

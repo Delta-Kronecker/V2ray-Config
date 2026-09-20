@@ -62,7 +62,7 @@ dns:
 proxies:
   - name: "🇦🇲_1"
     type: vless
-    server: "aotocon.ggisopi.su"
+    server: "87.121.47.179"
     port: 443
     uuid: "d0f0a880-0df1-48c9-bdf1-5669fb9483ce"
     udp: true
@@ -87,6 +87,20 @@ proxies:
     reality-opts:
       public-key: "nWQ7b9l9X6N3PrXLgIzOvMM8iSYrqjVHEb9ikWxqYSg"
       short-id: "0e"
+  - name: "🇦🇲_3"
+    type: vless
+    server: "aotocon.ggisopi.su"
+    port: 443
+    uuid: "d0f0a880-0df1-48c9-bdf1-5669fb9483ce"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "aotocon.ggisopi.su"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "SB1uC0OEveYjSiS_Nuw9Ld-uVVXWqi794OGnldthY3I"
+      short-id: ""
+    flow: "xtls-rprx-vision"
 
 proxy-groups:
   - name: "PROXY"
@@ -105,6 +119,7 @@ proxy-groups:
     proxies:
       - "🇦🇲_1"
       - "🇦🇲_2"
+      - "🇦🇲_3"
 
 
   - name: "Load Balance"
@@ -115,6 +130,7 @@ proxy-groups:
     proxies:
       - "🇦🇲_1"
       - "🇦🇲_2"
+      - "🇦🇲_3"
 
 rules:
   - MATCH,PROXY

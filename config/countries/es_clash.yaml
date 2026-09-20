@@ -62,58 +62,38 @@ dns:
 proxies:
   - name: "🇪🇸_1"
     type: vless
-    server: "46.28.71.247"
-    port: 443
-    uuid: "12c53e32-e589-47d6-b857-e4132294f767"
+    server: "es2.h1cloud.net"
+    port: 25535
+    uuid: "c379d8e4-c67d-42ec-a3ed-ca99d1ad0546"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "www.cloudflare.com"
+    servername: "www.microsoft.com"
     client-fingerprint: "firefox"
     reality-opts:
-      public-key: "v4MuZIvFrTPT5GHMSaPryUAbIZlLstmsUTzmC1E-JTE"
-      short-id: "0dfc23fe80778c00"
-    flow: "xtls-rprx-vision"
+      public-key: "Jh7CocBJSA55VZcLfXwXwoQ_Hi5pV-L1vv1SY-IrSh4"
+      short-id: "7642ce57308852e7"
   - name: "🇪🇸_2"
-    type: vless
-    server: "34.175.44.113"
-    port: 443
-    uuid: "0b4b1548-c7ca-45a5-9096-6c3cc4b1c43b"
+    type: ss
+    server: "140.174.184.5"
+    port: 8388
+    cipher: "chacha20-ietf-poly1305"
+    password: "qItG8SueYQcP"
     udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.cloudflare.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "iI9J--AfPKCXbVle3Om-WMn_g-3bO3SsVzUCNtwUkU0"
-      short-id: "fe85cb6a5c84e64c"
   - name: "🇪🇸_3"
-    type: vless
-    server: "87.76.179.117"
-    port: 7443
-    uuid: "cb15d1b0-e48b-4c4c-b98a-fa1103aa3723"
+    type: ss
+    server: "140.174.184.5"
+    port: 8388
+    cipher: "chacha20-ietf-poly1305"
+    password: "qItG8SueYQcP"
     udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.samsung.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "1MLoHw7RVkGefh7XUyuGg4ndxwv4vDU9en-f9JxpXRQ"
-      short-id: "d2061bb1"
-    flow: "xtls-rprx-vision"
   - name: "🇪🇸_4"
-    type: vless
-    server: "34.175.90.91"
-    port: 443
-    uuid: "c55c9880-2f9c-4ad6-bfc2-5054516bf613"
+    type: ss
+    server: "108.181.121.226"
+    port: 8388
+    cipher: "chacha20-ietf-poly1305"
+    password: "WSyL4XTwNsdv"
     udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.cloudflare.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "lM9EQ1rZH9inQjrZesuqgldsXYN_yfT5-tqhPfbyen4"
-      short-id: "1c9e101e99bf86bb"
   - name: "🇪🇸_5"
     type: ss
     server: "108.181.121.226"
@@ -123,10 +103,10 @@ proxies:
     udp: true
   - name: "🇪🇸_6"
     type: ss
-    server: "140.174.184.5"
+    server: "108.181.121.226"
     port: 8388
     cipher: "chacha20-ietf-poly1305"
-    password: "qItG8SueYQcP"
+    password: "WSyL4XTwNsdv"
     udp: true
   - name: "🇪🇸_7"
     type: ss
@@ -136,27 +116,6 @@ proxies:
     password: "qItG8SueYQcP"
     udp: true
   - name: "🇪🇸_8"
-    type: ss
-    server: "108.181.121.226"
-    port: 8388
-    cipher: "chacha20-ietf-poly1305"
-    password: "WSyL4XTwNsdv"
-    udp: true
-  - name: "🇪🇸_9"
-    type: ss
-    server: "108.181.121.226"
-    port: 8388
-    cipher: "chacha20-ietf-poly1305"
-    password: "WSyL4XTwNsdv"
-    udp: true
-  - name: "🇪🇸_10"
-    type: ss
-    server: "140.174.184.5"
-    port: 8388
-    cipher: "chacha20-ietf-poly1305"
-    password: "qItG8SueYQcP"
-    udp: true
-  - name: "🇪🇸_11"
     type: vmess
     server: "85.90.217.42"
     port: 22324
@@ -188,9 +147,6 @@ proxy-groups:
       - "🇪🇸_6"
       - "🇪🇸_7"
       - "🇪🇸_8"
-      - "🇪🇸_9"
-      - "🇪🇸_10"
-      - "🇪🇸_11"
 
 
   - name: "Load Balance"
@@ -207,9 +163,6 @@ proxy-groups:
       - "🇪🇸_6"
       - "🇪🇸_7"
       - "🇪🇸_8"
-      - "🇪🇸_9"
-      - "🇪🇸_10"
-      - "🇪🇸_11"
 
 rules:
   - MATCH,PROXY
