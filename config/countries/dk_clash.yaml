@@ -61,13 +61,55 @@ dns:
 
 proxies:
   - name: "🇩🇰_1"
+    type: vless
+    server: "den-khad-nxt.ramzshadi.ir"
+    port: 43312
+    uuid: "8124ddbb-bf22-49d9-945d-2e72c554deb2"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "play.google.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "06vBWFA7tgljTVI9N1pY6L6Ls88me171hrKzeH9-7EQ"
+      short-id: "194eb312877c9c35"
+    flow: "xtls-rprx-vision"
+  - name: "🇩🇰_2"
+    type: vless
+    server: "81.27.109.126"
+    port: 31770
+    uuid: "8124ddbb-bf22-49d9-945d-2e72c554deb2"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sheets.google.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "GZqmhFHyMfIyRUi1k-2UDeJtjUakgZRhyXLhGLfL3Ws"
+      short-id: "6a2a03e809012832"
+    flow: "xtls-rprx-vision"
+  - name: "🇩🇰_3"
+    type: vless
+    server: "den-khad-nxt.ramzshadi.ir"
+    port: 31770
+    uuid: "8124ddbb-bf22-49d9-945d-2e72c554deb2"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sheets.google.com"
+    client-fingerprint: "ios"
+    reality-opts:
+      public-key: "GZqmhFHyMfIyRUi1k-2UDeJtjUakgZRhyXLhGLfL3Ws"
+      short-id: "6a2a03e809012832"
+    flow: "xtls-rprx-vision"
+  - name: "🇩🇰_4"
     type: ss
     server: "38.180.214.110"
     port: 5600
     cipher: "aes-256-gcm"
     password: "Y6R9pAtvxxzmGC"
     udp: true
-  - name: "🇩🇰_2"
+  - name: "🇩🇰_5"
     type: ss
     server: "38.180.214.110"
     port: 5600
@@ -92,6 +134,9 @@ proxy-groups:
     proxies:
       - "🇩🇰_1"
       - "🇩🇰_2"
+      - "🇩🇰_3"
+      - "🇩🇰_4"
+      - "🇩🇰_5"
 
 
   - name: "Load Balance"
@@ -102,6 +147,9 @@ proxy-groups:
     proxies:
       - "🇩🇰_1"
       - "🇩🇰_2"
+      - "🇩🇰_3"
+      - "🇩🇰_4"
+      - "🇩🇰_5"
 
 rules:
   - MATCH,PROXY

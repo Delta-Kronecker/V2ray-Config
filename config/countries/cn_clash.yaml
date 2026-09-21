@@ -61,30 +61,6 @@ dns:
 
 proxies:
   - name: "🇨🇳_1"
-    type: trojan
-    server: "ja304.magiclampcloud.cn"
-    port: 59443
-    password: "2ddeb5f43bbb897b13db728b2dfbef92"
-    sni: "ja304.magiclampcloud.cn"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇨🇳_2"
-    type: trojan
-    server: "ja304.magiclampcloud.cn"
-    port: 59443
-    password: "1c8c770339adb746416981873a96c423"
-    sni: "ja304.magiclampcloud.cn"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇨🇳_3"
-    type: trojan
-    server: "ja304.magiclampcloud.cn"
-    port: 59443
-    password: "1a4dbf8b75346468b85c8d7f70c0cc75"
-    sni: "ja304.magiclampcloud.cn"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇨🇳_4"
     type: vmess
     server: "112.132.215.108"
     port: 50002
@@ -109,9 +85,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇨🇳_1"
-      - "🇨🇳_2"
-      - "🇨🇳_3"
-      - "🇨🇳_4"
 
 
   - name: "Load Balance"
@@ -121,9 +94,6 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇨🇳_1"
-      - "🇨🇳_2"
-      - "🇨🇳_3"
-      - "🇨🇳_4"
 
 rules:
   - MATCH,PROXY

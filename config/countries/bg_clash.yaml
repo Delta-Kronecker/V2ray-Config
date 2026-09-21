@@ -62,20 +62,6 @@ dns:
 proxies:
   - name: "🇧🇬_1"
     type: vless
-    server: "131.123.41.18"
-    port: 443
-    uuid: "54ee5e59-55a3-4599-83ff-0c67b3f411b2"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "sheetpeek.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "pX9uknHGLC9I26TT5kq4bIAljtX2AGWLK23EMgn6xFo"
-      short-id: "84be686ea1d16478"
-    flow: "xtls-rprx-vision"
-  - name: "🇧🇬_2"
-    type: vless
     server: "131.123.39.29"
     port: 443
     uuid: "54ee5e59-55a3-4599-83ff-0c67b3f411b2"
@@ -88,6 +74,42 @@ proxies:
       public-key: "pX9uknHGLC9I26TT5kq4bIAljtX2AGWLK23EMgn6xFo"
       short-id: "84be686ea1d16478"
     flow: "xtls-rprx-vision"
+  - name: "🇧🇬_2"
+    type: vless
+    server: "45.9.156.103"
+    port: 443
+    uuid: "e633de28-bfc0-4aca-aa67-e2e12e2c9e58"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "mzone.bg.3cloudhost.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "SARDrN_d46PsugT2k5ILoQAJqaA1eCOZhe1BjKMonj8"
+      short-id: ""
+    flow: "xtls-rprx-vision"
+  - name: "🇧🇬_3"
+    type: vless
+    server: "131.123.41.18"
+    port: 443
+    uuid: "54ee5e59-55a3-4599-83ff-0c67b3f411b2"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sheetpeek.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "pX9uknHGLC9I26TT5kq4bIAljtX2AGWLK23EMgn6xFo"
+      short-id: "84be686ea1d16478"
+    flow: "xtls-rprx-vision"
+  - name: "🇧🇬_4"
+    type: trojan
+    server: "91.227.77.87"
+    port: 443
+    password: "bpb-trojan"
+    sni: "skwygx.top"
+    skip-cert-verify: true
+    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -106,6 +128,8 @@ proxy-groups:
     proxies:
       - "🇧🇬_1"
       - "🇧🇬_2"
+      - "🇧🇬_3"
+      - "🇧🇬_4"
 
 
   - name: "Load Balance"
@@ -116,6 +140,8 @@ proxy-groups:
     proxies:
       - "🇧🇬_1"
       - "🇧🇬_2"
+      - "🇧🇬_3"
+      - "🇧🇬_4"
 
 rules:
   - MATCH,PROXY

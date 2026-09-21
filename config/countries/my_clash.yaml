@@ -61,34 +61,6 @@ dns:
 
 proxies:
   - name: "🇲🇾_1"
-    type: vless
-    server: "my2.miyazono-kaori.com"
-    port: 443
-    uuid: "355337bc-90f9-4469-8d9a-1e2be6a7a055"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.setel.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "R6q8qhMxgq3ynJPUgudaRkcDXj0qgoc_UU1N0SWGLwM"
-      short-id: "ed77ac35a310"
-    flow: "xtls-rprx-vision"
-  - name: "🇲🇾_2"
-    type: vless
-    server: "my1.miyazono-kaori.com"
-    port: 443
-    uuid: "355337bc-90f9-4469-8d9a-1e2be6a7a055"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.setel.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "t3HU7p5iYjE9Lcq2-QHTXZFhpAvoXljTNDgmFkFN-Tc"
-      short-id: "99f8972e3dd5ed"
-    flow: "xtls-rprx-vision"
-  - name: "🇲🇾_3"
     type: trojan
     server: "47.250.84.25"
     port: 443
@@ -96,20 +68,46 @@ proxies:
     sni: "moltbot.doctoroyy.net"
     skip-cert-verify: true
     udp: true
+  - name: "🇲🇾_2"
+    type: ss
+    server: "47.250.212.59"
+    port: 2053
+    cipher: "none"
+    password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
+    udp: true
+  - name: "🇲🇾_3"
+    type: ss
+    server: "47.250.212.59"
+    port: 2053
+    cipher: "none"
+    password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
+    udp: true
   - name: "🇲🇾_4"
     type: ss
-    server: "47.250.212.59"
-    port: 2053
+    server: "96.126.190.196"
+    port: 443
     cipher: "none"
     password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
     udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "/59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
   - name: "🇲🇾_5"
     type: ss
-    server: "47.250.212.59"
-    port: 2053
+    server: "96.126.190.196"
+    port: 443
     cipher: "none"
     password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
     udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "/59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
 
 proxy-groups:
   - name: "PROXY"

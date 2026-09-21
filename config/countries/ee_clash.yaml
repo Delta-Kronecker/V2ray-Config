@@ -62,20 +62,6 @@ dns:
 proxies:
   - name: "🇪🇪_1"
     type: vless
-    server: "estomin1.vodniki.monster"
-    port: 443
-    uuid: "4bdeee92-97e8-414d-bef6-ec1d5e2ab73b"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "estomin1.vodniki.monster"
-    client-fingerprint: "random"
-    reality-opts:
-      public-key: "r1MW0o1DsC6EEWN-KPKnoXszb1trxlKShRIgOpxqHBk"
-      short-id: "d98e7afec9c0c359"
-    flow: "xtls-rprx-vision"
-  - name: "🇪🇪_2"
-    type: vless
     server: "150.241.101.80"
     port: 8443
     uuid: "47d9b534-8a0a-4bd2-90f1-1d6ade14427e"
@@ -88,7 +74,7 @@ proxies:
       public-key: "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
       short-id: "6ba85179e30d4fc2"
     flow: "xtls-rprx-vision"
-  - name: "🇪🇪_3"
+  - name: "🇪🇪_2"
     type: vless
     server: "95.85.224.17"
     port: 443
@@ -102,16 +88,32 @@ proxies:
       public-key: "SB1uC0OEveYjSiS_Nuw9Ld-uVVXWqi794OGnldthY3I"
       short-id: ""
     flow: "xtls-rprx-vision"
+  - name: "🇪🇪_3"
+    type: vless
+    server: "94.183.170.147"
+    port: 8443
+    uuid: "66ac188b-bd8d-4218-b9ba-0bad0e152cd0"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.cloudflare.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "s2uiu3GQA2SlZzsr86Z5Dav97eAFTPf7Nvr-zqzzRgg"
+      short-id: "72ccd4a7563c2953"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "9d30d49278"
   - name: "🇪🇪_4"
     type: vless
-    server: "5.181.201.36"
+    server: "estomin1.vodniki.monster"
     port: 443
     uuid: "4bdeee92-97e8-414d-bef6-ec1d5e2ab73b"
     udp: true
     tls: true
     skip-cert-verify: true
     servername: "estomin1.vodniki.monster"
-    client-fingerprint: "firefox"
+    client-fingerprint: "random"
     reality-opts:
       public-key: "r1MW0o1DsC6EEWN-KPKnoXszb1trxlKShRIgOpxqHBk"
       short-id: "d98e7afec9c0c359"
@@ -128,34 +130,19 @@ proxies:
     client-fingerprint: "chrome"
   - name: "🇪🇪_6"
     type: vless
-    server: "ee.cdn-update.rutube.info"
-    port: 20443
-    uuid: "ad297a2b-ae17-4d2d-8fce-e2eafb89b145"
+    server: "5.181.201.36"
+    port: 443
+    uuid: "4bdeee92-97e8-414d-bef6-ec1d5e2ab73b"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "dest1.cdn-update.rutube.info"
-    reality-opts:
-      public-key: "-AdhgMZeNHR2zAmGWa5peg7Ni0-e4IVMoSzydC9n7C4"
-      short-id: "08"
-    flow: "xtls-rprx-vision"
-  - name: "🇪🇪_7"
-    type: vless
-    server: "94.183.170.147"
-    port: 8443
-    uuid: "66ac188b-bd8d-4218-b9ba-0bad0e152cd0"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.cloudflare.com"
+    servername: "estomin1.vodniki.monster"
     client-fingerprint: "firefox"
     reality-opts:
-      public-key: "s2uiu3GQA2SlZzsr86Z5Dav97eAFTPf7Nvr-zqzzRgg"
-      short-id: "72ccd4a7563c2953"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "9d30d49278"
-  - name: "🇪🇪_8"
+      public-key: "r1MW0o1DsC6EEWN-KPKnoXszb1trxlKShRIgOpxqHBk"
+      short-id: "d98e7afec9c0c359"
+    flow: "xtls-rprx-vision"
+  - name: "🇪🇪_7"
     type: vless
     server: "94.183.170.147"
     port: 8443
@@ -171,12 +158,41 @@ proxies:
     network: grpc
     grpc-opts:
       grpc-service-name: "9d30d49278"
+  - name: "🇪🇪_8"
+    type: vless
+    server: "ee.cdn-update.rutube.info"
+    port: 20443
+    uuid: "ad297a2b-ae17-4d2d-8fce-e2eafb89b145"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "dest1.cdn-update.rutube.info"
+    reality-opts:
+      public-key: "-AdhgMZeNHR2zAmGWa5peg7Ni0-e4IVMoSzydC9n7C4"
+      short-id: "08"
+    flow: "xtls-rprx-vision"
   - name: "🇪🇪_9"
     type: trojan
     server: "109.206.241.10"
     port: 449
     password: "oiiaB38ywjEHCWRs_O_a_1113_Il_KeyyyHop_Bes1"
     sni: "russiapower.accesscam.org"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇪🇪_10"
+    type: trojan
+    server: "45.139.194.60"
+    port: 443
+    password: "pjqRC5wfEFhYTyiaKF"
+    sni: "ee-1.tr202604.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇪🇪_11"
+    type: trojan
+    server: "ee-1.kamediorg.com"
+    port: 443
+    password: "GUGm7DHtpSx7SuPyUD"
+    sni: "ee-1.kamediorg.com"
     skip-cert-verify: true
     udp: true
 
@@ -204,6 +220,8 @@ proxy-groups:
       - "🇪🇪_7"
       - "🇪🇪_8"
       - "🇪🇪_9"
+      - "🇪🇪_10"
+      - "🇪🇪_11"
 
 
   - name: "Load Balance"
@@ -221,6 +239,8 @@ proxy-groups:
       - "🇪🇪_7"
       - "🇪🇪_8"
       - "🇪🇪_9"
+      - "🇪🇪_10"
+      - "🇪🇪_11"
 
 rules:
   - MATCH,PROXY

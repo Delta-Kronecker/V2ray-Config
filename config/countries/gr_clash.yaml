@@ -74,6 +74,15 @@ proxies:
       public-key: "biNcdU5mywtNw-KyPpLHindBxdEyAolT1WJ26N0b7y4"
       short-id: "94acb54627612d43"
     flow: "xtls-rprx-vision"
+  - name: "🇬🇷_2"
+    type: vless
+    server: "185.126.238.87"
+    port: 2083
+    uuid: "7668f678-faee-40cc-9b56-9c39dc773388"
+    udp: true
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "security.debian.org"
 
 proxy-groups:
   - name: "PROXY"
@@ -91,6 +100,7 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇬🇷_1"
+      - "🇬🇷_2"
 
 
   - name: "Load Balance"
@@ -100,6 +110,7 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇬🇷_1"
+      - "🇬🇷_2"
 
 rules:
   - MATCH,PROXY

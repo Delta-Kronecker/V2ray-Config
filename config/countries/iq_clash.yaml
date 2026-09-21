@@ -62,6 +62,20 @@ dns:
 proxies:
   - name: "🇮🇶_1"
     type: vless
+    server: "193.56.135.212"
+    port: 9543
+    uuid: "ff6d2dda-7b90-404e-9951-34b3124bfdfa"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "storage.yandexcloud.net"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc"
+      short-id: "123abcde"
+    flow: "xtls-rprx-vision"
+  - name: "🇮🇶_2"
+    type: vless
     server: "51.161.204.244"
     port: 443
     uuid: "36e89875-9c53-482b-bc41-d3890e9da176"
@@ -91,6 +105,7 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇮🇶_1"
+      - "🇮🇶_2"
 
 
   - name: "Load Balance"
@@ -100,6 +115,7 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇮🇶_1"
+      - "🇮🇶_2"
 
 rules:
   - MATCH,PROXY
