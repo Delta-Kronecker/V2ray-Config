@@ -62,32 +62,19 @@ dns:
 proxies:
   - name: "🇨🇭_1"
     type: vless
-    server: "179.43.162.252"
+    server: "45.140.205.2"
     port: 443
-    uuid: "ddf09ad0-02dc-485b-9048-1038de5bebf0"
+    uuid: "c795bdd5-0460-42bd-927b-fbff154d2ab5"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "ch.cache-4d8a.com"
-    client-fingerprint: "firefox"
+    servername: "promo.ch.iki-servers.com"
+    client-fingerprint: "chrome"
     reality-opts:
-      public-key: "lYVz8iVZI2XjTCw_XS9wi08P1DLXO0c7jQo-_xyw2xY"
-      short-id: "9d84de9d9f7b85e9"
+      public-key: "he6F0xhRgRSY0qekzzUoFHroztc6V06CpJ5UfSSlxmg"
+      short-id: ""
     flow: "xtls-rprx-vision"
   - name: "🇨🇭_2"
-    type: vless
-    server: "ch.cache-4d8a.com"
-    port: 443
-    uuid: "ddf09ad0-02dc-485b-9048-1038de5bebf0"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "ch.cache-4d8a.com"
-    reality-opts:
-      public-key: "lYVz8iVZI2XjTCw_XS9wi08P1DLXO0c7jQo-_xyw2xY"
-      short-id: "9d84de9d9f7b85e9"
-    flow: "xtls-rprx-vision"
-  - name: "🇨🇭_3"
     type: vless
     server: "45.90.59.15"
     port: 443
@@ -101,7 +88,7 @@ proxies:
       public-key: "P7S4UPFlQbmiBr4txyy8NZIMTrmO3UdxyH16WBU-YzY"
       short-id: "19253fae84102271"
     flow: "xtls-rprx-vision"
-  - name: "🇨🇭_4"
+  - name: "🇨🇭_3"
     type: trojan
     server: "83.228.224.161"
     port: 443
@@ -109,12 +96,19 @@ proxies:
     sni: "83.228.224.161"
     skip-cert-verify: true
     udp: true
+  - name: "🇨🇭_4"
+    type: ss
+    server: "132.243.175.144"
+    port: 8388
+    cipher: "chacha20-ietf-poly1305"
+    password: "e8KgS8fD0yDqYFpgN4G5piCOt9aFyqA3"
+    udp: true
   - name: "🇨🇭_5"
     type: ss
-    server: "94.249.187.46"
-    port: 1080
+    server: "132.243.175.144"
+    port: 8388
     cipher: "chacha20-ietf-poly1305"
-    password: "IXa3ylzS_jBOAsQy071tIQ"
+    password: "e8KgS8fD0yDqYFpgN4G5piCOt9aFyqA3"
     udp: true
   - name: "🇨🇭_6"
     type: ss
@@ -131,20 +125,6 @@ proxies:
     password: "e8KgS8fD0yDqYFpgN4G5piCOt9aFyqA3"
     udp: true
   - name: "🇨🇭_8"
-    type: ss
-    server: "132.243.175.144"
-    port: 8388
-    cipher: "chacha20-ietf-poly1305"
-    password: "e8KgS8fD0yDqYFpgN4G5piCOt9aFyqA3"
-    udp: true
-  - name: "🇨🇭_9"
-    type: ss
-    server: "132.243.175.144"
-    port: 8388
-    cipher: "chacha20-ietf-poly1305"
-    password: "e8KgS8fD0yDqYFpgN4G5piCOt9aFyqA3"
-    udp: true
-  - name: "🇨🇭_10"
     type: ss
     server: "132.243.175.144"
     port: 8388
@@ -175,8 +155,6 @@ proxy-groups:
       - "🇨🇭_6"
       - "🇨🇭_7"
       - "🇨🇭_8"
-      - "🇨🇭_9"
-      - "🇨🇭_10"
 
 
   - name: "Load Balance"
@@ -193,8 +171,6 @@ proxy-groups:
       - "🇨🇭_6"
       - "🇨🇭_7"
       - "🇨🇭_8"
-      - "🇨🇭_9"
-      - "🇨🇭_10"
 
 rules:
   - MATCH,PROXY

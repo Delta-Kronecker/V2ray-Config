@@ -73,6 +73,14 @@ proxies:
     reality-opts:
       public-key: "LklWoqMQz_TWiuLCUNRwHAKX1adVRSGMhtbo98fbDxw"
       short-id: "ca672c53fbbac555"
+  - name: "🇹🇭_2"
+    type: vmess
+    server: "119.46.51.45"
+    port: 37515
+    uuid: "9b76bc31-17a5-4454-934a-8d5fb602cd70"
+    alterId: 0
+    cipher: "auto"
+    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -90,6 +98,7 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇹🇭_1"
+      - "🇹🇭_2"
 
 
   - name: "Load Balance"
@@ -99,6 +108,7 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇹🇭_1"
+      - "🇹🇭_2"
 
 rules:
   - MATCH,PROXY

@@ -62,15 +62,6 @@ dns:
 proxies:
   - name: "🇨🇿_1"
     type: vless
-    server: "153.76.185.186"
-    port: 3090
-    uuid: "9912a5ca-3ee1-45ac-b182-46fec2610ee0"
-    udp: true
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "vless"
-  - name: "🇨🇿_2"
-    type: vless
     server: "31.76.7.227"
     port: 443
     uuid: "d0e771c5-024e-4393-bb90-4a3e3c561656"
@@ -83,16 +74,44 @@ proxies:
       public-key: "nIL5EeUo2XUkCaLJGbzgRm6zhF-96kWvV2VmhEt3CX4"
       short-id: "4af4102cb26e59"
     flow: "xtls-rprx-vision"
+  - name: "🇨🇿_2"
+    type: vless
+    server: "85.137.25.164"
+    port: 8443
+    uuid: "8df7343e-2427-41fb-aad1-6c563296faf6"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "github.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "1KY_jqa2yPLBEBa-3TG77zs4ak2zQLGul4eexxCueyI"
+      short-id: "f087eb07da743e94"
+    flow: "xtls-rprx-vision"
   - name: "🇨🇿_3"
     type: vless
-    server: "153.76.185.188"
+    server: "153.76.185.88"
     port: 3090
-    uuid: "9912a5ca-3ee1-45ac-b182-46fec2610ee0"
+    uuid: "5ba9f3dc-e8ec-4c8c-b273-68daed2fef12"
     udp: true
     network: grpc
     grpc-opts:
       grpc-service-name: "vless"
   - name: "🇨🇿_4"
+    type: vless
+    server: "cze.accessgate.link"
+    port: 8080
+    uuid: "38eb3e71-4349-4bd6-9baf-9740e1896495"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "unpkg.com"
+    client-fingerprint: "edge"
+    reality-opts:
+      public-key: "CQBmePak1QN5SsSmK_KTOSLjsCTaiaM4Jtxt7jLheko"
+      short-id: "b0d8c9a285c70f6f"
+    flow: "xtls-rprx-vision"
+  - name: "🇨🇿_5"
     type: vless
     server: "31.76.7.154"
     port: 7443
@@ -106,15 +125,31 @@ proxies:
       public-key: "1MLoHw7RVkGefh7XUyuGg4ndxwv4vDU9en-f9JxpXRQ"
       short-id: "d2061bb1"
     flow: "xtls-rprx-vision"
-  - name: "🇨🇿_5"
+  - name: "🇨🇿_6"
     type: vless
-    server: "153.76.185.189"
+    server: "153.76.185.80"
     port: 3090
-    uuid: "5ebdc9ee-8b41-4487-93af-231cb0b47d60"
+    uuid: "cc555869-9da6-4bfd-afa4-ba138ceccf60"
     udp: true
     network: grpc
     grpc-opts:
       grpc-service-name: "vless"
+  - name: "🇨🇿_7"
+    type: trojan
+    server: "ch-2.bexum.fun"
+    port: 443
+    password: "LYaEYwjN8LjWTRJdCCTzW7V6gK7atJVu"
+    sni: "ch-2.bexum.fun"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇨🇿_8"
+    type: trojan
+    server: "46.8.113.142"
+    port: 443
+    password: "LYaEYwjN8LjWTRJdCCTzW7V6gK7atJVu"
+    sni: "ch-2.bexum.fun"
+    skip-cert-verify: true
+    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -136,6 +171,9 @@ proxy-groups:
       - "🇨🇿_3"
       - "🇨🇿_4"
       - "🇨🇿_5"
+      - "🇨🇿_6"
+      - "🇨🇿_7"
+      - "🇨🇿_8"
 
 
   - name: "Load Balance"
@@ -149,6 +187,9 @@ proxy-groups:
       - "🇨🇿_3"
       - "🇨🇿_4"
       - "🇨🇿_5"
+      - "🇨🇿_6"
+      - "🇨🇿_7"
+      - "🇨🇿_8"
 
 rules:
   - MATCH,PROXY

@@ -60,29 +60,17 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇬🇷_1"
+  - name: "🇳🇿_1"
     type: vless
-    server: "85.90.197.220"
-    port: 443
-    uuid: "8f704ed6-9a1a-4d04-94dd-1bff501716de"
+    server: "de777.lavivas.org"
+    port: 7444
+    uuid: "44e1105d-b46e-402f-933b-eaa136fcbb24"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "www.cloudflare.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "biNcdU5mywtNw-KyPpLHindBxdEyAolT1WJ26N0b7y4"
-      short-id: "94acb54627612d43"
+    servername: "de777.lavivas.org"
+    client-fingerprint: "firefox"
     flow: "xtls-rprx-vision"
-  - name: "🇬🇷_2"
-    type: vless
-    server: "185.126.238.87"
-    port: 2083
-    uuid: "7668f678-faee-40cc-9b56-9c39dc773388"
-    udp: true
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "security.debian.org"
 
 proxy-groups:
   - name: "PROXY"
@@ -99,8 +87,7 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇬🇷_1"
-      - "🇬🇷_2"
+      - "🇳🇿_1"
 
 
   - name: "Load Balance"
@@ -109,8 +96,7 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇬🇷_1"
-      - "🇬🇷_2"
+      - "🇳🇿_1"
 
 rules:
   - MATCH,PROXY
