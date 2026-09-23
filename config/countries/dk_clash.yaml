@@ -61,27 +61,13 @@ dns:
 
 proxies:
   - name: "🇩🇰_1"
-    type: vless
-    server: "dnk.accessgate.link"
-    port: 8080
-    uuid: "38eb3e71-4349-4bd6-9baf-9740e1896495"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "unpkg.com"
-    client-fingerprint: "edge"
-    reality-opts:
-      public-key: "CQBmePak1QN5SsSmK_KTOSLjsCTaiaM4Jtxt7jLheko"
-      short-id: "b0d8c9a285c70f6f"
-    flow: "xtls-rprx-vision"
-  - name: "🇩🇰_2"
     type: ss
     server: "38.180.214.110"
     port: 5600
     cipher: "aes-256-gcm"
     password: "Y6R9pAtvxxzmGC"
     udp: true
-  - name: "🇩🇰_3"
+  - name: "🇩🇰_2"
     type: ss
     server: "38.180.214.110"
     port: 5600
@@ -106,7 +92,6 @@ proxy-groups:
     proxies:
       - "🇩🇰_1"
       - "🇩🇰_2"
-      - "🇩🇰_3"
 
 
   - name: "Load Balance"
@@ -117,7 +102,6 @@ proxy-groups:
     proxies:
       - "🇩🇰_1"
       - "🇩🇰_2"
-      - "🇩🇰_3"
 
 rules:
   - MATCH,PROXY

@@ -62,32 +62,11 @@ dns:
 proxies:
   - name: "🇹🇷_1"
     type: vless
-    server: "tr2.rexten.cc"
-    port: 443
-    uuid: "add59713-f5c6-4442-83a3-6bc9281f5c90"
+    server: "test.keoplentuio.xyz"
+    port: 2053
+    uuid: "9ef61079-6f7d-4911-9608-943da85d8e6f"
     udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "tr2.rexten.cc"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "OFmJtVi6OB9E6KIc5QV5YmoouimRFc-Se9hICjtV8hQ"
-      short-id: ""
-    flow: "xtls-rprx-vision"
   - name: "🇹🇷_2"
-    type: vless
-    server: "206.1.97.61"
-    port: 443
-    uuid: "416cea75-4802-43b1-8f31-c7fa1e211a6a"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "Miro.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "GFREEsH4rFLnXKDLKXk0iTZNP5_d1zfKTj8DUE0L6RE"
-      short-id: "d7397feef49deef9"
-  - name: "🇹🇷_3"
     type: vless
     server: "78.135.73.47"
     port: 443
@@ -101,7 +80,7 @@ proxies:
       public-key: "sZAJkAu23wp1WKY-qeaeiwR38izP5OyfhumoE9xhbB8"
       short-id: "f46cd3ea3d1eb72d"
     flow: "xtls-rprx-vision"
-  - name: "🇹🇷_4"
+  - name: "🇹🇷_3"
     type: vless
     server: "151.241.226.201"
     port: 2053
@@ -114,7 +93,7 @@ proxies:
     reality-opts:
       public-key: "bYW_MmB_CUHrsyoCAUKviI2LZdHf63yY2yOPXbih104"
       short-id: "9e419c0759b54d6f"
-  - name: "🇹🇷_5"
+  - name: "🇹🇷_4"
     type: trojan
     server: "subtu.charsoulink3.ir"
     port: 2087
@@ -122,7 +101,7 @@ proxies:
     sni: "pus.mmdaqaorg2.ir"
     skip-cert-verify: true
     udp: true
-  - name: "🇹🇷_6"
+  - name: "🇹🇷_5"
     type: trojan
     server: "194.146.26.40"
     port: 443
@@ -151,7 +130,6 @@ proxy-groups:
       - "🇹🇷_3"
       - "🇹🇷_4"
       - "🇹🇷_5"
-      - "🇹🇷_6"
 
 
   - name: "Load Balance"
@@ -165,7 +143,6 @@ proxy-groups:
       - "🇹🇷_3"
       - "🇹🇷_4"
       - "🇹🇷_5"
-      - "🇹🇷_6"
 
 rules:
   - MATCH,PROXY
