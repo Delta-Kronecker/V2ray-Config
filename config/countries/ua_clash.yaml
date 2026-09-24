@@ -61,13 +61,14 @@ dns:
 
 proxies:
   - name: "🇺🇦_1"
-    type: trojan
-    server: "130.0.236.88"
-    port: 443
-    password: "d2adff89-5143-4d67-921f-3478464de5bb"
-    sni: "ua.freeguard.org"
-    skip-cert-verify: true
+    type: vless
+    server: "104.143.223.78"
+    port: 2085
+    uuid: "2aa62660-e9ba-4f06-a103-768085910f8d"
     udp: true
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "vless"
 
 proxy-groups:
   - name: "PROXY"

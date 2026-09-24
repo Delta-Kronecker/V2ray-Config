@@ -61,19 +61,6 @@ dns:
 
 proxies:
   - name: "🇧🇷_1"
-    type: vless
-    server: "34.39.174.220"
-    port: 443
-    uuid: "5e517b94-e207-47ee-be3c-3020a57594e8"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.cloudflare.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "pCImwRkTjx8OIUiu1WFelZQFt1p3Q0lUoPbvjVq8GTs"
-      short-id: "b62a4da6cd1c4dd6"
-  - name: "🇧🇷_2"
     type: vmess
     server: "172.233.14.17"
     port: 22324
@@ -98,7 +85,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇧🇷_1"
-      - "🇧🇷_2"
 
 
   - name: "Load Balance"
@@ -108,7 +94,6 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇧🇷_1"
-      - "🇧🇷_2"
 
 rules:
   - MATCH,PROXY

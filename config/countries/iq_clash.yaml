@@ -76,7 +76,7 @@ proxies:
     flow: "xtls-rprx-vision"
   - name: "🇮🇶_2"
     type: vless
-    server: "193.56.135.233"
+    server: "193.56.135.212"
     port: 9543
     uuid: "ff6d2dda-7b90-404e-9951-34b3124bfdfa"
     udp: true
@@ -90,21 +90,7 @@ proxies:
     flow: "xtls-rprx-vision"
   - name: "🇮🇶_3"
     type: vless
-    server: "193.56.135.137"
-    port: 9543
-    uuid: "ff6d2dda-7b90-404e-9951-34b3124bfdfa"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "storage.yandexcloud.net"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc"
-      short-id: "123abcde"
-    flow: "xtls-rprx-vision"
-  - name: "🇮🇶_4"
-    type: vless
-    server: "193.56.135.212"
+    server: "193.56.135.233"
     port: 9543
     uuid: "ff6d2dda-7b90-404e-9951-34b3124bfdfa"
     udp: true
@@ -135,7 +121,6 @@ proxy-groups:
       - "🇮🇶_1"
       - "🇮🇶_2"
       - "🇮🇶_3"
-      - "🇮🇶_4"
 
 
   - name: "Load Balance"
@@ -147,7 +132,6 @@ proxy-groups:
       - "🇮🇶_1"
       - "🇮🇶_2"
       - "🇮🇶_3"
-      - "🇮🇶_4"
 
 rules:
   - MATCH,PROXY

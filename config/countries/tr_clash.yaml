@@ -68,18 +68,13 @@ proxies:
     udp: true
   - name: "🇹🇷_2"
     type: vless
-    server: "78.135.73.47"
-    port: 443
-    uuid: "25e16692-d097-4e69-9e2d-8415609c1968"
+    server: "93.190.9.23"
+    port: 3090
+    uuid: "1e65c1d0-fcc9-4c8e-8bbc-a132620b83f4"
     udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.datadoghq.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "sZAJkAu23wp1WKY-qeaeiwR38izP5OyfhumoE9xhbB8"
-      short-id: "f46cd3ea3d1eb72d"
-    flow: "xtls-rprx-vision"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "vless"
   - name: "🇹🇷_3"
     type: vless
     server: "151.241.226.201"
@@ -94,19 +89,96 @@ proxies:
       public-key: "bYW_MmB_CUHrsyoCAUKviI2LZdHf63yY2yOPXbih104"
       short-id: "9e419c0759b54d6f"
   - name: "🇹🇷_4"
-    type: trojan
-    server: "subtu.charsoulink3.ir"
-    port: 2087
-    password: "v2whz6ahmyy2f84j"
-    sni: "pus.mmdaqaorg2.ir"
-    skip-cert-verify: true
+    type: vless
+    server: "185.71.219.128"
+    port: 8443
+    uuid: "f4ade6db-3c64-4939-9f32-788b87a9392f"
     udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "youtubekids.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "yrKUxdxmj4Z5ECKB70SuqjmmjY7KUOtTL9-uWmKLqDw"
+      short-id: "26f54a3aeec766"
   - name: "🇹🇷_5"
+    type: vless
+    server: "194.135.34.157"
+    port: 6443
+    uuid: "43562697-135a-479a-92c8-4c96b46ace07"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "turkey-api.locallynet.org"
+    client-fingerprint: "chrome"
+    flow: "xtls-rprx-vision"
+  - name: "🇹🇷_6"
+    type: vless
+    server: "93.190.9.46"
+    port: 3090
+    uuid: "219b68e3-497a-4127-aec9-8a0142762fba"
+    udp: true
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "vless"
+  - name: "🇹🇷_7"
+    type: vless
+    server: "185.71.219.128"
+    port: 8080
+    uuid: "f4ade6db-3c64-4939-9f32-788b87a9392f"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "185.71.219.128"
+    client-fingerprint: "chrome"
+  - name: "🇹🇷_8"
+    type: vless
+    server: "185.71.219.128"
+    port: 443
+    uuid: "f4ade6db-3c64-4939-9f32-788b87a9392f"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "www.cloudflare.com"
+  - name: "🇹🇷_9"
+    type: vless
+    server: "93.190.9.157"
+    port: 3090
+    uuid: "219b68e3-497a-4127-aec9-8a0142762fba"
+    udp: true
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "vless"
+  - name: "🇹🇷_10"
+    type: vless
+    server: "78.135.73.47"
+    port: 443
+    uuid: "25e16692-d097-4e69-9e2d-8415609c1968"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.datadoghq.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "sZAJkAu23wp1WKY-qeaeiwR38izP5OyfhumoE9xhbB8"
+      short-id: "f46cd3ea3d1eb72d"
+    flow: "xtls-rprx-vision"
+  - name: "🇹🇷_11"
     type: trojan
     server: "194.146.26.40"
     port: 443
     password: "2ea5fc44-bd38-4fb0-a9b9-88c83fc56622"
     sni: "4-193-105-141.nhost.00cdn.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇹🇷_12"
+    type: trojan
+    server: "subtu.charsoulink3.ir"
+    port: 2087
+    password: "v2whz6ahmyy2f84j"
+    sni: "pus.mmdaqaorg2.ir"
     skip-cert-verify: true
     udp: true
 
@@ -130,6 +202,13 @@ proxy-groups:
       - "🇹🇷_3"
       - "🇹🇷_4"
       - "🇹🇷_5"
+      - "🇹🇷_6"
+      - "🇹🇷_7"
+      - "🇹🇷_8"
+      - "🇹🇷_9"
+      - "🇹🇷_10"
+      - "🇹🇷_11"
+      - "🇹🇷_12"
 
 
   - name: "Load Balance"
@@ -143,6 +222,13 @@ proxy-groups:
       - "🇹🇷_3"
       - "🇹🇷_4"
       - "🇹🇷_5"
+      - "🇹🇷_6"
+      - "🇹🇷_7"
+      - "🇹🇷_8"
+      - "🇹🇷_9"
+      - "🇹🇷_10"
+      - "🇹🇷_11"
+      - "🇹🇷_12"
 
 rules:
   - MATCH,PROXY

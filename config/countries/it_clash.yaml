@@ -62,62 +62,6 @@ dns:
 proxies:
   - name: "🇮🇹_1"
     type: vless
-    server: "204.216.216.23"
-    port: 1114
-    uuid: "6ba2eac6-0ec9-44ca-a42b-a8e23aafb530"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "yahoo.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "WfkCF0eEuIoO0MyJsKOddU89QrTzCZ4y2dzCJbH99CQ"
-      short-id: "79a1e14b"
-    flow: "xtls-rprx-vision"
-  - name: "🇮🇹_2"
-    type: vless
-    server: "31.76.113.212"
-    port: 443
-    uuid: "c5694dc5-39fd-4a92-8430-3837baa522a3"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "italia.superbuba.top"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "G2U8_BvRAgcOw0sX8u_0yYdVAlD8CWLSi-uYjvH07hw"
-      short-id: "4fa44664f6a566d3"
-    flow: "xtls-rprx-vision"
-  - name: "🇮🇹_3"
-    type: vless
-    server: "31.77.201.33"
-    port: 443
-    uuid: "c5694dc5-39fd-4a92-8430-3837baa522a3"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "italia.superbuba.top"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "G2U8_BvRAgcOw0sX8u_0yYdVAlD8CWLSi-uYjvH07hw"
-      short-id: "4fa44664f6a566d3"
-    flow: "xtls-rprx-vision"
-  - name: "🇮🇹_4"
-    type: vless
-    server: "82.118.16.187"
-    port: 443
-    uuid: "dc2259c4-388e-4285-ba18-df619b6672b6"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.cloudflare.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "R5ycsjJ-v024902dMSqTsSdqxUwCFEXMebdBEWFt9VU"
-      short-id: "cd6065902eea7a02"
-    flow: "xtls-rprx-vision"
-  - name: "🇮🇹_5"
-    type: vless
     server: "31.77.154.14"
     port: 8443
     uuid: "75079a7f-75b5-418b-8a65-f7b2f438cd4a"
@@ -132,7 +76,13 @@ proxies:
     network: grpc
     grpc-opts:
       grpc-service-name: "grpc-tunnel"
-  - name: "🇮🇹_6"
+  - name: "🇮🇹_2"
+    type: vless
+    server: "204.216.216.23"
+    port: 10086
+    uuid: "9f0285ee-20ca-4953-bcdb-86a920652923"
+    udp: true
+  - name: "🇮🇹_3"
     type: vless
     server: "176.108.246.58"
     port: 9881
@@ -147,7 +97,35 @@ proxies:
     network: grpc
     grpc-opts:
       grpc-service-name: "grpc-tunnel"
-  - name: "🇮🇹_7"
+  - name: "🇮🇹_4"
+    type: vless
+    server: "31.77.201.33"
+    port: 443
+    uuid: "c5694dc5-39fd-4a92-8430-3837baa522a3"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "italia.superbuba.top"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "G2U8_BvRAgcOw0sX8u_0yYdVAlD8CWLSi-uYjvH07hw"
+      short-id: "4fa44664f6a566d3"
+    flow: "xtls-rprx-vision"
+  - name: "🇮🇹_5"
+    type: vless
+    server: "31.76.113.212"
+    port: 443
+    uuid: "c5694dc5-39fd-4a92-8430-3837baa522a3"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "italia.superbuba.top"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "G2U8_BvRAgcOw0sX8u_0yYdVAlD8CWLSi-uYjvH07hw"
+      short-id: "4fa44664f6a566d3"
+    flow: "xtls-rprx-vision"
+  - name: "🇮🇹_6"
     type: vless
     server: "57.131.38.163"
     port: 2053
@@ -160,20 +138,21 @@ proxies:
     reality-opts:
       public-key: "Ej2H5ucT7qKegYcT8wODdlxa-cLHr7F4hDVUHzAhcnc"
       short-id: "5b8a942318178e7b"
-  - name: "🇮🇹_8"
+  - name: "🇮🇹_7"
     type: vless
-    server: "82.118.16.189"
+    server: "82.118.16.187"
     port: 443
-    uuid: "d5e5f5a1-0f23-4c49-af9f-4be445bf9d8e"
+    uuid: "dc2259c4-388e-4285-ba18-df619b6672b6"
     udp: true
     tls: true
     skip-cert-verify: true
     servername: "www.cloudflare.com"
+    client-fingerprint: "chrome"
     reality-opts:
-      public-key: "SjGkzJQ9I6ZZjC3V73atcPMczhMm0oiTrB8mUQXz1HY"
-      short-id: "37fbf155c7a9f3ff"
+      public-key: "R5ycsjJ-v024902dMSqTsSdqxUwCFEXMebdBEWFt9VU"
+      short-id: "cd6065902eea7a02"
     flow: "xtls-rprx-vision"
-  - name: "🇮🇹_9"
+  - name: "🇮🇹_8"
     type: vless
     server: "31.76.113.231"
     port: 443
@@ -187,13 +166,7 @@ proxies:
       public-key: "G2U8_BvRAgcOw0sX8u_0yYdVAlD8CWLSi-uYjvH07hw"
       short-id: "4fa44664f6a566d3"
     flow: "xtls-rprx-vision"
-  - name: "🇮🇹_10"
-    type: vless
-    server: "204.216.216.23"
-    port: 10086
-    uuid: "9f0285ee-20ca-4953-bcdb-86a920652923"
-    udp: true
-  - name: "🇮🇹_11"
+  - name: "🇮🇹_9"
     type: vless
     server: "193.163.203.170"
     port: 443
@@ -207,21 +180,34 @@ proxies:
       public-key: "GCCZ1ZZjB_nj7yxqFi22bIIWWr_G6rnWUzDcssN_40o"
       short-id: "b28db60d77c50b4f"
     flow: "xtls-rprx-vision"
-  - name: "🇮🇹_12"
+  - name: "🇮🇹_10"
     type: vless
-    server: "italia.superbuba.top"
-    port: 443
-    uuid: "c5694dc5-39fd-4a92-8430-3837baa522a3"
+    server: "204.216.216.23"
+    port: 1114
+    uuid: "6ba2eac6-0ec9-44ca-a42b-a8e23aafb530"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "italia.superbuba.top"
-    client-fingerprint: "firefox"
+    servername: "yahoo.com"
+    client-fingerprint: "chrome"
     reality-opts:
-      public-key: "G2U8_BvRAgcOw0sX8u_0yYdVAlD8CWLSi-uYjvH07hw"
-      short-id: "4fa44664f6a566d3"
+      public-key: "WfkCF0eEuIoO0MyJsKOddU89QrTzCZ4y2dzCJbH99CQ"
+      short-id: "79a1e14b"
     flow: "xtls-rprx-vision"
-  - name: "🇮🇹_13"
+  - name: "🇮🇹_11"
+    type: vless
+    server: "82.118.16.189"
+    port: 443
+    uuid: "d5e5f5a1-0f23-4c49-af9f-4be445bf9d8e"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.cloudflare.com"
+    reality-opts:
+      public-key: "SjGkzJQ9I6ZZjC3V73atcPMczhMm0oiTrB8mUQXz1HY"
+      short-id: "37fbf155c7a9f3ff"
+    flow: "xtls-rprx-vision"
+  - name: "🇮🇹_12"
     type: trojan
     server: "91.193.5.121"
     port: 8443
@@ -229,33 +215,41 @@ proxies:
     sni: "ngepz.ambercc.filegear-sg.me"
     skip-cert-verify: true
     udp: true
-  - name: "🇮🇹_14"
+  - name: "🇮🇹_13"
     type: ss
     server: "57.131.48.45"
     port: 8388
     cipher: "aes-256-gcm"
     password: "itzvpn@321"
+    udp: true
+  - name: "🇮🇹_14"
+    type: ss
+    server: "185.164.175.81"
+    port: 19999
+    cipher: "aes-256-gcm"
+    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
   - name: "🇮🇹_15"
     type: ss
-    server: "185.164.175.81"
-    port: 19999
-    cipher: "aes-256-gcm"
-    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
-    udp: true
-  - name: "🇮🇹_16"
-    type: ss
     server: "57.131.48.45"
     port: 8388
     cipher: "aes-256-gcm"
     password: "itzvpn@321"
     udp: true
-  - name: "🇮🇹_17"
+  - name: "🇮🇹_16"
     type: ss
     server: "185.164.175.81"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
+    udp: true
+  - name: "🇮🇹_17"
+    type: vmess
+    server: "89.41.172.85"
+    port: 22324
+    uuid: "04621bae-ab36-11ec-b909-0242ac120002"
+    alterId: 0
+    cipher: "auto"
     udp: true
 
 proxy-groups:
