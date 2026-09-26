@@ -76,6 +76,29 @@ proxies:
     flow: "xtls-rprx-vision"
   - name: "🇪🇸_2"
     type: vless
+    server: "85.90.217.42"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "85.90.217.42"
+  - name: "🇪🇸_3"
+    type: vless
+    server: "esbe.vihodest.net"
+    port: 443
+    uuid: "88956de8-38db-449c-8410-4b70a4fb5c9b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "esbe.vihodest.net"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "ihEweXseofZYKT-AB6cTtQ1IlXgC3a7HHAsi-o50yFE"
+      short-id: "e93196a756abca09"
+    flow: "xtls-rprx-vision"
+  - name: "🇪🇸_4"
+    type: vless
     server: "46.28.71.247"
     port: 443
     uuid: "12c53e32-e589-47d6-b857-e4132294f767"
@@ -87,7 +110,7 @@ proxies:
       public-key: "v4MuZIvFrTPT5GHMSaPryUAbIZlLstmsUTzmC1E-JTE"
       short-id: "0dfc23fe80778c00"
     flow: "xtls-rprx-vision"
-  - name: "🇪🇸_3"
+  - name: "🇪🇸_5"
     type: trojan
     server: "65.20.102.54"
     port: 443
@@ -95,33 +118,19 @@ proxies:
     sni: "www.gpt123.one"
     skip-cert-verify: true
     udp: true
-  - name: "🇪🇸_4"
-    type: ss
-    server: "108.181.121.226"
-    port: 8388
-    cipher: "chacha20-ietf-poly1305"
-    password: "WSyL4XTwNsdv"
-    udp: true
-  - name: "🇪🇸_5"
+  - name: "🇪🇸_6"
     type: ss
     server: "140.174.184.5"
     port: 8388
     cipher: "chacha20-ietf-poly1305"
     password: "qItG8SueYQcP"
-    udp: true
-  - name: "🇪🇸_6"
-    type: ss
-    server: "108.181.121.226"
-    port: 8388
-    cipher: "chacha20-ietf-poly1305"
-    password: "WSyL4XTwNsdv"
     udp: true
   - name: "🇪🇸_7"
     type: ss
-    server: "140.174.184.5"
+    server: "108.181.121.226"
     port: 8388
     cipher: "chacha20-ietf-poly1305"
-    password: "qItG8SueYQcP"
+    password: "WSyL4XTwNsdv"
     udp: true
   - name: "🇪🇸_8"
     type: ss
@@ -138,14 +147,20 @@ proxies:
     password: "qItG8SueYQcP"
     udp: true
   - name: "🇪🇸_10"
-    type: vmess
-    server: "85.90.217.42"
-    port: 22324
-    uuid: "04621bae-ab36-11ec-b909-0242ac120002"
-    alterId: 0
-    cipher: "auto"
+    type: ss
+    server: "108.181.121.226"
+    port: 8388
+    cipher: "chacha20-ietf-poly1305"
+    password: "WSyL4XTwNsdv"
     udp: true
   - name: "🇪🇸_11"
+    type: ss
+    server: "140.174.184.5"
+    port: 8388
+    cipher: "chacha20-ietf-poly1305"
+    password: "qItG8SueYQcP"
+    udp: true
+  - name: "🇪🇸_12"
     type: vmess
     server: "66.163.118.73"
     port: 22324
@@ -180,6 +195,7 @@ proxy-groups:
       - "🇪🇸_9"
       - "🇪🇸_10"
       - "🇪🇸_11"
+      - "🇪🇸_12"
 
 
   - name: "Load Balance"
@@ -199,6 +215,7 @@ proxy-groups:
       - "🇪🇸_9"
       - "🇪🇸_10"
       - "🇪🇸_11"
+      - "🇪🇸_12"
 
 rules:
   - MATCH,PROXY

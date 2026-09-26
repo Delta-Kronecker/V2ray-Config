@@ -62,6 +62,27 @@ dns:
 proxies:
   - name: "🇹🇷_1"
     type: vless
+    server: "185.87.24.173"
+    port: 2085
+    uuid: "720814fb-e38e-4570-97a7-c5df60352d37"
+    udp: true
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "vless"
+  - name: "🇹🇷_2"
+    type: vless
+    server: "82.47.63.156"
+    port: 2053
+    uuid: "9ef61079-6f7d-4911-9608-943da85d8e6f"
+    udp: true
+  - name: "🇹🇷_3"
+    type: vless
+    server: "test.keoplentuio.xyz"
+    port: 2053
+    uuid: "9ef61079-6f7d-4911-9608-943da85d8e6f"
+    udp: true
+  - name: "🇹🇷_4"
+    type: vless
     server: "78.135.73.47"
     port: 443
     uuid: "25e16692-d097-4e69-9e2d-8415609c1968"
@@ -74,7 +95,7 @@ proxies:
       public-key: "sZAJkAu23wp1WKY-qeaeiwR38izP5OyfhumoE9xhbB8"
       short-id: "f46cd3ea3d1eb72d"
     flow: "xtls-rprx-vision"
-  - name: "🇹🇷_2"
+  - name: "🇹🇷_5"
     type: vless
     server: "151.241.226.201"
     port: 2053
@@ -87,12 +108,33 @@ proxies:
     reality-opts:
       public-key: "bYW_MmB_CUHrsyoCAUKviI2LZdHf63yY2yOPXbih104"
       short-id: "9e419c0759b54d6f"
-  - name: "🇹🇷_3"
-    type: vless
-    server: "test.keoplentuio.xyz"
-    port: 2053
-    uuid: "9ef61079-6f7d-4911-9608-943da85d8e6f"
+  - name: "🇹🇷_6"
+    type: trojan
+    server: "194.146.26.40"
+    port: 443
+    password: "2ea5fc44-bd38-4fb0-a9b9-88c83fc56622"
+    sni: "4-193-105-141.nhost.00cdn.com"
+    skip-cert-verify: true
     udp: true
+  - name: "🇹🇷_7"
+    type: vmess
+    server: "103.215.218.158"
+    port: 22324
+    uuid: "04621bae-ab36-11ec-b909-0242ac120002"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+  - name: "🇹🇷_8"
+    type: vmess
+    server: "93.114.98.221"
+    port: 2083
+    uuid: "552ca1e2-d1d4-4d9d-b0ea-9fabd287ad14"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "00iwuafi1019.dopgangster.com"
 
 proxy-groups:
   - name: "PROXY"
@@ -112,6 +154,11 @@ proxy-groups:
       - "🇹🇷_1"
       - "🇹🇷_2"
       - "🇹🇷_3"
+      - "🇹🇷_4"
+      - "🇹🇷_5"
+      - "🇹🇷_6"
+      - "🇹🇷_7"
+      - "🇹🇷_8"
 
 
   - name: "Load Balance"
@@ -123,6 +170,11 @@ proxy-groups:
       - "🇹🇷_1"
       - "🇹🇷_2"
       - "🇹🇷_3"
+      - "🇹🇷_4"
+      - "🇹🇷_5"
+      - "🇹🇷_6"
+      - "🇹🇷_7"
+      - "🇹🇷_8"
 
 rules:
   - MATCH,PROXY

@@ -90,17 +90,17 @@ proxies:
     flow: "xtls-rprx-vision"
   - name: "🇱🇻_3"
     type: vless
-    server: "2.27.210.39"
+    server: "31.76.62.32"
     port: 443
-    uuid: "9bbd487f-8f84-4ad7-b897-681c3f7d95dc"
+    uuid: "8e66d40e-6f62-4243-a7d8-ebe83e4c2e77"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "ciccuc.mervi.icu"
-    client-fingerprint: "qq"
+    servername: "lv-rix-1.koolb.org"
+    client-fingerprint: "safari"
     reality-opts:
-      public-key: "3J-u0CiyQk47zVzkuMVgOiVIYtomNZPr__85MDxGxVw"
-      short-id: "5029592ae5516948"
+      public-key: "C4kK4uxh9a5ym0-JmcaTwkUwkB0FTRjSAIlHLTKRHlo"
+      short-id: "84341e3e"
     flow: "xtls-rprx-vision"
   - name: "🇱🇻_4"
     type: trojan
@@ -108,14 +108,6 @@ proxies:
     port: 443
     password: "kxHw-Dk-e9dffgzYszMlEqLJ92AnY3Pi"
     sni: "tr-latvia1.unlimited-access.ru"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇱🇻_5"
-    type: trojan
-    server: "31.57.61.76"
-    port: 2053
-    password: "8r<[9'l6hAO#8ZQi"
-    sni: "Koma-YT.PAGeS.Dev"
     skip-cert-verify: true
     udp: true
 
@@ -138,7 +130,6 @@ proxy-groups:
       - "🇱🇻_2"
       - "🇱🇻_3"
       - "🇱🇻_4"
-      - "🇱🇻_5"
 
 
   - name: "Load Balance"
@@ -151,7 +142,6 @@ proxy-groups:
       - "🇱🇻_2"
       - "🇱🇻_3"
       - "🇱🇻_4"
-      - "🇱🇻_5"
 
 rules:
   - MATCH,PROXY

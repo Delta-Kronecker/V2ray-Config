@@ -76,22 +76,6 @@ proxies:
     network: grpc
     grpc-opts:
       grpc-service-name: "grpc-tunnel"
-  - name: "🇷🇸_2"
-    type: vless
-    server: "176.108.246.58"
-    port: 9889
-    uuid: "5d16ac22-6eea-426f-b778-6f4c2961faef"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "dl.google.com"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "ycPIUcY6ci2yi7YA_OHc20e4gzxEdJTqpmeShxSuHRU"
-      short-id: ""
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "grpc-tunnel"
 
 proxy-groups:
   - name: "PROXY"
@@ -109,7 +93,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇷🇸_1"
-      - "🇷🇸_2"
 
 
   - name: "Load Balance"
@@ -119,7 +102,6 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇷🇸_1"
-      - "🇷🇸_2"
 
 rules:
   - MATCH,PROXY
