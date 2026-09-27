@@ -62,6 +62,20 @@ dns:
 proxies:
   - name: "🇧🇬_1"
     type: vless
+    server: "bg.masterpgd.com"
+    port: 6016
+    uuid: "d207c6c8-a278-487c-b06e-f1fc89304e6d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "play.google.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "ZqviTSUKpqxl9htoEiix8iIH3lRB6ahvw00btl-HOSk"
+      short-id: "1779b108c9eb4da7"
+    flow: "xtls-rprx-vision"
+  - name: "🇧🇬_2"
+    type: vless
     server: "136.175.82.85"
     port: 18775
     uuid: "9ae5940b-0278-403d-a1e1-9dddc47bdcf6"
@@ -74,14 +88,34 @@ proxies:
       public-key: "oR75S6pg_RDAKIuzv_WrCiwaUqqFoek2iuo5N22llQQ"
       short-id: "6ba85179e30d4fc2"
     flow: "xtls-rprx-vision"
-  - name: "🇧🇬_2"
-    type: trojan
-    server: "91.227.77.87"
-    port: 443
-    password: "bpb-trojan"
-    sni: "skwygx.top"
-    skip-cert-verify: true
+  - name: "🇧🇬_3"
+    type: vless
+    server: "bg.masterpgd.com"
+    port: 6016
+    uuid: "1cc6bd10-e414-4171-9220-09aaba23a6fa"
     udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "play.google.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "ZqviTSUKpqxl9htoEiix8iIH3lRB6ahvw00btl-HOSk"
+      short-id: "1779b108c9eb4da7"
+    flow: "xtls-rprx-vision"
+  - name: "🇧🇬_4"
+    type: vless
+    server: "bg.masterpgd.com"
+    port: 6016
+    uuid: "e19f406e-0f0f-4abd-9861-a3d2d213b650"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "play.google.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "ZqviTSUKpqxl9htoEiix8iIH3lRB6ahvw00btl-HOSk"
+      short-id: "1779b108c9eb4da7"
+    flow: "xtls-rprx-vision"
 
 proxy-groups:
   - name: "PROXY"
@@ -100,6 +134,8 @@ proxy-groups:
     proxies:
       - "🇧🇬_1"
       - "🇧🇬_2"
+      - "🇧🇬_3"
+      - "🇧🇬_4"
 
 
   - name: "Load Balance"
@@ -110,6 +146,8 @@ proxy-groups:
     proxies:
       - "🇧🇬_1"
       - "🇧🇬_2"
+      - "🇧🇬_3"
+      - "🇧🇬_4"
 
 rules:
   - MATCH,PROXY

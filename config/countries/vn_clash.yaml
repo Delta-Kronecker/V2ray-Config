@@ -76,6 +76,14 @@ proxies:
     sni: "36.50.135.142"
     skip-cert-verify: true
     udp: true
+  - name: "🇻🇳_3"
+    type: trojan
+    server: "103.72.96.55"
+    port: 443
+    password: "c95357eb-2869-4511-8940-f0dc5e1ec9b1"
+    sni: "hanoiidc2.5gsieutocdo.com"
+    skip-cert-verify: true
+    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -94,6 +102,7 @@ proxy-groups:
     proxies:
       - "🇻🇳_1"
       - "🇻🇳_2"
+      - "🇻🇳_3"
 
 
   - name: "Load Balance"
@@ -104,6 +113,7 @@ proxy-groups:
     proxies:
       - "🇻🇳_1"
       - "🇻🇳_2"
+      - "🇻🇳_3"
 
 rules:
   - MATCH,PROXY
