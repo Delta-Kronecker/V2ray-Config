@@ -75,17 +75,13 @@ proxies:
     flow: "xtls-rprx-vision"
   - name: "🇪🇸_2"
     type: vless
-    server: "madridsp.banibus.ir"
-    port: 8118
-    uuid: "eea1c59d-70fd-4829-8ed7-21ddfe55a0da"
+    server: "85.90.217.42"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "play.googleapis.com"
-    client-fingerprint: "ios"
-    reality-opts:
-      public-key: "LjAkLizwkZf35ObrUMFZ22UHXTEJzpgcTvHk9AuzcUM"
-      short-id: ""
+    servername: "85.90.217.42"
   - name: "🇪🇸_3"
     type: vless
     server: "87.76.179.117"
@@ -101,15 +97,6 @@ proxies:
       short-id: "d2061bb1"
     flow: "xtls-rprx-vision"
   - name: "🇪🇸_4"
-    type: vless
-    server: "85.90.217.42"
-    port: 443
-    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "85.90.217.42"
-  - name: "🇪🇸_5"
     type: trojan
     server: "65.20.102.54"
     port: 443
@@ -117,26 +104,33 @@ proxies:
     sni: "www.gpt123.one"
     skip-cert-verify: true
     udp: true
-  - name: "🇪🇸_6"
+  - name: "🇪🇸_5"
     type: ss
     server: "108.181.121.226"
     port: 8388
     cipher: "chacha20-ietf-poly1305"
     password: "WSyL4XTwNsdv"
     udp: true
-  - name: "🇪🇸_7"
+  - name: "🇪🇸_6"
     type: ss
     server: "140.174.184.5"
     port: 8388
     cipher: "chacha20-ietf-poly1305"
     password: "qItG8SueYQcP"
     udp: true
-  - name: "🇪🇸_8"
+  - name: "🇪🇸_7"
     type: ss
-    server: "140.174.184.5"
+    server: "108.181.121.226"
     port: 8388
     cipher: "chacha20-ietf-poly1305"
-    password: "qItG8SueYQcP"
+    password: "WSyL4XTwNsdv"
+    udp: true
+  - name: "🇪🇸_8"
+    type: ss
+    server: "108.181.121.226"
+    port: 8388
+    cipher: "chacha20-ietf-poly1305"
+    password: "WSyL4XTwNsdv"
     udp: true
   - name: "🇪🇸_9"
     type: ss
@@ -147,36 +141,22 @@ proxies:
     udp: true
   - name: "🇪🇸_10"
     type: ss
-    server: "108.181.121.226"
+    server: "140.174.184.5"
     port: 8388
     cipher: "chacha20-ietf-poly1305"
-    password: "WSyL4XTwNsdv"
+    password: "qItG8SueYQcP"
     udp: true
   - name: "🇪🇸_11"
-    type: ss
-    server: "82.38.31.155"
-    port: 8080
-    cipher: "chacha20-ietf-poly1305"
-    password: "oZIoA69Q8yhcQV8ka3Pa3A"
-    udp: true
-  - name: "🇪🇸_12"
-    type: ss
-    server: "108.181.121.226"
-    port: 8388
-    cipher: "chacha20-ietf-poly1305"
-    password: "WSyL4XTwNsdv"
-    udp: true
-  - name: "🇪🇸_13"
     type: vmess
-    server: "66.163.118.73"
+    server: "85.90.217.42"
     port: 22324
     uuid: "04621bae-ab36-11ec-b909-0242ac120002"
     alterId: 0
     cipher: "auto"
     udp: true
-  - name: "🇪🇸_14"
+  - name: "🇪🇸_12"
     type: vmess
-    server: "85.90.217.42"
+    server: "66.163.118.73"
     port: 22324
     uuid: "04621bae-ab36-11ec-b909-0242ac120002"
     alterId: 0
@@ -210,8 +190,6 @@ proxy-groups:
       - "🇪🇸_10"
       - "🇪🇸_11"
       - "🇪🇸_12"
-      - "🇪🇸_13"
-      - "🇪🇸_14"
 
 
   - name: "Load Balance"
@@ -232,8 +210,6 @@ proxy-groups:
       - "🇪🇸_10"
       - "🇪🇸_11"
       - "🇪🇸_12"
-      - "🇪🇸_13"
-      - "🇪🇸_14"
 
 rules:
   - MATCH,PROXY

@@ -60,16 +60,12 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇱🇰_1"
+  - name: "🇨🇴_1"
     type: vless
-    server: "free.sahanwickramasinghe.me"
-    port: 443
-    uuid: "3d08ed67-5a47-42d3-a948-ebc7d2eb21f7"
+    server: "157.137.224.224"
+    port: 62145
+    uuid: "8fb65472-5957-4f64-ba2d-b5812b2f155a"
     udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "aka.ms"
-    client-fingerprint: "random"
 
 proxy-groups:
   - name: "PROXY"
@@ -86,7 +82,7 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇱🇰_1"
+      - "🇨🇴_1"
 
 
   - name: "Load Balance"
@@ -95,7 +91,7 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇱🇰_1"
+      - "🇨🇴_1"
 
 rules:
   - MATCH,PROXY

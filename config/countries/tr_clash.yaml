@@ -62,6 +62,33 @@ dns:
 proxies:
   - name: "🇹🇷_1"
     type: vless
+    server: "93.190.8.26"
+    port: 3090
+    uuid: "4533a4e1-46ff-42d8-92b3-24c273481025"
+    udp: true
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "vless"
+  - name: "🇹🇷_2"
+    type: vless
+    server: "93.190.9.49"
+    port: 3090
+    uuid: "4533a4e1-46ff-42d8-92b3-24c273481025"
+    udp: true
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "vless"
+  - name: "🇹🇷_3"
+    type: vless
+    server: "93.190.8.86"
+    port: 3090
+    uuid: "73649cdf-0f29-4d1c-8a4d-95163688f93f"
+    udp: true
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "vless"
+  - name: "🇹🇷_4"
+    type: vless
     server: "78.135.73.47"
     port: 443
     uuid: "25e16692-d097-4e69-9e2d-8415609c1968"
@@ -74,16 +101,28 @@ proxies:
       public-key: "sZAJkAu23wp1WKY-qeaeiwR38izP5OyfhumoE9xhbB8"
       short-id: "f46cd3ea3d1eb72d"
     flow: "xtls-rprx-vision"
-  - name: "🇹🇷_2"
+  - name: "🇹🇷_5"
     type: vless
-    server: "93.190.9.172"
+    server: "145.239.30.17"
+    port: 2053
+    uuid: "9ef61079-6f7d-4911-9608-943da85d8e6f"
+    udp: true
+  - name: "🇹🇷_6"
+    type: vless
+    server: "test.keoplentuio.xyz"
+    port: 2053
+    uuid: "9ef61079-6f7d-4911-9608-943da85d8e6f"
+    udp: true
+  - name: "🇹🇷_7"
+    type: vless
+    server: "93.190.9.171"
     port: 3090
-    uuid: "7e24f2b1-04a0-4ab0-af87-3bef7eb78e25"
+    uuid: "4533a4e1-46ff-42d8-92b3-24c273481025"
     udp: true
     network: grpc
     grpc-opts:
       grpc-service-name: "vless"
-  - name: "🇹🇷_3"
+  - name: "🇹🇷_8"
     type: vless
     server: "151.241.226.201"
     port: 2053
@@ -96,13 +135,24 @@ proxies:
     reality-opts:
       public-key: "bYW_MmB_CUHrsyoCAUKviI2LZdHf63yY2yOPXbih104"
       short-id: "9e419c0759b54d6f"
-  - name: "🇹🇷_4"
+  - name: "🇹🇷_9"
     type: vless
-    server: "test.keoplentuio.xyz"
-    port: 2053
-    uuid: "9ef61079-6f7d-4911-9608-943da85d8e6f"
+    server: "93.190.9.55"
+    port: 3090
+    uuid: "73649cdf-0f29-4d1c-8a4d-95163688f93f"
     udp: true
-  - name: "🇹🇷_5"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "vless"
+  - name: "🇹🇷_10"
+    type: trojan
+    server: "subtu.charsoulink3.ir"
+    port: 2087
+    password: "v2whz6ahmyy2f84j"
+    sni: "pus.mmdaqaorg2.ir"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇹🇷_11"
     type: trojan
     server: "194.146.26.40"
     port: 443
@@ -131,6 +181,12 @@ proxy-groups:
       - "🇹🇷_3"
       - "🇹🇷_4"
       - "🇹🇷_5"
+      - "🇹🇷_6"
+      - "🇹🇷_7"
+      - "🇹🇷_8"
+      - "🇹🇷_9"
+      - "🇹🇷_10"
+      - "🇹🇷_11"
 
 
   - name: "Load Balance"
@@ -144,6 +200,12 @@ proxy-groups:
       - "🇹🇷_3"
       - "🇹🇷_4"
       - "🇹🇷_5"
+      - "🇹🇷_6"
+      - "🇹🇷_7"
+      - "🇹🇷_8"
+      - "🇹🇷_9"
+      - "🇹🇷_10"
+      - "🇹🇷_11"
 
 rules:
   - MATCH,PROXY
