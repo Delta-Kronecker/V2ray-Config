@@ -62,20 +62,14 @@ dns:
 proxies:
   - name: "🇱🇻_1"
     type: vless
-    server: "176.108.247.67"
-    port: 9881
-    uuid: "5d16ac22-6eea-426f-b778-6f4c2961faef"
+    server: "87.192.47.10"
+    port: 52006
+    uuid: "bc659d88-a1e0-4c65-a49a-7b51b26a7a7f"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "dl.google.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0"
-      short-id: "aabb"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "grpc-tunnel"
+    servername: "grok.setlisting.ru"
+    flow: "xtls-rprx-vision"
   - name: "🇱🇻_2"
     type: vless
     server: "138.124.180.137"
@@ -92,32 +86,34 @@ proxies:
     flow: "xtls-rprx-vision"
   - name: "🇱🇻_3"
     type: vless
-    server: "31.76.62.32"
+    server: "31.57.28.147"
     port: 443
-    uuid: "8e66d40e-6f62-4243-a7d8-ebe83e4c2e77"
+    uuid: "2412bd96-925b-43f2-81d1-0ed4f0793699"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "lv-rix-1.koolb.org"
-    client-fingerprint: "safari"
+    servername: "download-cdn.jetbrains.com"
+    client-fingerprint: "random"
     reality-opts:
-      public-key: "C4kK4uxh9a5ym0-JmcaTwkUwkB0FTRjSAIlHLTKRHlo"
-      short-id: "84341e3e"
+      public-key: "d7yg69dK4DkaV1EPpQcgd4GBncMN9u1o1Nk9u-i7wGc"
+      short-id: "7a18a196e730e1d5"
     flow: "xtls-rprx-vision"
   - name: "🇱🇻_4"
     type: vless
-    server: "195.123.213.28"
-    port: 443
-    uuid: "02fcc1a4-ee90-4970-8bbb-4ffaa8109d24"
+    server: "176.108.247.67"
+    port: 9881
+    uuid: "5d16ac22-6eea-426f-b778-6f4c2961faef"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "www.cloudflare.com"
-    client-fingerprint: "chrome"
+    servername: "dl.google.com"
+    client-fingerprint: "firefox"
     reality-opts:
-      public-key: "NMgy1XgCSXExOg6Tg8xG9lCWttMF6sjdpB41lZy6FWo"
-      short-id: "5c256336e3b673fa"
-    flow: "xtls-rprx-vision"
+      public-key: "Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0"
+      short-id: "aabb"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "grpc-tunnel"
   - name: "🇱🇻_5"
     type: trojan
     server: "31.57.61.76"

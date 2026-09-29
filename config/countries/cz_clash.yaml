@@ -62,29 +62,6 @@ dns:
 proxies:
   - name: "🇨🇿_1"
     type: vless
-    server: "31.76.7.154"
-    port: 7443
-    uuid: "d7cad038-0c3f-4cce-8f8a-36464aaf66c0"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "ya.ru"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "1MLoHw7RVkGefh7XUyuGg4ndxwv4vDU9en-f9JxpXRQ"
-      short-id: "d2061bb1"
-    flow: "xtls-rprx-vision"
-  - name: "🇨🇿_2"
-    type: vless
-    server: "194.87.59.25"
-    port: 2085
-    uuid: "73649cdf-0f29-4d1c-8a4d-95163688f93f"
-    udp: true
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "vless"
-  - name: "🇨🇿_3"
-    type: vless
     server: "31.76.7.227"
     port: 443
     uuid: "d0e771c5-024e-4393-bb90-4a3e3c561656"
@@ -97,31 +74,34 @@ proxies:
       public-key: "nIL5EeUo2XUkCaLJGbzgRm6zhF-96kWvV2VmhEt3CX4"
       short-id: "4af4102cb26e59"
     flow: "xtls-rprx-vision"
+  - name: "🇨🇿_2"
+    type: ss
+    server: "141.227.134.63"
+    port: 17000
+    cipher: "aes-256-gcm"
+    password: "pX0uhU3ZjUcLWYs0Vez55BO3JoQrRlL"
+    udp: true
+  - name: "🇨🇿_3"
+    type: ss
+    server: "141.227.134.63"
+    port: 17000
+    cipher: "aes-256-gcm"
+    password: "pX0uhU3ZjUcLWYs0Vez55BO3JoQrRlL"
+    udp: true
   - name: "🇨🇿_4"
-    type: vless
-    server: "176.108.241.137"
-    port: 9891
-    uuid: "5d16ac22-6eea-426f-b778-6f4c2961faef"
+    type: ss
+    server: "141.227.134.63"
+    port: 17000
+    cipher: "aes-256-gcm"
+    password: "pX0uhU3ZjUcLWYs0Vez55BO3JoQrRlL"
     udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "dl.google.com"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0"
-      short-id: "aabb"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "grpc-tunnel"
   - name: "🇨🇿_5"
-    type: vless
-    server: "153.76.185.105"
-    port: 3090
-    uuid: "73649cdf-0f29-4d1c-8a4d-95163688f93f"
+    type: ss
+    server: "141.227.134.63"
+    port: 17000
+    cipher: "aes-256-gcm"
+    password: "pX0uhU3ZjUcLWYs0Vez55BO3JoQrRlL"
     udp: true
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "vless"
   - name: "🇨🇿_6"
     type: ss
     server: "141.227.134.63"
@@ -144,20 +124,6 @@ proxies:
     password: "pX0uhU3ZjUcLWYs0Vez55BO3JoQrRlL"
     udp: true
   - name: "🇨🇿_9"
-    type: ss
-    server: "141.227.134.63"
-    port: 17000
-    cipher: "aes-256-gcm"
-    password: "pX0uhU3ZjUcLWYs0Vez55BO3JoQrRlL"
-    udp: true
-  - name: "🇨🇿_10"
-    type: ss
-    server: "141.227.134.63"
-    port: 17000
-    cipher: "aes-256-gcm"
-    password: "pX0uhU3ZjUcLWYs0Vez55BO3JoQrRlL"
-    udp: true
-  - name: "🇨🇿_11"
     type: ss
     server: "141.227.134.63"
     port: 17000
@@ -189,8 +155,6 @@ proxy-groups:
       - "🇨🇿_7"
       - "🇨🇿_8"
       - "🇨🇿_9"
-      - "🇨🇿_10"
-      - "🇨🇿_11"
 
 
   - name: "Load Balance"
@@ -208,8 +172,6 @@ proxy-groups:
       - "🇨🇿_7"
       - "🇨🇿_8"
       - "🇨🇿_9"
-      - "🇨🇿_10"
-      - "🇨🇿_11"
 
 rules:
   - MATCH,PROXY

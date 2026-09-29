@@ -60,11 +60,26 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇨🇴_1"
+  - name: "🇵🇭_1"
     type: vless
-    server: "157.137.224.224"
-    port: 62145
-    uuid: "8fb65472-5957-4f64-ba2d-b5812b2f155a"
+    server: "45.130.254.10"
+    port: 443
+    uuid: "eec2f6a7-c10f-43b0-b133-61f9bf9bbc27"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "amazon.de"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "G8SING6Ibc_igZ5vI5578fXCT_mBMRuq_o8_Ymnj2SQ"
+      short-id: "eba1498e012ef580"
+    flow: "xtls-rprx-vision"
+  - name: "🇵🇭_2"
+    type: ss
+    server: "149.104.109.252"
+    port: 8882
+    cipher: "aes-256-gcm"
+    password: "kDWvXYZoTBcGkC4"
     udp: true
 
 proxy-groups:
@@ -82,7 +97,8 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇨🇴_1"
+      - "🇵🇭_1"
+      - "🇵🇭_2"
 
 
   - name: "Load Balance"
@@ -91,7 +107,8 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇨🇴_1"
+      - "🇵🇭_1"
+      - "🇵🇭_2"
 
 rules:
   - MATCH,PROXY

@@ -60,13 +60,26 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇨🇱_1"
-    type: ss
-    server: "64.176.2.21"
-    port: 8388
-    cipher: "aes-256-gcm"
-    password: "xBStBEVqvGwHPocc"
+  - name: "🇱🇰_1"
+    type: vless
+    server: "51.75.67.209"
+    port: 443
+    uuid: "3d08ed67-5a47-42d3-a948-ebc7d2eb21f7"
     udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "free.sahanwickramasinghe.me"
+    client-fingerprint: "firefox"
+  - name: "🇱🇰_2"
+    type: vless
+    server: "free.sahanwickramasinghe.me"
+    port: 443
+    uuid: "3d08ed67-5a47-42d3-a948-ebc7d2eb21f7"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "aka.ms"
+    client-fingerprint: "random"
 
 proxy-groups:
   - name: "PROXY"
@@ -83,7 +96,8 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇨🇱_1"
+      - "🇱🇰_1"
+      - "🇱🇰_2"
 
 
   - name: "Load Balance"
@@ -92,7 +106,8 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇨🇱_1"
+      - "🇱🇰_1"
+      - "🇱🇰_2"
 
 rules:
   - MATCH,PROXY
