@@ -60,22 +60,13 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇩🇰_1"
-    type: vless
-    server: "176.108.244.38"
-    port: 9881
-    uuid: "5d16ac22-6eea-426f-b778-6f4c2961faef"
+  - name: "🇨🇱_1"
+    type: ss
+    server: "64.176.2.21"
+    port: 8388
+    cipher: "aes-256-gcm"
+    password: "xBStBEVqvGwHPocc"
     udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "dl.google.com"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0"
-      short-id: "aabb"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "grpc-tunnel"
 
 proxy-groups:
   - name: "PROXY"
@@ -92,7 +83,7 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇩🇰_1"
+      - "🇨🇱_1"
 
 
   - name: "Load Balance"
@@ -101,7 +92,7 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇩🇰_1"
+      - "🇨🇱_1"
 
 rules:
   - MATCH,PROXY

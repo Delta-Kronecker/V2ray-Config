@@ -62,19 +62,6 @@ dns:
 proxies:
   - name: "🇦🇱_1"
     type: vless
-    server: "85.155.228.185"
-    port: 443
-    uuid: "ca5ffe64-81e0-42f0-a136-03cc4f662a4f"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "avsal.krusofiya.fun"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "9M294WArTUZ9m1fMmvlHauSb5wZo68SkCW_lEgBVAF8"
-      short-id: "4d5faa03b738bd3b"
-  - name: "🇦🇱_2"
-    type: vless
     server: "95.85.224.51"
     port: 443
     uuid: "342ab7e4-5a89-0001-8809-304120d4aa83"
@@ -87,19 +74,12 @@ proxies:
       public-key: "WWeAHWUVD-phmnjNJ823cer0c4CMIbEs08AhsuEZmDc"
       short-id: "a696de84963656de"
     flow: "xtls-rprx-vision"
-  - name: "🇦🇱_3"
+  - name: "🇦🇱_2"
     type: ss
     server: "130.49.189.158"
     port: 43558
     cipher: "chacha20-ietf-poly1305"
-    password: "ziOeKejhhw+fmWet+xvuJsVJH7U9DvSWq1hlqtaKv+I="
-    udp: true
-  - name: "🇦🇱_4"
-    type: ss
-    server: "130.49.189.158"
-    port: 43558
-    cipher: "chacha20-ietf-poly1305"
-    password: "ziOeKejhhw+fmWet+xvuJsVJH7U9DvSWq1hlqtaKv+I="
+    password: "IcovoXEMyjfGjN9RenzKs0/iPaZ3vtk9fkxJ0s/R5vw="
     udp: true
 
 proxy-groups:
@@ -119,8 +99,6 @@ proxy-groups:
     proxies:
       - "🇦🇱_1"
       - "🇦🇱_2"
-      - "🇦🇱_3"
-      - "🇦🇱_4"
 
 
   - name: "Load Balance"
@@ -131,8 +109,6 @@ proxy-groups:
     proxies:
       - "🇦🇱_1"
       - "🇦🇱_2"
-      - "🇦🇱_3"
-      - "🇦🇱_4"
 
 rules:
   - MATCH,PROXY

@@ -62,31 +62,28 @@ dns:
 proxies:
   - name: "🇪🇪_1"
     type: vless
-    server: "188.255.236.14"
-    port: 52006
-    uuid: "bc659d88-a1e0-4c65-a49a-7b51b26a7a7f"
+    server: "94.183.170.135"
+    port: 8443
+    uuid: "06c4e938-2954-478f-a870-ca1b163e30e9"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "chatgpt.fastaichat.ru"
-    client-fingerprint: "ios"
-    flow: "xtls-rprx-vision"
+    servername: "estproxy4.lockdwn.com"
+    client-fingerprint: "chrome"
   - name: "🇪🇪_2"
     type: vless
-    server: "94.183.170.147"
-    port: 8443
-    uuid: "5edbcb44-8d04-4fa7-a587-bc5d60c24ca1"
+    server: "179.254.126.173"
+    port: 443
+    uuid: "7013d889-14f4-4475-a5ff-a5ecd992b522"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "www.cloudflare.com"
-    client-fingerprint: "firefox"
+    servername: "www.google.com"
+    client-fingerprint: "random"
     reality-opts:
-      public-key: "s2uiu3GQA2SlZzsr86Z5Dav97eAFTPf7Nvr-zqzzRgg"
-      short-id: "72ccd4a7563c2953"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "9d30d49278"
+      public-key: "9H_heZMEI3tShkb5pXRrlAzwGWIzGFCRX_HgyPdktnU"
+      short-id: ""
+    flow: "xtls-rprx-vision"
   - name: "🇪🇪_3"
     type: vless
     server: "150.241.101.80"
@@ -119,46 +116,6 @@ proxies:
       grpc-service-name: "telegram-bridge"
   - name: "🇪🇪_5"
     type: vless
-    server: "179.254.126.173"
-    port: 443
-    uuid: "7013d889-14f4-4475-a5ff-a5ecd992b522"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.google.com"
-    client-fingerprint: "random"
-    reality-opts:
-      public-key: "9H_heZMEI3tShkb5pXRrlAzwGWIzGFCRX_HgyPdktnU"
-      short-id: ""
-    flow: "xtls-rprx-vision"
-  - name: "🇪🇪_6"
-    type: vless
-    server: "94.183.170.135"
-    port: 8443
-    uuid: "06c4e938-2954-478f-a870-ca1b163e30e9"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "estproxy4.lockdwn.com"
-    client-fingerprint: "chrome"
-  - name: "🇪🇪_7"
-    type: vless
-    server: "94.183.170.147"
-    port: 8443
-    uuid: "66ac188b-bd8d-4218-b9ba-0bad0e152cd0"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.cloudflare.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "s2uiu3GQA2SlZzsr86Z5Dav97eAFTPf7Nvr-zqzzRgg"
-      short-id: "72ccd4a7563c2953"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "9d30d49278"
-  - name: "🇪🇪_8"
-    type: vless
     server: "150.241.101.17"
     port: 8443
     uuid: "47d9b534-8a0a-4bd2-90f1-1d6ade14427e"
@@ -171,7 +128,7 @@ proxies:
       public-key: "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
       short-id: "6ba85179e30d4fc2"
     flow: "xtls-rprx-vision"
-  - name: "🇪🇪_9"
+  - name: "🇪🇪_6"
     type: trojan
     server: "109.206.241.10"
     port: 449
@@ -179,15 +136,7 @@ proxies:
     sni: "russiapower.accesscam.org"
     skip-cert-verify: true
     udp: true
-  - name: "🇪🇪_10"
-    type: trojan
-    server: "ee-1.kamediorg.com"
-    port: 443
-    password: "GUGm7DHtpSx7SuPyUD"
-    sni: "ee-1.kamediorg.com"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇪🇪_11"
+  - name: "🇪🇪_7"
     type: trojan
     server: "ee-1.kamediorg.com"
     port: 443
@@ -195,15 +144,15 @@ proxies:
     sni: "ee-1.kamediorg.com"
     skip-cert-verify: true
     udp: true
-  - name: "🇪🇪_12"
+  - name: "🇪🇪_8"
     type: trojan
-    server: "45.139.194.60"
+    server: "ee-1.tr202604.com"
     port: 443
     password: "pjqRC5wfEFhYTyiaKF"
     sni: "ee-1.tr202604.com"
     skip-cert-verify: true
     udp: true
-  - name: "🇪🇪_13"
+  - name: "🇪🇪_9"
     type: trojan
     server: "45.139.194.66"
     port: 443
@@ -211,7 +160,15 @@ proxies:
     sni: "45.139.194.66"
     skip-cert-verify: true
     udp: true
-  - name: "🇪🇪_14"
+  - name: "🇪🇪_10"
+    type: trojan
+    server: "45.139.194.60"
+    port: 443
+    password: "pjqRC5wfEFhYTyiaKF"
+    sni: "ee-1.tr202604.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇪🇪_11"
     type: trojan
     server: "ee-1.tr202604.com"
     port: 443
@@ -219,13 +176,12 @@ proxies:
     sni: "ee-1.tr202604.com"
     skip-cert-verify: true
     udp: true
-  - name: "🇪🇪_15"
-    type: trojan
-    server: "ee-1.tr202604.com"
-    port: 443
-    password: "pjqRC5wfEFhYTyiaKF"
-    sni: "ee-1.tr202604.com"
-    skip-cert-verify: true
+  - name: "🇪🇪_12"
+    type: ss
+    server: "80.97.27.52"
+    port: 114
+    cipher: "chacha20-ietf-poly1305"
+    password: "9binmVT58Wnr6vNzxu_JmpzEW6i-FgAj"
     udp: true
 
 proxy-groups:
@@ -255,9 +211,6 @@ proxy-groups:
       - "🇪🇪_10"
       - "🇪🇪_11"
       - "🇪🇪_12"
-      - "🇪🇪_13"
-      - "🇪🇪_14"
-      - "🇪🇪_15"
 
 
   - name: "Load Balance"
@@ -278,9 +231,6 @@ proxy-groups:
       - "🇪🇪_10"
       - "🇪🇪_11"
       - "🇪🇪_12"
-      - "🇪🇪_13"
-      - "🇪🇪_14"
-      - "🇪🇪_15"
 
 rules:
   - MATCH,PROXY

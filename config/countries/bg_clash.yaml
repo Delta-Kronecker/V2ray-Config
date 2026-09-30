@@ -74,6 +74,28 @@ proxies:
       public-key: "oR75S6pg_RDAKIuzv_WrCiwaUqqFoek2iuo5N22llQQ"
       short-id: "6ba85179e30d4fc2"
     flow: "xtls-rprx-vision"
+  - name: "🇧🇬_2"
+    type: vless
+    server: "131.123.41.223"
+    port: 443
+    uuid: "33e8bd3a-26f0-4e57-bc27-e5552a81c880"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "bulgaria.stream-live.ru"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "dsyxDiVtAFRjKOqLdqof2SuygewTO-EWTd34Jk1YYVo"
+      short-id: "e9433de76a53573b"
+    flow: "xtls-rprx-vision"
+  - name: "🇧🇬_3"
+    type: trojan
+    server: "91.227.77.87"
+    port: 443
+    password: "bpb-trojan"
+    sni: "skwygx.top"
+    skip-cert-verify: true
+    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -91,6 +113,8 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇧🇬_1"
+      - "🇧🇬_2"
+      - "🇧🇬_3"
 
 
   - name: "Load Balance"
@@ -100,6 +124,8 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇧🇬_1"
+      - "🇧🇬_2"
+      - "🇧🇬_3"
 
 rules:
   - MATCH,PROXY

@@ -62,16 +62,6 @@ dns:
 proxies:
   - name: "🇱🇻_1"
     type: vless
-    server: "87.192.47.10"
-    port: 52006
-    uuid: "bc659d88-a1e0-4c65-a49a-7b51b26a7a7f"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "grok.setlisting.ru"
-    flow: "xtls-rprx-vision"
-  - name: "🇱🇻_2"
-    type: vless
     server: "138.124.180.137"
     port: 443
     uuid: "5234b2b7-5e07-422c-8159-d62a676c00c6"
@@ -84,7 +74,7 @@ proxies:
       public-key: "GBdkyDLfr0LIZo_94Xv8ycAKOmkjArYzwJAEMhuXX2c"
       short-id: "33acba1b"
     flow: "xtls-rprx-vision"
-  - name: "🇱🇻_3"
+  - name: "🇱🇻_2"
     type: vless
     server: "31.57.28.147"
     port: 443
@@ -98,22 +88,30 @@ proxies:
       public-key: "d7yg69dK4DkaV1EPpQcgd4GBncMN9u1o1Nk9u-i7wGc"
       short-id: "7a18a196e730e1d5"
     flow: "xtls-rprx-vision"
-  - name: "🇱🇻_4"
+  - name: "🇱🇻_3"
     type: vless
-    server: "176.108.247.67"
-    port: 9881
-    uuid: "5d16ac22-6eea-426f-b778-6f4c2961faef"
+    server: "87.192.47.10"
+    port: 52006
+    uuid: "bc659d88-a1e0-4c65-a49a-7b51b26a7a7f"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "dl.google.com"
-    client-fingerprint: "firefox"
+    servername: "grok.setlisting.ru"
+    flow: "xtls-rprx-vision"
+  - name: "🇱🇻_4"
+    type: vless
+    server: "195.123.213.28"
+    port: 443
+    uuid: "02fcc1a4-ee90-4970-8bbb-4ffaa8109d24"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.cloudflare.com"
+    client-fingerprint: "chrome"
     reality-opts:
-      public-key: "Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0"
-      short-id: "aabb"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "grpc-tunnel"
+      public-key: "NMgy1XgCSXExOg6Tg8xG9lCWttMF6sjdpB41lZy6FWo"
+      short-id: "5c256336e3b673fa"
+    flow: "xtls-rprx-vision"
   - name: "🇱🇻_5"
     type: trojan
     server: "31.57.61.76"

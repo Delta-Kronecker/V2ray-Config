@@ -88,6 +88,20 @@ proxies:
       public-key: "GDer6NQYXdbccrFI0tLn2671PjCvrcSy0R7TKY8vG1k"
       short-id: "002fb4ec7b3088cc"
     flow: "xtls-rprx-vision"
+  - name: "🇦🇪_3"
+    type: vless
+    server: "139.185.44.42"
+    port: 8443
+    uuid: "1a246091-937d-4e23-8e54-dd47da8360e1"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.microsoft.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "VlWMFvYxwGIsctI7BfOgC4PCG3EMToD7_H8vWcRB42w"
+      short-id: "855834d3b002ad21"
+    flow: "xtls-rprx-vision"
 
 proxy-groups:
   - name: "PROXY"
@@ -106,6 +120,7 @@ proxy-groups:
     proxies:
       - "🇦🇪_1"
       - "🇦🇪_2"
+      - "🇦🇪_3"
 
 
   - name: "Load Balance"
@@ -116,6 +131,7 @@ proxy-groups:
     proxies:
       - "🇦🇪_1"
       - "🇦🇪_2"
+      - "🇦🇪_3"
 
 rules:
   - MATCH,PROXY

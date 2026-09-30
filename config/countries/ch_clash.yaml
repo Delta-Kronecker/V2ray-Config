@@ -88,26 +88,40 @@ proxies:
       short-id: "19253fae84102271"
     flow: "xtls-rprx-vision"
   - name: "🇨🇭_3"
+    type: vless
+    server: "179.43.152.211"
+    port: 443
+    uuid: "386d4342-768d-4ed0-9478-4dba23220aed"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sw.denditop.site"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "wgoLhL4pRP0y6fu6He4qW_ElohCM_ANWJF3HEoUhNz4"
+      short-id: "9c2378562188c3cb"
+    flow: "xtls-rprx-vision"
+  - name: "🇨🇭_4"
+    type: vless
+    server: "179.43.152.211"
+    port: 443
+    uuid: "0589f43f-21cf-4275-8ef1-3559ef42072e"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sw.denditop.site"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "wgoLhL4pRP0y6fu6He4qW_ElohCM_ANWJF3HEoUhNz4"
+      short-id: "9c2378562188c3cb"
+    flow: "xtls-rprx-vision"
+  - name: "🇨🇭_5"
     type: trojan
     server: "83.228.224.161"
     port: 443
     password: "SoftNetConnect"
     sni: "83.228.224.161"
     skip-cert-verify: true
-    udp: true
-  - name: "🇨🇭_4"
-    type: ss
-    server: "132.243.175.144"
-    port: 8388
-    cipher: "chacha20-ietf-poly1305"
-    password: "e8KgS8fD0yDqYFpgN4G5piCOt9aFyqA3"
-    udp: true
-  - name: "🇨🇭_5"
-    type: ss
-    server: "132.243.175.144"
-    port: 8388
-    cipher: "chacha20-ietf-poly1305"
-    password: "e8KgS8fD0yDqYFpgN4G5piCOt9aFyqA3"
     udp: true
   - name: "🇨🇭_6"
     type: ss
@@ -118,10 +132,10 @@ proxies:
     udp: true
   - name: "🇨🇭_7"
     type: ss
-    server: "132.243.175.144"
-    port: 8388
+    server: "seses.pexmoro.ir"
+    port: 27017
     cipher: "chacha20-ietf-poly1305"
-    password: "e8KgS8fD0yDqYFpgN4G5piCOt9aFyqA3"
+    password: "8rMr6Vx2fehmtxHaBqkRLOwi2r9FfgZe"
     udp: true
   - name: "🇨🇭_8"
     type: ss
@@ -129,6 +143,35 @@ proxies:
     port: 8388
     cipher: "chacha20-ietf-poly1305"
     password: "e8KgS8fD0yDqYFpgN4G5piCOt9aFyqA3"
+    udp: true
+  - name: "🇨🇭_9"
+    type: ss
+    server: "132.243.175.144"
+    port: 8388
+    cipher: "chacha20-ietf-poly1305"
+    password: "e8KgS8fD0yDqYFpgN4G5piCOt9aFyqA3"
+    udp: true
+  - name: "🇨🇭_10"
+    type: ss
+    server: "seses.pexmoro.ir"
+    port: 27017
+    cipher: "chacha20-ietf-poly1305"
+    password: "8rMr6Vx2fehmtxHaBqkRLOwi2r9FfgZe"
+    udp: true
+  - name: "🇨🇭_11"
+    type: ss
+    server: "132.243.175.144"
+    port: 8388
+    cipher: "chacha20-ietf-poly1305"
+    password: "e8KgS8fD0yDqYFpgN4G5piCOt9aFyqA3"
+    udp: true
+  - name: "🇨🇭_12"
+    type: vmess
+    server: "37.143.131.229"
+    port: 8080
+    uuid: "f8aac2be-4d3c-4fa3-9afb-89b6c7e14596"
+    alterId: 0
+    cipher: "auto"
     udp: true
 
 proxy-groups:
@@ -154,6 +197,10 @@ proxy-groups:
       - "🇨🇭_6"
       - "🇨🇭_7"
       - "🇨🇭_8"
+      - "🇨🇭_9"
+      - "🇨🇭_10"
+      - "🇨🇭_11"
+      - "🇨🇭_12"
 
 
   - name: "Load Balance"
@@ -170,6 +217,10 @@ proxy-groups:
       - "🇨🇭_6"
       - "🇨🇭_7"
       - "🇨🇭_8"
+      - "🇨🇭_9"
+      - "🇨🇭_10"
+      - "🇨🇭_11"
+      - "🇨🇭_12"
 
 rules:
   - MATCH,PROXY

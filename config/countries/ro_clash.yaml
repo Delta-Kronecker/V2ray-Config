@@ -62,33 +62,19 @@ dns:
 proxies:
   - name: "🇷🇴_1"
     type: vless
-    server: "146.70.124.85"
+    server: "bl3fk52.sysopnova.art"
     port: 443
-    uuid: "40abbe13-f02e-4da2-9b19-966c2c3eb4ee"
+    uuid: "441afe11-a180-4516-bb80-80a8a6b38705"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "www.datadoghq.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "byzvlw97wjAAAfHs5AZRV0P0H6_JKBEZ4yfLS0HNewE"
-      short-id: "fe24f8a0a560056e"
-    flow: "xtls-rprx-vision"
-  - name: "🇷🇴_2"
-    type: vless
-    server: "185.100.85.72"
-    port: 10443
-    uuid: "d7c94b82-657a-4bb7-9b24-2ae566669835"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "romania.cdn-europe.org"
+    servername: "yandex.ru"
     client-fingerprint: "chrome"
     reality-opts:
-      public-key: "oTSZ8s1btblYQ-19eX0u8wQePodvAld45JfSEwnfHR0"
-      short-id: "624ef62512cfcbef"
+      public-key: "gE8LUmGFXik94SoDXNiAG5KprGyhjoRwDuhGebgAVWk"
+      short-id: "5ee019e02e6ed99a"
     flow: "xtls-rprx-vision"
-  - name: "🇷🇴_3"
+  - name: "🇷🇴_2"
     type: vless
     server: "46.28.67.55"
     port: 443
@@ -102,21 +88,50 @@ proxies:
       public-key: "i2dJ1_XGDpp50qpEclh6SWSWkxt4B0t2hi2qOVQbeSU"
       short-id: "d06d78e974491b6e"
     flow: "xtls-rprx-vision"
-  - name: "🇷🇴_4"
+  - name: "🇷🇴_3"
     type: vless
-    server: "romania.cdn-europe.org"
-    port: 10443
-    uuid: "d7c94b82-657a-4bb7-9b24-2ae566669835"
+    server: "146.70.124.85"
+    port: 443
+    uuid: "40abbe13-f02e-4da2-9b19-966c2c3eb4ee"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "romania.cdn-europe.org"
-    client-fingerprint: "random"
+    servername: "www.datadoghq.com"
+    client-fingerprint: "firefox"
     reality-opts:
-      public-key: "oTSZ8s1btblYQ-19eX0u8wQePodvAld45JfSEwnfHR0"
-      short-id: "624ef62512cfcbef"
+      public-key: "byzvlw97wjAAAfHs5AZRV0P0H6_JKBEZ4yfLS0HNewE"
+      short-id: "fe24f8a0a560056e"
+    flow: "xtls-rprx-vision"
+  - name: "🇷🇴_4"
+    type: vless
+    server: "193.163.203.253"
+    port: 443
+    uuid: "441afe11-a180-4516-bb80-80a8a6b38705"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "yandex.ru"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "gE8LUmGFXik94SoDXNiAG5KprGyhjoRwDuhGebgAVWk"
+      short-id: "5ee019e02e6ed99a"
     flow: "xtls-rprx-vision"
   - name: "🇷🇴_5"
+    type: trojan
+    server: "38.180.35.145"
+    port: 443
+    password: "600421cf-11d7-429f-a65b-c30397f1bc03"
+    sni: "bu2.freeguard.org"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇷🇴_6"
+    type: ss
+    server: "80.97.27.52"
+    port: 111
+    cipher: "chacha20-ietf-poly1305"
+    password: "9binmVT58Wnr6vNzxu_JmpzEW6i-FgAj"
+    udp: true
+  - name: "🇷🇴_7"
     type: ss
     server: "bogging-eyeteeth-fly.freesocks.work"
     port: 443
@@ -144,6 +159,8 @@ proxy-groups:
       - "🇷🇴_3"
       - "🇷🇴_4"
       - "🇷🇴_5"
+      - "🇷🇴_6"
+      - "🇷🇴_7"
 
 
   - name: "Load Balance"
@@ -157,6 +174,8 @@ proxy-groups:
       - "🇷🇴_3"
       - "🇷🇴_4"
       - "🇷🇴_5"
+      - "🇷🇴_6"
+      - "🇷🇴_7"
 
 rules:
   - MATCH,PROXY
