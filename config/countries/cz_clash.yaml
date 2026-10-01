@@ -62,14 +62,37 @@ dns:
 proxies:
   - name: "🇨🇿_1"
     type: vless
-    server: "153.76.185.179"
-    port: 3090
-    uuid: "08f0b2a1-b213-4d03-8309-d7c766cfca84"
+    server: "194.87.59.20"
+    port: 2085
+    uuid: "a641fd38-0ad7-40bf-9a56-6715c1787be3"
     udp: true
     network: grpc
     grpc-opts:
       grpc-service-name: "vless"
   - name: "🇨🇿_2"
+    type: vless
+    server: "85.117.235.50"
+    port: 443
+    uuid: "f4d71fd6-1c25-4748-836b-1dbda9268039"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "cz1.animeteka.info"
+    client-fingerprint: "ios"
+    reality-opts:
+      public-key: "PmdZ2ETkHc0zjYcs22xT_wyZk5fEpX7mg7RP396HBBc"
+      short-id: "232b1b09e45325a4"
+    flow: "xtls-rprx-vision"
+  - name: "🇨🇿_3"
+    type: vless
+    server: "153.76.185.101"
+    port: 3090
+    uuid: "74aed07d-280c-4e14-aa20-cbb815214af8"
+    udp: true
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "vless"
+  - name: "🇨🇿_4"
     type: vless
     server: "31.76.7.227"
     port: 443
@@ -83,11 +106,27 @@ proxies:
       public-key: "nIL5EeUo2XUkCaLJGbzgRm6zhF-96kWvV2VmhEt3CX4"
       short-id: "4af4102cb26e59"
     flow: "xtls-rprx-vision"
-  - name: "🇨🇿_3"
+  - name: "🇨🇿_5"
     type: vless
-    server: "153.76.185.106"
+    server: "45.132.176.161"
+    port: 9891
+    uuid: "5d16ac22-6eea-426f-b778-6f4c2961faef"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "dl.google.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0"
+      short-id: "aa"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "grpc-tunnel"
+  - name: "🇨🇿_6"
+    type: vless
+    server: "153.76.185.108"
     port: 3090
-    uuid: "08f0b2a1-b213-4d03-8309-d7c766cfca84"
+    uuid: "14e227c3-5a83-4b4d-a41a-e5f499c79415"
     udp: true
     network: grpc
     grpc-opts:
@@ -111,6 +150,9 @@ proxy-groups:
       - "🇨🇿_1"
       - "🇨🇿_2"
       - "🇨🇿_3"
+      - "🇨🇿_4"
+      - "🇨🇿_5"
+      - "🇨🇿_6"
 
 
   - name: "Load Balance"
@@ -122,6 +164,9 @@ proxy-groups:
       - "🇨🇿_1"
       - "🇨🇿_2"
       - "🇨🇿_3"
+      - "🇨🇿_4"
+      - "🇨🇿_5"
+      - "🇨🇿_6"
 
 rules:
   - MATCH,PROXY

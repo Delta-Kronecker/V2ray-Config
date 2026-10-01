@@ -61,6 +61,34 @@ dns:
 
 proxies:
   - name: "🇲🇾_1"
+    type: vless
+    server: "my1.miyazono-kaori.com"
+    port: 443
+    uuid: "f1d601f2-cc29-4fc2-bafc-7ac833af466a"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.setel.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "t3HU7p5iYjE9Lcq2-QHTXZFhpAvoXljTNDgmFkFN-Tc"
+      short-id: "99f8972e3dd5ed"
+    flow: "xtls-rprx-vision"
+  - name: "🇲🇾_2"
+    type: vless
+    server: "my2.miyazono-kaori.com"
+    port: 443
+    uuid: "f1d601f2-cc29-4fc2-bafc-7ac833af466a"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.setel.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "R6q8qhMxgq3ynJPUgudaRkcDXj0qgoc_UU1N0SWGLwM"
+      short-id: "ed77ac35a310"
+    flow: "xtls-rprx-vision"
+  - name: "🇲🇾_3"
     type: trojan
     server: "my.singaporenodeserverone.kyiv.ua"
     port: 443
@@ -68,7 +96,7 @@ proxies:
     sni: "45.32.28.232"
     skip-cert-verify: true
     udp: true
-  - name: "🇲🇾_2"
+  - name: "🇲🇾_4"
     type: trojan
     server: "47.250.84.25"
     port: 443
@@ -76,27 +104,13 @@ proxies:
     sni: "moltbot.doctoroyy.net"
     skip-cert-verify: true
     udp: true
-  - name: "🇲🇾_3"
+  - name: "🇲🇾_5"
     type: trojan
     server: "202.43.102.57"
     port: 443
     password: "6e1b9a65-884f-3aa9-9469-bf6ec0f08610"
     sni: "45.32.28.232"
     skip-cert-verify: true
-    udp: true
-  - name: "🇲🇾_4"
-    type: ss
-    server: "47.250.212.59"
-    port: 2053
-    cipher: "none"
-    password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
-    udp: true
-  - name: "🇲🇾_5"
-    type: ss
-    server: "47.250.212.59"
-    port: 2053
-    cipher: "none"
-    password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
     udp: true
   - name: "🇲🇾_6"
     type: ss
@@ -125,6 +139,27 @@ proxies:
       host: "woshinidie-et3.pages.dev"
       tls: true
   - name: "🇲🇾_8"
+    type: ss
+    server: "130.94.69.15"
+    port: 7001
+    cipher: "aes-256-gcm"
+    password: "RexnBgU7EV5ADxG"
+    udp: true
+  - name: "🇲🇾_9"
+    type: ss
+    server: "47.250.212.59"
+    port: 2053
+    cipher: "none"
+    password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
+    udp: true
+  - name: "🇲🇾_10"
+    type: ss
+    server: "47.250.212.59"
+    port: 2053
+    cipher: "none"
+    password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
+    udp: true
+  - name: "🇲🇾_11"
     type: vmess
     server: "47.250.135.244"
     port: 10000
@@ -156,6 +191,9 @@ proxy-groups:
       - "🇲🇾_6"
       - "🇲🇾_7"
       - "🇲🇾_8"
+      - "🇲🇾_9"
+      - "🇲🇾_10"
+      - "🇲🇾_11"
 
 
   - name: "Load Balance"
@@ -172,6 +210,9 @@ proxy-groups:
       - "🇲🇾_6"
       - "🇲🇾_7"
       - "🇲🇾_8"
+      - "🇲🇾_9"
+      - "🇲🇾_10"
+      - "🇲🇾_11"
 
 rules:
   - MATCH,PROXY

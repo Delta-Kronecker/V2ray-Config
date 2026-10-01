@@ -61,6 +61,14 @@ dns:
 
 proxies:
   - name: "🇹🇭_1"
+    type: trojan
+    server: "th1.zestapp778.com"
+    port: 443
+    password: "Trojan@82164024"
+    sni: "th1.zestapp778.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇹🇭_2"
     type: vmess
     server: "119.46.51.45"
     port: 37515
@@ -85,6 +93,7 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇹🇭_1"
+      - "🇹🇭_2"
 
 
   - name: "Load Balance"
@@ -94,6 +103,7 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇹🇭_1"
+      - "🇹🇭_2"
 
 rules:
   - MATCH,PROXY

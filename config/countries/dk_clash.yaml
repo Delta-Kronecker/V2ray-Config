@@ -60,22 +60,20 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇷🇸_1"
+  - name: "🇩🇰_1"
     type: vless
-    server: "176.108.246.58"
-    port: 9889
-    uuid: "5d16ac22-6eea-426f-b778-6f4c2961faef"
+    server: "93.92.112.233"
+    port: 443
+    uuid: "f7ec46bd-cb6e-44c2-b566-79873500e64d"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "dl.google.com"
-    client-fingerprint: "qq"
+    servername: "dr1.originask.site"
+    client-fingerprint: "chrome"
     reality-opts:
-      public-key: "ycPIUcY6ci2yi7YA_OHc20e4gzxEdJTqpmeShxSuHRU"
-      short-id: ""
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "grpc-tunnel"
+      public-key: "ftL0TyOTjUa1sL0t8BihJw4mivq1vmxVmln9UWtcWQ4"
+      short-id: "9fa94b480b31db5e"
+    flow: "xtls-rprx-vision"
 
 proxy-groups:
   - name: "PROXY"
@@ -92,7 +90,7 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇷🇸_1"
+      - "🇩🇰_1"
 
 
   - name: "Load Balance"
@@ -101,7 +99,7 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇷🇸_1"
+      - "🇩🇰_1"
 
 rules:
   - MATCH,PROXY
