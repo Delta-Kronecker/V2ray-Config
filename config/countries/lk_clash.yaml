@@ -62,18 +62,14 @@ dns:
 proxies:
   - name: "🇱🇰_1"
     type: vless
-    server: "144.31.129.174"
+    server: "free.sahanwickramasinghe.me"
     port: 443
-    uuid: "7b69c549-93f7-0316-88bc-f1a8c3c881e5"
+    uuid: "3d08ed67-5a47-42d3-a948-ebc7d2eb21f7"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "s3-fi-1.rucdn777.com"
+    servername: "aka.ms"
     client-fingerprint: "random"
-    reality-opts:
-      public-key: "GDlgvx8exl9BJ5dD2HSVqE2oUbZyZZOFX5EdnCn5j2M"
-      short-id: "c019a6ccd9134668"
-    flow: "xtls-rprx-vision"
   - name: "🇱🇰_2"
     type: vless
     server: "51.75.67.209"
@@ -84,16 +80,6 @@ proxies:
     skip-cert-verify: true
     servername: "free.sahanwickramasinghe.me"
     client-fingerprint: "firefox"
-  - name: "🇱🇰_3"
-    type: vless
-    server: "free.sahanwickramasinghe.me"
-    port: 443
-    uuid: "3d08ed67-5a47-42d3-a948-ebc7d2eb21f7"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "aka.ms"
-    client-fingerprint: "random"
 
 proxy-groups:
   - name: "PROXY"
@@ -112,7 +98,6 @@ proxy-groups:
     proxies:
       - "🇱🇰_1"
       - "🇱🇰_2"
-      - "🇱🇰_3"
 
 
   - name: "Load Balance"
@@ -123,7 +108,6 @@ proxy-groups:
     proxies:
       - "🇱🇰_1"
       - "🇱🇰_2"
-      - "🇱🇰_3"
 
 rules:
   - MATCH,PROXY

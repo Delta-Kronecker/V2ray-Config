@@ -60,34 +60,38 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇱🇺_1"
+  - name: "🇷🇸_1"
     type: vless
-    server: "193.239.179.15"
-    port: 443
-    uuid: "df08fd27-d7c2-4cd2-8a79-a32287682a79"
+    server: "45.132.177.96"
+    port: 9889
+    uuid: "5d16ac22-6eea-426f-b778-6f4c2961faef"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "worldoftanks.com"
-    client-fingerprint: "chrome"
+    servername: "dl.google.com"
+    client-fingerprint: "firefox"
     reality-opts:
-      public-key: "6dc3iKXilOQpA_JFrKlk5-CsFjSmOm_5p0kSQcO9qi4"
+      public-key: "ycPIUcY6ci2yi7YA_OHc20e4gzxEdJTqpmeShxSuHRU"
       short-id: ""
-    flow: "xtls-rprx-vision"
-  - name: "🇱🇺_2"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "grpc-tunnel"
+  - name: "🇷🇸_2"
     type: vless
-    server: "193.239.179.15"
-    port: 443
-    uuid: "ea21304e-3921-41ae-9c4b-7c5b0838cef8"
+    server: "176.108.246.58"
+    port: 9889
+    uuid: "5d16ac22-6eea-426f-b778-6f4c2961faef"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "worldoftanks.eu"
-    client-fingerprint: "chrome"
+    servername: "dl.google.com"
+    client-fingerprint: "qq"
     reality-opts:
-      public-key: "6dc3iKXilOQpA_JFrKlk5-CsFjSmOm_5p0kSQcO9qi4"
+      public-key: "ycPIUcY6ci2yi7YA_OHc20e4gzxEdJTqpmeShxSuHRU"
       short-id: ""
-    flow: "xtls-rprx-vision"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "grpc-tunnel"
 
 proxy-groups:
   - name: "PROXY"
@@ -104,8 +108,8 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇱🇺_1"
-      - "🇱🇺_2"
+      - "🇷🇸_1"
+      - "🇷🇸_2"
 
 
   - name: "Load Balance"
@@ -114,8 +118,8 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇱🇺_1"
-      - "🇱🇺_2"
+      - "🇷🇸_1"
+      - "🇷🇸_2"
 
 rules:
   - MATCH,PROXY

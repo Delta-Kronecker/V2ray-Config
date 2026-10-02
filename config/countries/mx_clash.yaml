@@ -62,7 +62,7 @@ dns:
 proxies:
   - name: "🇲🇽_1"
     type: vless
-    server: "34.51.119.243"
+    server: "34.51.23.2"
     port: 443
     uuid: "79bc7b01-6e4e-4365-a120-fefac8182bd9"
     udp: true
@@ -73,6 +73,21 @@ proxies:
     reality-opts:
       public-key: "vFcM44RcbcO5jcrSWHLd_0exXAnnJLhpCNnMrWCwlzI"
       short-id: "65f01b4b99e52015"
+  - name: "🇲🇽_2"
+    type: trojan
+    server: "154.205.152.109"
+    port: 443
+    password: "af4b064a9c39472fb34ad8b113acdc6b"
+    sni: "154.205.152.109"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇲🇽_3"
+    type: ss
+    server: "64.177.90.30"
+    port: 8388
+    cipher: "aes-256-gcm"
+    password: "BWyPPTusFKhGgzKh"
+    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -90,6 +105,8 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇲🇽_1"
+      - "🇲🇽_2"
+      - "🇲🇽_3"
 
 
   - name: "Load Balance"
@@ -99,6 +116,8 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇲🇽_1"
+      - "🇲🇽_2"
+      - "🇲🇽_3"
 
 rules:
   - MATCH,PROXY

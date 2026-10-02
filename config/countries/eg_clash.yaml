@@ -60,19 +60,14 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇨🇱_1"
-    type: vless
-    server: "34.176.187.219"
+  - name: "🇪🇬_1"
+    type: trojan
+    server: "38.54.59.90"
     port: 443
-    uuid: "ad5325f8-f0b3-41c4-a561-113529b60e70"
-    udp: true
-    tls: true
+    password: "af4b064a9c39472fb34ad8b113acdc6b"
+    sni: "38.54.59.90"
     skip-cert-verify: true
-    servername: "www.cloudflare.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "HnHVuSObMrldWGzq1-Eb93fwgu6QQRp6H0_8LX3ikDc"
-      short-id: "2c2d919f5183d0b7"
+    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -89,7 +84,7 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇨🇱_1"
+      - "🇪🇬_1"
 
 
   - name: "Load Balance"
@@ -98,7 +93,7 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇨🇱_1"
+      - "🇪🇬_1"
 
 rules:
   - MATCH,PROXY
