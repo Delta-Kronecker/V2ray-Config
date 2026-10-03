@@ -61,19 +61,6 @@ dns:
 
 proxies:
   - name: "🇲🇽_1"
-    type: vless
-    server: "34.51.23.2"
-    port: 443
-    uuid: "79bc7b01-6e4e-4365-a120-fefac8182bd9"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.cloudflare.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "vFcM44RcbcO5jcrSWHLd_0exXAnnJLhpCNnMrWCwlzI"
-      short-id: "65f01b4b99e52015"
-  - name: "🇲🇽_2"
     type: trojan
     server: "154.205.152.109"
     port: 443
@@ -81,7 +68,7 @@ proxies:
     sni: "154.205.152.109"
     skip-cert-verify: true
     udp: true
-  - name: "🇲🇽_3"
+  - name: "🇲🇽_2"
     type: ss
     server: "64.177.90.30"
     port: 8388
@@ -106,7 +93,6 @@ proxy-groups:
     proxies:
       - "🇲🇽_1"
       - "🇲🇽_2"
-      - "🇲🇽_3"
 
 
   - name: "Load Balance"
@@ -117,7 +103,6 @@ proxy-groups:
     proxies:
       - "🇲🇽_1"
       - "🇲🇽_2"
-      - "🇲🇽_3"
 
 rules:
   - MATCH,PROXY

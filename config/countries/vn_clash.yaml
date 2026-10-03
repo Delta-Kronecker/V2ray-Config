@@ -62,18 +62,18 @@ dns:
 proxies:
   - name: "🇻🇳_1"
     type: trojan
-    server: "36.50.134.29"
+    server: "103.9.77.6"
     port: 443
-    password: "94d219c9-1afc-4d42-b090-8b3794764380"
-    sni: "36.50.134.29"
+    password: "5a92d674-308c-4d95-b283-28383e63a59b"
+    sni: "103.9.77.6"
     skip-cert-verify: true
     udp: true
   - name: "🇻🇳_2"
     type: trojan
-    server: "36.50.135.142"
+    server: "36.50.134.29"
     port: 443
     password: "94d219c9-1afc-4d42-b090-8b3794764380"
-    sni: "36.50.135.142"
+    sni: "36.50.134.29"
     skip-cert-verify: true
     udp: true
   - name: "🇻🇳_3"
@@ -85,14 +85,6 @@ proxies:
     skip-cert-verify: true
     udp: true
   - name: "🇻🇳_4"
-    type: trojan
-    server: "103.9.77.6"
-    port: 443
-    password: "5a92d674-308c-4d95-b283-28383e63a59b"
-    sni: "103.9.77.6"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇻🇳_5"
     type: trojan
     server: "38.54.15.140"
     port: 443
@@ -120,7 +112,6 @@ proxy-groups:
       - "🇻🇳_2"
       - "🇻🇳_3"
       - "🇻🇳_4"
-      - "🇻🇳_5"
 
 
   - name: "Load Balance"
@@ -133,7 +124,6 @@ proxy-groups:
       - "🇻🇳_2"
       - "🇻🇳_3"
       - "🇻🇳_4"
-      - "🇻🇳_5"
 
 rules:
   - MATCH,PROXY

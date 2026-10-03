@@ -74,6 +74,19 @@ proxies:
       public-key: "dcox8XXfkOCmKn3kgrloj6wY5o1_0brJOi2mczYmAT4"
       short-id: "5ced03e42cc31aab"
   - name: "🇿🇦_2"
+    type: vless
+    server: "34.35.58.153"
+    port: 443
+    uuid: "8d65c8a7-4876-4556-bb6a-feccfb46ee81"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.cloudflare.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "bSN0cv0VMxmYZsNsMkkLndOTHZu74C1htJ2M71QMaVE"
+      short-id: "89b3a20484eb43ec"
+  - name: "🇿🇦_3"
     type: trojan
     server: "38.54.64.247"
     port: 443
@@ -81,47 +94,54 @@ proxies:
     sni: "38.54.64.247"
     skip-cert-verify: true
     udp: true
-  - name: "🇿🇦_3"
+  - name: "🇿🇦_4"
     type: ss
     server: "102.133.165.160"
     port: 16233
     cipher: "chacha20-ietf-poly1305"
     password: "Xsy8Ox4yOV3xLlpxtjzs3X"
-    udp: true
-  - name: "🇿🇦_4"
-    type: ss
-    server: "102.37.156.224"
-    port: 443
-    cipher: "chacha20-ietf-poly1305"
-    password: "aduB9HGxQHjA2SBMRjkHX6"
     udp: true
   - name: "🇿🇦_5"
     type: ss
-    server: "102.37.156.224"
+    server: "4.168.234.190"
     port: 443
     cipher: "chacha20-ietf-poly1305"
-    password: "aduB9HGxQHjA2SBMRjkHX6"
+    password: "SBw5b6E9noHolBdA"
     udp: true
   - name: "🇿🇦_6"
-    type: ss
-    server: "102.37.156.224"
-    port: 443
-    cipher: "chacha20-ietf-poly1305"
-    password: "aduB9HGxQHjA2SBMRjkHX6"
-    udp: true
-  - name: "🇿🇦_7"
-    type: ss
-    server: "102.133.165.160"
-    port: 16233
-    cipher: "chacha20-ietf-poly1305"
-    password: "Xsy8Ox4yOV3xLlpxtjzs3X"
-    udp: true
-  - name: "🇿🇦_8"
     type: ss
     server: "139.84.247.164"
     port: 8388
     cipher: "chacha20-ietf-poly1305"
     password: "tfAcRikawhNoZAhu"
+    udp: true
+  - name: "🇿🇦_7"
+    type: ss
+    server: "102.37.156.224"
+    port: 443
+    cipher: "chacha20-ietf-poly1305"
+    password: "aduB9HGxQHjA2SBMRjkHX6"
+    udp: true
+  - name: "🇿🇦_8"
+    type: ss
+    server: "102.37.156.224"
+    port: 443
+    cipher: "chacha20-ietf-poly1305"
+    password: "aduB9HGxQHjA2SBMRjkHX6"
+    udp: true
+  - name: "🇿🇦_9"
+    type: ss
+    server: "102.133.165.160"
+    port: 16233
+    cipher: "chacha20-ietf-poly1305"
+    password: "Xsy8Ox4yOV3xLlpxtjzs3X"
+    udp: true
+  - name: "🇿🇦_10"
+    type: ss
+    server: "102.37.156.224"
+    port: 443
+    cipher: "chacha20-ietf-poly1305"
+    password: "aduB9HGxQHjA2SBMRjkHX6"
     udp: true
 
 proxy-groups:
@@ -147,6 +167,8 @@ proxy-groups:
       - "🇿🇦_6"
       - "🇿🇦_7"
       - "🇿🇦_8"
+      - "🇿🇦_9"
+      - "🇿🇦_10"
 
 
   - name: "Load Balance"
@@ -163,6 +185,8 @@ proxy-groups:
       - "🇿🇦_6"
       - "🇿🇦_7"
       - "🇿🇦_8"
+      - "🇿🇦_9"
+      - "🇿🇦_10"
 
 rules:
   - MATCH,PROXY

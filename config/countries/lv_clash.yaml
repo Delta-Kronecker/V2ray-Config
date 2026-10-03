@@ -62,16 +62,6 @@ dns:
 proxies:
   - name: "🇱🇻_1"
     type: vless
-    server: "87.192.47.10"
-    port: 52006
-    uuid: "bc659d88-a1e0-4c65-a49a-7b51b26a7a7f"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "grok.setlisting.ru"
-    flow: "xtls-rprx-vision"
-  - name: "🇱🇻_2"
-    type: vless
     server: "176.109.104.103"
     port: 9881
     uuid: "5d16ac22-6eea-426f-b778-6f4c2961faef"
@@ -86,21 +76,85 @@ proxies:
     network: grpc
     grpc-opts:
       grpc-service-name: "grpc-tunnel"
-  - name: "🇱🇻_3"
+  - name: "🇱🇻_2"
     type: vless
-    server: "138.124.63.227"
+    server: "85.159.228.223"
     port: 443
-    uuid: "21d0929a-ba27-4822-9b50-bda9ee54a494"
+    uuid: "454431fc-71e2-42b1-b375-5b55dd06666a"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "n28.himoy.space"
+    servername: "example.org"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "aUdvs6o4PHN6jmdkIKBA2rHsN_7l8W2SaDfNgzn-BwU"
+      short-id: ""
+  - name: "🇱🇻_3"
+    type: vless
+    server: "lv.monkora.org"
+    port: 443
+    uuid: "454431fc-71e2-42b1-b375-5b55dd06666a"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "example.org"
     client-fingerprint: "firefox"
     reality-opts:
-      public-key: "FvdI1t5lHFIH_ZDtiL_Ajy0g4qNeMhQH00HXuchESAw"
-      short-id: "a6b13b7e952579e5"
-    flow: "xtls-rprx-vision"
+      public-key: "aUdvs6o4PHN6jmdkIKBA2rHsN_7l8W2SaDfNgzn-BwU"
+      short-id: ""
   - name: "🇱🇻_4"
+    type: vless
+    server: "latinki.pumpkinpie.study"
+    port: 443
+    uuid: "8f6e49e6-7f03-4f10-9da9-1716158d80ed"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "latinki.pumpkinpie.study"
+    client-fingerprint: "random"
+    reality-opts:
+      public-key: "wHTq_owme8N6237B37GhneBcNJQtzRdIFouRkSscgnQ"
+      short-id: "40fac5d64bc6a540"
+    flow: "xtls-rprx-vision"
+  - name: "🇱🇻_5"
+    type: vless
+    server: "87.192.47.10"
+    port: 52006
+    uuid: "bc659d88-a1e0-4c65-a49a-7b51b26a7a7f"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "grok.setlisting.ru"
+    flow: "xtls-rprx-vision"
+  - name: "🇱🇻_6"
+    type: vless
+    server: "185.28.47.28"
+    port: 443
+    uuid: "8f6e49e6-7f03-4f10-9da9-1716158d80ed"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "latinki.pumpkinpie.study"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "wHTq_owme8N6237B37GhneBcNJQtzRdIFouRkSscgnQ"
+      short-id: "40fac5d64bc6a540"
+    flow: "xtls-rprx-vision"
+  - name: "🇱🇻_7"
+    type: vless
+    server: "31.76.62.32"
+    port: 443
+    uuid: "8e66d40e-6f62-4243-a7d8-ebe83e4c2e77"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "lv-rix-1.koolb.org"
+    client-fingerprint: "safari"
+    reality-opts:
+      public-key: "C4kK4uxh9a5ym0-JmcaTwkUwkB0FTRjSAIlHLTKRHlo"
+      short-id: "84341e3e"
+    flow: "xtls-rprx-vision"
+  - name: "🇱🇻_8"
     type: vless
     server: "195.123.213.28"
     port: 443
@@ -114,7 +168,7 @@ proxies:
       public-key: "NMgy1XgCSXExOg6Tg8xG9lCWttMF6sjdpB41lZy6FWo"
       short-id: "5c256336e3b673fa"
     flow: "xtls-rprx-vision"
-  - name: "🇱🇻_5"
+  - name: "🇱🇻_9"
     type: vless
     server: "138.124.180.137"
     port: 443
@@ -128,14 +182,6 @@ proxies:
       public-key: "GBdkyDLfr0LIZo_94Xv8ycAKOmkjArYzwJAEMhuXX2c"
       short-id: "33acba1b"
     flow: "xtls-rprx-vision"
-  - name: "🇱🇻_6"
-    type: trojan
-    server: "31.57.61.76"
-    port: 2053
-    password: "8r<[9'l6hAO#8ZQi"
-    sni: "Koma-YT.PAGeS.Dev"
-    skip-cert-verify: true
-    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -158,6 +204,9 @@ proxy-groups:
       - "🇱🇻_4"
       - "🇱🇻_5"
       - "🇱🇻_6"
+      - "🇱🇻_7"
+      - "🇱🇻_8"
+      - "🇱🇻_9"
 
 
   - name: "Load Balance"
@@ -172,6 +221,9 @@ proxy-groups:
       - "🇱🇻_4"
       - "🇱🇻_5"
       - "🇱🇻_6"
+      - "🇱🇻_7"
+      - "🇱🇻_8"
+      - "🇱🇻_9"
 
 rules:
   - MATCH,PROXY

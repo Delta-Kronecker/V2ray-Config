@@ -62,30 +62,38 @@ dns:
 proxies:
   - name: "🇧🇪_1"
     type: vless
-    server: "34.156.242.126"
+    server: "be.monkora.org"
     port: 443
-    uuid: "d4d1b597-2769-465b-b7fa-c2b84393d3ee"
+    uuid: "454431fc-71e2-42b1-b375-5b55dd06666a"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "www.cloudflare.com"
-    client-fingerprint: "chrome"
+    servername: "example.org"
+    client-fingerprint: "firefox"
     reality-opts:
-      public-key: "OQ0MKzP5TYtlJCteckb25tD6USBH__D1z28Y8BOcdG4"
-      short-id: "b4f2c0e3d8668c2f"
+      public-key: "aUdvs6o4PHN6jmdkIKBA2rHsN_7l8W2SaDfNgzn-BwU"
+      short-id: ""
   - name: "🇧🇪_2"
     type: vless
-    server: "34.38.82.200"
+    server: "144.31.219.97"
     port: 443
-    uuid: "6d341f6e-7b9d-4ae3-999b-00333de7bdfb"
+    uuid: "454431fc-71e2-42b1-b375-5b55dd06666a"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "www.cloudflare.com"
-    client-fingerprint: "chrome"
+    servername: "example.org"
+    client-fingerprint: "firefox"
     reality-opts:
-      public-key: "v6QpErcVOVKIYLm53R3bAP8zIKCFr4HAJWW0VwBKtws"
-      short-id: "31f187650d9530bb"
+      public-key: "aUdvs6o4PHN6jmdkIKBA2rHsN_7l8W2SaDfNgzn-BwU"
+      short-id: ""
+  - name: "🇧🇪_3"
+    type: vmess
+    server: "dog-hk.kunlun01dns.com"
+    port: 21022
+    uuid: "9464ca40-dd75-3742-a628-d931a9f413b2"
+    alterId: 0
+    cipher: "auto"
+    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -104,6 +112,7 @@ proxy-groups:
     proxies:
       - "🇧🇪_1"
       - "🇧🇪_2"
+      - "🇧🇪_3"
 
 
   - name: "Load Balance"
@@ -114,6 +123,7 @@ proxy-groups:
     proxies:
       - "🇧🇪_1"
       - "🇧🇪_2"
+      - "🇧🇪_3"
 
 rules:
   - MATCH,PROXY

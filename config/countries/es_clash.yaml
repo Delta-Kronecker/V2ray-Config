@@ -62,44 +62,18 @@ dns:
 proxies:
   - name: "🇪🇸_1"
     type: vless
-    server: "assets-es.pleiades.codes"
-    port: 443
-    uuid: "e0b9fb0f-1bbd-478b-9580-c2294778338b"
+    server: "es2.h1cloud.net"
+    port: 25535
+    uuid: "c379d8e4-c67d-42ec-a3ed-ca99d1ad0546"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "assets-es.pleiades.codes"
+    servername: "www.microsoft.com"
     client-fingerprint: "firefox"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "cdn.v1.AssetService"
-  - name: "🇪🇸_2"
-    type: vless
-    server: "193.238.154.5"
-    port: 443
-    uuid: "e0b9fb0f-1bbd-478b-9580-c2294778338b"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "assets-es.pleiades.codes"
-    client-fingerprint: "chrome"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "cdn.v1.AssetService"
-  - name: "🇪🇸_3"
-    type: vless
-    server: "34.175.90.91"
-    port: 443
-    uuid: "c55c9880-2f9c-4ad6-bfc2-5054516bf613"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.cloudflare.com"
-    client-fingerprint: "chrome"
     reality-opts:
-      public-key: "lM9EQ1rZH9inQjrZesuqgldsXYN_yfT5-tqhPfbyen4"
-      short-id: "1c9e101e99bf86bb"
-  - name: "🇪🇸_4"
+      public-key: "Jh7CocBJSA55VZcLfXwXwoQ_Hi5pV-L1vv1SY-IrSh4"
+      short-id: "7642ce57308852e7"
+  - name: "🇪🇸_2"
     type: vless
     server: "46.28.71.247"
     port: 443
@@ -112,21 +86,56 @@ proxies:
       public-key: "v4MuZIvFrTPT5GHMSaPryUAbIZlLstmsUTzmC1E-JTE"
       short-id: "0dfc23fe80778c00"
     flow: "xtls-rprx-vision"
-  - name: "🇪🇸_5"
-    type: trojan
-    server: "65.20.102.54"
+  - name: "🇪🇸_3"
+    type: vless
+    server: "45.154.206.88"
     port: 443
-    password: "842b5f9dd11e458d8613c907c4cc5723"
-    sni: "www.gpt123.one"
+    uuid: "454431fc-71e2-42b1-b375-5b55dd06666a"
+    udp: true
+    tls: true
     skip-cert-verify: true
+    servername: "es.monkeyisland.xyz"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "2AKBmK0PMf2zUMhRo1Ad-WNf_XoRk3AN-SGo6ZdhxA4"
+      short-id: "ecca56e9a9963ed7"
+    flow: "xtls-rprx-vision"
+  - name: "🇪🇸_4"
+    type: vless
+    server: "es.monkeyisland.xyz"
+    port: 443
+    uuid: "454431fc-71e2-42b1-b375-5b55dd06666a"
     udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "es.monkeyisland.xyz"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "2AKBmK0PMf2zUMhRo1Ad-WNf_XoRk3AN-SGo6ZdhxA4"
+      short-id: "ecca56e9a9963ed7"
+    flow: "xtls-rprx-vision"
+  - name: "🇪🇸_5"
+    type: vless
+    server: "196.245.52.146"
+    port: 25535
+    uuid: "c379d8e4-c67d-42ec-a3ed-ca99d1ad0546"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.microsoft.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "Jh7CocBJSA55VZcLfXwXwoQ_Hi5pV-L1vv1SY-IrSh4"
+      short-id: "7642ce57308852e7"
   - name: "🇪🇸_6"
-    type: ss
-    server: "108.181.121.226"
-    port: 8388
-    cipher: "chacha20-ietf-poly1305"
-    password: "WSyL4XTwNsdv"
+    type: vless
+    server: "85.90.217.42"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
     udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "85.90.217.42"
   - name: "🇪🇸_7"
     type: ss
     server: "108.181.121.226"
@@ -143,17 +152,17 @@ proxies:
     udp: true
   - name: "🇪🇸_9"
     type: ss
-    server: "108.181.121.226"
-    port: 8388
-    cipher: "chacha20-ietf-poly1305"
-    password: "WSyL4XTwNsdv"
-    udp: true
-  - name: "🇪🇸_10"
-    type: ss
     server: "140.174.184.5"
     port: 8388
     cipher: "chacha20-ietf-poly1305"
     password: "qItG8SueYQcP"
+    udp: true
+  - name: "🇪🇸_10"
+    type: ss
+    server: "108.181.121.226"
+    port: 8388
+    cipher: "chacha20-ietf-poly1305"
+    password: "WSyL4XTwNsdv"
     udp: true
   - name: "🇪🇸_11"
     type: ss
@@ -163,6 +172,13 @@ proxies:
     password: "qItG8SueYQcP"
     udp: true
   - name: "🇪🇸_12"
+    type: ss
+    server: "108.181.121.226"
+    port: 8388
+    cipher: "chacha20-ietf-poly1305"
+    password: "WSyL4XTwNsdv"
+    udp: true
+  - name: "🇪🇸_13"
     type: vmess
     server: "66.163.118.73"
     port: 22324
@@ -198,6 +214,7 @@ proxy-groups:
       - "🇪🇸_10"
       - "🇪🇸_11"
       - "🇪🇸_12"
+      - "🇪🇸_13"
 
 
   - name: "Load Balance"
@@ -218,6 +235,7 @@ proxy-groups:
       - "🇪🇸_10"
       - "🇪🇸_11"
       - "🇪🇸_12"
+      - "🇪🇸_13"
 
 rules:
   - MATCH,PROXY
