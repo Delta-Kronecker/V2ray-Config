@@ -60,19 +60,20 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇮🇱_1"
+  - name: "🇬🇹_1"
     type: vless
-    server: "34.165.56.30"
+    server: "185.47.254.251"
     port: 443
-    uuid: "0c40bce9-8710-4820-8f22-0742b61df999"
+    uuid: "878fb7f7-fc65-465e-a352-17c7216c6f3d"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "www.cloudflare.com"
+    servername: "gateway.icloud.com"
     client-fingerprint: "chrome"
     reality-opts:
-      public-key: "AeQDUAVCESyA1hFkw6lENmgWAY3sBH9CFPpPAddPwVc"
-      short-id: "fffff8acddadcac3"
+      public-key: "6-_ZidygR8PRt4gtHlGCAW-PPmjEIm7Wn7MZqJU1z1Q"
+      short-id: "6c059ecfddf9b179"
+    flow: "xtls-rprx-vision"
 
 proxy-groups:
   - name: "PROXY"
@@ -89,7 +90,7 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇮🇱_1"
+      - "🇬🇹_1"
 
 
   - name: "Load Balance"
@@ -98,7 +99,7 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇮🇱_1"
+      - "🇬🇹_1"
 
 rules:
   - MATCH,PROXY

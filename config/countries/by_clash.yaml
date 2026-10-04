@@ -60,22 +60,32 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇱🇺_1"
+  - name: "🇧🇾_1"
     type: vless
-    server: "lbeiggdz.smart-cats.ru"
+    server: "gfgfdgdfg.apruxdomain.online"
     port: 443
-    uuid: "8325bd97-b77c-4917-acaa-2446e9e8cc03"
+    uuid: "0c4e0fa4-d16e-47a2-8325-39a1a8fb04d8"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "vk.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "mzrVbIsEggpJfXR8M7yxki2vgv3sXWQdy1bGhXqatUY"
-      short-id: "79651ae525860543"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "haknewhpjmv"
+    servername: "gfgfdgdfg.apruxdomain.online"
+    client-fingerprint: "qq"
+    network: httpupgrade
+    httpupgrade-opts:
+      path: "/"
+  - name: "🇧🇾_2"
+    type: vless
+    server: "178.172.235.73"
+    port: 443
+    uuid: "0c4e0fa4-d16e-47a2-8325-39a1a8fb04d8"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "gfgfdgdfg.apruxdomain.online"
+    client-fingerprint: "chrome"
+    network: httpupgrade
+    httpupgrade-opts:
+      path: "/"
 
 proxy-groups:
   - name: "PROXY"
@@ -92,7 +102,8 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇱🇺_1"
+      - "🇧🇾_1"
+      - "🇧🇾_2"
 
 
   - name: "Load Balance"
@@ -101,7 +112,8 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇱🇺_1"
+      - "🇧🇾_1"
+      - "🇧🇾_2"
 
 rules:
   - MATCH,PROXY

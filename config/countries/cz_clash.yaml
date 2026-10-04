@@ -62,22 +62,6 @@ dns:
 proxies:
   - name: "🇨🇿_1"
     type: vless
-    server: "45.132.176.161"
-    port: 9891
-    uuid: "5d16ac22-6eea-426f-b778-6f4c2961faef"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "dl.google.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0"
-      short-id: "aa"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "grpc-tunnel"
-  - name: "🇨🇿_2"
-    type: vless
     server: "85.117.235.50"
     port: 443
     uuid: "f4d71fd6-1c25-4748-836b-1dbda9268039"
@@ -90,36 +74,7 @@ proxies:
       public-key: "PmdZ2ETkHc0zjYcs22xT_wyZk5fEpX7mg7RP396HBBc"
       short-id: "232b1b09e45325a4"
     flow: "xtls-rprx-vision"
-  - name: "🇨🇿_3"
-    type: vless
-    server: "cz.monkora.org"
-    port: 443
-    uuid: "454431fc-71e2-42b1-b375-5b55dd06666a"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "example.org"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "aUdvs6o4PHN6jmdkIKBA2rHsN_7l8W2SaDfNgzn-BwU"
-      short-id: ""
-  - name: "🇨🇿_4"
-    type: vless
-    server: "45.132.177.83"
-    port: 9891
-    uuid: "5d16ac22-6eea-426f-b778-6f4c2961faef"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "dl.google.com"
-    client-fingerprint: "random"
-    reality-opts:
-      public-key: "Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0"
-      short-id: "aabbccdd"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "grpc-tunnel"
-  - name: "🇨🇿_5"
+  - name: "🇨🇿_2"
     type: vless
     server: "31.76.7.227"
     port: 443
@@ -133,19 +88,6 @@ proxies:
       public-key: "nIL5EeUo2XUkCaLJGbzgRm6zhF-96kWvV2VmhEt3CX4"
       short-id: "4af4102cb26e59"
     flow: "xtls-rprx-vision"
-  - name: "🇨🇿_6"
-    type: vless
-    server: "86.54.82.184"
-    port: 443
-    uuid: "454431fc-71e2-42b1-b375-5b55dd06666a"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "example.org"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "aUdvs6o4PHN6jmdkIKBA2rHsN_7l8W2SaDfNgzn-BwU"
-      short-id: ""
 
 proxy-groups:
   - name: "PROXY"
@@ -164,10 +106,6 @@ proxy-groups:
     proxies:
       - "🇨🇿_1"
       - "🇨🇿_2"
-      - "🇨🇿_3"
-      - "🇨🇿_4"
-      - "🇨🇿_5"
-      - "🇨🇿_6"
 
 
   - name: "Load Balance"
@@ -178,10 +116,6 @@ proxy-groups:
     proxies:
       - "🇨🇿_1"
       - "🇨🇿_2"
-      - "🇨🇿_3"
-      - "🇨🇿_4"
-      - "🇨🇿_5"
-      - "🇨🇿_6"
 
 rules:
   - MATCH,PROXY

@@ -62,6 +62,22 @@ dns:
 proxies:
   - name: "🇦🇪_1"
     type: vless
+    server: "122.8.45.4"
+    port: 8443
+    uuid: "2d24e797-ec6c-0808-dd31-9cd22b5dfdc7"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "download.nvidia.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "WtLZK1KyhSpI3K-R4M3sLAHWPOgGPMgkL6RneL0OfCY"
+      short-id: ""
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "TunService"
+  - name: "🇦🇪_2"
+    type: vless
     server: "146.70.102.82"
     port: 443
     uuid: "31fd2fde-ca69-450e-8c03-eaad819b06b9"
@@ -74,7 +90,7 @@ proxies:
       public-key: "GDer6NQYXdbccrFI0tLn2671PjCvrcSy0R7TKY8vG1k"
       short-id: "002fb4ec7b3088cc"
     flow: "xtls-rprx-vision"
-  - name: "🇦🇪_2"
+  - name: "🇦🇪_3"
     type: trojan
     server: "154.90.55.81"
     port: 443
@@ -100,6 +116,7 @@ proxy-groups:
     proxies:
       - "🇦🇪_1"
       - "🇦🇪_2"
+      - "🇦🇪_3"
 
 
   - name: "Load Balance"
@@ -110,6 +127,7 @@ proxy-groups:
     proxies:
       - "🇦🇪_1"
       - "🇦🇪_2"
+      - "🇦🇪_3"
 
 rules:
   - MATCH,PROXY

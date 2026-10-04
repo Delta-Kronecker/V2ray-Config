@@ -62,15 +62,17 @@ dns:
 proxies:
   - name: "🇲🇩_1"
     type: vless
-    server: "80.96.109.15"
+    server: "89.35.14.43"
     port: 443
-    uuid: "cd3bb7d9-7df3-4644-ac05-c260990ac277"
+    uuid: "6d257a71-6d98-42d2-983a-34363b6dedcd"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "moldova.failspace.top"
+    servername: "md7.mediacorp.fyi"
     client-fingerprint: "firefox"
-    flow: "xtls-rprx-vision"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "mobile.api.Event"
 
 proxy-groups:
   - name: "PROXY"

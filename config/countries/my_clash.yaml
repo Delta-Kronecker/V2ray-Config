@@ -61,19 +61,13 @@ dns:
 
 proxies:
   - name: "🇲🇾_1"
-    type: vless
-    server: "149.33.30.176"
+    type: trojan
+    server: "47.250.84.25"
     port: 443
-    uuid: "5fffad1b-10f0-41ff-abe7-e5a92696d5ef"
-    udp: true
-    tls: true
+    password: "5931134d1cde66bf83a54acdfebe7ab2"
+    sni: "47.250.84.25"
     skip-cert-verify: true
-    servername: "www.apple.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "rk_iTiKEWYK02oF8lCIXrVlM7pWMSYX-Iuaz6Eat5lI"
-      short-id: "4b26322b354bd74e"
-    flow: "xtls-rprx-vision"
+    udp: true
   - name: "🇲🇾_2"
     type: trojan
     server: "210.187.176.154"
@@ -84,32 +78,25 @@ proxies:
     udp: true
   - name: "🇲🇾_3"
     type: ss
-    server: "96.126.190.196"
-    port: 443
+    server: "47.250.212.59"
+    port: 2053
     cipher: "none"
     password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
     udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "/59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
   - name: "🇲🇾_4"
     type: ss
-    server: "47.250.212.59"
-    port: 2053
+    server: "96.126.190.196"
+    port: 443
     cipher: "none"
     password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
     udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "/59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
   - name: "🇲🇾_5"
-    type: ss
-    server: "47.250.212.59"
-    port: 2053
-    cipher: "none"
-    password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
-    udp: true
-  - name: "🇲🇾_6"
     type: ss
     server: "96.126.190.196"
     port: 443
@@ -122,6 +109,13 @@ proxies:
       path: "/59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
       host: "woshinidie-et3.pages.dev"
       tls: true
+  - name: "🇲🇾_6"
+    type: ss
+    server: "47.250.212.59"
+    port: 2053
+    cipher: "none"
+    password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
+    udp: true
 
 proxy-groups:
   - name: "PROXY"
