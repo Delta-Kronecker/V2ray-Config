@@ -75,6 +75,13 @@ proxies:
     cipher: "aes-256-gcm"
     password: "BWyPPTusFKhGgzKh"
     udp: true
+  - name: "🇲🇽_3"
+    type: ss
+    server: "147.78.1.234"
+    port: 16673
+    cipher: "aes-128-gcm"
+    password: "67c57ae584eecd70396fcd7ca7521130"
+    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -93,6 +100,7 @@ proxy-groups:
     proxies:
       - "🇲🇽_1"
       - "🇲🇽_2"
+      - "🇲🇽_3"
 
 
   - name: "Load Balance"
@@ -103,6 +111,7 @@ proxy-groups:
     proxies:
       - "🇲🇽_1"
       - "🇲🇽_2"
+      - "🇲🇽_3"
 
 rules:
   - MATCH,PROXY

@@ -72,34 +72,6 @@ proxies:
     flow: "xtls-rprx-vision"
   - name: "🇱🇻_2"
     type: vless
-    server: "195.123.213.28"
-    port: 443
-    uuid: "02fcc1a4-ee90-4970-8bbb-4ffaa8109d24"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.cloudflare.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "NMgy1XgCSXExOg6Tg8xG9lCWttMF6sjdpB41lZy6FWo"
-      short-id: "5c256336e3b673fa"
-    flow: "xtls-rprx-vision"
-  - name: "🇱🇻_3"
-    type: vless
-    server: "latinki.pumpkinpie.study"
-    port: 443
-    uuid: "8f6e49e6-7f03-4f10-9da9-1716158d80ed"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "latinki.pumpkinpie.study"
-    client-fingerprint: "random"
-    reality-opts:
-      public-key: "wHTq_owme8N6237B37GhneBcNJQtzRdIFouRkSscgnQ"
-      short-id: "40fac5d64bc6a540"
-    flow: "xtls-rprx-vision"
-  - name: "🇱🇻_4"
-    type: vless
     server: "138.124.180.137"
     port: 443
     uuid: "5234b2b7-5e07-422c-8159-d62a676c00c6"
@@ -112,20 +84,32 @@ proxies:
       public-key: "GBdkyDLfr0LIZo_94Xv8ycAKOmkjArYzwJAEMhuXX2c"
       short-id: "33acba1b"
     flow: "xtls-rprx-vision"
-  - name: "🇱🇻_5"
-    type: vless
-    server: "185.28.47.28"
+  - name: "🇱🇻_3"
+    type: ss
+    server: "46.32.186.85"
     port: 443
-    uuid: "8f6e49e6-7f03-4f10-9da9-1716158d80ed"
+    cipher: "none"
+    password: "3e96ef7d-8637-42c2-ac73-75182196e755"
     udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "latinki.pumpkinpie.study"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "wHTq_owme8N6237B37GhneBcNJQtzRdIFouRkSscgnQ"
-      short-id: "40fac5d64bc6a540"
-    flow: "xtls-rprx-vision"
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "3e96ef7d-8637-42c2-ac73-75182196e755/?ed\\=2560"
+      host: "mfvpn.fuchen.indevs.in"
+      tls: true
+  - name: "🇱🇻_4"
+    type: ss
+    server: "193.68.89.220"
+    port: 8443
+    cipher: "none"
+    password: "3e96ef7d-8637-42c2-ac73-75182196e755"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "3e96ef7d-8637-42c2-ac73-75182196e755/?ed\\=2560"
+      host: "mfvpn.fuchen.indevs.in"
+      tls: true
 
 proxy-groups:
   - name: "PROXY"
@@ -146,7 +130,6 @@ proxy-groups:
       - "🇱🇻_2"
       - "🇱🇻_3"
       - "🇱🇻_4"
-      - "🇱🇻_5"
 
 
   - name: "Load Balance"
@@ -159,7 +142,6 @@ proxy-groups:
       - "🇱🇻_2"
       - "🇱🇻_3"
       - "🇱🇻_4"
-      - "🇱🇻_5"
 
 rules:
   - MATCH,PROXY

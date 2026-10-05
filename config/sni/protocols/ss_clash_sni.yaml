@@ -60,13 +60,12 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇺🇿_1"
-    type: trojan
-    server: "93.174.164.49"
-    port: 443
-    password: "3828095943467868160"
-    sni: "concrete-lion.dolphin109.quest"
-    skip-cert-verify: true
+  - name: "@DeltaKroneckerGithub_6011"
+    type: ss
+    server: "127.0.0.1"
+    port: 40443
+    cipher: "none"
+    password: "f282b878-8711-45a1-8c69-5564172123c1"
     udp: true
 
 proxy-groups:
@@ -84,7 +83,7 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇺🇿_1"
+      - "@DeltaKroneckerGithub_6011"
 
 
   - name: "Load Balance"
@@ -93,7 +92,7 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇺🇿_1"
+      - "@DeltaKroneckerGithub_6011"
 
 rules:
   - MATCH,PROXY

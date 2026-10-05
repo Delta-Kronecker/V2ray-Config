@@ -62,20 +62,6 @@ dns:
 proxies:
   - name: "🇨🇿_1"
     type: vless
-    server: "85.117.235.50"
-    port: 443
-    uuid: "f4d71fd6-1c25-4748-836b-1dbda9268039"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "cz1.animeteka.info"
-    client-fingerprint: "ios"
-    reality-opts:
-      public-key: "PmdZ2ETkHc0zjYcs22xT_wyZk5fEpX7mg7RP396HBBc"
-      short-id: "232b1b09e45325a4"
-    flow: "xtls-rprx-vision"
-  - name: "🇨🇿_2"
-    type: vless
     server: "31.76.7.227"
     port: 443
     uuid: "d0e771c5-024e-4393-bb90-4a3e3c561656"
@@ -105,7 +91,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇨🇿_1"
-      - "🇨🇿_2"
 
 
   - name: "Load Balance"
@@ -115,7 +100,6 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇨🇿_1"
-      - "🇨🇿_2"
 
 rules:
   - MATCH,PROXY

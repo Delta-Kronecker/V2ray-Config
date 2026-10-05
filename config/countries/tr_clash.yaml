@@ -62,44 +62,45 @@ dns:
 proxies:
   - name: "🇹🇷_1"
     type: vless
-    server: "151.241.226.201"
-    port: 2053
-    uuid: "0eed6293-8cf1-4e77-ac10-9c3d50d0b2f8"
+    server: "85.192.48.142"
+    port: 443
+    uuid: "adc11f30-e4cb-4985-bf5e-f9ded69c019f"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "www.apple.com"
-    client-fingerprint: "firefox"
+    servername: "nvidia.com"
     reality-opts:
-      public-key: "bYW_MmB_CUHrsyoCAUKviI2LZdHf63yY2yOPXbih104"
-      short-id: "9e419c0759b54d6f"
+      public-key: "fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI"
+      short-id: "db04ce8bdb8900f1"
+    flow: "xtls-rprx-vision"
   - name: "🇹🇷_2"
     type: vless
-    server: "tutaim.azad0namah.ir"
-    port: 8080
-    uuid: "fdc1206a-9d2e-42b7-b615-9ccea8cf70ee"
+    server: "185.87.24.179"
+    port: 2085
+    uuid: "2f322254-c1e3-4ec1-80ac-822d44a2238a"
     udp: true
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "vless"
   - name: "🇹🇷_3"
     type: vless
-    server: "194.135.34.223"
-    port: 443
-    uuid: "4deb9957-e037-4ae2-8892-da357cc6f99f"
+    server: "155.117.5.158"
+    port: 2053
+    uuid: "9ef61079-6f7d-4911-9608-943da85d8e6f"
     udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "baltic.cendora.ru"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "t_qv0VOfWhKZJV_giGC55-ipgHYWo44Yfvik_B8T8ik"
-      short-id: "4a46213c935e2ee4"
-    flow: "xtls-rprx-vision"
   - name: "🇹🇷_4"
+    type: vless
+    server: "212.74.39.235"
+    port: 2053
+    uuid: "9ef61079-6f7d-4911-9608-943da85d8e6f"
+    udp: true
+  - name: "🇹🇷_5"
     type: vless
     server: "test.keoplentuio.xyz"
     port: 2053
     uuid: "9ef61079-6f7d-4911-9608-943da85d8e6f"
     udp: true
-  - name: "🇹🇷_5"
+  - name: "🇹🇷_6"
     type: vless
     server: "81.177.215.175"
     port: 443
@@ -113,20 +114,79 @@ proxies:
       public-key: "lHCkAu_DOVFtE-iL2JGrPt44QeTCFijXuRfuGaSni3Q"
       short-id: "9e4eced6e98ed4d4"
     flow: "xtls-rprx-vision"
-  - name: "🇹🇷_6"
+  - name: "🇹🇷_7"
     type: vless
-    server: "85.192.48.142"
-    port: 443
-    uuid: "adc11f30-e4cb-4985-bf5e-f9ded69c019f"
+    server: "178.83.46.125"
+    port: 2053
+    uuid: "9ef61079-6f7d-4911-9608-943da85d8e6f"
+    udp: true
+  - name: "🇹🇷_8"
+    type: vless
+    server: "151.241.226.201"
+    port: 2053
+    uuid: "0eed6293-8cf1-4e77-ac10-9c3d50d0b2f8"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "nvidia.com"
+    servername: "www.apple.com"
+    client-fingerprint: "firefox"
     reality-opts:
-      public-key: "fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI"
-      short-id: "db04ce8bdb8900f1"
+      public-key: "bYW_MmB_CUHrsyoCAUKviI2LZdHf63yY2yOPXbih104"
+      short-id: "9e419c0759b54d6f"
+  - name: "🇹🇷_9"
+    type: vless
+    server: "cookie.wookshop.ir"
+    port: 29221
+    uuid: "568bcbbc-7a90-4164-8b5d-1c0bbeccfa38"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.speedtest.net"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "Nk02XmnZz8nCeInyXD74BD4RRBvmyjiLlh_aBXYNjx0"
+      short-id: "0fe8d86cb65aa9a5"
+  - name: "🇹🇷_10"
+    type: vless
+    server: "cookie.wookshop.ir"
+    port: 16328
+    uuid: "568bcbbc-7a90-4164-8b5d-1c0bbeccfa38"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.epicgames.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "Mq4kcFmH5e0ttW-i3WkNMDxx0MmnpQ55fa7QroCmNHA"
+      short-id: "7dda83c53e"
+  - name: "🇹🇷_11"
+    type: vless
+    server: "206.1.100.211"
+    port: 34417
+    uuid: "568bcbbc-7a90-4164-8b5d-1c0bbeccfa38"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "timeline.www.cloudflare.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "U1P07BbfuNbqxUjItxSMEvHtpyf-DfhHEL9vcSy5Kmc"
+      short-id: "99a7726cf144"
+  - name: "🇹🇷_12"
+    type: vless
+    server: "194.135.34.223"
+    port: 443
+    uuid: "4deb9957-e037-4ae2-8892-da357cc6f99f"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "baltic.cendora.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "t_qv0VOfWhKZJV_giGC55-ipgHYWo44Yfvik_B8T8ik"
+      short-id: "4a46213c935e2ee4"
     flow: "xtls-rprx-vision"
-  - name: "🇹🇷_7"
+  - name: "🇹🇷_13"
     type: vless
     server: "78.135.73.47"
     port: 443
@@ -140,23 +200,7 @@ proxies:
       public-key: "sZAJkAu23wp1WKY-qeaeiwR38izP5OyfhumoE9xhbB8"
       short-id: "f46cd3ea3d1eb72d"
     flow: "xtls-rprx-vision"
-  - name: "🇹🇷_8"
-    type: trojan
-    server: "194.87.39.133"
-    port: 443
-    password: "af4b064a9c39472fb34ad8b113acdc6b"
-    sni: "194.87.39.133"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇹🇷_9"
-    type: trojan
-    server: "194.146.26.40"
-    port: 443
-    password: "2ea5fc44-bd38-4fb0-a9b9-88c83fc56622"
-    sni: "4-193-105-141.nhost.00cdn.com"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇹🇷_10"
+  - name: "🇹🇷_14"
     type: trojan
     server: "subtu.charsoulink3.ir"
     port: 2087
@@ -164,19 +208,28 @@ proxies:
     sni: "pus.mmdaqaorg2.ir"
     skip-cert-verify: true
     udp: true
-  - name: "🇹🇷_11"
-    type: ss
-    server: "tutaim.azad0namah.ir"
-    port: 5566
-    cipher: "2022-blake3-aes-128-gcm"
-    password: "8NwabdWBXK1q1QaBhF69rw==:d8C1FciKoaFD6xRFbCYyFQ=="
+  - name: "🇹🇷_15"
+    type: trojan
+    server: "194.87.39.133"
+    port: 443
+    password: "af4b064a9c39472fb34ad8b113acdc6b"
+    sni: "194.87.39.133"
+    skip-cert-verify: true
     udp: true
-  - name: "🇹🇷_12"
+  - name: "🇹🇷_16"
+    type: trojan
+    server: "194.146.26.40"
+    port: 443
+    password: "2ea5fc44-bd38-4fb0-a9b9-88c83fc56622"
+    sni: "4-193-105-141.nhost.00cdn.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇹🇷_17"
     type: ss
-    server: "tutaim.azad0namah.ir"
-    port: 5566
-    cipher: "2022-blake3-aes-128-gcm"
-    password: "8NwabdWBXK1q1QaBhF69rw==:d8C1FciKoaFD6xRFbCYyFQ=="
+    server: "206.1.100.83"
+    port: 25178
+    cipher: "2022-blake3-aes-256-gcm"
+    password: "ADzlhA3ndouUCY3JbLddR/jwgYY7IDGc1T+5DuCix9Y=:KyFe2akGo5hcrswbMkD2+BM52si+D7lzyccZFTd4xaU="
     udp: true
 
 proxy-groups:
@@ -206,6 +259,11 @@ proxy-groups:
       - "🇹🇷_10"
       - "🇹🇷_11"
       - "🇹🇷_12"
+      - "🇹🇷_13"
+      - "🇹🇷_14"
+      - "🇹🇷_15"
+      - "🇹🇷_16"
+      - "🇹🇷_17"
 
 
   - name: "Load Balance"
@@ -226,6 +284,11 @@ proxy-groups:
       - "🇹🇷_10"
       - "🇹🇷_11"
       - "🇹🇷_12"
+      - "🇹🇷_13"
+      - "🇹🇷_14"
+      - "🇹🇷_15"
+      - "🇹🇷_16"
+      - "🇹🇷_17"
 
 rules:
   - MATCH,PROXY
