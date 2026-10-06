@@ -60,20 +60,13 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇦🇶_1"
-    type: vless
-    server: "2.27.26.128"
-    port: 443
-    uuid: "8710a337-f504-4b75-8989-224cfd803b2d"
+  - name: "🇨🇱_1"
+    type: ss
+    server: "64.176.2.21"
+    port: 8388
+    cipher: "aes-256-gcm"
+    password: "xBStBEVqvGwHPocc"
     udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "aq-1.global-cdn.org"
-    client-fingerprint: "safari"
-    reality-opts:
-      public-key: "HKkU-5UanGjWdmX8E-EGulXMk1BnidkFsVveyyOlTg8"
-      short-id: "90f9d05bf95cb335"
-    flow: "xtls-rprx-vision"
 
 proxy-groups:
   - name: "PROXY"
@@ -90,7 +83,7 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇦🇶_1"
+      - "🇨🇱_1"
 
 
   - name: "Load Balance"
@@ -99,7 +92,7 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇦🇶_1"
+      - "🇨🇱_1"
 
 rules:
   - MATCH,PROXY

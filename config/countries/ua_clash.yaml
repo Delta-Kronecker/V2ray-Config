@@ -62,15 +62,6 @@ dns:
 proxies:
   - name: "🇺🇦_1"
     type: vless
-    server: "104.143.223.59"
-    port: 2085
-    uuid: "2f322254-c1e3-4ec1-80ac-822d44a2238a"
-    udp: true
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "vless"
-  - name: "🇺🇦_2"
-    type: vless
     server: "83.147.18.75"
     port: 443
     uuid: "5de0c218-0138-45d8-94d2-c2c3f37a1a6d"
@@ -83,7 +74,7 @@ proxies:
       public-key: "tfFzmbVByvoZxxIEUiHMv22_k0-nQz00L0XjU0bd_Fc"
       short-id: "7f1e29593aa94ad1"
     flow: "xtls-rprx-vision"
-  - name: "🇺🇦_3"
+  - name: "🇺🇦_2"
     type: trojan
     server: "130.0.236.88"
     port: 443
@@ -109,7 +100,6 @@ proxy-groups:
     proxies:
       - "🇺🇦_1"
       - "🇺🇦_2"
-      - "🇺🇦_3"
 
 
   - name: "Load Balance"
@@ -120,7 +110,6 @@ proxy-groups:
     proxies:
       - "🇺🇦_1"
       - "🇺🇦_2"
-      - "🇺🇦_3"
 
 rules:
   - MATCH,PROXY

@@ -68,20 +68,6 @@ proxies:
     sni: "154.205.152.109"
     skip-cert-verify: true
     udp: true
-  - name: "🇲🇽_2"
-    type: ss
-    server: "64.177.90.30"
-    port: 8388
-    cipher: "aes-256-gcm"
-    password: "BWyPPTusFKhGgzKh"
-    udp: true
-  - name: "🇲🇽_3"
-    type: ss
-    server: "147.78.1.234"
-    port: 16673
-    cipher: "aes-128-gcm"
-    password: "67c57ae584eecd70396fcd7ca7521130"
-    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -99,8 +85,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇲🇽_1"
-      - "🇲🇽_2"
-      - "🇲🇽_3"
 
 
   - name: "Load Balance"
@@ -110,8 +94,6 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇲🇽_1"
-      - "🇲🇽_2"
-      - "🇲🇽_3"
 
 rules:
   - MATCH,PROXY

@@ -74,6 +74,29 @@ proxies:
       public-key: "nIL5EeUo2XUkCaLJGbzgRm6zhF-96kWvV2VmhEt3CX4"
       short-id: "4af4102cb26e59"
     flow: "xtls-rprx-vision"
+  - name: "🇨🇿_2"
+    type: vless
+    server: "153.76.185.167"
+    port: 3090
+    uuid: "755d2e25-9b0c-41ae-a27c-bd45318c7a4f"
+    udp: true
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "vless"
+  - name: "🇨🇿_3"
+    type: vless
+    server: "31.76.6.221"
+    port: 17001
+    uuid: "953358cb-82ba-4296-960d-6d2ec3468f4c"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "media2.h2corp.org"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "Sui5lSCrqQCG3IlB2YstVMAJdmPkOk4Dim5GpNNLWxU"
+      short-id: "5d38f235a6e0916c"
+    flow: "xtls-rprx-vision"
 
 proxy-groups:
   - name: "PROXY"
@@ -91,6 +114,8 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇨🇿_1"
+      - "🇨🇿_2"
+      - "🇨🇿_3"
 
 
   - name: "Load Balance"
@@ -100,6 +125,8 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇨🇿_1"
+      - "🇨🇿_2"
+      - "🇨🇿_3"
 
 rules:
   - MATCH,PROXY
