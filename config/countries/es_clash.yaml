@@ -62,6 +62,41 @@ dns:
 proxies:
   - name: "🇪🇸_1"
     type: vless
+    server: "85.90.217.42"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "85.90.217.42"
+  - name: "🇪🇸_2"
+    type: vless
+    server: "es4.h1cloud.net"
+    port: 25047
+    uuid: "55a2940a-ae07-40b4-ab32-4d3e0617731f"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.apple.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "opG0oNW-PMHi8V4E0101eEqOqPlZVKCuRkF6dcWeqBU"
+      short-id: "8b7227d48365dda9"
+  - name: "🇪🇸_3"
+    type: vless
+    server: "78.40.111.178"
+    port: 25047
+    uuid: "55a2940a-ae07-40b4-ab32-4d3e0617731f"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.apple.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "opG0oNW-PMHi8V4E0101eEqOqPlZVKCuRkF6dcWeqBU"
+      short-id: "8b7227d48365dda9"
+  - name: "🇪🇸_4"
+    type: vless
     server: "46.28.71.247"
     port: 443
     uuid: "12c53e32-e589-47d6-b857-e4132294f767"
@@ -73,43 +108,27 @@ proxies:
       public-key: "v4MuZIvFrTPT5GHMSaPryUAbIZlLstmsUTzmC1E-JTE"
       short-id: "0dfc23fe80778c00"
     flow: "xtls-rprx-vision"
-  - name: "🇪🇸_2"
+  - name: "🇪🇸_5"
     type: vless
-    server: "85.90.217.42"
+    server: "138.124.62.158"
     port: 443
-    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    uuid: "2b781b4a-5942-48e0-a7f3-5a07b7b488c1"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "85.90.217.42"
-  - name: "🇪🇸_3"
+    servername: "es-root.sworkingvpn.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "AhLy7ha7FF2EQfu-3SxOFKUwExyHActYPHtyv82KNCI"
+      short-id: "15bcc0a77c3cacdf"
+    flow: "xtls-rprx-vision"
+  - name: "🇪🇸_6"
     type: trojan
     server: "65.20.102.54"
     port: 443
     password: "842b5f9dd11e458d8613c907c4cc5723"
     sni: "www.gpt123.one"
     skip-cert-verify: true
-    udp: true
-  - name: "🇪🇸_4"
-    type: ss
-    server: "140.174.184.5"
-    port: 8388
-    cipher: "chacha20-ietf-poly1305"
-    password: "qItG8SueYQcP"
-    udp: true
-  - name: "🇪🇸_5"
-    type: ss
-    server: "108.181.121.226"
-    port: 8388
-    cipher: "chacha20-ietf-poly1305"
-    password: "WSyL4XTwNsdv"
-    udp: true
-  - name: "🇪🇸_6"
-    type: ss
-    server: "140.174.184.5"
-    port: 8388
-    cipher: "chacha20-ietf-poly1305"
-    password: "qItG8SueYQcP"
     udp: true
   - name: "🇪🇸_7"
     type: ss
@@ -127,12 +146,33 @@ proxies:
     udp: true
   - name: "🇪🇸_9"
     type: ss
+    server: "140.174.184.5"
+    port: 8388
+    cipher: "chacha20-ietf-poly1305"
+    password: "qItG8SueYQcP"
+    udp: true
+  - name: "🇪🇸_10"
+    type: ss
+    server: "140.174.184.5"
+    port: 8388
+    cipher: "chacha20-ietf-poly1305"
+    password: "qItG8SueYQcP"
+    udp: true
+  - name: "🇪🇸_11"
+    type: ss
     server: "108.181.121.226"
     port: 8388
     cipher: "chacha20-ietf-poly1305"
     password: "WSyL4XTwNsdv"
     udp: true
-  - name: "🇪🇸_10"
+  - name: "🇪🇸_12"
+    type: ss
+    server: "108.181.121.226"
+    port: 8388
+    cipher: "chacha20-ietf-poly1305"
+    password: "WSyL4XTwNsdv"
+    udp: true
+  - name: "🇪🇸_13"
     type: vmess
     server: "85.90.217.42"
     port: 22324
@@ -166,6 +206,9 @@ proxy-groups:
       - "🇪🇸_8"
       - "🇪🇸_9"
       - "🇪🇸_10"
+      - "🇪🇸_11"
+      - "🇪🇸_12"
+      - "🇪🇸_13"
 
 
   - name: "Load Balance"
@@ -184,6 +227,9 @@ proxy-groups:
       - "🇪🇸_8"
       - "🇪🇸_9"
       - "🇪🇸_10"
+      - "🇪🇸_11"
+      - "🇪🇸_12"
+      - "🇪🇸_13"
 
 rules:
   - MATCH,PROXY

@@ -62,6 +62,15 @@ dns:
 proxies:
   - name: "🇨🇿_1"
     type: vless
+    server: "153.76.185.164"
+    port: 3090
+    uuid: "b79172e2-06f1-4d78-86f1-d38fa0e3cc1e"
+    udp: true
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "vless"
+  - name: "🇨🇿_2"
+    type: vless
     server: "31.76.7.227"
     port: 443
     uuid: "d0e771c5-024e-4393-bb90-4a3e3c561656"
@@ -74,15 +83,6 @@ proxies:
       public-key: "nIL5EeUo2XUkCaLJGbzgRm6zhF-96kWvV2VmhEt3CX4"
       short-id: "4af4102cb26e59"
     flow: "xtls-rprx-vision"
-  - name: "🇨🇿_2"
-    type: vless
-    server: "153.76.185.167"
-    port: 3090
-    uuid: "755d2e25-9b0c-41ae-a27c-bd45318c7a4f"
-    udp: true
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "vless"
   - name: "🇨🇿_3"
     type: vless
     server: "31.76.6.221"
@@ -96,6 +96,19 @@ proxies:
     reality-opts:
       public-key: "Sui5lSCrqQCG3IlB2YstVMAJdmPkOk4Dim5GpNNLWxU"
       short-id: "5d38f235a6e0916c"
+    flow: "xtls-rprx-vision"
+  - name: "🇨🇿_4"
+    type: vless
+    server: "85.117.235.50"
+    port: 443
+    uuid: "f4d71fd6-1c25-4748-836b-1dbda9268039"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "cz1.animeteka.info"
+    reality-opts:
+      public-key: "PmdZ2ETkHc0zjYcs22xT_wyZk5fEpX7mg7RP396HBBc"
+      short-id: "232b1b09e45325a4"
     flow: "xtls-rprx-vision"
 
 proxy-groups:
@@ -116,6 +129,7 @@ proxy-groups:
       - "🇨🇿_1"
       - "🇨🇿_2"
       - "🇨🇿_3"
+      - "🇨🇿_4"
 
 
   - name: "Load Balance"
@@ -127,6 +141,7 @@ proxy-groups:
       - "🇨🇿_1"
       - "🇨🇿_2"
       - "🇨🇿_3"
+      - "🇨🇿_4"
 
 rules:
   - MATCH,PROXY

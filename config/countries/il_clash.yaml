@@ -60,13 +60,32 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇵🇭_1"
-    type: ss
-    server: "149.104.109.252"
-    port: 8882
-    cipher: "aes-256-gcm"
-    password: "kDWvXYZoTBcGkC4"
+  - name: "🇮🇱_1"
+    type: vless
+    server: "s500.shahankhan.ir"
+    port: 80
+    uuid: "542997aa-ce04-4474-aaec-03daed5aea3c"
     udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "adn-stg.yourservice.samsung.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "bcycek1vZZ5_sS0H7vLZp4TWuTsQNMkWgRBTnswHuRQ"
+      short-id: "d3ec16bc"
+  - name: "🇮🇱_2"
+    type: vless
+    server: "S500.shahankhan.ir"
+    port: 80
+    uuid: "542997aa-ce04-4474-aaec-03daed5aea3c"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "adn-stg.yourservice.samsung.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "bcycek1vZZ5_sS0H7vLZp4TWuTsQNMkWgRBTnswHuRQ"
+      short-id: "d3ec16bc"
 
 proxy-groups:
   - name: "PROXY"
@@ -83,7 +102,8 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇵🇭_1"
+      - "🇮🇱_1"
+      - "🇮🇱_2"
 
 
   - name: "Load Balance"
@@ -92,7 +112,8 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇵🇭_1"
+      - "🇮🇱_1"
+      - "🇮🇱_2"
 
 rules:
   - MATCH,PROXY
