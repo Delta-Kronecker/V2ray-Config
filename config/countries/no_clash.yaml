@@ -62,22 +62,6 @@ dns:
 proxies:
   - name: "🇳🇴_1"
     type: vless
-    server: "176.108.252.139"
-    port: 9881
-    uuid: "5d16ac22-6eea-426f-b778-6f4c2961faef"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "dl.google.com"
-    client-fingerprint: "safari"
-    reality-opts:
-      public-key: "Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0"
-      short-id: "aabb"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "grpc-tunnel"
-  - name: "🇳🇴_2"
-    type: vless
     server: "46.29.238.88"
     port: 40443
     uuid: "db320947-adfb-400d-b60b-383b8324bffe"
@@ -89,14 +73,14 @@ proxies:
     reality-opts:
       public-key: "aZOpodpnifoxDqTzWgxJRffgsiGnG9-h-EZd4SvOImc"
       short-id: "f7b2"
-  - name: "🇳🇴_3"
+  - name: "🇳🇴_2"
     type: ss
     server: "185.213.23.63"
     port: 990
     cipher: "chacha20-ietf-poly1305"
     password: "ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44="
     udp: true
-  - name: "🇳🇴_4"
+  - name: "🇳🇴_3"
     type: ss
     server: "185.213.23.63"
     port: 990
@@ -122,7 +106,6 @@ proxy-groups:
       - "🇳🇴_1"
       - "🇳🇴_2"
       - "🇳🇴_3"
-      - "🇳🇴_4"
 
 
   - name: "Load Balance"
@@ -134,7 +117,6 @@ proxy-groups:
       - "🇳🇴_1"
       - "🇳🇴_2"
       - "🇳🇴_3"
-      - "🇳🇴_4"
 
 rules:
   - MATCH,PROXY
