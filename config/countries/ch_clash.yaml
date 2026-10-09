@@ -62,19 +62,6 @@ dns:
 proxies:
   - name: "🇨🇭_1"
     type: vless
-    server: "208.69.78.217"
-    port: 2053
-    uuid: "c0dd6d59-1573-43af-8b70-1470b2632a6d"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.apple.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "A49ue7zXSusJZdErPAewg3jqGdUFIO1a9xOunEKJfC0"
-      short-id: "ad86e2d52ff40ebd"
-  - name: "🇨🇭_2"
-    type: vless
     server: "45.90.59.15"
     port: 443
     uuid: "3950b45e-740d-4dca-ac95-505ec8534592"
@@ -87,7 +74,66 @@ proxies:
       public-key: "P7S4UPFlQbmiBr4txyy8NZIMTrmO3UdxyH16WBU-YzY"
       short-id: "19253fae84102271"
     flow: "xtls-rprx-vision"
+  - name: "🇨🇭_2"
+    type: vless
+    server: "208.69.78.217"
+    port: 2053
+    uuid: "c0dd6d59-1573-43af-8b70-1470b2632a6d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.apple.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "A49ue7zXSusJZdErPAewg3jqGdUFIO1a9xOunEKJfC0"
+      short-id: "ad86e2d52ff40ebd"
   - name: "🇨🇭_3"
+    type: vless
+    server: "bs.l90909l.vip"
+    port: 2096
+    uuid: "4f4ba283-2dd7-4eda-9211-63ae357373cf"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "id.vk.com"
+    client-fingerprint: "edge"
+    reality-opts:
+      public-key: "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
+      short-id: ""
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "vless-grpc-reality"
+  - name: "🇨🇭_4"
+    type: vless
+    server: "sweth.ali-bard.online"
+    port: 443
+    uuid: "15c9be2b-20f1-47b7-bf33-747ed1ff7fb7"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sweth.ali-bard.online"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "SB1uC0OEveYjSiS_Nuw9Ld-uVVXWqi794OGnldthY3I"
+      short-id: ""
+    flow: "xtls-rprx-vision"
+  - name: "🇨🇭_5"
+    type: vless
+    server: "81.94.148.104"
+    port: 2096
+    uuid: "4f4ba283-2dd7-4eda-9211-63ae357373cf"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "id.vk.com"
+    client-fingerprint: "random"
+    reality-opts:
+      public-key: "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
+      short-id: ""
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "vless-grpc-reality"
+  - name: "🇨🇭_6"
     type: trojan
     server: "83.228.224.161"
     port: 443
@@ -95,28 +141,28 @@ proxies:
     sni: "83.228.224.161"
     skip-cert-verify: true
     udp: true
-  - name: "🇨🇭_4"
-    type: ss
-    server: "132.243.175.144"
-    port: 8388
-    cipher: "chacha20-ietf-poly1305"
-    password: "e8KgS8fD0yDqYFpgN4G5piCOt9aFyqA3"
-    udp: true
-  - name: "🇨🇭_5"
-    type: ss
-    server: "132.243.175.144"
-    port: 8388
-    cipher: "chacha20-ietf-poly1305"
-    password: "e8KgS8fD0yDqYFpgN4G5piCOt9aFyqA3"
-    udp: true
-  - name: "🇨🇭_6"
-    type: ss
-    server: "132.243.175.144"
-    port: 8388
-    cipher: "chacha20-ietf-poly1305"
-    password: "e8KgS8fD0yDqYFpgN4G5piCOt9aFyqA3"
-    udp: true
   - name: "🇨🇭_7"
+    type: ss
+    server: "132.243.175.144"
+    port: 8388
+    cipher: "chacha20-ietf-poly1305"
+    password: "e8KgS8fD0yDqYFpgN4G5piCOt9aFyqA3"
+    udp: true
+  - name: "🇨🇭_8"
+    type: ss
+    server: "132.243.175.144"
+    port: 8388
+    cipher: "chacha20-ietf-poly1305"
+    password: "e8KgS8fD0yDqYFpgN4G5piCOt9aFyqA3"
+    udp: true
+  - name: "🇨🇭_9"
+    type: ss
+    server: "132.243.175.144"
+    port: 8388
+    cipher: "chacha20-ietf-poly1305"
+    password: "e8KgS8fD0yDqYFpgN4G5piCOt9aFyqA3"
+    udp: true
+  - name: "🇨🇭_10"
     type: ss
     server: "132.243.175.144"
     port: 8388
@@ -146,6 +192,9 @@ proxy-groups:
       - "🇨🇭_5"
       - "🇨🇭_6"
       - "🇨🇭_7"
+      - "🇨🇭_8"
+      - "🇨🇭_9"
+      - "🇨🇭_10"
 
 
   - name: "Load Balance"
@@ -161,6 +210,9 @@ proxy-groups:
       - "🇨🇭_5"
       - "🇨🇭_6"
       - "🇨🇭_7"
+      - "🇨🇭_8"
+      - "🇨🇭_9"
+      - "🇨🇭_10"
 
 rules:
   - MATCH,PROXY

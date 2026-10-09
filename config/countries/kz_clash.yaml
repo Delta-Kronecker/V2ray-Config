@@ -62,19 +62,6 @@ dns:
 proxies:
   - name: "🇰🇿_1"
     type: vless
-    server: "109.248.170.119"
-    port: 13447
-    uuid: "b573cefb-7bc7-4a42-b407-b8b534e66773"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "yahoo.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "_0wM2ep44eAcrgf5PflKaBivknCWT6kMvQBQUoScCkE"
-      short-id: "83"
-  - name: "🇰🇿_2"
-    type: vless
     server: "77.73.232.61"
     port: 19747
     uuid: "2a9ed01e-5455-44b4-a66a-76ee8165f0ac"
@@ -86,7 +73,7 @@ proxies:
     reality-opts:
       public-key: "ZO9dTeg1slvTXgVsBsaJ1BDvz_YUImTLJjbHs-GdVyM"
       short-id: "2001"
-  - name: "🇰🇿_3"
+  - name: "🇰🇿_2"
     type: vless
     server: "83.222.23.81"
     port: 38065
@@ -99,6 +86,19 @@ proxies:
     reality-opts:
       public-key: "dSSDPTK6AHfAdRAXD9i4rzqcNIY65RxlF25UyCKdiyo"
       short-id: "fa"
+  - name: "🇰🇿_3"
+    type: vless
+    server: "109.248.170.119"
+    port: 13447
+    uuid: "b573cefb-7bc7-4a42-b407-b8b534e66773"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "yahoo.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "_0wM2ep44eAcrgf5PflKaBivknCWT6kMvQBQUoScCkE"
+      short-id: "83"
   - name: "🇰🇿_4"
     type: vless
     server: "178.236.16.98"
@@ -112,6 +112,20 @@ proxies:
     reality-opts:
       public-key: "vhUFNoFcvtZAVMo8y5K5eU2V43m5q6yjmWIhp5RkFng"
       short-id: "69a2"
+  - name: "🇰🇿_5"
+    type: vless
+    server: "176.12.74.226"
+    port: 443
+    uuid: "186a7d6f-e360-4c5f-bafb-a816f79e231b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "kz-first.yourzloy.site"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "vL7_EY1_SpsyEROqEDtLaatpZEmna_VixzsEfWI5wDo"
+      short-id: "aef88ffbbfde7dea"
+    flow: "xtls-rprx-vision"
 
 proxy-groups:
   - name: "PROXY"
@@ -132,6 +146,7 @@ proxy-groups:
       - "🇰🇿_2"
       - "🇰🇿_3"
       - "🇰🇿_4"
+      - "🇰🇿_5"
 
 
   - name: "Load Balance"
@@ -144,6 +159,7 @@ proxy-groups:
       - "🇰🇿_2"
       - "🇰🇿_3"
       - "🇰🇿_4"
+      - "🇰🇿_5"
 
 rules:
   - MATCH,PROXY

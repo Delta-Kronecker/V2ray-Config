@@ -61,26 +61,13 @@ dns:
 
 proxies:
   - name: "🇳🇴_1"
-    type: vless
-    server: "46.29.238.88"
-    port: 40443
-    uuid: "db320947-adfb-400d-b60b-383b8324bffe"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "deepl.com"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "aZOpodpnifoxDqTzWgxJRffgsiGnG9-h-EZd4SvOImc"
-      short-id: "f7b2"
-  - name: "🇳🇴_2"
     type: ss
     server: "185.213.23.63"
     port: 990
     cipher: "chacha20-ietf-poly1305"
     password: "ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44="
     udp: true
-  - name: "🇳🇴_3"
+  - name: "🇳🇴_2"
     type: ss
     server: "185.213.23.63"
     port: 990
@@ -105,7 +92,6 @@ proxy-groups:
     proxies:
       - "🇳🇴_1"
       - "🇳🇴_2"
-      - "🇳🇴_3"
 
 
   - name: "Load Balance"
@@ -116,7 +102,6 @@ proxy-groups:
     proxies:
       - "🇳🇴_1"
       - "🇳🇴_2"
-      - "🇳🇴_3"
 
 rules:
   - MATCH,PROXY

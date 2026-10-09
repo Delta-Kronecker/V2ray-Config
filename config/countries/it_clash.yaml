@@ -62,18 +62,25 @@ dns:
 proxies:
   - name: "🇮🇹_1"
     type: vless
-    server: "57.131.38.163"
-    port: 2053
-    uuid: "d4b08cd6-0903-411a-9dac-45dbdf5c9712"
+    server: "204.216.216.23"
+    port: 10086
+    uuid: "9f0285ee-20ca-4953-bcdb-86a920652923"
+    udp: true
+  - name: "🇮🇹_2"
+    type: vless
+    server: "82.118.16.189"
+    port: 443
+    uuid: "d5e5f5a1-0f23-4c49-af9f-4be445bf9d8e"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "www.apple.com"
+    servername: "www.cloudflare.com"
     client-fingerprint: "chrome"
     reality-opts:
-      public-key: "Ej2H5ucT7qKegYcT8wODdlxa-cLHr7F4hDVUHzAhcnc"
-      short-id: "5b8a942318178e7b"
-  - name: "🇮🇹_2"
+      public-key: "SjGkzJQ9I6ZZjC3V73atcPMczhMm0oiTrB8mUQXz1HY"
+      short-id: "37fbf155c7a9f3ff"
+    flow: "xtls-rprx-vision"
+  - name: "🇮🇹_3"
     type: vless
     server: "82.118.16.187"
     port: 443
@@ -87,22 +94,6 @@ proxies:
       public-key: "R5ycsjJ-v024902dMSqTsSdqxUwCFEXMebdBEWFt9VU"
       short-id: "cd6065902eea7a02"
     flow: "xtls-rprx-vision"
-  - name: "🇮🇹_3"
-    type: vless
-    server: "45.132.176.225"
-    port: 9881
-    uuid: "5d16ac22-6eea-426f-b778-6f4c2961faef"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "dl.google.com"
-    client-fingerprint: "edge"
-    reality-opts:
-      public-key: "ycPIUcY6ci2yi7YA_OHc20e4gzxEdJTqpmeShxSuHRU"
-      short-id: "aabb"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "grpc-tunnel"
   - name: "🇮🇹_4"
     type: vless
     server: "204.216.216.23"
@@ -119,31 +110,45 @@ proxies:
     flow: "xtls-rprx-vision"
   - name: "🇮🇹_5"
     type: vless
-    server: "204.216.216.23"
-    port: 10086
-    uuid: "9f0285ee-20ca-4953-bcdb-86a920652923"
-    udp: true
-  - name: "🇮🇹_6"
-    type: vless
-    server: "82.118.16.189"
-    port: 443
-    uuid: "d5e5f5a1-0f23-4c49-af9f-4be445bf9d8e"
+    server: "57.131.38.163"
+    port: 2053
+    uuid: "d4b08cd6-0903-411a-9dac-45dbdf5c9712"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "www.cloudflare.com"
+    servername: "www.apple.com"
     client-fingerprint: "chrome"
     reality-opts:
-      public-key: "SjGkzJQ9I6ZZjC3V73atcPMczhMm0oiTrB8mUQXz1HY"
-      short-id: "37fbf155c7a9f3ff"
-    flow: "xtls-rprx-vision"
-  - name: "🇮🇹_7"
+      public-key: "Ej2H5ucT7qKegYcT8wODdlxa-cLHr7F4hDVUHzAhcnc"
+      short-id: "5b8a942318178e7b"
+  - name: "🇮🇹_6"
     type: trojan
     server: "91.193.5.121"
     port: 8443
     password: "Aimer"
     sni: "ngepz.ambercc.filegear-sg.me"
     skip-cert-verify: true
+    udp: true
+  - name: "🇮🇹_7"
+    type: ss
+    server: "185.164.175.81"
+    port: 19999
+    cipher: "aes-256-gcm"
+    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
+    udp: true
+  - name: "🇮🇹_8"
+    type: ss
+    server: "66.245.207.70"
+    port: 8388
+    cipher: "aes-256-gcm"
+    password: "qMvJmCbMduKUoeHq"
+    udp: true
+  - name: "🇮🇹_9"
+    type: ss
+    server: "185.164.175.81"
+    port: 19999
+    cipher: "aes-256-gcm"
+    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
 
 proxy-groups:
@@ -168,6 +173,8 @@ proxy-groups:
       - "🇮🇹_5"
       - "🇮🇹_6"
       - "🇮🇹_7"
+      - "🇮🇹_8"
+      - "🇮🇹_9"
 
 
   - name: "Load Balance"
@@ -183,6 +190,8 @@ proxy-groups:
       - "🇮🇹_5"
       - "🇮🇹_6"
       - "🇮🇹_7"
+      - "🇮🇹_8"
+      - "🇮🇹_9"
 
 rules:
   - MATCH,PROXY
