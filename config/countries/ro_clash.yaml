@@ -62,6 +62,19 @@ dns:
 proxies:
   - name: "🇷🇴_1"
     type: vless
+    server: "194.87.6.192"
+    port: 56789
+    uuid: "a889fba5-5472-4022-a6b4-9710157fda2f"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ger6.fytpn.com"
+    reality-opts:
+      public-key: "PDHRi_RRFsPhxLoH2C1l9A9HdL2y7g1uOzXmY0XnmzQ"
+      short-id: "a2aa"
+    flow: "xtls-rprx-vision"
+  - name: "🇷🇴_2"
+    type: vless
     server: "146.70.124.85"
     port: 443
     uuid: "40abbe13-f02e-4da2-9b19-966c2c3eb4ee"
@@ -74,7 +87,21 @@ proxies:
       public-key: "byzvlw97wjAAAfHs5AZRV0P0H6_JKBEZ4yfLS0HNewE"
       short-id: "fe24f8a0a560056e"
     flow: "xtls-rprx-vision"
-  - name: "🇷🇴_2"
+  - name: "🇷🇴_3"
+    type: vless
+    server: "ger6.fytpn.com"
+    port: 56789
+    uuid: "a889fba5-5472-4022-a6b4-9710157fda2f"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ger6.fytpn.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "PDHRi_RRFsPhxLoH2C1l9A9HdL2y7g1uOzXmY0XnmzQ"
+      short-id: "a2aa"
+    flow: "xtls-rprx-vision"
+  - name: "🇷🇴_4"
     type: vless
     server: "46.28.67.55"
     port: 443
@@ -88,7 +115,15 @@ proxies:
       public-key: "i2dJ1_XGDpp50qpEclh6SWSWkxt4B0t2hi2qOVQbeSU"
       short-id: "d06d78e974491b6e"
     flow: "xtls-rprx-vision"
-  - name: "🇷🇴_3"
+  - name: "🇷🇴_5"
+    type: trojan
+    server: "194.87.6.192"
+    port: 2097
+    password: "gHncxmRjWEJ7apX5XuXsHw4kGexMH_gU"
+    sni: "ger6.fytpn.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇷🇴_6"
     type: trojan
     server: "38.180.35.145"
     port: 443
@@ -96,7 +131,7 @@ proxies:
     sni: "bu2.freeguard.org"
     skip-cert-verify: true
     udp: true
-  - name: "🇷🇴_4"
+  - name: "🇷🇴_7"
     type: trojan
     server: "185.247.224.136"
     port: 443
@@ -104,9 +139,24 @@ proxies:
     sni: "185.247.224.136"
     skip-cert-verify: true
     udp: true
-  - name: "🇷🇴_5"
+  - name: "🇷🇴_8"
+    type: trojan
+    server: "ger6.fytpn.com"
+    port: 2097
+    password: "gHncxmRjWEJ7apX5XuXsHw4kGexMH_gU"
+    sni: "ger6.fytpn.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇷🇴_9"
     type: ss
     server: "154.46.31.106"
+    port: 443
+    cipher: "chacha20-ietf-poly1305"
+    password: "QFWzCw2uX9B9i6qAYeFBIE"
+    udp: true
+  - name: "🇷🇴_10"
+    type: ss
+    server: "bogging-eyeteeth-fly.freesocks.work"
     port: 443
     cipher: "chacha20-ietf-poly1305"
     password: "QFWzCw2uX9B9i6qAYeFBIE"
@@ -132,6 +182,11 @@ proxy-groups:
       - "🇷🇴_3"
       - "🇷🇴_4"
       - "🇷🇴_5"
+      - "🇷🇴_6"
+      - "🇷🇴_7"
+      - "🇷🇴_8"
+      - "🇷🇴_9"
+      - "🇷🇴_10"
 
 
   - name: "Load Balance"
@@ -145,6 +200,11 @@ proxy-groups:
       - "🇷🇴_3"
       - "🇷🇴_4"
       - "🇷🇴_5"
+      - "🇷🇴_6"
+      - "🇷🇴_7"
+      - "🇷🇴_8"
+      - "🇷🇴_9"
+      - "🇷🇴_10"
 
 rules:
   - MATCH,PROXY

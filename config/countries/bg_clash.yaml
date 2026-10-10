@@ -61,19 +61,33 @@ dns:
 
 proxies:
   - name: "🇧🇬_1"
-    type: trojan
-    server: "38.54.27.117"
-    port: 443
-    password: "af4b064a9c39472fb34ad8b113acdc6b"
-    sni: "38.54.27.117"
-    skip-cert-verify: true
+    type: vless
+    server: "136.175.82.85"
+    port: 18775
+    uuid: "9ae5940b-0278-403d-a1e1-9dddc47bdcf6"
     udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "addons.mozilla.org"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "oR75S6pg_RDAKIuzv_WrCiwaUqqFoek2iuo5N22llQQ"
+      short-id: "6ba85179e30d4fc2"
+    flow: "xtls-rprx-vision"
   - name: "🇧🇬_2"
     type: trojan
     server: "91.227.77.87"
     port: 443
     password: "bpb-trojan"
     sni: "skwygx.top"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇧🇬_3"
+    type: trojan
+    server: "38.54.27.117"
+    port: 443
+    password: "af4b064a9c39472fb34ad8b113acdc6b"
+    sni: "38.54.27.117"
     skip-cert-verify: true
     udp: true
 
@@ -94,6 +108,7 @@ proxy-groups:
     proxies:
       - "🇧🇬_1"
       - "🇧🇬_2"
+      - "🇧🇬_3"
 
 
   - name: "Load Balance"
@@ -104,6 +119,7 @@ proxy-groups:
     proxies:
       - "🇧🇬_1"
       - "🇧🇬_2"
+      - "🇧🇬_3"
 
 rules:
   - MATCH,PROXY

@@ -75,33 +75,12 @@ proxies:
       short-id: "a696de84963656de"
     flow: "xtls-rprx-vision"
   - name: "🇦🇱_2"
-    type: vless
-    server: "45.89.60.202"
-    port: 443
-    uuid: "2b781b4a-5942-48e0-a7f3-5a07b7b488c1"
+    type: ss
+    server: "130.49.189.158"
+    port: 43558
+    cipher: "chacha20-ietf-poly1305"
+    password: "eicdhshSrFLCx/sZ1PSpuKyoVWGZpU95tFS4iGC1c04="
     udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "al-root.sworkingvpn.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "AhLy7ha7FF2EQfu-3SxOFKUwExyHActYPHtyv82KNCI"
-      short-id: "15bcc0a77c3cacdf"
-    flow: "xtls-rprx-vision"
-  - name: "🇦🇱_3"
-    type: vless
-    server: "78.159.131.79"
-    port: 443
-    uuid: "2b781b4a-5942-48e0-a7f3-5a07b7b488c1"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "nl-root.sworkingvpn.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "AhLy7ha7FF2EQfu-3SxOFKUwExyHActYPHtyv82KNCI"
-      short-id: "15bcc0a77c3cacdf"
-    flow: "xtls-rprx-vision"
 
 proxy-groups:
   - name: "PROXY"
@@ -120,7 +99,6 @@ proxy-groups:
     proxies:
       - "🇦🇱_1"
       - "🇦🇱_2"
-      - "🇦🇱_3"
 
 
   - name: "Load Balance"
@@ -131,7 +109,6 @@ proxy-groups:
     proxies:
       - "🇦🇱_1"
       - "🇦🇱_2"
-      - "🇦🇱_3"
 
 rules:
   - MATCH,PROXY

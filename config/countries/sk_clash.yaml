@@ -60,20 +60,15 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇺🇿_1"
+  - name: "🇸🇰_1"
     type: vless
-    server: "193.202.113.5"
-    port: 443
-    uuid: "6f756511-7fc3-41ba-874b-8cdc8e1b225f"
+    server: "80.243.228.73"
+    port: 2085
+    uuid: "14d14e40-16e5-4972-8e13-d87ec3a949ee"
     udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "edge-uk2.mystatic-cdn.ru"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "65d6SIYIqiX-SN4vx_BnNiQJ8Lnr0HAgUKoT7WgWRgI"
-      short-id: "ee169e93d3c277a1"
-    flow: "xtls-rprx-vision"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "vless"
 
 proxy-groups:
   - name: "PROXY"
@@ -90,7 +85,7 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇺🇿_1"
+      - "🇸🇰_1"
 
 
   - name: "Load Balance"
@@ -99,7 +94,7 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇺🇿_1"
+      - "🇸🇰_1"
 
 rules:
   - MATCH,PROXY

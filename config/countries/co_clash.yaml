@@ -60,33 +60,19 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇧🇪_1"
+  - name: "🇨🇴_1"
     type: vless
-    server: "113.30.152.2"
+    server: "45.13.186.240"
     port: 443
-    uuid: "2b781b4a-5942-48e0-a7f3-5a07b7b488c1"
+    uuid: "e937b92c-701f-420e-a621-3eb3b75de467"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "be-root.sworkingvpn.com"
+    servername: "time.puffixhosting.com"
     client-fingerprint: "firefox"
     reality-opts:
-      public-key: "cceRo0o9bFMlCNVahZCrQWRzMAsR5M6abWXADIapY0w"
-      short-id: "15bcc0a77c3cacdf"
-    flow: "xtls-rprx-vision"
-  - name: "🇧🇪_2"
-    type: vless
-    server: "45.148.103.85"
-    port: 443
-    uuid: "2b781b4a-5942-48e0-a7f3-5a07b7b488c1"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "ca-root.sworkingvpn.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "AhLy7ha7FF2EQfu-3SxOFKUwExyHActYPHtyv82KNCI"
-      short-id: "15bcc0a77c3cacdf"
+      public-key: "NZO6V4j_bb35I-3ioL-dcbUYU07Ch3kjqV2zRgAslHs"
+      short-id: "c6437386a343e91e"
     flow: "xtls-rprx-vision"
 
 proxy-groups:
@@ -104,8 +90,7 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇧🇪_1"
-      - "🇧🇪_2"
+      - "🇨🇴_1"
 
 
   - name: "Load Balance"
@@ -114,8 +99,7 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇧🇪_1"
-      - "🇧🇪_2"
+      - "🇨🇴_1"
 
 rules:
   - MATCH,PROXY

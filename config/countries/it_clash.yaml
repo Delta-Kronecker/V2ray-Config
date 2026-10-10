@@ -62,11 +62,25 @@ dns:
 proxies:
   - name: "🇮🇹_1"
     type: vless
+    server: "82.118.16.187"
+    port: 443
+    uuid: "dc2259c4-388e-4285-ba18-df619b6672b6"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.cloudflare.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "R5ycsjJ-v024902dMSqTsSdqxUwCFEXMebdBEWFt9VU"
+      short-id: "cd6065902eea7a02"
+    flow: "xtls-rprx-vision"
+  - name: "🇮🇹_2"
+    type: vless
     server: "204.216.216.23"
     port: 10086
     uuid: "9f0285ee-20ca-4953-bcdb-86a920652923"
     udp: true
-  - name: "🇮🇹_2"
+  - name: "🇮🇹_3"
     type: vless
     server: "82.118.16.189"
     port: 443
@@ -80,35 +94,7 @@ proxies:
       public-key: "SjGkzJQ9I6ZZjC3V73atcPMczhMm0oiTrB8mUQXz1HY"
       short-id: "37fbf155c7a9f3ff"
     flow: "xtls-rprx-vision"
-  - name: "🇮🇹_3"
-    type: vless
-    server: "82.118.16.187"
-    port: 443
-    uuid: "dc2259c4-388e-4285-ba18-df619b6672b6"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.cloudflare.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "R5ycsjJ-v024902dMSqTsSdqxUwCFEXMebdBEWFt9VU"
-      short-id: "cd6065902eea7a02"
-    flow: "xtls-rprx-vision"
   - name: "🇮🇹_4"
-    type: vless
-    server: "204.216.216.23"
-    port: 1114
-    uuid: "6ba2eac6-0ec9-44ca-a42b-a8e23aafb530"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "yahoo.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "WfkCF0eEuIoO0MyJsKOddU89QrTzCZ4y2dzCJbH99CQ"
-      short-id: "79a1e14b"
-    flow: "xtls-rprx-vision"
-  - name: "🇮🇹_5"
     type: vless
     server: "57.131.38.163"
     port: 2053
@@ -121,7 +107,7 @@ proxies:
     reality-opts:
       public-key: "Ej2H5ucT7qKegYcT8wODdlxa-cLHr7F4hDVUHzAhcnc"
       short-id: "5b8a942318178e7b"
-  - name: "🇮🇹_6"
+  - name: "🇮🇹_5"
     type: trojan
     server: "91.193.5.121"
     port: 8443
@@ -129,26 +115,40 @@ proxies:
     sni: "ngepz.ambercc.filegear-sg.me"
     skip-cert-verify: true
     udp: true
-  - name: "🇮🇹_7"
+  - name: "🇮🇹_6"
     type: ss
     server: "185.164.175.81"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
+  - name: "🇮🇹_7"
+    type: ss
+    server: "57.131.48.45"
+    port: 8388
+    cipher: "aes-256-gcm"
+    password: "itzvpn@321"
+    udp: true
   - name: "🇮🇹_8"
+    type: ss
+    server: "185.164.175.81"
+    port: 19999
+    cipher: "aes-256-gcm"
+    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
+    udp: true
+  - name: "🇮🇹_9"
     type: ss
     server: "66.245.207.70"
     port: 8388
     cipher: "aes-256-gcm"
     password: "qMvJmCbMduKUoeHq"
     udp: true
-  - name: "🇮🇹_9"
+  - name: "🇮🇹_10"
     type: ss
-    server: "185.164.175.81"
-    port: 19999
+    server: "57.131.48.45"
+    port: 8388
     cipher: "aes-256-gcm"
-    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
+    password: "itzvpn@321"
     udp: true
 
 proxy-groups:
@@ -175,6 +175,7 @@ proxy-groups:
       - "🇮🇹_7"
       - "🇮🇹_8"
       - "🇮🇹_9"
+      - "🇮🇹_10"
 
 
   - name: "Load Balance"
@@ -192,6 +193,7 @@ proxy-groups:
       - "🇮🇹_7"
       - "🇮🇹_8"
       - "🇮🇹_9"
+      - "🇮🇹_10"
 
 rules:
   - MATCH,PROXY

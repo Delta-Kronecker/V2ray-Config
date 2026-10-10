@@ -62,14 +62,44 @@ dns:
 proxies:
   - name: "🇪🇸_1"
     type: vless
-    server: "85.90.217.42"
-    port: 443
-    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    server: "es3.h1cloud.net"
+    port: 25136
+    uuid: "440b5558-e701-4c6f-8de2-d24dcf1ebbe6"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "85.90.217.42"
+    servername: "www.cloudflare.com"
+    client-fingerprint: "random"
+    reality-opts:
+      public-key: "nkmfL3QCskKAfBUk-OiTgcWyIXGmXrZVtDEoio0Qo1w"
+      short-id: "f78838fbd85e59ae"
   - name: "🇪🇸_2"
+    type: vless
+    server: "es3.h1cloud.net"
+    port: 25136
+    uuid: "c1c13ef7-affa-47e1-8967-25cc67679c10"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.cloudflare.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "nkmfL3QCskKAfBUk-OiTgcWyIXGmXrZVtDEoio0Qo1w"
+      short-id: "f78838fbd85e59ae"
+  - name: "🇪🇸_3"
+    type: vless
+    server: "45.198.55.200"
+    port: 25136
+    uuid: "c1c13ef7-affa-47e1-8967-25cc67679c10"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.cloudflare.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "nkmfL3QCskKAfBUk-OiTgcWyIXGmXrZVtDEoio0Qo1w"
+      short-id: "f78838fbd85e59ae"
+  - name: "🇪🇸_4"
     type: vless
     server: "46.28.71.247"
     port: 443
@@ -82,34 +112,13 @@ proxies:
       public-key: "v4MuZIvFrTPT5GHMSaPryUAbIZlLstmsUTzmC1E-JTE"
       short-id: "0dfc23fe80778c00"
     flow: "xtls-rprx-vision"
-  - name: "🇪🇸_3"
-    type: vless
-    server: "138.124.62.158"
-    port: 443
-    uuid: "2b781b4a-5942-48e0-a7f3-5a07b7b488c1"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "es-root.sworkingvpn.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "AhLy7ha7FF2EQfu-3SxOFKUwExyHActYPHtyv82KNCI"
-      short-id: "15bcc0a77c3cacdf"
-    flow: "xtls-rprx-vision"
-  - name: "🇪🇸_4"
+  - name: "🇪🇸_5"
     type: trojan
     server: "65.20.102.54"
     port: 443
     password: "842b5f9dd11e458d8613c907c4cc5723"
     sni: "www.gpt123.one"
     skip-cert-verify: true
-    udp: true
-  - name: "🇪🇸_5"
-    type: ss
-    server: "108.181.121.226"
-    port: 8388
-    cipher: "chacha20-ietf-poly1305"
-    password: "WSyL4XTwNsdv"
     udp: true
   - name: "🇪🇸_6"
     type: ss
@@ -119,6 +128,20 @@ proxies:
     password: "WSyL4XTwNsdv"
     udp: true
   - name: "🇪🇸_7"
+    type: ss
+    server: "108.181.121.226"
+    port: 8388
+    cipher: "chacha20-ietf-poly1305"
+    password: "WSyL4XTwNsdv"
+    udp: true
+  - name: "🇪🇸_8"
+    type: ss
+    server: "82.38.31.155"
+    port: 8080
+    cipher: "chacha20-ietf-poly1305"
+    password: "oZIoA69Q8yhcQV8ka3Pa3A"
+    udp: true
+  - name: "🇪🇸_9"
     type: ss
     server: "108.181.121.226"
     port: 8388
@@ -148,6 +171,8 @@ proxy-groups:
       - "🇪🇸_5"
       - "🇪🇸_6"
       - "🇪🇸_7"
+      - "🇪🇸_8"
+      - "🇪🇸_9"
 
 
   - name: "Load Balance"
@@ -163,6 +188,8 @@ proxy-groups:
       - "🇪🇸_5"
       - "🇪🇸_6"
       - "🇪🇸_7"
+      - "🇪🇸_8"
+      - "🇪🇸_9"
 
 rules:
   - MATCH,PROXY

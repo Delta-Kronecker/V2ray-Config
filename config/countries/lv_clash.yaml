@@ -62,19 +62,33 @@ dns:
 proxies:
   - name: "🇱🇻_1"
     type: vless
-    server: "138.124.63.94"
-    port: 443
-    uuid: "2b781b4a-5942-0018-a7f3-5a07b7b488c1"
+    server: "188.220.205.44"
+    port: 56789
+    uuid: "a889fba5-5472-4022-a6b4-9710157fda2f"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "lv-root.sworkingvpn.com"
+    servername: "lit.fytpn.com"
     client-fingerprint: "firefox"
     reality-opts:
-      public-key: "AhLy7ha7FF2EQfu-3SxOFKUwExyHActYPHtyv82KNCI"
-      short-id: "15bcc0a77c3cacdf"
+      public-key: "PDHRi_RRFsPhxLoH2C1l9A9HdL2y7g1uOzXmY0XnmzQ"
+      short-id: "a2aa"
     flow: "xtls-rprx-vision"
   - name: "🇱🇻_2"
+    type: vless
+    server: "185.220.223.109"
+    port: 8443
+    uuid: "f7f48934-f14c-4819-b225-36e89bda5491"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "lv.shadowshroom.org"
+    client-fingerprint: "random"
+    reality-opts:
+      public-key: "RdMrEyniUBYe4bPHFYIwdczUWW4vbZe_DboFu8gjN0w"
+      short-id: ""
+    flow: "xtls-rprx-vision"
+  - name: "🇱🇻_3"
     type: vless
     server: "lit.fytpn.com"
     port: 56789
@@ -88,47 +102,35 @@ proxies:
       public-key: "PDHRi_RRFsPhxLoH2C1l9A9HdL2y7g1uOzXmY0XnmzQ"
       short-id: "a2aa"
     flow: "xtls-rprx-vision"
-  - name: "🇱🇻_3"
-    type: vless
-    server: "138.124.63.93"
-    port: 443
-    uuid: "2b781b4a-5942-48e0-a7f3-5a07b7b488c1"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "lv-root.sworkingvpn.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "AhLy7ha7FF2EQfu-3SxOFKUwExyHActYPHtyv82KNCI"
-      short-id: "15bcc0a77c3cacdf"
-    flow: "xtls-rprx-vision"
   - name: "🇱🇻_4"
     type: vless
-    server: "138.124.63.94"
-    port: 443
-    uuid: "2b781b4a-5942-48e0-a7f3-5a07b7b488c1"
+    server: "138.124.63.224"
+    port: 8444
+    uuid: "f55e9aba-7b14-4f6f-b59a-d5b3d45c9309"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "lv-root.sworkingvpn.com"
-    client-fingerprint: "firefox"
+    servername: "github.com"
+    client-fingerprint: "chrome"
     reality-opts:
-      public-key: "AhLy7ha7FF2EQfu-3SxOFKUwExyHActYPHtyv82KNCI"
-      short-id: "15bcc0a77c3cacdf"
-    flow: "xtls-rprx-vision"
+      public-key: "FWitre1jinQR7qz5HQ0q2Q4Gg9xA9B0SyizCziN7Ch0"
+      short-id: "457fab2ac885dbe0"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "GunService"
   - name: "🇱🇻_5"
     type: vless
-    server: "31.57.106.241"
+    server: "195.123.213.28"
     port: 443
-    uuid: "a4801105-c0c7-4cab-87c6-f257ff2afc09"
+    uuid: "02fcc1a4-ee90-4970-8bbb-4ffaa8109d24"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "www.lmt.lv"
-    client-fingerprint: "firefox"
+    servername: "www.cloudflare.com"
+    client-fingerprint: "chrome"
     reality-opts:
-      public-key: "4SJB--DChFNhmOUz0-BZK2dS3GhZ1yZwMVIhmpobB0o"
-      short-id: "44f7c5615039ae1b"
+      public-key: "NMgy1XgCSXExOg6Tg8xG9lCWttMF6sjdpB41lZy6FWo"
+      short-id: "5c256336e3b673fa"
     flow: "xtls-rprx-vision"
   - name: "🇱🇻_6"
     type: vless
@@ -159,36 +161,14 @@ proxies:
       short-id: "33acba1b"
     flow: "xtls-rprx-vision"
   - name: "🇱🇻_8"
-    type: vless
-    server: "5.34.215.70"
-    port: 8443
-    uuid: "d91dc97c-a09b-40fa-9da0-a3d1729f7427"
-    udp: true
-    tls: true
+    type: trojan
+    server: "188.220.205.44"
+    port: 2097
+    password: "gHncxmRjWEJ7apX5XuXsHw4kGexMH_gU"
+    sni: "lit.fytpn.com"
     skip-cert-verify: true
-    servername: "estoxy.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "i3F_hP7yc9VpcUC2Vn1oAqLyW3hZayGdTybl-VnWdz0"
-      short-id: "02827ef87f4a23c0"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "grpc-y"
+    udp: true
   - name: "🇱🇻_9"
-    type: vless
-    server: "195.123.213.28"
-    port: 443
-    uuid: "02fcc1a4-ee90-4970-8bbb-4ffaa8109d24"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.cloudflare.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "NMgy1XgCSXExOg6Tg8xG9lCWttMF6sjdpB41lZy6FWo"
-      short-id: "5c256336e3b673fa"
-    flow: "xtls-rprx-vision"
-  - name: "🇱🇻_10"
     type: trojan
     server: "lit.fytpn.com"
     port: 2097
@@ -196,10 +176,23 @@ proxies:
     sni: "lit.fytpn.com"
     skip-cert-verify: true
     udp: true
-  - name: "🇱🇻_11"
+  - name: "🇱🇻_10"
     type: ss
     server: "46.32.186.85"
     port: 443
+    cipher: "none"
+    password: "3e96ef7d-8637-42c2-ac73-75182196e755"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "3e96ef7d-8637-42c2-ac73-75182196e755/?ed\\=2560"
+      host: "mfvpn.fuchen.indevs.in"
+      tls: true
+  - name: "🇱🇻_11"
+    type: ss
+    server: "193.68.89.220"
+    port: 8443
     cipher: "none"
     password: "3e96ef7d-8637-42c2-ac73-75182196e755"
     udp: true
@@ -223,19 +216,6 @@ proxies:
       host: "mfvpn.fuchen.indevs.in"
       tls: true
   - name: "🇱🇻_13"
-    type: ss
-    server: "193.68.89.220"
-    port: 8443
-    cipher: "none"
-    password: "3e96ef7d-8637-42c2-ac73-75182196e755"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "3e96ef7d-8637-42c2-ac73-75182196e755/?ed\\=2560"
-      host: "mfvpn.fuchen.indevs.in"
-      tls: true
-  - name: "🇱🇻_14"
     type: ss
     server: "193.68.89.220"
     port: 8443
@@ -277,7 +257,6 @@ proxy-groups:
       - "🇱🇻_11"
       - "🇱🇻_12"
       - "🇱🇻_13"
-      - "🇱🇻_14"
 
 
   - name: "Load Balance"
@@ -299,7 +278,6 @@ proxy-groups:
       - "🇱🇻_11"
       - "🇱🇻_12"
       - "🇱🇻_13"
-      - "🇱🇻_14"
 
 rules:
   - MATCH,PROXY

@@ -62,9 +62,9 @@ dns:
 proxies:
   - name: "🇨🇿_1"
     type: vless
-    server: "gw2.edgemedia.lol"
+    server: "13.143.137.206"
     port: 8443
-    uuid: "8ff3db5a-5f41-4f25-a8a4-7fbf00f1c319"
+    uuid: "9ebf4fda-7395-4800-b42f-b2dda649880a"
     udp: true
     tls: true
     skip-cert-verify: true
@@ -76,21 +76,21 @@ proxies:
     flow: "xtls-rprx-vision"
   - name: "🇨🇿_2"
     type: vless
-    server: "31.76.115.238"
-    port: 8443
-    uuid: "8ff3db5a-5f41-4f25-a8a4-7fbf00f1c319"
+    server: "95.85.238.142"
+    port: 443
+    uuid: "e937b92c-701f-420e-a621-3eb3b75de467"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "ya.ru"
+    servername: "bobr.puffixhosting.com"
     client-fingerprint: "firefox"
     reality-opts:
-      public-key: "1MLoHw7RVkGefh7XUyuGg4ndxwv4vDU9en-f9JxpXRQ"
-      short-id: "d2061bb1"
+      public-key: "WrqktJc0i6tesi_bVc6WS1mYM0yxhbriI4jrU_butSA"
+      short-id: "cd529c087b552f2f"
     flow: "xtls-rprx-vision"
   - name: "🇨🇿_3"
     type: vless
-    server: "193.23.195.37"
+    server: "gw1.edgemedia.lol"
     port: 8443
     uuid: "9ebf4fda-7395-4800-b42f-b2dda649880a"
     udp: true
@@ -104,6 +104,57 @@ proxies:
     flow: "xtls-rprx-vision"
   - name: "🇨🇿_4"
     type: vless
+    server: "193.23.195.37"
+    port: 8443
+    uuid: "8ff3db5a-5f41-4f25-a8a4-7fbf00f1c319"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ya.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "1MLoHw7RVkGefh7XUyuGg4ndxwv4vDU9en-f9JxpXRQ"
+      short-id: "d2061bb1"
+    flow: "xtls-rprx-vision"
+  - name: "🇨🇿_5"
+    type: vless
+    server: "31.76.115.238"
+    port: 8443
+    uuid: "8ff3db5a-5f41-4f25-a8a4-7fbf00f1c319"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ya.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "1MLoHw7RVkGefh7XUyuGg4ndxwv4vDU9en-f9JxpXRQ"
+      short-id: "d2061bb1"
+    flow: "xtls-rprx-vision"
+  - name: "🇨🇿_6"
+    type: vless
+    server: "153.76.185.168"
+    port: 3090
+    uuid: "14d14e40-16e5-4972-8e13-d87ec3a949ee"
+    udp: true
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "vless"
+  - name: "🇨🇿_7"
+    type: vless
+    server: "193.23.195.37"
+    port: 8443
+    uuid: "9ebf4fda-7395-4800-b42f-b2dda649880a"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ya.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "1MLoHw7RVkGefh7XUyuGg4ndxwv4vDU9en-f9JxpXRQ"
+      short-id: "d2061bb1"
+    flow: "xtls-rprx-vision"
+  - name: "🇨🇿_8"
+    type: vless
     server: "31.76.7.227"
     port: 443
     uuid: "d0e771c5-024e-4393-bb90-4a3e3c561656"
@@ -116,25 +167,11 @@ proxies:
       public-key: "nIL5EeUo2XUkCaLJGbzgRm6zhF-96kWvV2VmhEt3CX4"
       short-id: "4af4102cb26e59"
     flow: "xtls-rprx-vision"
-  - name: "🇨🇿_5"
+  - name: "🇨🇿_9"
     type: vless
-    server: "188.124.59.124"
+    server: "gw2.edgemedia.lol"
     port: 8443
-    uuid: "c3369c07-f0d2-4a2c-97ab-0d3d47803912"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "github.com"
-    client-fingerprint: "safari"
-    reality-opts:
-      public-key: "1KY_jqa2yPLBEBa-3TG77zs4ak2zQLGul4eexxCueyI"
-      short-id: ""
-    flow: "xtls-rprx-vision"
-  - name: "🇨🇿_6"
-    type: vless
-    server: "13.143.137.206"
-    port: 8443
-    uuid: "9ebf4fda-7395-4800-b42f-b2dda649880a"
+    uuid: "8ff3db5a-5f41-4f25-a8a4-7fbf00f1c319"
     udp: true
     tls: true
     skip-cert-verify: true
@@ -166,6 +203,9 @@ proxy-groups:
       - "🇨🇿_4"
       - "🇨🇿_5"
       - "🇨🇿_6"
+      - "🇨🇿_7"
+      - "🇨🇿_8"
+      - "🇨🇿_9"
 
 
   - name: "Load Balance"
@@ -180,6 +220,9 @@ proxy-groups:
       - "🇨🇿_4"
       - "🇨🇿_5"
       - "🇨🇿_6"
+      - "🇨🇿_7"
+      - "🇨🇿_8"
+      - "🇨🇿_9"
 
 rules:
   - MATCH,PROXY

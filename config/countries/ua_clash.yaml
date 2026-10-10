@@ -61,6 +61,19 @@ dns:
 
 proxies:
   - name: "🇺🇦_1"
+    type: vless
+    server: "185.243.99.100"
+    port: 1222
+    uuid: "36c3dcc2-17b6-4478-b8a7-3978e6d5afe9"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.forvo.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "zpLKK8HuwXJDH9D0O3t5Z_tO3ajkj7VRtXdr6UGy1zE"
+      short-id: "a25d0f"
+  - name: "🇺🇦_2"
     type: trojan
     server: "130.0.236.88"
     port: 443
@@ -85,6 +98,7 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇺🇦_1"
+      - "🇺🇦_2"
 
 
   - name: "Load Balance"
@@ -94,6 +108,7 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇺🇦_1"
+      - "🇺🇦_2"
 
 rules:
   - MATCH,PROXY
