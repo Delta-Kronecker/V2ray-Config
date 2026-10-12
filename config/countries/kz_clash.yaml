@@ -88,6 +88,20 @@ proxies:
       short-id: "69a2"
   - name: "🇰🇿_3"
     type: vless
+    server: "206.223.249.90"
+    port: 33891
+    uuid: "9977ba41-b6aa-4033-9492-2f6abfcade31"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "browser.yandex.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "fj5f0rWTOAgd2gqCCWgag3oAGwb6MCef3OFNdnQLWW8"
+      short-id: "f5bc6788"
+    flow: "xtls-rprx-vision"
+  - name: "🇰🇿_4"
+    type: vless
     server: "109.248.170.119"
     port: 13447
     uuid: "b573cefb-7bc7-4a42-b407-b8b534e66773"
@@ -99,7 +113,7 @@ proxies:
     reality-opts:
       public-key: "_0wM2ep44eAcrgf5PflKaBivknCWT6kMvQBQUoScCkE"
       short-id: "83"
-  - name: "🇰🇿_4"
+  - name: "🇰🇿_5"
     type: vless
     server: "5.252.33.175"
     port: 9882
@@ -115,7 +129,7 @@ proxies:
     network: grpc
     grpc-opts:
       grpc-service-name: "grpc-tunnel"
-  - name: "🇰🇿_5"
+  - name: "🇰🇿_6"
     type: vless
     server: "83.222.23.81"
     port: 38065
@@ -149,6 +163,7 @@ proxy-groups:
       - "🇰🇿_3"
       - "🇰🇿_4"
       - "🇰🇿_5"
+      - "🇰🇿_6"
 
 
   - name: "Load Balance"
@@ -162,6 +177,7 @@ proxy-groups:
       - "🇰🇿_3"
       - "🇰🇿_4"
       - "🇰🇿_5"
+      - "🇰🇿_6"
 
 rules:
   - MATCH,PROXY

@@ -62,38 +62,34 @@ dns:
 proxies:
   - name: "🇹🇷_1"
     type: vless
-    server: "test.keoplentuio.xyz"
-    port: 2053
-    uuid: "9ef61079-6f7d-4911-9608-943da85d8e6f"
+    server: "85.192.48.142"
+    port: 443
+    uuid: "adc11f30-e4cb-4985-bf5e-f9ded69c019f"
     udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "nvidia.com"
+    reality-opts:
+      public-key: "fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI"
+      short-id: "db04ce8bdb8900f1"
+    flow: "xtls-rprx-vision"
   - name: "🇹🇷_2"
     type: vless
-    server: "151.241.226.201"
-    port: 2053
-    uuid: "0eed6293-8cf1-4e77-ac10-9c3d50d0b2f8"
+    server: "tr2.h1cloud.net"
+    port: 25375
+    uuid: "ec572cf0-1337-4c51-b4ec-ff2f538c1f4c"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "www.apple.com"
-    client-fingerprint: "firefox"
+    servername: "www.bing.com"
+    client-fingerprint: "random"
     reality-opts:
-      public-key: "bYW_MmB_CUHrsyoCAUKviI2LZdHf63yY2yOPXbih104"
-      short-id: "9e419c0759b54d6f"
+      public-key: "PdiXtqIEtNpVRKgB1WCKnmIOC7yJ-VR4uUe1uYjcqXM"
+      short-id: "8e2a0cd6de5dc50a"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "05195f917c82"
   - name: "🇹🇷_3"
-    type: vless
-    server: "78.135.73.47"
-    port: 443
-    uuid: "25e16692-d097-4e69-9e2d-8415609c1968"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.datadoghq.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "sZAJkAu23wp1WKY-qeaeiwR38izP5OyfhumoE9xhbB8"
-      short-id: "f46cd3ea3d1eb72d"
-    flow: "xtls-rprx-vision"
-  - name: "🇹🇷_4"
     type: vless
     server: "62.60.233.157"
     port: 8444
@@ -109,33 +105,45 @@ proxies:
     network: grpc
     grpc-opts:
       grpc-service-name: "GunService"
+  - name: "🇹🇷_4"
+    type: vless
+    server: "test.keoplentuio.xyz"
+    port: 2053
+    uuid: "9ef61079-6f7d-4911-9608-943da85d8e6f"
+    udp: true
   - name: "🇹🇷_5"
     type: vless
-    server: "85.192.48.142"
+    server: "78.135.73.47"
     port: 443
-    uuid: "adc11f30-e4cb-4985-bf5e-f9ded69c019f"
+    uuid: "25e16692-d097-4e69-9e2d-8415609c1968"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "nvidia.com"
+    servername: "www.datadoghq.com"
+    client-fingerprint: "firefox"
     reality-opts:
-      public-key: "fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI"
-      short-id: "db04ce8bdb8900f1"
+      public-key: "sZAJkAu23wp1WKY-qeaeiwR38izP5OyfhumoE9xhbB8"
+      short-id: "f46cd3ea3d1eb72d"
     flow: "xtls-rprx-vision"
   - name: "🇹🇷_6"
+    type: vless
+    server: "151.241.226.201"
+    port: 2053
+    uuid: "0eed6293-8cf1-4e77-ac10-9c3d50d0b2f8"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.apple.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "bYW_MmB_CUHrsyoCAUKviI2LZdHf63yY2yOPXbih104"
+      short-id: "9e419c0759b54d6f"
+  - name: "🇹🇷_7"
     type: trojan
     server: "194.146.26.40"
     port: 443
     password: "2ea5fc44-bd38-4fb0-a9b9-88c83fc56622"
     sni: "4-193-105-141.nhost.00cdn.com"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇹🇷_7"
-    type: trojan
-    server: "subtu.charsoulink3.ir"
-    port: 2087
-    password: "v2whz6ahmyy2f84j"
-    sni: "pus.mmdaqaorg2.ir"
     skip-cert-verify: true
     udp: true
   - name: "🇹🇷_8"
@@ -145,20 +153,6 @@ proxies:
     password: "af4b064a9c39472fb34ad8b113acdc6b"
     sni: "194.87.39.133"
     skip-cert-verify: true
-    udp: true
-  - name: "🇹🇷_9"
-    type: ss
-    server: "206.1.100.83"
-    port: 25178
-    cipher: "2022-blake3-aes-256-gcm"
-    password: "ADzlhA3ndouUCY3JbLddR/jwgYY7IDGc1T+5DuCix9Y=:KyFe2akGo5hcrswbMkD2+BM52si+D7lzyccZFTd4xaU="
-    udp: true
-  - name: "🇹🇷_10"
-    type: ss
-    server: "206.1.100.83"
-    port: 25178
-    cipher: "2022-blake3-aes-256-gcm"
-    password: "ADzlhA3ndouUCY3JbLddR/jwgYY7IDGc1T+5DuCix9Y=:KyFe2akGo5hcrswbMkD2+BM52si+D7lzyccZFTd4xaU="
     udp: true
 
 proxy-groups:
@@ -184,8 +178,6 @@ proxy-groups:
       - "🇹🇷_6"
       - "🇹🇷_7"
       - "🇹🇷_8"
-      - "🇹🇷_9"
-      - "🇹🇷_10"
 
 
   - name: "Load Balance"
@@ -202,8 +194,6 @@ proxy-groups:
       - "🇹🇷_6"
       - "🇹🇷_7"
       - "🇹🇷_8"
-      - "🇹🇷_9"
-      - "🇹🇷_10"
 
 rules:
   - MATCH,PROXY

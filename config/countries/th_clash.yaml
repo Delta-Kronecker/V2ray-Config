@@ -76,20 +76,6 @@ proxies:
     flow: "xtls-rprx-vision"
   - name: "🇹🇭_2"
     type: vless
-    server: "154.64.251.118"
-    port: 21033
-    uuid: "57beeeb0-03fc-4fc9-94da-7604488a7134"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.kaidee.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "EG-jzQw1RyOwAM4L9rMKondSx7cyFmPyv1OP7xXkIk4"
-      short-id: "cbd39bea0805e2"
-    flow: "xtls-rprx-vision"
-  - name: "🇹🇭_3"
-    type: vless
     server: "dghk2610.supertoolify.com"
     port: 21033
     uuid: "57beeeb0-03fc-4fc9-94da-7604488a7134"
@@ -102,6 +88,20 @@ proxies:
       public-key: "EG-jzQw1RyOwAM4L9rMKondSx7cyFmPyv1OP7xXkIk4"
       short-id: "cbd39bea0805e2"
     flow: "xtls-rprx-vision"
+  - name: "🇹🇭_3"
+    type: vless
+    server: "103.80.48.158"
+    port: 443
+    uuid: "c9c219dc-50da-4135-8e5b-67020291f0ec"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "xy4l6bpbjk.xeltrona-host26.sbs"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "fJnm6-PhJGSwHaAdJOzXkYOfCPPCWSlaZrtfm1XsqhA"
+      short-id: "6ba85179e30d4fc2"
+    flow: "xtls-rprx-vision"
   - name: "🇹🇭_4"
     type: ss
     server: "103.107.52.106"
@@ -111,19 +111,26 @@ proxies:
     udp: true
   - name: "🇹🇭_5"
     type: ss
-    server: "103.107.52.106"
+    server: "pphfree2.mvpnpvpn.de5.net"
     port: 52351
     cipher: "aes-256-gcm"
     password: "sxajCTwrlK0zl+zmHpX0p0jXIfatnzlLzWlSQ950L1c="
     udp: true
   - name: "🇹🇭_6"
     type: ss
-    server: "pphfree2.mvpnpvpn.de5.net"
+    server: "103.107.52.106"
     port: 52351
     cipher: "aes-256-gcm"
     password: "sxajCTwrlK0zl+zmHpX0p0jXIfatnzlLzWlSQ950L1c="
     udp: true
   - name: "🇹🇭_7"
+    type: ss
+    server: "pphfree2.mvpnpvpn.de5.net"
+    port: 52351
+    cipher: "aes-256-gcm"
+    password: "sxajCTwrlK0zl+zmHpX0p0jXIfatnzlLzWlSQ950L1c="
+    udp: true
+  - name: "🇹🇭_8"
     type: vmess
     server: "119.46.51.45"
     port: 37515
@@ -154,6 +161,7 @@ proxy-groups:
       - "🇹🇭_5"
       - "🇹🇭_6"
       - "🇹🇭_7"
+      - "🇹🇭_8"
 
 
   - name: "Load Balance"
@@ -169,6 +177,7 @@ proxy-groups:
       - "🇹🇭_5"
       - "🇹🇭_6"
       - "🇹🇭_7"
+      - "🇹🇭_8"
 
 rules:
   - MATCH,PROXY
