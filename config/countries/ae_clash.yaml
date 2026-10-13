@@ -62,20 +62,6 @@ dns:
 proxies:
   - name: "🇦🇪_1"
     type: vless
-    server: "94.249.188.202"
-    port: 43000
-    uuid: "f8842728-bf43-47e2-83bf-283e21f33664"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "94.249.188.202"
-    client-fingerprint: "random"
-    reality-opts:
-      public-key: "TdLpPmh5-Tbcj3bUPp7uw9znQ_Asao8z9jG7Eccrhwk"
-      short-id: "7887c27d"
-    flow: "xtls-rprx-vision"
-  - name: "🇦🇪_2"
-    type: vless
     server: "146.70.102.82"
     port: 443
     uuid: "31fd2fde-ca69-450e-8c03-eaad819b06b9"
@@ -88,14 +74,6 @@ proxies:
       public-key: "GDer6NQYXdbccrFI0tLn2671PjCvrcSy0R7TKY8vG1k"
       short-id: "002fb4ec7b3088cc"
     flow: "xtls-rprx-vision"
-  - name: "🇦🇪_3"
-    type: trojan
-    server: "154.90.55.81"
-    port: 443
-    password: "af4b064a9c39472fb34ad8b113acdc6b"
-    sni: "154.90.55.81"
-    skip-cert-verify: true
-    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -113,8 +91,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇦🇪_1"
-      - "🇦🇪_2"
-      - "🇦🇪_3"
 
 
   - name: "Load Balance"
@@ -124,8 +100,6 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇦🇪_1"
-      - "🇦🇪_2"
-      - "🇦🇪_3"
 
 rules:
   - MATCH,PROXY

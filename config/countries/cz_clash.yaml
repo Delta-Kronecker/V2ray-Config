@@ -76,27 +76,32 @@ proxies:
     flow: "xtls-rprx-vision"
   - name: "🇨🇿_2"
     type: vless
-    server: "153.76.185.168"
-    port: 3090
-    uuid: "0e9b538d-21d6-49c6-93da-20634d589497"
-    udp: true
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "vless"
-  - name: "🇨🇿_3"
-    type: vless
-    server: "5.254.49.34"
-    port: 995
-    uuid: "affb1e92-db55-4929-81e4-2e7e327b909b"
+    server: "czekkk.loknietotop.digital"
+    port: 443
+    uuid: "ace33fb8-c593-4b17-8f72-f3359b6e9638"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "prague.yyuyy.com"
+    servername: "czekkk.loknietotop.digital"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "WU5baXUzRH9BceiYI8MPBmDMEloTFImx2vvE5uh1yjM"
+      short-id: "f19e02a2fb573c18"
+    flow: "xtls-rprx-vision"
+  - name: "🇨🇿_3"
+    type: vless
+    server: "5.39.202.125"
+    port: 443
+    uuid: "ace33fb8-c593-4b17-8f72-f3359b6e9638"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "czekkk.loknietotop.digital"
     client-fingerprint: "random"
-    network: httpupgrade
-    httpupgrade-opts:
-      path: "/api/v1"
-      host: "prague.yyuyy.com"
+    reality-opts:
+      public-key: "WU5baXUzRH9BceiYI8MPBmDMEloTFImx2vvE5uh1yjM"
+      short-id: "f19e02a2fb573c18"
+    flow: "xtls-rprx-vision"
 
 proxy-groups:
   - name: "PROXY"

@@ -73,14 +73,6 @@ proxies:
     reality-opts:
       public-key: "pCImwRkTjx8OIUiu1WFelZQFt1p3Q0lUoPbvjVq8GTs"
       short-id: "b62a4da6cd1c4dd6"
-  - name: "🇧🇷_2"
-    type: trojan
-    server: "109.104.155.94"
-    port: 443
-    password: "3828095943467868160"
-    sni: "national-toucan.dolphin109.quest"
-    skip-cert-verify: true
-    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -98,7 +90,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇧🇷_1"
-      - "🇧🇷_2"
 
 
   - name: "Load Balance"
@@ -108,7 +99,6 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇧🇷_1"
-      - "🇧🇷_2"
 
 rules:
   - MATCH,PROXY

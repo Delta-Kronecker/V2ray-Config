@@ -62,20 +62,6 @@ dns:
 proxies:
   - name: "🇱🇻_1"
     type: vless
-    server: "31.76.62.32"
-    port: 443
-    uuid: "8e66d40e-6f62-4243-a7d8-ebe83e4c2e77"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "lv-rix-1.koolb.org"
-    client-fingerprint: "safari"
-    reality-opts:
-      public-key: "C4kK4uxh9a5ym0-JmcaTwkUwkB0FTRjSAIlHLTKRHlo"
-      short-id: "84341e3e"
-    flow: "xtls-rprx-vision"
-  - name: "🇱🇻_2"
-    type: vless
     server: "195.123.213.28"
     port: 443
     uuid: "02fcc1a4-ee90-4970-8bbb-4ffaa8109d24"
@@ -88,21 +74,21 @@ proxies:
       public-key: "NMgy1XgCSXExOg6Tg8xG9lCWttMF6sjdpB41lZy6FWo"
       short-id: "5c256336e3b673fa"
     flow: "xtls-rprx-vision"
-  - name: "🇱🇻_3"
+  - name: "🇱🇻_2"
     type: vless
-    server: "138.124.180.137"
+    server: "31.57.106.241"
     port: 443
-    uuid: "5234b2b7-5e07-422c-8159-d62a676c00c6"
+    uuid: "a4801105-c0c7-4cab-87c6-f257ff2afc09"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "www.apple.com"
+    servername: "www.lmt.lv"
     client-fingerprint: "chrome"
     reality-opts:
-      public-key: "GBdkyDLfr0LIZo_94Xv8ycAKOmkjArYzwJAEMhuXX2c"
-      short-id: "33acba1b"
+      public-key: "4SJB--DChFNhmOUz0-BZK2dS3GhZ1yZwMVIhmpobB0o"
+      short-id: "44f7c5615039ae1b"
     flow: "xtls-rprx-vision"
-  - name: "🇱🇻_4"
+  - name: "🇱🇻_3"
     type: vless
     server: "138.124.63.224"
     port: 8444
@@ -118,58 +104,20 @@ proxies:
     network: grpc
     grpc-opts:
       grpc-service-name: "GunService"
-  - name: "🇱🇻_5"
-    type: ss
-    server: "193.68.89.220"
-    port: 8443
-    cipher: "none"
-    password: "3e96ef7d-8637-42c2-ac73-75182196e755"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "3e96ef7d-8637-42c2-ac73-75182196e755/?ed\\=2560"
-      host: "mfvpn.fuchen.indevs.in"
-      tls: true
-  - name: "🇱🇻_6"
-    type: ss
-    server: "46.32.186.85"
+  - name: "🇱🇻_4"
+    type: vless
+    server: "138.124.180.137"
     port: 443
-    cipher: "none"
-    password: "3e96ef7d-8637-42c2-ac73-75182196e755"
+    uuid: "5234b2b7-5e07-422c-8159-d62a676c00c6"
     udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "3e96ef7d-8637-42c2-ac73-75182196e755/?ed\\=2560"
-      host: "mfvpn.fuchen.indevs.in"
-      tls: true
-  - name: "🇱🇻_7"
-    type: ss
-    server: "46.32.186.85"
-    port: 443
-    cipher: "none"
-    password: "3e96ef7d-8637-42c2-ac73-75182196e755"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "3e96ef7d-8637-42c2-ac73-75182196e755/?ed\\=2560"
-      host: "mfvpn.fuchen.indevs.in"
-      tls: true
-  - name: "🇱🇻_8"
-    type: ss
-    server: "193.68.89.220"
-    port: 8443
-    cipher: "none"
-    password: "3e96ef7d-8637-42c2-ac73-75182196e755"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "3e96ef7d-8637-42c2-ac73-75182196e755/?ed\\=2560"
-      host: "mfvpn.fuchen.indevs.in"
-      tls: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.apple.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "GBdkyDLfr0LIZo_94Xv8ycAKOmkjArYzwJAEMhuXX2c"
+      short-id: "33acba1b"
+    flow: "xtls-rprx-vision"
 
 proxy-groups:
   - name: "PROXY"
@@ -190,10 +138,6 @@ proxy-groups:
       - "🇱🇻_2"
       - "🇱🇻_3"
       - "🇱🇻_4"
-      - "🇱🇻_5"
-      - "🇱🇻_6"
-      - "🇱🇻_7"
-      - "🇱🇻_8"
 
 
   - name: "Load Balance"
@@ -206,10 +150,6 @@ proxy-groups:
       - "🇱🇻_2"
       - "🇱🇻_3"
       - "🇱🇻_4"
-      - "🇱🇻_5"
-      - "🇱🇻_6"
-      - "🇱🇻_7"
-      - "🇱🇻_8"
 
 rules:
   - MATCH,PROXY
