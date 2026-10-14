@@ -62,19 +62,33 @@ dns:
 proxies:
   - name: "🇦🇱_1"
     type: vless
-    server: "al3.h1cloud.net"
-    port: 25222
-    uuid: "83383473-0d62-4089-ac4d-d7ecb413504a"
+    server: "83.166.238.57"
+    port: 443
+    uuid: "a16a3e32-8d63-4dec-8c67-1361388a64ca"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "booking.com"
-    client-fingerprint: "firefox"
+    servername: "eh3.vk.ru"
+    client-fingerprint: "random"
     reality-opts:
-      public-key: "JpJpgrE3EOho_ldp0woAiPL-dh8he8V0m4-rV2Uc9TY"
-      short-id: "110177aa0babc87e"
+      public-key: "QXw5YbUfPssdgGZIfAol5PonYGWSjlWsWpoij93VU20"
+      short-id: "b276e04195d77f6b"
     flow: "xtls-rprx-vision"
   - name: "🇦🇱_2"
+    type: vless
+    server: "45.155.69.230"
+    port: 443
+    uuid: "0de1d303-d7de-e033-8679-c4cb67e2e2cc"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "amd.com"
+    client-fingerprint: "qq"
+    reality-opts:
+      public-key: "WWeAHWUVD-phmnjNJ823cer0c4CMIbEs08AhsuEZmDc"
+      short-id: "a696de84963656de"
+    flow: "xtls-rprx-vision"
+  - name: "🇦🇱_3"
     type: vless
     server: "95.85.224.51"
     port: 443
@@ -88,14 +102,14 @@ proxies:
       public-key: "WWeAHWUVD-phmnjNJ823cer0c4CMIbEs08AhsuEZmDc"
       short-id: "a696de84963656de"
     flow: "xtls-rprx-vision"
-  - name: "🇦🇱_3"
+  - name: "🇦🇱_4"
     type: ss
     server: "130.49.189.158"
     port: 43558
     cipher: "chacha20-ietf-poly1305"
     password: "52+ggoCvKFVJyT1NDiuWOZw2rHIvAg3tgqgJl8aeCwY="
     udp: true
-  - name: "🇦🇱_4"
+  - name: "🇦🇱_5"
     type: ss
     server: "130.49.189.158"
     port: 43558
@@ -122,6 +136,7 @@ proxy-groups:
       - "🇦🇱_2"
       - "🇦🇱_3"
       - "🇦🇱_4"
+      - "🇦🇱_5"
 
 
   - name: "Load Balance"
@@ -134,6 +149,7 @@ proxy-groups:
       - "🇦🇱_2"
       - "🇦🇱_3"
       - "🇦🇱_4"
+      - "🇦🇱_5"
 
 rules:
   - MATCH,PROXY

@@ -62,20 +62,6 @@ dns:
 proxies:
   - name: "🇨🇦_1"
     type: vless
-    server: "185.218.17.127"
-    port: 443
-    uuid: "bc8446e7-ba8e-4dfd-92df-8681793fe31e"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "corporate.amazon.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "QKaBb_u0KoNkMYbh9ljrxC9BDtnHyFoaMd4-s4xfKxQ"
-      short-id: "33c0b6e213"
-    flow: "xtls-rprx-vision"
-  - name: "🇨🇦_2"
-    type: vless
     server: "209.200.246.148"
     port: 443
     uuid: "ca52e2b6-fb9f-4dac-b6dc-49da9923f251"
@@ -88,7 +74,7 @@ proxies:
       public-key: "uTmb-ytXsx8p0fkBz7A76SHpWk7_oVutIA4LGTE8BQk"
       short-id: "f98843107912e782"
     flow: "xtls-rprx-vision"
-  - name: "🇨🇦_3"
+  - name: "🇨🇦_2"
     type: vless
     server: "66.70.179.198"
     port: 2053
@@ -100,13 +86,21 @@ proxies:
     reality-opts:
       public-key: "k4l6TxwkBbx9DhZAFpByq5rfCWFSgyOex3f_eFe9CWU"
       short-id: "83f8317a948bb769"
-  - name: "🇨🇦_4"
+  - name: "🇨🇦_3"
     type: vless
-    server: "milo.rubinaz.xyz"
-    port: 8080
-    uuid: "6bceb548-d9b6-461f-8e37-a5a7fbcdc2c8"
+    server: "185.218.17.127"
+    port: 443
+    uuid: "bc8446e7-ba8e-4dfd-92df-8681793fe31e"
     udp: true
-  - name: "🇨🇦_5"
+    tls: true
+    skip-cert-verify: true
+    servername: "corporate.amazon.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "QKaBb_u0KoNkMYbh9ljrxC9BDtnHyFoaMd4-s4xfKxQ"
+      short-id: "33c0b6e213"
+    flow: "xtls-rprx-vision"
+  - name: "🇨🇦_4"
     type: vless
     server: "51.79.31.36"
     port: 31146
@@ -120,23 +114,13 @@ proxies:
       public-key: "QAoJHZT6_DZsBu-jH74uYZUTpGgxmvN2tXpRKj4CygE"
       short-id: "cf4e6f8338"
     flow: "xtls-rprx-vision"
+  - name: "🇨🇦_5"
+    type: vless
+    server: "milo.rubinaz.xyz"
+    port: 8080
+    uuid: "6bceb548-d9b6-461f-8e37-a5a7fbcdc2c8"
+    udp: true
   - name: "🇨🇦_6"
-    type: trojan
-    server: "216.144.231.47"
-    port: 443
-    password: "8r<[9'l6hAO#8ZQi"
-    sni: "Koma-YT.PAGeS.Dev"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇨🇦_7"
-    type: trojan
-    server: "159.203.22.227"
-    port: 443
-    password: "acfef609-b3c7-4e52-b292-8921d5fca90d"
-    sni: "ca-full.privateip.net"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇨🇦_8"
     type: trojan
     server: "216.128.184.4"
     port: 443
@@ -144,34 +128,51 @@ proxies:
     sni: "ash.d22e0961-e0a7-49b8-8259-eac71e24d27b.kailib.com"
     skip-cert-verify: true
     udp: true
+  - name: "🇨🇦_7"
+    type: trojan
+    server: "216.144.231.47"
+    port: 443
+    password: "8r<[9'l6hAO#8ZQi"
+    sni: "Koma-YT.PAGeS.Dev"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇨🇦_8"
+    type: trojan
+    server: "159.203.22.227"
+    port: 443
+    password: "acfef609-b3c7-4e52-b292-8921d5fca90d"
+    sni: "ca-full.privateip.net"
+    skip-cert-verify: true
+    udp: true
   - name: "🇨🇦_9"
     type: trojan
-    server: "ca.tronsg.com"
+    server: "137.184.172.228"
     port: 443
-    password: "Trojan@82164024"
-    sni: "ca.tronsg.com"
+    password: "5392c4d3-b13e-456f-a0e5-8eaf52b7fc1d"
+    sni: "termux.com"
     skip-cert-verify: true
     udp: true
   - name: "🇨🇦_10"
-    type: ss
-    server: "51.222.200.165"
-    port: 5000
-    cipher: "aes-256-gcm"
-    password: "Y6R9pAtvxxzmGC"
+    type: trojan
+    server: "35.183.238.42"
+    port: 443
+    password: "your_password"
+    sni: "aws-ca-central-1.f1rocketnode.com"
+    skip-cert-verify: true
     udp: true
   - name: "🇨🇦_11"
     type: ss
-    server: "51.222.141.125"
-    port: 445
+    server: "51.79.85.185"
+    port: 8118
     cipher: "aes-256-gcm"
-    password: "zDNVedRFPQexG9v"
+    password: "cdBIDV42DCwnfIN"
     udp: true
   - name: "🇨🇦_12"
     type: ss
-    server: "51.79.64.198"
-    port: 8119
+    server: "51.79.49.116"
+    port: 8882
     cipher: "aes-256-gcm"
-    password: "cdBIDV42DCwnfIN"
+    password: "kDWvXYZoTBcGkC4"
     udp: true
   - name: "🇨🇦_13"
     type: ss
@@ -182,75 +183,110 @@ proxies:
     udp: true
   - name: "🇨🇦_14"
     type: ss
-    server: "51.222.12.127"
-    port: 445
+    server: "51.222.200.165"
+    port: 5000
     cipher: "aes-256-gcm"
-    password: "zDNVedRFPQexG9v"
+    password: "Y6R9pAtvxxzmGC"
     udp: true
   - name: "🇨🇦_15"
-    type: ss
-    server: "51.79.85.185"
-    port: 8118
-    cipher: "aes-256-gcm"
-    password: "cdBIDV42DCwnfIN"
-    udp: true
-  - name: "🇨🇦_16"
-    type: ss
-    server: "51.222.200.165"
-    port: 5000
-    cipher: "aes-256-gcm"
-    password: "Y6R9pAtvxxzmGC"
-    udp: true
-  - name: "🇨🇦_17"
-    type: ss
-    server: "ca225.vpnbook.com"
-    port: 443
-    cipher: "chacha20-ietf-poly1305"
-    password: "e5c65ph"
-    udp: true
-  - name: "🇨🇦_18"
-    type: ss
-    server: "51.79.49.116"
-    port: 8882
-    cipher: "aes-256-gcm"
-    password: "kDWvXYZoTBcGkC4"
-    udp: true
-  - name: "🇨🇦_19"
-    type: ss
-    server: "51.222.136.236"
-    port: 8882
-    cipher: "aes-256-gcm"
-    password: "kDWvXYZoTBcGkC4"
-    udp: true
-  - name: "🇨🇦_20"
-    type: ss
-    server: "51.222.200.165"
-    port: 5000
-    cipher: "aes-256-gcm"
-    password: "Y6R9pAtvxxzmGC"
-    udp: true
-  - name: "🇨🇦_21"
-    type: ss
-    server: "51.222.155.32"
-    port: 5003
-    cipher: "aes-256-gcm"
-    password: "g5MeD6Ft3CWlJId"
-    udp: true
-  - name: "🇨🇦_22"
     type: ss
     server: "64.74.163.67"
     port: 18764
     cipher: "aes-128-gcm"
     password: "4efe1af272e7292139b889f6a63ee071"
     udp: true
+  - name: "🇨🇦_16"
+    type: ss
+    server: "51.222.12.127"
+    port: 445
+    cipher: "aes-256-gcm"
+    password: "zDNVedRFPQexG9v"
+    udp: true
+  - name: "🇨🇦_17"
+    type: ss
+    server: "64.74.163.69"
+    port: 18766
+    cipher: "aes-128-gcm"
+    password: "4efe1af272e7292139b889f6a63ee071"
+    udp: true
+  - name: "🇨🇦_18"
+    type: ss
+    server: "51.222.155.32"
+    port: 5003
+    cipher: "aes-256-gcm"
+    password: "g5MeD6Ft3CWlJId"
+    udp: true
+  - name: "🇨🇦_19"
+    type: ss
+    server: "51.222.200.165"
+    port: 5000
+    cipher: "aes-256-gcm"
+    password: "Y6R9pAtvxxzmGC"
+    udp: true
+  - name: "🇨🇦_20"
+    type: ss
+    server: "51.222.141.125"
+    port: 445
+    cipher: "aes-256-gcm"
+    password: "zDNVedRFPQexG9v"
+    udp: true
+  - name: "🇨🇦_21"
+    type: ss
+    server: "64.74.163.67"
+    port: 18764
+    cipher: "aes-128-gcm"
+    password: "4efe1af272e7292139b889f6a63ee071"
+    udp: true
+  - name: "🇨🇦_22"
+    type: ss
+    server: "51.222.12.127"
+    port: 445
+    cipher: "aes-256-gcm"
+    password: "zDNVedRFPQexG9v"
+    udp: true
   - name: "🇨🇦_23"
     type: ss
-    server: "51.79.49.116"
+    server: "51.79.64.198"
+    port: 8119
+    cipher: "aes-256-gcm"
+    password: "cdBIDV42DCwnfIN"
+    udp: true
+  - name: "🇨🇦_24"
+    type: ss
+    server: "51.222.155.113"
+    port: 5601
+    cipher: "aes-256-gcm"
+    password: "Y6R9pAtvxxzmGC"
+    udp: true
+  - name: "🇨🇦_25"
+    type: ss
+    server: "51.222.200.165"
+    port: 5000
+    cipher: "aes-256-gcm"
+    password: "Y6R9pAtvxxzmGC"
+    udp: true
+  - name: "🇨🇦_26"
+    type: ss
+    server: "51.222.136.236"
     port: 8882
     cipher: "aes-256-gcm"
     password: "kDWvXYZoTBcGkC4"
     udp: true
-  - name: "🇨🇦_24"
+  - name: "🇨🇦_27"
+    type: ss
+    server: "64.74.163.69"
+    port: 18766
+    cipher: "aes-128-gcm"
+    password: "4efe1af272e7292139b889f6a63ee071"
+    udp: true
+  - name: "🇨🇦_28"
+    type: ss
+    server: "51.222.155.113"
+    port: 5601
+    cipher: "aes-256-gcm"
+    password: "Y6R9pAtvxxzmGC"
+    udp: true
+  - name: "🇨🇦_29"
     type: vmess
     server: "134.195.196.211"
     port: 18000
@@ -258,7 +294,7 @@ proxies:
     alterId: 0
     cipher: "auto"
     udp: true
-  - name: "🇨🇦_25"
+  - name: "🇨🇦_30"
     type: vmess
     server: "23.162.200.198"
     port: 18000
@@ -307,6 +343,11 @@ proxy-groups:
       - "🇨🇦_23"
       - "🇨🇦_24"
       - "🇨🇦_25"
+      - "🇨🇦_26"
+      - "🇨🇦_27"
+      - "🇨🇦_28"
+      - "🇨🇦_29"
+      - "🇨🇦_30"
 
 
   - name: "Load Balance"
@@ -340,6 +381,11 @@ proxy-groups:
       - "🇨🇦_23"
       - "🇨🇦_24"
       - "🇨🇦_25"
+      - "🇨🇦_26"
+      - "🇨🇦_27"
+      - "🇨🇦_28"
+      - "🇨🇦_29"
+      - "🇨🇦_30"
 
 rules:
   - MATCH,PROXY
