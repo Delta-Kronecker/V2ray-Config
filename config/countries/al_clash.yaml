@@ -62,60 +62,18 @@ dns:
 proxies:
   - name: "🇦🇱_1"
     type: vless
-    server: "83.166.238.57"
+    server: "31.59.217.164"
     port: 443
-    uuid: "a16a3e32-8d63-4dec-8c67-1361388a64ca"
+    uuid: "4b09d40d-e36a-47c3-baa4-e6bf551b3183"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "eh3.vk.ru"
-    client-fingerprint: "random"
+    servername: "www.adobe.com"
+    client-fingerprint: "chrome"
     reality-opts:
-      public-key: "QXw5YbUfPssdgGZIfAol5PonYGWSjlWsWpoij93VU20"
-      short-id: "b276e04195d77f6b"
+      public-key: "kOkILS7UXUQDNPLYn4SQ65kMIWKXNOttV5Kddw4ZqTo"
+      short-id: "1625a2a79d01328f"
     flow: "xtls-rprx-vision"
-  - name: "🇦🇱_2"
-    type: vless
-    server: "45.155.69.230"
-    port: 443
-    uuid: "0de1d303-d7de-e033-8679-c4cb67e2e2cc"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "amd.com"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "WWeAHWUVD-phmnjNJ823cer0c4CMIbEs08AhsuEZmDc"
-      short-id: "a696de84963656de"
-    flow: "xtls-rprx-vision"
-  - name: "🇦🇱_3"
-    type: vless
-    server: "95.85.224.51"
-    port: 443
-    uuid: "342ab7e4-5a89-0001-8809-304120d4aa83"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "max.ru"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "WWeAHWUVD-phmnjNJ823cer0c4CMIbEs08AhsuEZmDc"
-      short-id: "a696de84963656de"
-    flow: "xtls-rprx-vision"
-  - name: "🇦🇱_4"
-    type: ss
-    server: "130.49.189.158"
-    port: 43558
-    cipher: "chacha20-ietf-poly1305"
-    password: "52+ggoCvKFVJyT1NDiuWOZw2rHIvAg3tgqgJl8aeCwY="
-    udp: true
-  - name: "🇦🇱_5"
-    type: ss
-    server: "130.49.189.158"
-    port: 43558
-    cipher: "chacha20-ietf-poly1305"
-    password: "52+ggoCvKFVJyT1NDiuWOZw2rHIvAg3tgqgJl8aeCwY="
-    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -133,10 +91,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇦🇱_1"
-      - "🇦🇱_2"
-      - "🇦🇱_3"
-      - "🇦🇱_4"
-      - "🇦🇱_5"
 
 
   - name: "Load Balance"
@@ -146,10 +100,6 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇦🇱_1"
-      - "🇦🇱_2"
-      - "🇦🇱_3"
-      - "🇦🇱_4"
-      - "🇦🇱_5"
 
 rules:
   - MATCH,PROXY

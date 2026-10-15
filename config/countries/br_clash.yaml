@@ -62,20 +62,6 @@ dns:
 proxies:
   - name: "🇧🇷_1"
     type: vless
-    server: "br.urobotix.tech"
-    port: 443
-    uuid: "7b9b233c-c646-4859-88b2-2a55695c6487"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "br.urobotix.tech"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "jQx41aPKBwFCRKregjdLMmwo4ShIYfjHWIMIl-0HJhc"
-      short-id: "288d01b5"
-    flow: "xtls-rprx-vision"
-  - name: "🇧🇷_2"
-    type: vless
     server: "35.199.90.53"
     port: 443
     uuid: "5e517b94-e207-47ee-be3c-3020a57594e8"
@@ -87,21 +73,7 @@ proxies:
     reality-opts:
       public-key: "pCImwRkTjx8OIUiu1WFelZQFt1p3Q0lUoPbvjVq8GTs"
       short-id: "b62a4da6cd1c4dd6"
-  - name: "🇧🇷_3"
-    type: vless
-    server: "157.228.156.211"
-    port: 443
-    uuid: "7b9b233c-c646-4859-88b2-2a55695c6487"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "br.urobotix.tech"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "jQx41aPKBwFCRKregjdLMmwo4ShIYfjHWIMIl-0HJhc"
-      short-id: "288d01b5"
-    flow: "xtls-rprx-vision"
-  - name: "🇧🇷_4"
+  - name: "🇧🇷_2"
     type: trojan
     server: "109.104.155.94"
     port: 443
@@ -109,7 +81,7 @@ proxies:
     sni: "national-toucan.dolphin109.quest"
     skip-cert-verify: true
     udp: true
-  - name: "🇧🇷_5"
+  - name: "🇧🇷_3"
     type: ss
     server: "216.128.168.190"
     port: 8388
@@ -135,8 +107,6 @@ proxy-groups:
       - "🇧🇷_1"
       - "🇧🇷_2"
       - "🇧🇷_3"
-      - "🇧🇷_4"
-      - "🇧🇷_5"
 
 
   - name: "Load Balance"
@@ -148,8 +118,6 @@ proxy-groups:
       - "🇧🇷_1"
       - "🇧🇷_2"
       - "🇧🇷_3"
-      - "🇧🇷_4"
-      - "🇧🇷_5"
 
 rules:
   - MATCH,PROXY

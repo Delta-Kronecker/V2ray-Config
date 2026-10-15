@@ -60,12 +60,19 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇨🇴_1"
+  - name: "🇨🇱_1"
     type: ss
-    server: "149.104.107.41"
-    port: 8090
+    server: "64.176.2.21"
+    port: 8388
     cipher: "aes-256-gcm"
-    password: "PCnnH6SQSnfoS27"
+    password: "xBStBEVqvGwHPocc"
+    udp: true
+  - name: "🇨🇱_2"
+    type: ss
+    server: "64.176.2.21"
+    port: 8388
+    cipher: "aes-256-gcm"
+    password: "xBStBEVqvGwHPocc"
     udp: true
 
 proxy-groups:
@@ -83,7 +90,8 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇨🇴_1"
+      - "🇨🇱_1"
+      - "🇨🇱_2"
 
 
   - name: "Load Balance"
@@ -92,7 +100,8 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇨🇴_1"
+      - "🇨🇱_1"
+      - "🇨🇱_2"
 
 rules:
   - MATCH,PROXY

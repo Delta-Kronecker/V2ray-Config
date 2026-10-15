@@ -90,32 +90,11 @@ proxies:
     flow: "xtls-rprx-vision"
   - name: "🇮🇹_3"
     type: vless
-    server: "82.118.16.189"
-    port: 443
-    uuid: "d5e5f5a1-0f23-4c49-af9f-4be445bf9d8e"
+    server: "204.216.216.23"
+    port: 10086
+    uuid: "9f0285ee-20ca-4953-bcdb-86a920652923"
     udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.cloudflare.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "SjGkzJQ9I6ZZjC3V73atcPMczhMm0oiTrB8mUQXz1HY"
-      short-id: "37fbf155c7a9f3ff"
-    flow: "xtls-rprx-vision"
   - name: "🇮🇹_4"
-    type: vless
-    server: "57.131.38.163"
-    port: 2053
-    uuid: "d4b08cd6-0903-411a-9dac-45dbdf5c9712"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.apple.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "Ej2H5ucT7qKegYcT8wODdlxa-cLHr7F4hDVUHzAhcnc"
-      short-id: "5b8a942318178e7b"
-  - name: "🇮🇹_5"
     type: vless
     server: "31.59.180.155"
     port: 443
@@ -129,20 +108,33 @@ proxies:
       public-key: "_0bRaAOYHd4ccDCmnlIq9I13WLRuT4LzlXfV_GGHKE0"
       short-id: "5aab0b0401044801"
     flow: "xtls-rprx-vision"
-  - name: "🇮🇹_6"
+  - name: "🇮🇹_5"
     type: vless
-    server: "204.216.216.23"
-    port: 1114
-    uuid: "6ba2eac6-0ec9-44ca-a42b-a8e23aafb530"
+    server: "82.118.16.189"
+    port: 443
+    uuid: "d5e5f5a1-0f23-4c49-af9f-4be445bf9d8e"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "yahoo.com"
+    servername: "www.cloudflare.com"
     client-fingerprint: "chrome"
     reality-opts:
-      public-key: "WfkCF0eEuIoO0MyJsKOddU89QrTzCZ4y2dzCJbH99CQ"
-      short-id: "79a1e14b"
+      public-key: "SjGkzJQ9I6ZZjC3V73atcPMczhMm0oiTrB8mUQXz1HY"
+      short-id: "37fbf155c7a9f3ff"
     flow: "xtls-rprx-vision"
+  - name: "🇮🇹_6"
+    type: vless
+    server: "57.131.38.163"
+    port: 2053
+    uuid: "d4b08cd6-0903-411a-9dac-45dbdf5c9712"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.apple.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "Ej2H5ucT7qKegYcT8wODdlxa-cLHr7F4hDVUHzAhcnc"
+      short-id: "5b8a942318178e7b"
   - name: "🇮🇹_7"
     type: trojan
     server: "91.193.5.121"
@@ -172,13 +164,6 @@ proxies:
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
-  - name: "🇮🇹_11"
-    type: ss
-    server: "57.131.48.45"
-    port: 8388
-    cipher: "aes-256-gcm"
-    password: "itzvpn@321"
-    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -205,7 +190,6 @@ proxy-groups:
       - "🇮🇹_8"
       - "🇮🇹_9"
       - "🇮🇹_10"
-      - "🇮🇹_11"
 
 
   - name: "Load Balance"
@@ -224,7 +208,6 @@ proxy-groups:
       - "🇮🇹_8"
       - "🇮🇹_9"
       - "🇮🇹_10"
-      - "🇮🇹_11"
 
 rules:
   - MATCH,PROXY

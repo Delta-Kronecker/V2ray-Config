@@ -62,20 +62,6 @@ dns:
 proxies:
   - name: "🇨🇿_1"
     type: vless
-    server: "31.76.7.227"
-    port: 443
-    uuid: "d0e771c5-024e-4393-bb90-4a3e3c561656"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "origin.vpnoodles.ru"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "nIL5EeUo2XUkCaLJGbzgRm6zhF-96kWvV2VmhEt3CX4"
-      short-id: "4af4102cb26e59"
-    flow: "xtls-rprx-vision"
-  - name: "🇨🇿_2"
-    type: vless
     server: "195.123.245.241"
     port: 443
     uuid: "7c053ca8-38cc-45e2-930c-eda1fd66f903"
@@ -88,33 +74,19 @@ proxies:
       public-key: "hlY5ce1UsVIgE46y5PlEZhUsSaXUnCtoDLLaGrhInjw"
       short-id: "23d0950d60bc0d5b"
     flow: "xtls-rprx-vision"
-  - name: "🇨🇿_3"
+  - name: "🇨🇿_2"
     type: vless
-    server: "5.39.202.125"
+    server: "31.76.7.227"
     port: 443
-    uuid: "ace33fb8-c593-4b17-8f72-f3359b6e9638"
+    uuid: "d0e771c5-024e-4393-bb90-4a3e3c561656"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "czekkk.loknietotop.digital"
-    client-fingerprint: "random"
+    servername: "origin.vpnoodles.ru"
+    client-fingerprint: "chrome"
     reality-opts:
-      public-key: "WU5baXUzRH9BceiYI8MPBmDMEloTFImx2vvE5uh1yjM"
-      short-id: "f19e02a2fb573c18"
-    flow: "xtls-rprx-vision"
-  - name: "🇨🇿_4"
-    type: vless
-    server: "czekkk.loknietotop.digital"
-    port: 443
-    uuid: "ace33fb8-c593-4b17-8f72-f3359b6e9638"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "czekkk.loknietotop.digital"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "WU5baXUzRH9BceiYI8MPBmDMEloTFImx2vvE5uh1yjM"
-      short-id: "f19e02a2fb573c18"
+      public-key: "nIL5EeUo2XUkCaLJGbzgRm6zhF-96kWvV2VmhEt3CX4"
+      short-id: "4af4102cb26e59"
     flow: "xtls-rprx-vision"
 
 proxy-groups:
@@ -134,8 +106,6 @@ proxy-groups:
     proxies:
       - "🇨🇿_1"
       - "🇨🇿_2"
-      - "🇨🇿_3"
-      - "🇨🇿_4"
 
 
   - name: "Load Balance"
@@ -146,8 +116,6 @@ proxy-groups:
     proxies:
       - "🇨🇿_1"
       - "🇨🇿_2"
-      - "🇨🇿_3"
-      - "🇨🇿_4"
 
 rules:
   - MATCH,PROXY

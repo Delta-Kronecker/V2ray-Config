@@ -62,17 +62,17 @@ dns:
 proxies:
   - name: "🇷🇴_1"
     type: vless
-    server: "app-str-53.nexus-infinitus.com"
+    server: "82.117.255.174"
     port: 443
-    uuid: "0cf8e402-e801-4aeb-9b7a-00a933f9f1c1"
+    uuid: "679439c5-28f2-485e-af5f-60a5fcd9c36c"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "assets-str-53.nexus-infinitus.com"
-    client-fingerprint: "random"
+    servername: "gateway.icloud.com"
+    client-fingerprint: "chrome"
     reality-opts:
-      public-key: "gLO2GRqV0iVDmVdytcJLqGyZEB5Swxb-NAOC9AL13UM"
-      short-id: "344f1f56582dda0f"
+      public-key: "0QDBHaCRO2dPeeSVy3B3R_U12ZOvbvWl1JTFW_ZcpD0"
+      short-id: "31e91d43e553bf32"
     flow: "xtls-rprx-vision"
   - name: "🇷🇴_2"
     type: vless
@@ -90,20 +90,6 @@ proxies:
     flow: "xtls-rprx-vision"
   - name: "🇷🇴_3"
     type: vless
-    server: "83.147.245.126"
-    port: 443
-    uuid: "0cf8e402-e801-4aeb-9b7a-00a933f9f1c1"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "assets-str-53.nexus-infinitus.com"
-    client-fingerprint: "random"
-    reality-opts:
-      public-key: "gLO2GRqV0iVDmVdytcJLqGyZEB5Swxb-NAOC9AL13UM"
-      short-id: "344f1f56582dda0f"
-    flow: "xtls-rprx-vision"
-  - name: "🇷🇴_4"
-    type: vless
     server: "146.70.124.85"
     port: 443
     uuid: "40abbe13-f02e-4da2-9b19-966c2c3eb4ee"
@@ -116,29 +102,7 @@ proxies:
       public-key: "byzvlw97wjAAAfHs5AZRV0P0H6_JKBEZ4yfLS0HNewE"
       short-id: "fe24f8a0a560056e"
     flow: "xtls-rprx-vision"
-  - name: "🇷🇴_5"
-    type: vless
-    server: "82.117.255.174"
-    port: 443
-    uuid: "679439c5-28f2-485e-af5f-60a5fcd9c36c"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "gateway.icloud.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "0QDBHaCRO2dPeeSVy3B3R_U12ZOvbvWl1JTFW_ZcpD0"
-      short-id: "31e91d43e553bf32"
-    flow: "xtls-rprx-vision"
-  - name: "🇷🇴_6"
-    type: trojan
-    server: "38.180.35.145"
-    port: 443
-    password: "600421cf-11d7-429f-a65b-c30397f1bc03"
-    sni: "bu2.freeguard.org"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇷🇴_7"
+  - name: "🇷🇴_4"
     type: trojan
     server: "185.247.224.136"
     port: 443
@@ -146,26 +110,34 @@ proxies:
     sni: "185.247.224.136"
     skip-cert-verify: true
     udp: true
-  - name: "🇷🇴_8"
-    type: ss
-    server: "154.46.31.106"
+  - name: "🇷🇴_5"
+    type: trojan
+    server: "38.180.35.145"
     port: 443
-    cipher: "chacha20-ietf-poly1305"
-    password: "QFWzCw2uX9B9i6qAYeFBIE"
+    password: "600421cf-11d7-429f-a65b-c30397f1bc03"
+    sni: "bu2.freeguard.org"
+    skip-cert-verify: true
     udp: true
-  - name: "🇷🇴_9"
+  - name: "🇷🇴_6"
+    type: ss
+    server: "194.68.44.42"
+    port: 64546
+    cipher: "chacha20-ietf-poly1305"
+    password: "U83u9OGpvSatIUW7LsWffr"
+    udp: true
+  - name: "🇷🇴_7"
     type: ss
     server: "bogging-eyeteeth-fly.freesocks.work"
     port: 443
     cipher: "chacha20-ietf-poly1305"
     password: "QFWzCw2uX9B9i6qAYeFBIE"
     udp: true
-  - name: "🇷🇴_10"
+  - name: "🇷🇴_8"
     type: ss
-    server: "194.68.44.42"
-    port: 64546
+    server: "154.46.31.106"
+    port: 443
     cipher: "chacha20-ietf-poly1305"
-    password: "U83u9OGpvSatIUW7LsWffr"
+    password: "QFWzCw2uX9B9i6qAYeFBIE"
     udp: true
 
 proxy-groups:
@@ -191,8 +163,6 @@ proxy-groups:
       - "🇷🇴_6"
       - "🇷🇴_7"
       - "🇷🇴_8"
-      - "🇷🇴_9"
-      - "🇷🇴_10"
 
 
   - name: "Load Balance"
@@ -209,8 +179,6 @@ proxy-groups:
       - "🇷🇴_6"
       - "🇷🇴_7"
       - "🇷🇴_8"
-      - "🇷🇴_9"
-      - "🇷🇴_10"
 
 rules:
   - MATCH,PROXY

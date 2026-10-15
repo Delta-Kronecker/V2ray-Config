@@ -76,6 +76,13 @@ proxies:
     sni: "wise-cowbird.boa152.lol"
     skip-cert-verify: true
     udp: true
+  - name: "🇨🇾_3"
+    type: ss
+    server: "ruot.ayucloudservices.nl"
+    port: 35008
+    cipher: "aes-128-gcm"
+    password: "edad69d9-ea99-4ce9-bae8-8fedc2afcbf4"
+    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -94,6 +101,7 @@ proxy-groups:
     proxies:
       - "🇨🇾_1"
       - "🇨🇾_2"
+      - "🇨🇾_3"
 
 
   - name: "Load Balance"
@@ -104,6 +112,7 @@ proxy-groups:
     proxies:
       - "🇨🇾_1"
       - "🇨🇾_2"
+      - "🇨🇾_3"
 
 rules:
   - MATCH,PROXY
