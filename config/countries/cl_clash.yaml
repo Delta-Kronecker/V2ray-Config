@@ -67,13 +67,6 @@ proxies:
     cipher: "aes-256-gcm"
     password: "xBStBEVqvGwHPocc"
     udp: true
-  - name: "🇨🇱_2"
-    type: ss
-    server: "64.176.2.21"
-    port: 8388
-    cipher: "aes-256-gcm"
-    password: "xBStBEVqvGwHPocc"
-    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -91,7 +84,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇨🇱_1"
-      - "🇨🇱_2"
 
 
   - name: "Load Balance"
@@ -101,7 +93,6 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇨🇱_1"
-      - "🇨🇱_2"
 
 rules:
   - MATCH,PROXY

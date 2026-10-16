@@ -61,20 +61,6 @@ dns:
 
 proxies:
   - name: "🇲🇾_1"
-    type: vless
-    server: "my2.oh-node.com"
-    port: 443
-    uuid: "7cfd34ae-edad-4cc5-9d6f-066f7add7829"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.setel.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "R6q8qhMxgq3ynJPUgudaRkcDXj0qgoc_UU1N0SWGLwM"
-      short-id: "ed77ac35a310"
-    flow: "xtls-rprx-vision"
-  - name: "🇲🇾_2"
     type: trojan
     server: "210.187.176.154"
     port: 443
@@ -82,15 +68,7 @@ proxies:
     sni: "210.187.176.154"
     skip-cert-verify: true
     udp: true
-  - name: "🇲🇾_3"
-    type: trojan
-    server: "47.250.84.25"
-    port: 443
-    password: "5931134d1cde66bf83a54acdfebe7ab2"
-    sni: "47.250.84.25"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇲🇾_4"
+  - name: "🇲🇾_2"
     type: ss
     server: "96.126.190.196"
     port: 443
@@ -103,6 +81,20 @@ proxies:
       path: "/59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
       host: "woshinidie-et3.pages.dev"
       tls: true
+  - name: "🇲🇾_3"
+    type: ss
+    server: "47.250.212.59"
+    port: 2053
+    cipher: "none"
+    password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
+    udp: true
+  - name: "🇲🇾_4"
+    type: ss
+    server: "47.250.212.59"
+    port: 2053
+    cipher: "none"
+    password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
+    udp: true
   - name: "🇲🇾_5"
     type: ss
     server: "96.126.190.196"
@@ -117,20 +109,6 @@ proxies:
       host: "woshinidie-et3.pages.dev"
       tls: true
   - name: "🇲🇾_6"
-    type: ss
-    server: "47.250.212.59"
-    port: 2053
-    cipher: "none"
-    password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
-    udp: true
-  - name: "🇲🇾_7"
-    type: ss
-    server: "47.250.212.59"
-    port: 2053
-    cipher: "none"
-    password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
-    udp: true
-  - name: "🇲🇾_8"
     type: vmess
     server: "47.250.135.244"
     port: 10000
@@ -160,8 +138,6 @@ proxy-groups:
       - "🇲🇾_4"
       - "🇲🇾_5"
       - "🇲🇾_6"
-      - "🇲🇾_7"
-      - "🇲🇾_8"
 
 
   - name: "Load Balance"
@@ -176,8 +152,6 @@ proxy-groups:
       - "🇲🇾_4"
       - "🇲🇾_5"
       - "🇲🇾_6"
-      - "🇲🇾_7"
-      - "🇲🇾_8"
 
 rules:
   - MATCH,PROXY

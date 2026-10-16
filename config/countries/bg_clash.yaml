@@ -61,33 +61,19 @@ dns:
 
 proxies:
   - name: "🇧🇬_1"
-    type: vless
-    server: "195.123.226.21"
+    type: trojan
+    server: "91.227.77.87"
     port: 443
-    uuid: "6589c320-db68-43cd-a273-b46299bab355"
-    udp: true
-    tls: true
+    password: "bpb-trojan"
+    sni: "skwygx.top"
     skip-cert-verify: true
-    servername: "gateway.icloud.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "rabtI-ymNXBUvYYRwAw8DiR-1pdP7U0WPIaCBHEkgzo"
-      short-id: "77bb0d07bddbc832"
-    flow: "xtls-rprx-vision"
+    udp: true
   - name: "🇧🇬_2"
     type: trojan
     server: "38.54.27.117"
     port: 443
     password: "af4b064a9c39472fb34ad8b113acdc6b"
     sni: "38.54.27.117"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇧🇬_3"
-    type: trojan
-    server: "91.227.77.87"
-    port: 443
-    password: "bpb-trojan"
-    sni: "skwygx.top"
     skip-cert-verify: true
     udp: true
 
@@ -108,7 +94,6 @@ proxy-groups:
     proxies:
       - "🇧🇬_1"
       - "🇧🇬_2"
-      - "🇧🇬_3"
 
 
   - name: "Load Balance"
@@ -119,7 +104,6 @@ proxy-groups:
     proxies:
       - "🇧🇬_1"
       - "🇧🇬_2"
-      - "🇧🇬_3"
 
 rules:
   - MATCH,PROXY

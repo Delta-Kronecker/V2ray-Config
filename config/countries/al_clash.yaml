@@ -74,6 +74,27 @@ proxies:
       public-key: "kOkILS7UXUQDNPLYn4SQ65kMIWKXNOttV5Kddw4ZqTo"
       short-id: "1625a2a79d01328f"
     flow: "xtls-rprx-vision"
+  - name: "🇦🇱_2"
+    type: vless
+    server: "85.155.228.110"
+    port: 443
+    uuid: "e5544327-834c-455a-9db5-2454c788fa17"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "github.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "Q0351ApYOgCGCOgSEROnacDdm7xp-kLs9mYddSDFwRQ"
+      short-id: "360881fdb193758d"
+    flow: "xtls-rprx-vision"
+  - name: "🇦🇱_3"
+    type: ss
+    server: "130.49.189.158"
+    port: 43558
+    cipher: "chacha20-ietf-poly1305"
+    password: "j3PKOCj7wHl5Pk6thI9HyXtCa6JU180IlBpWANgFjkY="
+    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -91,6 +112,8 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇦🇱_1"
+      - "🇦🇱_2"
+      - "🇦🇱_3"
 
 
   - name: "Load Balance"
@@ -100,6 +123,8 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇦🇱_1"
+      - "🇦🇱_2"
+      - "🇦🇱_3"
 
 rules:
   - MATCH,PROXY
