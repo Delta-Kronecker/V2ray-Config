@@ -62,19 +62,27 @@ dns:
 proxies:
   - name: "🇪🇸_1"
     type: vless
-    server: "129.101.121.70"
-    port: 8443
-    uuid: "a96ad3ea-4820-43d2-bbf3-27c6bf19d652"
+    server: "46.28.71.247"
+    port: 443
+    uuid: "12c53e32-e589-47d6-b857-e4132294f767"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "storage.yandex.net"
-    client-fingerprint: "firefox"
+    servername: "www.cloudflare.com"
     reality-opts:
-      public-key: "xX9ZxZRrF_EER9-8fOegxR97HV5KaMaftAD7eq10UXw"
-      short-id: "75dd7e79a7876314"
+      public-key: "v4MuZIvFrTPT5GHMSaPryUAbIZlLstmsUTzmC1E-JTE"
+      short-id: "0dfc23fe80778c00"
     flow: "xtls-rprx-vision"
   - name: "🇪🇸_2"
+    type: vless
+    server: "85.90.217.42"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "85.90.217.42"
+  - name: "🇪🇸_3"
     type: vless
     server: "193.238.154.78"
     port: 443
@@ -88,29 +96,7 @@ proxies:
       public-key: "4eE3K8Eac-ELze-LwRyJolqmhPqgCVqwQM1DKu6i0Ts"
       short-id: "e93d46ee3735069e"
     flow: "xtls-rprx-vision"
-  - name: "🇪🇸_3"
-    type: vless
-    server: "46.28.71.247"
-    port: 443
-    uuid: "12c53e32-e589-47d6-b857-e4132294f767"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.cloudflare.com"
-    reality-opts:
-      public-key: "v4MuZIvFrTPT5GHMSaPryUAbIZlLstmsUTzmC1E-JTE"
-      short-id: "0dfc23fe80778c00"
-    flow: "xtls-rprx-vision"
   - name: "🇪🇸_4"
-    type: vless
-    server: "85.90.217.42"
-    port: 443
-    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "85.90.217.42"
-  - name: "🇪🇸_5"
     type: trojan
     server: "65.20.102.54"
     port: 443
@@ -138,7 +124,6 @@ proxy-groups:
       - "🇪🇸_2"
       - "🇪🇸_3"
       - "🇪🇸_4"
-      - "🇪🇸_5"
 
 
   - name: "Load Balance"
@@ -151,7 +136,6 @@ proxy-groups:
       - "🇪🇸_2"
       - "🇪🇸_3"
       - "🇪🇸_4"
-      - "🇪🇸_5"
 
 rules:
   - MATCH,PROXY

@@ -108,19 +108,18 @@ proxies:
     flow: "xtls-rprx-vision"
   - name: "🇨🇭_4"
     type: trojan
-    server: "84.234.29.238"
-    port: 443
-    password: "Masir_Sefid"
-    sni: "store.steampowered.com"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇨🇭_5"
-    type: trojan
     server: "83.228.224.161"
     port: 443
     password: "SoftNetConnect"
     sni: "83.228.224.161"
     skip-cert-verify: true
+    udp: true
+  - name: "🇨🇭_5"
+    type: ss
+    server: "132.243.175.144"
+    port: 8388
+    cipher: "chacha20-ietf-poly1305"
+    password: "e8KgS8fD0yDqYFpgN4G5piCOt9aFyqA3"
     udp: true
   - name: "🇨🇭_6"
     type: ss
@@ -137,13 +136,6 @@ proxies:
     password: "2bf536a4bd6008511734a505d248de2c"
     udp: true
   - name: "🇨🇭_8"
-    type: ss
-    server: "132.243.175.144"
-    port: 8388
-    cipher: "chacha20-ietf-poly1305"
-    password: "e8KgS8fD0yDqYFpgN4G5piCOt9aFyqA3"
-    udp: true
-  - name: "🇨🇭_9"
     type: ss
     server: "132.243.175.144"
     port: 8388
@@ -174,7 +166,6 @@ proxy-groups:
       - "🇨🇭_6"
       - "🇨🇭_7"
       - "🇨🇭_8"
-      - "🇨🇭_9"
 
 
   - name: "Load Balance"
@@ -191,7 +182,6 @@ proxy-groups:
       - "🇨🇭_6"
       - "🇨🇭_7"
       - "🇨🇭_8"
-      - "🇨🇭_9"
 
 rules:
   - MATCH,PROXY

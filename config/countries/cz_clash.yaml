@@ -62,20 +62,6 @@ dns:
 proxies:
   - name: "🇨🇿_1"
     type: vless
-    server: "31.76.7.227"
-    port: 443
-    uuid: "d0e771c5-024e-4393-bb90-4a3e3c561656"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "origin.vpnoodles.ru"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "nIL5EeUo2XUkCaLJGbzgRm6zhF-96kWvV2VmhEt3CX4"
-      short-id: "4af4102cb26e59"
-    flow: "xtls-rprx-vision"
-  - name: "🇨🇿_2"
-    type: vless
     server: "195.123.245.241"
     port: 443
     uuid: "7c053ca8-38cc-45e2-930c-eda1fd66f903"
@@ -88,6 +74,34 @@ proxies:
       public-key: "hlY5ce1UsVIgE46y5PlEZhUsSaXUnCtoDLLaGrhInjw"
       short-id: "23d0950d60bc0d5b"
     flow: "xtls-rprx-vision"
+  - name: "🇨🇿_2"
+    type: vless
+    server: "31.76.7.227"
+    port: 443
+    uuid: "d0e771c5-024e-4393-bb90-4a3e3c561656"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "origin.vpnoodles.ru"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "nIL5EeUo2XUkCaLJGbzgRm6zhF-96kWvV2VmhEt3CX4"
+      short-id: "4af4102cb26e59"
+    flow: "xtls-rprx-vision"
+  - name: "🇨🇿_3"
+    type: ss
+    server: "67.159.18.34"
+    port: 17001
+    cipher: "aes-256-gcm"
+    password: "I6o9NnialYLMEjVt28RF4dpjmr9wMvNL"
+    udp: true
+  - name: "🇨🇿_4"
+    type: ss
+    server: "67.159.18.34"
+    port: 17001
+    cipher: "aes-256-gcm"
+    password: "I6o9NnialYLMEjVt28RF4dpjmr9wMvNL"
+    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -106,6 +120,8 @@ proxy-groups:
     proxies:
       - "🇨🇿_1"
       - "🇨🇿_2"
+      - "🇨🇿_3"
+      - "🇨🇿_4"
 
 
   - name: "Load Balance"
@@ -116,6 +132,8 @@ proxy-groups:
     proxies:
       - "🇨🇿_1"
       - "🇨🇿_2"
+      - "🇨🇿_3"
+      - "🇨🇿_4"
 
 rules:
   - MATCH,PROXY

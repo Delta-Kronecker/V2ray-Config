@@ -61,14 +61,6 @@ dns:
 
 proxies:
   - name: "🇲🇽_1"
-    type: trojan
-    server: "154.205.152.109"
-    port: 443
-    password: "af4b064a9c39472fb34ad8b113acdc6b"
-    sni: "154.205.152.109"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇲🇽_2"
     type: ss
     server: "64.177.90.30"
     port: 8388
@@ -92,7 +84,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇲🇽_1"
-      - "🇲🇽_2"
 
 
   - name: "Load Balance"
@@ -102,7 +93,6 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇲🇽_1"
-      - "🇲🇽_2"
 
 rules:
   - MATCH,PROXY

@@ -76,24 +76,32 @@ proxies:
     flow: "xtls-rprx-vision"
   - name: "🇻🇳_2"
     type: vless
-    server: "150.95.109.109"
-    port: 2086
-    uuid: "b83faafc-cbb7-4655-99d4-2c4c39a49d1b"
+    server: "funagfrdfs.alixxplay.com"
+    port: 55688
+    uuid: "57beeeb0-03fc-4fc9-94da-7604488a7134"
     udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "bilibili-vn.biliimg.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "KeV1nArisy7FO5DjqTSmn0hBnlNd38rzhbIMMpe-MBw"
+      short-id: "a46bb5972cf50671"
+    flow: "xtls-rprx-vision"
   - name: "🇻🇳_3"
+    type: trojan
+    server: "103.72.96.55"
+    port: 443
+    password: "c95357eb-2869-4511-8940-f0dc5e1ec9b1"
+    sni: "hanoiidc2.5gsieutocdo.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇻🇳_4"
     type: trojan
     server: "103.9.77.6"
     port: 443
     password: "c0f32867-001f-43f6-a0cc-9fd8730e5430"
     sni: "Free.Shecan.Ir"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇻🇳_4"
-    type: trojan
-    server: "36.50.134.29"
-    port: 443
-    password: "94d219c9-1afc-4d42-b090-8b3794764380"
-    sni: "36.50.134.29"
     skip-cert-verify: true
     udp: true
   - name: "🇻🇳_5"
@@ -102,14 +110,6 @@ proxies:
     port: 443
     password: "5a92d674-308c-4d95-b283-28383e63a59b"
     sni: "103.9.77.6"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇻🇳_6"
-    type: trojan
-    server: "38.54.15.140"
-    port: 443
-    password: "af4b064a9c39472fb34ad8b113acdc6b"
-    sni: "38.54.15.140"
     skip-cert-verify: true
     udp: true
 
@@ -133,7 +133,6 @@ proxy-groups:
       - "🇻🇳_3"
       - "🇻🇳_4"
       - "🇻🇳_5"
-      - "🇻🇳_6"
 
 
   - name: "Load Balance"
@@ -147,7 +146,6 @@ proxy-groups:
       - "🇻🇳_3"
       - "🇻🇳_4"
       - "🇻🇳_5"
-      - "🇻🇳_6"
 
 rules:
   - MATCH,PROXY

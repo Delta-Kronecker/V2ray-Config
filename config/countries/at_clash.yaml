@@ -61,60 +61,41 @@ dns:
 
 proxies:
   - name: "🇦🇹_1"
-    type: trojan
-    server: "86.106.119.23"
+    type: vless
+    server: "api.mediakaskad.cc"
     port: 443
-    password: "600421cf-11d7-429f-a65b-c30397f1bc03"
-    sni: "gr.freeguard.org"
+    uuid: "082f5694-9019-4110-b67b-8125dbb9bab8"
+    udp: true
+    tls: true
     skip-cert-verify: true
-    udp: true
+    servername: "api.mediakaskad.cc"
+    client-fingerprint: "ios"
+    reality-opts:
+      public-key: "r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs"
+      short-id: "a8"
+    flow: "xtls-rprx-vision"
   - name: "🇦🇹_2"
-    type: ss
-    server: "130.195.222.215"
+    type: vless
+    server: "189.74.115.16"
     port: 443
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
+    uuid: "082f5694-9019-4110-b67b-8125dbb9bab8"
     udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
+    tls: true
+    skip-cert-verify: true
+    servername: "api.mediakaskad.cc"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs"
+      short-id: "a8"
+    flow: "xtls-rprx-vision"
   - name: "🇦🇹_3"
-    type: ss
-    server: "130.195.222.215"
-    port: 443
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
-  - name: "🇦🇹_4"
     type: ss
     server: "82.110.60.9"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
-  - name: "🇦🇹_5"
-    type: ss
-    server: "130.195.222.215"
-    port: 443
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
-  - name: "🇦🇹_6"
+  - name: "🇦🇹_4"
     type: ss
     server: "82.110.60.9"
     port: 19999
@@ -141,8 +122,6 @@ proxy-groups:
       - "🇦🇹_2"
       - "🇦🇹_3"
       - "🇦🇹_4"
-      - "🇦🇹_5"
-      - "🇦🇹_6"
 
 
   - name: "Load Balance"
@@ -155,8 +134,6 @@ proxy-groups:
       - "🇦🇹_2"
       - "🇦🇹_3"
       - "🇦🇹_4"
-      - "🇦🇹_5"
-      - "🇦🇹_6"
 
 rules:
   - MATCH,PROXY
