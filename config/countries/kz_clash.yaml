@@ -99,6 +99,33 @@ proxies:
     reality-opts:
       public-key: "_0wM2ep44eAcrgf5PflKaBivknCWT6kMvQBQUoScCkE"
       short-id: "83"
+  - name: "🇰🇿_4"
+    type: vless
+    server: "185.91.126.213"
+    port: 443
+    uuid: "ad9f922d-1881-474d-94a8-4b06851f6039"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ads.x5.ru"
+    client-fingerprint: "random"
+    reality-opts:
+      public-key: "qB_eMu3ZO_wGITnyIqJ7Kt39-h9oHFnHlQQEqA-r3VA"
+      short-id: ""
+    flow: "xtls-rprx-vision"
+  - name: "🇰🇿_5"
+    type: vless
+    server: "77.73.232.61"
+    port: 19747
+    uuid: "2a9ed01e-5455-44b4-a66a-76ee8165f0ac"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "yahoo.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "ZO9dTeg1slvTXgVsBsaJ1BDvz_YUImTLJjbHs-GdVyM"
+      short-id: "2001"
 
 proxy-groups:
   - name: "PROXY"
@@ -118,6 +145,8 @@ proxy-groups:
       - "🇰🇿_1"
       - "🇰🇿_2"
       - "🇰🇿_3"
+      - "🇰🇿_4"
+      - "🇰🇿_5"
 
 
   - name: "Load Balance"
@@ -129,6 +158,8 @@ proxy-groups:
       - "🇰🇿_1"
       - "🇰🇿_2"
       - "🇰🇿_3"
+      - "🇰🇿_4"
+      - "🇰🇿_5"
 
 rules:
   - MATCH,PROXY

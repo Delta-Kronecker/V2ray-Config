@@ -62,17 +62,17 @@ dns:
 proxies:
   - name: "🇧🇾_1"
     type: vless
-    server: "178.172.227.228"
-    port: 10444
-    uuid: "b6e5dc56-836f-48c1-9163-b0b0b43b647d"
+    server: "186.246.55.176"
+    port: 8462
+    uuid: "4cb9157c-cd6f-451f-b786-1c92edec32cb"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "ads.x5.ru"
-    client-fingerprint: "edge"
+    servername: "ru.tradingview.com"
+    client-fingerprint: "qq"
     reality-opts:
-      public-key: "0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo"
-      short-id: "8debcf36f1cc69ff"
+      public-key: "n3BiVX_oDQXcqC0OmOm5o0RuOaXoHHhdiQ2s-xqkayA"
+      short-id: "d7c8227902c1d878"
     flow: "xtls-rprx-vision"
   - name: "🇧🇾_2"
     type: vless
@@ -102,6 +102,20 @@ proxies:
       public-key: "0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo"
       short-id: "8debcf36f1cc69ff"
     flow: "xtls-rprx-vision"
+  - name: "🇧🇾_4"
+    type: vless
+    server: "178.172.227.228"
+    port: 10444
+    uuid: "b6e5dc56-836f-48c1-9163-b0b0b43b647d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ads.x5.ru"
+    client-fingerprint: "edge"
+    reality-opts:
+      public-key: "0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo"
+      short-id: "8debcf36f1cc69ff"
+    flow: "xtls-rprx-vision"
 
 proxy-groups:
   - name: "PROXY"
@@ -121,6 +135,7 @@ proxy-groups:
       - "🇧🇾_1"
       - "🇧🇾_2"
       - "🇧🇾_3"
+      - "🇧🇾_4"
 
 
   - name: "Load Balance"
@@ -132,6 +147,7 @@ proxy-groups:
       - "🇧🇾_1"
       - "🇧🇾_2"
       - "🇧🇾_3"
+      - "🇧🇾_4"
 
 rules:
   - MATCH,PROXY

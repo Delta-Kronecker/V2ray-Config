@@ -62,17 +62,17 @@ dns:
 proxies:
   - name: "🇱🇻_1"
     type: vless
-    server: "195.123.213.28"
+    server: "185.220.223.25"
     port: 443
-    uuid: "02fcc1a4-ee90-4970-8bbb-4ffaa8109d24"
+    uuid: "6338c01a-310e-42c3-bf4f-2a20e161054b"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "www.cloudflare.com"
-    client-fingerprint: "chrome"
+    servername: "lv.aiage.work"
+    client-fingerprint: "firefox"
     reality-opts:
-      public-key: "NMgy1XgCSXExOg6Tg8xG9lCWttMF6sjdpB41lZy6FWo"
-      short-id: "5c256336e3b673fa"
+      public-key: "ds-U8G06uZvV9qFhAeO16dwS9Nkcw_coYr_4puEUGFg"
+      short-id: "3c6afdc4124d0560"
     flow: "xtls-rprx-vision"
   - name: "🇱🇻_2"
     type: vless
@@ -90,33 +90,19 @@ proxies:
     flow: "xtls-rprx-vision"
   - name: "🇱🇻_3"
     type: vless
-    server: "195.123.208.32"
+    server: "138.124.180.137"
     port: 443
-    uuid: "1ebcb694-875c-4be7-b6a2-d53c8208991b"
+    uuid: "5234b2b7-5e07-422c-8159-d62a676c00c6"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "gateway.icloud.com"
+    servername: "www.apple.com"
     client-fingerprint: "chrome"
     reality-opts:
-      public-key: "ICrsmE5hqN7IsDIyHPG2WkDUUFK_VEj9yobLv8zuDwk"
-      short-id: "757b9e1ef18e60f0"
+      public-key: "GBdkyDLfr0LIZo_94Xv8ycAKOmkjArYzwJAEMhuXX2c"
+      short-id: "33acba1b"
     flow: "xtls-rprx-vision"
   - name: "🇱🇻_4"
-    type: vless
-    server: "31.76.62.32"
-    port: 443
-    uuid: "8e66d40e-6f62-4243-a7d8-ebe83e4c2e77"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "lv-rix-1.koolb.org"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "C4kK4uxh9a5ym0-JmcaTwkUwkB0FTRjSAIlHLTKRHlo"
-      short-id: "84341e3e"
-    flow: "xtls-rprx-vision"
-  - name: "🇱🇻_5"
     type: vless
     server: "185.220.223.24"
     port: 443
@@ -129,7 +115,7 @@ proxies:
       public-key: "ds-U8G06uZvV9qFhAeO16dwS9Nkcw_coYr_4puEUGFg"
       short-id: "3c6afdc4124d0560"
     flow: "xtls-rprx-vision"
-  - name: "🇱🇻_6"
+  - name: "🇱🇻_5"
     type: vless
     server: "138.124.63.224"
     port: 8444
@@ -145,33 +131,19 @@ proxies:
     network: grpc
     grpc-opts:
       grpc-service-name: "GunService"
-  - name: "🇱🇻_7"
+  - name: "🇱🇻_6"
     type: vless
-    server: "138.124.180.137"
+    server: "195.123.208.32"
     port: 443
-    uuid: "5234b2b7-5e07-422c-8159-d62a676c00c6"
+    uuid: "1ebcb694-875c-4be7-b6a2-d53c8208991b"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "www.apple.com"
+    servername: "gateway.icloud.com"
     client-fingerprint: "chrome"
     reality-opts:
-      public-key: "GBdkyDLfr0LIZo_94Xv8ycAKOmkjArYzwJAEMhuXX2c"
-      short-id: "33acba1b"
-    flow: "xtls-rprx-vision"
-  - name: "🇱🇻_8"
-    type: vless
-    server: "185.220.223.25"
-    port: 443
-    uuid: "6338c01a-310e-42c3-bf4f-2a20e161054b"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "lv.aiage.work"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "ds-U8G06uZvV9qFhAeO16dwS9Nkcw_coYr_4puEUGFg"
-      short-id: "3c6afdc4124d0560"
+      public-key: "ICrsmE5hqN7IsDIyHPG2WkDUUFK_VEj9yobLv8zuDwk"
+      short-id: "757b9e1ef18e60f0"
     flow: "xtls-rprx-vision"
 
 proxy-groups:
@@ -195,8 +167,6 @@ proxy-groups:
       - "🇱🇻_4"
       - "🇱🇻_5"
       - "🇱🇻_6"
-      - "🇱🇻_7"
-      - "🇱🇻_8"
 
 
   - name: "Load Balance"
@@ -211,8 +181,6 @@ proxy-groups:
       - "🇱🇻_4"
       - "🇱🇻_5"
       - "🇱🇻_6"
-      - "🇱🇻_7"
-      - "🇱🇻_8"
 
 rules:
   - MATCH,PROXY

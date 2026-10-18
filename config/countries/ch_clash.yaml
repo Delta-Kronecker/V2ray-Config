@@ -62,23 +62,21 @@ dns:
 proxies:
   - name: "🇨🇭_1"
     type: vless
-    server: "167.148.183.51"
-    port: 444
-    uuid: "318c935d-c195-41d3-99ad-9bbcfdab3386"
+    server: "45.90.59.15"
+    port: 443
+    uuid: "3950b45e-740d-4dca-ac95-505ec8534592"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "ch.srv.vbuste.ru"
+    servername: "www.cloudflare.com"
     client-fingerprint: "firefox"
     reality-opts:
-      public-key: "0-or5ogGhYbBgsVSrSC2Fhxyp2BN97Y9pqIdg61Qd08"
-      short-id: "4be4110078ebed4a"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: ""
+      public-key: "P7S4UPFlQbmiBr4txyy8NZIMTrmO3UdxyH16WBU-YzY"
+      short-id: "19253fae84102271"
+    flow: "xtls-rprx-vision"
   - name: "🇨🇭_2"
     type: vless
-    server: "ch.srv.vbuste.ru"
+    server: "167.148.183.51"
     port: 444
     uuid: "318c935d-c195-41d3-99ad-9bbcfdab3386"
     udp: true
@@ -94,48 +92,28 @@ proxies:
       grpc-service-name: ""
   - name: "🇨🇭_3"
     type: vless
-    server: "45.90.59.15"
-    port: 443
-    uuid: "3950b45e-740d-4dca-ac95-505ec8534592"
+    server: "ch.srv.vbuste.ru"
+    port: 444
+    uuid: "318c935d-c195-41d3-99ad-9bbcfdab3386"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "www.cloudflare.com"
+    servername: "ch.srv.vbuste.ru"
     client-fingerprint: "firefox"
     reality-opts:
-      public-key: "P7S4UPFlQbmiBr4txyy8NZIMTrmO3UdxyH16WBU-YzY"
-      short-id: "19253fae84102271"
-    flow: "xtls-rprx-vision"
+      public-key: "0-or5ogGhYbBgsVSrSC2Fhxyp2BN97Y9pqIdg61Qd08"
+      short-id: "4be4110078ebed4a"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: ""
   - name: "🇨🇭_4"
-    type: trojan
-    server: "83.228.224.161"
-    port: 443
-    password: "SoftNetConnect"
-    sni: "83.228.224.161"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇨🇭_5"
     type: ss
     server: "132.243.175.144"
     port: 8388
     cipher: "chacha20-ietf-poly1305"
     password: "e8KgS8fD0yDqYFpgN4G5piCOt9aFyqA3"
     udp: true
-  - name: "🇨🇭_6"
-    type: ss
-    server: "86.106.84.194"
-    port: 13261
-    cipher: "aes-128-gcm"
-    password: "2bf536a4bd6008511734a505d248de2c"
-    udp: true
-  - name: "🇨🇭_7"
-    type: ss
-    server: "86.106.84.194"
-    port: 13261
-    cipher: "aes-128-gcm"
-    password: "2bf536a4bd6008511734a505d248de2c"
-    udp: true
-  - name: "🇨🇭_8"
+  - name: "🇨🇭_5"
     type: ss
     server: "132.243.175.144"
     port: 8388
@@ -163,9 +141,6 @@ proxy-groups:
       - "🇨🇭_3"
       - "🇨🇭_4"
       - "🇨🇭_5"
-      - "🇨🇭_6"
-      - "🇨🇭_7"
-      - "🇨🇭_8"
 
 
   - name: "Load Balance"
@@ -179,9 +154,6 @@ proxy-groups:
       - "🇨🇭_3"
       - "🇨🇭_4"
       - "🇨🇭_5"
-      - "🇨🇭_6"
-      - "🇨🇭_7"
-      - "🇨🇭_8"
 
 rules:
   - MATCH,PROXY

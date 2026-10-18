@@ -62,32 +62,30 @@ dns:
 proxies:
   - name: "🇦🇱_1"
     type: vless
-    server: "31.59.217.164"
-    port: 443
-    uuid: "4b09d40d-e36a-47c3-baa4-e6bf551b3183"
+    server: "aelix-al.safire-soleiman.ir"
+    port: 6311
+    uuid: "2ffa91fe-e1cc-4c44-a90a-45002feae978"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "www.adobe.com"
-    client-fingerprint: "chrome"
+    servername: "play.google.com"
+    client-fingerprint: "qq"
     reality-opts:
-      public-key: "kOkILS7UXUQDNPLYn4SQ65kMIWKXNOttV5Kddw4ZqTo"
-      short-id: "1625a2a79d01328f"
-    flow: "xtls-rprx-vision"
+      public-key: "lQbgwNDYw6Zbjdim0JtXUarzb-3GSjDvtX6FJYZD9Qo"
+      short-id: ""
   - name: "🇦🇱_2"
-    type: ss
-    server: "130.49.189.158"
-    port: 43558
-    cipher: "chacha20-ietf-poly1305"
-    password: "j3PKOCj7wHl5Pk6thI9HyXtCa6JU180IlBpWANgFjkY="
+    type: vless
+    server: "130.49.189.146"
+    port: 6311
+    uuid: "2ffa91fe-e1cc-4c44-a90a-45002feae978"
     udp: true
-  - name: "🇦🇱_3"
-    type: ss
-    server: "130.49.189.158"
-    port: 43558
-    cipher: "chacha20-ietf-poly1305"
-    password: "j3PKOCj7wHl5Pk6thI9HyXtCa6JU180IlBpWANgFjkY="
-    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "play.google.com"
+    client-fingerprint: "qq"
+    reality-opts:
+      public-key: "lQbgwNDYw6Zbjdim0JtXUarzb-3GSjDvtX6FJYZD9Qo"
+      short-id: ""
 
 proxy-groups:
   - name: "PROXY"
@@ -106,7 +104,6 @@ proxy-groups:
     proxies:
       - "🇦🇱_1"
       - "🇦🇱_2"
-      - "🇦🇱_3"
 
 
   - name: "Load Balance"
@@ -117,7 +114,6 @@ proxy-groups:
     proxies:
       - "🇦🇱_1"
       - "🇦🇱_2"
-      - "🇦🇱_3"
 
 rules:
   - MATCH,PROXY

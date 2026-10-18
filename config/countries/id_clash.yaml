@@ -88,22 +88,6 @@ proxies:
       public-key: "ll7JTP628PuBMZJvx6fuhGSmCRSURnReAetmhCEL8GU"
       short-id: ""
     flow: "xtls-rprx-vision"
-  - name: "🇮🇩_3"
-    type: trojan
-    server: "qfdfsg.wsone.icu"
-    port: 443
-    password: "M7v%w11Se*"
-    sni: "qfdfsg.wsone.icu"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇮🇩_4"
-    type: trojan
-    server: "103.67.79.156"
-    port: 443
-    password: "af4b064a9c39472fb34ad8b113acdc6b"
-    sni: "103.67.79.156"
-    skip-cert-verify: true
-    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -122,8 +106,6 @@ proxy-groups:
     proxies:
       - "🇮🇩_1"
       - "🇮🇩_2"
-      - "🇮🇩_3"
-      - "🇮🇩_4"
 
 
   - name: "Load Balance"
@@ -134,8 +116,6 @@ proxy-groups:
     proxies:
       - "🇮🇩_1"
       - "🇮🇩_2"
-      - "🇮🇩_3"
-      - "🇮🇩_4"
 
 rules:
   - MATCH,PROXY
