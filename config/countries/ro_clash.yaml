@@ -62,11 +62,25 @@ dns:
 proxies:
   - name: "🇷🇴_1"
     type: vless
+    server: "46.28.67.55"
+    port: 443
+    uuid: "d1a6a033-fdbd-46a6-a177-3370ba042b9f"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.cloudflare.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "i2dJ1_XGDpp50qpEclh6SWSWkxt4B0t2hi2qOVQbeSU"
+      short-id: "d06d78e974491b6e"
+    flow: "xtls-rprx-vision"
+  - name: "🇷🇴_2"
+    type: vless
     server: "edge10.cyrionflare.com"
     port: 2052
     uuid: "1a8ecc41-6e62-431b-8eca-87c2fa4dc286"
     udp: true
-  - name: "🇷🇴_2"
+  - name: "🇷🇴_3"
     type: vless
     server: "82.117.255.174"
     port: 443
@@ -79,20 +93,6 @@ proxies:
     reality-opts:
       public-key: "0QDBHaCRO2dPeeSVy3B3R_U12ZOvbvWl1JTFW_ZcpD0"
       short-id: "31e91d43e553bf32"
-    flow: "xtls-rprx-vision"
-  - name: "🇷🇴_3"
-    type: vless
-    server: "46.28.67.55"
-    port: 443
-    uuid: "d1a6a033-fdbd-46a6-a177-3370ba042b9f"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.cloudflare.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "i2dJ1_XGDpp50qpEclh6SWSWkxt4B0t2hi2qOVQbeSU"
-      short-id: "d06d78e974491b6e"
     flow: "xtls-rprx-vision"
   - name: "🇷🇴_4"
     type: vless
@@ -118,15 +118,15 @@ proxies:
     udp: true
   - name: "🇷🇴_6"
     type: trojan
-    server: "de4.dedushka.top"
+    server: "de2.dedushka.top"
     port: 443
     password: "4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA"
-    sni: "de4.dedushka.top"
+    sni: "de2.dedushka.top"
     skip-cert-verify: true
     udp: true
   - name: "🇷🇴_7"
     type: trojan
-    server: "de9.dedushka.top"
+    server: "188.241.241.235"
     port: 443
     password: "4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA"
     sni: "de9.dedushka.top"
@@ -134,53 +134,29 @@ proxies:
     udp: true
   - name: "🇷🇴_8"
     type: trojan
-    server: "de10.dedushka.top"
-    port: 443
-    password: "4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA"
-    sni: "de10.dedushka.top"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇷🇴_9"
-    type: trojan
     server: "38.180.35.145"
     port: 443
     password: "600421cf-11d7-429f-a65b-c30397f1bc03"
     sni: "bu2.freeguard.org"
     skip-cert-verify: true
     udp: true
-  - name: "🇷🇴_10"
+  - name: "🇷🇴_9"
     type: trojan
-    server: "de5.dedushka.top"
+    server: "de4.dedushka.top"
     port: 443
     password: "4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA"
-    sni: "de5.dedushka.top"
+    sni: "de4.dedushka.top"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇷🇴_10"
+    type: trojan
+    server: "de10.dedushka.top"
+    port: 443
+    password: "4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA"
+    sni: "de10.dedushka.top"
     skip-cert-verify: true
     udp: true
   - name: "🇷🇴_11"
-    type: trojan
-    server: "de2.dedushka.top"
-    port: 443
-    password: "4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA"
-    sni: "de2.dedushka.top"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇷🇴_12"
-    type: trojan
-    server: "de7.dedushka.top"
-    port: 443
-    password: "4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA"
-    sni: "de7.dedushka.top"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇷🇴_13"
-    type: trojan
-    server: "de3.dedushka.top"
-    port: 443
-    password: "4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA"
-    sni: "de3.dedushka.top"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇷🇴_14"
     type: trojan
     server: "de8.dedushka.top"
     port: 443
@@ -188,34 +164,68 @@ proxies:
     sni: "de8.dedushka.top"
     skip-cert-verify: true
     udp: true
-  - name: "🇷🇴_15"
+  - name: "🇷🇴_12"
     type: trojan
-    server: "de6.dedushka.top"
+    server: "de5.dedushka.top"
     port: 443
     password: "4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA"
-    sni: "de6.dedushka.top"
+    sni: "de5.dedushka.top"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇷🇴_13"
+    type: trojan
+    server: "de9.dedushka.top"
+    port: 443
+    password: "4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA"
+    sni: "de9.dedushka.top"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇷🇴_14"
+    type: trojan
+    server: "188.241.241.122"
+    port: 443
+    password: "4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA"
+    sni: "de2.dedushka.top"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇷🇴_15"
+    type: trojan
+    server: "de7.dedushka.top"
+    port: 443
+    password: "4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA"
+    sni: "de7.dedushka.top"
     skip-cert-verify: true
     udp: true
   - name: "🇷🇴_16"
-    type: ss
-    server: "154.46.31.106"
+    type: trojan
+    server: "188.241.241.102"
     port: 443
-    cipher: "chacha20-ietf-poly1305"
-    password: "QFWzCw2uX9B9i6qAYeFBIE"
+    password: "4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA"
+    sni: "de4.dedushka.top"
+    skip-cert-verify: true
     udp: true
   - name: "🇷🇴_17"
+    type: trojan
+    server: "188.241.241.236"
+    port: 443
+    password: "4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA"
+    sni: "de10.dedushka.top"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇷🇴_18"
+    type: trojan
+    server: "de3.dedushka.top"
+    port: 443
+    password: "4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA"
+    sni: "de3.dedushka.top"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇷🇴_19"
     type: ss
     server: "194.68.44.42"
     port: 64546
     cipher: "chacha20-ietf-poly1305"
     password: "U83u9OGpvSatIUW7LsWffr"
-    udp: true
-  - name: "🇷🇴_18"
-    type: ss
-    server: "bogging-eyeteeth-fly.freesocks.work"
-    port: 443
-    cipher: "chacha20-ietf-poly1305"
-    password: "QFWzCw2uX9B9i6qAYeFBIE"
     udp: true
 
 proxy-groups:
@@ -251,6 +261,7 @@ proxy-groups:
       - "🇷🇴_16"
       - "🇷🇴_17"
       - "🇷🇴_18"
+      - "🇷🇴_19"
 
 
   - name: "Load Balance"
@@ -277,6 +288,7 @@ proxy-groups:
       - "🇷🇴_16"
       - "🇷🇴_17"
       - "🇷🇴_18"
+      - "🇷🇴_19"
 
 rules:
   - MATCH,PROXY

@@ -73,6 +73,14 @@ proxies:
     reality-opts:
       public-key: "zpLKK8HuwXJDH9D0O3t5Z_tO3ajkj7VRtXdr6UGy1zE"
       short-id: "a25d0f"
+  - name: "🇺🇦_2"
+    type: trojan
+    server: "130.0.236.88"
+    port: 443
+    password: "d2adff89-5143-4d67-921f-3478464de5bb"
+    sni: "ua.freeguard.org"
+    skip-cert-verify: true
+    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -90,6 +98,7 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇺🇦_1"
+      - "🇺🇦_2"
 
 
   - name: "Load Balance"
@@ -99,6 +108,7 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇺🇦_1"
+      - "🇺🇦_2"
 
 rules:
   - MATCH,PROXY

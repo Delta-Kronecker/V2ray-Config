@@ -62,13 +62,14 @@ dns:
 proxies:
   - name: "🇸🇪_1"
     type: vless
-    server: "edge-lab-b.10media.top"
+    server: "45.12.63.219"
     port: 443
     uuid: "9cb8d71c-fe06-4402-a591-eaa1f173b890"
     udp: true
     tls: true
     skip-cert-verify: true
     servername: "edge-lab-b.10media.top"
+    client-fingerprint: "firefox"
     network: grpc
     grpc-opts:
       grpc-service-name: "swedenfeed"
@@ -89,11 +90,59 @@ proxies:
     grpc-opts:
       grpc-service-name: "grpce5bb9e71"
   - name: "🇸🇪_3"
+    type: vless
+    server: "se1.h1cloud.net"
+    port: 26128
+    uuid: "68c3d665-b2b5-4ffb-9f37-9f3d8c47324d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.icloud.com"
+    client-fingerprint: "qq"
+    reality-opts:
+      public-key: "sACiHit5lNtPRK_eFP6jT8dMPUZ4kQRsfPj_LL5p7Uk"
+      short-id: "13ac4d3bdadf1ea1"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "df50147201bf"
+  - name: "🇸🇪_4"
     type: trojan
     server: "38.180.56.158"
     port: 443
     password: "af4b064a9c39472fb34ad8b113acdc6b"
     sni: "38.180.56.158"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇸🇪_5"
+    type: trojan
+    server: "65.20.113.246"
+    port: 443
+    password: "Bw5Mz7QkVp"
+    sni: "z-v2-074389.kailib.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇸🇪_6"
+    type: trojan
+    server: "checkout.skog.lalibobi.online"
+    port: 443
+    password: "qjQdBgnCuhLVLxYKyBrEWHYtWJYtBjpS"
+    sni: "checkout.skog.lalibobi.online"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇸🇪_7"
+    type: trojan
+    server: "45.91.171.116"
+    port: 443
+    password: "2ee85121-31de-4581-a492-eb00f606e392"
+    sni: "sto.freeguard.org"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇸🇪_8"
+    type: trojan
+    server: "13.53.176.184"
+    port: 443
+    password: "TRY332RCOD4panalyy9nISleFSZDOYFwzXSSNaCCwYelEyDR230cxAZxDqFOTzA3AX68S"
+    sni: "otcele.golfland.club"
     skip-cert-verify: true
     udp: true
 
@@ -115,6 +164,11 @@ proxy-groups:
       - "🇸🇪_1"
       - "🇸🇪_2"
       - "🇸🇪_3"
+      - "🇸🇪_4"
+      - "🇸🇪_5"
+      - "🇸🇪_6"
+      - "🇸🇪_7"
+      - "🇸🇪_8"
 
 
   - name: "Load Balance"
@@ -126,6 +180,11 @@ proxy-groups:
       - "🇸🇪_1"
       - "🇸🇪_2"
       - "🇸🇪_3"
+      - "🇸🇪_4"
+      - "🇸🇪_5"
+      - "🇸🇪_6"
+      - "🇸🇪_7"
+      - "🇸🇪_8"
 
 rules:
   - MATCH,PROXY

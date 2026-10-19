@@ -62,20 +62,6 @@ dns:
 proxies:
   - name: "🇮🇩_1"
     type: vless
-    server: "103.172.197.2"
-    port: 29172
-    uuid: "3977434d-6a9b-4858-8ced-80326ba5e367"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "aws.amazon.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "pff94OJwuKXnF7_3SJ8KKJuAN4GJtInBlR-kg-4mwzQ"
-      short-id: ""
-    flow: "xtls-rprx-vision"
-  - name: "🇮🇩_2"
-    type: vless
     server: "103.172.197.3"
     port: 16006
     uuid: "f8c9d2a1-da40-4f90-b671-11772a0b13d6"
@@ -88,6 +74,36 @@ proxies:
       public-key: "ll7JTP628PuBMZJvx6fuhGSmCRSURnReAetmhCEL8GU"
       short-id: ""
     flow: "xtls-rprx-vision"
+  - name: "🇮🇩_2"
+    type: vless
+    server: "103.172.197.2"
+    port: 29172
+    uuid: "3977434d-6a9b-4858-8ced-80326ba5e367"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "aws.amazon.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "pff94OJwuKXnF7_3SJ8KKJuAN4GJtInBlR-kg-4mwzQ"
+      short-id: ""
+    flow: "xtls-rprx-vision"
+  - name: "🇮🇩_3"
+    type: trojan
+    server: "103.67.79.156"
+    port: 443
+    password: "af4b064a9c39472fb34ad8b113acdc6b"
+    sni: "103.67.79.156"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇮🇩_4"
+    type: trojan
+    server: "172.232.250.160"
+    port: 443
+    password: "788f2b96-47e2-4302-a417-511b6fd7d09c"
+    sni: "172.232.250.160"
+    skip-cert-verify: true
+    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -106,6 +122,8 @@ proxy-groups:
     proxies:
       - "🇮🇩_1"
       - "🇮🇩_2"
+      - "🇮🇩_3"
+      - "🇮🇩_4"
 
 
   - name: "Load Balance"
@@ -116,6 +134,8 @@ proxy-groups:
     proxies:
       - "🇮🇩_1"
       - "🇮🇩_2"
+      - "🇮🇩_3"
+      - "🇮🇩_4"
 
 rules:
   - MATCH,PROXY
