@@ -104,13 +104,6 @@ proxies:
     cipher: "chacha20-ietf-poly1305"
     password: "e8KgS8fD0yDqYFpgN4G5piCOt9aFyqA3"
     udp: true
-  - name: "🇨🇭_6"
-    type: ss
-    server: "132.243.175.144"
-    port: 8388
-    cipher: "chacha20-ietf-poly1305"
-    password: "e8KgS8fD0yDqYFpgN4G5piCOt9aFyqA3"
-    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -132,7 +125,6 @@ proxy-groups:
       - "🇨🇭_3"
       - "🇨🇭_4"
       - "🇨🇭_5"
-      - "🇨🇭_6"
 
 
   - name: "Load Balance"
@@ -146,7 +138,6 @@ proxy-groups:
       - "🇨🇭_3"
       - "🇨🇭_4"
       - "🇨🇭_5"
-      - "🇨🇭_6"
 
 rules:
   - MATCH,PROXY
