@@ -62,62 +62,17 @@ dns:
 proxies:
   - name: "🇲🇩_1"
     type: vless
-    server: "195.178.106.23"
+    server: "9f6635t.msk1.h1clayd.click"
     port: 443
-    uuid: "6338c01a-310e-42c3-bf4f-2a20e161054b"
+    uuid: "3acb386b-fdd7-4bc9-911f-159fdcd834ce"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "md1.aiage.work"
+    servername: "9f6635t.msk1.h1clayd.click"
     client-fingerprint: "firefox"
     reality-opts:
-      public-key: "0dtXhkhkh-_MBFoGwzdW4PdlJtVX9oswhJZHbUPGCmo"
-      short-id: "e829f50f0a3f416b"
-    flow: "xtls-rprx-vision"
-  - name: "🇲🇩_2"
-    type: vless
-    server: "md1.aiage.work"
-    port: 443
-    uuid: "6338c01a-310e-42c3-bf4f-2a20e161054b"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "md1.aiage.work"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "0dtXhkhkh-_MBFoGwzdW4PdlJtVX9oswhJZHbUPGCmo"
-      short-id: "e829f50f0a3f416b"
-    flow: "xtls-rprx-vision"
-  - name: "🇲🇩_3"
-    type: vless
-    server: "85.120.144.27"
-    port: 443
-    uuid: "6338c01a-310e-42c3-bf4f-2a20e161054b"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "md1.aiage.work"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "0dtXhkhkh-_MBFoGwzdW4PdlJtVX9oswhJZHbUPGCmo"
-      short-id: "5d7a45ac0ad6adff"
-    flow: "xtls-rprx-vision"
-  - name: "🇲🇩_4"
-    type: vless
-    server: "94.103.2.23"
-    port: 8462
-    uuid: "a346c521-7a7f-452b-9356-a4893feb5982"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "github.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "FWitre1jinQR7qz5HQ0q2Q4Gg9xA9B0SyizCziN7Ch0"
-      short-id: ""
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "GunService"
+      public-key: "aovrqfVIxA_POvJorIg05wBQJM9nZ859c0fsNL7v9RM"
+      short-id: "0ea5f9d7955c3971"
 
 proxy-groups:
   - name: "PROXY"
@@ -135,9 +90,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇲🇩_1"
-      - "🇲🇩_2"
-      - "🇲🇩_3"
-      - "🇲🇩_4"
 
 
   - name: "Load Balance"
@@ -147,9 +99,6 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇲🇩_1"
-      - "🇲🇩_2"
-      - "🇲🇩_3"
-      - "🇲🇩_4"
 
 rules:
   - MATCH,PROXY

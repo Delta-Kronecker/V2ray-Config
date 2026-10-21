@@ -62,32 +62,18 @@ dns:
 proxies:
   - name: "🇰🇿_1"
     type: vless
-    server: "185.91.126.213"
-    port: 443
-    uuid: "5a4f865d-7480-45a8-b487-248a46819aa1"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "ads.x5.ru"
-    client-fingerprint: "random"
-    reality-opts:
-      public-key: "qB_eMu3ZO_wGITnyIqJ7Kt39-h9oHFnHlQQEqA-r3VA"
-      short-id: ""
-    flow: "xtls-rprx-vision"
-  - name: "🇰🇿_2"
-    type: vless
-    server: "77.73.232.61"
-    port: 19747
-    uuid: "2a9ed01e-5455-44b4-a66a-76ee8165f0ac"
+    server: "83.222.23.81"
+    port: 38065
+    uuid: "4b9063e0-3288-44e9-9aac-80fbfce323a0"
     udp: true
     tls: true
     skip-cert-verify: true
     servername: "yahoo.com"
     client-fingerprint: "chrome"
     reality-opts:
-      public-key: "ZO9dTeg1slvTXgVsBsaJ1BDvz_YUImTLJjbHs-GdVyM"
-      short-id: "2001"
-  - name: "🇰🇿_3"
+      public-key: "dSSDPTK6AHfAdRAXD9i4rzqcNIY65RxlF25UyCKdiyo"
+      short-id: "fa"
+  - name: "🇰🇿_2"
     type: vless
     server: "178.236.16.98"
     port: 35728
@@ -100,19 +86,19 @@ proxies:
     reality-opts:
       public-key: "vhUFNoFcvtZAVMo8y5K5eU2V43m5q6yjmWIhp5RkFng"
       short-id: "69a2"
-  - name: "🇰🇿_4"
+  - name: "🇰🇿_3"
     type: vless
-    server: "83.222.23.81"
-    port: 38065
-    uuid: "4b9063e0-3288-44e9-9aac-80fbfce323a0"
+    server: "77.73.232.61"
+    port: 19747
+    uuid: "2a9ed01e-5455-44b4-a66a-76ee8165f0ac"
     udp: true
     tls: true
     skip-cert-verify: true
     servername: "yahoo.com"
     client-fingerprint: "chrome"
     reality-opts:
-      public-key: "dSSDPTK6AHfAdRAXD9i4rzqcNIY65RxlF25UyCKdiyo"
-      short-id: "fa"
+      public-key: "ZO9dTeg1slvTXgVsBsaJ1BDvz_YUImTLJjbHs-GdVyM"
+      short-id: "2001"
 
 proxy-groups:
   - name: "PROXY"
@@ -132,7 +118,6 @@ proxy-groups:
       - "🇰🇿_1"
       - "🇰🇿_2"
       - "🇰🇿_3"
-      - "🇰🇿_4"
 
 
   - name: "Load Balance"
@@ -144,7 +129,6 @@ proxy-groups:
       - "🇰🇿_1"
       - "🇰🇿_2"
       - "🇰🇿_3"
-      - "🇰🇿_4"
 
 rules:
   - MATCH,PROXY
