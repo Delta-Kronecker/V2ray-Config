@@ -60,22 +60,15 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇭🇷_1"
+  - name: "🇸🇰_1"
     type: vless
-    server: "2.56.175.179"
-    port: 9443
-    uuid: "8179d7cc-82bc-4eae-a97f-5d30c6c2a812"
+    server: "80.243.228.130"
+    port: 2085
+    uuid: "4dc8093e-4eff-410b-bc14-b69f78209414"
     udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "itunes.apple.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "8bhS-nnIN67a292RpJsCPzXQy4CzpzOVLTPn5CiAFyg"
-      short-id: "6ba7b810"
     network: grpc
     grpc-opts:
-      grpc-service-name: "grpc"
+      grpc-service-name: "vless"
 
 proxy-groups:
   - name: "PROXY"
@@ -92,7 +85,7 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇭🇷_1"
+      - "🇸🇰_1"
 
 
   - name: "Load Balance"
@@ -101,7 +94,7 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇭🇷_1"
+      - "🇸🇰_1"
 
 rules:
   - MATCH,PROXY

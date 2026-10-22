@@ -61,6 +61,20 @@ dns:
 
 proxies:
   - name: "🇵🇪_1"
+    type: vless
+    server: "134.185.81.5"
+    port: 47881
+    uuid: "59b203b2-b1bc-4e9c-a9e5-ccb8f691bf72"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.tesla.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "6XmXX1QXGodmtqU37Zx9CDHnCnPtonRdq8ieLmt__g4"
+      short-id: "38d72071"
+    flow: "xtls-rprx-vision"
+  - name: "🇵🇪_2"
     type: trojan
     server: "38.180.173.150"
     port: 443
@@ -85,6 +99,7 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇵🇪_1"
+      - "🇵🇪_2"
 
 
   - name: "Load Balance"
@@ -94,6 +109,7 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇵🇪_1"
+      - "🇵🇪_2"
 
 rules:
   - MATCH,PROXY

@@ -62,6 +62,22 @@ dns:
 proxies:
   - name: "🇲🇩_1"
     type: vless
+    server: "94.103.2.232"
+    port: 8444
+    uuid: "a346c521-7a7f-452b-9356-a4893feb5982"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "github.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "FWitre1jinQR7qz5HQ0q2Q4Gg9xA9B0SyizCziN7Ch0"
+      short-id: ""
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "GunService"
+  - name: "🇲🇩_2"
+    type: vless
     server: "9f6635t.msk1.h1clayd.click"
     port: 443
     uuid: "3acb386b-fdd7-4bc9-911f-159fdcd834ce"
@@ -73,6 +89,35 @@ proxies:
     reality-opts:
       public-key: "aovrqfVIxA_POvJorIg05wBQJM9nZ859c0fsNL7v9RM"
       short-id: "0ea5f9d7955c3971"
+  - name: "🇲🇩_3"
+    type: vless
+    server: "45.91.52.28"
+    port: 443
+    uuid: "3acb386b-fdd7-4bc9-911f-159fdcd834ce"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "9f6635t.msk1.h1clayd.click"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "aovrqfVIxA_POvJorIg05wBQJM9nZ859c0fsNL7v9RM"
+      short-id: "0ea5f9d7955c3971"
+  - name: "🇲🇩_4"
+    type: vless
+    server: "0f5857g.msk1.h1clayd.click"
+    port: 443
+    uuid: "3acb386b-fdd7-4bc9-911f-159fdcd834ce"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "0f5857g.msk1.h1clayd.click"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "_UKyZZvF2cvo6qev4VY-QoOyzqE8cGT3hciD0g--sD8"
+      short-id: "07e197719352d606"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "fb78f1bc0355"
 
 proxy-groups:
   - name: "PROXY"
@@ -90,6 +135,9 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇲🇩_1"
+      - "🇲🇩_2"
+      - "🇲🇩_3"
+      - "🇲🇩_4"
 
 
   - name: "Load Balance"
@@ -99,6 +147,9 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇲🇩_1"
+      - "🇲🇩_2"
+      - "🇲🇩_3"
+      - "🇲🇩_4"
 
 rules:
   - MATCH,PROXY

@@ -83,21 +83,13 @@ proxies:
     skip-cert-verify: true
     udp: true
   - name: "🇨🇭_3"
-    type: trojan
-    server: "84.234.29.238"
-    port: 443
-    password: "Masir_Sefid"
-    sni: "store.steampowered.com"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇨🇭_4"
     type: ss
     server: "132.243.175.144"
     port: 8388
     cipher: "chacha20-ietf-poly1305"
     password: "e8KgS8fD0yDqYFpgN4G5piCOt9aFyqA3"
     udp: true
-  - name: "🇨🇭_5"
+  - name: "🇨🇭_4"
     type: ss
     server: "132.243.175.144"
     port: 8388
@@ -124,7 +116,6 @@ proxy-groups:
       - "🇨🇭_2"
       - "🇨🇭_3"
       - "🇨🇭_4"
-      - "🇨🇭_5"
 
 
   - name: "Load Balance"
@@ -137,7 +128,6 @@ proxy-groups:
       - "🇨🇭_2"
       - "🇨🇭_3"
       - "🇨🇭_4"
-      - "🇨🇭_5"
 
 rules:
   - MATCH,PROXY

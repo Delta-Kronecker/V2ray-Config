@@ -71,17 +71,17 @@ proxies:
     servername: "85.90.217.42"
   - name: "🇪🇸_2"
     type: vless
-    server: "46.28.71.247"
+    server: "45.198.54.249"
     port: 443
-    uuid: "12c53e32-e589-47d6-b857-e4132294f767"
+    uuid: "8d4c35bd-d04a-43fe-8390-47133ab90dbf"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "www.cloudflare.com"
+    servername: "6a4a06t.es3.h1clayd.click"
+    client-fingerprint: "chrome"
     reality-opts:
-      public-key: "v4MuZIvFrTPT5GHMSaPryUAbIZlLstmsUTzmC1E-JTE"
-      short-id: "0dfc23fe80778c00"
-    flow: "xtls-rprx-vision"
+      public-key: "rHCPMrwRVCwxdwv4YOCso7zlYTPoX8w7x1f5Yqv2bGM"
+      short-id: "b73ab21227d33c1e"
   - name: "🇪🇸_3"
     type: vless
     server: "193.238.154.78"
@@ -97,6 +97,32 @@ proxies:
       short-id: "e93d46ee3735069e"
     flow: "xtls-rprx-vision"
   - name: "🇪🇸_4"
+    type: vless
+    server: "46.28.71.247"
+    port: 443
+    uuid: "12c53e32-e589-47d6-b857-e4132294f767"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.cloudflare.com"
+    reality-opts:
+      public-key: "v4MuZIvFrTPT5GHMSaPryUAbIZlLstmsUTzmC1E-JTE"
+      short-id: "0dfc23fe80778c00"
+    flow: "xtls-rprx-vision"
+  - name: "🇪🇸_5"
+    type: vless
+    server: "212.227.235.66"
+    port: 2053
+    uuid: "ead0dd61-d398-40ad-80d6-a0e1e516d7d3"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.apple.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "7Y6Xb5Ql_03K25x8yKUSOKI2JTOMyv2nyCcFza90uxk"
+      short-id: "29e8dcd2b37aaa7f"
+  - name: "🇪🇸_6"
     type: trojan
     server: "65.20.102.54"
     port: 443
@@ -124,6 +150,8 @@ proxy-groups:
       - "🇪🇸_2"
       - "🇪🇸_3"
       - "🇪🇸_4"
+      - "🇪🇸_5"
+      - "🇪🇸_6"
 
 
   - name: "Load Balance"
@@ -136,6 +164,8 @@ proxy-groups:
       - "🇪🇸_2"
       - "🇪🇸_3"
       - "🇪🇸_4"
+      - "🇪🇸_5"
+      - "🇪🇸_6"
 
 rules:
   - MATCH,PROXY

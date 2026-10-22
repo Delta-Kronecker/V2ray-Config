@@ -61,31 +61,13 @@ dns:
 
 proxies:
   - name: "🇧🇪_1"
-    type: vless
-    server: "213.189.8.10"
-    port: 8030
-    uuid: "b4ce2452-5f71-4137-8cf9-0467ca5b07b0"
+    type: vmess
+    server: "dog-hk.kunlun01dns.com"
+    port: 21018
+    uuid: "9464ca40-dd75-3742-a628-d931a9f413b2"
+    alterId: 0
+    cipher: "auto"
     udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "race.egistration.ir"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "yNCiWHU2y1M-cWl5jJLfSDwwYM_9gdP5sqBLANxxdAs"
-      short-id: "38dda82955d5791e"
-  - name: "🇧🇪_2"
-    type: vless
-    server: "dns11.m3hrzd.ir"
-    port: 8030
-    uuid: "b4ce2452-5f71-4137-8cf9-0467ca5b07b0"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "race.egistration.ir"
-    client-fingerprint: "edge"
-    reality-opts:
-      public-key: "yNCiWHU2y1M-cWl5jJLfSDwwYM_9gdP5sqBLANxxdAs"
-      short-id: "38dda82955d5791e"
 
 proxy-groups:
   - name: "PROXY"
@@ -103,7 +85,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇧🇪_1"
-      - "🇧🇪_2"
 
 
   - name: "Load Balance"
@@ -113,7 +94,6 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇧🇪_1"
-      - "🇧🇪_2"
 
 rules:
   - MATCH,PROXY
