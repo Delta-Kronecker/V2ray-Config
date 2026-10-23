@@ -62,34 +62,6 @@ dns:
 proxies:
   - name: "🇦🇪_1"
     type: vless
-    server: "178.83.122.65"
-    port: 443
-    uuid: "90144ad9-2db7-42ef-9271-e537d187cfb7"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "wikipedia.org"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "OEuFn92apsB9ZjFf5GpGHFmLR6T--heK-MsiThxWsl4"
-      short-id: ""
-    flow: "xtls-rprx-vision"
-  - name: "🇦🇪_2"
-    type: vless
-    server: "178.83.121.15"
-    port: 443
-    uuid: "61b258c4-d246-40a1-8ee5-6ffbf9cfd3eb"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "ru.tradingview.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "megh_wXh4-8dbwuTtQY7beR_jRiYOap5qt-jZ33Wbj0"
-      short-id: ""
-    flow: "xtls-rprx-vision"
-  - name: "🇦🇪_3"
-    type: vless
     server: "45.59.120.217"
     port: 443
     uuid: "8732f92b-ba85-48f7-92e4-ad029f1cd4e7"
@@ -101,6 +73,14 @@ proxies:
     reality-opts:
       public-key: "mWxcYeYE-M3iE0RBjTzG88QI9kj2wivJDoIYDu_aG3w"
       short-id: "29c2dd1e3ef7c4d4"
+  - name: "🇦🇪_2"
+    type: trojan
+    server: "154.90.55.81"
+    port: 443
+    password: "af4b064a9c39472fb34ad8b113acdc6b"
+    sni: "154.90.55.81"
+    skip-cert-verify: true
+    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -119,7 +99,6 @@ proxy-groups:
     proxies:
       - "🇦🇪_1"
       - "🇦🇪_2"
-      - "🇦🇪_3"
 
 
   - name: "Load Balance"
@@ -130,7 +109,6 @@ proxy-groups:
     proxies:
       - "🇦🇪_1"
       - "🇦🇪_2"
-      - "🇦🇪_3"
 
 rules:
   - MATCH,PROXY

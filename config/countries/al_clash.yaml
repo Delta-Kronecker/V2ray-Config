@@ -69,10 +69,17 @@ proxies:
     udp: true
   - name: "🇦🇱_2"
     type: ss
-    server: "130.49.189.158"
-    port: 43558
-    cipher: "chacha20-ietf-poly1305"
-    password: "nQeEoXC5Yl5PZnPLvKUpFTU9cyQcNG902zpibWkwGbo="
+    server: "31.171.155.50"
+    port: 10394
+    cipher: "aes-128-gcm"
+    password: "16e3d1d2200f8bb68feed164ef43a021"
+    udp: true
+  - name: "🇦🇱_3"
+    type: ss
+    server: "31.171.155.50"
+    port: 10394
+    cipher: "aes-128-gcm"
+    password: "16e3d1d2200f8bb68feed164ef43a021"
     udp: true
 
 proxy-groups:
@@ -92,6 +99,7 @@ proxy-groups:
     proxies:
       - "🇦🇱_1"
       - "🇦🇱_2"
+      - "🇦🇱_3"
 
 
   - name: "Load Balance"
@@ -102,6 +110,7 @@ proxy-groups:
     proxies:
       - "🇦🇱_1"
       - "🇦🇱_2"
+      - "🇦🇱_3"
 
 rules:
   - MATCH,PROXY

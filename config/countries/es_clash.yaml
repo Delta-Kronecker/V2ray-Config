@@ -62,26 +62,27 @@ dns:
 proxies:
   - name: "🇪🇸_1"
     type: vless
-    server: "85.90.217.42"
-    port: 443
-    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    server: "213.182.201.11"
+    port: 3090
+    uuid: "b6f15079-7bd0-4398-b045-93f2c07a1a87"
     udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "85.90.217.42"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "vless"
   - name: "🇪🇸_2"
     type: vless
-    server: "45.198.54.249"
+    server: "es.srv.dvzh.net"
     port: 443
-    uuid: "8d4c35bd-d04a-43fe-8390-47133ab90dbf"
+    uuid: "9ab3a362-1518-496d-b08d-eced45cec936"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "6a4a06t.es3.h1clayd.click"
-    client-fingerprint: "chrome"
+    servername: "es.srv.dvzh.net"
+    client-fingerprint: "firefox"
     reality-opts:
-      public-key: "rHCPMrwRVCwxdwv4YOCso7zlYTPoX8w7x1f5Yqv2bGM"
-      short-id: "b73ab21227d33c1e"
+      public-key: "9GEc6lOjnGQyyE1951OZSBMWt4uCXsOjKyj9fysxHH0"
+      short-id: "e0ccc8c2f487d913"
+    flow: "xtls-rprx-vision"
   - name: "🇪🇸_3"
     type: vless
     server: "193.238.154.78"
@@ -98,6 +99,15 @@ proxies:
     flow: "xtls-rprx-vision"
   - name: "🇪🇸_4"
     type: vless
+    server: "85.90.217.42"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "85.90.217.42"
+  - name: "🇪🇸_5"
+    type: vless
     server: "46.28.71.247"
     port: 443
     uuid: "12c53e32-e589-47d6-b857-e4132294f767"
@@ -109,19 +119,6 @@ proxies:
       public-key: "v4MuZIvFrTPT5GHMSaPryUAbIZlLstmsUTzmC1E-JTE"
       short-id: "0dfc23fe80778c00"
     flow: "xtls-rprx-vision"
-  - name: "🇪🇸_5"
-    type: vless
-    server: "212.227.235.66"
-    port: 2053
-    uuid: "ead0dd61-d398-40ad-80d6-a0e1e516d7d3"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.apple.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "7Y6Xb5Ql_03K25x8yKUSOKI2JTOMyv2nyCcFza90uxk"
-      short-id: "29e8dcd2b37aaa7f"
   - name: "🇪🇸_6"
     type: trojan
     server: "65.20.102.54"
@@ -129,6 +126,41 @@ proxies:
     password: "842b5f9dd11e458d8613c907c4cc5723"
     sni: "www.gpt123.one"
     skip-cert-verify: true
+    udp: true
+  - name: "🇪🇸_7"
+    type: ss
+    server: "193.148.19.212"
+    port: 12796
+    cipher: "aes-128-gcm"
+    password: "905470106f6c49d68e90a5c55c020190"
+    udp: true
+  - name: "🇪🇸_8"
+    type: ss
+    server: "108.181.71.5"
+    port: 15995
+    cipher: "aes-128-gcm"
+    password: "882dd5b0e0f2cf05bb5de75f59bbe953"
+    udp: true
+  - name: "🇪🇸_9"
+    type: ss
+    server: "108.181.71.156"
+    port: 15998
+    cipher: "aes-128-gcm"
+    password: "882dd5b0e0f2cf05bb5de75f59bbe953"
+    udp: true
+  - name: "🇪🇸_10"
+    type: ss
+    server: "108.181.71.5"
+    port: 15995
+    cipher: "aes-128-gcm"
+    password: "882dd5b0e0f2cf05bb5de75f59bbe953"
+    udp: true
+  - name: "🇪🇸_11"
+    type: ss
+    server: "193.148.19.212"
+    port: 12796
+    cipher: "aes-128-gcm"
+    password: "905470106f6c49d68e90a5c55c020190"
     udp: true
 
 proxy-groups:
@@ -152,6 +184,11 @@ proxy-groups:
       - "🇪🇸_4"
       - "🇪🇸_5"
       - "🇪🇸_6"
+      - "🇪🇸_7"
+      - "🇪🇸_8"
+      - "🇪🇸_9"
+      - "🇪🇸_10"
+      - "🇪🇸_11"
 
 
   - name: "Load Balance"
@@ -166,6 +203,11 @@ proxy-groups:
       - "🇪🇸_4"
       - "🇪🇸_5"
       - "🇪🇸_6"
+      - "🇪🇸_7"
+      - "🇪🇸_8"
+      - "🇪🇸_9"
+      - "🇪🇸_10"
+      - "🇪🇸_11"
 
 rules:
   - MATCH,PROXY

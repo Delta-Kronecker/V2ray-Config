@@ -62,22 +62,6 @@ dns:
 proxies:
   - name: "🇦🇲_1"
     type: vless
-    server: "88.218.95.88"
-    port: 443
-    uuid: "b8df3f50-ffef-4c7e-9ef3-d5b156a47c02"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.google.com"
-    client-fingerprint: "random"
-    reality-opts:
-      public-key: "rRg3JiP2006ldJYh2TDPAn7dtlXLcSHdgHgkGI_HZTE"
-      short-id: "43adea0ec9f97a0a"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "grpc"
-  - name: "🇦🇲_2"
-    type: vless
     server: "77.91.68.70"
     port: 55983
     uuid: "f667a096-5231-4cfb-8759-92bb32473139"
@@ -106,7 +90,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇦🇲_1"
-      - "🇦🇲_2"
 
 
   - name: "Load Balance"
@@ -116,7 +99,6 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇦🇲_1"
-      - "🇦🇲_2"
 
 rules:
   - MATCH,PROXY

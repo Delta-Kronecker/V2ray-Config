@@ -62,32 +62,34 @@ dns:
 proxies:
   - name: "🇲🇾_1"
     type: vless
-    server: "84.252.66.134"
-    port: 443
-    uuid: "a7b8c99f-945e-4037-974e-da965b2b4ad7"
+    server: "111.90.143.184"
+    port: 61111
+    uuid: "30572b57-f5ab-4eb8-82d4-a24d399b99f6"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "ru.tradingview.com"
-    client-fingerprint: "firefox"
+    servername: "github.com"
+    client-fingerprint: "chrome"
     reality-opts:
-      public-key: "6zqx0qoVQ2AQgbjWVcY_EUS2RxwIQRAQmCdmHLd8LhE"
-      short-id: ""
-    flow: "xtls-rprx-vision"
+      public-key: "jT5prLDhvJ86zZVz5pDX907oQbeZ0Hyb_VcDSiJxQQU"
+      short-id: "1378f725da558887"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: ""
   - name: "🇲🇾_2"
-    type: trojan
-    server: "210.187.176.154"
-    port: 443
-    password: "af4b064a9c39472fb34ad8b113acdc6b"
-    sni: "210.187.176.154"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇲🇾_3"
     type: trojan
     server: "47.250.84.25"
     port: 443
     password: "5931134d1cde66bf83a54acdfebe7ab2"
     sni: "47.250.84.25"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇲🇾_3"
+    type: trojan
+    server: "210.187.176.154"
+    port: 443
+    password: "af4b064a9c39472fb34ad8b113acdc6b"
+    sni: "210.187.176.154"
     skip-cert-verify: true
     udp: true
   - name: "🇲🇾_4"
@@ -98,13 +100,6 @@ proxies:
     password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
     udp: true
   - name: "🇲🇾_5"
-    type: ss
-    server: "47.250.212.59"
-    port: 2053
-    cipher: "none"
-    password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
-    udp: true
-  - name: "🇲🇾_6"
     type: ss
     server: "96.126.190.196"
     port: 443
@@ -117,6 +112,13 @@ proxies:
       path: "/59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
       host: "woshinidie-et3.pages.dev"
       tls: true
+  - name: "🇲🇾_6"
+    type: ss
+    server: "47.250.212.59"
+    port: 2053
+    cipher: "none"
+    password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
+    udp: true
   - name: "🇲🇾_7"
     type: ss
     server: "96.126.190.196"

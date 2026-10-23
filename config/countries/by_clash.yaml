@@ -62,6 +62,20 @@ dns:
 proxies:
   - name: "🇧🇾_1"
     type: vless
+    server: "178.172.227.124"
+    port: 10444
+    uuid: "1af36694-b548-4b18-89a0-bc076eab4ed7"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ads.x5.ru"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo"
+      short-id: "8debcf36f1cc69ff"
+    flow: "xtls-rprx-vision"
+  - name: "🇧🇾_2"
+    type: vless
     server: "178.172.227.228"
     port: 10444
     uuid: "b6e5dc56-836f-48c1-9163-b0b0b43b647d"
@@ -74,7 +88,7 @@ proxies:
       public-key: "0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo"
       short-id: "8debcf36f1cc69ff"
     flow: "xtls-rprx-vision"
-  - name: "🇧🇾_2"
+  - name: "🇧🇾_3"
     type: vless
     server: "95.128.71.79"
     port: 10444
@@ -106,6 +120,7 @@ proxy-groups:
     proxies:
       - "🇧🇾_1"
       - "🇧🇾_2"
+      - "🇧🇾_3"
 
 
   - name: "Load Balance"
@@ -116,6 +131,7 @@ proxy-groups:
     proxies:
       - "🇧🇾_1"
       - "🇧🇾_2"
+      - "🇧🇾_3"
 
 rules:
   - MATCH,PROXY
