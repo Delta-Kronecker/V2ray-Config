@@ -62,6 +62,20 @@ dns:
 proxies:
   - name: "🇨🇭_1"
     type: vless
+    server: "151.241.217.160"
+    port: 443
+    uuid: "21f5ba17-28ea-4fd0-9c8f-80e2b91df5f1"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "lstu.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "e0RV9wRJdsQbQ0ugn5QUhJcTgWsSTVsKQTXMKweMDUg"
+      short-id: ""
+    flow: "xtls-rprx-vision"
+  - name: "🇨🇭_2"
+    type: vless
     server: "45.90.59.15"
     port: 443
     uuid: "3950b45e-740d-4dca-ac95-505ec8534592"
@@ -74,14 +88,6 @@ proxies:
       public-key: "P7S4UPFlQbmiBr4txyy8NZIMTrmO3UdxyH16WBU-YzY"
       short-id: "19253fae84102271"
     flow: "xtls-rprx-vision"
-  - name: "🇨🇭_2"
-    type: trojan
-    server: "84.234.29.238"
-    port: 443
-    password: "Masir_Sefid"
-    sni: "store.steampowered.com"
-    skip-cert-verify: true
-    udp: true
   - name: "🇨🇭_3"
     type: trojan
     server: "83.228.224.161"
@@ -91,18 +97,19 @@ proxies:
     skip-cert-verify: true
     udp: true
   - name: "🇨🇭_4"
+    type: trojan
+    server: "84.234.29.238"
+    port: 443
+    password: "Masir_Sefid"
+    sni: "store.steampowered.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇨🇭_5"
     type: ss
     server: "132.243.175.144"
     port: 8388
     cipher: "chacha20-ietf-poly1305"
     password: "e8KgS8fD0yDqYFpgN4G5piCOt9aFyqA3"
-    udp: true
-  - name: "🇨🇭_5"
-    type: ss
-    server: "86.106.84.198"
-    port: 13265
-    cipher: "aes-128-gcm"
-    password: "2bf536a4bd6008511734a505d248de2c"
     udp: true
   - name: "🇨🇭_6"
     type: ss

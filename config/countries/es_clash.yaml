@@ -62,14 +62,28 @@ dns:
 proxies:
   - name: "🇪🇸_1"
     type: vless
-    server: "213.182.201.11"
-    port: 3090
-    uuid: "b6f15079-7bd0-4398-b045-93f2c07a1a87"
+    server: "es1.accessboy.com"
+    port: 443
+    uuid: "caf3d607-95c9-4ea0-98b5-864027056ba0"
     udp: true
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "vless"
+    tls: true
+    skip-cert-verify: true
+    servername: "es1.accessboy.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "1TtWNQhTJr_3H7-ypMw4EiLzVxy22AzUtMiE5JmQMl4"
+      short-id: "1c5869a95671bcb0"
+    flow: "xtls-rprx-vision"
   - name: "🇪🇸_2"
+    type: vless
+    server: "85.90.217.42"
+    port: 443
+    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "85.90.217.42"
+  - name: "🇪🇸_3"
     type: vless
     server: "es.srv.dvzh.net"
     port: 443
@@ -83,7 +97,7 @@ proxies:
       public-key: "9GEc6lOjnGQyyE1951OZSBMWt4uCXsOjKyj9fysxHH0"
       short-id: "e0ccc8c2f487d913"
     flow: "xtls-rprx-vision"
-  - name: "🇪🇸_3"
+  - name: "🇪🇸_4"
     type: vless
     server: "193.238.154.78"
     port: 443
@@ -97,15 +111,6 @@ proxies:
       public-key: "4eE3K8Eac-ELze-LwRyJolqmhPqgCVqwQM1DKu6i0Ts"
       short-id: "e93d46ee3735069e"
     flow: "xtls-rprx-vision"
-  - name: "🇪🇸_4"
-    type: vless
-    server: "85.90.217.42"
-    port: 443
-    uuid: "03fcc618-b93d-6796-6aed-8a38c975d581"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "85.90.217.42"
   - name: "🇪🇸_5"
     type: vless
     server: "46.28.71.247"
@@ -120,47 +125,54 @@ proxies:
       short-id: "0dfc23fe80778c00"
     flow: "xtls-rprx-vision"
   - name: "🇪🇸_6"
+    type: vless
+    server: "103.240.146.153"
+    port: 443
+    uuid: "9ab3a362-1518-496d-b08d-eced45cec936"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "es.srv.dvzh.net"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "9GEc6lOjnGQyyE1951OZSBMWt4uCXsOjKyj9fysxHH0"
+      short-id: "e0ccc8c2f487d913"
+    flow: "xtls-rprx-vision"
+  - name: "🇪🇸_7"
+    type: vless
+    server: "5.180.173.130"
+    port: 443
+    uuid: "21f5ba17-28ea-4fd0-9c8f-80e2b91df5f1"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "lstu.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "e0RV9wRJdsQbQ0ugn5QUhJcTgWsSTVsKQTXMKweMDUg"
+      short-id: ""
+    flow: "xtls-rprx-vision"
+  - name: "🇪🇸_8"
+    type: vless
+    server: "37.143.130.108"
+    port: 443
+    uuid: "caf3d607-95c9-4ea0-98b5-864027056ba0"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "es1.accessboy.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "1TtWNQhTJr_3H7-ypMw4EiLzVxy22AzUtMiE5JmQMl4"
+      short-id: "1c5869a95671bcb0"
+    flow: "xtls-rprx-vision"
+  - name: "🇪🇸_9"
     type: trojan
     server: "65.20.102.54"
     port: 443
     password: "842b5f9dd11e458d8613c907c4cc5723"
     sni: "www.gpt123.one"
     skip-cert-verify: true
-    udp: true
-  - name: "🇪🇸_7"
-    type: ss
-    server: "193.148.19.212"
-    port: 12796
-    cipher: "aes-128-gcm"
-    password: "905470106f6c49d68e90a5c55c020190"
-    udp: true
-  - name: "🇪🇸_8"
-    type: ss
-    server: "108.181.71.5"
-    port: 15995
-    cipher: "aes-128-gcm"
-    password: "882dd5b0e0f2cf05bb5de75f59bbe953"
-    udp: true
-  - name: "🇪🇸_9"
-    type: ss
-    server: "108.181.71.156"
-    port: 15998
-    cipher: "aes-128-gcm"
-    password: "882dd5b0e0f2cf05bb5de75f59bbe953"
-    udp: true
-  - name: "🇪🇸_10"
-    type: ss
-    server: "108.181.71.5"
-    port: 15995
-    cipher: "aes-128-gcm"
-    password: "882dd5b0e0f2cf05bb5de75f59bbe953"
-    udp: true
-  - name: "🇪🇸_11"
-    type: ss
-    server: "193.148.19.212"
-    port: 12796
-    cipher: "aes-128-gcm"
-    password: "905470106f6c49d68e90a5c55c020190"
     udp: true
 
 proxy-groups:
@@ -187,8 +199,6 @@ proxy-groups:
       - "🇪🇸_7"
       - "🇪🇸_8"
       - "🇪🇸_9"
-      - "🇪🇸_10"
-      - "🇪🇸_11"
 
 
   - name: "Load Balance"
@@ -206,8 +216,6 @@ proxy-groups:
       - "🇪🇸_7"
       - "🇪🇸_8"
       - "🇪🇸_9"
-      - "🇪🇸_10"
-      - "🇪🇸_11"
 
 rules:
   - MATCH,PROXY

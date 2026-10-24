@@ -61,12 +61,33 @@ dns:
 
 proxies:
   - name: "🇵🇹_1"
-    type: ss
-    server: "185.231.233.91"
-    port: 17167
-    cipher: "aes-128-gcm"
-    password: "ca438054771821250089399a2f33275e"
+    type: vless
+    server: "185.231.233.139"
+    port: 443
+    uuid: "caf3d607-95c9-4ea0-98b5-864027056ba0"
     udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "pt1.accessboy.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "1TtWNQhTJr_3H7-ypMw4EiLzVxy22AzUtMiE5JmQMl4"
+      short-id: "1c5869a95671bcb0"
+    flow: "xtls-rprx-vision"
+  - name: "🇵🇹_2"
+    type: vless
+    server: "pt1.accessboy.com"
+    port: 443
+    uuid: "caf3d607-95c9-4ea0-98b5-864027056ba0"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "pt1.accessboy.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "1TtWNQhTJr_3H7-ypMw4EiLzVxy22AzUtMiE5JmQMl4"
+      short-id: "1c5869a95671bcb0"
+    flow: "xtls-rprx-vision"
 
 proxy-groups:
   - name: "PROXY"
@@ -84,6 +105,7 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇵🇹_1"
+      - "🇵🇹_2"
 
 
   - name: "Load Balance"
@@ -93,6 +115,7 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇵🇹_1"
+      - "🇵🇹_2"
 
 rules:
   - MATCH,PROXY

@@ -61,6 +61,34 @@ dns:
 
 proxies:
   - name: "🇮🇪_1"
+    type: vless
+    server: "46.16.131.178"
+    port: 443
+    uuid: "caf3d607-95c9-4ea0-98b5-864027056ba0"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ie1.accessboy.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "1TtWNQhTJr_3H7-ypMw4EiLzVxy22AzUtMiE5JmQMl4"
+      short-id: "1c5869a95671bcb0"
+    flow: "xtls-rprx-vision"
+  - name: "🇮🇪_2"
+    type: vless
+    server: "ie1.accessboy.com"
+    port: 443
+    uuid: "caf3d607-95c9-4ea0-98b5-864027056ba0"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ie1.accessboy.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "1TtWNQhTJr_3H7-ypMw4EiLzVxy22AzUtMiE5JmQMl4"
+      short-id: "1c5869a95671bcb0"
+    flow: "xtls-rprx-vision"
+  - name: "🇮🇪_3"
     type: trojan
     server: "54.170.212.206"
     port: 443
@@ -68,15 +96,7 @@ proxies:
     sni: "skilled-lioness.rooster465.autos"
     skip-cert-verify: true
     udp: true
-  - name: "🇮🇪_2"
-    type: trojan
-    server: "34.253.182.161"
-    port: 443
-    password: "IQ68037294"
-    sni: "moving-wren.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇮🇪_3"
+  - name: "🇮🇪_4"
     type: trojan
     server: "52.208.138.36"
     port: 443
@@ -84,13 +104,35 @@ proxies:
     sni: "vast-turkey.rooster465.autos"
     skip-cert-verify: true
     udp: true
-  - name: "🇮🇪_4"
+  - name: "🇮🇪_5"
+    type: trojan
+    server: "34.253.182.161"
+    port: 443
+    password: "IQ68037294"
+    sni: "moving-wren.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇮🇪_6"
     type: trojan
     server: "52.208.138.36"
     port: 443
     password: "IQ68037294"
     sni: "vast-turkey.rooster465.autos"
     skip-cert-verify: true
+    udp: true
+  - name: "🇮🇪_7"
+    type: ss
+    server: "20.223.233.241"
+    port: 443
+    cipher: "chacha20-ietf-poly1305"
+    password: "Ds3hlPero5ov6gae"
+    udp: true
+  - name: "🇮🇪_8"
+    type: ss
+    server: "20.223.233.241"
+    port: 443
+    cipher: "chacha20-ietf-poly1305"
+    password: "Ds3hlPero5ov6gae"
     udp: true
 
 proxy-groups:
@@ -112,6 +154,10 @@ proxy-groups:
       - "🇮🇪_2"
       - "🇮🇪_3"
       - "🇮🇪_4"
+      - "🇮🇪_5"
+      - "🇮🇪_6"
+      - "🇮🇪_7"
+      - "🇮🇪_8"
 
 
   - name: "Load Balance"
@@ -124,6 +170,10 @@ proxy-groups:
       - "🇮🇪_2"
       - "🇮🇪_3"
       - "🇮🇪_4"
+      - "🇮🇪_5"
+      - "🇮🇪_6"
+      - "🇮🇪_7"
+      - "🇮🇪_8"
 
 rules:
   - MATCH,PROXY
