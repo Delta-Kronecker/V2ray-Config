@@ -62,20 +62,6 @@ dns:
 proxies:
   - name: "🇨🇭_1"
     type: vless
-    server: "151.241.217.160"
-    port: 443
-    uuid: "21f5ba17-28ea-4fd0-9c8f-80e2b91df5f1"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "lstu.ru"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "e0RV9wRJdsQbQ0ugn5QUhJcTgWsSTVsKQTXMKweMDUg"
-      short-id: ""
-    flow: "xtls-rprx-vision"
-  - name: "🇨🇭_2"
-    type: vless
     server: "45.90.59.15"
     port: 443
     uuid: "3950b45e-740d-4dca-ac95-505ec8534592"
@@ -88,7 +74,7 @@ proxies:
       public-key: "P7S4UPFlQbmiBr4txyy8NZIMTrmO3UdxyH16WBU-YzY"
       short-id: "19253fae84102271"
     flow: "xtls-rprx-vision"
-  - name: "🇨🇭_3"
+  - name: "🇨🇭_2"
     type: trojan
     server: "83.228.224.161"
     port: 443
@@ -96,7 +82,7 @@ proxies:
     sni: "83.228.224.161"
     skip-cert-verify: true
     udp: true
-  - name: "🇨🇭_4"
+  - name: "🇨🇭_3"
     type: trojan
     server: "84.234.29.238"
     port: 443
@@ -104,14 +90,14 @@ proxies:
     sni: "store.steampowered.com"
     skip-cert-verify: true
     udp: true
-  - name: "🇨🇭_5"
+  - name: "🇨🇭_4"
     type: ss
     server: "132.243.175.144"
     port: 8388
     cipher: "chacha20-ietf-poly1305"
     password: "e8KgS8fD0yDqYFpgN4G5piCOt9aFyqA3"
     udp: true
-  - name: "🇨🇭_6"
+  - name: "🇨🇭_5"
     type: ss
     server: "132.243.175.144"
     port: 8388
@@ -139,7 +125,6 @@ proxy-groups:
       - "🇨🇭_3"
       - "🇨🇭_4"
       - "🇨🇭_5"
-      - "🇨🇭_6"
 
 
   - name: "Load Balance"
@@ -153,7 +138,6 @@ proxy-groups:
       - "🇨🇭_3"
       - "🇨🇭_4"
       - "🇨🇭_5"
-      - "🇨🇭_6"
 
 rules:
   - MATCH,PROXY

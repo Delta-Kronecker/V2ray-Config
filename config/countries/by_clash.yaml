@@ -62,18 +62,17 @@ dns:
 proxies:
   - name: "🇧🇾_1"
     type: vless
-    server: "178.172.227.228"
-    port: 10444
-    uuid: "b6e5dc56-836f-48c1-9163-b0b0b43b647d"
+    server: "13.143.188.31"
+    port: 443
+    uuid: "7f6adf9d-42f1-4fec-ab22-fb7f66bf3adc"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "ads.x5.ru"
-    client-fingerprint: "edge"
-    reality-opts:
-      public-key: "0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo"
-      short-id: "8debcf36f1cc69ff"
-    flow: "xtls-rprx-vision"
+    servername: "ae9pzoazs7.hat.onl"
+    client-fingerprint: "firefox"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "v1.segment.YI61ONxTtmADr1b7.ts"
   - name: "🇧🇾_2"
     type: vless
     server: "178.172.227.124"
@@ -102,6 +101,20 @@ proxies:
       public-key: "0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo"
       short-id: "8debcf36f1cc69ff"
     flow: "xtls-rprx-vision"
+  - name: "🇧🇾_4"
+    type: vless
+    server: "178.172.227.228"
+    port: 10444
+    uuid: "b6e5dc56-836f-48c1-9163-b0b0b43b647d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ads.x5.ru"
+    client-fingerprint: "edge"
+    reality-opts:
+      public-key: "0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo"
+      short-id: "8debcf36f1cc69ff"
+    flow: "xtls-rprx-vision"
 
 proxy-groups:
   - name: "PROXY"
@@ -121,6 +134,7 @@ proxy-groups:
       - "🇧🇾_1"
       - "🇧🇾_2"
       - "🇧🇾_3"
+      - "🇧🇾_4"
 
 
   - name: "Load Balance"
@@ -132,6 +146,7 @@ proxy-groups:
       - "🇧🇾_1"
       - "🇧🇾_2"
       - "🇧🇾_3"
+      - "🇧🇾_4"
 
 rules:
   - MATCH,PROXY

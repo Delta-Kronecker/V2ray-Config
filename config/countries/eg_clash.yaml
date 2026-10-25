@@ -68,6 +68,13 @@ proxies:
     sni: "38.54.59.90"
     skip-cert-verify: true
     udp: true
+  - name: "🇪🇬_2"
+    type: ss
+    server: "38.54.59.102"
+    port: 443
+    cipher: "aes-256-gcm"
+    password: "pKEW8JPByTVTLtM"
+    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -85,6 +92,7 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇪🇬_1"
+      - "🇪🇬_2"
 
 
   - name: "Load Balance"
@@ -94,6 +102,7 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇪🇬_1"
+      - "🇪🇬_2"
 
 rules:
   - MATCH,PROXY

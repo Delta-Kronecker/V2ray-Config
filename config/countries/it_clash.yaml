@@ -62,46 +62,36 @@ dns:
 proxies:
   - name: "🇮🇹_1"
     type: vless
-    server: "151.241.215.129"
-    port: 443
-    uuid: "21f5ba17-28ea-4fd0-9c8f-80e2b91df5f1"
+    server: "57.131.38.163"
+    port: 2053
+    uuid: "d4b08cd6-0903-411a-9dac-45dbdf5c9712"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "lstu.ru"
-    client-fingerprint: "firefox"
+    servername: "www.apple.com"
+    client-fingerprint: "chrome"
     reality-opts:
-      public-key: "e0RV9wRJdsQbQ0ugn5QUhJcTgWsSTVsKQTXMKweMDUg"
-      short-id: ""
-    flow: "xtls-rprx-vision"
+      public-key: "Ej2H5ucT7qKegYcT8wODdlxa-cLHr7F4hDVUHzAhcnc"
+      short-id: "5b8a942318178e7b"
   - name: "🇮🇹_2"
     type: vless
-    server: "85.137.175.214"
-    port: 443
-    uuid: "f36c82e2-e33e-4054-960a-34619d9fdd5b"
+    server: "204.216.216.23"
+    port: 1114
+    uuid: "6ba2eac6-0ec9-44ca-a42b-a8e23aafb530"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "www.leaseweb.com"
-    client-fingerprint: "firefox"
+    servername: "yahoo.com"
     reality-opts:
-      public-key: "Et_qbCjAgw1NFNOw_49PLmnBuEYCxCrTwbL57wJRAF8"
-      short-id: "22be958ca3b798e2"
+      public-key: "WfkCF0eEuIoO0MyJsKOddU89QrTzCZ4y2dzCJbH99CQ"
+      short-id: "79a1e14b"
     flow: "xtls-rprx-vision"
   - name: "🇮🇹_3"
     type: vless
-    server: "82.118.16.189"
-    port: 443
-    uuid: "d5e5f5a1-0f23-4c49-af9f-4be445bf9d8e"
+    server: "204.216.216.23"
+    port: 10086
+    uuid: "9f0285ee-20ca-4953-bcdb-86a920652923"
     udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.cloudflare.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "SjGkzJQ9I6ZZjC3V73atcPMczhMm0oiTrB8mUQXz1HY"
-      short-id: "37fbf155c7a9f3ff"
-    flow: "xtls-rprx-vision"
   - name: "🇮🇹_4"
     type: vless
     server: "193.163.203.170"
@@ -118,18 +108,46 @@ proxies:
     flow: "xtls-rprx-vision"
   - name: "🇮🇹_5"
     type: vless
-    server: "57.131.38.163"
-    port: 2053
-    uuid: "d4b08cd6-0903-411a-9dac-45dbdf5c9712"
+    server: "82.118.16.189"
+    port: 443
+    uuid: "d5e5f5a1-0f23-4c49-af9f-4be445bf9d8e"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "www.apple.com"
+    servername: "www.cloudflare.com"
     client-fingerprint: "chrome"
     reality-opts:
-      public-key: "Ej2H5ucT7qKegYcT8wODdlxa-cLHr7F4hDVUHzAhcnc"
-      short-id: "5b8a942318178e7b"
+      public-key: "SjGkzJQ9I6ZZjC3V73atcPMczhMm0oiTrB8mUQXz1HY"
+      short-id: "37fbf155c7a9f3ff"
+    flow: "xtls-rprx-vision"
   - name: "🇮🇹_6"
+    type: vless
+    server: "150.241.73.65"
+    port: 443
+    uuid: "7f6adf9d-42f1-4fec-ab22-fb7f66bf3adc"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "nel50v6idoy1u.hat.onl"
+    client-fingerprint: "firefox"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "v1.segment.0K8-XZZ0rlAKn8bua_kT_XN4DhMIEkBSlndsx9DI7S1J.ts"
+  - name: "🇮🇹_7"
+    type: vless
+    server: "82.118.16.187"
+    port: 443
+    uuid: "dc2259c4-388e-4285-ba18-df619b6672b6"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.cloudflare.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "R5ycsjJ-v024902dMSqTsSdqxUwCFEXMebdBEWFt9VU"
+      short-id: "cd6065902eea7a02"
+    flow: "xtls-rprx-vision"
+  - name: "🇮🇹_8"
     type: trojan
     server: "91.193.5.121"
     port: 8443
@@ -137,163 +155,170 @@ proxies:
     sni: "ngepz.ambercc.filegear-sg.me"
     skip-cert-verify: true
     udp: true
-  - name: "🇮🇹_7"
-    type: ss
-    server: "202.50.253.18"
-    port: 19999
-    cipher: "aes-256-gcm"
-    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
-    udp: true
-  - name: "🇮🇹_8"
-    type: ss
-    server: "202.50.253.36"
-    port: 19999
-    cipher: "aes-256-gcm"
-    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
-    udp: true
   - name: "🇮🇹_9"
     type: ss
-    server: "202.50.253.90"
+    server: "202.50.253.72"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
   - name: "🇮🇹_10"
     type: ss
-    server: "202.50.253.90"
+    server: "202.50.253.18"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
   - name: "🇮🇹_11"
     type: ss
-    server: "185.164.175.81"
+    server: "202.50.253.36"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
   - name: "🇮🇹_12"
     type: ss
-    server: "202.50.253.72"
+    server: "202.50.253.90"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
   - name: "🇮🇹_13"
     type: ss
-    server: "202.50.253.81"
-    port: 19999
+    server: "57.131.48.45"
+    port: 8388
     cipher: "aes-256-gcm"
-    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
+    password: "itzvpn@321"
     udp: true
   - name: "🇮🇹_14"
     type: ss
-    server: "185.164.175.81"
+    server: "202.50.253.45"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
   - name: "🇮🇹_15"
     type: ss
-    server: "202.50.253.63"
+    server: "202.50.253.27"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
   - name: "🇮🇹_16"
     type: ss
-    server: "202.50.253.54"
+    server: "202.50.253.99"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
   - name: "🇮🇹_17"
     type: ss
-    server: "202.50.253.18"
+    server: "202.50.253.99"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
   - name: "🇮🇹_18"
     type: ss
-    server: "202.50.253.72"
+    server: "202.50.253.36"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
   - name: "🇮🇹_19"
     type: ss
-    server: "57.131.48.45"
-    port: 8388
+    server: "202.50.253.81"
+    port: 19999
     cipher: "aes-256-gcm"
-    password: "itzvpn@321"
+    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
   - name: "🇮🇹_20"
     type: ss
-    server: "202.50.253.27"
+    server: "202.50.253.81"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
   - name: "🇮🇹_21"
     type: ss
-    server: "202.50.253.36"
+    server: "202.50.253.18"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
   - name: "🇮🇹_22"
     type: ss
-    server: "57.131.48.45"
-    port: 8388
+    server: "202.50.253.45"
+    port: 19999
     cipher: "aes-256-gcm"
-    password: "itzvpn@321"
+    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
   - name: "🇮🇹_23"
     type: ss
-    server: "202.50.253.99"
+    server: "185.164.175.81"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
   - name: "🇮🇹_24"
     type: ss
-    server: "202.50.253.45"
-    port: 19999
+    server: "57.131.48.45"
+    port: 8388
     cipher: "aes-256-gcm"
-    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
+    password: "itzvpn@321"
     udp: true
   - name: "🇮🇹_25"
     type: ss
-    server: "202.50.253.27"
+    server: "202.50.253.72"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
   - name: "🇮🇹_26"
     type: ss
-    server: "202.50.253.63"
+    server: "202.50.253.54"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
   - name: "🇮🇹_27"
     type: ss
-    server: "202.50.253.54"
+    server: "202.50.253.72"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
   - name: "🇮🇹_28"
     type: ss
-    server: "202.50.253.45"
+    server: "185.164.175.81"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
   - name: "🇮🇹_29"
     type: ss
-    server: "202.50.253.81"
+    server: "202.50.253.63"
+    port: 19999
+    cipher: "aes-256-gcm"
+    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
+    udp: true
+  - name: "🇮🇹_30"
+    type: ss
+    server: "202.50.253.54"
+    port: 19999
+    cipher: "aes-256-gcm"
+    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
+    udp: true
+  - name: "🇮🇹_31"
+    type: ss
+    server: "202.50.253.27"
+    port: 19999
+    cipher: "aes-256-gcm"
+    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
+    udp: true
+  - name: "🇮🇹_32"
+    type: ss
+    server: "202.50.253.90"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
@@ -343,6 +368,9 @@ proxy-groups:
       - "🇮🇹_27"
       - "🇮🇹_28"
       - "🇮🇹_29"
+      - "🇮🇹_30"
+      - "🇮🇹_31"
+      - "🇮🇹_32"
 
 
   - name: "Load Balance"
@@ -380,6 +408,9 @@ proxy-groups:
       - "🇮🇹_27"
       - "🇮🇹_28"
       - "🇮🇹_29"
+      - "🇮🇹_30"
+      - "🇮🇹_31"
+      - "🇮🇹_32"
 
 rules:
   - MATCH,PROXY

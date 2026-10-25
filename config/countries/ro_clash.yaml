@@ -62,17 +62,17 @@ dns:
 proxies:
   - name: "🇷🇴_1"
     type: vless
-    server: "185.126.237.19"
+    server: "46.28.67.55"
     port: 443
-    uuid: "caf3d607-95c9-4ea0-98b5-864027056ba0"
+    uuid: "d1a6a033-fdbd-46a6-a177-3370ba042b9f"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "ro1.accessboy.com"
-    client-fingerprint: "firefox"
+    servername: "www.cloudflare.com"
+    client-fingerprint: "chrome"
     reality-opts:
-      public-key: "1TtWNQhTJr_3H7-ypMw4EiLzVxy22AzUtMiE5JmQMl4"
-      short-id: "1c5869a95671bcb0"
+      public-key: "i2dJ1_XGDpp50qpEclh6SWSWkxt4B0t2hi2qOVQbeSU"
+      short-id: "d06d78e974491b6e"
     flow: "xtls-rprx-vision"
   - name: "🇷🇴_2"
     type: vless
@@ -103,27 +103,11 @@ proxies:
     flow: "xtls-rprx-vision"
   - name: "🇷🇴_4"
     type: vless
-    server: "ro1.accessboy.com"
-    port: 443
-    uuid: "caf3d607-95c9-4ea0-98b5-864027056ba0"
+    server: "edge10.cyrionflare.com"
+    port: 2052
+    uuid: "1a8ecc41-6e62-431b-8eca-87c2fa4dc286"
     udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "ro1.accessboy.com"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "1TtWNQhTJr_3H7-ypMw4EiLzVxy22AzUtMiE5JmQMl4"
-      short-id: "1c5869a95671bcb0"
-    flow: "xtls-rprx-vision"
   - name: "🇷🇴_5"
-    type: trojan
-    server: "185.247.224.136"
-    port: 443
-    password: "af4b064a9c39472fb34ad8b113acdc6b"
-    sni: "185.247.224.136"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇷🇴_6"
     type: trojan
     server: "38.180.35.145"
     port: 443
@@ -131,14 +115,50 @@ proxies:
     sni: "bu2.freeguard.org"
     skip-cert-verify: true
     udp: true
+  - name: "🇷🇴_6"
+    type: trojan
+    server: "185.247.224.136"
+    port: 443
+    password: "af4b064a9c39472fb34ad8b113acdc6b"
+    sni: "185.247.224.136"
+    skip-cert-verify: true
+    udp: true
   - name: "🇷🇴_7"
+    type: ss
+    server: "154.46.31.106"
+    port: 443
+    cipher: "chacha20-ietf-poly1305"
+    password: "QFWzCw2uX9B9i6qAYeFBIE"
+    udp: true
+  - name: "🇷🇴_8"
     type: ss
     server: "194.68.44.42"
     port: 64546
     cipher: "chacha20-ietf-poly1305"
     password: "U83u9OGpvSatIUW7LsWffr"
     udp: true
-  - name: "🇷🇴_8"
+  - name: "🇷🇴_9"
+    type: ss
+    server: "irnamh.g44mozgh.ir"
+    port: 1001
+    cipher: "chacha20-ietf-poly1305"
+    password: "cZ_BEAwsqEtHCExtItIrORFOdAwxic0G"
+    udp: true
+  - name: "🇷🇴_10"
+    type: ss
+    server: "irnamh.g44mozgh.ir"
+    port: 1001
+    cipher: "chacha20-ietf-poly1305"
+    password: "xJUiv6Q1mBPuRv1yQ8-dqFEss0Ho4FtE"
+    udp: true
+  - name: "🇷🇴_11"
+    type: ss
+    server: "bogging-eyeteeth-fly.freesocks.work"
+    port: 443
+    cipher: "chacha20-ietf-poly1305"
+    password: "QFWzCw2uX9B9i6qAYeFBIE"
+    udp: true
+  - name: "🇷🇴_12"
     type: ss
     server: "irnamh.g44mozgh.ir"
     port: 1001
@@ -169,6 +189,10 @@ proxy-groups:
       - "🇷🇴_6"
       - "🇷🇴_7"
       - "🇷🇴_8"
+      - "🇷🇴_9"
+      - "🇷🇴_10"
+      - "🇷🇴_11"
+      - "🇷🇴_12"
 
 
   - name: "Load Balance"
@@ -185,6 +209,10 @@ proxy-groups:
       - "🇷🇴_6"
       - "🇷🇴_7"
       - "🇷🇴_8"
+      - "🇷🇴_9"
+      - "🇷🇴_10"
+      - "🇷🇴_11"
+      - "🇷🇴_12"
 
 rules:
   - MATCH,PROXY

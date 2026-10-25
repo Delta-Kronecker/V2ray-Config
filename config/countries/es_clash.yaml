@@ -62,19 +62,32 @@ dns:
 proxies:
   - name: "🇪🇸_1"
     type: vless
-    server: "es1.accessboy.com"
-    port: 443
-    uuid: "caf3d607-95c9-4ea0-98b5-864027056ba0"
+    server: "213.152.165.203"
+    port: 2095
+    uuid: "b38712cb-e4aa-4462-b7e3-df20508d2b39"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "es1.accessboy.com"
-    client-fingerprint: "firefox"
+    servername: "www.apple.com"
+    client-fingerprint: "chrome"
     reality-opts:
-      public-key: "1TtWNQhTJr_3H7-ypMw4EiLzVxy22AzUtMiE5JmQMl4"
-      short-id: "1c5869a95671bcb0"
+      public-key: "OKksVHWL5JepTv7if7Ta_L_7vn8OxW0INwV71HJM1jI"
+      short-id: "3869d49a9a79e06a"
     flow: "xtls-rprx-vision"
   - name: "🇪🇸_2"
+    type: vless
+    server: "46.28.71.247"
+    port: 443
+    uuid: "12c53e32-e589-47d6-b857-e4132294f767"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.cloudflare.com"
+    reality-opts:
+      public-key: "v4MuZIvFrTPT5GHMSaPryUAbIZlLstmsUTzmC1E-JTE"
+      short-id: "0dfc23fe80778c00"
+    flow: "xtls-rprx-vision"
+  - name: "🇪🇸_3"
     type: vless
     server: "85.90.217.42"
     port: 443
@@ -83,20 +96,6 @@ proxies:
     tls: true
     skip-cert-verify: true
     servername: "85.90.217.42"
-  - name: "🇪🇸_3"
-    type: vless
-    server: "es.srv.dvzh.net"
-    port: 443
-    uuid: "9ab3a362-1518-496d-b08d-eced45cec936"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "es.srv.dvzh.net"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "9GEc6lOjnGQyyE1951OZSBMWt4uCXsOjKyj9fysxHH0"
-      short-id: "e0ccc8c2f487d913"
-    flow: "xtls-rprx-vision"
   - name: "🇪🇸_4"
     type: vless
     server: "193.238.154.78"
@@ -113,60 +112,18 @@ proxies:
     flow: "xtls-rprx-vision"
   - name: "🇪🇸_5"
     type: vless
-    server: "46.28.71.247"
+    server: "46.28.71.135"
     port: 443
-    uuid: "12c53e32-e589-47d6-b857-e4132294f767"
+    uuid: "7f6adf9d-42f1-4fec-ab22-fb7f66bf3adc"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "www.cloudflare.com"
-    reality-opts:
-      public-key: "v4MuZIvFrTPT5GHMSaPryUAbIZlLstmsUTzmC1E-JTE"
-      short-id: "0dfc23fe80778c00"
-    flow: "xtls-rprx-vision"
+    servername: "l97bke0sf1.hat.onl"
+    client-fingerprint: "firefox"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "v1.segment.UWfv4bkH4bz1Hs3u.ts"
   - name: "🇪🇸_6"
-    type: vless
-    server: "103.240.146.153"
-    port: 443
-    uuid: "9ab3a362-1518-496d-b08d-eced45cec936"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "es.srv.dvzh.net"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "9GEc6lOjnGQyyE1951OZSBMWt4uCXsOjKyj9fysxHH0"
-      short-id: "e0ccc8c2f487d913"
-    flow: "xtls-rprx-vision"
-  - name: "🇪🇸_7"
-    type: vless
-    server: "5.180.173.130"
-    port: 443
-    uuid: "21f5ba17-28ea-4fd0-9c8f-80e2b91df5f1"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "lstu.ru"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "e0RV9wRJdsQbQ0ugn5QUhJcTgWsSTVsKQTXMKweMDUg"
-      short-id: ""
-    flow: "xtls-rprx-vision"
-  - name: "🇪🇸_8"
-    type: vless
-    server: "37.143.130.108"
-    port: 443
-    uuid: "caf3d607-95c9-4ea0-98b5-864027056ba0"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "es1.accessboy.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "1TtWNQhTJr_3H7-ypMw4EiLzVxy22AzUtMiE5JmQMl4"
-      short-id: "1c5869a95671bcb0"
-    flow: "xtls-rprx-vision"
-  - name: "🇪🇸_9"
     type: trojan
     server: "65.20.102.54"
     port: 443
@@ -196,9 +153,6 @@ proxy-groups:
       - "🇪🇸_4"
       - "🇪🇸_5"
       - "🇪🇸_6"
-      - "🇪🇸_7"
-      - "🇪🇸_8"
-      - "🇪🇸_9"
 
 
   - name: "Load Balance"
@@ -213,9 +167,6 @@ proxy-groups:
       - "🇪🇸_4"
       - "🇪🇸_5"
       - "🇪🇸_6"
-      - "🇪🇸_7"
-      - "🇪🇸_8"
-      - "🇪🇸_9"
 
 rules:
   - MATCH,PROXY

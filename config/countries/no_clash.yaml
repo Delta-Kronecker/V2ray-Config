@@ -61,13 +61,26 @@ dns:
 
 proxies:
   - name: "🇳🇴_1"
+    type: vless
+    server: "31.76.5.79"
+    port: 443
+    uuid: "7f6adf9d-42f1-4fec-ab22-fb7f66bf3adc"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "r2q24xzokp4.hat.onl"
+    client-fingerprint: "firefox"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "live.yejssizh1kjrn.chunk-9828.m4s"
+  - name: "🇳🇴_2"
     type: ss
     server: "185.213.23.63"
     port: 990
     cipher: "chacha20-ietf-poly1305"
     password: "ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44="
     udp: true
-  - name: "🇳🇴_2"
+  - name: "🇳🇴_3"
     type: ss
     server: "185.213.23.63"
     port: 990
@@ -92,6 +105,7 @@ proxy-groups:
     proxies:
       - "🇳🇴_1"
       - "🇳🇴_2"
+      - "🇳🇴_3"
 
 
   - name: "Load Balance"
@@ -102,6 +116,7 @@ proxy-groups:
     proxies:
       - "🇳🇴_1"
       - "🇳🇴_2"
+      - "🇳🇴_3"
 
 rules:
   - MATCH,PROXY

@@ -62,46 +62,43 @@ dns:
 proxies:
   - name: "🇦🇹_1"
     type: vless
-    server: "193.160.140.49"
+    server: "150.241.72.161"
     port: 443
-    uuid: "21f5ba17-28ea-4fd0-9c8f-80e2b91df5f1"
+    uuid: "7f6adf9d-42f1-4fec-ab22-fb7f66bf3adc"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "at.lstu.ru"
+    servername: "b6i5po18lw.hat.onl"
     client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "e0RV9wRJdsQbQ0ugn5QUhJcTgWsSTVsKQTXMKweMDUg"
-      short-id: ""
-    flow: "xtls-rprx-vision"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "live.gpuwxc84nl.chunk-4022.m4s"
   - name: "🇦🇹_2"
     type: vless
-    server: "45.128.78.159"
+    server: "au1.sream-rutube.shop"
     port: 443
-    uuid: "21f5ba17-28ea-4fd0-9c8f-80e2b91df5f1"
+    uuid: "d40fdcdb-8d6f-406d-a050-12e196fe8804"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "at.lstu.ru"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "e0RV9wRJdsQbQ0ugn5QUhJcTgWsSTVsKQTXMKweMDUg"
-      short-id: ""
-    flow: "xtls-rprx-vision"
+    servername: "au1.sream-rutube.shop"
+    client-fingerprint: "chrome"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "trgrpc"
   - name: "🇦🇹_3"
     type: vless
-    server: "152.53.102.127"
+    server: "62.60.238.201"
     port: 443
-    uuid: "21f5ba17-28ea-4fd0-9c8f-80e2b91df5f1"
+    uuid: "d40fdcdb-8d6f-406d-a050-12e196fe8804"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "lstu.ru"
+    servername: "au1.sream-rutube.shop"
     client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "e0RV9wRJdsQbQ0ugn5QUhJcTgWsSTVsKQTXMKweMDUg"
-      short-id: ""
-    flow: "xtls-rprx-vision"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "trgrpc"
   - name: "🇦🇹_4"
     type: trojan
     server: "86.106.119.23"
@@ -111,13 +108,6 @@ proxies:
     skip-cert-verify: true
     udp: true
   - name: "🇦🇹_5"
-    type: ss
-    server: "82.110.60.9"
-    port: 19999
-    cipher: "aes-256-gcm"
-    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
-    udp: true
-  - name: "🇦🇹_6"
     type: ss
     server: "130.195.222.215"
     port: 443
@@ -130,13 +120,26 @@ proxies:
       path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
       host: "woshinidie-et3.pages.dev"
       tls: true
-  - name: "🇦🇹_7"
+  - name: "🇦🇹_6"
     type: ss
     server: "82.110.60.9"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
+  - name: "🇦🇹_7"
+    type: ss
+    server: "130.195.222.215"
+    port: 443
+    cipher: "none"
+    password: "https://t.me/WangCai2🇨🇳"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
   - name: "🇦🇹_8"
     type: ss
     server: "130.195.222.215"
@@ -152,17 +155,11 @@ proxies:
       tls: true
   - name: "🇦🇹_9"
     type: ss
-    server: "130.195.222.215"
-    port: 443
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
+    server: "82.110.60.9"
+    port: 19999
+    cipher: "aes-256-gcm"
+    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
 
 proxy-groups:
   - name: "PROXY"

@@ -61,6 +61,19 @@ dns:
 
 proxies:
   - name: "🇧🇬_1"
+    type: vless
+    server: "195.123.227.162"
+    port: 443
+    uuid: "7f6adf9d-42f1-4fec-ab22-fb7f66bf3adc"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "zbfkmgdg8.hat.onl"
+    client-fingerprint: "firefox"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "hls-vod.ohql91f.segment-26-v1-a1.ts"
+  - name: "🇧🇬_2"
     type: trojan
     server: "91.227.77.87"
     port: 443
@@ -68,7 +81,7 @@ proxies:
     sni: "skwygx.top"
     skip-cert-verify: true
     udp: true
-  - name: "🇧🇬_2"
+  - name: "🇧🇬_3"
     type: trojan
     server: "38.54.27.117"
     port: 443
@@ -94,6 +107,7 @@ proxy-groups:
     proxies:
       - "🇧🇬_1"
       - "🇧🇬_2"
+      - "🇧🇬_3"
 
 
   - name: "Load Balance"
@@ -104,6 +118,7 @@ proxy-groups:
     proxies:
       - "🇧🇬_1"
       - "🇧🇬_2"
+      - "🇧🇬_3"
 
 rules:
   - MATCH,PROXY

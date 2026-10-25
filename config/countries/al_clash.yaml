@@ -61,67 +61,18 @@ dns:
 
 proxies:
   - name: "🇦🇱_1"
-    type: vless
-    server: "157.22.240.50"
-    port: 443
-    uuid: "iCaYLyqSFgn5Nt"
+    type: ss
+    server: "130.49.189.158"
+    port: 43558
+    cipher: "chacha20-ietf-poly1305"
+    password: "rWIg16plgZ82V7MTNcw1UTgiYK4ooPUB95qVhKIwIDc="
     udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.ovhcloud.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "XMvZvBbY8rIlWFNGB6IDzDOf-xBPm4737KN9weKltBc"
-      short-id: "f5bce2ac"
-    flow: "xtls-rprx-vision"
   - name: "🇦🇱_2"
-    type: vless
-    server: "185.186.77.206"
-    port: 443
-    uuid: "caf3d607-95c9-4ea0-98b5-864027056ba0"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "al1.accessboy.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "1TtWNQhTJr_3H7-ypMw4EiLzVxy22AzUtMiE5JmQMl4"
-      short-id: "1c5869a95671bcb0"
-    flow: "xtls-rprx-vision"
-  - name: "🇦🇱_3"
-    type: vless
-    server: "al1.accessboy.com"
-    port: 443
-    uuid: "caf3d607-95c9-4ea0-98b5-864027056ba0"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "al1.accessboy.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "1TtWNQhTJr_3H7-ypMw4EiLzVxy22AzUtMiE5JmQMl4"
-      short-id: "1c5869a95671bcb0"
-    flow: "xtls-rprx-vision"
-  - name: "🇦🇱_4"
     type: ss
     server: "130.49.189.158"
     port: 43558
     cipher: "chacha20-ietf-poly1305"
     password: "rWIg16plgZ82V7MTNcw1UTgiYK4ooPUB95qVhKIwIDc="
-    udp: true
-  - name: "🇦🇱_5"
-    type: ss
-    server: "130.49.189.158"
-    port: 43558
-    cipher: "chacha20-ietf-poly1305"
-    password: "rWIg16plgZ82V7MTNcw1UTgiYK4ooPUB95qVhKIwIDc="
-    udp: true
-  - name: "🇦🇱_6"
-    type: ss
-    server: "202.50.253.99"
-    port: 19999
-    cipher: "aes-256-gcm"
-    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
 
 proxy-groups:
@@ -141,10 +92,6 @@ proxy-groups:
     proxies:
       - "🇦🇱_1"
       - "🇦🇱_2"
-      - "🇦🇱_3"
-      - "🇦🇱_4"
-      - "🇦🇱_5"
-      - "🇦🇱_6"
 
 
   - name: "Load Balance"
@@ -155,10 +102,6 @@ proxy-groups:
     proxies:
       - "🇦🇱_1"
       - "🇦🇱_2"
-      - "🇦🇱_3"
-      - "🇦🇱_4"
-      - "🇦🇱_5"
-      - "🇦🇱_6"
 
 rules:
   - MATCH,PROXY

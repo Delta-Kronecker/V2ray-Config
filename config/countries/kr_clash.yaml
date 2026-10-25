@@ -62,21 +62,7 @@ dns:
 proxies:
   - name: "🇰🇷_1"
     type: vless
-    server: "3.39.4.109"
-    port: 18967
-    uuid: "814bd064-544d-4255-a070-5705c03f6da9"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.apple.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "k2hPp0tTW0Da-HK94wYpSCLbuK44LfGqC2MSJIM1Ti0"
-      short-id: "48050fab"
-    flow: "xtls-rprx-vision"
-  - name: "🇰🇷_2"
-    type: vless
-    server: "158.247.241.102"
+    server: "64.176.231.183"
     port: 443
     uuid: "583cc910-b57c-4dd0-a4a7-cea51a30b032"
     udp: true
@@ -88,10 +74,24 @@ proxies:
       public-key: "GR_zPAgxF9PZ70Z9UpSmMlcd2STyoAC0fZTSHkTTCGE"
       short-id: "ca193e889d958f81"
     flow: "xtls-rprx-vision"
-  - name: "🇰🇷_3"
+  - name: "🇰🇷_2"
     type: vless
     server: "3.39.4.109"
     port: 13672
+    uuid: "814bd064-544d-4255-a070-5705c03f6da9"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.apple.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "k2hPp0tTW0Da-HK94wYpSCLbuK44LfGqC2MSJIM1Ti0"
+      short-id: "48050fab"
+    flow: "xtls-rprx-vision"
+  - name: "🇰🇷_3"
+    type: vless
+    server: "3.39.4.109"
+    port: 18967
     uuid: "814bd064-544d-4255-a070-5705c03f6da9"
     udp: true
     tls: true
@@ -117,7 +117,7 @@ proxies:
       short-id: "429499c03d4cc8a0"
   - name: "🇰🇷_5"
     type: vless
-    server: "64.176.231.183"
+    server: "158.247.241.102"
     port: 443
     uuid: "583cc910-b57c-4dd0-a4a7-cea51a30b032"
     udp: true
@@ -130,22 +130,20 @@ proxies:
       short-id: "ca193e889d958f81"
     flow: "xtls-rprx-vision"
   - name: "🇰🇷_6"
-    type: trojan
-    server: "ktc1k.xmrthnode.com"
-    port: 41300
-    password: "5bafc1f1-43bc-301c-bf57-53abbf20dabc"
-    sni: "mpvideo.qpic.cn"
-    skip-cert-verify: true
+    type: vless
+    server: "13.125.13.26"
+    port: 443
+    uuid: "7e68e32f-8015-4f37-9082-70e8b0b58043"
     udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "telemetry.tesla-dev2.ev-infra.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "DHOrfoin7TeRpnIoU3d6qT5Yrq3QPVFp49kApATA4iE"
+      short-id: "e04a526b0b09c765"
+    flow: "xtls-rprx-vision"
   - name: "🇰🇷_7"
-    type: trojan
-    server: "ktc1k.xmrthnode.com"
-    port: 24501
-    password: "5bafc1f1-43bc-301c-bf57-53abbf20dabc"
-    sni: "mpvideo.qpic.cn"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_8"
     type: trojan
     server: "158.180.71.69"
     port: 443
@@ -153,71 +151,7 @@ proxies:
     sni: "hhcm.hhxaf.cc.cd"
     skip-cert-verify: true
     udp: true
-  - name: "🇰🇷_9"
-    type: trojan
-    server: "ktc1k.xmrthnode.com"
-    port: 41306
-    password: "5bafc1f1-43bc-301c-bf57-53abbf20dabc"
-    sni: "mpvideo.qpic.cn"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_10"
-    type: trojan
-    server: "141.164.42.2"
-    port: 443
-    password: "114514"
-    sni: "tjaaa.hhllfly.kdns.fr"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_11"
-    type: trojan
-    server: "ktc1k.xmrthnode.com"
-    port: 41305
-    password: "5bafc1f1-43bc-301c-bf57-53abbf20dabc"
-    sni: "mpvideo.qpic.cn"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_12"
-    type: trojan
-    server: "123.140.124.25"
-    port: 8443
-    password: "96983eb4-c8f1-316e-ab00-500014ed3d8b"
-    sni: "official.seoulcityhall.com.ua"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_13"
-    type: trojan
-    server: "ktc1k.xmrthnode.com"
-    port: 41303
-    password: "5bafc1f1-43bc-301c-bf57-53abbf20dabc"
-    sni: "mpvideo.qpic.cn"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_14"
-    type: trojan
-    server: "123.140.124.24"
-    port: 8443
-    password: "96983eb4-c8f1-316e-ab00-500014ed3d8b"
-    sni: "123.140.124.24"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_15"
-    type: trojan
-    server: "ktc1k.xmrthnode.com"
-    port: 24509
-    password: "5bafc1f1-43bc-301c-bf57-53abbf20dabc"
-    sni: "mpvideo.qpic.cn"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_16"
-    type: trojan
-    server: "02a.seoulcitygovernment.com.ua"
-    port: 2050
-    password: "6e1b9a65-884f-3aa9-9469-bf6ec0f08610"
-    sni: "45.32.28.232"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_17"
+  - name: "🇰🇷_8"
     type: trojan
     server: "official.seoulcityhall.com.ua"
     port: 2053
@@ -225,23 +159,39 @@ proxies:
     sni: "official.seoulcityhall.com.ua"
     skip-cert-verify: true
     udp: true
-  - name: "🇰🇷_18"
+  - name: "🇰🇷_9"
     type: trojan
-    server: "ktc1k.xmrthnode.com"
-    port: 24505
-    password: "5bafc1f1-43bc-301c-bf57-53abbf20dabc"
-    sni: "mpvideo.qpic.cn"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_19"
-    type: trojan
-    server: "official.seoulcitygovernment.com.ua"
+    server: "123.140.124.25"
     port: 8443
     password: "96983eb4-c8f1-316e-ab00-500014ed3d8b"
-    sni: "official.seoulcitygovernment.com.ua"
+    sni: "official.seoulcityhall.com.ua"
     skip-cert-verify: true
     udp: true
-  - name: "🇰🇷_20"
+  - name: "🇰🇷_10"
+    type: trojan
+    server: "official.seoulcityhall.com.ua"
+    port: 8443
+    password: "96983eb4-c8f1-316e-ab00-500014ed3d8b"
+    sni: "official.seoulcityhall.com.ua"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_11"
+    type: trojan
+    server: "154.90.62.70"
+    port: 56127
+    password: "p5jTPcffLgi4gaNOJd2KUTb9YEPBBD5B"
+    sni: "154.90.62.70"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_12"
+    type: trojan
+    server: "141.164.42.2"
+    port: 443
+    password: "114514"
+    sni: "tjaaa.hhllfly.kdns.fr"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_13"
     type: trojan
     server: "141.164.42.2"
     port: 443
@@ -249,7 +199,7 @@ proxies:
     sni: "jy.hhllfly.kdns.fr"
     skip-cert-verify: true
     udp: true
-  - name: "🇰🇷_21"
+  - name: "🇰🇷_14"
     type: trojan
     server: "103.133.240.115"
     port: 443
@@ -257,7 +207,55 @@ proxies:
     sni: "hhcm.hhxaf.cc.cd"
     skip-cert-verify: true
     udp: true
-  - name: "🇰🇷_22"
+  - name: "🇰🇷_15"
+    type: trojan
+    server: "02a.seoulcitygovernment.com.ua"
+    port: 2050
+    password: "6e1b9a65-884f-3aa9-9469-bf6ec0f08610"
+    sni: "45.32.28.232"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_16"
+    type: trojan
+    server: "01a.seoulcityhall.com.ua"
+    port: 2051
+    password: "6e1b9a65-884f-3aa9-9469-bf6ec0f08610"
+    sni: "45.32.28.232"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_17"
+    type: trojan
+    server: "123.140.124.24"
+    port: 8443
+    password: "96983eb4-c8f1-316e-ab00-500014ed3d8b"
+    sni: "123.140.124.24"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_18"
+    type: trojan
+    server: "official.seoulcitygovernment.com.ua"
+    port: 8443
+    password: "96983eb4-c8f1-316e-ab00-500014ed3d8b"
+    sni: "official.seoulcitygovernment.com.ua"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_19"
+    type: trojan
+    server: "tjhg.m2k699.com"
+    port: 24999
+    password: "29086912-33e4-4e06-ba2b-60f1a195864f"
+    sni: "www.itunes.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_20"
+    type: trojan
+    server: "146.56.180.103"
+    port: 443
+    password: "4c3164ee-abcf-4091-abea-d1cd4937a68d"
+    sni: "jy.hhllfly.kdns.fr"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇰🇷_21"
     type: trojan
     server: "123.140.124.25"
     port: 2053
@@ -265,15 +263,7 @@ proxies:
     sni: "official.seoulcityhall.com.ua"
     skip-cert-verify: true
     udp: true
-  - name: "🇰🇷_23"
-    type: trojan
-    server: "ktc1k.xmrthnode.com"
-    port: 41014
-    password: "5bafc1f1-43bc-301c-bf57-53abbf20dabc"
-    sni: "mpvideo.qpic.cn"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_24"
+  - name: "🇰🇷_22"
     type: trojan
     server: "158.247.222.240"
     port: 443
@@ -281,23 +271,21 @@ proxies:
     sni: "kr.freeguard.org"
     skip-cert-verify: true
     udp: true
+  - name: "🇰🇷_23"
+    type: ss
+    server: "141.164.45.187"
+    port: 6697
+    cipher: "aes-256-gcm"
+    password: "TEzjfAYq2IjtuoS"
+    udp: true
+  - name: "🇰🇷_24"
+    type: ss
+    server: "141.164.45.187"
+    port: 2376
+    cipher: "aes-256-gcm"
+    password: "faBAoD54k87UJG7"
+    udp: true
   - name: "🇰🇷_25"
-    type: trojan
-    server: "3.36.49.203"
-    port: 443
-    password: "FH72359861"
-    sni: "destined-skylark.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_26"
-    type: trojan
-    server: "ktc1k.xmrthnode.com"
-    port: 41011
-    password: "5bafc1f1-43bc-301c-bf57-53abbf20dabc"
-    sni: "mpvideo.qpic.cn"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇰🇷_27"
     type: ss
     server: "125.138.18.69"
     port: 11300
@@ -310,6 +298,26 @@ proxies:
       path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
       host: "woshinidie-et3.pages.dev"
       tls: true
+  - name: "🇰🇷_26"
+    type: ss
+    server: "49.142.200.31"
+    port: 11434
+    cipher: "none"
+    password: "https://t.me/WangCai2🇨🇳"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
+  - name: "🇰🇷_27"
+    type: ss
+    server: "141.164.45.187"
+    port: 8091
+    cipher: "aes-256-gcm"
+    password: "PCnnH6SQSnfoS27"
+    udp: true
   - name: "🇰🇷_28"
     type: ss
     server: "141.164.45.187"
@@ -319,8 +327,8 @@ proxies:
     udp: true
   - name: "🇰🇷_29"
     type: ss
-    server: "158.247.250.157"
-    port: 81
+    server: "125.138.18.69"
+    port: 11300
     cipher: "none"
     password: "https://t.me/WangCai2🇨🇳"
     udp: true
@@ -332,8 +340,8 @@ proxies:
       tls: true
   - name: "🇰🇷_30"
     type: ss
-    server: "183.108.82.157"
-    port: 10002
+    server: "124.57.36.207"
+    port: 37020
     cipher: "none"
     password: "https://t.me/WangCai2🇨🇳"
     udp: true
@@ -345,8 +353,8 @@ proxies:
       tls: true
   - name: "🇰🇷_31"
     type: ss
-    server: "14.46.128.84"
-    port: 25010
+    server: "158.247.250.157"
+    port: 81
     cipher: "none"
     password: "https://t.me/WangCai2🇨🇳"
     udp: true
@@ -359,9 +367,9 @@ proxies:
   - name: "🇰🇷_32"
     type: ss
     server: "141.164.45.187"
-    port: 5498
+    port: 5001
     cipher: "aes-256-gcm"
-    password: "lGqs95QkFHo2NV"
+    password: "Y6R9pAtvxxzmGC"
     udp: true
   - name: "🇰🇷_33"
     type: ss
@@ -370,259 +378,21 @@ proxies:
     cipher: "none"
     password: "https://t.me/WangCai2🇨🇳"
     udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
   - name: "🇰🇷_34"
     type: ss
-    server: "112.163.229.82"
-    port: 10909
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
+    server: "141.164.45.187"
+    port: 8119
+    cipher: "aes-256-gcm"
+    password: "cdBIDV42DCwnfIN"
     udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
   - name: "🇰🇷_35"
     type: ss
-    server: "125.138.18.69"
-    port: 11300
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
-  - name: "🇰🇷_36"
-    type: ss
     server: "141.164.45.187"
-    port: 8008
-    cipher: "aes-256-gcm"
-    password: "XKFKl2rULjIp74"
-    udp: true
-  - name: "🇰🇷_37"
-    type: ss
-    server: "125.138.18.69"
-    port: 11300
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
-    udp: true
-  - name: "🇰🇷_38"
-    type: ss
-    server: "141.164.45.187"
-    port: 6697
-    cipher: "aes-256-gcm"
-    password: "TEzjfAYq2IjtuoS"
-    udp: true
-  - name: "🇰🇷_39"
-    type: ss
-    server: "158.247.250.157"
-    port: 81
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
-  - name: "🇰🇷_40"
-    type: ss
-    server: "36.38.117.86"
-    port: 11965
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
-    udp: true
-  - name: "🇰🇷_41"
-    type: ss
-    server: "132.145.91.181"
-    port: 8443
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
-  - name: "🇰🇷_42"
-    type: ss
-    server: "141.164.45.187"
-    port: 7002
-    cipher: "aes-256-gcm"
-    password: "RexnBgU7EV5ADxG"
-    udp: true
-  - name: "🇰🇷_43"
-    type: ss
-    server: "49.142.200.31"
-    port: 28017
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
-  - name: "🇰🇷_44"
-    type: ss
-    server: "14.46.128.84"
-    port: 25010
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
-  - name: "🇰🇷_45"
-    type: ss
-    server: "36.38.117.86"
-    port: 11965
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
-    udp: true
-  - name: "🇰🇷_46"
-    type: ss
-    server: "49.142.200.31"
-    port: 11434
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
-  - name: "🇰🇷_47"
-    type: ss
-    server: "141.164.45.187"
-    port: 8000
-    cipher: "aes-256-gcm"
-    password: "KixLvKzwjekG00rm"
-    udp: true
-  - name: "🇰🇷_48"
-    type: ss
-    server: "141.164.45.187"
-    port: 5001
+    port: 9090
     cipher: "aes-256-gcm"
     password: "Y6R9pAtvxxzmGC"
     udp: true
-  - name: "🇰🇷_49"
-    type: ss
-    server: "49.142.200.31"
-    port: 28017
-    cipher: "none"
-    password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "/59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
-  - name: "🇰🇷_50"
-    type: ss
-    server: "49.142.200.31"
-    port: 28017
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
-    udp: true
-  - name: "🇰🇷_51"
-    type: ss
-    server: "124.57.36.207"
-    port: 37020
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
-  - name: "🇰🇷_52"
-    type: ss
-    server: "49.142.200.31"
-    port: 28017
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
-    udp: true
-  - name: "🇰🇷_53"
-    type: ss
-    server: "49.142.200.31"
-    port: 11434
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
-  - name: "🇰🇷_54"
-    type: ss
-    server: "121.178.202.91"
-    port: 12380
-    cipher: "none"
-    password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "/59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
-  - name: "🇰🇷_55"
-    type: ss
-    server: "141.164.45.187"
-    port: 5498
-    cipher: "aes-256-gcm"
-    password: "lGqs95QkFHo2NV"
-    udp: true
-  - name: "🇰🇷_56"
-    type: ss
-    server: "112.163.229.82"
-    port: 10909
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
-  - name: "🇰🇷_57"
-    type: ss
-    server: "124.57.36.207"
-    port: 37020
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
-  - name: "🇰🇷_58"
+  - name: "🇰🇷_36"
     type: ss
     server: "175.204.72.94"
     port: 11001
@@ -635,21 +405,47 @@ proxies:
       path: "/59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
       host: "woshinidie-et3.pages.dev"
       tls: true
-  - name: "🇰🇷_59"
+  - name: "🇰🇷_37"
     type: ss
     server: "141.164.45.187"
-    port: 8000
+    port: 9101
     cipher: "aes-256-gcm"
-    password: "KixLvKzwjekG00rm"
+    password: "e4FCWrgpkji3QY"
     udp: true
-  - name: "🇰🇷_60"
+  - name: "🇰🇷_38"
     type: ss
-    server: "132.145.91.181"
-    port: 8443
+    server: "168.126.204.135"
+    port: 10035
     cipher: "none"
     password: "https://t.me/WangCai2🇨🇳"
     udp: true
-  - name: "🇰🇷_61"
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
+  - name: "🇰🇷_39"
+    type: ss
+    server: "14.46.128.84"
+    port: 25010
+    cipher: "none"
+    password: "https://t.me/WangCai2🇨🇳"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
+  - name: "🇰🇷_40"
+    type: ss
+    server: "141.164.45.187"
+    port: 8008
+    cipher: "aes-256-gcm"
+    password: "XKFKl2rULjIp74"
+    udp: true
+  - name: "🇰🇷_41"
     type: ss
     server: "49.142.200.31"
     port: 28017
@@ -662,14 +458,7 @@ proxies:
       path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
       host: "woshinidie-et3.pages.dev"
       tls: true
-  - name: "🇰🇷_62"
-    type: ss
-    server: "54.180.151.244"
-    port: 8443
-    cipher: "chacha20-ietf-poly1305"
-    password: "7e68e32f-8015-4f37-9082-70e8b0b58043"
-    udp: true
-  - name: "🇰🇷_63"
+  - name: "🇰🇷_42"
     type: ss
     server: "183.108.82.157"
     port: 10002
@@ -682,7 +471,127 @@ proxies:
       path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
       host: "woshinidie-et3.pages.dev"
       tls: true
-  - name: "🇰🇷_64"
+  - name: "🇰🇷_43"
+    type: ss
+    server: "49.142.200.31"
+    port: 28017
+    cipher: "none"
+    password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "/59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
+  - name: "🇰🇷_44"
+    type: ss
+    server: "124.57.36.207"
+    port: 37020
+    cipher: "none"
+    password: "https://t.me/WangCai2🇨🇳"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
+  - name: "🇰🇷_45"
+    type: ss
+    server: "49.142.200.31"
+    port: 28017
+    cipher: "none"
+    password: "https://t.me/WangCai2🇨🇳"
+    udp: true
+  - name: "🇰🇷_46"
+    type: ss
+    server: "141.164.45.187"
+    port: 9101
+    cipher: "aes-256-gcm"
+    password: "e4FCWrgpkji3QY"
+    udp: true
+  - name: "🇰🇷_47"
+    type: ss
+    server: "141.164.45.187"
+    port: 8008
+    cipher: "aes-256-gcm"
+    password: "XKFKl2rULjIp74"
+    udp: true
+  - name: "🇰🇷_48"
+    type: ss
+    server: "14.46.128.84"
+    port: 25010
+    cipher: "none"
+    password: "https://t.me/WangCai2🇨🇳"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
+  - name: "🇰🇷_49"
+    type: ss
+    server: "175.204.72.94"
+    port: 11001
+    cipher: "none"
+    password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "/59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
+  - name: "🇰🇷_50"
+    type: ss
+    server: "168.126.204.135"
+    port: 10035
+    cipher: "none"
+    password: "https://t.me/WangCai2🇨🇳"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
+  - name: "🇰🇷_51"
+    type: ss
+    server: "125.138.18.69"
+    port: 11300
+    cipher: "none"
+    password: "https://t.me/WangCai2🇨🇳"
+    udp: true
+  - name: "🇰🇷_52"
+    type: ss
+    server: "141.164.45.187"
+    port: 7002
+    cipher: "aes-256-gcm"
+    password: "RexnBgU7EV5ADxG"
+    udp: true
+  - name: "🇰🇷_53"
+    type: ss
+    server: "141.164.45.187"
+    port: 7001
+    cipher: "aes-256-gcm"
+    password: "RexnBgU7EV5ADxG"
+    udp: true
+  - name: "🇰🇷_54"
+    type: ss
+    server: "14.46.128.84"
+    port: 25010
+    cipher: "none"
+    password: "https://t.me/WangCai2🇨🇳"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
+  - name: "🇰🇷_55"
     type: ss
     server: "36.38.117.86"
     port: 11965
@@ -695,6 +604,93 @@ proxies:
       path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
       host: "woshinidie-et3.pages.dev"
       tls: true
+  - name: "🇰🇷_56"
+    type: ss
+    server: "49.142.200.31"
+    port: 11434
+    cipher: "none"
+    password: "https://t.me/WangCai2🇨🇳"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
+  - name: "🇰🇷_57"
+    type: ss
+    server: "158.247.250.157"
+    port: 81
+    cipher: "none"
+    password: "https://t.me/WangCai2🇨🇳"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
+  - name: "🇰🇷_58"
+    type: ss
+    server: "121.178.202.91"
+    port: 12380
+    cipher: "none"
+    password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
+    udp: true
+  - name: "🇰🇷_59"
+    type: ss
+    server: "13.125.13.26"
+    port: 8443
+    cipher: "chacha20-ietf-poly1305"
+    password: "7e68e32f-8015-4f37-9082-70e8b0b58043"
+    udp: true
+  - name: "🇰🇷_60"
+    type: ss
+    server: "112.163.229.82"
+    port: 10909
+    cipher: "none"
+    password: "https://t.me/WangCai2🇨🇳"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
+  - name: "🇰🇷_61"
+    type: ss
+    server: "36.38.117.86"
+    port: 11965
+    cipher: "none"
+    password: "https://t.me/WangCai2🇨🇳"
+    udp: true
+  - name: "🇰🇷_62"
+    type: ss
+    server: "49.142.200.31"
+    port: 28017
+    cipher: "none"
+    password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "/59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
+  - name: "🇰🇷_63"
+    type: ss
+    server: "49.142.200.31"
+    port: 28017
+    cipher: "none"
+    password: "https://t.me/WangCai2🇨🇳"
+    udp: true
+  - name: "🇰🇷_64"
+    type: ss
+    server: "13.125.13.26"
+    port: 8443
+    cipher: "chacha20-ietf-poly1305"
+    password: "7e68e32f-8015-4f37-9082-70e8b0b58043"
+    udp: true
   - name: "🇰🇷_65"
     type: ss
     server: "112.163.229.82"
@@ -710,18 +706,19 @@ proxies:
       tls: true
   - name: "🇰🇷_66"
     type: ss
-    server: "132.145.91.181"
-    port: 8443
-    cipher: "none"
-    password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
+    server: "141.164.45.187"
+    port: 7002
+    cipher: "aes-256-gcm"
+    password: "RexnBgU7EV5ADxG"
     udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "/59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
   - name: "🇰🇷_67"
+    type: ss
+    server: "141.164.45.187"
+    port: 5001
+    cipher: "aes-256-gcm"
+    password: "Y6R9pAtvxxzmGC"
+    udp: true
+  - name: "🇰🇷_68"
     type: ss
     server: "49.142.200.31"
     port: 11434
@@ -734,23 +731,10 @@ proxies:
       path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
       host: "woshinidie-et3.pages.dev"
       tls: true
-  - name: "🇰🇷_68"
-    type: ss
-    server: "168.126.204.135"
-    port: 10035
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
   - name: "🇰🇷_69"
     type: ss
-    server: "14.46.128.84"
-    port: 25010
+    server: "49.142.200.31"
+    port: 28017
     cipher: "none"
     password: "https://t.me/WangCai2🇨🇳"
     udp: true
@@ -762,132 +746,25 @@ proxies:
       tls: true
   - name: "🇰🇷_70"
     type: ss
-    server: "132.145.91.181"
-    port: 8443
+    server: "125.138.18.69"
+    port: 11300
     cipher: "none"
     password: "https://t.me/WangCai2🇨🇳"
     udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
   - name: "🇰🇷_71"
-    type: ss
-    server: "124.57.36.207"
-    port: 37020
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
-  - name: "🇰🇷_72"
-    type: ss
-    server: "54.180.151.244"
-    port: 8443
-    cipher: "chacha20-ietf-poly1305"
-    password: "7e68e32f-8015-4f37-9082-70e8b0b58043"
-    udp: true
-  - name: "🇰🇷_73"
-    type: ss
-    server: "175.204.72.94"
-    port: 11001
-    cipher: "none"
-    password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "/59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
-  - name: "🇰🇷_74"
-    type: ss
-    server: "141.164.45.187"
-    port: 8888
-    cipher: "aes-256-gcm"
-    password: "Y6R9pAtvxxzmGC"
-    udp: true
-  - name: "🇰🇷_75"
-    type: ss
-    server: "141.164.45.187"
-    port: 8119
-    cipher: "aes-256-gcm"
-    password: "cdBIDV42DCwnfIN"
-    udp: true
-  - name: "🇰🇷_76"
-    type: ss
-    server: "168.126.204.135"
-    port: 10035
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
-  - name: "🇰🇷_77"
-    type: ss
-    server: "141.164.45.187"
-    port: 9090
-    cipher: "aes-256-gcm"
-    password: "Y6R9pAtvxxzmGC"
-    udp: true
-  - name: "🇰🇷_78"
     type: ss
     server: "121.178.202.91"
     port: 12380
     cipher: "none"
     password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
     udp: true
-  - name: "🇰🇷_79"
-    type: ss
-    server: "158.247.250.157"
-    port: 81
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
-    udp: true
     plugin: v2ray-plugin
     plugin-opts:
       mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      path: "/59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed=2560"
       host: "woshinidie-et3.pages.dev"
       tls: true
-  - name: "🇰🇷_80"
-    type: ss
-    server: "132.145.91.181"
-    port: 8443
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
-    udp: true
-  - name: "🇰🇷_81"
-    type: ss
-    server: "125.138.18.69"
-    port: 11300
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
-    udp: true
-  - name: "🇰🇷_82"
-    type: ss
-    server: "132.145.91.181"
-    port: 8443
-    cipher: "none"
-    password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "/59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
-  - name: "🇰🇷_83"
+  - name: "🇰🇷_72"
     type: ss
     server: "183.108.82.157"
     port: 10002
@@ -900,20 +777,73 @@ proxies:
       path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
       host: "woshinidie-et3.pages.dev"
       tls: true
-  - name: "🇰🇷_84"
+  - name: "🇰🇷_73"
     type: ss
-    server: "49.142.200.31"
-    port: 28017
+    server: "36.38.117.86"
+    port: 11965
     cipher: "none"
-    password: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2"
+    password: "https://t.me/WangCai2🇨🇳"
     udp: true
     plugin: v2ray-plugin
     plugin-opts:
       mode: "websocket"
-      path: "/59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
       host: "woshinidie-et3.pages.dev"
       tls: true
-  - name: "🇰🇷_85"
+  - name: "🇰🇷_74"
+    type: ss
+    server: "141.164.45.187"
+    port: 8000
+    cipher: "aes-256-gcm"
+    password: "KixLvKzwjekG00rm"
+    udp: true
+  - name: "🇰🇷_75"
+    type: ss
+    server: "141.164.45.187"
+    port: 8000
+    cipher: "aes-256-gcm"
+    password: "KixLvKzwjekG00rm"
+    udp: true
+  - name: "🇰🇷_76"
+    type: ss
+    server: "112.163.229.82"
+    port: 10909
+    cipher: "none"
+    password: "https://t.me/WangCai2🇨🇳"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
+  - name: "🇰🇷_77"
+    type: ss
+    server: "158.247.250.157"
+    port: 81
+    cipher: "none"
+    password: "https://t.me/WangCai2🇨🇳"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
+  - name: "🇰🇷_78"
+    type: ss
+    server: "183.108.82.157"
+    port: 10002
+    cipher: "none"
+    password: "https://t.me/WangCai2🇨🇳"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
+  - name: "🇰🇷_79"
     type: ss
     server: "168.126.204.135"
     port: 10035
@@ -926,7 +856,20 @@ proxies:
       path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
       host: "woshinidie-et3.pages.dev"
       tls: true
-  - name: "🇰🇷_86"
+  - name: "🇰🇷_80"
+    type: ss
+    server: "124.57.36.207"
+    port: 37020
+    cipher: "none"
+    password: "https://t.me/WangCai2🇨🇳"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
+  - name: "🇰🇷_81"
     type: vmess
     server: "140.238.2.250"
     port: 443
@@ -934,15 +877,7 @@ proxies:
     alterId: 0
     cipher: "auto"
     udp: true
-  - name: "🇰🇷_87"
-    type: vmess
-    server: "dog-kr.kunlun01dns.com"
-    port: 21004
-    uuid: "9464ca40-dd75-3742-a628-d931a9f413b2"
-    alterId: 0
-    cipher: "auto"
-    udp: true
-  - name: "🇰🇷_88"
+  - name: "🇰🇷_82"
     type: vmess
     server: "146.56.112.110"
     port: 8888
@@ -1048,12 +983,6 @@ proxy-groups:
       - "🇰🇷_80"
       - "🇰🇷_81"
       - "🇰🇷_82"
-      - "🇰🇷_83"
-      - "🇰🇷_84"
-      - "🇰🇷_85"
-      - "🇰🇷_86"
-      - "🇰🇷_87"
-      - "🇰🇷_88"
 
 
   - name: "Load Balance"
@@ -1144,12 +1073,6 @@ proxy-groups:
       - "🇰🇷_80"
       - "🇰🇷_81"
       - "🇰🇷_82"
-      - "🇰🇷_83"
-      - "🇰🇷_84"
-      - "🇰🇷_85"
-      - "🇰🇷_86"
-      - "🇰🇷_87"
-      - "🇰🇷_88"
 
 rules:
   - MATCH,PROXY
