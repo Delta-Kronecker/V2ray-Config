@@ -62,21 +62,13 @@ dns:
 proxies:
   - name: "🇮🇪_1"
     type: trojan
-    server: "52.208.138.36"
+    server: "54.170.212.206"
     port: 443
-    password: "IQ68037294"
-    sni: "vast-turkey.rooster465.autos"
+    password: "ND91608427"
+    sni: "skilled-lioness.rooster465.autos"
     skip-cert-verify: true
     udp: true
   - name: "🇮🇪_2"
-    type: trojan
-    server: "34.253.182.161"
-    port: 443
-    password: "IQ68037294"
-    sni: "moving-wren.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇮🇪_3"
     type: trojan
     server: "52.208.138.36"
     port: 443
@@ -84,20 +76,21 @@ proxies:
     sni: "vast-turkey.rooster465.autos"
     skip-cert-verify: true
     udp: true
-  - name: "🇮🇪_4"
+  - name: "🇮🇪_3"
     type: trojan
-    server: "54.170.212.206"
+    server: "34.253.182.161"
     port: 443
-    password: "ND91608427"
-    sni: "skilled-lioness.rooster465.autos"
+    password: "IQ68037294"
+    sni: "moving-wren.rooster465.autos"
     skip-cert-verify: true
     udp: true
-  - name: "🇮🇪_5"
-    type: ss
-    server: "20.123.12.228"
+  - name: "🇮🇪_4"
+    type: trojan
+    server: "52.208.138.36"
     port: 443
-    cipher: "chacha20-ietf-poly1305"
-    password: "lmG45rfbkt8DAPfP"
+    password: "IQ68037294"
+    sni: "vast-turkey.rooster465.autos"
+    skip-cert-verify: true
     udp: true
 
 proxy-groups:
@@ -119,7 +112,6 @@ proxy-groups:
       - "🇮🇪_2"
       - "🇮🇪_3"
       - "🇮🇪_4"
-      - "🇮🇪_5"
 
 
   - name: "Load Balance"
@@ -132,7 +124,6 @@ proxy-groups:
       - "🇮🇪_2"
       - "🇮🇪_3"
       - "🇮🇪_4"
-      - "🇮🇪_5"
 
 rules:
   - MATCH,PROXY

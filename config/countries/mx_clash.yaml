@@ -60,13 +60,39 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇧🇷_1"
-    type: ss
-    server: "78.111.102.80"
-    port: 2083
-    cipher: "chacha20-ietf-poly1305"
-    password: "banJ58KfDF21KoMFZ5TXmg"
+  - name: "🇲🇽_1"
+    type: vless
+    server: "149.104.90.21"
+    port: 19167
+    uuid: "e9a8144e-5237-488a-afb1-9ca3d8d54c80"
     udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "mx001.zestapp778.com"
+    client-fingerprint: "firefox"
+  - name: "🇲🇽_2"
+    type: vless
+    server: "156.252.229.11"
+    port: 8443
+    uuid: "3e21e3d3-6d26-4155-b851-764dd8e8c6b5"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "play.googleapis.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "7jPluypHwPilf_Mq7JOY96SwKkbK35WuIlN1HwGQ_0A"
+      short-id: "974f7f8f"
+  - name: "🇲🇽_3"
+    type: vless
+    server: "mx001.zestapp778.com"
+    port: 19167
+    uuid: "e9a8144e-5237-488a-afb1-9ca3d8d54c80"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "mx001.zestapp778.com"
+    client-fingerprint: "chrome"
 
 proxy-groups:
   - name: "PROXY"
@@ -83,7 +109,9 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇧🇷_1"
+      - "🇲🇽_1"
+      - "🇲🇽_2"
+      - "🇲🇽_3"
 
 
   - name: "Load Balance"
@@ -92,7 +120,9 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇧🇷_1"
+      - "🇲🇽_1"
+      - "🇲🇽_2"
+      - "🇲🇽_3"
 
 rules:
   - MATCH,PROXY

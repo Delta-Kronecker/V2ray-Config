@@ -60,19 +60,20 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇧🇪_1"
+  - name: "🇲🇩_1"
     type: vless
-    server: "13.143.186.63"
-    port: 443
-    uuid: "7f6adf9d-42f1-4fec-ab22-fb7f66bf3adc"
+    server: "217.69.167.203"
+    port: 43000
+    uuid: "a094cdfb-8894-4a0e-8299-5ece1078a857"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "k1qqse81xfbu.hat.onl"
-    client-fingerprint: "firefox"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "hls.n7ic-p6k1.UOa1suKMcTlfijXl7w.m3u8"
+    servername: "217.69.167.203"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "A8sWghnS7fSui7vIrx18mCX4rx1nr-yBpYKmwmkcXjo"
+      short-id: "870721a2"
+    flow: "xtls-rprx-vision"
 
 proxy-groups:
   - name: "PROXY"
@@ -89,7 +90,7 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇧🇪_1"
+      - "🇲🇩_1"
 
 
   - name: "Load Balance"
@@ -98,7 +99,7 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇧🇪_1"
+      - "🇲🇩_1"
 
 rules:
   - MATCH,PROXY

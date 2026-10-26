@@ -60,13 +60,32 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇵🇪_1"
-    type: trojan
-    server: "38.180.173.150"
-    port: 443
-    password: "af4b064a9c39472fb34ad8b113acdc6b"
-    sni: "38.180.173.150"
+  - name: "🇵🇭_1"
+    type: vless
+    server: "130.94.53.51"
+    port: 15656
+    uuid: "e9a8144e-5237-488a-afb1-9ca3d8d54c80"
+    udp: true
+    tls: true
     skip-cert-verify: true
+    servername: "ph001.zestapp778.com"
+    client-fingerprint: "firefox"
+  - name: "🇵🇭_2"
+    type: vless
+    server: "ph001.zestapp778.com"
+    port: 15656
+    uuid: "e9a8144e-5237-488a-afb1-9ca3d8d54c80"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ph001.zestapp778.com"
+    client-fingerprint: "chrome"
+  - name: "🇵🇭_3"
+    type: ss
+    server: "149.104.109.252"
+    port: 8882
+    cipher: "aes-256-gcm"
+    password: "kDWvXYZoTBcGkC4"
     udp: true
 
 proxy-groups:
@@ -84,7 +103,9 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇵🇪_1"
+      - "🇵🇭_1"
+      - "🇵🇭_2"
+      - "🇵🇭_3"
 
 
   - name: "Load Balance"
@@ -93,7 +114,9 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇵🇪_1"
+      - "🇵🇭_1"
+      - "🇵🇭_2"
+      - "🇵🇭_3"
 
 rules:
   - MATCH,PROXY

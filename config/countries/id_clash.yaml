@@ -76,6 +76,20 @@ proxies:
     sni: "172.232.250.160"
     skip-cert-verify: true
     udp: true
+  - name: "🇮🇩_3"
+    type: ss
+    server: "aio.unlimited.biz.id"
+    port: 443
+    cipher: "none"
+    password: "f282b878-8711-45a1-8c69-5564172123c1"
+    udp: true
+  - name: "🇮🇩_4"
+    type: ss
+    server: "aio.unlimited.biz.id"
+    port: 443
+    cipher: "none"
+    password: "f282b878-8711-45a1-8c69-5564172123c1"
+    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -94,6 +108,8 @@ proxy-groups:
     proxies:
       - "🇮🇩_1"
       - "🇮🇩_2"
+      - "🇮🇩_3"
+      - "🇮🇩_4"
 
 
   - name: "Load Balance"
@@ -104,6 +120,8 @@ proxy-groups:
     proxies:
       - "🇮🇩_1"
       - "🇮🇩_2"
+      - "🇮🇩_3"
+      - "🇮🇩_4"
 
 rules:
   - MATCH,PROXY

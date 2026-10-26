@@ -60,20 +60,19 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇺🇿_1"
+  - name: "🇱🇺_1"
     type: vless
-    server: "103.24.207.43"
-    port: 8443
-    uuid: "968c71ab-c205-409b-9b2d-3b44f758adf2"
+    server: "107.189.7.176"
+    port: 32752
+    uuid: "4970c1cd-13e1-498a-920a-61d07be2fa65"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "edge-uk2.mystatic-cdn.ru"
-    client-fingerprint: "firefox"
+    servername: "www.apple.com"
+    client-fingerprint: "chrome"
     reality-opts:
-      public-key: "65d6SIYIqiX-SN4vx_BnNiQJ8Lnr0HAgUKoT7WgWRgI"
-      short-id: ""
-    flow: "xtls-rprx-vision"
+      public-key: "pfFcQxKv4EPhCDUoZMCmTjj4FK7HHQg_me-In3bOejA"
+      short-id: "d758a643034ad90e"
 
 proxy-groups:
   - name: "PROXY"
@@ -90,7 +89,7 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇺🇿_1"
+      - "🇱🇺_1"
 
 
   - name: "Load Balance"
@@ -99,7 +98,7 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇺🇿_1"
+      - "🇱🇺_1"
 
 rules:
   - MATCH,PROXY

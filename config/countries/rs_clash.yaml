@@ -74,19 +74,6 @@ proxies:
       public-key: "U9O1sbuPwoTowF3Ka7CIgUZlRjokulxSwsYohEGCLA8"
       short-id: "0d87fec579"
     flow: "xtls-rprx-vision"
-  - name: "🇷🇸_2"
-    type: vless
-    server: "13.143.199.8"
-    port: 443
-    uuid: "7f6adf9d-42f1-4fec-ab22-fb7f66bf3adc"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "d1s4sp75x.hat.onl"
-    client-fingerprint: "firefox"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "v1.segment.us8G1doCcaJggaU-.ts"
 
 proxy-groups:
   - name: "PROXY"
@@ -104,7 +91,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇷🇸_1"
-      - "🇷🇸_2"
 
 
   - name: "Load Balance"
@@ -114,7 +100,6 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇷🇸_1"
-      - "🇷🇸_2"
 
 rules:
   - MATCH,PROXY

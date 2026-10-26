@@ -70,10 +70,10 @@ proxies:
     udp: true
   - name: "🇿🇦_2"
     type: ss
-    server: "102.37.156.224"
-    port: 443
+    server: "102.133.165.160"
+    port: 16233
     cipher: "chacha20-ietf-poly1305"
-    password: "aduB9HGxQHjA2SBMRjkHX6"
+    password: "Xsy8Ox4yOV3xLlpxtjzs3X"
     udp: true
   - name: "🇿🇦_3"
     type: ss
@@ -91,10 +91,17 @@ proxies:
     udp: true
   - name: "🇿🇦_5"
     type: ss
-    server: "102.133.165.160"
-    port: 16233
+    server: "102.37.156.224"
+    port: 443
     cipher: "chacha20-ietf-poly1305"
-    password: "Xsy8Ox4yOV3xLlpxtjzs3X"
+    password: "aduB9HGxQHjA2SBMRjkHX6"
+    udp: true
+  - name: "🇿🇦_6"
+    type: ss
+    server: "20.164.41.194"
+    port: 443
+    cipher: "chacha20-ietf-poly1305"
+    password: "UQFMIrjfuCgElfpl"
     udp: true
 
 proxy-groups:
@@ -117,6 +124,7 @@ proxy-groups:
       - "🇿🇦_3"
       - "🇿🇦_4"
       - "🇿🇦_5"
+      - "🇿🇦_6"
 
 
   - name: "Load Balance"
@@ -130,6 +138,7 @@ proxy-groups:
       - "🇿🇦_3"
       - "🇿🇦_4"
       - "🇿🇦_5"
+      - "🇿🇦_6"
 
 rules:
   - MATCH,PROXY
