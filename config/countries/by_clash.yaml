@@ -62,6 +62,39 @@ dns:
 proxies:
   - name: "🇧🇾_1"
     type: vless
+    server: "95.128.71.79"
+    port: 10444
+    uuid: "8cef7621-c6f0-486e-b51d-59c30c5b0b25"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ads.x5.ru"
+    client-fingerprint: "safari"
+    reality-opts:
+      public-key: "0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo"
+      short-id: "8debcf36f1cc69ff"
+    flow: "xtls-rprx-vision"
+  - name: "🇧🇾_2"
+    type: vless
+    server: "178.172.227.124"
+    port: 10443
+    uuid: "1af36694-b548-4b18-89a0-bc076eab4ed7"
+    udp: true
+  - name: "🇧🇾_3"
+    type: vless
+    server: "186.246.9.216"
+    port: 443
+    uuid: "c9c219dc-50da-4135-8e5b-67020291f0ec"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "j5ftvd2nz.edgebundle.monster"
+    reality-opts:
+      public-key: "fJnm6-PhJGSwHaAdJOzXkYOfCPPCWSlaZrtfm1XsqhA"
+      short-id: ""
+    flow: "xtls-rprx-vision"
+  - name: "🇧🇾_4"
+    type: vless
     server: "178.172.227.228"
     port: 10444
     uuid: "b6e5dc56-836f-48c1-9163-b0b0b43b647d"
@@ -74,7 +107,7 @@ proxies:
       public-key: "0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo"
       short-id: "8debcf36f1cc69ff"
     flow: "xtls-rprx-vision"
-  - name: "🇧🇾_2"
+  - name: "🇧🇾_5"
     type: vless
     server: "178.172.227.124"
     port: 10444
@@ -84,20 +117,6 @@ proxies:
     skip-cert-verify: true
     servername: "ads.x5.ru"
     client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo"
-      short-id: "8debcf36f1cc69ff"
-    flow: "xtls-rprx-vision"
-  - name: "🇧🇾_3"
-    type: vless
-    server: "95.128.71.79"
-    port: 10444
-    uuid: "8cef7621-c6f0-486e-b51d-59c30c5b0b25"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "ads.x5.ru"
-    client-fingerprint: "safari"
     reality-opts:
       public-key: "0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo"
       short-id: "8debcf36f1cc69ff"
@@ -121,6 +140,8 @@ proxy-groups:
       - "🇧🇾_1"
       - "🇧🇾_2"
       - "🇧🇾_3"
+      - "🇧🇾_4"
+      - "🇧🇾_5"
 
 
   - name: "Load Balance"
@@ -132,6 +153,8 @@ proxy-groups:
       - "🇧🇾_1"
       - "🇧🇾_2"
       - "🇧🇾_3"
+      - "🇧🇾_4"
+      - "🇧🇾_5"
 
 rules:
   - MATCH,PROXY

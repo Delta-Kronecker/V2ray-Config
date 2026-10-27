@@ -65,14 +65,7 @@ proxies:
     server: "130.49.189.158"
     port: 43558
     cipher: "chacha20-ietf-poly1305"
-    password: "rWIg16plgZ82V7MTNcw1UTgiYK4ooPUB95qVhKIwIDc="
-    udp: true
-  - name: "🇦🇱_2"
-    type: ss
-    server: "130.49.189.158"
-    port: 43558
-    cipher: "chacha20-ietf-poly1305"
-    password: "rWIg16plgZ82V7MTNcw1UTgiYK4ooPUB95qVhKIwIDc="
+    password: "cZGr8nLHdf+FE5ZAw0Y/Rzsml4AyikGL481Pg7eBpsI="
     udp: true
 
 proxy-groups:
@@ -91,7 +84,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇦🇱_1"
-      - "🇦🇱_2"
 
 
   - name: "Load Balance"
@@ -101,7 +93,6 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇦🇱_1"
-      - "🇦🇱_2"
 
 rules:
   - MATCH,PROXY

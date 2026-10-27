@@ -74,6 +74,14 @@ proxies:
       public-key: "PQjgf7GxBd2tDXf0zl9Z5rTZo7LdsWj0hGZLH-lJ-Uk"
       short-id: "7c"
     flow: "xtls-rprx-vision"
+  - name: "🇮🇱_2"
+    type: trojan
+    server: "64.176.163.182"
+    port: 443
+    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
+    sni: "exploreeducationsectoropportunitiestodayandadvancecareers.com"
+    skip-cert-verify: true
+    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -91,6 +99,7 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇮🇱_1"
+      - "🇮🇱_2"
 
 
   - name: "Load Balance"
@@ -100,6 +109,7 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇮🇱_1"
+      - "🇮🇱_2"
 
 rules:
   - MATCH,PROXY

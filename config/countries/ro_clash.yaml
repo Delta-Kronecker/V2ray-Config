@@ -62,26 +62,6 @@ dns:
 proxies:
   - name: "🇷🇴_1"
     type: vless
-    server: "82.117.255.174"
-    port: 443
-    uuid: "679439c5-28f2-485e-af5f-60a5fcd9c36c"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "gateway.icloud.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "0QDBHaCRO2dPeeSVy3B3R_U12ZOvbvWl1JTFW_ZcpD0"
-      short-id: "31e91d43e553bf32"
-    flow: "xtls-rprx-vision"
-  - name: "🇷🇴_2"
-    type: vless
-    server: "edge10.cyrionflare.com"
-    port: 2052
-    uuid: "1a8ecc41-6e62-431b-8eca-87c2fa4dc286"
-    udp: true
-  - name: "🇷🇴_3"
-    type: vless
     server: "46.28.67.55"
     port: 443
     uuid: "d1a6a033-fdbd-46a6-a177-3370ba042b9f"
@@ -94,14 +74,32 @@ proxies:
       public-key: "i2dJ1_XGDpp50qpEclh6SWSWkxt4B0t2hi2qOVQbeSU"
       short-id: "d06d78e974491b6e"
     flow: "xtls-rprx-vision"
-  - name: "🇷🇴_4"
-    type: trojan
-    server: "38.180.35.145"
-    port: 443
-    password: "600421cf-11d7-429f-a65b-c30397f1bc03"
-    sni: "bu2.freeguard.org"
-    skip-cert-verify: true
+  - name: "🇷🇴_2"
+    type: vless
+    server: "155.117.5.208"
+    port: 2052
+    uuid: "1a8ecc41-6e62-431b-8eca-87c2fa4dc286"
     udp: true
+  - name: "🇷🇴_3"
+    type: vless
+    server: "178.83.45.226"
+    port: 2052
+    uuid: "1a8ecc41-6e62-431b-8eca-87c2fa4dc286"
+    udp: true
+  - name: "🇷🇴_4"
+    type: vless
+    server: "82.117.255.174"
+    port: 443
+    uuid: "679439c5-28f2-485e-af5f-60a5fcd9c36c"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "gateway.icloud.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "0QDBHaCRO2dPeeSVy3B3R_U12ZOvbvWl1JTFW_ZcpD0"
+      short-id: "31e91d43e553bf32"
+    flow: "xtls-rprx-vision"
   - name: "🇷🇴_5"
     type: trojan
     server: "185.247.224.136"
@@ -111,11 +109,12 @@ proxies:
     skip-cert-verify: true
     udp: true
   - name: "🇷🇴_6"
-    type: ss
-    server: "194.68.44.42"
-    port: 64546
-    cipher: "chacha20-ietf-poly1305"
-    password: "U83u9OGpvSatIUW7LsWffr"
+    type: trojan
+    server: "38.180.35.145"
+    port: 443
+    password: "600421cf-11d7-429f-a65b-c30397f1bc03"
+    sni: "bu2.freeguard.org"
+    skip-cert-verify: true
     udp: true
   - name: "🇷🇴_7"
     type: ss
@@ -126,10 +125,10 @@ proxies:
     udp: true
   - name: "🇷🇴_8"
     type: ss
-    server: "154.46.31.106"
-    port: 443
+    server: "194.68.44.42"
+    port: 64546
     cipher: "chacha20-ietf-poly1305"
-    password: "QFWzCw2uX9B9i6qAYeFBIE"
+    password: "U83u9OGpvSatIUW7LsWffr"
     udp: true
 
 proxy-groups:

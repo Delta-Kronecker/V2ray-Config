@@ -62,6 +62,20 @@ dns:
 proxies:
   - name: "🇱🇻_1"
     type: vless
+    server: "195.123.213.28"
+    port: 443
+    uuid: "02fcc1a4-ee90-4970-8bbb-4ffaa8109d24"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.cloudflare.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "NMgy1XgCSXExOg6Tg8xG9lCWttMF6sjdpB41lZy6FWo"
+      short-id: "5c256336e3b673fa"
+    flow: "xtls-rprx-vision"
+  - name: "🇱🇻_2"
+    type: vless
     server: "138.124.180.137"
     port: 443
     uuid: "5234b2b7-5e07-422c-8159-d62a676c00c6"
@@ -74,7 +88,7 @@ proxies:
       public-key: "GBdkyDLfr0LIZo_94Xv8ycAKOmkjArYzwJAEMhuXX2c"
       short-id: "33acba1b"
     flow: "xtls-rprx-vision"
-  - name: "🇱🇻_2"
+  - name: "🇱🇻_3"
     type: vless
     server: "195.123.208.32"
     port: 443
@@ -88,32 +102,6 @@ proxies:
       public-key: "ICrsmE5hqN7IsDIyHPG2WkDUUFK_VEj9yobLv8zuDwk"
       short-id: "757b9e1ef18e60f0"
     flow: "xtls-rprx-vision"
-  - name: "🇱🇻_3"
-    type: ss
-    server: "193.68.89.220"
-    port: 8443
-    cipher: "none"
-    password: "3e96ef7d-8637-42c2-ac73-75182196e755"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "3e96ef7d-8637-42c2-ac73-75182196e755/?ed\\=2560"
-      host: "mfvpn.fuchen.indevs.in"
-      tls: true
-  - name: "🇱🇻_4"
-    type: ss
-    server: "193.68.89.220"
-    port: 8443
-    cipher: "none"
-    password: "3e96ef7d-8637-42c2-ac73-75182196e755"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "3e96ef7d-8637-42c2-ac73-75182196e755/?ed\\=2560"
-      host: "mfvpn.fuchen.indevs.in"
-      tls: true
 
 proxy-groups:
   - name: "PROXY"
@@ -133,7 +121,6 @@ proxy-groups:
       - "🇱🇻_1"
       - "🇱🇻_2"
       - "🇱🇻_3"
-      - "🇱🇻_4"
 
 
   - name: "Load Balance"
@@ -145,7 +132,6 @@ proxy-groups:
       - "🇱🇻_1"
       - "🇱🇻_2"
       - "🇱🇻_3"
-      - "🇱🇻_4"
 
 rules:
   - MATCH,PROXY
