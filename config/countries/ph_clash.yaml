@@ -62,16 +62,6 @@ dns:
 proxies:
   - name: "🇵🇭_1"
     type: vless
-    server: "130.94.53.51"
-    port: 15656
-    uuid: "e9a8144e-5237-488a-afb1-9ca3d8d54c80"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "ph001.zestapp778.com"
-    client-fingerprint: "firefox"
-  - name: "🇵🇭_2"
-    type: vless
     server: "ph001.zestapp778.com"
     port: 15656
     uuid: "e9a8144e-5237-488a-afb1-9ca3d8d54c80"
@@ -97,7 +87,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇵🇭_1"
-      - "🇵🇭_2"
 
 
   - name: "Load Balance"
@@ -107,7 +96,6 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇵🇭_1"
-      - "🇵🇭_2"
 
 rules:
   - MATCH,PROXY

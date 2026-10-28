@@ -62,6 +62,12 @@ dns:
 proxies:
   - name: "🇷🇴_1"
     type: vless
+    server: "155.117.5.208"
+    port: 2052
+    uuid: "1a8ecc41-6e62-431b-8eca-87c2fa4dc286"
+    udp: true
+  - name: "🇷🇴_2"
+    type: vless
     server: "46.28.67.55"
     port: 443
     uuid: "d1a6a033-fdbd-46a6-a177-3370ba042b9f"
@@ -74,12 +80,6 @@ proxies:
       public-key: "i2dJ1_XGDpp50qpEclh6SWSWkxt4B0t2hi2qOVQbeSU"
       short-id: "d06d78e974491b6e"
     flow: "xtls-rprx-vision"
-  - name: "🇷🇴_2"
-    type: vless
-    server: "155.117.5.208"
-    port: 2052
-    uuid: "1a8ecc41-6e62-431b-8eca-87c2fa4dc286"
-    udp: true
   - name: "🇷🇴_3"
     type: vless
     server: "178.83.45.226"
@@ -102,28 +102,21 @@ proxies:
     flow: "xtls-rprx-vision"
   - name: "🇷🇴_5"
     type: trojan
-    server: "185.247.224.136"
-    port: 443
-    password: "af4b064a9c39472fb34ad8b113acdc6b"
-    sni: "185.247.224.136"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇷🇴_6"
-    type: trojan
     server: "38.180.35.145"
     port: 443
     password: "600421cf-11d7-429f-a65b-c30397f1bc03"
     sni: "bu2.freeguard.org"
     skip-cert-verify: true
     udp: true
-  - name: "🇷🇴_7"
-    type: ss
-    server: "bogging-eyeteeth-fly.freesocks.work"
+  - name: "🇷🇴_6"
+    type: trojan
+    server: "185.247.224.136"
     port: 443
-    cipher: "chacha20-ietf-poly1305"
-    password: "QFWzCw2uX9B9i6qAYeFBIE"
+    password: "af4b064a9c39472fb34ad8b113acdc6b"
+    sni: "185.247.224.136"
+    skip-cert-verify: true
     udp: true
-  - name: "🇷🇴_8"
+  - name: "🇷🇴_7"
     type: ss
     server: "194.68.44.42"
     port: 64546
@@ -153,7 +146,6 @@ proxy-groups:
       - "🇷🇴_5"
       - "🇷🇴_6"
       - "🇷🇴_7"
-      - "🇷🇴_8"
 
 
   - name: "Load Balance"
@@ -169,7 +161,6 @@ proxy-groups:
       - "🇷🇴_5"
       - "🇷🇴_6"
       - "🇷🇴_7"
-      - "🇷🇴_8"
 
 rules:
   - MATCH,PROXY

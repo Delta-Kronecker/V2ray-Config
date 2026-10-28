@@ -61,6 +61,26 @@ dns:
 
 proxies:
   - name: "🇮🇩_1"
+    type: vless
+    server: "in001.zestapp778.com"
+    port: 57353
+    uuid: "e9a8144e-5237-488a-afb1-9ca3d8d54c80"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "in001.zestapp778.com"
+    client-fingerprint: "chrome"
+  - name: "🇮🇩_2"
+    type: vless
+    server: "130.94.95.198"
+    port: 57353
+    uuid: "e9a8144e-5237-488a-afb1-9ca3d8d54c80"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "in001.zestapp778.com"
+    client-fingerprint: "firefox"
+  - name: "🇮🇩_3"
     type: trojan
     server: "172.232.250.160"
     port: 443
@@ -68,13 +88,27 @@ proxies:
     sni: "172.232.250.160"
     skip-cert-verify: true
     udp: true
-  - name: "🇮🇩_2"
+  - name: "🇮🇩_4"
     type: trojan
     server: "103.67.79.156"
     port: 443
     password: "af4b064a9c39472fb34ad8b113acdc6b"
     sni: "103.67.79.156"
     skip-cert-verify: true
+    udp: true
+  - name: "🇮🇩_5"
+    type: ss
+    server: "aio.unlimited.biz.id"
+    port: 443
+    cipher: "none"
+    password: "f282b878-8711-45a1-8c69-5564172123c1"
+    udp: true
+  - name: "🇮🇩_6"
+    type: ss
+    server: "aio.unlimited.biz.id"
+    port: 443
+    cipher: "none"
+    password: "f282b878-8711-45a1-8c69-5564172123c1"
     udp: true
 
 proxy-groups:
@@ -94,6 +128,10 @@ proxy-groups:
     proxies:
       - "🇮🇩_1"
       - "🇮🇩_2"
+      - "🇮🇩_3"
+      - "🇮🇩_4"
+      - "🇮🇩_5"
+      - "🇮🇩_6"
 
 
   - name: "Load Balance"
@@ -104,6 +142,10 @@ proxy-groups:
     proxies:
       - "🇮🇩_1"
       - "🇮🇩_2"
+      - "🇮🇩_3"
+      - "🇮🇩_4"
+      - "🇮🇩_5"
+      - "🇮🇩_6"
 
 rules:
   - MATCH,PROXY

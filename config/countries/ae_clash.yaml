@@ -61,6 +61,34 @@ dns:
 
 proxies:
   - name: "🇦🇪_1"
+    type: vless
+    server: "91.132.48.136"
+    port: 443
+    uuid: "0d607d84-0ae0-4b9c-a4f3-1766ab456e02"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "bunny.net"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "_0hmzeEAGEx6boacV3d-FrFGaFBYfdvJno39FxveJwM"
+      short-id: "e7c5f2a9"
+    flow: "xtls-rprx-vision"
+  - name: "🇦🇪_2"
+    type: vless
+    server: "uae.purchasebot.net"
+    port: 443
+    uuid: "0d607d84-0ae0-4b9c-a4f3-1766ab456e02"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "bunny.net"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "_0hmzeEAGEx6boacV3d-FrFGaFBYfdvJno39FxveJwM"
+      short-id: "e7c5f2a9"
+    flow: "xtls-rprx-vision"
+  - name: "🇦🇪_3"
     type: trojan
     server: "154.90.55.81"
     port: 443
@@ -85,6 +113,8 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇦🇪_1"
+      - "🇦🇪_2"
+      - "🇦🇪_3"
 
 
   - name: "Load Balance"
@@ -94,6 +124,8 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇦🇪_1"
+      - "🇦🇪_2"
+      - "🇦🇪_3"
 
 rules:
   - MATCH,PROXY

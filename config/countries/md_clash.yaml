@@ -62,17 +62,45 @@ dns:
 proxies:
   - name: "🇲🇩_1"
     type: vless
-    server: "217.69.167.203"
-    port: 43000
-    uuid: "a094cdfb-8894-4a0e-8299-5ece1078a857"
+    server: "md-x3n8.youtub-arvelys.top"
+    port: 443
+    uuid: "4b1be712-774c-4b65-8491-a3339e124a70"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "217.69.167.203"
-    client-fingerprint: "chrome"
+    servername: "md-x3n8.youtub-arvelys.top"
+    client-fingerprint: "firefox"
     reality-opts:
-      public-key: "A8sWghnS7fSui7vIrx18mCX4rx1nr-yBpYKmwmkcXjo"
-      short-id: "870721a2"
+      public-key: "vIfPrMro2GFmeRpxEEt2Q1lJUYO-bRDK2y7WdBaekQs"
+      short-id: "37d5880f"
+    flow: "xtls-rprx-vision"
+  - name: "🇲🇩_2"
+    type: vless
+    server: "37.221.66.135"
+    port: 443
+    uuid: "4b1be712-774c-4b65-8491-a3339e124a70"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "md-x3n8.youtub-arvelys.top"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "vIfPrMro2GFmeRpxEEt2Q1lJUYO-bRDK2y7WdBaekQs"
+      short-id: "37d5880f"
+    flow: "xtls-rprx-vision"
+  - name: "🇲🇩_3"
+    type: vless
+    server: "217.69.167.199"
+    port: 43000
+    uuid: "9a1acad0-081d-4a40-9541-f544865225bb"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "217.69.167.199"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "FX23FdMBb-cdr29rzlCrh4tAWgqwhjaV3zXm3kW3fX0"
+      short-id: "561eb502"
     flow: "xtls-rprx-vision"
 
 proxy-groups:
@@ -91,6 +119,8 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇲🇩_1"
+      - "🇲🇩_2"
+      - "🇲🇩_3"
 
 
   - name: "Load Balance"
@@ -100,6 +130,8 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇲🇩_1"
+      - "🇲🇩_2"
+      - "🇲🇩_3"
 
 rules:
   - MATCH,PROXY

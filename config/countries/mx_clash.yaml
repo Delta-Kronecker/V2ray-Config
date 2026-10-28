@@ -62,16 +62,6 @@ dns:
 proxies:
   - name: "🇲🇽_1"
     type: vless
-    server: "149.104.90.21"
-    port: 19167
-    uuid: "e9a8144e-5237-488a-afb1-9ca3d8d54c80"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "mx001.zestapp778.com"
-    client-fingerprint: "firefox"
-  - name: "🇲🇽_2"
-    type: vless
     server: "mx001.zestapp778.com"
     port: 19167
     uuid: "e9a8144e-5237-488a-afb1-9ca3d8d54c80"
@@ -80,6 +70,14 @@ proxies:
     skip-cert-verify: true
     servername: "mx001.zestapp778.com"
     client-fingerprint: "chrome"
+  - name: "🇲🇽_2"
+    type: trojan
+    server: "154.205.152.109"
+    port: 443
+    password: "af4b064a9c39472fb34ad8b113acdc6b"
+    sni: "154.205.152.109"
+    skip-cert-verify: true
+    udp: true
   - name: "🇲🇽_3"
     type: trojan
     server: "216.238.80.100"
@@ -89,12 +87,19 @@ proxies:
     skip-cert-verify: true
     udp: true
   - name: "🇲🇽_4"
-    type: trojan
-    server: "154.205.152.109"
-    port: 443
-    password: "af4b064a9c39472fb34ad8b113acdc6b"
-    sni: "154.205.152.109"
-    skip-cert-verify: true
+    type: ss
+    server: "64.177.90.30"
+    port: 8388
+    cipher: "aes-256-gcm"
+    password: "BWyPPTusFKhGgzKh"
+    udp: true
+  - name: "🇲🇽_5"
+    type: vmess
+    server: "38.60.224.173"
+    port: 32153
+    uuid: "5cf1f470-3f70-4589-a2a4-4657ea3a1edf"
+    alterId: 0
+    cipher: "auto"
     udp: true
 
 proxy-groups:
@@ -116,6 +121,7 @@ proxy-groups:
       - "🇲🇽_2"
       - "🇲🇽_3"
       - "🇲🇽_4"
+      - "🇲🇽_5"
 
 
   - name: "Load Balance"
@@ -128,6 +134,7 @@ proxy-groups:
       - "🇲🇽_2"
       - "🇲🇽_3"
       - "🇲🇽_4"
+      - "🇲🇽_5"
 
 rules:
   - MATCH,PROXY
