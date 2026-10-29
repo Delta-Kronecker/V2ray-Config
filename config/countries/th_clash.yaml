@@ -72,33 +72,19 @@ proxies:
     client-fingerprint: "chrome"
   - name: "🇹🇭_2"
     type: vless
-    server: "dghk2610.supertoolify.com"
-    port: 21033
-    uuid: "57beeeb0-03fc-4fc9-94da-7604488a7134"
+    server: "45.154.26.63"
+    port: 443
+    uuid: "ff85e702-b605-4109-884d-2c1f065d0954"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "www.kaidee.com"
-    client-fingerprint: "ios"
+    servername: "www.cloudflare.com"
+    client-fingerprint: "chrome"
     reality-opts:
-      public-key: "EG-jzQw1RyOwAM4L9rMKondSx7cyFmPyv1OP7xXkIk4"
-      short-id: "cbd39bea0805e2"
+      public-key: "MiQ5B4j6In71lWvCi0vO_DkVSDb7sii34bh5efBMswk"
+      short-id: "3c032a7e"
     flow: "xtls-rprx-vision"
   - name: "🇹🇭_3"
-    type: vless
-    server: "109.237.98.213"
-    port: 443
-    uuid: "26f751bc-2edc-4338-9c3f-abeb32aba3b7"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "xy4l6bpbjk.xeltrona-host26.sbs"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "fJnm6-PhJGSwHaAdJOzXkYOfCPPCWSlaZrtfm1XsqhA"
-      short-id: "6ba85179e30d4fc2"
-    flow: "xtls-rprx-vision"
-  - name: "🇹🇭_4"
     type: vless
     server: "154.21.203.106"
     port: 21033
@@ -112,23 +98,9 @@ proxies:
       public-key: "EG-jzQw1RyOwAM4L9rMKondSx7cyFmPyv1OP7xXkIk4"
       short-id: "cbd39bea0805e2"
     flow: "xtls-rprx-vision"
-  - name: "🇹🇭_5"
+  - name: "🇹🇭_4"
     type: vless
-    server: "45.154.26.63"
-    port: 443
-    uuid: "ff85e702-b605-4109-884d-2c1f065d0954"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.cloudflare.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "MiQ5B4j6In71lWvCi0vO_DkVSDb7sii34bh5efBMswk"
-      short-id: "3c032a7e"
-    flow: "xtls-rprx-vision"
-  - name: "🇹🇭_6"
-    type: vless
-    server: "38.60.254.50"
+    server: "38.60.233.38"
     port: 22222
     uuid: "e9a8144e-5237-488a-afb1-9ca3d8d54c80"
     udp: true
@@ -136,6 +108,14 @@ proxies:
     skip-cert-verify: true
     servername: "th001.zestapp778.com"
     client-fingerprint: "firefox"
+  - name: "🇹🇭_5"
+    type: trojan
+    server: "th001.zestapp778.com"
+    port: 33079
+    password: "5t6i121em5lkmsmk"
+    sni: "th001.zestapp778.com"
+    skip-cert-verify: true
+    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -157,7 +137,6 @@ proxy-groups:
       - "🇹🇭_3"
       - "🇹🇭_4"
       - "🇹🇭_5"
-      - "🇹🇭_6"
 
 
   - name: "Load Balance"
@@ -171,7 +150,6 @@ proxy-groups:
       - "🇹🇭_3"
       - "🇹🇭_4"
       - "🇹🇭_5"
-      - "🇹🇭_6"
 
 rules:
   - MATCH,PROXY
