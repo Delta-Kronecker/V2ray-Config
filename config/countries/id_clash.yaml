@@ -61,6 +61,20 @@ dns:
 
 proxies:
   - name: "🇮🇩_1"
+    type: vless
+    server: "31.58.234.135"
+    port: 47443
+    uuid: "1fe01c8a-ab37-4e95-bbfc-95d4a608931e"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "nl-1.waspguard.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "r69Y55UMNEcuk345EEMQtVvpK8cNccqo3y9WjY-ugDc"
+      short-id: "ae97223a8f799871"
+    flow: "xtls-rprx-vision"
+  - name: "🇮🇩_2"
     type: trojan
     server: "103.67.79.156"
     port: 443
@@ -68,7 +82,7 @@ proxies:
     sni: "103.67.79.156"
     skip-cert-verify: true
     udp: true
-  - name: "🇮🇩_2"
+  - name: "🇮🇩_3"
     type: trojan
     server: "172.232.250.160"
     port: 443
@@ -76,21 +90,21 @@ proxies:
     sni: "172.232.250.160"
     skip-cert-verify: true
     udp: true
-  - name: "🇮🇩_3"
+  - name: "🇮🇩_4"
     type: ss
     server: "82.38.31.205"
     port: 8080
     cipher: "chacha20-ietf-poly1305"
     password: "k1dBOmOB4oqi7Ump37a1bQ"
     udp: true
-  - name: "🇮🇩_4"
+  - name: "🇮🇩_5"
     type: ss
     server: "aio.unlimited.biz.id"
     port: 443
     cipher: "none"
     password: "f282b878-8711-45a1-8c69-5564172123c1"
     udp: true
-  - name: "🇮🇩_5"
+  - name: "🇮🇩_6"
     type: ss
     server: "aio.unlimited.biz.id"
     port: 443
@@ -118,6 +132,7 @@ proxy-groups:
       - "🇮🇩_3"
       - "🇮🇩_4"
       - "🇮🇩_5"
+      - "🇮🇩_6"
 
 
   - name: "Load Balance"
@@ -131,6 +146,7 @@ proxy-groups:
       - "🇮🇩_3"
       - "🇮🇩_4"
       - "🇮🇩_5"
+      - "🇮🇩_6"
 
 rules:
   - MATCH,PROXY

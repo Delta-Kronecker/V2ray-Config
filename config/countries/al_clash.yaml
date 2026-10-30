@@ -61,46 +61,18 @@ dns:
 
 proxies:
   - name: "🇦🇱_1"
-    type: vless
-    server: "157.22.240.230"
-    port: 443
-    uuid: "99551a64-bc49-4442-b78b-cc8a9a57b9a9"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "yandex.ru"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "T1BWBw3lq9G1LiQ7eQSPfdNQic7bUMEbdFNJBewAwB8"
-      short-id: "6ad3c0f1e9b2478a"
-    flow: "xtls-rprx-vision"
-  - name: "🇦🇱_2"
-    type: ss
-    server: "130.49.189.158"
-    port: 43558
-    cipher: "chacha20-ietf-poly1305"
-    password: "cZGr8nLHdf+FE5ZAw0Y/Rzsml4AyikGL481Pg7eBpsI="
-    udp: true
-  - name: "🇦🇱_3"
     type: ss
     server: "alb.rvpn.app"
     port: 8388
     cipher: "chacha20-ietf-poly1305"
     password: "hTTg7lwQMzpaF7KXpY3A8w"
     udp: true
-  - name: "🇦🇱_4"
-    type: ss
-    server: "130.49.189.54"
-    port: 8388
-    cipher: "chacha20-ietf-poly1305"
-    password: "hTTg7lwQMzpaF7KXpY3A8w"
-    udp: true
-  - name: "🇦🇱_5"
+  - name: "🇦🇱_2"
     type: ss
     server: "130.49.189.158"
     port: 43558
     cipher: "chacha20-ietf-poly1305"
-    password: "cZGr8nLHdf+FE5ZAw0Y/Rzsml4AyikGL481Pg7eBpsI="
+    password: "lsu1v/3iNERwDDVwxCu5033KCUqQOoElYQul63kmqJ8="
     udp: true
 
 proxy-groups:
@@ -120,9 +92,6 @@ proxy-groups:
     proxies:
       - "🇦🇱_1"
       - "🇦🇱_2"
-      - "🇦🇱_3"
-      - "🇦🇱_4"
-      - "🇦🇱_5"
 
 
   - name: "Load Balance"
@@ -133,9 +102,6 @@ proxy-groups:
     proxies:
       - "🇦🇱_1"
       - "🇦🇱_2"
-      - "🇦🇱_3"
-      - "🇦🇱_4"
-      - "🇦🇱_5"
 
 rules:
   - MATCH,PROXY

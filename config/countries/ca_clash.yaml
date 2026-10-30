@@ -62,47 +62,38 @@ dns:
 proxies:
   - name: "🇨🇦_1"
     type: vless
-    server: "178.83.45.226"
+    server: "milo.rubinaz.xyz"
     port: 8080
     uuid: "6bceb548-d9b6-461f-8e37-a5a7fbcdc2c8"
     udp: true
   - name: "🇨🇦_2"
     type: vless
-    server: "209.200.246.148"
+    server: "91.196.33.157"
     port: 443
-    uuid: "ca52e2b6-fb9f-4dac-b6dc-49da9923f251"
+    uuid: "7b22dce8-7ebd-425b-8ca4-7b6190321985"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "www.cloudflare.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "uTmb-ytXsx8p0fkBz7A76SHpWk7_oVutIA4LGTE8BQk"
-      short-id: "f98843107912e782"
-    flow: "xtls-rprx-vision"
+    servername: "b.us-1.bnc-gt.co.uk"
+    client-fingerprint: "qq"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "grpc"
   - name: "🇨🇦_3"
     type: vless
-    server: "168.222.43.53"
+    server: "milo.networkforexir.site"
     port: 8080
     uuid: "6bceb548-d9b6-461f-8e37-a5a7fbcdc2c8"
     udp: true
   - name: "🇨🇦_4"
     type: vless
-    server: "167.17.69.171"
-    port: 443
-    uuid: "00144519-7e0d-476b-8d28-435576af9262"
+    server: "168.222.43.53"
+    port: 8080
+    uuid: "6bceb548-d9b6-461f-8e37-a5a7fbcdc2c8"
     udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.cloudflare.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "ALT8hIGeZEhi0sQFbXP_ntBg8Xo-v7i0YCLrqTnBxRk"
-      short-id: "0990d22f"
-    flow: "xtls-rprx-vision"
   - name: "🇨🇦_5"
     type: vless
-    server: "milo.rubinaz.xyz"
+    server: "178.83.45.226"
     port: 8080
     uuid: "6bceb548-d9b6-461f-8e37-a5a7fbcdc2c8"
     udp: true
@@ -120,61 +111,47 @@ proxies:
       short-id: "83f8317a948bb769"
   - name: "🇨🇦_7"
     type: vless
-    server: "milo.networkforexir.site"
-    port: 8080
-    uuid: "6bceb548-d9b6-461f-8e37-a5a7fbcdc2c8"
+    server: "209.200.246.148"
+    port: 443
+    uuid: "ca52e2b6-fb9f-4dac-b6dc-49da9923f251"
     udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.cloudflare.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "uTmb-ytXsx8p0fkBz7A76SHpWk7_oVutIA4LGTE8BQk"
+      short-id: "f98843107912e782"
+    flow: "xtls-rprx-vision"
   - name: "🇨🇦_8"
+    type: vless
+    server: "167.17.69.171"
+    port: 443
+    uuid: "00144519-7e0d-476b-8d28-435576af9262"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.cloudflare.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "ALT8hIGeZEhi0sQFbXP_ntBg8Xo-v7i0YCLrqTnBxRk"
+      short-id: "0990d22f"
+    flow: "xtls-rprx-vision"
+  - name: "🇨🇦_9"
     type: vless
     server: "155.117.5.208"
     port: 8080
     uuid: "6bceb548-d9b6-461f-8e37-a5a7fbcdc2c8"
     udp: true
-  - name: "🇨🇦_9"
-    type: vless
-    server: "ca001.zestapp778.com"
-    port: 32355
-    uuid: "e9a8144e-5237-488a-afb1-9ca3d8d54c80"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "ca001.zestapp778.com"
-    client-fingerprint: "chrome"
   - name: "🇨🇦_10"
-    type: vless
-    server: "149.248.50.252"
-    port: 32355
-    uuid: "e9a8144e-5237-488a-afb1-9ca3d8d54c80"
-    udp: true
-    tls: true
+    type: trojan
+    server: "155.138.138.2"
+    port: 443
+    password: "Trojan@82164024"
+    sni: "ca.tronsg.com"
     skip-cert-verify: true
-    servername: "ca001.zestapp778.com"
-    client-fingerprint: "firefox"
+    udp: true
   - name: "🇨🇦_11"
-    type: trojan
-    server: "137.184.172.228"
-    port: 443
-    password: "5392c4d3-b13e-456f-a0e5-8eaf52b7fc1d"
-    sni: "termux.com"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇨🇦_12"
-    type: trojan
-    server: "169.197.140.245"
-    port: 443
-    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
-    sni: "www.discoverfreshgraduatejobsstartyourprofessionaljourney.com"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇨🇦_13"
-    type: trojan
-    server: "169.197.140.169"
-    port: 443
-    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
-    sni: "api.discoverfreshgraduatejobsstartyourprofessionaljourney.com"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇨🇦_14"
     type: trojan
     server: "216.128.184.4"
     port: 443
@@ -182,12 +159,36 @@ proxies:
     sni: "ash.d22e0961-e0a7-49b8-8259-eac71e24d27b.kailib.com"
     skip-cert-verify: true
     udp: true
-  - name: "🇨🇦_15"
+  - name: "🇨🇦_12"
+    type: trojan
+    server: "159.203.22.227"
+    port: 443
+    password: "acfef609-b3c7-4e52-b292-8921d5fca90d"
+    sni: "ca-full.privateip.net"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇨🇦_13"
     type: trojan
     server: "169.197.140.224"
     port: 443
     password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
     sni: "resources.discoverfreshgraduatejobsstartyourprofessionaljourney.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇨🇦_14"
+    type: trojan
+    server: "ca.tronsg.com"
+    port: 443
+    password: "Trojan@82164024"
+    sni: "ca.tronsg.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇨🇦_15"
+    type: trojan
+    server: "216.144.231.47"
+    port: 443
+    password: "8r<[9'l6hAO#8ZQi"
+    sni: "Koma-YT.PAGeS.Dev"
     skip-cert-verify: true
     udp: true
   - name: "🇨🇦_16"
@@ -200,21 +201,13 @@ proxies:
     udp: true
   - name: "🇨🇦_17"
     type: trojan
-    server: "169.197.140.218"
+    server: "51.222.15.68"
     port: 443
-    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
-    sni: "learn.discoverfreshgraduatejobsstartyourprofessionaljourney.com"
+    password: "f4dc01c0-6376-11ee-8ca8-1239d0255272"
+    sni: "www.ewane.krd"
     skip-cert-verify: true
     udp: true
   - name: "🇨🇦_18"
-    type: trojan
-    server: "159.203.22.227"
-    port: 443
-    password: "acfef609-b3c7-4e52-b292-8921d5fca90d"
-    sni: "ca-full.privateip.net"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇨🇦_19"
     type: trojan
     server: "ca001.zestapp778.com"
     port: 46977
@@ -222,35 +215,45 @@ proxies:
     sni: "ca001.zestapp778.com"
     skip-cert-verify: true
     udp: true
+  - name: "🇨🇦_19"
+    type: trojan
+    server: "169.197.140.169"
+    port: 443
+    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
+    sni: "api.discoverfreshgraduatejobsstartyourprofessionaljourney.com"
+    skip-cert-verify: true
+    udp: true
   - name: "🇨🇦_20"
     type: trojan
-    server: "216.144.231.47"
+    server: "137.184.172.228"
     port: 443
-    password: "8r<[9'l6hAO#8ZQi"
-    sni: "Koma-YT.PAGeS.Dev"
+    password: "5392c4d3-b13e-456f-a0e5-8eaf52b7fc1d"
+    sni: "termux.com"
     skip-cert-verify: true
     udp: true
   - name: "🇨🇦_21"
     type: trojan
-    server: "51.222.15.68"
+    server: "169.197.140.218"
     port: 443
-    password: "f4dc01c0-6376-11ee-8ca8-1239d0255272"
-    sni: "www.ewane.krd"
+    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
+    sni: "learn.discoverfreshgraduatejobsstartyourprofessionaljourney.com"
     skip-cert-verify: true
     udp: true
   - name: "🇨🇦_22"
-    type: ss
-    server: "149.22.95.183"
+    type: trojan
+    server: "169.197.140.245"
     port: 443
-    cipher: "aes-128-gcm"
-    password: "shadowsocks"
+    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
+    sni: "www.discoverfreshgraduatejobsstartyourprofessionaljourney.com"
+    skip-cert-verify: true
     udp: true
   - name: "🇨🇦_23"
-    type: ss
-    server: "51.222.136.236"
-    port: 8882
-    cipher: "aes-256-gcm"
-    password: "kDWvXYZoTBcGkC4"
+    type: trojan
+    server: "169.197.140.214"
+    port: 443
+    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
+    sni: "courses.discoverfreshgraduatejobsstartyourprofessionaljourney.com"
+    skip-cert-verify: true
     udp: true
   - name: "🇨🇦_24"
     type: ss
@@ -261,10 +264,10 @@ proxies:
     udp: true
   - name: "🇨🇦_25"
     type: ss
-    server: "51.79.49.116"
-    port: 8882
-    cipher: "aes-256-gcm"
-    password: "kDWvXYZoTBcGkC4"
+    server: "149.22.95.183"
+    port: 443
+    cipher: "aes-128-gcm"
+    password: "shadowsocks"
     udp: true
   - name: "🇨🇦_26"
     type: ss
@@ -275,10 +278,10 @@ proxies:
     udp: true
   - name: "🇨🇦_27"
     type: ss
-    server: "149.22.95.183"
-    port: 443
-    cipher: "aes-128-gcm"
-    password: "shadowsocks"
+    server: "51.79.85.185"
+    port: 8118
+    cipher: "aes-256-gcm"
+    password: "cdBIDV42DCwnfIN"
     udp: true
   - name: "🇨🇦_28"
     type: ss
@@ -289,38 +292,38 @@ proxies:
     udp: true
   - name: "🇨🇦_29"
     type: ss
+    server: "149.22.95.183"
+    port: 443
+    cipher: "aes-128-gcm"
+    password: "shadowsocks"
+    udp: true
+  - name: "🇨🇦_30"
+    type: ss
     server: "51.222.200.165"
     port: 5000
     cipher: "aes-256-gcm"
     password: "Y6R9pAtvxxzmGC"
     udp: true
-  - name: "🇨🇦_30"
-    type: ss
-    server: "51.222.12.127"
-    port: 445
-    cipher: "aes-256-gcm"
-    password: "zDNVedRFPQexG9v"
-    udp: true
   - name: "🇨🇦_31"
     type: ss
-    server: "51.222.155.113"
-    port: 5601
+    server: "51.222.155.32"
+    port: 5003
     cipher: "aes-256-gcm"
-    password: "Y6R9pAtvxxzmGC"
+    password: "g5MeD6Ft3CWlJId"
     udp: true
   - name: "🇨🇦_32"
+    type: ss
+    server: "149.22.95.183"
+    port: 443
+    cipher: "aes-128-gcm"
+    password: "shadowsocks"
+    udp: true
+  - name: "🇨🇦_33"
     type: ss
     server: "51.79.49.116"
     port: 8882
     cipher: "aes-256-gcm"
     password: "kDWvXYZoTBcGkC4"
-    udp: true
-  - name: "🇨🇦_33"
-    type: ss
-    server: "51.222.12.127"
-    port: 445
-    cipher: "aes-256-gcm"
-    password: "zDNVedRFPQexG9v"
     udp: true
   - name: "🇨🇦_34"
     type: ss
@@ -331,33 +334,69 @@ proxies:
     udp: true
   - name: "🇨🇦_35"
     type: ss
-    server: "51.79.85.185"
-    port: 8118
+    server: "51.222.12.127"
+    port: 445
     cipher: "aes-256-gcm"
-    password: "cdBIDV42DCwnfIN"
+    password: "zDNVedRFPQexG9v"
     udp: true
   - name: "🇨🇦_36"
+    type: ss
+    server: "51.79.49.116"
+    port: 8882
+    cipher: "aes-256-gcm"
+    password: "kDWvXYZoTBcGkC4"
+    udp: true
+  - name: "🇨🇦_37"
     type: ss
     server: "51.222.200.165"
     port: 5000
     cipher: "aes-256-gcm"
     password: "Y6R9pAtvxxzmGC"
     udp: true
-  - name: "🇨🇦_37"
+  - name: "🇨🇦_38"
+    type: ss
+    server: "51.222.12.127"
+    port: 445
+    cipher: "aes-256-gcm"
+    password: "zDNVedRFPQexG9v"
+    udp: true
+  - name: "🇨🇦_39"
+    type: ss
+    server: "51.222.136.236"
+    port: 8882
+    cipher: "aes-256-gcm"
+    password: "kDWvXYZoTBcGkC4"
+    udp: true
+  - name: "🇨🇦_40"
     type: ss
     server: "51.222.141.125"
     port: 445
     cipher: "aes-256-gcm"
     password: "zDNVedRFPQexG9v"
     udp: true
-  - name: "🇨🇦_38"
+  - name: "🇨🇦_41"
     type: ss
     server: "51.222.200.165"
     port: 5000
     cipher: "aes-256-gcm"
     password: "Y6R9pAtvxxzmGC"
     udp: true
-  - name: "🇨🇦_39"
+  - name: "🇨🇦_42"
+    type: ss
+    server: "51.222.155.113"
+    port: 5601
+    cipher: "aes-256-gcm"
+    password: "Y6R9pAtvxxzmGC"
+    udp: true
+  - name: "🇨🇦_43"
+    type: vmess
+    server: "134.195.196.211"
+    port: 18000
+    uuid: "f8c8dc3d-0d37-46b0-8b34-a7232882fcfe"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+  - name: "🇨🇦_44"
     type: vmess
     server: "169.197.142.22"
     port: 18000
@@ -365,9 +404,9 @@ proxies:
     alterId: 0
     cipher: "auto"
     udp: true
-  - name: "🇨🇦_40"
+  - name: "🇨🇦_45"
     type: vmess
-    server: "134.195.196.211"
+    server: "23.162.200.198"
     port: 18000
     uuid: "f8c8dc3d-0d37-46b0-8b34-a7232882fcfe"
     alterId: 0
@@ -429,6 +468,11 @@ proxy-groups:
       - "🇨🇦_38"
       - "🇨🇦_39"
       - "🇨🇦_40"
+      - "🇨🇦_41"
+      - "🇨🇦_42"
+      - "🇨🇦_43"
+      - "🇨🇦_44"
+      - "🇨🇦_45"
 
 
   - name: "Load Balance"
@@ -477,6 +521,11 @@ proxy-groups:
       - "🇨🇦_38"
       - "🇨🇦_39"
       - "🇨🇦_40"
+      - "🇨🇦_41"
+      - "🇨🇦_42"
+      - "🇨🇦_43"
+      - "🇨🇦_44"
+      - "🇨🇦_45"
 
 rules:
   - MATCH,PROXY

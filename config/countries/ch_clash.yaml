@@ -62,14 +62,18 @@ dns:
 proxies:
   - name: "🇨🇭_1"
     type: vless
-    server: "149.33.15.213"
-    port: 443
-    uuid: "054362fb-e485-4a3f-9568-4c5b0f60e074"
+    server: "45.90.57.119"
+    port: 8443
+    uuid: "f5e70ce3-cfb4-4df1-b25c-d19bfae627c0"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "swz.proxyplankton.ru"
-    client-fingerprint: "chrome"
+    servername: "twitch.tv"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "L6DeK_a25_ZjPKFOrQLoCPWuXi5KCIH_EcRpARmCwkI"
+      short-id: "16036bbef04d0509"
+    flow: "xtls-rprx-vision"
   - name: "🇨🇭_2"
     type: vless
     server: "45.90.59.15"
@@ -86,17 +90,17 @@ proxies:
     flow: "xtls-rprx-vision"
   - name: "🇨🇭_3"
     type: vless
-    server: "45.90.57.119"
-    port: 8443
-    uuid: "f5e70ce3-cfb4-4df1-b25c-d19bfae627c0"
+    server: "94.249.195.31"
+    port: 43000
+    uuid: "1b3b5bc6-cbd4-4bd4-8b98-a4a742d2186b"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "twitch.tv"
+    servername: "94.249.195.31"
     client-fingerprint: "firefox"
     reality-opts:
-      public-key: "L6DeK_a25_ZjPKFOrQLoCPWuXi5KCIH_EcRpARmCwkI"
-      short-id: "16036bbef04d0509"
+      public-key: "zOu3OvSP0TQgIrk_2gFh4UKH5KSKHbmgY_w6R94v5Ew"
+      short-id: "815e6c09"
     flow: "xtls-rprx-vision"
   - name: "🇨🇭_4"
     type: trojan
@@ -105,20 +109,6 @@ proxies:
     password: "Masir_Sefid"
     sni: "store.steampowered.com"
     skip-cert-verify: true
-    udp: true
-  - name: "🇨🇭_5"
-    type: ss
-    server: "132.243.175.144"
-    port: 8388
-    cipher: "chacha20-ietf-poly1305"
-    password: "e8KgS8fD0yDqYFpgN4G5piCOt9aFyqA3"
-    udp: true
-  - name: "🇨🇭_6"
-    type: ss
-    server: "132.243.175.144"
-    port: 8388
-    cipher: "chacha20-ietf-poly1305"
-    password: "e8KgS8fD0yDqYFpgN4G5piCOt9aFyqA3"
     udp: true
 
 proxy-groups:
@@ -140,8 +130,6 @@ proxy-groups:
       - "🇨🇭_2"
       - "🇨🇭_3"
       - "🇨🇭_4"
-      - "🇨🇭_5"
-      - "🇨🇭_6"
 
 
   - name: "Load Balance"
@@ -154,8 +142,6 @@ proxy-groups:
       - "🇨🇭_2"
       - "🇨🇭_3"
       - "🇨🇭_4"
-      - "🇨🇭_5"
-      - "🇨🇭_6"
 
 rules:
   - MATCH,PROXY
