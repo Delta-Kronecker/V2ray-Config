@@ -62,34 +62,69 @@ dns:
 proxies:
   - name: "🇪🇪_1"
     type: vless
-    server: "ee.h1cloud.net"
-    port: 25895
-    uuid: "f90b7d43-69e2-4b46-a672-8029bc6796a2"
+    server: "185.225.205.53"
+    port: 443
+    uuid: "7a0348d6-55d3-4c23-b22f-6277fcb2264c"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "www.samsung.com"
-    client-fingerprint: "edge"
+    servername: "addons.mozilla.org"
     reality-opts:
-      public-key: "jOVKSP-bS9OkILJ8Epz8hadh6qhavCrOiJYeF0NCn0k"
-      short-id: "a73f0410d728c823"
+      public-key: "2XyUS3_ONl5REQ7NiwikdJphAe7oJ61-21zuqnN67y8"
+      short-id: "2e82d7ac"
+    flow: "xtls-rprx-vision"
   - name: "🇪🇪_2"
-    type: trojan
-    server: "45.139.194.60"
+    type: vless
+    server: "188.225.83.133"
     port: 443
-    password: "pjqRC5wfEFhYTyiaKF"
-    sni: "ee-1.tr202604.com"
-    skip-cert-verify: true
+    uuid: "5f1c2e83-d4aa-4f10-81e9-e0ccc018974c"
     udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "xnodtwx.artemida.live"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw"
+      short-id: "a1b2c3d4e5f6a7b8"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: ""
   - name: "🇪🇪_3"
-    type: trojan
-    server: "ee-1.tr202604.com"
+    type: vless
+    server: "45.86.60.102"
+    port: 8443
+    uuid: "a52fd54b-ba4d-4d11-8e00-301e2646cd66"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ee1.vpngold.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "1H1DiBCBB7fpALV71pH1q66ePybBFlVOcxftdlQimQ8"
+      short-id: "385cb18df0892069"
+    flow: "xtls-rprx-vision"
+  - name: "🇪🇪_4"
+    type: vless
+    server: "31.77.68.36"
     port: 443
-    password: "AG4yPUSazj57DBFnKG"
-    sni: "ee-1.tr202604.com"
+    uuid: "7a0348d6-55d3-4c23-b22f-6277fcb2264c"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "addons.mozilla.org"
+    reality-opts:
+      public-key: "Daj7jHuHFEC_LV-Fv1fBSaTSQRM9vfgf_DtjMn9svl0"
+      short-id: "64e4efa1"
+    flow: "xtls-rprx-vision"
+  - name: "🇪🇪_5"
+    type: trojan
+    server: "89.125.13.13"
+    port: 443
+    password: "Lg-BbZtsZ22VjvZPTsZbacbYA25pP-TF"
+    sni: "estoninode.dostupnet.ru"
     skip-cert-verify: true
     udp: true
-  - name: "🇪🇪_4"
+  - name: "🇪🇪_6"
     type: trojan
     server: "45.139.194.80"
     port: 443
@@ -97,36 +132,20 @@ proxies:
     sni: "45.139.194.80"
     skip-cert-verify: true
     udp: true
-  - name: "🇪🇪_5"
-    type: trojan
-    server: "ee1.nngo.cc"
-    port: 443
-    password: "pR320Cwdj7mJ9HKc_UVz-VJyuecT4qdh"
-    sni: "ee1.nngo.cc"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇪🇪_6"
-    type: trojan
-    server: "ee-1.tr202604.com"
-    port: 443
-    password: "pjqRC5wfEFhYTyiaKF"
-    sni: "ee-1.tr202604.com"
-    skip-cert-verify: true
-    udp: true
   - name: "🇪🇪_7"
-    type: trojan
-    server: "checkout.salu.lalibobi.online"
-    port: 443
-    password: "qjQdBgnCuhLVLxYKyBrEWHYtWJYtBjpS"
-    sni: "checkout.salu.lalibobi.online"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇪🇪_8"
     type: trojan
     server: "ee-1.kamediorg.com"
     port: 443
     password: "wQz5G4ybA9eC3BQDkd"
     sni: "ee-1.kamediorg.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇪🇪_8"
+    type: trojan
+    server: "45.139.194.60"
+    port: 443
+    password: "pjqRC5wfEFhYTyiaKF"
+    sni: "ee-1.tr202604.com"
     skip-cert-verify: true
     udp: true
   - name: "🇪🇪_9"
@@ -139,18 +158,42 @@ proxies:
     udp: true
   - name: "🇪🇪_10"
     type: trojan
+    server: "ee-1.kamediorg.com"
+    port: 443
+    password: "GUGm7DHtpSx7SuPyUD"
+    sni: "ee-1.kamediorg.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇪🇪_11"
+    type: trojan
     server: "45.139.194.66"
     port: 443
     password: "AG4yPUSazj57DBFnKG"
     sni: "45.139.194.66"
     skip-cert-verify: true
     udp: true
-  - name: "🇪🇪_11"
+  - name: "🇪🇪_12"
     type: trojan
-    server: "ee-1.kamediorg.com"
+    server: "ee-1.tr202604.com"
     port: 443
-    password: "GUGm7DHtpSx7SuPyUD"
-    sni: "ee-1.kamediorg.com"
+    password: "AG4yPUSazj57DBFnKG"
+    sni: "ee-1.tr202604.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇪🇪_13"
+    type: trojan
+    server: "ee-1.tr202604.com"
+    port: 443
+    password: "pjqRC5wfEFhYTyiaKF"
+    sni: "ee-1.tr202604.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇪🇪_14"
+    type: trojan
+    server: "checkout.salu.lalibobi.online"
+    port: 443
+    password: "qjQdBgnCuhLVLxYKyBrEWHYtWJYtBjpS"
+    sni: "checkout.salu.lalibobi.online"
     skip-cert-verify: true
     udp: true
 
@@ -180,6 +223,9 @@ proxy-groups:
       - "🇪🇪_9"
       - "🇪🇪_10"
       - "🇪🇪_11"
+      - "🇪🇪_12"
+      - "🇪🇪_13"
+      - "🇪🇪_14"
 
 
   - name: "Load Balance"
@@ -199,6 +245,9 @@ proxy-groups:
       - "🇪🇪_9"
       - "🇪🇪_10"
       - "🇪🇪_11"
+      - "🇪🇪_12"
+      - "🇪🇪_13"
+      - "🇪🇪_14"
 
 rules:
   - MATCH,PROXY

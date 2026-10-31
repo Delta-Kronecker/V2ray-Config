@@ -60,20 +60,13 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇲🇨_1"
-    type: vless
-    server: "104.194.148.125"
-    port: 443
-    uuid: "167539f8-88ff-46b3-955c-4c8f7bf0f296"
+  - name: "🇨🇴_1"
+    type: ss
+    server: "149.104.107.41"
+    port: 8090
+    cipher: "aes-256-gcm"
+    password: "PCnnH6SQSnfoS27"
     udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "suffolkprimarycare.uk"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "5Xgf3UO6yZb7gCK3R3GULk8jyNIp7Sr-26YXZfSW71c"
-      short-id: "13975a8e0bd50e7c"
-    flow: "xtls-rprx-vision"
 
 proxy-groups:
   - name: "PROXY"
@@ -90,7 +83,7 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇲🇨_1"
+      - "🇨🇴_1"
 
 
   - name: "Load Balance"
@@ -99,7 +92,7 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇲🇨_1"
+      - "🇨🇴_1"
 
 rules:
   - MATCH,PROXY

@@ -62,20 +62,6 @@ dns:
 proxies:
   - name: "🇧🇬_1"
     type: vless
-    server: "de.soft10.ir"
-    port: 8080
-    uuid: "8be3e9b2-54e6-490c-ad5f-5a372765ffae"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "staticview.microsoft.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "Au0lpWqAPpK0aNuc3Uwcsf7fB1B2w2LXzdC1CVKb1ik"
-      short-id: "a8235bf7eb8fca"
-    flow: "xtls-rprx-vision"
-  - name: "🇧🇬_2"
-    type: vless
     server: "195.123.226.21"
     port: 443
     uuid: "6589c320-db68-43cd-a273-b46299bab355"
@@ -88,6 +74,28 @@ proxies:
       public-key: "rabtI-ymNXBUvYYRwAw8DiR-1pdP7U0WPIaCBHEkgzo"
       short-id: "77bb0d07bddbc832"
     flow: "xtls-rprx-vision"
+  - name: "🇧🇬_2"
+    type: vless
+    server: "93.152.206.97"
+    port: 443
+    uuid: "6db6b948-655f-4f68-a9e7-865050e05b31"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "remote.propaint.cl"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "-zjl4KNE4PFeuthfmw_2JeCbiXAA2kaoYVHODPq-sXQ"
+      short-id: "aca2fc"
+    flow: "xtls-rprx-vision"
+  - name: "🇧🇬_3"
+    type: trojan
+    server: "38.54.27.117"
+    port: 443
+    password: "af4b064a9c39472fb34ad8b113acdc6b"
+    sni: "38.54.27.117"
+    skip-cert-verify: true
+    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -106,6 +114,7 @@ proxy-groups:
     proxies:
       - "🇧🇬_1"
       - "🇧🇬_2"
+      - "🇧🇬_3"
 
 
   - name: "Load Balance"
@@ -116,6 +125,7 @@ proxy-groups:
     proxies:
       - "🇧🇬_1"
       - "🇧🇬_2"
+      - "🇧🇬_3"
 
 rules:
   - MATCH,PROXY

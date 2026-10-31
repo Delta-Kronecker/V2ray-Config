@@ -62,14 +62,14 @@ dns:
 proxies:
   - name: "🇮🇱_1"
     type: vless
-    server: "79.182.39.75"
+    server: "79.182.39.236"
     port: 25362
     uuid: "36fb6650-8a50-42b5-9f66-06538806f32c"
     udp: true
     tls: true
     skip-cert-verify: true
     servername: "www.chip.de"
-    client-fingerprint: "chrome"
+    client-fingerprint: "firefox"
     reality-opts:
       public-key: "hFee7zTreqlv_wccK_8zxN5v23hj9u-DshByvGf-KAA"
       short-id: "23732d14a527990d"
@@ -87,14 +87,6 @@ proxies:
       public-key: "PQjgf7GxBd2tDXf0zl9Z5rTZo7LdsWj0hGZLH-lJ-Uk"
       short-id: "7c"
     flow: "xtls-rprx-vision"
-  - name: "🇮🇱_3"
-    type: trojan
-    server: "64.176.163.182"
-    port: 443
-    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
-    sni: "exploreeducationsectoropportunitiestodayandadvancecareers.com"
-    skip-cert-verify: true
-    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -113,7 +105,6 @@ proxy-groups:
     proxies:
       - "🇮🇱_1"
       - "🇮🇱_2"
-      - "🇮🇱_3"
 
 
   - name: "Load Balance"
@@ -124,7 +115,6 @@ proxy-groups:
     proxies:
       - "🇮🇱_1"
       - "🇮🇱_2"
-      - "🇮🇱_3"
 
 rules:
   - MATCH,PROXY

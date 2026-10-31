@@ -75,10 +75,10 @@ proxies:
       short-id: "4cc9dc65f7770115"
   - name: "🇦🇺_2"
     type: trojan
-    server: "45.63.30.142"
+    server: "193.187.119.41"
     port: 443
-    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
-    sni: "connectwithemployerstohireyouridealteam.com"
+    password: "owreRY1bmquS1WcYN2"
+    sni: "193.187.119.41"
     skip-cert-verify: true
     udp: true
   - name: "🇦🇺_3"
@@ -91,21 +91,13 @@ proxies:
     udp: true
   - name: "🇦🇺_4"
     type: trojan
-    server: "au-1.tr202613.com"
+    server: "103.106.231.55"
     port: 443
-    password: "2ni2H9zUKdDCjREL8Z"
-    sni: "au-1.tr202613.com"
+    password: "3828095943467868160"
+    sni: "closing-longhorn.dolphin109.quest"
     skip-cert-verify: true
     udp: true
   - name: "🇦🇺_5"
-    type: trojan
-    server: "194.195.254.50"
-    port: 443
-    password: "ef81a036-1db9-45ed-a3aa-f932a4750066"
-    sni: "cdn.qchwnd.moe"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇦🇺_6"
     type: trojan
     server: "103.224.212.211"
     port: 443
@@ -113,31 +105,15 @@ proxies:
     sni: "jp-h1.sshub.xyz"
     skip-cert-verify: true
     udp: true
+  - name: "🇦🇺_6"
+    type: trojan
+    server: "los.ydnode.us"
+    port: 443
+    password: "b3845d95-c82e-47f8-b626-0f27d861e8f7"
+    sni: "los.ydnode.us"
+    skip-cert-verify: true
+    udp: true
   - name: "🇦🇺_7"
-    type: trojan
-    server: "193.187.119.41"
-    port: 443
-    password: "owreRY1bmquS1WcYN2"
-    sni: "193.187.119.41"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇦🇺_8"
-    type: trojan
-    server: "103.106.231.55"
-    port: 443
-    password: "3828095943467868160"
-    sni: "closing-longhorn.dolphin109.quest"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇦🇺_9"
-    type: trojan
-    server: "au-3.tr202605.com"
-    port: 443
-    password: "owreRY1bmquS1WcYN2"
-    sni: "au-3.tr202605.com"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇦🇺_10"
     type: trojan
     server: "au-2.tr202604.com"
     port: 443
@@ -145,14 +121,46 @@ proxies:
     sni: "au-2.tr202604.com"
     skip-cert-verify: true
     udp: true
+  - name: "🇦🇺_8"
+    type: trojan
+    server: "au-3.tr202605.com"
+    port: 443
+    password: "owreRY1bmquS1WcYN2"
+    sni: "au-3.tr202605.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇦🇺_9"
+    type: trojan
+    server: "45.63.30.142"
+    port: 443
+    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
+    sni: "connectwithemployerstohireyouridealteam.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇦🇺_10"
+    type: trojan
+    server: "194.195.254.50"
+    port: 443
+    password: "ef81a036-1db9-45ed-a3aa-f932a4750066"
+    sni: "cdn.qchwnd.moe"
+    skip-cert-verify: true
+    udp: true
   - name: "🇦🇺_11"
+    type: trojan
+    server: "au-1.tr202613.com"
+    port: 443
+    password: "2ni2H9zUKdDCjREL8Z"
+    sni: "au-1.tr202613.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇦🇺_12"
     type: ss
     server: "103.11.76.248"
     port: 28679
     cipher: "2022-blake3-aes-128-gcm"
     password: "NzJlOTQ5NWYtM2ZkYi00Cg=="
     udp: true
-  - name: "🇦🇺_12"
+  - name: "🇦🇺_13"
     type: ss
     server: "103.11.76.248"
     port: 28679
@@ -187,6 +195,7 @@ proxy-groups:
       - "🇦🇺_10"
       - "🇦🇺_11"
       - "🇦🇺_12"
+      - "🇦🇺_13"
 
 
   - name: "Load Balance"
@@ -207,6 +216,7 @@ proxy-groups:
       - "🇦🇺_10"
       - "🇦🇺_11"
       - "🇦🇺_12"
+      - "🇦🇺_13"
 
 rules:
   - MATCH,PROXY

@@ -76,14 +76,6 @@ proxies:
     network: grpc
     grpc-opts:
       grpc-service-name: "GunService"
-  - name: "🇩🇰_2"
-    type: vmess
-    server: "212.80.8.184"
-    port: 443
-    uuid: "9ed79305-5e4a-4977-92fb-014db8b0a62f"
-    alterId: 0
-    cipher: "auto"
-    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -101,7 +93,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇩🇰_1"
-      - "🇩🇰_2"
 
 
   - name: "Load Balance"
@@ -111,7 +102,6 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇩🇰_1"
-      - "🇩🇰_2"
 
 rules:
   - MATCH,PROXY

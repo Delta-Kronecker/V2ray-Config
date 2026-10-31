@@ -68,10 +68,10 @@ proxies:
     udp: true
   - name: "🇻🇳_2"
     type: trojan
-    server: "103.9.77.6"
+    server: "103.72.96.55"
     port: 443
-    password: "c0f32867-001f-43f6-a0cc-9fd8730e5430"
-    sni: "Free.Shecan.Ir"
+    password: "c95357eb-2869-4511-8940-f0dc5e1ec9b1"
+    sni: "hanoiidc2.5gsieutocdo.com"
     skip-cert-verify: true
     udp: true
   - name: "🇻🇳_3"
@@ -91,14 +91,6 @@ proxies:
     skip-cert-verify: true
     udp: true
   - name: "🇻🇳_5"
-    type: trojan
-    server: "103.72.96.55"
-    port: 443
-    password: "c95357eb-2869-4511-8940-f0dc5e1ec9b1"
-    sni: "hanoiidc2.5gsieutocdo.com"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇻🇳_6"
     type: trojan
     server: "36.50.134.29"
     port: 443
@@ -127,7 +119,6 @@ proxy-groups:
       - "🇻🇳_3"
       - "🇻🇳_4"
       - "🇻🇳_5"
-      - "🇻🇳_6"
 
 
   - name: "Load Balance"
@@ -141,7 +132,6 @@ proxy-groups:
       - "🇻🇳_3"
       - "🇻🇳_4"
       - "🇻🇳_5"
-      - "🇻🇳_6"
 
 rules:
   - MATCH,PROXY

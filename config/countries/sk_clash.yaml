@@ -62,13 +62,15 @@ dns:
 proxies:
   - name: "🇸🇰_1"
     type: vless
-    server: "80.243.228.98"
-    port: 2085
-    uuid: "1b60e6e9-65ef-4f7c-8c9c-758f42d4c531"
+    server: "130.49.162.137"
+    port: 443
+    uuid: "689a62e4-37e7-41de-9e6a-f2a56368c9e2"
     udp: true
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "vless"
+    tls: true
+    skip-cert-verify: true
+    servername: "sk3.speedtestinternet.link"
+    client-fingerprint: "firefox"
+    flow: "xtls-rprx-vision"
 
 proxy-groups:
   - name: "PROXY"
