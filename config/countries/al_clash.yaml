@@ -61,20 +61,54 @@ dns:
 
 proxies:
   - name: "🇦🇱_1"
-    type: ss
-    server: "alb.rvpn.app"
-    port: 8388
-    cipher: "chacha20-ietf-poly1305"
-    password: "hTTg7lwQMzpaF7KXpY3A8w"
+    type: vless
+    server: "103.167.234.179"
+    port: 443
+    uuid: "8007dda2-aed2-4514-8299-6e3edbdb015b"
     udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "al3.magazinnarubeva.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "trN5x0amt2YuVzF2vZnK294YBAuh_zl5QkZjPyWz-TI"
+      short-id: "8718c58d3d51db59"
+    flow: "xtls-rprx-vision"
   - name: "🇦🇱_2"
+    type: vless
+    server: "151.123.187.198"
+    port: 443
+    uuid: "b24ad12f-f6ce-4f0b-a264-d58a76104026"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "al2.magazinnarubeva.ru"
+    reality-opts:
+      public-key: "trN5x0amt2YuVzF2vZnK294YBAuh_zl5QkZjPyWz-TI"
+      short-id: "8718c58d3d51db59"
+    flow: "xtls-rprx-vision"
+  - name: "🇦🇱_3"
+    type: vless
+    server: "157.22.240.20"
+    port: 443
+    uuid: "f28ce4eb-62cd-45f5-b3b3-be1c1a95e335"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "yandex.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "T1BWBw3lq9G1LiQ7eQSPfdNQic7bUMEbdFNJBewAwB8"
+      short-id: "6ad3c0f1e9b2478a"
+    flow: "xtls-rprx-vision"
+  - name: "🇦🇱_4"
     type: ss
     server: "130.49.189.158"
     port: 43558
     cipher: "chacha20-ietf-poly1305"
     password: "lsu1v/3iNERwDDVwxCu5033KCUqQOoElYQul63kmqJ8="
     udp: true
-  - name: "🇦🇱_3"
+  - name: "🇦🇱_5"
     type: ss
     server: "130.49.189.158"
     port: 43558
@@ -100,6 +134,8 @@ proxy-groups:
       - "🇦🇱_1"
       - "🇦🇱_2"
       - "🇦🇱_3"
+      - "🇦🇱_4"
+      - "🇦🇱_5"
 
 
   - name: "Load Balance"
@@ -111,6 +147,8 @@ proxy-groups:
       - "🇦🇱_1"
       - "🇦🇱_2"
       - "🇦🇱_3"
+      - "🇦🇱_4"
+      - "🇦🇱_5"
 
 rules:
   - MATCH,PROXY

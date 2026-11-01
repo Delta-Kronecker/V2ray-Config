@@ -62,23 +62,7 @@ dns:
 proxies:
   - name: "🇧🇷_1"
     type: trojan
-    server: "216.238.104.154"
-    port: 443
-    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
-    sni: "findtemporaryworkandfreelancerprojectsonlineplatform.com"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇧🇷_2"
-    type: trojan
     server: "216.238.116.204"
-    port: 39533
-    password: "5t6i121em5lkmsmk"
-    sni: "br001.zestapp778.com"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇧🇷_3"
-    type: trojan
-    server: "br001.zestapp778.com"
     port: 39533
     password: "5t6i121em5lkmsmk"
     sni: "br001.zestapp778.com"
@@ -101,8 +85,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇧🇷_1"
-      - "🇧🇷_2"
-      - "🇧🇷_3"
 
 
   - name: "Load Balance"
@@ -112,8 +94,6 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇧🇷_1"
-      - "🇧🇷_2"
-      - "🇧🇷_3"
 
 rules:
   - MATCH,PROXY

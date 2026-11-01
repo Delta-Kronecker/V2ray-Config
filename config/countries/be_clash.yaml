@@ -60,20 +60,14 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇲🇩_1"
-    type: vless
-    server: "5.181.158.193"
-    port: 443
-    uuid: "1c8f7130-8c1a-4949-831d-1d45b39c795b"
+  - name: "🇧🇪_1"
+    type: vmess
+    server: "dog-hk.kunlun01dns.com"
+    port: 21019
+    uuid: "9464ca40-dd75-3742-a628-d931a9f413b2"
+    alterId: 0
+    cipher: "auto"
     udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "svoboda18.bystriynet.online"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "TS4XYds5zXG3-cU_zgA3jE6zoDc-Q1WXMQnVj4bdRhA"
-      short-id: "7c41ea9b53d618af"
-    flow: "xtls-rprx-vision"
 
 proxy-groups:
   - name: "PROXY"
@@ -90,7 +84,7 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇲🇩_1"
+      - "🇧🇪_1"
 
 
   - name: "Load Balance"
@@ -99,7 +93,7 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇲🇩_1"
+      - "🇧🇪_1"
 
 rules:
   - MATCH,PROXY

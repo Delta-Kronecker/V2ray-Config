@@ -62,26 +62,26 @@ dns:
 proxies:
   - name: "🇮🇪_1"
     type: trojan
-    server: "54.216.163.119"
-    port: 443
-    password: "PD07395842"
-    sni: "above-rabbit.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇮🇪_2"
-    type: trojan
     server: "52.208.138.36"
     port: 443
     password: "IQ68037294"
     sni: "vast-turkey.rooster465.autos"
     skip-cert-verify: true
     udp: true
+  - name: "🇮🇪_2"
+    type: trojan
+    server: "54.170.212.206"
+    port: 443
+    password: "ND91608427"
+    sni: "skilled-lioness.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
   - name: "🇮🇪_3"
     type: trojan
-    server: "54.216.163.119"
+    server: "52.208.138.36"
     port: 443
-    password: "WG39087154"
-    sni: "above-rabbit.rooster465.autos"
+    password: "ON38567014"
+    sni: "vast-turkey.rooster465.autos"
     skip-cert-verify: true
     udp: true
   - name: "🇮🇪_4"
@@ -90,14 +90,6 @@ proxies:
     port: 443
     password: "IQ68037294"
     sni: "moving-wren.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇮🇪_5"
-    type: trojan
-    server: "54.170.212.206"
-    port: 443
-    password: "ND91608427"
-    sni: "skilled-lioness.rooster465.autos"
     skip-cert-verify: true
     udp: true
 
@@ -120,7 +112,6 @@ proxy-groups:
       - "🇮🇪_2"
       - "🇮🇪_3"
       - "🇮🇪_4"
-      - "🇮🇪_5"
 
 
   - name: "Load Balance"
@@ -133,7 +124,6 @@ proxy-groups:
       - "🇮🇪_2"
       - "🇮🇪_3"
       - "🇮🇪_4"
-      - "🇮🇪_5"
 
 rules:
   - MATCH,PROXY

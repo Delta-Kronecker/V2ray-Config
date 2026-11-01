@@ -74,6 +74,30 @@ proxies:
       public-key: "MiQ5B4j6In71lWvCi0vO_DkVSDb7sii34bh5efBMswk"
       short-id: "3c032a7e"
     flow: "xtls-rprx-vision"
+  - name: "🇹🇭_2"
+    type: trojan
+    server: "38.60.200.237"
+    port: 33079
+    password: "5t6i121em5lkmsmk"
+    sni: "th001.zestapp778.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇹🇭_3"
+    type: trojan
+    server: "th001.zestapp778.com"
+    port: 33079
+    password: "5t6i121em5lkmsmk"
+    sni: "th001.zestapp778.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇹🇭_4"
+    type: vmess
+    server: "119.46.51.45"
+    port: 37515
+    uuid: "9b76bc31-17a5-4454-934a-8d5fb602cd70"
+    alterId: 0
+    cipher: "auto"
+    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -91,6 +115,9 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇹🇭_1"
+      - "🇹🇭_2"
+      - "🇹🇭_3"
+      - "🇹🇭_4"
 
 
   - name: "Load Balance"
@@ -100,6 +127,9 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇹🇭_1"
+      - "🇹🇭_2"
+      - "🇹🇭_3"
+      - "🇹🇭_4"
 
 rules:
   - MATCH,PROXY

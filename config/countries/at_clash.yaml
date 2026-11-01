@@ -62,29 +62,18 @@ dns:
 proxies:
   - name: "🇦🇹_1"
     type: vless
-    server: "193.8.215.116"
-    port: 8443
-    uuid: "706bce83-91db-4260-b175-cba29145cd56"
+    server: "66.90.106.228"
+    port: 443
+    uuid: "8007dda2-aed2-4514-8299-6e3edbdb015b"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "aezau1.uni-plan.com"
+    servername: "au1.wolffast.net"
     reality-opts:
-      public-key: "HhT-m2xbI4X_o99Hzkh40v-r32sIydYNCbA7Bnqh7AY"
-      short-id: "8f0f92607e5b353c"
+      public-key: "hyOYRfDSIYyqALQt3N2H0RjK8gbV1JvPTkNACC4PJF8"
+      short-id: "8718c58d3d51db59"
     flow: "xtls-rprx-vision"
   - name: "🇦🇹_2"
-    type: vless
-    server: "212.113.117.172"
-    port: 443
-    uuid: "2f7aeef7-6b91-48e6-a44c-304b65a0442b"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "de1.duck-proxy.com"
-    client-fingerprint: "chrome"
-    flow: "xtls-rprx-vision"
-  - name: "🇦🇹_3"
     type: trojan
     server: "86.106.119.23"
     port: 443
@@ -92,13 +81,32 @@ proxies:
     sni: "gr.freeguard.org"
     skip-cert-verify: true
     udp: true
+  - name: "🇦🇹_3"
+    type: ss
+    server: "130.195.222.215"
+    port: 443
+    cipher: "none"
+    password: "https://t.me/WangCai2🇨🇳"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
   - name: "🇦🇹_4"
     type: ss
-    server: "82.110.60.9"
-    port: 19999
-    cipher: "aes-256-gcm"
-    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
+    server: "130.195.222.215"
+    port: 443
+    cipher: "none"
+    password: "https://t.me/WangCai2🇨🇳"
     udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
   - name: "🇦🇹_5"
     type: ss
     server: "130.195.222.215"
@@ -112,39 +120,6 @@ proxies:
       path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed=2560"
       host: "woshinidie-et3.pages.dev"
       tls: true
-  - name: "🇦🇹_6"
-    type: ss
-    server: "130.195.222.215"
-    port: 443
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
-  - name: "🇦🇹_7"
-    type: ss
-    server: "130.195.222.215"
-    port: 443
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
-  - name: "🇦🇹_8"
-    type: ss
-    server: "82.110.60.9"
-    port: 19999
-    cipher: "aes-256-gcm"
-    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
-    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -166,9 +141,6 @@ proxy-groups:
       - "🇦🇹_3"
       - "🇦🇹_4"
       - "🇦🇹_5"
-      - "🇦🇹_6"
-      - "🇦🇹_7"
-      - "🇦🇹_8"
 
 
   - name: "Load Balance"
@@ -182,9 +154,6 @@ proxy-groups:
       - "🇦🇹_3"
       - "🇦🇹_4"
       - "🇦🇹_5"
-      - "🇦🇹_6"
-      - "🇦🇹_7"
-      - "🇦🇹_8"
 
 rules:
   - MATCH,PROXY
