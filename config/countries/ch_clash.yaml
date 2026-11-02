@@ -62,18 +62,29 @@ dns:
 proxies:
   - name: "🇨🇭_1"
     type: vless
-    server: "179.43.138.70"
+    server: "45.90.59.15"
     port: 443
-    uuid: "e69fd81c-c6f4-4998-afb8-42e771f2d978"
+    uuid: "3950b45e-740d-4dca-ac95-505ec8534592"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "ethz.ch"
-    client-fingerprint: "chrome"
+    servername: "www.cloudflare.com"
+    client-fingerprint: "firefox"
     reality-opts:
-      public-key: "U682Pn1N94W72DLrimGwWyePnEeeceKC7LojBtvFgSs"
-      short-id: "82ae"
+      public-key: "P7S4UPFlQbmiBr4txyy8NZIMTrmO3UdxyH16WBU-YzY"
+      short-id: "19253fae84102271"
+    flow: "xtls-rprx-vision"
   - name: "🇨🇭_2"
+    type: vless
+    server: "179.43.187.67"
+    port: 443
+    uuid: "9dd38d60-e683-47c6-bd53-d71bdfee78f3"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "portal.mavexa.ir"
+    client-fingerprint: "chrome"
+  - name: "🇨🇭_3"
     type: vless
     server: "45.90.57.119"
     port: 8443
@@ -87,40 +98,20 @@ proxies:
       public-key: "L6DeK_a25_ZjPKFOrQLoCPWuXi5KCIH_EcRpARmCwkI"
       short-id: "16036bbef04d0509"
     flow: "xtls-rprx-vision"
-  - name: "🇨🇭_3"
-    type: vless
-    server: "45.90.59.15"
-    port: 443
-    uuid: "3950b45e-740d-4dca-ac95-505ec8534592"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.cloudflare.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "P7S4UPFlQbmiBr4txyy8NZIMTrmO3UdxyH16WBU-YzY"
-      short-id: "19253fae84102271"
-    flow: "xtls-rprx-vision"
   - name: "🇨🇭_4"
-    type: vless
-    server: "179.43.170.84"
-    port: 443
-    uuid: "8007dda2-aed2-4514-8299-6e3edbdb015b"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "si2.greenzone12.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "hyOYRfDSIYyqALQt3N2H0RjK8gbV1JvPTkNACC4PJF8"
-      short-id: "8718c58d3d51db59"
-    flow: "xtls-rprx-vision"
-  - name: "🇨🇭_5"
     type: trojan
     server: "84.234.29.238"
     port: 443
     password: "Masir_Sefid"
     sni: "store.steampowered.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇨🇭_5"
+    type: trojan
+    server: "83.228.224.161"
+    port: 443
+    password: "SoftNetConnect"
+    sni: "83.228.224.161"
     skip-cert-verify: true
     udp: true
 

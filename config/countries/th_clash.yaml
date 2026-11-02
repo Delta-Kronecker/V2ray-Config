@@ -76,21 +76,13 @@ proxies:
     flow: "xtls-rprx-vision"
   - name: "🇹🇭_2"
     type: trojan
-    server: "38.60.200.237"
-    port: 33079
-    password: "5t6i121em5lkmsmk"
-    sni: "th001.zestapp778.com"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇹🇭_3"
-    type: trojan
     server: "th001.zestapp778.com"
     port: 33079
     password: "5t6i121em5lkmsmk"
     sni: "th001.zestapp778.com"
     skip-cert-verify: true
     udp: true
-  - name: "🇹🇭_4"
+  - name: "🇹🇭_3"
     type: vmess
     server: "119.46.51.45"
     port: 37515
@@ -117,7 +109,6 @@ proxy-groups:
       - "🇹🇭_1"
       - "🇹🇭_2"
       - "🇹🇭_3"
-      - "🇹🇭_4"
 
 
   - name: "Load Balance"
@@ -129,7 +120,6 @@ proxy-groups:
       - "🇹🇭_1"
       - "🇹🇭_2"
       - "🇹🇭_3"
-      - "🇹🇭_4"
 
 rules:
   - MATCH,PROXY

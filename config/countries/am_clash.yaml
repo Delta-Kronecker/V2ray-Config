@@ -73,26 +73,6 @@ proxies:
     reality-opts:
       public-key: "nWQ7b9l9X6N3PrXLgIzOvMM8iSYrqjVHEb9ikWxqYSg"
       short-id: "0e"
-  - name: "🇦🇲_2"
-    type: vless
-    server: "179.253.179.109"
-    port: 63080
-    uuid: "e3aa3d22-a95e-407b-aacc-d855b90a5d70"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "de2.derevohom.xyz"
-    client-fingerprint: "firefox"
-  - name: "🇦🇲_3"
-    type: vless
-    server: "179.253.179.109"
-    port: 63053
-    uuid: "e3aa3d22-a95e-407b-aacc-d855b90a5d70"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "de2.derevohom.xyz"
-    client-fingerprint: "firefox"
 
 proxy-groups:
   - name: "PROXY"
@@ -110,8 +90,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇦🇲_1"
-      - "🇦🇲_2"
-      - "🇦🇲_3"
 
 
   - name: "Load Balance"
@@ -121,8 +99,6 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇦🇲_1"
-      - "🇦🇲_2"
-      - "🇦🇲_3"
 
 rules:
   - MATCH,PROXY

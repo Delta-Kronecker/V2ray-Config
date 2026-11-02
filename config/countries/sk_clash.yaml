@@ -60,14 +60,20 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇧🇪_1"
-    type: vmess
-    server: "dog-hk.kunlun01dns.com"
-    port: 21019
-    uuid: "9464ca40-dd75-3742-a628-d931a9f413b2"
-    alterId: 0
-    cipher: "auto"
+  - name: "🇸🇰_1"
+    type: vless
+    server: "13.143.190.55"
+    port: 443
+    uuid: "62754c5f-9940-41b9-a4c4-3caf42f27208"
     udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "sk.wistfalls.cc"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "sCGcKgedjcq3dCSiMojk2io89B-x1arRcEMfOjigvHk"
+      short-id: "2f61487baea67fdd"
+    flow: "xtls-rprx-vision"
 
 proxy-groups:
   - name: "PROXY"
@@ -84,7 +90,7 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇧🇪_1"
+      - "🇸🇰_1"
 
 
   - name: "Load Balance"
@@ -93,7 +99,7 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇧🇪_1"
+      - "🇸🇰_1"
 
 rules:
   - MATCH,PROXY
