@@ -61,14 +61,6 @@ dns:
 
 proxies:
   - name: "🇵🇭_1"
-    type: trojan
-    server: "ph001.zestapp778.com"
-    port: 46298
-    password: "5t6i121em5lkmsmk"
-    sni: "ph001.zestapp778.com"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇵🇭_2"
     type: ss
     server: "149.104.109.252"
     port: 8882
@@ -92,7 +84,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇵🇭_1"
-      - "🇵🇭_2"
 
 
   - name: "Load Balance"
@@ -102,7 +93,6 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇵🇭_1"
-      - "🇵🇭_2"
 
 rules:
   - MATCH,PROXY

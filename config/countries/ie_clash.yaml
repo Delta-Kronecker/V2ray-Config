@@ -62,14 +62,14 @@ dns:
 proxies:
   - name: "🇮🇪_1"
     type: vless
-    server: "qtir1.dnetsolutions.ru"
+    server: "195.123.189.221"
     port: 443
     uuid: "63959ed7-d26f-48dd-8c7b-ebdb6ea68535"
     udp: true
     tls: true
     skip-cert-verify: true
     servername: "max.ru"
-    client-fingerprint: "chrome"
+    client-fingerprint: "firefox"
     reality-opts:
       public-key: "9X-tgXeFaqxURY0nGxFNdz9bpNIo7DTXHoWXpBqiOj0"
       short-id: "cbc638acc8ac87"
@@ -78,42 +78,27 @@ proxies:
       grpc-service-name: "grpc-90"
   - name: "🇮🇪_2"
     type: trojan
-    server: "52.208.138.36"
-    port: 443
-    password: "ON38567014"
-    sni: "vast-turkey.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇮🇪_3"
-    type: trojan
-    server: "54.170.212.206"
-    port: 443
-    password: "ND91608427"
-    sni: "skilled-lioness.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇮🇪_4"
-    type: trojan
-    server: "52.208.138.36"
-    port: 443
-    password: "IQ68037294"
-    sni: "vast-turkey.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇮🇪_5"
-    type: trojan
     server: "34.253.182.161"
     port: 443
     password: "IQ68037294"
     sni: "moving-wren.rooster465.autos"
     skip-cert-verify: true
     udp: true
-  - name: "🇮🇪_6"
-    type: ss
-    server: "52.138.233.48"
+  - name: "🇮🇪_3"
+    type: trojan
+    server: "52.208.138.36"
     port: 443
-    cipher: "chacha20-ietf-poly1305"
-    password: "4ivh6F6XFBD12gEg"
+    password: "ON38567014"
+    sni: "vast-turkey.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇮🇪_4"
+    type: trojan
+    server: "54.170.212.206"
+    port: 443
+    password: "ND91608427"
+    sni: "skilled-lioness.rooster465.autos"
+    skip-cert-verify: true
     udp: true
 
 proxy-groups:
@@ -135,8 +120,6 @@ proxy-groups:
       - "🇮🇪_2"
       - "🇮🇪_3"
       - "🇮🇪_4"
-      - "🇮🇪_5"
-      - "🇮🇪_6"
 
 
   - name: "Load Balance"
@@ -149,8 +132,6 @@ proxy-groups:
       - "🇮🇪_2"
       - "🇮🇪_3"
       - "🇮🇪_4"
-      - "🇮🇪_5"
-      - "🇮🇪_6"
 
 rules:
   - MATCH,PROXY

@@ -60,7 +60,31 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "@DeltaKroneckerGithub_1513"
+  - name: "@DeltaKroneckerGithub_1447"
+    type: trojan
+    server: "127.0.0.1"
+    port: 40443
+    password: "gHQP0D7D15"
+    sni: "marvdasht.phonecomparisonblog.org"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+  - name: "@DeltaKroneckerGithub_1592"
+    type: trojan
+    server: "127.0.0.1"
+    port: 40443
+    password: "8deb189a-3aed-4865-843b-b72dae954c46"
+    sni: "api.85s.me"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "api.85s.me"
+  - name: "@DeltaKroneckerGithub_1608"
     type: trojan
     server: "127.0.0.1"
     port: 40443
@@ -71,7 +95,31 @@ proxies:
     network: ws
     ws-opts:
       path: "/api"
-  - name: "@DeltaKroneckerGithub_1550"
+  - name: "@DeltaKroneckerGithub_1674"
+    type: trojan
+    server: "127.0.0.1"
+    port: 40443
+    password: "GZOof2R1ej4yML1NxajR2frGQ"
+    sni: "HL-FREEDOM-1.UNDEF.NETWORK"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/f2fc2a1f"
+      headers:
+        Host: "hl-freedom-1.undef.network"
+  - name: "@DeltaKroneckerGithub_1802"
+    type: trojan
+    server: "127.0.0.1"
+    port: 40443
+    password: "trojan"
+    sni: "longwanghen.pages.dev"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+  - name: "@DeltaKroneckerGithub_1825"
     type: trojan
     server: "127.0.0.1"
     port: 40443
@@ -84,30 +132,32 @@ proxies:
       path: "/"
       headers:
         Host: "marvdasht.phonecomparisonblog.org"
-  - name: "@DeltaKroneckerGithub_2188"
+  - name: "@DeltaKroneckerGithub_2051"
     type: trojan
     server: "127.0.0.1"
     port: 40443
-    password: "7LBbob9IutFObLxLf9Svc1HaV"
-    sni: "hl-freedom-1.undef.network"
-    skip-cert-verify: true
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/f2fc2a1f"
-      headers:
-        Host: "hl-freedom-1.undef.network"
-  - name: "@DeltaKroneckerGithub_2264"
-    type: trojan
-    server: "127.0.0.1"
-    port: 40443
-    password: "gHQP0D7D15"
-    sni: "marvdasht.phonecomparisonblog.org"
+    password: "8deb189a-3aed-4865-843b-b72dae954c46"
+    sni: "api.85s.me"
     skip-cert-verify: true
     udp: true
     network: ws
     ws-opts:
       path: "/"
+      headers:
+        Host: "api.85s.me"
+  - name: "@DeltaKroneckerGithub_2067"
+    type: trojan
+    server: "127.0.0.1"
+    port: 40443
+    password: "8deb189a-3aed-4865-843b-b72dae954c46"
+    sni: "api.85s.me"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "api.85s.me"
 
 proxy-groups:
   - name: "PROXY"
@@ -124,10 +174,14 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "@DeltaKroneckerGithub_1513"
-      - "@DeltaKroneckerGithub_1550"
-      - "@DeltaKroneckerGithub_2188"
-      - "@DeltaKroneckerGithub_2264"
+      - "@DeltaKroneckerGithub_1447"
+      - "@DeltaKroneckerGithub_1592"
+      - "@DeltaKroneckerGithub_1608"
+      - "@DeltaKroneckerGithub_1674"
+      - "@DeltaKroneckerGithub_1802"
+      - "@DeltaKroneckerGithub_1825"
+      - "@DeltaKroneckerGithub_2051"
+      - "@DeltaKroneckerGithub_2067"
 
 
   - name: "Load Balance"
@@ -136,10 +190,14 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "@DeltaKroneckerGithub_1513"
-      - "@DeltaKroneckerGithub_1550"
-      - "@DeltaKroneckerGithub_2188"
-      - "@DeltaKroneckerGithub_2264"
+      - "@DeltaKroneckerGithub_1447"
+      - "@DeltaKroneckerGithub_1592"
+      - "@DeltaKroneckerGithub_1608"
+      - "@DeltaKroneckerGithub_1674"
+      - "@DeltaKroneckerGithub_1802"
+      - "@DeltaKroneckerGithub_1825"
+      - "@DeltaKroneckerGithub_2051"
+      - "@DeltaKroneckerGithub_2067"
 
 rules:
   - MATCH,PROXY

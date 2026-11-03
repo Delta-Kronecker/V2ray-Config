@@ -61,20 +61,6 @@ dns:
 
 proxies:
   - name: "🇦🇹_1"
-    type: vless
-    server: "217.198.6.206"
-    port: 443
-    uuid: "7ad63b26-bf70-4872-8fab-ebaf73a1e19d"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "patch-51.topp-con.xyz"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "LEziyH-E4k9hehGRJkVi1FadVObB_NZJy8U7oUCVWXU"
-      short-id: "b9120cd53ffd7bba"
-    flow: "xtls-rprx-vision"
-  - name: "🇦🇹_2"
     type: trojan
     server: "86.106.119.23"
     port: 443
@@ -82,13 +68,26 @@ proxies:
     sni: "gr.freeguard.org"
     skip-cert-verify: true
     udp: true
-  - name: "🇦🇹_3"
+  - name: "🇦🇹_2"
     type: ss
     server: "152.53.1.57"
     port: 8388
     cipher: "chacha20-ietf-poly1305"
     password: "AdawffFMHymlasRb0VOP3HFf7sTG5sJx"
     udp: true
+  - name: "🇦🇹_3"
+    type: ss
+    server: "130.195.222.215"
+    port: 443
+    cipher: "none"
+    password: "https://t.me/WangCai2🇨🇳"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
   - name: "🇦🇹_4"
     type: ss
     server: "130.195.222.215"
@@ -99,7 +98,7 @@ proxies:
     plugin: v2ray-plugin
     plugin-opts:
       mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
+      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed=2560"
       host: "woshinidie-et3.pages.dev"
       tls: true
   - name: "🇦🇹_5"
@@ -112,23 +111,10 @@ proxies:
     plugin: v2ray-plugin
     plugin-opts:
       mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed=2560"
+      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
       host: "woshinidie-et3.pages.dev"
       tls: true
   - name: "🇦🇹_6"
-    type: ss
-    server: "130.195.222.215"
-    port: 443
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
-  - name: "🇦🇹_7"
     type: ss
     server: "152.53.1.57"
     port: 8388
@@ -157,7 +143,6 @@ proxy-groups:
       - "🇦🇹_4"
       - "🇦🇹_5"
       - "🇦🇹_6"
-      - "🇦🇹_7"
 
 
   - name: "Load Balance"
@@ -172,7 +157,6 @@ proxy-groups:
       - "🇦🇹_4"
       - "🇦🇹_5"
       - "🇦🇹_6"
-      - "🇦🇹_7"
 
 rules:
   - MATCH,PROXY
