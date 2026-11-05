@@ -62,18 +62,53 @@ dns:
 proxies:
   - name: "🇦🇱_1"
     type: vless
-    server: "157.22.240.20"
+    server: "nl4.japancase.site"
     port: 443
-    uuid: "f28ce4eb-62cd-45f5-b3b3-be1c1a95e335"
+    uuid: "db80088c-32a1-4cb8-a907-0f3cb7844152"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "yandex.ru"
+    servername: "nl4.japancase.site"
+    client-fingerprint: "ios"
+    reality-opts:
+      public-key: "lXCVb-MY5dJqMUw6xvkuPbi0idyfF-OkSY_6GpOovVI"
+      short-id: "9f05c35b73b47d53"
+    flow: "xtls-rprx-vision"
+  - name: "🇦🇱_2"
+    type: vless
+    server: "147.45.221.5"
+    port: 443
+    uuid: "db80088c-32a1-4cb8-a907-0f3cb7844152"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "nl4.japancase.site"
     client-fingerprint: "firefox"
     reality-opts:
-      public-key: "T1BWBw3lq9G1LiQ7eQSPfdNQic7bUMEbdFNJBewAwB8"
-      short-id: "6ad3c0f1e9b2478a"
+      public-key: "lXCVb-MY5dJqMUw6xvkuPbi0idyfF-OkSY_6GpOovVI"
+      short-id: "9f05c35b73b47d53"
     flow: "xtls-rprx-vision"
+  - name: "🇦🇱_3"
+    type: ss
+    server: "dns22.m3hrzd.ir"
+    port: 1348
+    cipher: "chacha20-ietf-poly1305"
+    password: "6Gzfdmd2cvye1qyKoub9E7eWijMDR2lK"
+    udp: true
+  - name: "🇦🇱_4"
+    type: ss
+    server: "130.49.189.158"
+    port: 43558
+    cipher: "chacha20-ietf-poly1305"
+    password: "yZiPrr484OdSYcivDUv+UIygwvyW+HQYytKsIgTw9tU="
+    udp: true
+  - name: "🇦🇱_5"
+    type: ss
+    server: "dns22.m3hrzd.ir"
+    port: 1348
+    cipher: "chacha20-ietf-poly1305"
+    password: "6Gzfdmd2cvye1qyKoub9E7eWijMDR2lK"
+    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -91,6 +126,10 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇦🇱_1"
+      - "🇦🇱_2"
+      - "🇦🇱_3"
+      - "🇦🇱_4"
+      - "🇦🇱_5"
 
 
   - name: "Load Balance"
@@ -100,6 +139,10 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇦🇱_1"
+      - "🇦🇱_2"
+      - "🇦🇱_3"
+      - "🇦🇱_4"
+      - "🇦🇱_5"
 
 rules:
   - MATCH,PROXY

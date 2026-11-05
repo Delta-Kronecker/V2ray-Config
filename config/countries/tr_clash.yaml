@@ -62,31 +62,18 @@ dns:
 proxies:
   - name: "🇹🇷_1"
     type: vless
-    server: "45.74.158.57"
-    port: 2218
+    server: "217.11.164.183"
+    port: 2112
     uuid: "4476ca08-bdb4-41c1-bae4-a960bdb28c19"
     udp: true
     tls: true
     skip-cert-verify: true
     servername: "www.apple.com"
+    client-fingerprint: "chrome"
     reality-opts:
       public-key: "bWIOrQAqUWCrz6BGdwaG42xaV-HEo8sUdGqVktUh0XU"
-      short-id: "cc80ef"
+      short-id: "06"
   - name: "🇹🇷_2"
-    type: vless
-    server: "153.56.210.61"
-    port: 443
-    uuid: "0de1d303-d7de-0001-8679-c4cb67e2e2cc"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "amd.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "WWeAHWUVD-phmnjNJ823cer0c4CMIbEs08AhsuEZmDc"
-      short-id: "a696de84963656de"
-    flow: "xtls-rprx-vision"
-  - name: "🇹🇷_3"
     type: vless
     server: "217.11.164.183"
     port: 2112
@@ -99,7 +86,7 @@ proxies:
     reality-opts:
       public-key: "bWIOrQAqUWCrz6BGdwaG42xaV-HEo8sUdGqVktUh0XU"
       short-id: "68c328105c"
-  - name: "🇹🇷_4"
+  - name: "🇹🇷_3"
     type: vless
     server: "217.11.164.183"
     port: 2102
@@ -112,7 +99,46 @@ proxies:
     reality-opts:
       public-key: "bWIOrQAqUWCrz6BGdwaG42xaV-HEo8sUdGqVktUh0XU"
       short-id: "68c328105c"
+  - name: "🇹🇷_4"
+    type: vless
+    server: "81.177.215.220"
+    port: 443
+    uuid: "db80088c-32a1-4cb8-a907-0f3cb7844152"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "tr3.japancase.site"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "B5Rbu23-J_PmzD6d-5ra_pxKaXd1MeRf6IT4jT_6PEM"
+      short-id: "071c3bd86b0c3c73"
+    flow: "xtls-rprx-vision"
   - name: "🇹🇷_5"
+    type: vless
+    server: "217.11.164.183"
+    port: 2120
+    uuid: "4476ca08-bdb4-41c1-bae4-a960bdb28c19"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.apple.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "bWIOrQAqUWCrz6BGdwaG42xaV-HEo8sUdGqVktUh0XU"
+      short-id: "ddaaf1630788aeac"
+  - name: "🇹🇷_6"
+    type: vless
+    server: "45.74.158.57"
+    port: 2218
+    uuid: "4476ca08-bdb4-41c1-bae4-a960bdb28c19"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.apple.com"
+    reality-opts:
+      public-key: "bWIOrQAqUWCrz6BGdwaG42xaV-HEo8sUdGqVktUh0XU"
+      short-id: "cc80ef"
+  - name: "🇹🇷_7"
     type: vless
     server: "helllo.com.tr"
     port: 2216
@@ -125,16 +151,21 @@ proxies:
     reality-opts:
       public-key: "bWIOrQAqUWCrz6BGdwaG42xaV-HEo8sUdGqVktUh0XU"
       short-id: "ddaaf1630788aeac"
-  - name: "🇹🇷_6"
+  - name: "🇹🇷_8"
     type: vless
-    server: "93.190.9.2"
-    port: 3090
-    uuid: "9992be65-f201-44ca-a177-2ca95aaa7ad4"
+    server: "tr3.japancase.site"
+    port: 443
+    uuid: "db80088c-32a1-4cb8-a907-0f3cb7844152"
     udp: true
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "vless"
-  - name: "🇹🇷_7"
+    tls: true
+    skip-cert-verify: true
+    servername: "tr3.japancase.site"
+    client-fingerprint: "edge"
+    reality-opts:
+      public-key: "B5Rbu23-J_PmzD6d-5ra_pxKaXd1MeRf6IT4jT_6PEM"
+      short-id: "071c3bd86b0c3c73"
+    flow: "xtls-rprx-vision"
+  - name: "🇹🇷_9"
     type: vless
     server: "62.133.63.45"
     port: 8444
@@ -150,7 +181,7 @@ proxies:
     network: grpc
     grpc-opts:
       grpc-service-name: "GunService"
-  - name: "🇹🇷_8"
+  - name: "🇹🇷_10"
     type: vless
     server: "78.135.73.47"
     port: 443
@@ -164,20 +195,21 @@ proxies:
       public-key: "sZAJkAu23wp1WKY-qeaeiwR38izP5OyfhumoE9xhbB8"
       short-id: "f46cd3ea3d1eb72d"
     flow: "xtls-rprx-vision"
-  - name: "🇹🇷_9"
+  - name: "🇹🇷_11"
     type: vless
-    server: "217.11.164.183"
-    port: 2118
-    uuid: "4476ca08-bdb4-41c1-bae4-a960bdb28c19"
+    server: "198.105.123.224"
+    port: 443
+    uuid: "db80088c-32a1-4cb8-a907-0f3cb7844152"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "www.apple.com"
-    client-fingerprint: "chrome"
+    servername: "tr1.japancase.site"
+    client-fingerprint: "firefox"
     reality-opts:
-      public-key: "bWIOrQAqUWCrz6BGdwaG42xaV-HEo8sUdGqVktUh0XU"
-      short-id: "68c328105c"
-  - name: "🇹🇷_10"
+      public-key: "zEntiD6D81wY__YHPvIw78e09CBIgYkyQ5meIo7c_hg"
+      short-id: "41ae8e266bc3346f"
+    flow: "xtls-rprx-vision"
+  - name: "🇹🇷_12"
     type: vless
     server: "151.241.226.201"
     port: 2053
@@ -190,33 +222,62 @@ proxies:
     reality-opts:
       public-key: "bYW_MmB_CUHrsyoCAUKviI2LZdHf63yY2yOPXbih104"
       short-id: "9e419c0759b54d6f"
-  - name: "🇹🇷_11"
-    type: vless
-    server: "217.11.164.183"
-    port: 2112
-    uuid: "4476ca08-bdb4-41c1-bae4-a960bdb28c19"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.apple.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "bWIOrQAqUWCrz6BGdwaG42xaV-HEo8sUdGqVktUh0XU"
-      short-id: "06"
-  - name: "🇹🇷_12"
-    type: vless
-    server: "217.11.164.183"
-    port: 2120
-    uuid: "4476ca08-bdb4-41c1-bae4-a960bdb28c19"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.apple.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "bWIOrQAqUWCrz6BGdwaG42xaV-HEo8sUdGqVktUh0XU"
-      short-id: "ddaaf1630788aeac"
   - name: "🇹🇷_13"
+    type: vless
+    server: "tr1.japancase.site"
+    port: 443
+    uuid: "db80088c-32a1-4cb8-a907-0f3cb7844152"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "tr1.japancase.site"
+    client-fingerprint: "qq"
+    reality-opts:
+      public-key: "zEntiD6D81wY__YHPvIw78e09CBIgYkyQ5meIo7c_hg"
+      short-id: "41ae8e266bc3346f"
+    flow: "xtls-rprx-vision"
+  - name: "🇹🇷_14"
+    type: vless
+    server: "153.56.210.61"
+    port: 443
+    uuid: "0de1d303-d7de-0001-8679-c4cb67e2e2cc"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "amd.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "WWeAHWUVD-phmnjNJ823cer0c4CMIbEs08AhsuEZmDc"
+      short-id: "a696de84963656de"
+    flow: "xtls-rprx-vision"
+  - name: "🇹🇷_15"
+    type: vless
+    server: "217.11.164.183"
+    port: 2118
+    uuid: "4476ca08-bdb4-41c1-bae4-a960bdb28c19"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.apple.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "bWIOrQAqUWCrz6BGdwaG42xaV-HEo8sUdGqVktUh0XU"
+      short-id: "68c328105c"
+  - name: "🇹🇷_16"
+    type: vless
+    server: "147.45.66.60"
+    port: 43000
+    uuid: "01e61db7-9e0b-4431-a995-a5288a01b951"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "147.45.66.60"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "DbL9RJFvJrnxBu6fFhWkHF8nsD6cK_DKMuMV00RmlWg"
+      short-id: "4d3d8e15"
+    flow: "xtls-rprx-vision"
+  - name: "🇹🇷_17"
     type: vless
     server: "helllo.com.tr"
     port: 2218
@@ -229,7 +290,15 @@ proxies:
     reality-opts:
       public-key: "bWIOrQAqUWCrz6BGdwaG42xaV-HEo8sUdGqVktUh0XU"
       short-id: "cc80ef"
-  - name: "🇹🇷_14"
+  - name: "🇹🇷_18"
+    type: trojan
+    server: "subtu.charsoulink3.ir"
+    port: 2087
+    password: "v2whz6ahmyy2f84j"
+    sni: "pus.mmdaqaorg2.ir"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇹🇷_19"
     type: trojan
     server: "194.146.26.40"
     port: 443
@@ -237,7 +306,7 @@ proxies:
     sni: "4-193-105-141.nhost.00cdn.com"
     skip-cert-verify: true
     udp: true
-  - name: "🇹🇷_15"
+  - name: "🇹🇷_20"
     type: trojan
     server: "194.87.39.133"
     port: 443
@@ -276,6 +345,11 @@ proxy-groups:
       - "🇹🇷_13"
       - "🇹🇷_14"
       - "🇹🇷_15"
+      - "🇹🇷_16"
+      - "🇹🇷_17"
+      - "🇹🇷_18"
+      - "🇹🇷_19"
+      - "🇹🇷_20"
 
 
   - name: "Load Balance"
@@ -299,6 +373,11 @@ proxy-groups:
       - "🇹🇷_13"
       - "🇹🇷_14"
       - "🇹🇷_15"
+      - "🇹🇷_16"
+      - "🇹🇷_17"
+      - "🇹🇷_18"
+      - "🇹🇷_19"
+      - "🇹🇷_20"
 
 rules:
   - MATCH,PROXY

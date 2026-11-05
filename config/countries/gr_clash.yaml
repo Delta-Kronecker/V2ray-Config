@@ -74,6 +74,14 @@ proxies:
       public-key: "biNcdU5mywtNw-KyPpLHindBxdEyAolT1WJ26N0b7y4"
       short-id: "94acb54627612d43"
     flow: "xtls-rprx-vision"
+  - name: "🇬🇷_2"
+    type: trojan
+    server: "38.54.29.52"
+    port: 443
+    password: "af4b064a9c39472fb34ad8b113acdc6b"
+    sni: "38.54.29.52"
+    skip-cert-verify: true
+    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -91,6 +99,7 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇬🇷_1"
+      - "🇬🇷_2"
 
 
   - name: "Load Balance"
@@ -100,6 +109,7 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇬🇷_1"
+      - "🇬🇷_2"
 
 rules:
   - MATCH,PROXY
