@@ -69,22 +69,6 @@ proxies:
     skip-cert-verify: true
     udp: true
   - name: "🇧🇷_2"
-    type: trojan
-    server: "br001.zestapp778.com"
-    port: 39533
-    password: "5t6i121em5lkmsmk"
-    sni: "br001.zestapp778.com"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇧🇷_3"
-    type: trojan
-    server: "216.238.116.204"
-    port: 39533
-    password: "5t6i121em5lkmsmk"
-    sni: "br001.zestapp778.com"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇧🇷_4"
     type: vmess
     server: "103.88.232.55"
     port: 1270
@@ -113,8 +97,6 @@ proxy-groups:
     proxies:
       - "🇧🇷_1"
       - "🇧🇷_2"
-      - "🇧🇷_3"
-      - "🇧🇷_4"
 
 
   - name: "Load Balance"
@@ -125,8 +107,6 @@ proxy-groups:
     proxies:
       - "🇧🇷_1"
       - "🇧🇷_2"
-      - "🇧🇷_3"
-      - "🇧🇷_4"
 
 rules:
   - MATCH,PROXY

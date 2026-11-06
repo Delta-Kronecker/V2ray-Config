@@ -60,19 +60,13 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇵🇹_1"
-    type: ss
-    server: "185.231.233.91"
-    port: 17167
-    cipher: "aes-128-gcm"
-    password: "d925ddb6fe1e6e62887cf3dc3f5137f3"
-    udp: true
-  - name: "🇵🇹_2"
-    type: ss
-    server: "185.231.233.91"
-    port: 17167
-    cipher: "aes-128-gcm"
-    password: "d925ddb6fe1e6e62887cf3dc3f5137f3"
+  - name: "🇵🇭_1"
+    type: trojan
+    server: "ph001.zestapp778.com"
+    port: 46298
+    password: "5t6i121em5lkmsmk"
+    sni: "ph001.zestapp778.com"
+    skip-cert-verify: true
     udp: true
 
 proxy-groups:
@@ -90,8 +84,7 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇵🇹_1"
-      - "🇵🇹_2"
+      - "🇵🇭_1"
 
 
   - name: "Load Balance"
@@ -100,8 +93,7 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇵🇹_1"
-      - "🇵🇹_2"
+      - "🇵🇭_1"
 
 rules:
   - MATCH,PROXY

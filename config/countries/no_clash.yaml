@@ -88,6 +88,14 @@ proxies:
     cipher: "chacha20-ietf-poly1305"
     password: "ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44="
     udp: true
+  - name: "🇳🇴_4"
+    type: vmess
+    server: "zfd-boardv2.kunlun01dns.com"
+    port: 16291
+    uuid: "0802ac03-7973-39ef-a019-ba02de6c01e1"
+    alterId: 0
+    cipher: "auto"
+    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -107,6 +115,7 @@ proxy-groups:
       - "🇳🇴_1"
       - "🇳🇴_2"
       - "🇳🇴_3"
+      - "🇳🇴_4"
 
 
   - name: "Load Balance"
@@ -118,6 +127,7 @@ proxy-groups:
       - "🇳🇴_1"
       - "🇳🇴_2"
       - "🇳🇴_3"
+      - "🇳🇴_4"
 
 rules:
   - MATCH,PROXY

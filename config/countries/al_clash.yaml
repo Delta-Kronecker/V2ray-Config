@@ -90,24 +90,10 @@ proxies:
     flow: "xtls-rprx-vision"
   - name: "🇦🇱_3"
     type: ss
-    server: "dns22.m3hrzd.ir"
-    port: 1348
-    cipher: "chacha20-ietf-poly1305"
-    password: "6Gzfdmd2cvye1qyKoub9E7eWijMDR2lK"
-    udp: true
-  - name: "🇦🇱_4"
-    type: ss
     server: "130.49.189.158"
     port: 43558
     cipher: "chacha20-ietf-poly1305"
     password: "yZiPrr484OdSYcivDUv+UIygwvyW+HQYytKsIgTw9tU="
-    udp: true
-  - name: "🇦🇱_5"
-    type: ss
-    server: "dns22.m3hrzd.ir"
-    port: 1348
-    cipher: "chacha20-ietf-poly1305"
-    password: "6Gzfdmd2cvye1qyKoub9E7eWijMDR2lK"
     udp: true
 
 proxy-groups:
@@ -128,8 +114,6 @@ proxy-groups:
       - "🇦🇱_1"
       - "🇦🇱_2"
       - "🇦🇱_3"
-      - "🇦🇱_4"
-      - "🇦🇱_5"
 
 
   - name: "Load Balance"
@@ -141,8 +125,6 @@ proxy-groups:
       - "🇦🇱_1"
       - "🇦🇱_2"
       - "🇦🇱_3"
-      - "🇦🇱_4"
-      - "🇦🇱_5"
 
 rules:
   - MATCH,PROXY

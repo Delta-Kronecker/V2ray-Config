@@ -60,48 +60,16 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇧🇪_1"
+  - name: "🇱🇰_1"
     type: vless
-    server: "201.10.90.113"
+    server: "free.vkehi.store"
     port: 443
-    uuid: "610ac982-04eb-34c0-80b1-5dd3c2ca131e"
+    uuid: "e4d1298a-1f21-42e2-a53e-1b22c0645c48"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "undef-aut-0.undef.network"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "6z3VlbF2v0C3FTWQQemYDxX-MIzwaz_k8_B-xyc0Xyg"
-      short-id: ""
-    flow: "xtls-rprx-vision"
-  - name: "🇧🇪_2"
-    type: vless
-    server: "45.148.103.120"
-    port: 443
-    uuid: "db80088c-32a1-4cb8-a907-0f3cb7844152"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "ca1.japancase.site"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "zN5buqMK95hn0mv3vKlfoOAi99ehuvP73cUuyNbZNWc"
-      short-id: "dbd6b473c7038dd5"
-    flow: "xtls-rprx-vision"
-  - name: "🇧🇪_3"
-    type: vless
-    server: "ca1.japancase.site"
-    port: 443
-    uuid: "db80088c-32a1-4cb8-a907-0f3cb7844152"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "ca1.japancase.site"
-    client-fingerprint: "edge"
-    reality-opts:
-      public-key: "zN5buqMK95hn0mv3vKlfoOAi99ehuvP73cUuyNbZNWc"
-      short-id: "dbd6b473c7038dd5"
-    flow: "xtls-rprx-vision"
+    servername: "aka.ms"
+    client-fingerprint: "chrome"
 
 proxy-groups:
   - name: "PROXY"
@@ -118,9 +86,7 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇧🇪_1"
-      - "🇧🇪_2"
-      - "🇧🇪_3"
+      - "🇱🇰_1"
 
 
   - name: "Load Balance"
@@ -129,9 +95,7 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇧🇪_1"
-      - "🇧🇪_2"
-      - "🇧🇪_3"
+      - "🇱🇰_1"
 
 rules:
   - MATCH,PROXY

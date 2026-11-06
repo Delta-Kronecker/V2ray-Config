@@ -62,10 +62,10 @@ dns:
 proxies:
   - name: "🇮🇪_1"
     type: trojan
-    server: "34.253.182.161"
+    server: "54.170.212.206"
     port: 443
-    password: "IQ68037294"
-    sni: "moving-wren.rooster465.autos"
+    password: "ND91608427"
+    sni: "skilled-lioness.rooster465.autos"
     skip-cert-verify: true
     udp: true
   - name: "🇮🇪_2"
@@ -77,14 +77,6 @@ proxies:
     skip-cert-verify: true
     udp: true
   - name: "🇮🇪_3"
-    type: trojan
-    server: "54.170.212.206"
-    port: 443
-    password: "ND91608427"
-    sni: "skilled-lioness.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇮🇪_4"
     type: trojan
     server: "52.208.138.36"
     port: 443
@@ -111,7 +103,6 @@ proxy-groups:
       - "🇮🇪_1"
       - "🇮🇪_2"
       - "🇮🇪_3"
-      - "🇮🇪_4"
 
 
   - name: "Load Balance"
@@ -123,7 +114,6 @@ proxy-groups:
       - "🇮🇪_1"
       - "🇮🇪_2"
       - "🇮🇪_3"
-      - "🇮🇪_4"
 
 rules:
   - MATCH,PROXY

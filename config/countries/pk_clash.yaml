@@ -60,17 +60,22 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇷🇸_1"
+  - name: "🇵🇰_1"
     type: vless
-    server: "185.72.11.43"
-    port: 443
-    uuid: "689a62e4-37e7-41de-9e6a-f2a56368c9e2"
+    server: "103.175.79.5"
+    port: 8443
+    uuid: "1c80222f-9fd9-db7b-c1ae-86c82c158b9d"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "rs8.speedtestinternet.link"
+    servername: "download.autodesk.com"
     client-fingerprint: "firefox"
-    flow: "xtls-rprx-vision"
+    reality-opts:
+      public-key: "92KJ-ibs1qTy8nODGrHTW8T0b_trG7McLYv8My9o2EE"
+      short-id: ""
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "TunService"
 
 proxy-groups:
   - name: "PROXY"
@@ -87,7 +92,7 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇷🇸_1"
+      - "🇵🇰_1"
 
 
   - name: "Load Balance"
@@ -96,7 +101,7 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇷🇸_1"
+      - "🇵🇰_1"
 
 rules:
   - MATCH,PROXY

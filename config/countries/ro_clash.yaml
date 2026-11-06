@@ -76,26 +76,39 @@ proxies:
     flow: "xtls-rprx-vision"
   - name: "🇷🇴_2"
     type: trojan
-    server: "185.247.224.136"
-    port: 443
-    password: "af4b064a9c39472fb34ad8b113acdc6b"
-    sni: "185.247.224.136"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇷🇴_3"
-    type: trojan
     server: "38.180.35.145"
     port: 443
     password: "600421cf-11d7-429f-a65b-c30397f1bc03"
     sni: "bu2.freeguard.org"
     skip-cert-verify: true
     udp: true
+  - name: "🇷🇴_3"
+    type: ss
+    server: "82.152.132.211"
+    port: 8044
+    cipher: "chacha20-ietf-poly1305"
+    password: "dCamglzrORaopqbpBlptzbt9QdiH4CSN"
+    udp: true
   - name: "🇷🇴_4"
+    type: ss
+    server: "bogging-eyeteeth-fly.freesocks.work"
+    port: 443
+    cipher: "chacha20-ietf-poly1305"
+    password: "QFWzCw2uX9B9i6qAYeFBIE"
+    udp: true
+  - name: "🇷🇴_5"
     type: ss
     server: "194.68.44.42"
     port: 64546
     cipher: "chacha20-ietf-poly1305"
     password: "U83u9OGpvSatIUW7LsWffr"
+    udp: true
+  - name: "🇷🇴_6"
+    type: ss
+    server: "82.152.132.211"
+    port: 8044
+    cipher: "chacha20-ietf-poly1305"
+    password: "dCamglzrORaopqbpBlptzbt9QdiH4CSN"
     udp: true
 
 proxy-groups:
@@ -117,6 +130,8 @@ proxy-groups:
       - "🇷🇴_2"
       - "🇷🇴_3"
       - "🇷🇴_4"
+      - "🇷🇴_5"
+      - "🇷🇴_6"
 
 
   - name: "Load Balance"
@@ -129,6 +144,8 @@ proxy-groups:
       - "🇷🇴_2"
       - "🇷🇴_3"
       - "🇷🇴_4"
+      - "🇷🇴_5"
+      - "🇷🇴_6"
 
 rules:
   - MATCH,PROXY
