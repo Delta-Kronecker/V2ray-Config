@@ -76,19 +76,6 @@ proxies:
     flow: "xtls-rprx-vision"
   - name: "🇰🇿_2"
     type: vless
-    server: "109.248.170.119"
-    port: 13447
-    uuid: "b573cefb-7bc7-4a42-b407-b8b534e66773"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "yahoo.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "_0wM2ep44eAcrgf5PflKaBivknCWT6kMvQBQUoScCkE"
-      short-id: "83"
-  - name: "🇰🇿_3"
-    type: vless
     server: "kz1.japancase.site"
     port: 443
     uuid: "db80088c-32a1-4cb8-a907-0f3cb7844152"
@@ -101,6 +88,26 @@ proxies:
       public-key: "eV6ewGF7oTHf2pTQHKYvwJt-vU8hUC-1CjiUl20HtXE"
       short-id: "4000cdda6278d236"
     flow: "xtls-rprx-vision"
+  - name: "🇰🇿_3"
+    type: vless
+    server: "109.248.170.119"
+    port: 13447
+    uuid: "b573cefb-7bc7-4a42-b407-b8b534e66773"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "yahoo.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "_0wM2ep44eAcrgf5PflKaBivknCWT6kMvQBQUoScCkE"
+      short-id: "83"
+  - name: "🇰🇿_4"
+    type: ss
+    server: "38.180.38.19"
+    port: 15231
+    cipher: "aes-128-gcm"
+    password: "5126ccc78eea4c643cbed4e6c21465e8"
+    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -120,6 +127,7 @@ proxy-groups:
       - "🇰🇿_1"
       - "🇰🇿_2"
       - "🇰🇿_3"
+      - "🇰🇿_4"
 
 
   - name: "Load Balance"
@@ -131,6 +139,7 @@ proxy-groups:
       - "🇰🇿_1"
       - "🇰🇿_2"
       - "🇰🇿_3"
+      - "🇰🇿_4"
 
 rules:
   - MATCH,PROXY

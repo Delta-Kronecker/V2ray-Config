@@ -72,7 +72,7 @@ proxies:
     type: trojan
     server: "52.208.138.36"
     port: 443
-    password: "IQ68037294"
+    password: "ON38567014"
     sni: "vast-turkey.rooster465.autos"
     skip-cert-verify: true
     udp: true
@@ -80,8 +80,16 @@ proxies:
     type: trojan
     server: "52.208.138.36"
     port: 443
-    password: "ON38567014"
+    password: "IQ68037294"
     sni: "vast-turkey.rooster465.autos"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇮🇪_4"
+    type: trojan
+    server: "34.253.182.161"
+    port: 443
+    password: "IQ68037294"
+    sni: "moving-wren.rooster465.autos"
     skip-cert-verify: true
     udp: true
 
@@ -103,6 +111,7 @@ proxy-groups:
       - "🇮🇪_1"
       - "🇮🇪_2"
       - "🇮🇪_3"
+      - "🇮🇪_4"
 
 
   - name: "Load Balance"
@@ -114,6 +123,7 @@ proxy-groups:
       - "🇮🇪_1"
       - "🇮🇪_2"
       - "🇮🇪_3"
+      - "🇮🇪_4"
 
 rules:
   - MATCH,PROXY

@@ -62,16 +62,16 @@ dns:
 proxies:
   - name: "🇦🇪_1"
     type: trojan
-    server: "154.90.55.81"
-    port: 443
-    password: "af4b064a9c39472fb34ad8b113acdc6b"
-    sni: "154.90.55.81"
+    server: "Sclass-C1.catcat321.com"
+    port: 20086
+    password: "d9064589-74af-432a-9390-5d8a9da281bf"
+    sni: "hk.catxstar.com"
     skip-cert-verify: true
     udp: true
   - name: "🇦🇪_2"
     type: trojan
-    server: "sclass-00.catcat321.com"
-    port: 20123
+    server: "sclass-c1.catcat321.com"
+    port: 20086
     password: "d9064589-74af-432a-9390-5d8a9da281bf"
     sni: "hk.catxstar.com"
     skip-cert-verify: true
@@ -85,6 +85,22 @@ proxies:
     skip-cert-verify: true
     udp: true
   - name: "🇦🇪_4"
+    type: trojan
+    server: "sclass-00.catcat321.com"
+    port: 20123
+    password: "d9064589-74af-432a-9390-5d8a9da281bf"
+    sni: "hk.catxstar.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇦🇪_5"
+    type: trojan
+    server: "217.217.222.230"
+    port: 20123
+    password: "d9064589-74af-432a-9390-5d8a9da281bf"
+    sni: "hk.catxstar.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇦🇪_6"
     type: trojan
     server: "Sclass-00.catcat321.com"
     port: 20123
@@ -112,6 +128,8 @@ proxy-groups:
       - "🇦🇪_2"
       - "🇦🇪_3"
       - "🇦🇪_4"
+      - "🇦🇪_5"
+      - "🇦🇪_6"
 
 
   - name: "Load Balance"
@@ -124,6 +142,8 @@ proxy-groups:
       - "🇦🇪_2"
       - "🇦🇪_3"
       - "🇦🇪_4"
+      - "🇦🇪_5"
+      - "🇦🇪_6"
 
 rules:
   - MATCH,PROXY

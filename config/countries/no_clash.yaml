@@ -62,17 +62,17 @@ dns:
 proxies:
   - name: "🇳🇴_1"
     type: vless
-    server: "connect2.accessgate.link"
-    port: 2086
-    uuid: "2f6c70f3-206a-4bc1-ac1f-6b70153f9c73"
+    server: "45.143.94.91"
+    port: 8443
+    uuid: "3837e7a5-d40e-4b85-8700-5f9725a5a2cb"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "unpkg.com"
+    servername: "us1.cloudvienta.com"
     client-fingerprint: "firefox"
     reality-opts:
-      public-key: "CQBmePak1QN5SsSmK_KTOSLjsCTaiaM4Jtxt7jLheko"
-      short-id: "b0d8c9a285c70f6f"
+      public-key: "3Kgy_0tHtOzEn9_mEylNsBVlAHNngT6S4AuYy5wEOSU"
+      short-id: "0c37b64d1935ebc1"
     flow: "xtls-rprx-vision"
   - name: "🇳🇴_2"
     type: ss
@@ -87,14 +87,6 @@ proxies:
     port: 990
     cipher: "chacha20-ietf-poly1305"
     password: "ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44="
-    udp: true
-  - name: "🇳🇴_4"
-    type: vmess
-    server: "zfd-boardv2.kunlun01dns.com"
-    port: 16291
-    uuid: "0802ac03-7973-39ef-a019-ba02de6c01e1"
-    alterId: 0
-    cipher: "auto"
     udp: true
 
 proxy-groups:
@@ -115,7 +107,6 @@ proxy-groups:
       - "🇳🇴_1"
       - "🇳🇴_2"
       - "🇳🇴_3"
-      - "🇳🇴_4"
 
 
   - name: "Load Balance"
@@ -127,7 +118,6 @@ proxy-groups:
       - "🇳🇴_1"
       - "🇳🇴_2"
       - "🇳🇴_3"
-      - "🇳🇴_4"
 
 rules:
   - MATCH,PROXY

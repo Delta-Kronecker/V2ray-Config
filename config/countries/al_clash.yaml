@@ -61,34 +61,6 @@ dns:
 
 proxies:
   - name: "🇦🇱_1"
-    type: vless
-    server: "nl4.japancase.site"
-    port: 443
-    uuid: "db80088c-32a1-4cb8-a907-0f3cb7844152"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "nl4.japancase.site"
-    client-fingerprint: "ios"
-    reality-opts:
-      public-key: "lXCVb-MY5dJqMUw6xvkuPbi0idyfF-OkSY_6GpOovVI"
-      short-id: "9f05c35b73b47d53"
-    flow: "xtls-rprx-vision"
-  - name: "🇦🇱_2"
-    type: vless
-    server: "147.45.221.5"
-    port: 443
-    uuid: "db80088c-32a1-4cb8-a907-0f3cb7844152"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "nl4.japancase.site"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "lXCVb-MY5dJqMUw6xvkuPbi0idyfF-OkSY_6GpOovVI"
-      short-id: "9f05c35b73b47d53"
-    flow: "xtls-rprx-vision"
-  - name: "🇦🇱_3"
     type: ss
     server: "130.49.189.158"
     port: 43558
@@ -112,8 +84,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇦🇱_1"
-      - "🇦🇱_2"
-      - "🇦🇱_3"
 
 
   - name: "Load Balance"
@@ -123,8 +93,6 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇦🇱_1"
-      - "🇦🇱_2"
-      - "🇦🇱_3"
 
 rules:
   - MATCH,PROXY

@@ -62,12 +62,6 @@ dns:
 proxies:
   - name: "🇻🇳_1"
     type: vless
-    server: "150.95.109.109"
-    port: 2086
-    uuid: "b83faafc-cbb7-4655-99d4-2c4c39a49d1b"
-    udp: true
-  - name: "🇻🇳_2"
-    type: vless
     server: "154.21.203.106"
     port: 51279
     uuid: "57beeeb0-03fc-4fc9-94da-7604488a7134"
@@ -80,6 +74,12 @@ proxies:
       public-key: "f6Tj8-uvWsLv3V-lGLuPciArp5oKqUImBg-U7-WJ-0A"
       short-id: "bb82c8"
     flow: "xtls-rprx-vision"
+  - name: "🇻🇳_2"
+    type: vless
+    server: "150.95.109.109"
+    port: 2086
+    uuid: "b83faafc-cbb7-4655-99d4-2c4c39a49d1b"
+    udp: true
   - name: "🇻🇳_3"
     type: trojan
     server: "38.54.15.140"
@@ -97,14 +97,6 @@ proxies:
     skip-cert-verify: true
     udp: true
   - name: "🇻🇳_5"
-    type: trojan
-    server: "36.50.134.29"
-    port: 443
-    password: "94d219c9-1afc-4d42-b090-8b3794764380"
-    sni: "36.50.134.29"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇻🇳_6"
     type: trojan
     server: "103.9.77.6"
     port: 443
@@ -133,7 +125,6 @@ proxy-groups:
       - "🇻🇳_3"
       - "🇻🇳_4"
       - "🇻🇳_5"
-      - "🇻🇳_6"
 
 
   - name: "Load Balance"
@@ -147,7 +138,6 @@ proxy-groups:
       - "🇻🇳_3"
       - "🇻🇳_4"
       - "🇻🇳_5"
-      - "🇻🇳_6"
 
 rules:
   - MATCH,PROXY
