@@ -61,27 +61,13 @@ dns:
 
 proxies:
   - name: "🇳🇴_1"
-    type: vless
-    server: "45.143.94.91"
-    port: 8443
-    uuid: "3837e7a5-d40e-4b85-8700-5f9725a5a2cb"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "us1.cloudvienta.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "3Kgy_0tHtOzEn9_mEylNsBVlAHNngT6S4AuYy5wEOSU"
-      short-id: "0c37b64d1935ebc1"
-    flow: "xtls-rprx-vision"
-  - name: "🇳🇴_2"
     type: ss
     server: "185.213.23.63"
     port: 990
     cipher: "chacha20-ietf-poly1305"
     password: "ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44="
     udp: true
-  - name: "🇳🇴_3"
+  - name: "🇳🇴_2"
     type: ss
     server: "185.213.23.63"
     port: 990
@@ -106,7 +92,6 @@ proxy-groups:
     proxies:
       - "🇳🇴_1"
       - "🇳🇴_2"
-      - "🇳🇴_3"
 
 
   - name: "Load Balance"
@@ -117,7 +102,6 @@ proxy-groups:
     proxies:
       - "🇳🇴_1"
       - "🇳🇴_2"
-      - "🇳🇴_3"
 
 rules:
   - MATCH,PROXY

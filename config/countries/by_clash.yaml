@@ -62,32 +62,19 @@ dns:
 proxies:
   - name: "🇧🇾_1"
     type: vless
-    server: "178.172.227.124"
+    server: "95.128.71.79"
     port: 10444
-    uuid: "1af36694-b548-4b18-89a0-bc076eab4ed7"
+    uuid: "8cef7621-c6f0-486e-b51d-59c30c5b0b25"
     udp: true
     tls: true
     skip-cert-verify: true
     servername: "ads.x5.ru"
-    client-fingerprint: "chrome"
+    client-fingerprint: "safari"
     reality-opts:
       public-key: "0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo"
       short-id: "8debcf36f1cc69ff"
     flow: "xtls-rprx-vision"
   - name: "🇧🇾_2"
-    type: vless
-    server: "15d7fft.nl11.h1clayd.click"
-    port: 443
-    uuid: "b7b8ee80-db83-4276-8c68-87dc88b0b0b5"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "15d7fft.nl11.h1clayd.click"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "xv6OUZcyzEHXFMTfumuJH-1Rd4NQ0cdmWikek4mm0m4"
-      short-id: "c71118d9399fb8c2"
-  - name: "🇧🇾_3"
     type: vless
     server: "178.172.227.228"
     port: 10444
@@ -101,16 +88,16 @@ proxies:
       public-key: "0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo"
       short-id: "8debcf36f1cc69ff"
     flow: "xtls-rprx-vision"
-  - name: "🇧🇾_4"
+  - name: "🇧🇾_3"
     type: vless
-    server: "95.128.71.79"
+    server: "178.172.227.124"
     port: 10444
-    uuid: "8cef7621-c6f0-486e-b51d-59c30c5b0b25"
+    uuid: "1af36694-b548-4b18-89a0-bc076eab4ed7"
     udp: true
     tls: true
     skip-cert-verify: true
     servername: "ads.x5.ru"
-    client-fingerprint: "safari"
+    client-fingerprint: "chrome"
     reality-opts:
       public-key: "0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo"
       short-id: "8debcf36f1cc69ff"
@@ -134,7 +121,6 @@ proxy-groups:
       - "🇧🇾_1"
       - "🇧🇾_2"
       - "🇧🇾_3"
-      - "🇧🇾_4"
 
 
   - name: "Load Balance"
@@ -146,7 +132,6 @@ proxy-groups:
       - "🇧🇾_1"
       - "🇧🇾_2"
       - "🇧🇾_3"
-      - "🇧🇾_4"
 
 rules:
   - MATCH,PROXY

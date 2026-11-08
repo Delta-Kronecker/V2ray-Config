@@ -62,20 +62,6 @@ dns:
 proxies:
   - name: "🇲🇽_1"
     type: vless
-    server: "dddz-1-x.473221.xyz"
-    port: 43116
-    uuid: "65ec84f5-0dd4-4582-8b4f-592e50b22116"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "v1-dy.ixigua.com"
-    client-fingerprint: "edge"
-    reality-opts:
-      public-key: "rLU2xJNZPFvtHy49MygD-nta6OpJEbjarjAZ5vHwpVE"
-      short-id: "29ad689280e2f0ec"
-    flow: "xtls-rprx-vision"
-  - name: "🇲🇽_2"
-    type: vless
     server: "147.78.1.253"
     port: 443
     uuid: "39a390af-1f90-4c0e-89e4-4e2023732e4b"
@@ -88,7 +74,7 @@ proxies:
       public-key: "TefL2KtNcNLPmUY8TKlu5pA7ffipqgmbBN6gpyzyklk"
       short-id: ""
     flow: "xtls-rprx-vision"
-  - name: "🇲🇽_3"
+  - name: "🇲🇽_2"
     type: trojan
     server: "216.238.80.100"
     port: 443
@@ -96,7 +82,7 @@ proxies:
     sni: "connectwithtopemployersandfindidealjobs.com"
     skip-cert-verify: true
     udp: true
-  - name: "🇲🇽_4"
+  - name: "🇲🇽_3"
     type: trojan
     server: "154.205.152.109"
     port: 443
@@ -104,14 +90,14 @@ proxies:
     sni: "154.205.152.109"
     skip-cert-verify: true
     udp: true
-  - name: "🇲🇽_5"
+  - name: "🇲🇽_4"
     type: ss
     server: "64.177.90.30"
     port: 8388
     cipher: "aes-256-gcm"
     password: "BWyPPTusFKhGgzKh"
     udp: true
-  - name: "🇲🇽_6"
+  - name: "🇲🇽_5"
     type: ss
     server: "64.177.90.30"
     port: 8388
@@ -139,7 +125,6 @@ proxy-groups:
       - "🇲🇽_3"
       - "🇲🇽_4"
       - "🇲🇽_5"
-      - "🇲🇽_6"
 
 
   - name: "Load Balance"
@@ -153,7 +138,6 @@ proxy-groups:
       - "🇲🇽_3"
       - "🇲🇽_4"
       - "🇲🇽_5"
-      - "🇲🇽_6"
 
 rules:
   - MATCH,PROXY

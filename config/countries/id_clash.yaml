@@ -93,18 +93,6 @@ proxies:
   - name: "🇮🇩_5"
     type: vmess
     server: "free2.rajaserver2.web.id"
-    port: 80
-    uuid: "4d4708ef-0729-44ac-b2b0-411ce0242e89"
-    alterId: 0
-    cipher: "auto"
-    udp: true
-    network: httpupgrade
-    httpupgrade-opts:
-      path: "/upvmess"
-      host: "free2.rajaserver2.web.id"
-  - name: "🇮🇩_6"
-    type: vmess
-    server: "free2.rajaserver2.web.id"
     port: 443
     uuid: "4d4708ef-0729-44ac-b2b0-411ce0242e89"
     alterId: 0
@@ -116,6 +104,18 @@ proxies:
     network: grpc
     grpc-opts:
       grpc-service-name: ""
+  - name: "🇮🇩_6"
+    type: vmess
+    server: "free2.rajaserver2.web.id"
+    port: 80
+    uuid: "4d4708ef-0729-44ac-b2b0-411ce0242e89"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: httpupgrade
+    httpupgrade-opts:
+      path: "/upvmess"
+      host: "free2.rajaserver2.web.id"
 
 proxy-groups:
   - name: "PROXY"

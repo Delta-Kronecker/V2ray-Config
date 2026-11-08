@@ -61,20 +61,6 @@ dns:
 
 proxies:
   - name: "🇮🇱_1"
-    type: vless
-    server: "dddz-1-x.473221.xyz"
-    port: 43117
-    uuid: "65ec84f5-0dd4-4582-8b4f-592e50b22116"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "v1-dy.ixigua.com"
-    client-fingerprint: "edge"
-    reality-opts:
-      public-key: "sx45rPTYcCjQaHYudo1gfNFWYN4mQ4SCwGHfdGU-Hwc"
-      short-id: "1f34079b44529536"
-    flow: "xtls-rprx-vision"
-  - name: "🇮🇱_2"
     type: trojan
     server: "64.176.163.182"
     port: 443
@@ -99,7 +85,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇮🇱_1"
-      - "🇮🇱_2"
 
 
   - name: "Load Balance"
@@ -109,7 +94,6 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇮🇱_1"
-      - "🇮🇱_2"
 
 rules:
   - MATCH,PROXY

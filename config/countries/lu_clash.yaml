@@ -60,16 +60,13 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇱🇰_1"
-    type: vless
-    server: "free.vkehi.store"
-    port: 443
-    uuid: "e4d1298a-1f21-42e2-a53e-1b22c0645c48"
+  - name: "🇱🇺_1"
+    type: ss
+    server: "87.228.61.175"
+    port: 1443
+    cipher: "chacha20-ietf-poly1305"
+    password: "tAGGzgRCi6W95UwG0qerf6"
     udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "aka.ms"
-    client-fingerprint: "chrome"
 
 proxy-groups:
   - name: "PROXY"
@@ -86,7 +83,7 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇱🇰_1"
+      - "🇱🇺_1"
 
 
   - name: "Load Balance"
@@ -95,7 +92,7 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇱🇰_1"
+      - "🇱🇺_1"
 
 rules:
   - MATCH,PROXY
