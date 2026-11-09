@@ -60,14 +60,18 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇮🇱_1"
-    type: trojan
-    server: "64.176.163.182"
-    port: 443
-    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
-    sni: "exploreeducationsectoropportunitiestodayandadvancecareers.com"
-    skip-cert-verify: true
+  - name: "🇮🇸_1"
+    type: vless
+    server: "93.95.226.159"
+    port: 28150
+    uuid: "b4e69d67-9d41-417c-b465-ebf1591fb792"
     udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "google.com"
+    reality-opts:
+      public-key: "KQW_o2BlCjMC8aH5lkNkO_rmMCAUykQIQCCIIehhsAo"
+      short-id: "06"
 
 proxy-groups:
   - name: "PROXY"
@@ -84,7 +88,7 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇮🇱_1"
+      - "🇮🇸_1"
 
 
   - name: "Load Balance"
@@ -93,7 +97,7 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇮🇱_1"
+      - "🇮🇸_1"
 
 rules:
   - MATCH,PROXY

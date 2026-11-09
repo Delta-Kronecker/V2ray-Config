@@ -61,21 +61,19 @@ dns:
 
 proxies:
   - name: "🇧🇪_1"
-    type: vmess
-    server: "dog-hk.kunlun01dns.com"
-    port: 21019
-    uuid: "9464ca40-dd75-3742-a628-d931a9f413b2"
-    alterId: 0
-    cipher: "auto"
+    type: vless
+    server: "167.17.64.67"
+    port: 10303
+    uuid: "dbf3f074-3b18-43f3-b82a-debd8c879c69"
     udp: true
-  - name: "🇧🇪_2"
-    type: vmess
-    server: "zfd-hkv2.kunlun01dns.com"
-    port: 16116
-    uuid: "0802ac03-7973-39ef-a019-ba02de6c01e1"
-    alterId: 0
-    cipher: "auto"
-    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.apple.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "RCm8x1FrSdaJ2NY9k5deQQZilwbubeK-4bcH_6E31wk"
+      short-id: "14f18ef16e7c32cc"
+    flow: "xtls-rprx-vision"
 
 proxy-groups:
   - name: "PROXY"
@@ -93,7 +91,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇧🇪_1"
-      - "🇧🇪_2"
 
 
   - name: "Load Balance"
@@ -103,7 +100,6 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇧🇪_1"
-      - "🇧🇪_2"
 
 rules:
   - MATCH,PROXY

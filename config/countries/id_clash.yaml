@@ -61,6 +61,20 @@ dns:
 
 proxies:
   - name: "🇮🇩_1"
+    type: vless
+    server: "103.172.116.191"
+    port: 10203
+    uuid: "dbf3f074-3b18-43f3-b82a-debd8c879c69"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.apple.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "mjWmmSvs0D3V3130FT7MVbRs94pPuWXR7ffaQ_3A4kU"
+      short-id: "f96b3b17a0f5b1fe"
+    flow: "xtls-rprx-vision"
+  - name: "🇮🇩_2"
     type: trojan
     server: "103.67.79.156"
     port: 443
@@ -68,20 +82,13 @@ proxies:
     sni: "103.67.79.156"
     skip-cert-verify: true
     udp: true
-  - name: "🇮🇩_2"
+  - name: "🇮🇩_3"
     type: trojan
     server: "172.232.250.160"
     port: 443
     password: "788f2b96-47e2-4302-a417-511b6fd7d09c"
     sni: "172.232.250.160"
     skip-cert-verify: true
-    udp: true
-  - name: "🇮🇩_3"
-    type: ss
-    server: "aio.unlimited.biz.id"
-    port: 443
-    cipher: "none"
-    password: "f282b878-8711-45a1-8c69-5564172123c1"
     udp: true
   - name: "🇮🇩_4"
     type: ss
@@ -91,31 +98,12 @@ proxies:
     password: "f282b878-8711-45a1-8c69-5564172123c1"
     udp: true
   - name: "🇮🇩_5"
-    type: vmess
-    server: "free2.rajaserver2.web.id"
+    type: ss
+    server: "aio.unlimited.biz.id"
     port: 443
-    uuid: "4d4708ef-0729-44ac-b2b0-411ce0242e89"
-    alterId: 0
-    cipher: "auto"
+    cipher: "none"
+    password: "f282b878-8711-45a1-8c69-5564172123c1"
     udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "free2.rajaserver2.web.id"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: ""
-  - name: "🇮🇩_6"
-    type: vmess
-    server: "free2.rajaserver2.web.id"
-    port: 80
-    uuid: "4d4708ef-0729-44ac-b2b0-411ce0242e89"
-    alterId: 0
-    cipher: "auto"
-    udp: true
-    network: httpupgrade
-    httpupgrade-opts:
-      path: "/upvmess"
-      host: "free2.rajaserver2.web.id"
 
 proxy-groups:
   - name: "PROXY"
@@ -137,7 +125,6 @@ proxy-groups:
       - "🇮🇩_3"
       - "🇮🇩_4"
       - "🇮🇩_5"
-      - "🇮🇩_6"
 
 
   - name: "Load Balance"
@@ -151,7 +138,6 @@ proxy-groups:
       - "🇮🇩_3"
       - "🇮🇩_4"
       - "🇮🇩_5"
-      - "🇮🇩_6"
 
 rules:
   - MATCH,PROXY

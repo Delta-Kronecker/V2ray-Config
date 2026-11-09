@@ -62,20 +62,7 @@ dns:
 proxies:
   - name: "🇷🇴_1"
     type: vless
-    server: "212.193.0.105"
-    port: 443
-    uuid: "dc95c1dd-2cd3-414c-8cf1-71ae86dad666"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "cdn-rum-keno-prsv.keno.su"
-    reality-opts:
-      public-key: "Cw04nkURk7InPCPZl-0PovP44rh5o74dMHBUFOsjFig"
-      short-id: "a1b2c3d4e5f60718"
-    flow: "xtls-rprx-vision"
-  - name: "🇷🇴_2"
-    type: vless
-    server: "cdn-rum-keno-prsv.keno.su"
+    server: "103.102.229.75"
     port: 443
     uuid: "dc95c1dd-2cd3-414c-8cf1-71ae86dad666"
     udp: true
@@ -86,6 +73,20 @@ proxies:
     reality-opts:
       public-key: "Cw04nkURk7InPCPZl-0PovP44rh5o74dMHBUFOsjFig"
       short-id: "a1b2c3d4e5f60718"
+    flow: "xtls-rprx-vision"
+  - name: "🇷🇴_2"
+    type: vless
+    server: "46.28.67.55"
+    port: 443
+    uuid: "d1a6a033-fdbd-46a6-a177-3370ba042b9f"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.cloudflare.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "i2dJ1_XGDpp50qpEclh6SWSWkxt4B0t2hi2qOVQbeSU"
+      short-id: "d06d78e974491b6e"
     flow: "xtls-rprx-vision"
   - name: "🇷🇴_3"
     type: trojan
@@ -104,20 +105,6 @@ proxies:
     skip-cert-verify: true
     udp: true
   - name: "🇷🇴_5"
-    type: ss
-    server: "bogging-eyeteeth-fly.freesocks.work"
-    port: 443
-    cipher: "chacha20-ietf-poly1305"
-    password: "QFWzCw2uX9B9i6qAYeFBIE"
-    udp: true
-  - name: "🇷🇴_6"
-    type: ss
-    server: "154.46.31.106"
-    port: 443
-    cipher: "chacha20-ietf-poly1305"
-    password: "QFWzCw2uX9B9i6qAYeFBIE"
-    udp: true
-  - name: "🇷🇴_7"
     type: ss
     server: "194.68.44.42"
     port: 64546
@@ -145,8 +132,6 @@ proxy-groups:
       - "🇷🇴_3"
       - "🇷🇴_4"
       - "🇷🇴_5"
-      - "🇷🇴_6"
-      - "🇷🇴_7"
 
 
   - name: "Load Balance"
@@ -160,8 +145,6 @@ proxy-groups:
       - "🇷🇴_3"
       - "🇷🇴_4"
       - "🇷🇴_5"
-      - "🇷🇴_6"
-      - "🇷🇴_7"
 
 rules:
   - MATCH,PROXY

@@ -60,14 +60,19 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇳🇬_1"
-    type: trojan
-    server: "103.97.91.17"
+  - name: "🇸🇰_1"
+    type: vless
+    server: "196.245.153.110"
     port: 443
-    password: "600421cf-11d7-429f-a65b-c30397f1bc03"
-    sni: "la.freeguard.org"
-    skip-cert-verify: true
+    uuid: "95c2ba1e-a330-4e6b-bd81-bf9c0f647b2f"
     udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "230b29t.es8.h1clayd.click"
+    client-fingerprint: "ios"
+    reality-opts:
+      public-key: "JvnTbjxkV9nXKoDRA_tmeY6aeOTnJXSBU3yNp9ZUnH0"
+      short-id: "91313fc9f7571857"
 
 proxy-groups:
   - name: "PROXY"
@@ -84,7 +89,7 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇳🇬_1"
+      - "🇸🇰_1"
 
 
   - name: "Load Balance"
@@ -93,7 +98,7 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇳🇬_1"
+      - "🇸🇰_1"
 
 rules:
   - MATCH,PROXY
