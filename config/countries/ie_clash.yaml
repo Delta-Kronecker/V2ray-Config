@@ -76,6 +76,13 @@ proxies:
     sni: "moving-wren.rooster465.autos"
     skip-cert-verify: true
     udp: true
+  - name: "🇮🇪_3"
+    type: ss
+    server: "20.166.20.135"
+    port: 443
+    cipher: "chacha20-ietf-poly1305"
+    password: "G2shlbeRXdE45aVA"
+    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -94,6 +101,7 @@ proxy-groups:
     proxies:
       - "🇮🇪_1"
       - "🇮🇪_2"
+      - "🇮🇪_3"
 
 
   - name: "Load Balance"
@@ -104,6 +112,7 @@ proxy-groups:
     proxies:
       - "🇮🇪_1"
       - "🇮🇪_2"
+      - "🇮🇪_3"
 
 rules:
   - MATCH,PROXY

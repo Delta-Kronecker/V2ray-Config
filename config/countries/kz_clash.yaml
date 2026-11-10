@@ -73,6 +73,20 @@ proxies:
     reality-opts:
       public-key: "_0wM2ep44eAcrgf5PflKaBivknCWT6kMvQBQUoScCkE"
       short-id: "83"
+  - name: "🇰🇿_2"
+    type: vless
+    server: "185.246.155.91"
+    port: 10403
+    uuid: "dbf3f074-3b18-43f3-b82a-debd8c879c69"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.apple.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "obQkp5VlQpnlt1hRLQ3VfHISYiiISZJyJZAMaIdjCko"
+      short-id: "6859f5b59e55aa30"
+    flow: "xtls-rprx-vision"
 
 proxy-groups:
   - name: "PROXY"
@@ -90,6 +104,7 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇰🇿_1"
+      - "🇰🇿_2"
 
 
   - name: "Load Balance"
@@ -99,6 +114,7 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇰🇿_1"
+      - "🇰🇿_2"
 
 rules:
   - MATCH,PROXY
