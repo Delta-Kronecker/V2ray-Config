@@ -62,14 +62,17 @@ dns:
 proxies:
   - name: "🇦🇱_1"
     type: vless
-    server: "allba.connect-qik.uk"
-    port: 443
-    uuid: "38de3363-7945-402e-9a9b-6f2f9015a44e"
+    server: "23.95.72.244"
+    port: 50120
+    uuid: "9a5e7b1c-bf39-4b1f-891f-ac87824ee38f"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "allba.connect-qik.uk"
-    client-fingerprint: "qq"
+    servername: "api.adidas.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "n4sk3x-GS3uCHsert4qOJQt_RzjcTPGFQvRImsnsyTA"
+      short-id: "289f5ebf78f79b"
     flow: "xtls-rprx-vision"
   - name: "🇦🇱_2"
     type: ss
@@ -79,6 +82,13 @@ proxies:
     password: "LNc9h/4NA9Q6ZHNeYHoT5X/fR9aoE9KQR1SWhVDHBog="
     udp: true
   - name: "🇦🇱_3"
+    type: ss
+    server: "130.49.189.158"
+    port: 43558
+    cipher: "chacha20-ietf-poly1305"
+    password: "LNc9h/4NA9Q6ZHNeYHoT5X/fR9aoE9KQR1SWhVDHBog="
+    udp: true
+  - name: "🇦🇱_4"
     type: ss
     server: "130.49.189.158"
     port: 43558
@@ -104,6 +114,7 @@ proxy-groups:
       - "🇦🇱_1"
       - "🇦🇱_2"
       - "🇦🇱_3"
+      - "🇦🇱_4"
 
 
   - name: "Load Balance"
@@ -115,6 +126,7 @@ proxy-groups:
       - "🇦🇱_1"
       - "🇦🇱_2"
       - "🇦🇱_3"
+      - "🇦🇱_4"
 
 rules:
   - MATCH,PROXY

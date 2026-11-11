@@ -62,27 +62,28 @@ dns:
 proxies:
   - name: "🇦🇺_1"
     type: vless
-    server: "46.250.240.80"
-    port: 2053
-    uuid: "948df76f-505d-4608-9c76-a933ee3ccc76"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.cloudflare.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "CYFeysLf--_IVhxQOCd3ZxLrAVWFFOkJzvIGHOVXN3E"
-      short-id: "4cc9dc65f7770115"
-  - name: "🇦🇺_2"
-    type: vless
-    server: "39.109.111.23"
+    server: "doghkzf.zalolink.com"
     port: 48158
     uuid: "57beeeb0-03fc-4fc9-94da-7604488a7134"
     udp: true
     tls: true
     skip-cert-verify: true
     servername: "www.apple.com"
-    client-fingerprint: "firefox"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "7GvJVbR6BRhtrc8-rcZvB8qTFUF1LPeM_MmoZ04mBxo"
+      short-id: "54cca3c1c1c7"
+    flow: "xtls-rprx-vision"
+  - name: "🇦🇺_2"
+    type: vless
+    server: "zfapi.zalolink.com"
+    port: 54528
+    uuid: "57beeeb0-03fc-4fc9-94da-7604488a7134"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.apple.com"
+    client-fingerprint: "ios"
     reality-opts:
       public-key: "7GvJVbR6BRhtrc8-rcZvB8qTFUF1LPeM_MmoZ04mBxo"
       short-id: "54cca3c1c1c7"
@@ -102,27 +103,38 @@ proxies:
       short-id: "26b26357bfcd59a1"
     flow: "xtls-rprx-vision"
   - name: "🇦🇺_4"
-    type: trojan
-    server: "au001.zestapp778.com"
-    port: 54374
-    password: "5t6i121em5lkmsmk"
-    sni: "au001.zestapp778.com"
-    skip-cert-verify: true
+    type: vless
+    server: "46.250.240.80"
+    port: 2053
+    uuid: "948df76f-505d-4608-9c76-a933ee3ccc76"
     udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.cloudflare.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "CYFeysLf--_IVhxQOCd3ZxLrAVWFFOkJzvIGHOVXN3E"
+      short-id: "4cc9dc65f7770115"
   - name: "🇦🇺_5"
-    type: trojan
-    server: "194.195.254.50"
+    type: vless
+    server: "v1au.mateflora.com"
     port: 443
-    password: "ef81a036-1db9-45ed-a3aa-f932a4750066"
-    sni: "cdn.qchwnd.moe"
-    skip-cert-verify: true
+    uuid: "57beeeb0-03fc-4fc9-94da-7604488a7134"
     udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.apple.com"
+    client-fingerprint: "ios"
+    reality-opts:
+      public-key: "7GvJVbR6BRhtrc8-rcZvB8qTFUF1LPeM_MmoZ04mBxo"
+      short-id: "54cca3c1c1c7"
+    flow: "xtls-rprx-vision"
   - name: "🇦🇺_6"
     type: trojan
-    server: "au-3.tr202605.com"
+    server: "au.tronsg.com"
     port: 443
-    password: "owreRY1bmquS1WcYN2"
-    sni: "au-3.tr202605.com"
+    password: "Trojan@82164024"
+    sni: "au.tronsg.com"
     skip-cert-verify: true
     udp: true
   - name: "🇦🇺_7"
@@ -135,26 +147,26 @@ proxies:
     udp: true
   - name: "🇦🇺_8"
     type: trojan
-    server: "31.72img.xyz"
+    server: "194.195.254.50"
     port: 443
-    password: "81d93f62-15a2-4994-adb9-0b5d906aac7e"
-    sni: "31.72img.xyz"
+    password: "ef81a036-1db9-45ed-a3aa-f932a4750066"
+    sni: "cdn.qchwnd.moe"
     skip-cert-verify: true
     udp: true
   - name: "🇦🇺_9"
     type: trojan
-    server: "168.138.13.201"
+    server: "32.72img.xyz"
     port: 443
-    password: "Aimer"
-    sni: "epmo.ambercc.filegear-sg.me"
+    password: "b605dc8f-249f-4f08-9793-571acf746dab"
+    sni: "32.72img.xyz"
     skip-cert-verify: true
     udp: true
   - name: "🇦🇺_10"
     type: trojan
-    server: "193.187.119.41"
+    server: "32.72img.xyz"
     port: 443
-    password: "owreRY1bmquS1WcYN2"
-    sni: "193.187.119.41"
+    password: "81d93f62-15a2-4994-adb9-0b5d906aac7e"
+    sni: "32.72img.xyz"
     skip-cert-verify: true
     udp: true
   - name: "🇦🇺_11"
@@ -167,21 +179,45 @@ proxies:
     udp: true
   - name: "🇦🇺_12"
     type: trojan
-    server: "au-1.tr202613.com"
+    server: "103.224.212.213"
     port: 443
-    password: "2ni2H9zUKdDCjREL8Z"
-    sni: "au-1.tr202613.com"
+    password: "99b166ff-25ab-4bda-9493-618d491c2a9a"
+    sni: "us232.support-putin-kill-all-ukrainians.98848.xyz"
     skip-cert-verify: true
     udp: true
   - name: "🇦🇺_13"
     type: trojan
-    server: "au-3.tr202604.com"
+    server: "31.72img.xyz"
     port: 443
-    password: "q6UYkw9nUn6MYZz8Sp"
-    sni: "au-3.tr202604.com"
+    password: "81d93f62-15a2-4994-adb9-0b5d906aac7e"
+    sni: "31.72img.xyz"
     skip-cert-verify: true
     udp: true
   - name: "🇦🇺_14"
+    type: trojan
+    server: "193.187.119.41"
+    port: 443
+    password: "owreRY1bmquS1WcYN2"
+    sni: "193.187.119.41"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇦🇺_15"
+    type: trojan
+    server: "60.72img.xyz"
+    port: 443
+    password: "81d93f62-15a2-4994-adb9-0b5d906aac7e"
+    sni: "60.72img.xyz"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇦🇺_16"
+    type: trojan
+    server: "au-3.tr202605.com"
+    port: 443
+    password: "owreRY1bmquS1WcYN2"
+    sni: "au-3.tr202605.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇦🇺_17"
     type: trojan
     server: "au-2.tr202604.com"
     port: 443
@@ -189,28 +225,60 @@ proxies:
     sni: "au-2.tr202604.com"
     skip-cert-verify: true
     udp: true
-  - name: "🇦🇺_15"
-    type: ss
-    server: "103.11.76.248"
-    port: 28679
-    cipher: "2022-blake3-aes-128-gcm"
-    password: "NzJlOTQ5NWYtM2ZkYi00Cg=="
-    udp: true
-  - name: "🇦🇺_16"
-    type: ss
-    server: "103.11.76.248"
-    port: 28679
-    cipher: "2022-blake3-aes-128-gcm"
-    password: "NzJlOTQ5NWYtM2ZkYi00Cg=="
-    udp: true
-  - name: "🇦🇺_17"
-    type: ss
-    server: "103.11.76.248"
-    port: 28679
-    cipher: "2022-blake3-aes-128-gcm"
-    password: "NzJlOTQ5NWYtM2ZkYi00Cg=="
-    udp: true
   - name: "🇦🇺_18"
+    type: trojan
+    server: "au001.zestapp778.com"
+    port: 54374
+    password: "5t6i121em5lkmsmk"
+    sni: "au001.zestapp778.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇦🇺_19"
+    type: trojan
+    server: "168.138.13.201"
+    port: 443
+    password: "Aimer"
+    sni: "epmo.ambercc.filegear-sg.me"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇦🇺_20"
+    type: trojan
+    server: "au-1.tr202613.com"
+    port: 443
+    password: "2ni2H9zUKdDCjREL8Z"
+    sni: "au-1.tr202613.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇦🇺_21"
+    type: trojan
+    server: "45.63.30.142"
+    port: 443
+    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
+    sni: "connectwithemployerstohireyouridealteam.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇦🇺_22"
+    type: ss
+    server: "103.11.76.248"
+    port: 28679
+    cipher: "2022-blake3-aes-128-gcm"
+    password: "NzJlOTQ5NWYtM2ZkYi00Cg=="
+    udp: true
+  - name: "🇦🇺_23"
+    type: ss
+    server: "103.11.76.248"
+    port: 28679
+    cipher: "2022-blake3-aes-128-gcm"
+    password: "NzJlOTQ5NWYtM2ZkYi00Cg=="
+    udp: true
+  - name: "🇦🇺_24"
+    type: ss
+    server: "103.11.76.248"
+    port: 28679
+    cipher: "2022-blake3-aes-128-gcm"
+    password: "NzJlOTQ5NWYtM2ZkYi00Cg=="
+    udp: true
+  - name: "🇦🇺_25"
     type: vmess
     server: "185.177.229.95"
     port: 1270
@@ -255,6 +323,13 @@ proxy-groups:
       - "🇦🇺_16"
       - "🇦🇺_17"
       - "🇦🇺_18"
+      - "🇦🇺_19"
+      - "🇦🇺_20"
+      - "🇦🇺_21"
+      - "🇦🇺_22"
+      - "🇦🇺_23"
+      - "🇦🇺_24"
+      - "🇦🇺_25"
 
 
   - name: "Load Balance"
@@ -281,6 +356,13 @@ proxy-groups:
       - "🇦🇺_16"
       - "🇦🇺_17"
       - "🇦🇺_18"
+      - "🇦🇺_19"
+      - "🇦🇺_20"
+      - "🇦🇺_21"
+      - "🇦🇺_22"
+      - "🇦🇺_23"
+      - "🇦🇺_24"
+      - "🇦🇺_25"
 
 rules:
   - MATCH,PROXY

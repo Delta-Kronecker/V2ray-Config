@@ -75,13 +75,19 @@ proxies:
       short-id: "6c84fbac2d"
     flow: "xtls-rprx-vision"
   - name: "🇹🇭_2"
-    type: trojan
-    server: "th001.zestapp778.com"
-    port: 33079
-    password: "5t6i121em5lkmsmk"
-    sni: "th001.zestapp778.com"
-    skip-cert-verify: true
+    type: vless
+    server: "23.95.72.244"
+    port: 5458
+    uuid: "9a5e7b1c-bf39-4b1f-891f-ac87824ee38f"
     udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "api.adidas.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "NfmPfb_XeLj8j8cho5JkVKW3u_KA2G5UrZyOAhZAxn8"
+      short-id: "ba80520852fb9c25"
+    flow: "xtls-rprx-vision"
   - name: "🇹🇭_3"
     type: trojan
     server: "38.60.233.126"
@@ -91,6 +97,14 @@ proxies:
     skip-cert-verify: true
     udp: true
   - name: "🇹🇭_4"
+    type: trojan
+    server: "th001.zestapp778.com"
+    port: 33079
+    password: "5t6i121em5lkmsmk"
+    sni: "th001.zestapp778.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇹🇭_5"
     type: vmess
     server: "119.46.51.45"
     port: 37515
@@ -118,6 +132,7 @@ proxy-groups:
       - "🇹🇭_2"
       - "🇹🇭_3"
       - "🇹🇭_4"
+      - "🇹🇭_5"
 
 
   - name: "Load Balance"
@@ -130,6 +145,7 @@ proxy-groups:
       - "🇹🇭_2"
       - "🇹🇭_3"
       - "🇹🇭_4"
+      - "🇹🇭_5"
 
 rules:
   - MATCH,PROXY

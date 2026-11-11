@@ -61,106 +61,22 @@ dns:
 
 proxies:
   - name: "🇮🇷_1"
-    type: vless
-    server: "198.16.113.218"
-    port: 8443
-    uuid: "98a24806-141a-43d3-b094-bd66c4eb93b8"
-    udp: true
-    tls: true
+    type: trojan
+    server: "193.8.139.22"
+    port: 443
+    password: "DyxOlYWfEYVf"
+    sni: "sb24.ir"
     skip-cert-verify: true
-    servername: "www.apple.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "8NkTRxC5Q7bptx-8ADobkuhPK-ZN0kEEbzv6tCFGMzE"
-      short-id: "69984b9e02545831"
-    flow: "xtls-rprx-vision"
+    udp: true
   - name: "🇮🇷_2"
-    type: vless
-    server: "198.16.113.219"
-    port: 8443
-    uuid: "e3e0e1c3-599e-4ae1-8ad4-d9e90effacc4"
-    udp: true
-    tls: true
+    type: trojan
+    server: "ir1.wufpel.ir"
+    port: 443
+    password: "GbeGE_MwDQ_2Q_0b9RgdZd07ChS3mMLz"
+    sni: "bf0264eb50014997.wufpel.ir"
     skip-cert-verify: true
-    servername: "www.apple.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "8NkTRxC5Q7bptx-8ADobkuhPK-ZN0kEEbzv6tCFGMzE"
-      short-id: "69984b9e02545831"
-    flow: "xtls-rprx-vision"
+    udp: true
   - name: "🇮🇷_3"
-    type: vless
-    server: "198.16.113.220"
-    port: 8443
-    uuid: "98a24806-141a-43d3-b094-bd66c4eb93b8"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.apple.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "8NkTRxC5Q7bptx-8ADobkuhPK-ZN0kEEbzv6tCFGMzE"
-      short-id: "69984b9e02545831"
-    flow: "xtls-rprx-vision"
-  - name: "🇮🇷_4"
-    type: vless
-    server: "198.16.113.221"
-    port: 8443
-    uuid: "98a24806-141a-43d3-b094-bd66c4eb93b8"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.apple.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "8NkTRxC5Q7bptx-8ADobkuhPK-ZN0kEEbzv6tCFGMzE"
-      short-id: "69984b9e02545831"
-    flow: "xtls-rprx-vision"
-  - name: "🇮🇷_5"
-    type: vless
-    server: "198.16.113.220"
-    port: 8443
-    uuid: "eb6fbbdd-669b-4055-9379-4eeba938578a"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.apple.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "8NkTRxC5Q7bptx-8ADobkuhPK-ZN0kEEbzv6tCFGMzE"
-      short-id: "69984b9e02545831"
-    flow: "xtls-rprx-vision"
-  - name: "🇮🇷_6"
-    type: vless
-    server: "198.16.113.222"
-    port: 8443
-    uuid: "98a24806-141a-43d3-b094-bd66c4eb93b8"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.apple.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "8NkTRxC5Q7bptx-8ADobkuhPK-ZN0kEEbzv6tCFGMzE"
-      short-id: "69984b9e02545831"
-    flow: "xtls-rprx-vision"
-  - name: "🇮🇷_7"
-    type: trojan
-    server: "193.151.134.182"
-    port: 443
-    password: "diCyRX1d"
-    sni: "iprostable.enterprises"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇮🇷_8"
-    type: trojan
-    server: "ir1.iobase.ir"
-    port: 443
-    password: "a6xjq4UD2t"
-    sni: "ir1.iobase.ir"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇮🇷_9"
     type: trojan
     server: "81.12.80.236"
     port: 36862
@@ -168,12 +84,56 @@ proxies:
     sni: "diako.fifamarket.monster"
     skip-cert-verify: true
     udp: true
+  - name: "🇮🇷_4"
+    type: trojan
+    server: "193.151.134.182"
+    port: 443
+    password: "diCyRX1d"
+    sni: "iprostable.enterprises"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇮🇷_5"
+    type: trojan
+    server: "ir1.iobase.ir"
+    port: 443
+    password: "a6xjq4UD2t"
+    sni: "ir1.iobase.ir"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇮🇷_6"
+    type: ss
+    server: "dkstatics-public.digikala.com"
+    port: 443
+    cipher: "none"
+    password: "RSzEIkk2EsHEAVj15N5E/A=="
+    udp: true
+  - name: "🇮🇷_7"
+    type: ss
+    server: "185.188.104.10"
+    port: 443
+    cipher: "none"
+    password: "RSzEIkk2EsHEAVj15N5E/A=="
+    udp: true
+  - name: "🇮🇷_8"
+    type: ss
+    server: "185.188.105.10"
+    port: 443
+    cipher: "none"
+    password: "RSzEIkk2EsHEAVj15N5E/A=="
+    udp: true
+  - name: "🇮🇷_9"
+    type: ss
+    server: "185.188.106.10"
+    port: 443
+    cipher: "none"
+    password: "RSzEIkk2EsHEAVj15N5E/A=="
+    udp: true
   - name: "🇮🇷_10"
     type: ss
-    server: "5.202.11.137"
-    port: 555
-    cipher: "chacha20-ietf-poly1305"
-    password: "60806a2e4c3945f4ba08beade8d71d4e"
+    server: "185.188.105.11"
+    port: 443
+    cipher: "none"
+    password: "RSzEIkk2EsHEAVj15N5E/A=="
     udp: true
   - name: "🇮🇷_11"
     type: ss
@@ -184,28 +144,28 @@ proxies:
     udp: true
   - name: "🇮🇷_12"
     type: ss
-    server: "185.188.105.10"
+    server: "dkstatics-public.digikala.com"
     port: 443
     cipher: "none"
     password: "RSzEIkk2EsHEAVj15N5E/A=="
     udp: true
   - name: "🇮🇷_13"
     type: ss
-    server: "dkstatics-public.digikala.com"
+    server: "185.188.107.10"
     port: 443
     cipher: "none"
     password: "RSzEIkk2EsHEAVj15N5E/A=="
     udp: true
   - name: "🇮🇷_14"
     type: ss
-    server: "185.188.107.10"
+    server: "185.188.104.12"
     port: 443
     cipher: "none"
     password: "RSzEIkk2EsHEAVj15N5E/A=="
     udp: true
   - name: "🇮🇷_15"
     type: ss
-    server: "dkstatics-public.digikala.com"
+    server: "185.188.104.12"
     port: 443
     cipher: "none"
     password: "RSzEIkk2EsHEAVj15N5E/A=="
@@ -219,14 +179,14 @@ proxies:
     udp: true
   - name: "🇮🇷_17"
     type: ss
-    server: "gaming.cloudnamercqtzumigrhrjm.ir"
-    port: 30473
-    cipher: "2022-blake3-aes-256-gcm"
-    password: "5n3cwrcnUDtzPesQ9EC2/95cxVKaWNud1aUJSj4Aemw=:BNQqPjIRZvaTHbySMfNMYKLFQ2D13bVg+l/iyJkMsSM="
+    server: "185.188.105.11"
+    port: 443
+    cipher: "none"
+    password: "RSzEIkk2EsHEAVj15N5E/A=="
     udp: true
   - name: "🇮🇷_18"
     type: ss
-    server: "185.188.104.12"
+    server: "185.188.105.10"
     port: 443
     cipher: "none"
     password: "RSzEIkk2EsHEAVj15N5E/A=="
@@ -240,67 +200,17 @@ proxies:
     udp: true
   - name: "🇮🇷_20"
     type: ss
-    server: "185.188.105.11"
+    server: "185.188.107.10"
     port: 443
     cipher: "none"
     password: "RSzEIkk2EsHEAVj15N5E/A=="
     udp: true
   - name: "🇮🇷_21"
     type: ss
-    server: "185.188.107.10"
-    port: 443
-    cipher: "none"
-    password: "RSzEIkk2EsHEAVj15N5E/A=="
-    udp: true
-  - name: "🇮🇷_22"
-    type: ss
-    server: "185.188.106.10"
-    port: 443
-    cipher: "none"
-    password: "RSzEIkk2EsHEAVj15N5E/A=="
-    udp: true
-  - name: "🇮🇷_23"
-    type: ss
-    server: "185.188.105.10"
-    port: 443
-    cipher: "none"
-    password: "RSzEIkk2EsHEAVj15N5E/A=="
-    udp: true
-  - name: "🇮🇷_24"
-    type: ss
-    server: "185.188.105.11"
-    port: 443
-    cipher: "none"
-    password: "RSzEIkk2EsHEAVj15N5E/A=="
-    udp: true
-  - name: "🇮🇷_25"
-    type: ss
     server: "185.188.104.11"
     port: 443
     cipher: "none"
     password: "RSzEIkk2EsHEAVj15N5E/A=="
-    udp: true
-  - name: "🇮🇷_26"
-    type: ss
-    server: "185.188.104.10"
-    port: 443
-    cipher: "none"
-    password: "RSzEIkk2EsHEAVj15N5E/A=="
-    udp: true
-  - name: "🇮🇷_27"
-    type: ss
-    server: "185.188.104.12"
-    port: 443
-    cipher: "none"
-    password: "RSzEIkk2EsHEAVj15N5E/A=="
-    udp: true
-  - name: "🇮🇷_28"
-    type: vmess
-    server: "94.184.18.130"
-    port: 44580
-    uuid: "45dc5086-f30d-4b34-aac4-612c074243c8"
-    alterId: 0
-    cipher: "auto"
     udp: true
 
 proxy-groups:
@@ -339,13 +249,6 @@ proxy-groups:
       - "🇮🇷_19"
       - "🇮🇷_20"
       - "🇮🇷_21"
-      - "🇮🇷_22"
-      - "🇮🇷_23"
-      - "🇮🇷_24"
-      - "🇮🇷_25"
-      - "🇮🇷_26"
-      - "🇮🇷_27"
-      - "🇮🇷_28"
 
 
   - name: "Load Balance"
@@ -375,13 +278,6 @@ proxy-groups:
       - "🇮🇷_19"
       - "🇮🇷_20"
       - "🇮🇷_21"
-      - "🇮🇷_22"
-      - "🇮🇷_23"
-      - "🇮🇷_24"
-      - "🇮🇷_25"
-      - "🇮🇷_26"
-      - "🇮🇷_27"
-      - "🇮🇷_28"
 
 rules:
   - MATCH,PROXY

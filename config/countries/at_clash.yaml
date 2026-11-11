@@ -62,20 +62,6 @@ dns:
 proxies:
   - name: "🇦🇹_1"
     type: vless
-    server: "147.45.71.230"
-    port: 8443
-    uuid: "eb733326-d5b1-4e96-a0b5-ba0d61b2f60a"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "cdn.coldcrate.pro"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "s7pfm2CSaAD1_KTtfMjSzky3MUvHNFLodKwloZ1cEQY"
-      short-id: "ba68eb2bb350c7a2"
-    flow: "xtls-rprx-vision"
-  - name: "🇦🇹_2"
-    type: vless
     server: "66.90.106.28"
     port: 443
     uuid: "90157e25-cee1-4217-921e-91f300bc1a24"
@@ -88,7 +74,7 @@ proxies:
       public-key: "1vSZjvhZO01oAEH3b7eebR1qF5dLU1Dq2E7xu8pwGSs"
       short-id: "428ef87fd47a3a32"
     flow: "xtls-rprx-vision"
-  - name: "🇦🇹_3"
+  - name: "🇦🇹_2"
     type: vless
     server: "fdat.titun.su"
     port: 443
@@ -102,7 +88,7 @@ proxies:
       public-key: "1vSZjvhZO01oAEH3b7eebR1qF5dLU1Dq2E7xu8pwGSs"
       short-id: "428ef87fd47a3a32"
     flow: "xtls-rprx-vision"
-  - name: "🇦🇹_4"
+  - name: "🇦🇹_3"
     type: trojan
     server: "86.106.119.23"
     port: 443
@@ -110,34 +96,28 @@ proxies:
     sni: "gr.freeguard.org"
     skip-cert-verify: true
     udp: true
+  - name: "🇦🇹_4"
+    type: ss
+    server: "152.53.1.57"
+    port: 8388
+    cipher: "chacha20-ietf-poly1305"
+    password: "AdawffFMHymlasRb0VOP3HFf7sTG5sJx"
+    udp: true
   - name: "🇦🇹_5"
     type: ss
-    server: "82.110.60.9"
-    port: 19999
-    cipher: "aes-256-gcm"
-    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
+    server: "152.53.1.57"
+    port: 8388
+    cipher: "chacha20-ietf-poly1305"
+    password: "AdawffFMHymlasRb0VOP3HFf7sTG5sJx"
     udp: true
   - name: "🇦🇹_6"
     type: ss
-    server: "130.195.222.215"
-    port: 443
-    cipher: "none"
-    password: "https://t.me/WangCai2🇨🇳"
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed=2560"
-      host: "woshinidie-et3.pages.dev"
-      tls: true
-  - name: "🇦🇹_7"
-    type: ss
     server: "82.110.60.9"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
-  - name: "🇦🇹_8"
+  - name: "🇦🇹_7"
     type: ss
     server: "130.195.222.215"
     port: 443
@@ -150,7 +130,7 @@ proxies:
       path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed=2560"
       host: "woshinidie-et3.pages.dev"
       tls: true
-  - name: "🇦🇹_9"
+  - name: "🇦🇹_8"
     type: ss
     server: "130.195.222.215"
     port: 443
@@ -163,19 +143,25 @@ proxies:
       path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed\\=2560"
       host: "woshinidie-et3.pages.dev"
       tls: true
+  - name: "🇦🇹_9"
+    type: ss
+    server: "130.195.222.215"
+    port: 443
+    cipher: "none"
+    password: "https://t.me/WangCai2🇨🇳"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "59fc5f8c-5697-4eb8-acf2-8ae363f203a2/?ed=2560"
+      host: "woshinidie-et3.pages.dev"
+      tls: true
   - name: "🇦🇹_10"
     type: ss
-    server: "152.53.1.57"
-    port: 8388
-    cipher: "chacha20-ietf-poly1305"
-    password: "AdawffFMHymlasRb0VOP3HFf7sTG5sJx"
-    udp: true
-  - name: "🇦🇹_11"
-    type: ss
-    server: "152.53.1.57"
-    port: 8388
-    cipher: "chacha20-ietf-poly1305"
-    password: "AdawffFMHymlasRb0VOP3HFf7sTG5sJx"
+    server: "82.110.60.9"
+    port: 19999
+    cipher: "aes-256-gcm"
+    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
 
 proxy-groups:
@@ -203,7 +189,6 @@ proxy-groups:
       - "🇦🇹_8"
       - "🇦🇹_9"
       - "🇦🇹_10"
-      - "🇦🇹_11"
 
 
   - name: "Load Balance"
@@ -222,7 +207,6 @@ proxy-groups:
       - "🇦🇹_8"
       - "🇦🇹_9"
       - "🇦🇹_10"
-      - "🇦🇹_11"
 
 rules:
   - MATCH,PROXY

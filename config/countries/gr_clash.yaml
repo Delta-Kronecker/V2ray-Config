@@ -75,6 +75,20 @@ proxies:
       short-id: "94acb54627612d43"
     flow: "xtls-rprx-vision"
   - name: "🇬🇷_2"
+    type: vless
+    server: "23.95.72.244"
+    port: 50121
+    uuid: "9a5e7b1c-bf39-4b1f-891f-ac87824ee38f"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "api.adidas.com"
+    client-fingerprint: "ios"
+    reality-opts:
+      public-key: "wwVM0-8EUXMZthXS6SAGpu3xSPbf2kjWB_A3i-TCOS0"
+      short-id: "888cb24cb698"
+    flow: "xtls-rprx-vision"
+  - name: "🇬🇷_3"
     type: trojan
     server: "38.54.29.52"
     port: 443
@@ -100,6 +114,7 @@ proxy-groups:
     proxies:
       - "🇬🇷_1"
       - "🇬🇷_2"
+      - "🇬🇷_3"
 
 
   - name: "Load Balance"
@@ -110,6 +125,7 @@ proxy-groups:
     proxies:
       - "🇬🇷_1"
       - "🇬🇷_2"
+      - "🇬🇷_3"
 
 rules:
   - MATCH,PROXY

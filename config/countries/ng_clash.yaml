@@ -61,6 +61,20 @@ dns:
 
 proxies:
   - name: "🇳🇬_1"
+    type: vless
+    server: "23.95.72.244"
+    port: 50889
+    uuid: "9a5e7b1c-bf39-4b1f-891f-ac87824ee38f"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "api.adidas.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "nRsOy4cUKjMIi5k8HtdfY9qnrm8fMe031yi56zMtzSg"
+      short-id: "2eae70bfca3776cc"
+    flow: "xtls-rprx-vision"
+  - name: "🇳🇬_2"
     type: trojan
     server: "103.97.91.17"
     port: 443
@@ -85,6 +99,7 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇳🇬_1"
+      - "🇳🇬_2"
 
 
   - name: "Load Balance"
@@ -94,6 +109,7 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇳🇬_1"
+      - "🇳🇬_2"
 
 rules:
   - MATCH,PROXY

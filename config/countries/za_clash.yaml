@@ -61,26 +61,36 @@ dns:
 
 proxies:
   - name: "🇿🇦_1"
+    type: vless
+    server: "212.41.9.190"
+    port: 8443
+    uuid: "db57c865-2318-4fd2-8aea-e8ba58ec696d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "s3.storage.selcloud.ru"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "_h_4Tmkb2bq5yNs_TkzHm4g_dJTZLeKiNGAN9tuP22Y"
+      short-id: "c42a4d4d"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "cas-za"
+  - name: "🇿🇦_2"
+    type: trojan
+    server: "139.84.231.142"
+    port: 443
+    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
+    sni: "explorecareerpathsandunlockprofessionalsuccesstoday.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇿🇦_3"
     type: trojan
     server: "38.54.64.247"
     port: 443
     password: "ks3og6wZ9kH8UJv1bmpvwXbfgDNNaTd1Lk"
     sni: "38.54.64.247"
     skip-cert-verify: true
-    udp: true
-  - name: "🇿🇦_2"
-    type: ss
-    server: "102.133.165.160"
-    port: 16233
-    cipher: "chacha20-ietf-poly1305"
-    password: "Xsy8Ox4yOV3xLlpxtjzs3X"
-    udp: true
-  - name: "🇿🇦_3"
-    type: ss
-    server: "102.133.165.160"
-    port: 16233
-    cipher: "chacha20-ietf-poly1305"
-    password: "Xsy8Ox4yOV3xLlpxtjzs3X"
     udp: true
   - name: "🇿🇦_4"
     type: ss
@@ -91,10 +101,38 @@ proxies:
     udp: true
   - name: "🇿🇦_5"
     type: ss
+    server: "20.164.212.218"
+    port: 443
+    cipher: "chacha20-ietf-poly1305"
+    password: "SLFwIpUe79MuuFcq"
+    udp: true
+  - name: "🇿🇦_6"
+    type: ss
+    server: "102.133.165.160"
+    port: 16233
+    cipher: "chacha20-ietf-poly1305"
+    password: "Xsy8Ox4yOV3xLlpxtjzs3X"
+    udp: true
+  - name: "🇿🇦_7"
+    type: ss
+    server: "102.133.165.160"
+    port: 16233
+    cipher: "chacha20-ietf-poly1305"
+    password: "Xsy8Ox4yOV3xLlpxtjzs3X"
+    udp: true
+  - name: "🇿🇦_8"
+    type: ss
     server: "102.37.156.224"
     port: 443
     cipher: "chacha20-ietf-poly1305"
     password: "aduB9HGxQHjA2SBMRjkHX6"
+    udp: true
+  - name: "🇿🇦_9"
+    type: ss
+    server: "20.164.212.218"
+    port: 443
+    cipher: "chacha20-ietf-poly1305"
+    password: "2tEG6QDaFjEic05o"
     udp: true
 
 proxy-groups:
@@ -117,6 +155,10 @@ proxy-groups:
       - "🇿🇦_3"
       - "🇿🇦_4"
       - "🇿🇦_5"
+      - "🇿🇦_6"
+      - "🇿🇦_7"
+      - "🇿🇦_8"
+      - "🇿🇦_9"
 
 
   - name: "Load Balance"
@@ -130,6 +172,10 @@ proxy-groups:
       - "🇿🇦_3"
       - "🇿🇦_4"
       - "🇿🇦_5"
+      - "🇿🇦_6"
+      - "🇿🇦_7"
+      - "🇿🇦_8"
+      - "🇿🇦_9"
 
 rules:
   - MATCH,PROXY

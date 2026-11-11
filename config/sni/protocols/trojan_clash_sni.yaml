@@ -60,42 +60,33 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "@DeltaKroneckerGithub_1114"
+  - name: "@DeltaKroneckerGithub_1587"
     type: trojan
     server: "127.0.0.1"
     port: 40443
-    password: "HutaoCloud"
-    sni: "185.220.238.77"
-    skip-cert-verify: true
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/api"
-  - name: "@DeltaKroneckerGithub_1580"
-    type: trojan
-    server: "127.0.0.1"
-    port: 40443
-    password: "C910E5F2-A662-7CFB-B5A6-5D39DB212CBA"
-    sni: "muddy-frost-4e2d.vpnetwork3567.workers.dev"
-    skip-cert-verify: true
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/"
-  - name: "@DeltaKroneckerGithub_1666"
-    type: trojan
-    server: "127.0.0.1"
-    port: 40443
-    password: "76yTlnTIsjCTlmqnUJ5Tzc1rM"
-    sni: "hl-freedom-0.undef.network"
+    password: "7LBbob9IutFObLxLf9Svc1HaV"
+    sni: "hl-freedom-1.undef.network"
     skip-cert-verify: true
     udp: true
     network: ws
     ws-opts:
       path: "/f2fc2a1f"
       headers:
-        Host: "hl-freedom-0.undef.network"
-  - name: "@DeltaKroneckerGithub_1669"
+        Host: "hl-freedom-1.undef.network"
+  - name: "@DeltaKroneckerGithub_1623"
+    type: trojan
+    server: "127.0.0.1"
+    port: 40443
+    password: "123456"
+    sni: "321dfbc6.uir-9i6.pages.dev"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "321dfbc6.uir-9i6.pages.dev"
+  - name: "@DeltaKroneckerGithub_1627"
     type: trojan
     server: "127.0.0.1"
     port: 40443
@@ -108,6 +99,32 @@ proxies:
       path: "/tvpn-trojan/bg"
       headers:
         Host: "orbylume.my.to"
+  - name: "@DeltaKroneckerGithub_1761"
+    type: trojan
+    server: "127.0.0.1"
+    port: 40443
+    password: "123456"
+    sni: "321dfbc6.uir-9i6.pages.dev"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "321dfbc6.uir-9i6.pages.dev"
+  - name: "@DeltaKroneckerGithub_1905"
+    type: trojan
+    server: "127.0.0.1"
+    port: 40443
+    password: "C910E5F2-A662-7CFB-B5A6-5D39DB212CBA"
+    sni: "muddy-frost-4e2d.vpnetwork3567.workers.dev"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/?--Telegram--Viturey--Telegram--Viturey--"
+      headers:
+        Host: "muddy-frost-4e2d.vpnetwork3567.workers.dev"
 
 proxy-groups:
   - name: "PROXY"
@@ -124,10 +141,11 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "@DeltaKroneckerGithub_1114"
-      - "@DeltaKroneckerGithub_1580"
-      - "@DeltaKroneckerGithub_1666"
-      - "@DeltaKroneckerGithub_1669"
+      - "@DeltaKroneckerGithub_1587"
+      - "@DeltaKroneckerGithub_1623"
+      - "@DeltaKroneckerGithub_1627"
+      - "@DeltaKroneckerGithub_1761"
+      - "@DeltaKroneckerGithub_1905"
 
 
   - name: "Load Balance"
@@ -136,10 +154,11 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "@DeltaKroneckerGithub_1114"
-      - "@DeltaKroneckerGithub_1580"
-      - "@DeltaKroneckerGithub_1666"
-      - "@DeltaKroneckerGithub_1669"
+      - "@DeltaKroneckerGithub_1587"
+      - "@DeltaKroneckerGithub_1623"
+      - "@DeltaKroneckerGithub_1627"
+      - "@DeltaKroneckerGithub_1761"
+      - "@DeltaKroneckerGithub_1905"
 
 rules:
   - MATCH,PROXY
