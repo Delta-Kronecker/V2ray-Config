@@ -60,22 +60,22 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇩🇰_1"
+  - name: "🇳🇪_1"
     type: vless
-    server: "193.233.253.180"
-    port: 8444
-    uuid: "a346c521-7a7f-452b-9356-a4893feb5982"
+    server: "196.196.148.63"
+    port: 443
+    uuid: "cda0862a-0f87-4be9-8ed8-1d0c9e382839"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "github.com"
+    servername: "717252g.nl8.h1clayd.click"
     client-fingerprint: "firefox"
     reality-opts:
-      public-key: "FWitre1jinQR7qz5HQ0q2Q4Gg9xA9B0SyizCziN7Ch0"
-      short-id: ""
+      public-key: "PD8Jdlg3xB9QY--jwQjp8PFPzCS8-Oryw6-HWBcHMFU"
+      short-id: "d3bd772514c87d28"
     network: grpc
     grpc-opts:
-      grpc-service-name: "GunService"
+      grpc-service-name: "204adda7e3da"
 
 proxy-groups:
   - name: "PROXY"
@@ -92,7 +92,7 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇩🇰_1"
+      - "🇳🇪_1"
 
 
   - name: "Load Balance"
@@ -101,7 +101,7 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇩🇰_1"
+      - "🇳🇪_1"
 
 rules:
   - MATCH,PROXY

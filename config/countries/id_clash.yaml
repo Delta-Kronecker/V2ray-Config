@@ -62,25 +62,19 @@ dns:
 proxies:
   - name: "🇮🇩_1"
     type: vless
-    server: "in001.zestapp778.com"
-    port: 57353
-    uuid: "e9a8144e-5237-488a-afb1-9ca3d8d54c80"
+    server: "23.95.72.244"
+    port: 52147
+    uuid: "9a5e7b1c-bf39-4b1f-891f-ac87824ee38f"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "in001.zestapp778.com"
-    client-fingerprint: "chrome"
-  - name: "🇮🇩_2"
-    type: vless
-    server: "130.94.95.198"
-    port: 57353
-    uuid: "e9a8144e-5237-488a-afb1-9ca3d8d54c80"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "in001.zestapp778.com"
+    servername: "api.adidas.com"
     client-fingerprint: "firefox"
-  - name: "🇮🇩_3"
+    reality-opts:
+      public-key: "_QiN_9E9zPt1RehuXIuwVYr0AyT7SWrHzIeXQuK00nQ"
+      short-id: "4af6e97b161680e3"
+    flow: "xtls-rprx-vision"
+  - name: "🇮🇩_2"
     type: trojan
     server: "103.67.79.156"
     port: 443
@@ -88,7 +82,7 @@ proxies:
     sni: "103.67.79.156"
     skip-cert-verify: true
     udp: true
-  - name: "🇮🇩_4"
+  - name: "🇮🇩_3"
     type: trojan
     server: "172.232.250.160"
     port: 443
@@ -96,14 +90,14 @@ proxies:
     sni: "172.232.250.160"
     skip-cert-verify: true
     udp: true
-  - name: "🇮🇩_5"
+  - name: "🇮🇩_4"
     type: ss
     server: "aio.unlimited.biz.id"
     port: 443
     cipher: "none"
     password: "f282b878-8711-45a1-8c69-5564172123c1"
     udp: true
-  - name: "🇮🇩_6"
+  - name: "🇮🇩_5"
     type: ss
     server: "aio.unlimited.biz.id"
     port: 443
@@ -131,7 +125,6 @@ proxy-groups:
       - "🇮🇩_3"
       - "🇮🇩_4"
       - "🇮🇩_5"
-      - "🇮🇩_6"
 
 
   - name: "Load Balance"
@@ -145,7 +138,6 @@ proxy-groups:
       - "🇮🇩_3"
       - "🇮🇩_4"
       - "🇮🇩_5"
-      - "🇮🇩_6"
 
 rules:
   - MATCH,PROXY

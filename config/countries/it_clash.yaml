@@ -78,33 +78,19 @@ proxies:
       grpc-service-name: "cas-it"
   - name: "🇮🇹_2"
     type: vless
-    server: "151.243.199.136"
+    server: "82.118.16.187"
     port: 443
-    uuid: "dbf3f074-3b18-43f3-b82a-debd8c879c69"
+    uuid: "dc2259c4-388e-4285-ba18-df619b6672b6"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "www.apple.com"
+    servername: "www.cloudflare.com"
     client-fingerprint: "chrome"
     reality-opts:
-      public-key: "-Av3XhLUiIhW1nbejSq0OZgH8cNfLbH1qytIhDIl_VU"
-      short-id: "03cb729f3186c7fb"
+      public-key: "R5ycsjJ-v024902dMSqTsSdqxUwCFEXMebdBEWFt9VU"
+      short-id: "cd6065902eea7a02"
     flow: "xtls-rprx-vision"
   - name: "🇮🇹_3"
-    type: vless
-    server: "2.59.21.188"
-    port: 443
-    uuid: "3dad6500-9910-4aae-9422-7374a0e422f6"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "tg-lovers-free.com"
-    client-fingerprint: "edge"
-    reality-opts:
-      public-key: "_0N3gACBkKvGKTh0q5-dmt-XqSHB3xfEHSANRXu-U0I"
-      short-id: "f00f58383241c807"
-    flow: "xtls-rprx-vision"
-  - name: "🇮🇹_4"
     type: vless
     server: "23.95.72.244"
     port: 50175
@@ -118,19 +104,32 @@ proxies:
       public-key: "v1uQwWk-IO_5A4jLeLv1wTEFjxtq8UVZc2uRj58To3U"
       short-id: "39f91686f6377b"
     flow: "xtls-rprx-vision"
-  - name: "🇮🇹_5"
+  - name: "🇮🇹_4"
     type: vless
-    server: "82.118.16.187"
-    port: 443
-    uuid: "dc2259c4-388e-4285-ba18-df619b6672b6"
+    server: "172.213.24.16"
+    port: 2083
+    uuid: "52a5a29f-c162-411a-8a37-a3f11b0dc537"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "www.cloudflare.com"
-    client-fingerprint: "chrome"
+    servername: "www.apple.com"
     reality-opts:
-      public-key: "R5ycsjJ-v024902dMSqTsSdqxUwCFEXMebdBEWFt9VU"
-      short-id: "cd6065902eea7a02"
+      public-key: "WbgtxLlo2gmTzB4Wzxgh_U7G97d4ENTS10fYIoujET4"
+      short-id: "0123456789abcdef"
+    flow: "xtls-rprx-vision"
+  - name: "🇮🇹_5"
+    type: vless
+    server: "2.59.21.188"
+    port: 443
+    uuid: "3dad6500-9910-4aae-9422-7374a0e422f6"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "tg-lovers-free.com"
+    client-fingerprint: "edge"
+    reality-opts:
+      public-key: "_0N3gACBkKvGKTh0q5-dmt-XqSHB3xfEHSANRXu-U0I"
+      short-id: "f00f58383241c807"
     flow: "xtls-rprx-vision"
   - name: "🇮🇹_6"
     type: vless
@@ -148,35 +147,6 @@ proxies:
     flow: "xtls-rprx-vision"
   - name: "🇮🇹_7"
     type: vless
-    server: "212.41.9.190"
-    port: 12443
-    uuid: "db57c865-2318-4fd2-8aea-e8ba58ec696d"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "s3.storage.selcloud.ru"
-    client-fingerprint: "random"
-    reality-opts:
-      public-key: "H2OZHvueEdgPOrpYR7KoD6o10l7mak7dvxn0Sdq1MHE"
-      short-id: "10700887"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "cas-it"
-  - name: "🇮🇹_8"
-    type: vless
-    server: "172.213.24.16"
-    port: 2083
-    uuid: "52a5a29f-c162-411a-8a37-a3f11b0dc537"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.apple.com"
-    reality-opts:
-      public-key: "WbgtxLlo2gmTzB4Wzxgh_U7G97d4ENTS10fYIoujET4"
-      short-id: "0123456789abcdef"
-    flow: "xtls-rprx-vision"
-  - name: "🇮🇹_9"
-    type: vless
     server: "193.163.203.170"
     port: 443
     uuid: "11aabba0-5fd1-4f15-8068-74c1a466cefc"
@@ -189,7 +159,7 @@ proxies:
       public-key: "GCCZ1ZZjB_nj7yxqFi22bIIWWr_G6rnWUzDcssN_40o"
       short-id: "b28db60d77c50b4f"
     flow: "xtls-rprx-vision"
-  - name: "🇮🇹_10"
+  - name: "🇮🇹_8"
     type: trojan
     server: "91.193.5.121"
     port: 8443
@@ -197,121 +167,135 @@ proxies:
     sni: "ngepz.ambercc.filegear-sg.me"
     skip-cert-verify: true
     udp: true
+  - name: "🇮🇹_9"
+    type: ss
+    server: "202.50.253.36"
+    port: 19999
+    cipher: "aes-256-gcm"
+    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
+    udp: true
+  - name: "🇮🇹_10"
+    type: ss
+    server: "202.50.253.90"
+    port: 19999
+    cipher: "aes-256-gcm"
+    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
+    udp: true
   - name: "🇮🇹_11"
     type: ss
-    server: "202.50.253.99"
+    server: "202.50.253.90"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
   - name: "🇮🇹_12"
     type: ss
-    server: "202.50.253.18"
-    port: 19999
-    cipher: "aes-256-gcm"
-    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
+    server: "185.194.191.35"
+    port: 1349
+    cipher: "chacha20-ietf-poly1305"
+    password: "byX4-DV0C42PLFTWQhMTAQ63mZ8qrDRB"
     udp: true
   - name: "🇮🇹_13"
     type: ss
-    server: "202.50.253.36"
+    server: "202.50.253.45"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
   - name: "🇮🇹_14"
     type: ss
-    server: "202.50.253.27"
+    server: "202.50.253.36"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
   - name: "🇮🇹_15"
     type: ss
-    server: "202.50.253.81"
+    server: "149.50.215.234"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
   - name: "🇮🇹_16"
     type: ss
-    server: "202.50.253.72"
+    server: "202.50.253.27"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
   - name: "🇮🇹_17"
     type: ss
-    server: "149.50.215.234"
+    server: "202.50.253.72"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
   - name: "🇮🇹_18"
     type: ss
-    server: "202.50.253.72"
+    server: "202.50.253.27"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
   - name: "🇮🇹_19"
     type: ss
-    server: "202.50.253.72"
+    server: "185.164.175.81"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
   - name: "🇮🇹_20"
     type: ss
-    server: "202.50.253.72"
+    server: "202.50.253.81"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
   - name: "🇮🇹_21"
     type: ss
-    server: "202.50.253.90"
+    server: "202.50.253.81"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
   - name: "🇮🇹_22"
     type: ss
-    server: "202.50.253.81"
+    server: "149.50.215.234"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
   - name: "🇮🇹_23"
     type: ss
-    server: "202.50.253.63"
+    server: "202.50.253.72"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
   - name: "🇮🇹_24"
     type: ss
-    server: "202.50.253.36"
+    server: "202.50.253.45"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
   - name: "🇮🇹_25"
     type: ss
-    server: "202.50.253.90"
+    server: "202.50.253.18"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
   - name: "🇮🇹_26"
     type: ss
-    server: "202.50.253.99"
+    server: "185.164.175.81"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
   - name: "🇮🇹_27"
     type: ss
-    server: "202.50.253.63"
+    server: "149.50.215.234"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
@@ -325,21 +309,21 @@ proxies:
     udp: true
   - name: "🇮🇹_29"
     type: ss
-    server: "202.50.253.72"
+    server: "202.50.253.18"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
   - name: "🇮🇹_30"
     type: ss
-    server: "202.50.253.18"
+    server: "202.50.253.99"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
   - name: "🇮🇹_31"
     type: ss
-    server: "185.164.175.81"
+    server: "202.50.253.54"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
@@ -353,7 +337,7 @@ proxies:
     udp: true
   - name: "🇮🇹_33"
     type: ss
-    server: "202.50.253.45"
+    server: "202.50.253.72"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
@@ -367,40 +351,51 @@ proxies:
     udp: true
   - name: "🇮🇹_35"
     type: ss
-    server: "185.164.175.81"
-    port: 19999
-    cipher: "aes-256-gcm"
-    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
+    server: "dns24.m3hrzd.ir"
+    port: 1349
+    cipher: "chacha20-ietf-poly1305"
+    password: "byX4-DV0C42PLFTWQhMTAQ63mZ8qrDRB"
     udp: true
   - name: "🇮🇹_36"
     type: ss
-    server: "202.50.253.45"
+    server: "202.50.253.63"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
   - name: "🇮🇹_37"
     type: ss
-    server: "149.50.215.234"
+    server: "202.50.253.72"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
   - name: "🇮🇹_38"
     type: ss
-    server: "202.50.253.27"
+    server: "202.50.253.99"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
   - name: "🇮🇹_39"
     type: ss
-    server: "202.50.253.54"
+    server: "202.50.253.63"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
   - name: "🇮🇹_40"
+    type: vmess
+    server: "149.50.215.238"
+    port: 1270
+    uuid: "5c040f1d-45db-43bd-8d46-e4950e433735"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "xmfhlpy.com"
+  - name: "🇮🇹_41"
     type: vmess
     server: "149.50.215.240"
     port: 1270
@@ -411,7 +406,7 @@ proxies:
     tls: true
     skip-cert-verify: true
     servername: "xmfhlpy.com"
-  - name: "🇮🇹_41"
+  - name: "🇮🇹_42"
     type: vmess
     server: "149.22.91.20"
     port: 1270
@@ -479,6 +474,7 @@ proxy-groups:
       - "🇮🇹_39"
       - "🇮🇹_40"
       - "🇮🇹_41"
+      - "🇮🇹_42"
 
 
   - name: "Load Balance"
@@ -528,6 +524,7 @@ proxy-groups:
       - "🇮🇹_39"
       - "🇮🇹_40"
       - "🇮🇹_41"
+      - "🇮🇹_42"
 
 rules:
   - MATCH,PROXY

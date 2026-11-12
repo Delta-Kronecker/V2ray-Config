@@ -60,7 +60,33 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "@DeltaKroneckerGithub_1587"
+  - name: "@DeltaKroneckerGithub_1210"
+    type: trojan
+    server: "127.0.0.1"
+    port: 40443
+    password: "krOXKzNRRIROWi"
+    sni: "kaMran06-v3QDLI.KAMRaN-06.WOrKErs.dEV"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "kaMran06-v3QDLI.KAMRaN-06.WOrKErs.dEV"
+  - name: "@DeltaKroneckerGithub_1318"
+    type: trojan
+    server: "127.0.0.1"
+    port: 40443
+    password: "reinz"
+    sni: "tsg3.pages.dev"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "tsg3.pages.dev"
+  - name: "@DeltaKroneckerGithub_1411"
     type: trojan
     server: "127.0.0.1"
     port: 40443
@@ -73,7 +99,33 @@ proxies:
       path: "/f2fc2a1f"
       headers:
         Host: "hl-freedom-1.undef.network"
-  - name: "@DeltaKroneckerGithub_1623"
+  - name: "@DeltaKroneckerGithub_1746"
+    type: trojan
+    server: "127.0.0.1"
+    port: 40443
+    password: "32787f90-c845-11ee-8ca5-1239d0255272"
+    sni: "sg-4.test3.net"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/howdy"
+      headers:
+        Host: "sg-4.test3.net"
+  - name: "@DeltaKroneckerGithub_2017"
+    type: trojan
+    server: "127.0.0.1"
+    port: 40443
+    password: "RXR0MNWOjvFH"
+    sni: "raYAnCOnfiG01-dPbXh49m-t1.raYAn-cONfig-01.workERs.dEV"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: "raYAnCOnfiG01-dPbXh49m-t1.raYAn-cONfig-01.workERs.dEV"
+  - name: "@DeltaKroneckerGithub_2026"
     type: trojan
     server: "127.0.0.1"
     port: 40443
@@ -86,45 +138,6 @@ proxies:
       path: "/"
       headers:
         Host: "321dfbc6.uir-9i6.pages.dev"
-  - name: "@DeltaKroneckerGithub_1627"
-    type: trojan
-    server: "127.0.0.1"
-    port: 40443
-    password: "46d221fa-e9b4-748c-4eae-019a88e42991"
-    sni: "orbylume.my.to"
-    skip-cert-verify: true
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/tvpn-trojan/bg"
-      headers:
-        Host: "orbylume.my.to"
-  - name: "@DeltaKroneckerGithub_1761"
-    type: trojan
-    server: "127.0.0.1"
-    port: 40443
-    password: "123456"
-    sni: "321dfbc6.uir-9i6.pages.dev"
-    skip-cert-verify: true
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "321dfbc6.uir-9i6.pages.dev"
-  - name: "@DeltaKroneckerGithub_1905"
-    type: trojan
-    server: "127.0.0.1"
-    port: 40443
-    password: "C910E5F2-A662-7CFB-B5A6-5D39DB212CBA"
-    sni: "muddy-frost-4e2d.vpnetwork3567.workers.dev"
-    skip-cert-verify: true
-    udp: true
-    network: ws
-    ws-opts:
-      path: "/?--Telegram--Viturey--Telegram--Viturey--"
-      headers:
-        Host: "muddy-frost-4e2d.vpnetwork3567.workers.dev"
 
 proxy-groups:
   - name: "PROXY"
@@ -141,11 +154,12 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "@DeltaKroneckerGithub_1587"
-      - "@DeltaKroneckerGithub_1623"
-      - "@DeltaKroneckerGithub_1627"
-      - "@DeltaKroneckerGithub_1761"
-      - "@DeltaKroneckerGithub_1905"
+      - "@DeltaKroneckerGithub_1210"
+      - "@DeltaKroneckerGithub_1318"
+      - "@DeltaKroneckerGithub_1411"
+      - "@DeltaKroneckerGithub_1746"
+      - "@DeltaKroneckerGithub_2017"
+      - "@DeltaKroneckerGithub_2026"
 
 
   - name: "Load Balance"
@@ -154,11 +168,12 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "@DeltaKroneckerGithub_1587"
-      - "@DeltaKroneckerGithub_1623"
-      - "@DeltaKroneckerGithub_1627"
-      - "@DeltaKroneckerGithub_1761"
-      - "@DeltaKroneckerGithub_1905"
+      - "@DeltaKroneckerGithub_1210"
+      - "@DeltaKroneckerGithub_1318"
+      - "@DeltaKroneckerGithub_1411"
+      - "@DeltaKroneckerGithub_1746"
+      - "@DeltaKroneckerGithub_2017"
+      - "@DeltaKroneckerGithub_2026"
 
 rules:
   - MATCH,PROXY

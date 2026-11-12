@@ -62,20 +62,30 @@ dns:
 proxies:
   - name: "🇸🇰_1"
     type: vless
-    server: "196.245.153.104"
+    server: "196.245.153.111"
     port: 443
     uuid: "cda0862a-0f87-4be9-8ed8-1d0c9e382839"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "15b171g.nl7.h1clayd.click"
+    servername: "76574ct.nl8.h1clayd.click"
     client-fingerprint: "firefox"
     reality-opts:
-      public-key: "zbz--PMjcIC4Ggr3j-ibDf0fzXRTj0lM_HzjPJyMkVE"
-      short-id: "50a749f0eccb628c"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "5b79e8a94241"
+      public-key: "9zW5lTDbs9svY-lzlPp-pq0j2Sr6g031SY0E-3xSHDc"
+      short-id: "2ca59bdc5121f921"
+  - name: "🇸🇰_2"
+    type: vless
+    server: "76574ct.nl8.h1clayd.click"
+    port: 443
+    uuid: "cda0862a-0f87-4be9-8ed8-1d0c9e382839"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "76574ct.nl8.h1clayd.click"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "9zW5lTDbs9svY-lzlPp-pq0j2Sr6g031SY0E-3xSHDc"
+      short-id: "2ca59bdc5121f921"
 
 proxy-groups:
   - name: "PROXY"
@@ -93,6 +103,7 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇸🇰_1"
+      - "🇸🇰_2"
 
 
   - name: "Load Balance"
@@ -102,6 +113,7 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇸🇰_1"
+      - "🇸🇰_2"
 
 rules:
   - MATCH,PROXY

@@ -92,24 +92,31 @@ proxies:
     udp: true
   - name: "🇷🇴_4"
     type: ss
+    server: "194.68.44.42"
+    port: 64546
+    cipher: "chacha20-ietf-poly1305"
+    password: "U83u9OGpvSatIUW7LsWffr"
+    udp: true
+  - name: "🇷🇴_5"
+    type: ss
     server: "82.152.132.211"
     port: 8044
     cipher: "chacha20-ietf-poly1305"
-    password: "H4JHkHU2pIRZ1sbruQ-p39Grh1z6nxY8"
+    password: "byX4-DV0C42PLFTWQhMTAQ63mZ8qrDRB"
     udp: true
-  - name: "🇷🇴_5"
+  - name: "🇷🇴_6"
     type: ss
     server: "154.46.31.106"
     port: 443
     cipher: "chacha20-ietf-poly1305"
     password: "QFWzCw2uX9B9i6qAYeFBIE"
     udp: true
-  - name: "🇷🇴_6"
+  - name: "🇷🇴_7"
     type: ss
-    server: "194.68.44.42"
-    port: 64546
+    server: "bogging-eyeteeth-fly.freesocks.work"
+    port: 443
     cipher: "chacha20-ietf-poly1305"
-    password: "U83u9OGpvSatIUW7LsWffr"
+    password: "QFWzCw2uX9B9i6qAYeFBIE"
     udp: true
 
 proxy-groups:
@@ -133,6 +140,7 @@ proxy-groups:
       - "🇷🇴_4"
       - "🇷🇴_5"
       - "🇷🇴_6"
+      - "🇷🇴_7"
 
 
   - name: "Load Balance"
@@ -147,6 +155,7 @@ proxy-groups:
       - "🇷🇴_4"
       - "🇷🇴_5"
       - "🇷🇴_6"
+      - "🇷🇴_7"
 
 rules:
   - MATCH,PROXY

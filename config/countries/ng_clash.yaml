@@ -82,6 +82,38 @@ proxies:
     sni: "la.freeguard.org"
     skip-cert-verify: true
     udp: true
+  - name: "🇳🇬_3"
+    type: trojan
+    server: "sclass-b1.catcat321.com"
+    port: 20051
+    password: "d7563108-615c-4338-a7bd-77f359869a4a"
+    sni: "hk.catxstar.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇳🇬_4"
+    type: trojan
+    server: "sclass-c1.catcat321.com"
+    port: 20051
+    password: "d9064589-74af-432a-9390-5d8a9da281bf"
+    sni: "hk.catxstar.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇳🇬_5"
+    type: trojan
+    server: "sclass-01.catcat321.com"
+    port: 20103
+    password: "d7563108-615c-4338-a7bd-77f359869a4a"
+    sni: "hk.catxstar.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇳🇬_6"
+    type: trojan
+    server: "sclass-c2.catcat321.com"
+    port: 20051
+    password: "d9064589-74af-432a-9390-5d8a9da281bf"
+    sni: "hk.catxstar.com"
+    skip-cert-verify: true
+    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -100,6 +132,10 @@ proxy-groups:
     proxies:
       - "🇳🇬_1"
       - "🇳🇬_2"
+      - "🇳🇬_3"
+      - "🇳🇬_4"
+      - "🇳🇬_5"
+      - "🇳🇬_6"
 
 
   - name: "Load Balance"
@@ -110,6 +146,10 @@ proxy-groups:
     proxies:
       - "🇳🇬_1"
       - "🇳🇬_2"
+      - "🇳🇬_3"
+      - "🇳🇬_4"
+      - "🇳🇬_5"
+      - "🇳🇬_6"
 
 rules:
   - MATCH,PROXY

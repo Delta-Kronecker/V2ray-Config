@@ -74,6 +74,14 @@ proxies:
       public-key: "RCm8x1FrSdaJ2NY9k5deQQZilwbubeK-4bcH_6E31wk"
       short-id: "14f18ef16e7c32cc"
     flow: "xtls-rprx-vision"
+  - name: "🇧🇪_2"
+    type: vmess
+    server: "dog-hk.kunlun01dns.com"
+    port: 21019
+    uuid: "9464ca40-dd75-3742-a628-d931a9f413b2"
+    alterId: 0
+    cipher: "auto"
+    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -91,6 +99,7 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇧🇪_1"
+      - "🇧🇪_2"
 
 
   - name: "Load Balance"
@@ -100,6 +109,7 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇧🇪_1"
+      - "🇧🇪_2"
 
 rules:
   - MATCH,PROXY

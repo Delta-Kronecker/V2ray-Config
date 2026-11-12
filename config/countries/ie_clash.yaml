@@ -61,13 +61,21 @@ dns:
 
 proxies:
   - name: "🇮🇪_1"
-    type: trojan
-    server: "54.170.212.206"
-    port: 443
-    password: "ND91608427"
-    sni: "skilled-lioness.rooster465.autos"
-    skip-cert-verify: true
+    type: vless
+    server: "83.141.88.155"
+    port: 17640
+    uuid: "aacf5dd1-fd4a-4239-9263-87259925c384"
     udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "it.nvidia.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "Tyoq9C5aTMV9h3g4AAcpci4PsDOIUrrnQipagPkwL1s"
+      short-id: "39da"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: ""
   - name: "🇮🇪_2"
     type: trojan
     server: "34.253.182.161"
@@ -77,32 +85,12 @@ proxies:
     skip-cert-verify: true
     udp: true
   - name: "🇮🇪_3"
-    type: ss
-    server: "68.219.96.146"
+    type: trojan
+    server: "54.170.212.206"
     port: 443
-    cipher: "chacha20-ietf-poly1305"
-    password: "8ds10bQrvY4KE8Tz"
-    udp: true
-  - name: "🇮🇪_4"
-    type: ss
-    server: "68.219.96.146"
-    port: 443
-    cipher: "chacha20-ietf-poly1305"
-    password: "G2shlbeRXdE45aVA"
-    udp: true
-  - name: "🇮🇪_5"
-    type: ss
-    server: "18.202.232.173"
-    port: 8388
-    cipher: "chacha20-ietf-poly1305"
-    password: "KoJrr14BKAiBUHEoWHFsAVrNzbNVzjKN"
-    udp: true
-  - name: "🇮🇪_6"
-    type: ss
-    server: "18.202.232.173"
-    port: 8388
-    cipher: "chacha20-ietf-poly1305"
-    password: "KoJrr14BKAiBUHEoWHFsAVrNzbNVzjKN"
+    password: "ND91608427"
+    sni: "skilled-lioness.rooster465.autos"
+    skip-cert-verify: true
     udp: true
 
 proxy-groups:
@@ -123,9 +111,6 @@ proxy-groups:
       - "🇮🇪_1"
       - "🇮🇪_2"
       - "🇮🇪_3"
-      - "🇮🇪_4"
-      - "🇮🇪_5"
-      - "🇮🇪_6"
 
 
   - name: "Load Balance"
@@ -137,9 +122,6 @@ proxy-groups:
       - "🇮🇪_1"
       - "🇮🇪_2"
       - "🇮🇪_3"
-      - "🇮🇪_4"
-      - "🇮🇪_5"
-      - "🇮🇪_6"
 
 rules:
   - MATCH,PROXY

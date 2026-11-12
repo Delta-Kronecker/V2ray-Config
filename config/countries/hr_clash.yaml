@@ -60,19 +60,19 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇸🇦_1"
+  - name: "🇭🇷_1"
     type: vless
-    server: "216.106.191.201"
-    port: 10403
-    uuid: "dbf3f074-3b18-43f3-b82a-debd8c879c69"
+    server: "23.95.72.244"
+    port: 50131
+    uuid: "9a5e7b1c-bf39-4b1f-891f-ac87824ee38f"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "www.apple.com"
-    client-fingerprint: "chrome"
+    servername: "api.adidas.com"
+    client-fingerprint: "ios"
     reality-opts:
-      public-key: "suK-MYTtZhJ9IJgsxPLTHLQadNotDqYslQcd5BNV_EQ"
-      short-id: "6aa50b0cc8d23464"
+      public-key: "D-7bbtY-0R7n8bX_n-tMlnNPkgy1-y7zaxQvmHrcAHQ"
+      short-id: "edcd88f8279bfd9b"
     flow: "xtls-rprx-vision"
 
 proxy-groups:
@@ -90,7 +90,7 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇸🇦_1"
+      - "🇭🇷_1"
 
 
   - name: "Load Balance"
@@ -99,7 +99,7 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇸🇦_1"
+      - "🇭🇷_1"
 
 rules:
   - MATCH,PROXY

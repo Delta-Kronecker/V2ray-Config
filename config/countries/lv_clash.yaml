@@ -62,16 +62,17 @@ dns:
 proxies:
   - name: "🇱🇻_1"
     type: vless
-    server: "195.123.213.28"
+    server: "45.43.79.92"
     port: 443
-    uuid: "02fcc1a4-ee90-4970-8bbb-4ffaa8109d24"
+    uuid: "042b12d8-bac4-4b3a-b661-79e333f08e4e"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "www.cloudflare.com"
+    servername: "vikt659.isgood.host"
+    client-fingerprint: "chrome"
     reality-opts:
-      public-key: "NMgy1XgCSXExOg6Tg8xG9lCWttMF6sjdpB41lZy6FWo"
-      short-id: "5c256336e3b673fa"
+      public-key: "M4Y9h339sntl5wEpiCa7f4IKhJ_8JLzPnAz2IzKlngM"
+      short-id: "af4ca5d16438c938"
     flow: "xtls-rprx-vision"
   - name: "🇱🇻_2"
     type: vless
@@ -87,6 +88,32 @@ proxies:
       short-id: "33acba1b"
     flow: "xtls-rprx-vision"
   - name: "🇱🇻_3"
+    type: vless
+    server: "195.123.213.28"
+    port: 443
+    uuid: "02fcc1a4-ee90-4970-8bbb-4ffaa8109d24"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.cloudflare.com"
+    reality-opts:
+      public-key: "NMgy1XgCSXExOg6Tg8xG9lCWttMF6sjdpB41lZy6FWo"
+      short-id: "5c256336e3b673fa"
+    flow: "xtls-rprx-vision"
+  - name: "🇱🇻_4"
+    type: vless
+    server: "45.38.143.210"
+    port: 30584
+    uuid: "cebc5f19-18d9-48e6-9029-fb4b04caf393"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "m.vk.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "2hV4TY2ygvQ7ISa5o4u_FUKXzlIhLgbsScE8M1h0m3Y"
+      short-id: "67ece882d65d0f1a"
+  - name: "🇱🇻_5"
     type: trojan
     server: "31.57.92.205"
     port: 2053
@@ -113,6 +140,8 @@ proxy-groups:
       - "🇱🇻_1"
       - "🇱🇻_2"
       - "🇱🇻_3"
+      - "🇱🇻_4"
+      - "🇱🇻_5"
 
 
   - name: "Load Balance"
@@ -124,6 +153,8 @@ proxy-groups:
       - "🇱🇻_1"
       - "🇱🇻_2"
       - "🇱🇻_3"
+      - "🇱🇻_4"
+      - "🇱🇻_5"
 
 rules:
   - MATCH,PROXY

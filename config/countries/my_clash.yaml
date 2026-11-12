@@ -75,25 +75,19 @@ proxies:
       short-id: "39c553a45e5649d9"
     flow: "xtls-rprx-vision"
   - name: "🇲🇾_2"
-    type: vless
-    server: "23.95.72.244"
-    port: 50174
-    uuid: "9a5e7b1c-bf39-4b1f-891f-ac87824ee38f"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "api.adidas.com"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "tmlOT7vvbKwBuucRKRm33TqocfvHfgDAstvca5Yy-gU"
-      short-id: "8b10495bdb"
-    flow: "xtls-rprx-vision"
-  - name: "🇲🇾_3"
     type: trojan
     server: "210.187.176.154"
     port: 443
     password: "af4b064a9c39472fb34ad8b113acdc6b"
     sni: "210.187.176.154"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇲🇾_3"
+    type: trojan
+    server: "47.250.84.25"
+    port: 443
+    password: "5931134d1cde66bf83a54acdfebe7ab2"
+    sni: "47.250.84.25"
     skip-cert-verify: true
     udp: true
   - name: "🇲🇾_4"
@@ -138,6 +132,14 @@ proxies:
     udp: true
   - name: "🇲🇾_8"
     type: vmess
+    server: "192.228.145.118"
+    port: 10086
+    uuid: "b831381d-6324-4d53-ad4f-8cda48b30811"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+  - name: "🇲🇾_9"
+    type: vmess
     server: "47.250.135.244"
     port: 10000
     uuid: "aedc66b8-99d7-4a21-8310-61870e7f870d"
@@ -168,6 +170,7 @@ proxy-groups:
       - "🇲🇾_6"
       - "🇲🇾_7"
       - "🇲🇾_8"
+      - "🇲🇾_9"
 
 
   - name: "Load Balance"
@@ -184,6 +187,7 @@ proxy-groups:
       - "🇲🇾_6"
       - "🇲🇾_7"
       - "🇲🇾_8"
+      - "🇲🇾_9"
 
 rules:
   - MATCH,PROXY

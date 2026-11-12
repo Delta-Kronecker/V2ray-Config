@@ -62,19 +62,47 @@ dns:
 proxies:
   - name: "🇪🇸_1"
     type: vless
-    server: "23.95.72.244"
-    port: 50119
-    uuid: "9a5e7b1c-bf39-4b1f-891f-ac87824ee38f"
+    server: "46.28.71.247"
+    port: 443
+    uuid: "12c53e32-e589-47d6-b857-e4132294f767"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "api.adidas.com"
-    client-fingerprint: "firefox"
+    servername: "www.cloudflare.com"
+    client-fingerprint: "chrome"
     reality-opts:
-      public-key: "OecTdVhZmf_1KohFt8cYOMMqf45t8dqvNniqe-Yevlw"
-      short-id: "823473a176f25e"
+      public-key: "v4MuZIvFrTPT5GHMSaPryUAbIZlLstmsUTzmC1E-JTE"
+      short-id: "0dfc23fe80778c00"
     flow: "xtls-rprx-vision"
   - name: "🇪🇸_2"
+    type: vless
+    server: "196.196.149.80"
+    port: 443
+    uuid: "4201786b-d99b-4147-a5f0-20d47acddb81"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "7aa271t.es1.h1clayd.click"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "ZSmetD4e9QG5CiXhniHg5HJB68L4kwbgAkJmMHtVwEE"
+      short-id: "42426c882c5fcd41"
+    flow: "xtls-rprx-vision"
+  - name: "🇪🇸_3"
+    type: vless
+    server: "66.163.118.113"
+    port: 443
+    uuid: "dbf3f074-3b18-43f3-b82a-debd8c879c69"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.apple.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "PwN5VWqwWKVfrqqrbLE4kzVu9vIXSENAUiAPjMWIrVY"
+      short-id: "32209e627ee109c7"
+    flow: "xtls-rprx-vision"
+  - name: "🇪🇸_4"
     type: vless
     server: "85.90.217.42"
     port: 443
@@ -83,36 +111,6 @@ proxies:
     tls: true
     skip-cert-verify: true
     servername: "85.90.217.42"
-  - name: "🇪🇸_3"
-    type: vless
-    server: "7aa271t.es1.h1clayd.click"
-    port: 443
-    uuid: "4201786b-d99b-4147-a5f0-20d47acddb81"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "7aa271t.es1.h1clayd.click"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "ZSmetD4e9QG5CiXhniHg5HJB68L4kwbgAkJmMHtVwEE"
-      short-id: "42426c882c5fcd41"
-    flow: "xtls-rprx-vision"
-  - name: "🇪🇸_4"
-    type: vless
-    server: "b3cd32g.es1.h1clayd.click"
-    port: 443
-    uuid: "4201786b-d99b-4147-a5f0-20d47acddb81"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "b3cd32g.es1.h1clayd.click"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "7efBhLzPwoTtEC1GlukCdiTllobUfa2_XuAKNSLJx30"
-      short-id: "e7cffac9f8cfb434"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: ""
   - name: "🇪🇸_5"
     type: vless
     server: "195.206.235.121"
@@ -129,19 +127,6 @@ proxies:
     flow: "xtls-rprx-vision"
   - name: "🇪🇸_6"
     type: vless
-    server: "77.81.182.7"
-    port: 8443
-    uuid: "585a421d-d782-4420-912e-dd58ff5966d7"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "amp-api-edge.apps.apple.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "7jPluypHwPilf_Mq7JOY96SwKkbK35WuIlN1HwGQ_0A"
-      short-id: "974f7f8f"
-  - name: "🇪🇸_7"
-    type: vless
     server: "79.182.70.212"
     port: 443
     uuid: "4201786b-d99b-4147-a5f0-20d47acddb81"
@@ -154,7 +139,7 @@ proxies:
       public-key: "ZSmetD4e9QG5CiXhniHg5HJB68L4kwbgAkJmMHtVwEE"
       short-id: "42426c882c5fcd41"
     flow: "xtls-rprx-vision"
-  - name: "🇪🇸_8"
+  - name: "🇪🇸_7"
     type: vless
     server: "196.199.122.2"
     port: 443
@@ -168,6 +153,15 @@ proxies:
       public-key: "ZSmetD4e9QG5CiXhniHg5HJB68L4kwbgAkJmMHtVwEE"
       short-id: "42426c882c5fcd41"
     flow: "xtls-rprx-vision"
+  - name: "🇪🇸_8"
+    type: vless
+    server: "213.182.201.10"
+    port: 3090
+    uuid: "d6d100e7-c74a-4ce5-8643-c1f8947807c5"
+    udp: true
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "vless"
   - name: "🇪🇸_9"
     type: vless
     server: "68.221.177.135"
@@ -184,65 +178,19 @@ proxies:
     flow: "xtls-rprx-vision"
   - name: "🇪🇸_10"
     type: vless
-    server: "66.163.118.113"
+    server: "7aa271t.es1.h1clayd.click"
     port: 443
-    uuid: "dbf3f074-3b18-43f3-b82a-debd8c879c69"
+    uuid: "4201786b-d99b-4147-a5f0-20d47acddb81"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "www.apple.com"
-    client-fingerprint: "chrome"
+    servername: "7aa271t.es1.h1clayd.click"
+    client-fingerprint: "firefox"
     reality-opts:
-      public-key: "PwN5VWqwWKVfrqqrbLE4kzVu9vIXSENAUiAPjMWIrVY"
-      short-id: "32209e627ee109c7"
+      public-key: "ZSmetD4e9QG5CiXhniHg5HJB68L4kwbgAkJmMHtVwEE"
+      short-id: "42426c882c5fcd41"
     flow: "xtls-rprx-vision"
   - name: "🇪🇸_11"
-    type: vless
-    server: "46.28.71.247"
-    port: 443
-    uuid: "12c53e32-e589-47d6-b857-e4132294f767"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.cloudflare.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "v4MuZIvFrTPT5GHMSaPryUAbIZlLstmsUTzmC1E-JTE"
-      short-id: "0dfc23fe80778c00"
-    flow: "xtls-rprx-vision"
-  - name: "🇪🇸_12"
-    type: trojan
-    server: "66.163.118.131"
-    port: 443
-    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
-    sni: "www.discovergreatjobsandadvanceyourcareer.com"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇪🇸_13"
-    type: trojan
-    server: "66.163.118.251"
-    port: 443
-    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
-    sni: "66.163.118.251"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇪🇸_14"
-    type: trojan
-    server: "66.163.118.166"
-    port: 443
-    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
-    sni: "learn.discovergreatjobsandadvanceyourcareer.com"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇪🇸_15"
-    type: trojan
-    server: "66.163.118.244"
-    port: 443
-    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
-    sni: "66.163.118.244"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇪🇸_16"
     type: trojan
     server: "65.20.102.54"
     port: 443
@@ -250,7 +198,23 @@ proxies:
     sni: "www.gpt123.one"
     skip-cert-verify: true
     udp: true
-  - name: "🇪🇸_17"
+  - name: "🇪🇸_12"
+    type: trojan
+    server: "66.163.118.62"
+    port: 443
+    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
+    sni: "66.163.118.62"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇪🇸_13"
+    type: trojan
+    server: "66.163.118.166"
+    port: 443
+    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
+    sni: "learn.discovergreatjobsandadvanceyourcareer.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇪🇸_14"
     type: trojan
     server: "66.163.118.203"
     port: 443
@@ -258,38 +222,62 @@ proxies:
     sni: "blog.discovergreatjobsandadvanceyourcareer.com"
     skip-cert-verify: true
     udp: true
-  - name: "🇪🇸_18"
+  - name: "🇪🇸_15"
     type: trojan
-    server: "66.163.118.115"
+    server: "66.163.118.131"
     port: 443
     password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
-    sni: "discovergreatjobsandadvanceyourcareer.com"
+    sni: "www.discovergreatjobsandadvanceyourcareer.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇪🇸_16"
+    type: trojan
+    server: "66.163.118.251"
+    port: 443
+    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
+    sni: "66.163.118.251"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇪🇸_17"
+    type: trojan
+    server: "66.163.118.40"
+    port: 443
+    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
+    sni: "66.163.118.40"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇪🇸_18"
+    type: trojan
+    server: "66.163.118.244"
+    port: 443
+    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
+    sni: "66.163.118.244"
     skip-cert-verify: true
     udp: true
   - name: "🇪🇸_19"
-    type: ss
-    server: "62.93.179.97"
-    port: 19999
-    cipher: "aes-256-gcm"
-    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
-    udp: true
-  - name: "🇪🇸_20"
-    type: ss
-    server: "167.17.71.167"
-    port: 19999
-    cipher: "aes-256-gcm"
-    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
-    udp: true
-  - name: "🇪🇸_21"
     type: ss
     server: "66.163.118.103"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
+  - name: "🇪🇸_20"
+    type: ss
+    server: "79.127.139.242"
+    port: 19999
+    cipher: "aes-256-gcm"
+    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
+    udp: true
+  - name: "🇪🇸_21"
+    type: ss
+    server: "167.17.71.167"
+    port: 19999
+    cipher: "aes-256-gcm"
+    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
+    udp: true
   - name: "🇪🇸_22"
     type: ss
-    server: "62.93.179.117"
+    server: "66.163.118.103"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
@@ -303,17 +291,17 @@ proxies:
     udp: true
   - name: "🇪🇸_24"
     type: ss
-    server: "167.17.71.167"
-    port: 19999
-    cipher: "aes-256-gcm"
-    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
+    server: "108.181.71.165"
+    port: 10840
+    cipher: "aes-128-gcm"
+    password: "cac96c2692d85bc2dceec378cea6c83f"
     udp: true
   - name: "🇪🇸_25"
     type: ss
-    server: "79.127.139.242"
-    port: 19999
-    cipher: "aes-256-gcm"
-    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
+    server: "108.181.71.165"
+    port: 10840
+    cipher: "aes-128-gcm"
+    password: "cac96c2692d85bc2dceec378cea6c83f"
     udp: true
   - name: "🇪🇸_26"
     type: ss
@@ -324,7 +312,7 @@ proxies:
     udp: true
   - name: "🇪🇸_27"
     type: ss
-    server: "79.127.139.242"
+    server: "62.93.179.117"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
@@ -338,17 +326,17 @@ proxies:
     udp: true
   - name: "🇪🇸_29"
     type: ss
-    server: "66.163.118.103"
+    server: "167.17.71.167"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
   - name: "🇪🇸_30"
     type: ss
-    server: "108.181.71.165"
-    port: 10840
-    cipher: "aes-128-gcm"
-    password: "cac96c2692d85bc2dceec378cea6c83f"
+    server: "62.93.179.97"
+    port: 19999
+    cipher: "aes-256-gcm"
+    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
 
 proxy-groups:
