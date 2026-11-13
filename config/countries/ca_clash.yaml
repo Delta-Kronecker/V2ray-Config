@@ -62,19 +62,6 @@ dns:
 proxies:
   - name: "🇨🇦_1"
     type: vless
-    server: "167.17.69.171"
-    port: 443
-    uuid: "00144519-7e0d-476b-8d28-435576af9262"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.cloudflare.com"
-    reality-opts:
-      public-key: "ALT8hIGeZEhi0sQFbXP_ntBg8Xo-v7i0YCLrqTnBxRk"
-      short-id: "0990d22f"
-    flow: "xtls-rprx-vision"
-  - name: "🇨🇦_2"
-    type: vless
     server: "66.70.179.198"
     port: 2053
     uuid: "dc620cd6-a9d8-4a0f-8f18-006b895db77e"
@@ -86,7 +73,62 @@ proxies:
     reality-opts:
       public-key: "k4l6TxwkBbx9DhZAFpByq5rfCWFSgyOex3f_eFe9CWU"
       short-id: "83f8317a948bb769"
+  - name: "🇨🇦_2"
+    type: vless
+    server: "212.69.135.225"
+    port: 8443
+    uuid: "690004b0-ccf2-4106-be08-80a90039a369"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "uk-room05.filesnap.tech"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "FdZlh9FC4ay9OGnKG6K_iNqhz1I3tWDfNZhxrDYuQl8"
+      short-id: "7da3ba09a037e956"
+    flow: "xtls-rprx-vision"
   - name: "🇨🇦_3"
+    type: vless
+    server: "167.17.69.171"
+    port: 443
+    uuid: "00144519-7e0d-476b-8d28-435576af9262"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.cloudflare.com"
+    reality-opts:
+      public-key: "ALT8hIGeZEhi0sQFbXP_ntBg8Xo-v7i0YCLrqTnBxRk"
+      short-id: "0990d22f"
+    flow: "xtls-rprx-vision"
+  - name: "🇨🇦_4"
+    type: vless
+    server: "212.69.135.225"
+    port: 8443
+    uuid: "25c52886-4cee-4d09-bbd4-f03dc524ec6b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "uk-room05.filesnap.tech"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "FdZlh9FC4ay9OGnKG6K_iNqhz1I3tWDfNZhxrDYuQl8"
+      short-id: "7da3ba09a037e956"
+    flow: "xtls-rprx-vision"
+  - name: "🇨🇦_5"
+    type: vless
+    server: "212.69.135.225"
+    port: 8443
+    uuid: "bf5f9b94-e57f-46bc-9451-27e115b3409a"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "uk-room05.filesnap.tech"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "FdZlh9FC4ay9OGnKG6K_iNqhz1I3tWDfNZhxrDYuQl8"
+      short-id: "7da3ba09a037e956"
+    flow: "xtls-rprx-vision"
+  - name: "🇨🇦_6"
     type: vless
     server: "209.200.246.148"
     port: 443
@@ -100,52 +142,28 @@ proxies:
       public-key: "uTmb-ytXsx8p0fkBz7A76SHpWk7_oVutIA4LGTE8BQk"
       short-id: "f98843107912e782"
     flow: "xtls-rprx-vision"
-  - name: "🇨🇦_4"
-    type: trojan
-    server: "169.197.140.245"
-    port: 443
-    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
-    sni: "www.discoverfreshgraduatejobsstartyourprofessionaljourney.com"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇨🇦_5"
-    type: trojan
-    server: "169.197.140.214"
-    port: 443
-    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
-    sni: "courses.discoverfreshgraduatejobsstartyourprofessionaljourney.com"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇨🇦_6"
-    type: trojan
-    server: "169.197.140.171"
-    port: 443
-    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
-    sni: "cdn.discoverfreshgraduatejobsstartyourprofessionaljourney.com"
-    skip-cert-verify: true
-    udp: true
   - name: "🇨🇦_7"
-    type: trojan
-    server: "169.197.140.208"
-    port: 443
-    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
-    sni: "blog.discoverfreshgraduatejobsstartyourprofessionaljourney.com"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇨🇦_8"
-    type: trojan
-    server: "216.144.231.47"
-    port: 443
-    password: "8r<[9'l6hAO#8ZQi"
-    sni: "Koma-YT.PAGeS.Dev"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇨🇦_9"
     type: trojan
     server: "137.184.172.228"
     port: 443
     password: "5392c4d3-b13e-456f-a0e5-8eaf52b7fc1d"
     sni: "termux.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇨🇦_8"
+    type: trojan
+    server: "169.197.140.224"
+    port: 443
+    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
+    sni: "resources.discoverfreshgraduatejobsstartyourprofessionaljourney.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇨🇦_9"
+    type: trojan
+    server: "51.222.15.68"
+    port: 443
+    password: "f4dc01c0-6376-11ee-8ca8-1239d0255272"
+    sni: "www.ewane.krd"
     skip-cert-verify: true
     udp: true
   - name: "🇨🇦_10"
@@ -166,13 +184,37 @@ proxies:
     udp: true
   - name: "🇨🇦_12"
     type: trojan
-    server: "169.197.140.224"
+    server: "169.197.140.169"
     port: 443
     password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
-    sni: "resources.discoverfreshgraduatejobsstartyourprofessionaljourney.com"
+    sni: "169.197.140.169"
     skip-cert-verify: true
     udp: true
   - name: "🇨🇦_13"
+    type: trojan
+    server: "216.144.231.47"
+    port: 443
+    password: "8r<[9'l6hAO#8ZQi"
+    sni: "Koma-YT.PAGeS.Dev"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇨🇦_14"
+    type: trojan
+    server: "169.197.140.171"
+    port: 443
+    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
+    sni: "cdn.discoverfreshgraduatejobsstartyourprofessionaljourney.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇨🇦_15"
+    type: trojan
+    server: "169.197.140.208"
+    port: 443
+    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
+    sni: "blog.discoverfreshgraduatejobsstartyourprofessionaljourney.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇨🇦_16"
     type: trojan
     server: "169.197.140.218"
     port: 443
@@ -180,51 +222,32 @@ proxies:
     sni: "learn.discoverfreshgraduatejobsstartyourprofessionaljourney.com"
     skip-cert-verify: true
     udp: true
-  - name: "🇨🇦_14"
-    type: ss
-    server: "172.111.36.123"
-    port: 19999
-    cipher: "aes-256-gcm"
-    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
-    udp: true
-  - name: "🇨🇦_15"
-    type: ss
-    server: "38.114.120.221"
-    port: 19999
-    cipher: "aes-256-gcm"
-    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
-    udp: true
-  - name: "🇨🇦_16"
-    type: ss
-    server: "51.222.155.113"
-    port: 5601
-    cipher: "aes-256-gcm"
-    password: "Y6R9pAtvxxzmGC"
-    udp: true
   - name: "🇨🇦_17"
-    type: ss
-    server: "51.79.49.116"
-    port: 8882
-    cipher: "aes-256-gcm"
-    password: "kDWvXYZoTBcGkC4"
+    type: trojan
+    server: "169.197.140.245"
+    port: 443
+    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
+    sni: "www.discoverfreshgraduatejobsstartyourprofessionaljourney.com"
+    skip-cert-verify: true
     udp: true
   - name: "🇨🇦_18"
-    type: ss
-    server: "51.222.136.236"
-    port: 8882
-    cipher: "aes-256-gcm"
-    password: "kDWvXYZoTBcGkC4"
+    type: trojan
+    server: "169.197.140.214"
+    port: 443
+    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
+    sni: "courses.discoverfreshgraduatejobsstartyourprofessionaljourney.com"
+    skip-cert-verify: true
     udp: true
   - name: "🇨🇦_19"
     type: ss
-    server: "167.17.64.175"
+    server: "172.111.38.72"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
   - name: "🇨🇦_20"
     type: ss
-    server: "172.111.38.72"
+    server: "167.17.64.22"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
@@ -238,112 +261,112 @@ proxies:
     udp: true
   - name: "🇨🇦_22"
     type: ss
-    server: "198.100.154.175"
-    port: 8080
-    cipher: "chacha20-ietf-poly1305"
-    password: "3h3hb2gptqz6suyt"
+    server: "172.111.36.123"
+    port: 19999
+    cipher: "aes-256-gcm"
+    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
   - name: "🇨🇦_23"
-    type: ss
-    server: "51.79.64.198"
-    port: 8119
-    cipher: "aes-256-gcm"
-    password: "cdBIDV42DCwnfIN"
-    udp: true
-  - name: "🇨🇦_24"
-    type: ss
-    server: "51.222.155.32"
-    port: 5003
-    cipher: "aes-256-gcm"
-    password: "g5MeD6Ft3CWlJId"
-    udp: true
-  - name: "🇨🇦_25"
     type: ss
     server: "51.79.85.185"
     port: 8118
     cipher: "aes-256-gcm"
     password: "cdBIDV42DCwnfIN"
     udp: true
-  - name: "🇨🇦_26"
+  - name: "🇨🇦_24"
     type: ss
-    server: "38.114.120.221"
+    server: "172.111.36.123"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
-  - name: "🇨🇦_27"
-    type: ss
-    server: "15.235.57.6"
-    port: 8080
-    cipher: "chacha20-ietf-poly1305"
-    password: "kxhnt5jtykd328cg"
-    udp: true
-  - name: "🇨🇦_28"
-    type: ss
-    server: "169.197.140.247"
-    port: 19999
-    cipher: "aes-256-gcm"
-    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
-    udp: true
-  - name: "🇨🇦_29"
+  - name: "🇨🇦_25"
     type: ss
     server: "167.17.64.27"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
-  - name: "🇨🇦_30"
-    type: ss
-    server: "51.222.12.127"
-    port: 445
-    cipher: "aes-256-gcm"
-    password: "zDNVedRFPQexG9v"
-    udp: true
-  - name: "🇨🇦_31"
-    type: ss
-    server: "167.17.64.175"
-    port: 19999
-    cipher: "aes-256-gcm"
-    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
-    udp: true
-  - name: "🇨🇦_32"
-    type: ss
-    server: "158.51.121.221"
-    port: 19999
-    cipher: "aes-256-gcm"
-    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
-    udp: true
-  - name: "🇨🇦_33"
+  - name: "🇨🇦_26"
     type: ss
     server: "51.79.49.116"
     port: 8882
     cipher: "aes-256-gcm"
     password: "kDWvXYZoTBcGkC4"
     udp: true
-  - name: "🇨🇦_34"
+  - name: "🇨🇦_27"
     type: ss
-    server: "15.235.121.109"
-    port: 8080
-    cipher: "chacha20-ietf-poly1305"
-    password: "575hiopq2h28yao6"
+    server: "51.222.136.236"
+    port: 8882
+    cipher: "aes-256-gcm"
+    password: "kDWvXYZoTBcGkC4"
     udp: true
-  - name: "🇨🇦_35"
+  - name: "🇨🇦_28"
     type: ss
     server: "51.222.200.165"
     port: 5000
     cipher: "aes-256-gcm"
     password: "Y6R9pAtvxxzmGC"
     udp: true
+  - name: "🇨🇦_29"
+    type: ss
+    server: "51.222.12.127"
+    port: 445
+    cipher: "aes-256-gcm"
+    password: "zDNVedRFPQexG9v"
+    udp: true
+  - name: "🇨🇦_30"
+    type: ss
+    server: "167.17.64.22"
+    port: 19999
+    cipher: "aes-256-gcm"
+    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
+    udp: true
+  - name: "🇨🇦_31"
+    type: ss
+    server: "158.51.121.221"
+    port: 19999
+    cipher: "aes-256-gcm"
+    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
+    udp: true
+  - name: "🇨🇦_32"
+    type: ss
+    server: "169.197.142.68"
+    port: 19999
+    cipher: "aes-256-gcm"
+    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
+    udp: true
+  - name: "🇨🇦_33"
+    type: ss
+    server: "169.197.140.247"
+    port: 19999
+    cipher: "aes-256-gcm"
+    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
+    udp: true
+  - name: "🇨🇦_34"
+    type: ss
+    server: "198.100.154.175"
+    port: 8080
+    cipher: "chacha20-ietf-poly1305"
+    password: "3h3hb2gptqz6suyt"
+    udp: true
+  - name: "🇨🇦_35"
+    type: ss
+    server: "51.79.64.198"
+    port: 8119
+    cipher: "aes-256-gcm"
+    password: "cdBIDV42DCwnfIN"
+    udp: true
   - name: "🇨🇦_36"
     type: ss
-    server: "51.222.155.113"
-    port: 5601
+    server: "158.51.121.221"
+    port: 19999
     cipher: "aes-256-gcm"
-    password: "Y6R9pAtvxxzmGC"
+    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
   - name: "🇨🇦_37"
     type: ss
-    server: "169.197.142.68"
+    server: "172.111.38.72"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
@@ -357,123 +380,138 @@ proxies:
     udp: true
   - name: "🇨🇦_39"
     type: ss
-    server: "158.51.121.221"
-    port: 19999
+    server: "51.222.155.113"
+    port: 5601
     cipher: "aes-256-gcm"
-    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
+    password: "Y6R9pAtvxxzmGC"
     udp: true
   - name: "🇨🇦_40"
     type: ss
-    server: "169.197.142.68"
+    server: "38.114.120.221"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
   - name: "🇨🇦_41"
     type: ss
-    server: "51.222.12.127"
-    port: 445
+    server: "167.17.64.175"
+    port: 19999
     cipher: "aes-256-gcm"
-    password: "zDNVedRFPQexG9v"
+    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
   - name: "🇨🇦_42"
     type: ss
-    server: "51.222.12.127"
-    port: 445
+    server: "38.114.120.221"
+    port: 19999
     cipher: "aes-256-gcm"
-    password: "zDNVedRFPQexG9v"
+    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
   - name: "🇨🇦_43"
     type: ss
-    server: "172.111.36.123"
-    port: 19999
-    cipher: "aes-256-gcm"
-    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
+    server: "149.22.95.183"
+    port: 443
+    cipher: "aes-128-gcm"
+    password: "shadowsocks"
     udp: true
   - name: "🇨🇦_44"
-    type: ss
-    server: "158.51.121.221"
-    port: 19999
-    cipher: "aes-256-gcm"
-    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
-    udp: true
-  - name: "🇨🇦_45"
-    type: ss
-    server: "172.111.38.72"
-    port: 19999
-    cipher: "aes-256-gcm"
-    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
-    udp: true
-  - name: "🇨🇦_46"
-    type: ss
-    server: "51.222.141.125"
-    port: 445
-    cipher: "aes-256-gcm"
-    password: "zDNVedRFPQexG9v"
-    udp: true
-  - name: "🇨🇦_47"
     type: ss
     server: "167.17.64.27"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
-  - name: "🇨🇦_48"
+  - name: "🇨🇦_45"
+    type: ss
+    server: "169.197.142.68"
+    port: 19999
+    cipher: "aes-256-gcm"
+    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
+    udp: true
+  - name: "🇨🇦_46"
     type: ss
     server: "54.39.96.233"
     port: 8080
     cipher: "chacha20-ietf-poly1305"
     password: "2cvhpvdg4x7mvbps"
     udp: true
+  - name: "🇨🇦_47"
+    type: ss
+    server: "15.235.121.109"
+    port: 8080
+    cipher: "chacha20-ietf-poly1305"
+    password: "575hiopq2h28yao6"
+    udp: true
+  - name: "🇨🇦_48"
+    type: ss
+    server: "51.222.155.32"
+    port: 5003
+    cipher: "aes-256-gcm"
+    password: "g5MeD6Ft3CWlJId"
+    udp: true
   - name: "🇨🇦_49"
+    type: ss
+    server: "51.222.141.125"
+    port: 445
+    cipher: "aes-256-gcm"
+    password: "zDNVedRFPQexG9v"
+    udp: true
+  - name: "🇨🇦_50"
+    type: ss
+    server: "51.79.49.116"
+    port: 8882
+    cipher: "aes-256-gcm"
+    password: "kDWvXYZoTBcGkC4"
+    udp: true
+  - name: "🇨🇦_51"
+    type: ss
+    server: "167.17.64.175"
+    port: 19999
+    cipher: "aes-256-gcm"
+    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
+    udp: true
+  - name: "🇨🇦_52"
+    type: ss
+    server: "51.222.12.127"
+    port: 445
+    cipher: "aes-256-gcm"
+    password: "zDNVedRFPQexG9v"
+    udp: true
+  - name: "🇨🇦_53"
+    type: ss
+    server: "51.222.155.113"
+    port: 5601
+    cipher: "aes-256-gcm"
+    password: "Y6R9pAtvxxzmGC"
+    udp: true
+  - name: "🇨🇦_54"
+    type: ss
+    server: "158.51.121.221"
+    port: 19999
+    cipher: "aes-256-gcm"
+    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
+    udp: true
+  - name: "🇨🇦_55"
     type: ss
     server: "51.222.200.165"
     port: 5000
     cipher: "aes-256-gcm"
     password: "Y6R9pAtvxxzmGC"
     udp: true
-  - name: "🇨🇦_50"
-    type: vmess
-    server: "169.197.142.22"
-    port: 18000
-    uuid: "f8c8dc3d-0d37-46b0-8b34-a7232882fcfe"
-    alterId: 0
-    cipher: "auto"
+  - name: "🇨🇦_56"
+    type: ss
+    server: "15.235.57.6"
+    port: 8080
+    cipher: "chacha20-ietf-poly1305"
+    password: "kxhnt5jtykd328cg"
     udp: true
-  - name: "🇨🇦_51"
-    type: vmess
-    server: "172.111.38.246"
-    port: 1270
-    uuid: "5c040f1d-45db-43bd-8d46-e4950e433735"
-    alterId: 0
-    cipher: "auto"
+  - name: "🇨🇦_57"
+    type: ss
+    server: "51.222.12.127"
+    port: 445
+    cipher: "aes-256-gcm"
+    password: "zDNVedRFPQexG9v"
     udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "xmfhlpy.com"
-  - name: "🇨🇦_52"
-    type: vmess
-    server: "172.111.36.126"
-    port: 1270
-    uuid: "5c040f1d-45db-43bd-8d46-e4950e433735"
-    alterId: 0
-    cipher: "auto"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "xmfhlpy.com"
-  - name: "🇨🇦_53"
-    type: vmess
-    server: "169.197.142.68"
-    port: 1270
-    uuid: "5c040f1d-45db-43bd-8d46-e4950e433735"
-    alterId: 0
-    cipher: "auto"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "xmfhlpy.com"
-  - name: "🇨🇦_54"
+  - name: "🇨🇦_58"
     type: vmess
     server: "172.111.36.137"
     port: 1270
@@ -484,58 +522,14 @@ proxies:
     tls: true
     skip-cert-verify: true
     servername: "xmfhlpy.com"
-  - name: "🇨🇦_55"
+  - name: "🇨🇦_59"
     type: vmess
-    server: "158.51.121.246"
-    port: 1270
-    uuid: "5c040f1d-45db-43bd-8d46-e4950e433735"
-    alterId: 0
-    cipher: "auto"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "xmfhlpy.com"
-  - name: "🇨🇦_56"
-    type: vmess
-    server: "23.162.200.198"
+    server: "169.197.142.22"
     port: 18000
     uuid: "f8c8dc3d-0d37-46b0-8b34-a7232882fcfe"
     alterId: 0
     cipher: "auto"
     udp: true
-  - name: "🇨🇦_57"
-    type: vmess
-    server: "134.195.196.154"
-    port: 1270
-    uuid: "5c040f1d-45db-43bd-8d46-e4950e433735"
-    alterId: 0
-    cipher: "auto"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "xmfhlpy.com"
-  - name: "🇨🇦_58"
-    type: vmess
-    server: "172.111.36.147"
-    port: 1270
-    uuid: "5c040f1d-45db-43bd-8d46-e4950e433735"
-    alterId: 0
-    cipher: "auto"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "xmfhlpy.com"
-  - name: "🇨🇦_59"
-    type: vmess
-    server: "172.111.36.123"
-    port: 1270
-    uuid: "5c040f1d-45db-43bd-8d46-e4950e433735"
-    alterId: 0
-    cipher: "auto"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "xmfhlpy.com"
   - name: "🇨🇦_60"
     type: vmess
     server: "172.111.36.253"
@@ -549,12 +543,97 @@ proxies:
     servername: "xmfhlpy.com"
   - name: "🇨🇦_61"
     type: vmess
+    server: "172.111.36.123"
+    port: 1270
+    uuid: "5c040f1d-45db-43bd-8d46-e4950e433735"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "xmfhlpy.com"
+  - name: "🇨🇦_62"
+    type: vmess
+    server: "172.111.36.147"
+    port: 1270
+    uuid: "5c040f1d-45db-43bd-8d46-e4950e433735"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "xmfhlpy.com"
+  - name: "🇨🇦_63"
+    type: vmess
+    server: "134.195.196.154"
+    port: 1270
+    uuid: "5c040f1d-45db-43bd-8d46-e4950e433735"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "xmfhlpy.com"
+  - name: "🇨🇦_64"
+    type: vmess
     server: "134.195.196.211"
     port: 18000
     uuid: "f8c8dc3d-0d37-46b0-8b34-a7232882fcfe"
     alterId: 0
     cipher: "auto"
     udp: true
+  - name: "🇨🇦_65"
+    type: vmess
+    server: "169.197.142.68"
+    port: 1270
+    uuid: "5c040f1d-45db-43bd-8d46-e4950e433735"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "xmfhlpy.com"
+  - name: "🇨🇦_66"
+    type: vmess
+    server: "172.111.36.126"
+    port: 1270
+    uuid: "5c040f1d-45db-43bd-8d46-e4950e433735"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "xmfhlpy.com"
+  - name: "🇨🇦_67"
+    type: vmess
+    server: "172.111.38.246"
+    port: 1270
+    uuid: "5c040f1d-45db-43bd-8d46-e4950e433735"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "xmfhlpy.com"
+  - name: "🇨🇦_68"
+    type: vmess
+    server: "23.162.200.198"
+    port: 18000
+    uuid: "f8c8dc3d-0d37-46b0-8b34-a7232882fcfe"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+  - name: "🇨🇦_69"
+    type: vmess
+    server: "158.51.121.246"
+    port: 1270
+    uuid: "5c040f1d-45db-43bd-8d46-e4950e433735"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "xmfhlpy.com"
 
 proxy-groups:
   - name: "PROXY"
@@ -632,6 +711,14 @@ proxy-groups:
       - "🇨🇦_59"
       - "🇨🇦_60"
       - "🇨🇦_61"
+      - "🇨🇦_62"
+      - "🇨🇦_63"
+      - "🇨🇦_64"
+      - "🇨🇦_65"
+      - "🇨🇦_66"
+      - "🇨🇦_67"
+      - "🇨🇦_68"
+      - "🇨🇦_69"
 
 
   - name: "Load Balance"
@@ -701,6 +788,14 @@ proxy-groups:
       - "🇨🇦_59"
       - "🇨🇦_60"
       - "🇨🇦_61"
+      - "🇨🇦_62"
+      - "🇨🇦_63"
+      - "🇨🇦_64"
+      - "🇨🇦_65"
+      - "🇨🇦_66"
+      - "🇨🇦_67"
+      - "🇨🇦_68"
+      - "🇨🇦_69"
 
 rules:
   - MATCH,PROXY

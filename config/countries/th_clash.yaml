@@ -61,56 +61,6 @@ dns:
 
 proxies:
   - name: "🇹🇭_1"
-    type: vless
-    server: "23.95.72.244"
-    port: 5459
-    uuid: "9a5e7b1c-bf39-4b1f-891f-ac87824ee38f"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "api.adidas.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "Von3W6smD_9vmKScjCG9ex6xw4_sG9MFfBk-9zbrbzs"
-      short-id: "3fdc9f533b3fb068"
-    flow: "xtls-rprx-vision"
-  - name: "🇹🇭_2"
-    type: vless
-    server: "23.95.72.244"
-    port: 5458
-    uuid: "9a5e7b1c-bf39-4b1f-891f-ac87824ee38f"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "api.adidas.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "NfmPfb_XeLj8j8cho5JkVKW3u_KA2G5UrZyOAhZAxn8"
-      short-id: "ba80520852fb9c25"
-    flow: "xtls-rprx-vision"
-  - name: "🇹🇭_3"
-    type: vless
-    server: "zfapi.zalolink.com"
-    port: 11802
-    uuid: "57beeeb0-03fc-4fc9-94da-7604488a7134"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "psstatic.cdn.bcebos.com"
-    client-fingerprint: "ios"
-    reality-opts:
-      public-key: "FUBjYwXlKIVwF7IuJf5dt_HU2sUnrEt10s4TIlTe8Q4"
-      short-id: "6c84fbac2d"
-    flow: "xtls-rprx-vision"
-  - name: "🇹🇭_4"
-    type: vmess
-    server: "8.213.209.1"
-    port: 13433
-    uuid: "66e15bce-c353-405d-865b-a5dee8e27dee"
-    alterId: 0
-    cipher: "chacha20-poly1305"
-    udp: true
-  - name: "🇹🇭_5"
     type: vmess
     server: "119.46.51.45"
     port: 37515
@@ -135,10 +85,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇹🇭_1"
-      - "🇹🇭_2"
-      - "🇹🇭_3"
-      - "🇹🇭_4"
-      - "🇹🇭_5"
 
 
   - name: "Load Balance"
@@ -148,10 +94,6 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇹🇭_1"
-      - "🇹🇭_2"
-      - "🇹🇭_3"
-      - "🇹🇭_4"
-      - "🇹🇭_5"
 
 rules:
   - MATCH,PROXY

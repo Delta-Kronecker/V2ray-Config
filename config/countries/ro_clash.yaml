@@ -75,6 +75,20 @@ proxies:
       short-id: "d06d78e974491b6e"
     flow: "xtls-rprx-vision"
   - name: "🇷🇴_2"
+    type: vless
+    server: "201.8.80.82"
+    port: 443
+    uuid: "0f677c30-da27-4e25-a002-a845240adfc6"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "forumdrun.xubi.org"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "SS-XyOr9wL4mqZPuAaGPAaROVy3_CSP6jFtvZemn21g"
+      short-id: "a1b2c3d4e5f60718"
+    flow: "xtls-rprx-vision"
+  - name: "🇷🇴_3"
     type: trojan
     server: "38.180.35.145"
     port: 443
@@ -82,20 +96,13 @@ proxies:
     sni: "bu2.freeguard.org"
     skip-cert-verify: true
     udp: true
-  - name: "🇷🇴_3"
+  - name: "🇷🇴_4"
     type: trojan
     server: "185.247.224.136"
     port: 443
     password: "af4b064a9c39472fb34ad8b113acdc6b"
     sni: "185.247.224.136"
     skip-cert-verify: true
-    udp: true
-  - name: "🇷🇴_4"
-    type: ss
-    server: "194.68.44.42"
-    port: 64546
-    cipher: "chacha20-ietf-poly1305"
-    password: "U83u9OGpvSatIUW7LsWffr"
     udp: true
   - name: "🇷🇴_5"
     type: ss
@@ -106,17 +113,24 @@ proxies:
     udp: true
   - name: "🇷🇴_6"
     type: ss
-    server: "154.46.31.106"
+    server: "bogging-eyeteeth-fly.freesocks.work"
     port: 443
     cipher: "chacha20-ietf-poly1305"
     password: "QFWzCw2uX9B9i6qAYeFBIE"
     udp: true
   - name: "🇷🇴_7"
     type: ss
-    server: "bogging-eyeteeth-fly.freesocks.work"
-    port: 443
+    server: "82.152.132.211"
+    port: 8044
     cipher: "chacha20-ietf-poly1305"
-    password: "QFWzCw2uX9B9i6qAYeFBIE"
+    password: "byX4-DV0C42PLFTWQhMTAQ63mZ8qrDRB"
+    udp: true
+  - name: "🇷🇴_8"
+    type: ss
+    server: "194.68.44.42"
+    port: 64546
+    cipher: "chacha20-ietf-poly1305"
+    password: "U83u9OGpvSatIUW7LsWffr"
     udp: true
 
 proxy-groups:
@@ -141,6 +155,7 @@ proxy-groups:
       - "🇷🇴_5"
       - "🇷🇴_6"
       - "🇷🇴_7"
+      - "🇷🇴_8"
 
 
   - name: "Load Balance"
@@ -156,6 +171,7 @@ proxy-groups:
       - "🇷🇴_5"
       - "🇷🇴_6"
       - "🇷🇴_7"
+      - "🇷🇴_8"
 
 rules:
   - MATCH,PROXY

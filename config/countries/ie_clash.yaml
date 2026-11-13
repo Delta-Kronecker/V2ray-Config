@@ -61,35 +61,19 @@ dns:
 
 proxies:
   - name: "🇮🇪_1"
-    type: vless
-    server: "83.141.88.155"
-    port: 17640
-    uuid: "aacf5dd1-fd4a-4239-9263-87259925c384"
-    udp: true
-    tls: true
+    type: trojan
+    server: "54.170.212.206"
+    port: 443
+    password: "ND91608427"
+    sni: "skilled-lioness.rooster465.autos"
     skip-cert-verify: true
-    servername: "it.nvidia.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "Tyoq9C5aTMV9h3g4AAcpci4PsDOIUrrnQipagPkwL1s"
-      short-id: "39da"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: ""
+    udp: true
   - name: "🇮🇪_2"
     type: trojan
     server: "34.253.182.161"
     port: 443
     password: "IQ68037294"
     sni: "moving-wren.rooster465.autos"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇮🇪_3"
-    type: trojan
-    server: "54.170.212.206"
-    port: 443
-    password: "ND91608427"
-    sni: "skilled-lioness.rooster465.autos"
     skip-cert-verify: true
     udp: true
 
@@ -110,7 +94,6 @@ proxy-groups:
     proxies:
       - "🇮🇪_1"
       - "🇮🇪_2"
-      - "🇮🇪_3"
 
 
   - name: "Load Balance"
@@ -121,7 +104,6 @@ proxy-groups:
     proxies:
       - "🇮🇪_1"
       - "🇮🇪_2"
-      - "🇮🇪_3"
 
 rules:
   - MATCH,PROXY

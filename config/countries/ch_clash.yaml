@@ -62,36 +62,6 @@ dns:
 proxies:
   - name: "🇨🇭_1"
     type: vless
-    server: "prvtch.titun.su"
-    port: 443
-    uuid: "90157e25-cee1-4217-921e-91f300bc1a24"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "perevodchiki.su"
-    client-fingerprint: "edge"
-    reality-opts:
-      public-key: "1vSZjvhZO01oAEH3b7eebR1qF5dLU1Dq2E7xu8pwGSs"
-      short-id: "428ef87fd47a3a32"
-    flow: "xtls-rprx-vision"
-  - name: "🇨🇭_2"
-    type: vless
-    server: "45.95.232.233"
-    port: 8446
-    uuid: "dac0e736-5c69-4b7c-8b1d-27cbbc3bd948"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "1c.hlclub.tech"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "XxWn04baea-nyjxLud3mjo15Xz1DNwlDOOken4qHNVA"
-      short-id: "555ac69b22424282"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "grpc-tunnel"
-  - name: "🇨🇭_3"
-    type: vless
     server: "74.161.152.237"
     port: 2083
     uuid: "52a5a29f-c162-411a-8a37-a3f11b0dc537"
@@ -104,31 +74,23 @@ proxies:
       public-key: "WbgtxLlo2gmTzB4Wzxgh_U7G97d4ENTS10fYIoujET4"
       short-id: "0123456789abcdef"
     flow: "xtls-rprx-vision"
-  - name: "🇨🇭_4"
+  - name: "🇨🇭_2"
     type: vless
-    server: "31.7.60.250"
+    server: "193.228.128.230"
     port: 443
-    uuid: "90157e25-cee1-4217-921e-91f300bc1a24"
+    uuid: "de404269-a97c-4f49-9efb-43509c2afa09"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "perevodchiki.su"
-    client-fingerprint: "ios"
+    servername: "ch.primarymaster.online"
+    client-fingerprint: "firefox"
     reality-opts:
-      public-key: "1vSZjvhZO01oAEH3b7eebR1qF5dLU1Dq2E7xu8pwGSs"
-      short-id: "428ef87fd47a3a32"
-    flow: "xtls-rprx-vision"
-  - name: "🇨🇭_5"
-    type: vless
-    server: "179.43.187.67"
-    port: 443
-    uuid: "9dd38d60-e683-47c6-bd53-d71bdfee78f3"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "portal.mavexa.ir"
-    client-fingerprint: "chrome"
-  - name: "🇨🇭_6"
+      public-key: "rS6r3PZQHZp31tnOmJAuCme4xJgsak_JsZ5hTPwpuiY"
+      short-id: "8b8dd8a1c0c468d3"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: ""
+  - name: "🇨🇭_3"
     type: vless
     server: "45.90.59.15"
     port: 443
@@ -142,9 +104,23 @@ proxies:
       public-key: "P7S4UPFlQbmiBr4txyy8NZIMTrmO3UdxyH16WBU-YzY"
       short-id: "19253fae84102271"
     flow: "xtls-rprx-vision"
-  - name: "🇨🇭_7"
+  - name: "🇨🇭_4"
     type: vless
-    server: "81.17.18.106"
+    server: "prvtch.titun.su"
+    port: 443
+    uuid: "90157e25-cee1-4217-921e-91f300bc1a24"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "perevodchiki.su"
+    client-fingerprint: "edge"
+    reality-opts:
+      public-key: "1vSZjvhZO01oAEH3b7eebR1qF5dLU1Dq2E7xu8pwGSs"
+      short-id: "428ef87fd47a3a32"
+    flow: "xtls-rprx-vision"
+  - name: "🇨🇭_5"
+    type: vless
+    server: "81.17.18.109"
     port: 443
     uuid: "90157e25-cee1-4217-921e-91f300bc1a24"
     udp: true
@@ -156,12 +132,30 @@ proxies:
       public-key: "1vSZjvhZO01oAEH3b7eebR1qF5dLU1Dq2E7xu8pwGSs"
       short-id: "428ef87fd47a3a32"
     flow: "xtls-rprx-vision"
-  - name: "🇨🇭_8"
+  - name: "🇨🇭_6"
+    type: vless
+    server: "179.43.187.67"
+    port: 443
+    uuid: "9dd38d60-e683-47c6-bd53-d71bdfee78f3"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "portal.mavexa.ir"
+    client-fingerprint: "chrome"
+  - name: "🇨🇭_7"
     type: trojan
     server: "83.228.230.226"
     port: 8443
     password: "SoftNetConnect"
     sni: "play.google.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇨🇭_8"
+    type: trojan
+    server: "83.228.224.161"
+    port: 443
+    password: "SoftNetConnect"
+    sni: "83.228.224.161"
     skip-cert-verify: true
     udp: true
   - name: "🇨🇭_9"
@@ -173,16 +167,15 @@ proxies:
     skip-cert-verify: true
     udp: true
   - name: "🇨🇭_10"
-    type: trojan
-    server: "83.228.224.161"
-    port: 443
-    password: "SoftNetConnect"
-    sni: "83.228.224.161"
-    skip-cert-verify: true
+    type: ss
+    server: "23.166.88.127"
+    port: 19999
+    cipher: "aes-256-gcm"
+    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
   - name: "🇨🇭_11"
     type: ss
-    server: "23.166.88.189"
+    server: "79.127.184.104"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
@@ -203,7 +196,7 @@ proxies:
     udp: true
   - name: "🇨🇭_14"
     type: ss
-    server: "23.166.88.127"
+    server: "23.166.88.189"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
@@ -217,14 +210,14 @@ proxies:
     udp: true
   - name: "🇨🇭_16"
     type: ss
-    server: "23.166.88.127"
+    server: "79.127.184.104"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
   - name: "🇨🇭_17"
     type: ss
-    server: "79.127.184.104"
+    server: "23.166.88.127"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="

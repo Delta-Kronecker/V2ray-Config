@@ -61,6 +61,22 @@ dns:
 
 proxies:
   - name: "🇿🇦_1"
+    type: vless
+    server: "102.208.217.14"
+    port: 2087
+    uuid: "ead4a562-edf2-40cf-ad33-13ae98546226"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "dl.google.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "eeD55i5qwcb8fvWZuJF6o-o2Ums4QEenTer8iNtobUk"
+      short-id: "d9d5b093"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "grpc"
+  - name: "🇿🇦_2"
     type: trojan
     server: "38.54.64.247"
     port: 443
@@ -68,7 +84,7 @@ proxies:
     sni: "38.54.64.247"
     skip-cert-verify: true
     udp: true
-  - name: "🇿🇦_2"
+  - name: "🇿🇦_3"
     type: trojan
     server: "139.84.231.142"
     port: 443
@@ -76,40 +92,33 @@ proxies:
     sni: "explorecareerpathsandunlockprofessionalsuccesstoday.com"
     skip-cert-verify: true
     udp: true
-  - name: "🇿🇦_3"
+  - name: "🇿🇦_4"
     type: ss
     server: "102.37.156.224"
     port: 443
     cipher: "chacha20-ietf-poly1305"
     password: "aduB9HGxQHjA2SBMRjkHX6"
-    udp: true
-  - name: "🇿🇦_4"
-    type: ss
-    server: "102.133.165.160"
-    port: 16233
-    cipher: "chacha20-ietf-poly1305"
-    password: "Xsy8Ox4yOV3xLlpxtjzs3X"
     udp: true
   - name: "🇿🇦_5"
     type: ss
-    server: "20.164.204.82"
-    port: 443
-    cipher: "chacha20-ietf-poly1305"
-    password: "zJINhErlCXBpyP95"
-    udp: true
-  - name: "🇿🇦_6"
-    type: ss
     server: "102.133.165.160"
     port: 16233
     cipher: "chacha20-ietf-poly1305"
     password: "Xsy8Ox4yOV3xLlpxtjzs3X"
     udp: true
-  - name: "🇿🇦_7"
+  - name: "🇿🇦_6"
     type: ss
     server: "102.37.156.224"
     port: 443
     cipher: "chacha20-ietf-poly1305"
     password: "aduB9HGxQHjA2SBMRjkHX6"
+    udp: true
+  - name: "🇿🇦_7"
+    type: ss
+    server: "102.133.165.160"
+    port: 16233
+    cipher: "chacha20-ietf-poly1305"
+    password: "Xsy8Ox4yOV3xLlpxtjzs3X"
     udp: true
 
 proxy-groups:

@@ -60,19 +60,19 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇲🇦_1"
+  - name: "🇲🇨_1"
     type: vless
-    server: "23.95.72.244"
-    port: 55854
-    uuid: "9a5e7b1c-bf39-4b1f-891f-ac87824ee38f"
+    server: "107.189.23.205"
+    port: 443
+    uuid: "63eecfaa-50b7-4ea9-9bec-a176bf03a215"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "api.adidas.com"
-    client-fingerprint: "firefox"
+    servername: "suffolkprimarycare.uk"
+    client-fingerprint: "edge"
     reality-opts:
-      public-key: "-dI886DcXmuCdKxWIEkJ8irTmumm1YDZSZ-M-J6lW0M"
-      short-id: "18bc6e27d744"
+      public-key: "5Xgf3UO6yZb7gCK3R3GULk8jyNIp7Sr-26YXZfSW71c"
+      short-id: "13975a8e0bd50e7c"
     flow: "xtls-rprx-vision"
 
 proxy-groups:
@@ -90,7 +90,7 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇲🇦_1"
+      - "🇲🇨_1"
 
 
   - name: "Load Balance"
@@ -99,7 +99,7 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇲🇦_1"
+      - "🇲🇨_1"
 
 rules:
   - MATCH,PROXY

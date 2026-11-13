@@ -61,20 +61,6 @@ dns:
 
 proxies:
   - name: "🇵🇪_1"
-    type: vless
-    server: "23.95.72.244"
-    port: 50122
-    uuid: "9a5e7b1c-bf39-4b1f-891f-ac87824ee38f"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "api.adidas.com"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "a9XavLXaCvwAvMpMWT3XlJ_MvXDd41cA7Mp-DiN6WCo"
-      short-id: "79c25836ab103a48"
-    flow: "xtls-rprx-vision"
-  - name: "🇵🇪_2"
     type: trojan
     server: "38.180.173.150"
     port: 443
@@ -99,7 +85,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇵🇪_1"
-      - "🇵🇪_2"
 
 
   - name: "Load Balance"
@@ -109,7 +94,6 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇵🇪_1"
-      - "🇵🇪_2"
 
 rules:
   - MATCH,PROXY

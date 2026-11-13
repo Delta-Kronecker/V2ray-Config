@@ -62,7 +62,7 @@ dns:
 proxies:
   - name: "🇺🇦_1"
     type: vless
-    server: "31.222.235.81"
+    server: "netx.smrtai.top"
     port: 443
     uuid: "d8b58872-cc25-4bb2-badb-b86399c075fa"
     udp: true
@@ -75,7 +75,7 @@ proxies:
       short-id: "d8b58872"
   - name: "🇺🇦_2"
     type: vless
-    server: "netx.smrtai.top"
+    server: "31.222.235.81"
     port: 443
     uuid: "d8b58872-cc25-4bb2-badb-b86399c075fa"
     udp: true
@@ -88,33 +88,19 @@ proxies:
       short-id: "d8b58872"
   - name: "🇺🇦_3"
     type: trojan
-    server: "130.0.236.88"
-    port: 443
-    password: "d2adff89-5143-4d67-921f-3478464de5bb"
-    sni: "ua.freeguard.org"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇺🇦_4"
-    type: trojan
     server: "173.242.51.189"
     port: 443
     password: "humanity"
     sni: "www.cordweave.com"
     skip-cert-verify: true
     udp: true
-  - name: "🇺🇦_5"
-    type: ss
-    server: "dns24.m3hrzd.ir"
-    port: 1353
-    cipher: "chacha20-ietf-poly1305"
-    password: "byX4-DV0C42PLFTWQhMTAQ63mZ8qrDRB"
-    udp: true
-  - name: "🇺🇦_6"
-    type: ss
-    server: "185.194.191.35"
-    port: 1353
-    cipher: "chacha20-ietf-poly1305"
-    password: "byX4-DV0C42PLFTWQhMTAQ63mZ8qrDRB"
+  - name: "🇺🇦_4"
+    type: trojan
+    server: "130.0.236.88"
+    port: 443
+    password: "d2adff89-5143-4d67-921f-3478464de5bb"
+    sni: "ua.freeguard.org"
+    skip-cert-verify: true
     udp: true
 
 proxy-groups:
@@ -136,8 +122,6 @@ proxy-groups:
       - "🇺🇦_2"
       - "🇺🇦_3"
       - "🇺🇦_4"
-      - "🇺🇦_5"
-      - "🇺🇦_6"
 
 
   - name: "Load Balance"
@@ -150,8 +134,6 @@ proxy-groups:
       - "🇺🇦_2"
       - "🇺🇦_3"
       - "🇺🇦_4"
-      - "🇺🇦_5"
-      - "🇺🇦_6"
 
 rules:
   - MATCH,PROXY

@@ -62,25 +62,33 @@ dns:
 proxies:
   - name: "🇻🇳_1"
     type: vless
+    server: "zfapi.zalolink.com"
+    port: 55688
+    uuid: "57beeeb0-03fc-4fc9-94da-7604488a7134"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "bilibili-vn.biliimg.com"
+    client-fingerprint: "ios"
+    reality-opts:
+      public-key: "6dqd0hqbC0bht9RtsYamvlYdMpxyUbk7uXw0xtO8DzQ"
+      short-id: "865c1b2c"
+    flow: "xtls-rprx-vision"
+  - name: "🇻🇳_2"
+    type: vless
     server: "150.95.109.109"
     port: 2086
     uuid: "b83faafc-cbb7-4655-99d4-2c4c39a49d1b"
     udp: true
-  - name: "🇻🇳_2"
-    type: vless
-    server: "23.95.72.244"
-    port: 60013
-    uuid: "9a5e7b1c-bf39-4b1f-891f-ac87824ee38f"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "api.adidas.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "mcL0jagupr0AWJCb80sHTxhsAgD1xnrpb1bM20UTT0U"
-      short-id: "31cef3438d"
-    flow: "xtls-rprx-vision"
   - name: "🇻🇳_3"
+    type: trojan
+    server: "36.50.134.29"
+    port: 443
+    password: "94d219c9-1afc-4d42-b090-8b3794764380"
+    sni: "36.50.134.29"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇻🇳_4"
     type: trojan
     server: "38.54.15.140"
     port: 443
@@ -88,7 +96,7 @@ proxies:
     sni: "38.54.15.140"
     skip-cert-verify: true
     udp: true
-  - name: "🇻🇳_4"
+  - name: "🇻🇳_5"
     type: trojan
     server: "103.9.77.6"
     port: 443
@@ -96,20 +104,12 @@ proxies:
     sni: "103.9.77.6"
     skip-cert-verify: true
     udp: true
-  - name: "🇻🇳_5"
+  - name: "🇻🇳_6"
     type: trojan
     server: "103.72.96.55"
     port: 443
     password: "c95357eb-2869-4511-8940-f0dc5e1ec9b1"
     sni: "hanoiidc2.5gsieutocdo.com"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇻🇳_6"
-    type: trojan
-    server: "36.50.134.29"
-    port: 443
-    password: "94d219c9-1afc-4d42-b090-8b3794764380"
-    sni: "36.50.134.29"
     skip-cert-verify: true
     udp: true
 

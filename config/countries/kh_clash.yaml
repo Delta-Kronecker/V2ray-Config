@@ -60,19 +60,19 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇵🇰_1"
+  - name: "🇰🇭_1"
     type: vless
-    server: "23.95.72.244"
-    port: 51482
-    uuid: "9a5e7b1c-bf39-4b1f-891f-ac87824ee38f"
+    server: "93.152.215.254"
+    port: 443
+    uuid: "6db6b948-655f-4f68-a9e7-865050e05b31"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "api.adidas.com"
-    client-fingerprint: "edge"
+    servername: "93.152.215.254"
+    client-fingerprint: "firefox"
     reality-opts:
-      public-key: "ZqVGy04LsOyGwbiA_CLWVFXGqMs6vteg-wGaYZ1BbzA"
-      short-id: "b785a30c236e93"
+      public-key: "_bGFsLP1Vw7sK0g6oervHFV00C5O3q7X3x_aOo-zhWI"
+      short-id: "672cac"
     flow: "xtls-rprx-vision"
 
 proxy-groups:
@@ -90,7 +90,7 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇵🇰_1"
+      - "🇰🇭_1"
 
 
   - name: "Load Balance"
@@ -99,7 +99,7 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇵🇰_1"
+      - "🇰🇭_1"
 
 rules:
   - MATCH,PROXY

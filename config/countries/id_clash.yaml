@@ -61,19 +61,13 @@ dns:
 
 proxies:
   - name: "🇮🇩_1"
-    type: vless
-    server: "23.95.72.244"
-    port: 52147
-    uuid: "9a5e7b1c-bf39-4b1f-891f-ac87824ee38f"
-    udp: true
-    tls: true
+    type: trojan
+    server: "172.232.250.160"
+    port: 443
+    password: "788f2b96-47e2-4302-a417-511b6fd7d09c"
+    sni: "172.232.250.160"
     skip-cert-verify: true
-    servername: "api.adidas.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "_QiN_9E9zPt1RehuXIuwVYr0AyT7SWrHzIeXQuK00nQ"
-      short-id: "4af6e97b161680e3"
-    flow: "xtls-rprx-vision"
+    udp: true
   - name: "🇮🇩_2"
     type: trojan
     server: "103.67.79.156"
@@ -83,21 +77,13 @@ proxies:
     skip-cert-verify: true
     udp: true
   - name: "🇮🇩_3"
-    type: trojan
-    server: "172.232.250.160"
-    port: 443
-    password: "788f2b96-47e2-4302-a417-511b6fd7d09c"
-    sni: "172.232.250.160"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇮🇩_4"
     type: ss
     server: "aio.unlimited.biz.id"
     port: 443
     cipher: "none"
     password: "f282b878-8711-45a1-8c69-5564172123c1"
     udp: true
-  - name: "🇮🇩_5"
+  - name: "🇮🇩_4"
     type: ss
     server: "aio.unlimited.biz.id"
     port: 443
@@ -124,7 +110,6 @@ proxy-groups:
       - "🇮🇩_2"
       - "🇮🇩_3"
       - "🇮🇩_4"
-      - "🇮🇩_5"
 
 
   - name: "Load Balance"
@@ -137,7 +122,6 @@ proxy-groups:
       - "🇮🇩_2"
       - "🇮🇩_3"
       - "🇮🇩_4"
-      - "🇮🇩_5"
 
 rules:
   - MATCH,PROXY
