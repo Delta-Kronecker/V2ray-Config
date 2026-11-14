@@ -62,46 +62,6 @@ dns:
 proxies:
   - name: "🇸🇪_1"
     type: vless
-    server: "46.29.255.123"
-    port: 59539
-    uuid: "30572b57-f5ab-4eb8-82d4-a24d399b99f6"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "cloudflare-dns.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "R6mPqCsjZMWauci4LHw7Qp1LGKmBd-sxMXplyOn9bSQ"
-      short-id: ""
-    flow: "xtls-rprx-vision"
-  - name: "🇸🇪_2"
-    type: vless
-    server: "84.32.217.164"
-    port: 443
-    uuid: "fa081e9f-7574-4e18-8928-31aa5ac923c7"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "tcpswed1.figurapn.ru"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "drl7nndYdfzZY1aQ0eUAWmNV0nsHig2uDnu9siy9biQ"
-      short-id: "868419504747f6de"
-  - name: "🇸🇪_3"
-    type: vless
-    server: "141.227.160.61"
-    port: 8443
-    uuid: "f59fdac3-5842-449b-8c8d-d5ebcdbf1768"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "apple.com"
-    reality-opts:
-      public-key: "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
-      short-id: "6ba85179e30d4fc2"
-    flow: "xtls-rprx-vision"
-  - name: "🇸🇪_4"
-    type: vless
     server: "62.182.193.228"
     port: 8443
     uuid: "c0d58ed7-41f8-4cf4-b61b-8ba8f6be9a46"
@@ -114,6 +74,49 @@ proxies:
       public-key: "G3ZzvlhhrESJFCm41agmCMitg14XGzIAaS5DpdxZxkI"
       short-id: "da5e9707"
     flow: "xtls-rprx-vision"
+  - name: "🇸🇪_2"
+    type: vless
+    server: "185.117.89.74"
+    port: 443
+    uuid: "f8cb3c89-32af-4255-bebc-d90aad175069"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "seb.kosmosapp.net"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "pR39Vv5qhk8r6akOicoy6mMs4-ppSWUez8MyAXG7wwQ"
+      short-id: "27350908de933e09"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "neurex"
+  - name: "🇸🇪_3"
+    type: vless
+    server: "46.29.255.123"
+    port: 59539
+    uuid: "30572b57-f5ab-4eb8-82d4-a24d399b99f6"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "cloudflare-dns.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "R6mPqCsjZMWauci4LHw7Qp1LGKmBd-sxMXplyOn9bSQ"
+      short-id: ""
+    flow: "xtls-rprx-vision"
+  - name: "🇸🇪_4"
+    type: vless
+    server: "Awtyhj2.zefmul.ir"
+    port: 8890
+    uuid: "e61bb397-dfc2-4d58-b40f-63932846976b"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "play.google.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "ILnZwALWgpb1HZ2eE58jgNCbUt8ul73tSNXmr05SNgU"
+      short-id: "05d15772f3cb403a"
   - name: "🇸🇪_5"
     type: vless
     server: "138.124.86.230"
@@ -128,21 +131,31 @@ proxies:
     grpc-opts:
       grpc-service-name: "138-124-86-230-sslip-io"
   - name: "🇸🇪_6"
-    type: trojan
-    server: "45.91.171.116"
-    port: 443
-    password: "2ee85121-31de-4581-a492-eb00f606e392"
-    sni: "sto.freeguard.org"
-    skip-cert-verify: true
+    type: vless
+    server: "tsaujxjdj.zefmul.ir"
+    port: 8021
+    uuid: "e61bb397-dfc2-4d58-b40f-63932846976b"
     udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "play.google.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "ILnZwALWgpb1HZ2eE58jgNCbUt8ul73tSNXmr05SNgU"
+      short-id: "05d15772f3cb403a"
   - name: "🇸🇪_7"
-    type: trojan
-    server: "95.143.196.97"
-    port: 443
-    password: "FkQH0Q5EFneySv20Qj3yoArD2GSb2XZF"
-    sni: "connect-se.mimowhat.online"
-    skip-cert-verify: true
+    type: vless
+    server: "141.227.160.61"
+    port: 8443
+    uuid: "f59fdac3-5842-449b-8c8d-d5ebcdbf1768"
     udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "apple.com"
+    reality-opts:
+      public-key: "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
+      short-id: "6ba85179e30d4fc2"
+    flow: "xtls-rprx-vision"
   - name: "🇸🇪_8"
     type: trojan
     server: "checkout.skog.lalibobi.online"
@@ -161,42 +174,56 @@ proxies:
     udp: true
   - name: "🇸🇪_10"
     type: trojan
-    server: "95.143.196.32"
-    port: 443
-    password: "FkQH0Q5EFneySv20Qj3yoArD2GSb2XZF"
-    sni: "connect-se.mimowhat.online"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇸🇪_11"
-    type: trojan
     server: "38.180.56.158"
     port: 443
     password: "af4b064a9c39472fb34ad8b113acdc6b"
     sni: "38.180.56.158"
     skip-cert-verify: true
     udp: true
+  - name: "🇸🇪_11"
+    type: trojan
+    server: "45.91.171.116"
+    port: 443
+    password: "2ee85121-31de-4581-a492-eb00f606e392"
+    sni: "sto.freeguard.org"
+    skip-cert-verify: true
+    udp: true
   - name: "🇸🇪_12"
+    type: trojan
+    server: "95.143.196.32"
+    port: 443
+    password: "FkQH0Q5EFneySv20Qj3yoArD2GSb2XZF"
+    sni: "connect-se.mimowhat.online"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇸🇪_13"
+    type: ss
+    server: "193.68.89.220"
+    port: 8443
+    cipher: "none"
+    password: "3e96ef7d-8637-42c2-ac73-75182196e755"
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: "websocket"
+      path: "3e96ef7d-8637-42c2-ac73-75182196e755/?ed\\=2560"
+      host: "mfvpn.fuchen.indevs.in"
+      tls: true
+  - name: "🇸🇪_14"
     type: ss
     server: "194.59.250.52"
     port: 18501
     cipher: "aes-128-gcm"
     password: "517403753b63fd4fac88986bf98b11e0"
     udp: true
-  - name: "🇸🇪_13"
-    type: ss
-    server: "138.199.55.243"
-    port: 19999
-    cipher: "aes-256-gcm"
-    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
-    udp: true
-  - name: "🇸🇪_14"
-    type: ss
-    server: "70.34.212.124"
-    port: 8388
-    cipher: "aes-256-gcm"
-    password: "AxIYWtskJWIIaefW"
-    udp: true
   - name: "🇸🇪_15"
+    type: ss
+    server: "194.59.250.52"
+    port: 18501
+    cipher: "aes-128-gcm"
+    password: "517403753b63fd4fac88986bf98b11e0"
+    udp: true
+  - name: "🇸🇪_16"
     type: ss
     server: "193.68.89.220"
     port: 8443
@@ -209,40 +236,27 @@ proxies:
       path: "3e96ef7d-8637-42c2-ac73-75182196e755/?ed\\=2560"
       host: "mfvpn.fuchen.indevs.in"
       tls: true
-  - name: "🇸🇪_16"
+  - name: "🇸🇪_17"
     type: ss
     server: "138.199.55.243"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
-  - name: "🇸🇪_17"
+  - name: "🇸🇪_18"
     type: ss
     server: "62.182.193.228"
     port: 8388
     cipher: "chacha20-ietf-poly1305"
     password: "2e555e46dbc421452416834962fd014f"
     udp: true
-  - name: "🇸🇪_18"
-    type: ss
-    server: "70.34.212.124"
-    port: 8388
-    cipher: "aes-256-gcm"
-    password: "AxIYWtskJWIIaefW"
-    udp: true
   - name: "🇸🇪_19"
     type: ss
-    server: "193.68.89.220"
-    port: 8443
-    cipher: "none"
-    password: "3e96ef7d-8637-42c2-ac73-75182196e755"
+    server: "138.199.55.243"
+    port: 19999
+    cipher: "aes-256-gcm"
+    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: "websocket"
-      path: "3e96ef7d-8637-42c2-ac73-75182196e755/?ed\\=2560"
-      host: "mfvpn.fuchen.indevs.in"
-      tls: true
   - name: "🇸🇪_20"
     type: ss
     server: "62.182.193.228"
@@ -252,7 +266,7 @@ proxies:
     udp: true
   - name: "🇸🇪_21"
     type: vmess
-    server: "62.93.166.184"
+    server: "138.199.55.230"
     port: 1270
     uuid: "5c040f1d-45db-43bd-8d46-e4950e433735"
     alterId: 0
@@ -263,7 +277,7 @@ proxies:
     servername: "xmfhlpy.com"
   - name: "🇸🇪_22"
     type: vmess
-    server: "138.199.55.230"
+    server: "62.93.166.184"
     port: 1270
     uuid: "5c040f1d-45db-43bd-8d46-e4950e433735"
     alterId: 0

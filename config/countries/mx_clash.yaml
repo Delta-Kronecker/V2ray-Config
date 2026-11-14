@@ -61,19 +61,13 @@ dns:
 
 proxies:
   - name: "🇲🇽_1"
-    type: vless
-    server: "147.78.1.253"
-    port: 443
-    uuid: "39a390af-1f90-4c0e-89e4-4e2023732e4b"
-    udp: true
-    tls: true
+    type: trojan
+    server: "149.104.87.125"
+    port: 15083
+    password: "5t6i121em5lkmsmk"
+    sni: "mx001.zestapp778.com"
     skip-cert-verify: true
-    servername: "www.apple.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "TefL2KtNcNLPmUY8TKlu5pA7ffipqgmbBN6gpyzyklk"
-      short-id: ""
-    flow: "xtls-rprx-vision"
+    udp: true
   - name: "🇲🇽_2"
     type: trojan
     server: "mx001.zestapp778.com"
@@ -91,21 +85,13 @@ proxies:
     skip-cert-verify: true
     udp: true
   - name: "🇲🇽_4"
-    type: trojan
-    server: "149.104.87.125"
-    port: 15083
-    password: "5t6i121em5lkmsmk"
-    sni: "mx001.zestapp778.com"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇲🇽_5"
     type: ss
     server: "64.177.90.30"
     port: 8388
     cipher: "aes-256-gcm"
     password: "BWyPPTusFKhGgzKh"
     udp: true
-  - name: "🇲🇽_6"
+  - name: "🇲🇽_5"
     type: ss
     server: "64.177.90.30"
     port: 8388
@@ -133,7 +119,6 @@ proxy-groups:
       - "🇲🇽_3"
       - "🇲🇽_4"
       - "🇲🇽_5"
-      - "🇲🇽_6"
 
 
   - name: "Load Balance"
@@ -147,7 +132,6 @@ proxy-groups:
       - "🇲🇽_3"
       - "🇲🇽_4"
       - "🇲🇽_5"
-      - "🇲🇽_6"
 
 rules:
   - MATCH,PROXY

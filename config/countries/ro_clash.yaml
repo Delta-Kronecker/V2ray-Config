@@ -76,7 +76,7 @@ proxies:
     flow: "xtls-rprx-vision"
   - name: "🇷🇴_2"
     type: vless
-    server: "201.8.80.82"
+    server: "forumdrun.xubi.org"
     port: 443
     uuid: "0f677c30-da27-4e25-a002-a845240adfc6"
     udp: true
@@ -97,35 +97,6 @@ proxies:
     skip-cert-verify: true
     udp: true
   - name: "🇷🇴_4"
-    type: trojan
-    server: "185.247.224.136"
-    port: 443
-    password: "af4b064a9c39472fb34ad8b113acdc6b"
-    sni: "185.247.224.136"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇷🇴_5"
-    type: ss
-    server: "82.152.132.211"
-    port: 8044
-    cipher: "chacha20-ietf-poly1305"
-    password: "byX4-DV0C42PLFTWQhMTAQ63mZ8qrDRB"
-    udp: true
-  - name: "🇷🇴_6"
-    type: ss
-    server: "bogging-eyeteeth-fly.freesocks.work"
-    port: 443
-    cipher: "chacha20-ietf-poly1305"
-    password: "QFWzCw2uX9B9i6qAYeFBIE"
-    udp: true
-  - name: "🇷🇴_7"
-    type: ss
-    server: "82.152.132.211"
-    port: 8044
-    cipher: "chacha20-ietf-poly1305"
-    password: "byX4-DV0C42PLFTWQhMTAQ63mZ8qrDRB"
-    udp: true
-  - name: "🇷🇴_8"
     type: ss
     server: "194.68.44.42"
     port: 64546
@@ -152,10 +123,6 @@ proxy-groups:
       - "🇷🇴_2"
       - "🇷🇴_3"
       - "🇷🇴_4"
-      - "🇷🇴_5"
-      - "🇷🇴_6"
-      - "🇷🇴_7"
-      - "🇷🇴_8"
 
 
   - name: "Load Balance"
@@ -168,10 +135,6 @@ proxy-groups:
       - "🇷🇴_2"
       - "🇷🇴_3"
       - "🇷🇴_4"
-      - "🇷🇴_5"
-      - "🇷🇴_6"
-      - "🇷🇴_7"
-      - "🇷🇴_8"
 
 rules:
   - MATCH,PROXY

@@ -75,33 +75,6 @@ proxies:
       short-id: "77bb0d07bddbc832"
     flow: "xtls-rprx-vision"
   - name: "🇧🇬_2"
-    type: vless
-    server: "88.80.150.15"
-    port: 443
-    uuid: "1d46250c-f015-439d-a7fd-c4d9e2a4c63d"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "bg2.oncloudvpn.com"
-    client-fingerprint: "edge"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "grpc"
-  - name: "🇧🇬_3"
-    type: vless
-    server: "66.bmi.ir.asopardaz.ir"
-    port: 8443
-    uuid: "7c356ae5-3b11-4040-9e76-2d2b7b8ea2f4"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "hostgator.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "JtA0d5K6Jnmg35oWP9SDOsc1ceuqaxOsNg33fiPHJQs"
-      short-id: "e915"
-    flow: "xtls-rprx-vision"
-  - name: "🇧🇬_4"
     type: trojan
     server: "38.54.27.117"
     port: 443
@@ -127,8 +100,6 @@ proxy-groups:
     proxies:
       - "🇧🇬_1"
       - "🇧🇬_2"
-      - "🇧🇬_3"
-      - "🇧🇬_4"
 
 
   - name: "Load Balance"
@@ -139,8 +110,6 @@ proxy-groups:
     proxies:
       - "🇧🇬_1"
       - "🇧🇬_2"
-      - "🇧🇬_3"
-      - "🇧🇬_4"
 
 rules:
   - MATCH,PROXY

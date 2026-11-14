@@ -60,20 +60,14 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇲🇨_1"
-    type: vless
-    server: "107.189.23.205"
-    port: 443
-    uuid: "63eecfaa-50b7-4ea9-9bec-a176bf03a215"
-    udp: true
-    tls: true
+  - name: "🇷🇸_1"
+    type: trojan
+    server: "38.180.101.235"
+    port: 5443
+    password: "X00HagvwL8gQXNDAnsxsN8dv1_VdneEo"
+    sni: "rs.nebulaguard.org"
     skip-cert-verify: true
-    servername: "suffolkprimarycare.uk"
-    client-fingerprint: "edge"
-    reality-opts:
-      public-key: "5Xgf3UO6yZb7gCK3R3GULk8jyNIp7Sr-26YXZfSW71c"
-      short-id: "13975a8e0bd50e7c"
-    flow: "xtls-rprx-vision"
+    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -90,7 +84,7 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇲🇨_1"
+      - "🇷🇸_1"
 
 
   - name: "Load Balance"
@@ -99,7 +93,7 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇲🇨_1"
+      - "🇷🇸_1"
 
 rules:
   - MATCH,PROXY
