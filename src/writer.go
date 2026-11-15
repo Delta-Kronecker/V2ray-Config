@@ -1904,60 +1904,73 @@ func writeSummary(results []configResult, failedLinks []string, duration float64
 	w.WriteString(gen.String())
 }
 
-// ── Daily archive ────────────────────────────────────────────────────────────
+// ── Run archive ──────────────────────────────────────────────────────────────
 
-func archiveDailyConfigs(lines []string) {
+// archiveRunConfigs snapshots the current run. One file per run (timestamped)
+// so several runs on the same day no longer overwrite each other. Retention
+// keeps every run from the last maxDays days but never fewer than minRuns
+// snapshots, so both "past week" and "last 7 runs" are covered.
+func archiveRunConfigs(lines []string) {
 	const maxDays = 7
+	const minRuns = 7
 	archiveDir := filepath.Join("config", "archive")
 	os.MkdirAll(archiveDir, 0755)
 
-	today := time.Now().Format("2006-01-02")
-	archivePath := filepath.Join(archiveDir, "all_configs_"+today+".txt")
+	stamp := time.Now().Format("2006-01-02_150405")
+	archivePath := filepath.Join(archiveDir, "all_configs_"+stamp+".txt")
 	writeFile(archivePath, lines)
 	fmt.Printf(" Archived %d configs → %s\n", len(lines), archivePath)
 
-	entries, err := os.ReadDir(archiveDir)
-	if err != nil {
-		return
-	}
+	files := listArchiveFiles(archiveDir)
+	sort.Strings(files) // oldest → newest (timestamp sorts lexicographically)
+	cutoff := time.Now().AddDate(0, 0, -maxDays)
 
-	var archiveFiles []string
-	for _, e := range entries {
-		if !e.IsDir() && strings.HasPrefix(e.Name(), "all_configs_") && strings.HasSuffix(e.Name(), ".txt") {
-			archiveFiles = append(archiveFiles, e.Name())
+	for i, name := range files {
+		// Always keep the newest minRuns snapshots.
+		if i >= len(files)-minRuns {
+			break
 		}
-	}
-
-	if len(archiveFiles) > maxDays {
-		sort.Strings(archiveFiles)
-		for i := 0; i < len(archiveFiles)-maxDays; i++ {
-			oldPath := filepath.Join(archiveDir, archiveFiles[i])
-			os.Remove(oldPath)
-			fmt.Printf("  Removed old archive: %s\n", archiveFiles[i])
+		ts, err := time.Parse("2006-01-02_150405", strings.TrimSuffix(strings.TrimPrefix(name, "all_configs_"), ".txt"))
+		if err == nil && ts.After(cutoff) {
+			continue // still inside the retention window
 		}
+		os.Remove(filepath.Join(archiveDir, name))
+		fmt.Printf("  Removed old archive: %s\n", name)
 	}
 }
 
-func loadArchiveConfigs() map[string]bool {
-	archiveDir := filepath.Join("config", "archive")
-	entries, err := os.ReadDir(archiveDir)
+func listArchiveFiles(dir string) []string {
+	entries, err := os.ReadDir(dir)
 	if err != nil {
 		return nil
 	}
-
-	known := make(map[string]bool)
+	var files []string
 	for _, e := range entries {
-		if e.IsDir() || !strings.HasPrefix(e.Name(), "all_configs_") || !strings.HasSuffix(e.Name(), ".txt") {
-			continue
+		if !e.IsDir() && strings.HasPrefix(e.Name(), "all_configs_") && strings.HasSuffix(e.Name(), ".txt") {
+			files = append(files, e.Name())
 		}
-		data, err := os.ReadFile(filepath.Join(archiveDir, e.Name()))
+	}
+	return files
+}
+
+// loadArchiveConfigs collects the identity of every config seen in the retained
+// archive snapshots. Identity is proto+host+port+credentials (coreIdentity), so
+// it is independent of the display name and stable across renames.
+func loadArchiveConfigs() map[string]bool {
+	archiveDir := filepath.Join("config", "archive")
+	known := make(map[string]bool)
+	for _, name := range listArchiveFiles(archiveDir) {
+		data, err := os.ReadFile(filepath.Join(archiveDir, name))
 		if err != nil {
 			continue
 		}
 		for _, line := range strings.Split(string(data), "\n") {
 			line = strings.TrimSpace(line)
-			if line != "" {
-				known[line] = true
+			if line == "" {
+				continue
+			}
+			if proto := detectProto(line); proto != "" {
+				known[coreIdentity(line, proto)] = true
 			}
 		}
 	}
@@ -1967,21 +1980,21 @@ func loadArchiveConfigs() map[string]bool {
 func writeNewConfigs(results []configResult, known map[string]bool) {
 	if len(known) == 0 {
 		writeFile("config/new.txt", nil)
-		fmt.Println(" new.txt: 0 new configs (no archive to compare)")
+		fmt.Println(" new.txt: 0 new configs (no previous archive to compare)")
 		return
 	}
 
 	const fallbackName = "@DeltaKroneckerGithub"
 	var newLines []string
 	for _, r := range results {
-		if !known[r.line] {
+		if !known[coreIdentity(r.line, r.proto)] {
 			named := renameTo(r.line, r.proto, fallbackName)
 			newLines = append(newLines, named)
 		}
 	}
 
 	writeFile("config/new.txt", newLines)
-	fmt.Printf(" new.txt: %d new configs (not in last 7 days archive)\n", len(newLines))
+	fmt.Printf(" new.txt: %d new configs (not seen in last 7 runs)\n", len(newLines))
 }
 
 // ── Patt config (vless/trojan ws + fragment) ──────────────────────────────────

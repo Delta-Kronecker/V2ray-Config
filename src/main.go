@@ -103,8 +103,10 @@ func main() {
 
 	writeOutputFiles(results, onlyTCPPass)
 
-	archiveDailyConfigs(readFileLines("config/all_configs.txt"))
+	// Load the identity set from previous runs BEFORE snapshotting this run,
+	// otherwise today's own configs would be treated as "already known".
 	archiveKnown := loadArchiveConfigs()
+	archiveRunConfigs(readFileLines("config/all_configs.txt"))
 	writeNewConfigs(results, archiveKnown)
 
 	writeSummary(results, failedLinks, elapsed, len(allConfigs), len(onlyTCPPass))
