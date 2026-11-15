@@ -60,19 +60,39 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇲🇩_1"
+  - name: "🇸🇨_1"
     type: vless
-    server: "143.246.205.2"
+    server: "196.240.125.250"
     port: 8443
-    uuid: "f2905db1-4c91-48fc-a101-705d1620e279"
+    uuid: "97fd7807-7e2b-49da-8a0e-e40197088f97"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "ch.gacvpn.site"
+    servername: "api-v1-6af87527.vmagnum.win"
+    client-fingerprint: "qq"
+    flow: "xtls-rprx-vision"
+  - name: "🇸🇨_2"
+    type: vless
+    server: "165.231.157.148"
+    port: 8443
+    uuid: "97fd7807-7e2b-49da-8a0e-e40197088f97"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "api-6af74a4f.adhil.uk"
     client-fingerprint: "firefox"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "connect-ch"
+    flow: "xtls-rprx-vision"
+  - name: "🇸🇨_3"
+    type: vless
+    server: "196.240.125.10"
+    port: 8443
+    uuid: "97fd7807-7e2b-49da-8a0e-e40197088f97"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "api-v1-6af86a96.vmagnum.win"
+    client-fingerprint: "ios"
+    flow: "xtls-rprx-vision"
 
 proxy-groups:
   - name: "PROXY"
@@ -89,7 +109,9 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇲🇩_1"
+      - "🇸🇨_1"
+      - "🇸🇨_2"
+      - "🇸🇨_3"
 
 
   - name: "Load Balance"
@@ -98,7 +120,9 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇲🇩_1"
+      - "🇸🇨_1"
+      - "🇸🇨_2"
+      - "🇸🇨_3"
 
 rules:
   - MATCH,PROXY

@@ -62,24 +62,22 @@ dns:
 proxies:
   - name: "🇦🇱_1"
     type: vless
-    server: "176.108.240.45"
+    server: "79.182.70.232"
     port: 443
-    uuid: "6895528a-aa3e-48c4-8804-ced625e92b47"
+    uuid: "cda0862a-0f87-4be9-8ed8-1d0c9e382839"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "xn---26-5cd9bhfc0a8c7b8af.xn--p1ai"
-    client-fingerprint: "firefox"
+    servername: "5d0319t.nl7.h1clayd.click"
     reality-opts:
-      public-key: "me0xkqd3f9UlKOavrYCOTK5J2erH1-JK_LA017XHkUU"
-      short-id: "43560624cceb5666"
-    flow: "xtls-rprx-vision"
+      public-key: "l-GzBDuNuhnjxoRlZqKvT7jAt_sbVAxhGFsAttO5kXs"
+      short-id: "361d0dd59c70516f"
   - name: "🇦🇱_2"
     type: ss
     server: "130.49.189.158"
     port: 43558
     cipher: "chacha20-ietf-poly1305"
-    password: "LNc9h/4NA9Q6ZHNeYHoT5X/fR9aoE9KQR1SWhVDHBog="
+    password: "yZiPrr484OdSYcivDUv+UIygwvyW+HQYytKsIgTw9tU="
     udp: true
   - name: "🇦🇱_3"
     type: ss
@@ -93,9 +91,23 @@ proxies:
     server: "130.49.189.158"
     port: 43558
     cipher: "chacha20-ietf-poly1305"
-    password: "LNc9h/4NA9Q6ZHNeYHoT5X/fR9aoE9KQR1SWhVDHBog="
+    password: "0SxLXFtomY9ypO4o8rrNWEpNSZEFzsMnfhBETUd3oOw="
     udp: true
   - name: "🇦🇱_5"
+    type: ss
+    server: "130.49.189.158"
+    port: 43558
+    cipher: "chacha20-ietf-poly1305"
+    password: "LNc9h/4NA9Q6ZHNeYHoT5X/fR9aoE9KQR1SWhVDHBog="
+    udp: true
+  - name: "🇦🇱_6"
+    type: ss
+    server: "130.49.189.158"
+    port: 43558
+    cipher: "chacha20-ietf-poly1305"
+    password: "LNc9h/4NA9Q6ZHNeYHoT5X/fR9aoE9KQR1SWhVDHBog="
+    udp: true
+  - name: "🇦🇱_7"
     type: ss
     server: "130.49.189.158"
     port: 43558
@@ -123,6 +135,8 @@ proxy-groups:
       - "🇦🇱_3"
       - "🇦🇱_4"
       - "🇦🇱_5"
+      - "🇦🇱_6"
+      - "🇦🇱_7"
 
 
   - name: "Load Balance"
@@ -136,6 +150,8 @@ proxy-groups:
       - "🇦🇱_3"
       - "🇦🇱_4"
       - "🇦🇱_5"
+      - "🇦🇱_6"
+      - "🇦🇱_7"
 
 rules:
   - MATCH,PROXY

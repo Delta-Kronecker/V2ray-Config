@@ -62,20 +62,72 @@ dns:
 proxies:
   - name: "🇸🇰_1"
     type: vless
-    server: "196.245.153.104"
+    server: "196.245.153.112"
+    port: 443
+    uuid: "474638a5-dc58-4453-9e40-70bcaa4ef74c"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "b998f03d.de-p2.h1clayd.click"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "RjoTK5x2_y3hb4nsOUnjii7IAu6gy5GrC-VN-H_AIh0"
+      short-id: "c10f4100fa3a8d47"
+  - name: "🇸🇰_2"
+    type: vless
+    server: "b998f03d.de-p2.h1clayd.click"
+    port: 443
+    uuid: "474638a5-dc58-4453-9e40-70bcaa4ef74c"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "b998f03d.de-p2.h1clayd.click"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "RjoTK5x2_y3hb4nsOUnjii7IAu6gy5GrC-VN-H_AIh0"
+      short-id: "c10f4100fa3a8d47"
+  - name: "🇸🇰_3"
+    type: vless
+    server: "7cabc1g.de-p2.h1clayd.click"
+    port: 443
+    uuid: "4618cebd-e1e9-45c3-be98-d9d6e3ee8bef"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "7cabc1g.de-p2.h1clayd.click"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "VKwRsPrkqzgO1NgEd9uK-g9Sg9vWUl37msYt4OH7XiI"
+      short-id: "d04b7f092468a136"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "df0c8e02206d"
+  - name: "🇸🇰_4"
+    type: vless
+    server: "196.245.153.111"
     port: 443
     uuid: "cda0862a-0f87-4be9-8ed8-1d0c9e382839"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "15b171g.nl7.h1clayd.click"
+    servername: "76574ct.nl8.h1clayd.click"
     client-fingerprint: "firefox"
     reality-opts:
-      public-key: "zbz--PMjcIC4Ggr3j-ibDf0fzXRTj0lM_HzjPJyMkVE"
-      short-id: "50a749f0eccb628c"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "5b79e8a94241"
+      public-key: "9zW5lTDbs9svY-lzlPp-pq0j2Sr6g031SY0E-3xSHDc"
+      short-id: "2ca59bdc5121f921"
+  - name: "🇸🇰_5"
+    type: vless
+    server: "45.151.70.116"
+    port: 443
+    uuid: "6f2857ee-4d43-417f-8a60-6f29becf061f"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.amd.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "O-B_Lb2sUV9VaUIv0_d6gVMA20oSKEd1wwyZ5vJYvh8"
+      short-id: "836c3060"
 
 proxy-groups:
   - name: "PROXY"
@@ -93,6 +145,10 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇸🇰_1"
+      - "🇸🇰_2"
+      - "🇸🇰_3"
+      - "🇸🇰_4"
+      - "🇸🇰_5"
 
 
   - name: "Load Balance"
@@ -102,6 +158,10 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇸🇰_1"
+      - "🇸🇰_2"
+      - "🇸🇰_3"
+      - "🇸🇰_4"
+      - "🇸🇰_5"
 
 rules:
   - MATCH,PROXY

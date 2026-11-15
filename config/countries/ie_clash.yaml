@@ -61,48 +61,6 @@ dns:
 
 proxies:
   - name: "🇮🇪_1"
-    type: vless
-    server: "83.141.69.220"
-    port: 443
-    uuid: "64432174-b71d-4cda-8b08-2459d2407be5"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "13.143.195.113.sslip.io"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "p0M6RumtfcATPNPUIFnFcgWy2rzk2gGVWx21sql1hV0"
-      short-id: "8238d76df92c2560"
-    flow: "xtls-rprx-vision"
-  - name: "🇮🇪_2"
-    type: vless
-    server: "83.141.69.189"
-    port: 443
-    uuid: "20d56ff9-359e-4983-9b04-6402e9ebce08"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "cdn.savesafe.space"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "X5QCQAU6PhQ0ZYdMfsOD8SzK2tAcKqGbqHcGKOCkHg0"
-      short-id: "3e70d4cbb01bddfd"
-    flow: "xtls-rprx-vision"
-  - name: "🇮🇪_3"
-    type: vless
-    server: "83.141.68.232"
-    port: 443
-    uuid: "7d718630-7a1a-4af8-9332-aa0610634e8a"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "fieldnote.lalibobi.online"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "RDFOZiTfbF3lzMcJGSm9rODFi1ErzlqqADAHQUpU2xs"
-      short-id: "d06c37930f65c360"
-    flow: "xtls-rprx-vision"
-  - name: "🇮🇪_4"
     type: trojan
     server: "54.74.210.220"
     port: 443
@@ -127,9 +85,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇮🇪_1"
-      - "🇮🇪_2"
-      - "🇮🇪_3"
-      - "🇮🇪_4"
 
 
   - name: "Load Balance"
@@ -139,9 +94,6 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇮🇪_1"
-      - "🇮🇪_2"
-      - "🇮🇪_3"
-      - "🇮🇪_4"
 
 rules:
   - MATCH,PROXY
