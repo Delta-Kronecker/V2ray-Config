@@ -61,45 +61,39 @@ dns:
 
 proxies:
   - name: "🇦🇱_1"
-    type: vless
-    server: "b998f03d.de-p2.h1clayd.click"
-    port: 443
-    uuid: "474638a5-dc58-4453-9e40-70bcaa4ef74c"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "b998f03d.de-p2.h1clayd.click"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "RjoTK5x2_y3hb4nsOUnjii7IAu6gy5GrC-VN-H_AIh0"
-      short-id: "c10f4100fa3a8d47"
-  - name: "🇦🇱_2"
-    type: ss
-    server: "130.49.189.158"
-    port: 43558
-    cipher: "chacha20-ietf-poly1305"
-    password: "0SxLXFtomY9ypO4o8rrNWEpNSZEFzsMnfhBETUd3oOw="
-    udp: true
-  - name: "🇦🇱_3"
     type: ss
     server: "130.49.189.158"
     port: 43558
     cipher: "chacha20-ietf-poly1305"
     password: "yZiPrr484OdSYcivDUv+UIygwvyW+HQYytKsIgTw9tU="
     udp: true
-  - name: "🇦🇱_4"
+  - name: "🇦🇱_2"
     type: ss
     server: "130.49.189.158"
     port: 43558
     cipher: "chacha20-ietf-poly1305"
     password: "LNc9h/4NA9Q6ZHNeYHoT5X/fR9aoE9KQR1SWhVDHBog="
     udp: true
-  - name: "🇦🇱_5"
+  - name: "🇦🇱_3"
     type: ss
     server: "130.49.189.158"
     port: 43558
     cipher: "chacha20-ietf-poly1305"
     password: "LNc9h/4NA9Q6ZHNeYHoT5X/fR9aoE9KQR1SWhVDHBog="
+    udp: true
+  - name: "🇦🇱_4"
+    type: ss
+    server: "130.49.189.158"
+    port: 43558
+    cipher: "chacha20-ietf-poly1305"
+    password: "0SxLXFtomY9ypO4o8rrNWEpNSZEFzsMnfhBETUd3oOw="
+    udp: true
+  - name: "🇦🇱_5"
+    type: ss
+    server: "130.49.189.158"
+    port: 43558
+    cipher: "chacha20-ietf-poly1305"
+    password: "JYevOrmujurJsNP1ata0kNfjsxwFLAhgD73mrZPJP1I="
     udp: true
   - name: "🇦🇱_6"
     type: ss
@@ -107,13 +101,6 @@ proxies:
     port: 43558
     cipher: "chacha20-ietf-poly1305"
     password: "yZiPrr484OdSYcivDUv+UIygwvyW+HQYytKsIgTw9tU="
-    udp: true
-  - name: "🇦🇱_7"
-    type: ss
-    server: "130.49.189.158"
-    port: 43558
-    cipher: "chacha20-ietf-poly1305"
-    password: "0SxLXFtomY9ypO4o8rrNWEpNSZEFzsMnfhBETUd3oOw="
     udp: true
 
 proxy-groups:
@@ -137,7 +124,6 @@ proxy-groups:
       - "🇦🇱_4"
       - "🇦🇱_5"
       - "🇦🇱_6"
-      - "🇦🇱_7"
 
 
   - name: "Load Balance"
@@ -152,7 +138,6 @@ proxy-groups:
       - "🇦🇱_4"
       - "🇦🇱_5"
       - "🇦🇱_6"
-      - "🇦🇱_7"
 
 rules:
   - MATCH,PROXY

@@ -60,32 +60,20 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇸🇰_1"
+  - name: "🇩🇰_1"
     type: vless
-    server: "45.151.70.116"
+    server: "193.181.210.205"
     port: 443
-    uuid: "6f2857ee-4d43-417f-8a60-6f29becf061f"
+    uuid: "8197b9b9-8945-460f-99c9-325ef8a8a7c3"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "www.amd.com"
+    servername: "dk1.gofizz.in"
     client-fingerprint: "firefox"
     reality-opts:
-      public-key: "O-B_Lb2sUV9VaUIv0_d6gVMA20oSKEd1wwyZ5vJYvh8"
-      short-id: "836c3060"
-  - name: "🇸🇰_2"
-    type: vless
-    server: "196.245.153.112"
-    port: 443
-    uuid: "474638a5-dc58-4453-9e40-70bcaa4ef74c"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "b998f03d.de-p2.h1clayd.click"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "RjoTK5x2_y3hb4nsOUnjii7IAu6gy5GrC-VN-H_AIh0"
-      short-id: "c10f4100fa3a8d47"
+      public-key: "arZrNPbhlxNAGMzO_g2Dx3AAV_FEMnFyydbBsyZUCiY"
+      short-id: "54005328cd"
+    flow: "xtls-rprx-vision"
 
 proxy-groups:
   - name: "PROXY"
@@ -102,8 +90,7 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇸🇰_1"
-      - "🇸🇰_2"
+      - "🇩🇰_1"
 
 
   - name: "Load Balance"
@@ -112,8 +99,7 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇸🇰_1"
-      - "🇸🇰_2"
+      - "🇩🇰_1"
 
 rules:
   - MATCH,PROXY

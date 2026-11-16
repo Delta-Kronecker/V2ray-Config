@@ -68,6 +68,20 @@ proxies:
     sni: "38.54.59.90"
     skip-cert-verify: true
     udp: true
+  - name: "🇪🇬_2"
+    type: ss
+    server: "dlc.deltapc.digital"
+    port: 11133
+    cipher: "xchacha20-ietf-poly1305"
+    password: "mDLpXyVaIwCQ5GjuekgBxYMtVT9Z/nkb3K2SXpwHCLU="
+    udp: true
+  - name: "🇪🇬_3"
+    type: ss
+    server: "dlc.deltapc.digital"
+    port: 11133
+    cipher: "xchacha20-ietf-poly1305"
+    password: "mDLpXyVaIwCQ5GjuekgBxYMtVT9Z/nkb3K2SXpwHCLU="
+    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -85,6 +99,8 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇪🇬_1"
+      - "🇪🇬_2"
+      - "🇪🇬_3"
 
 
   - name: "Load Balance"
@@ -94,6 +110,8 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇪🇬_1"
+      - "🇪🇬_2"
+      - "🇪🇬_3"
 
 rules:
   - MATCH,PROXY
