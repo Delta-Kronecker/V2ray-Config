@@ -60,38 +60,62 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇸🇨_1"
+  - name: "🇧🇪_1"
     type: vless
-    server: "196.240.125.250"
-    port: 8443
-    uuid: "97fd7807-7e2b-49da-8a0e-e40197088f97"
+    server: "netherlandddtun.whooisthebest.ir"
+    port: 3134
+    uuid: "49fe1f7b-e6f6-43dc-a67d-caade85128ba"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "api-v1-6af87527.vmagnum.win"
-    client-fingerprint: "qq"
-    flow: "xtls-rprx-vision"
-  - name: "🇸🇨_2"
+    servername: "aparat.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "BECatGFyR4lUoLv4-w-qOzPPDkAQt_P8yGB4cP3nE0k"
+      short-id: "e9b64ca7d55f2672"
+  - name: "🇧🇪_2"
     type: vless
-    server: "165.231.157.148"
-    port: 8443
-    uuid: "97fd7807-7e2b-49da-8a0e-e40197088f97"
+    server: "netherlanddocjac.whooisthebest.ir"
+    port: 10000
+    uuid: "49fe1f7b-e6f6-43dc-a67d-caade85128ba"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "api-6af74a4f.adhil.uk"
-    client-fingerprint: "firefox"
-    flow: "xtls-rprx-vision"
-  - name: "🇸🇨_3"
+    servername: "amp-api-edge.apps.apple.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "Du5pk4KuMNA1sRcSpmuoLuC0HmxDBmFljFNfUzqxKiM"
+      short-id: "cd0a1986719e44c8"
+  - name: "🇧🇪_3"
     type: vless
-    server: "196.240.125.10"
-    port: 8443
-    uuid: "97fd7807-7e2b-49da-8a0e-e40197088f97"
+    server: "84.32.100.247"
+    port: 443
+    uuid: "2232d904-8e6a-4202-8240-6efd8aec02e9"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "api-v1-6af86a96.vmagnum.win"
+    servername: "app.streamru4.net"
     client-fingerprint: "ios"
+    flow: "xtls-rprx-vision"
+  - name: "🇧🇪_4"
+    type: vless
+    server: "185.22.155.97"
+    port: 8080
+    uuid: "FastKey_331443"
+    udp: true
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "api"
+  - name: "🇧🇪_5"
+    type: vless
+    server: "app.streamru4.net"
+    port: 443
+    uuid: "2232d904-8e6a-4202-8240-6efd8aec02e9"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "app.streamru4.net"
+    client-fingerprint: "edge"
     flow: "xtls-rprx-vision"
 
 proxy-groups:
@@ -109,9 +133,11 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇸🇨_1"
-      - "🇸🇨_2"
-      - "🇸🇨_3"
+      - "🇧🇪_1"
+      - "🇧🇪_2"
+      - "🇧🇪_3"
+      - "🇧🇪_4"
+      - "🇧🇪_5"
 
 
   - name: "Load Balance"
@@ -120,9 +146,11 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇸🇨_1"
-      - "🇸🇨_2"
-      - "🇸🇨_3"
+      - "🇧🇪_1"
+      - "🇧🇪_2"
+      - "🇧🇪_3"
+      - "🇧🇪_4"
+      - "🇧🇪_5"
 
 rules:
   - MATCH,PROXY

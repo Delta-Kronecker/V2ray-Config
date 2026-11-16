@@ -3,27 +3,27 @@
 <details>
 <summary><strong>V2ray</strong></summary>
 
-V2ray All (4138 config):
+V2ray All (3946 config):
 ```
 https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/all_configs.txt
 ```
 
-V2ray VLESS (920 config):
+V2ray VLESS (803 config):
 ```
 https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/protocols/vless.txt
 ```
 
-V2ray TROJAN (1169 config):
+V2ray TROJAN (1194 config):
 ```
 https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/protocols/trojan.txt
 ```
 
-V2ray SS (971 config):
+V2ray SS (784 config):
 ```
 https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/protocols/ss.txt
 ```
 
-V2ray VMESS (1078 config):
+V2ray VMESS (1165 config):
 ```
 https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/protocols/vmess.txt
 ```
@@ -68,14 +68,9 @@ V2ray Batch 007 (500 config):
 https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/batches/v2ray/batch_007.txt
 ```
 
-V2ray Batch 008 (500 config):
+V2ray Batch 008 (446 config):
 ```
 https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/batches/v2ray/batch_008.txt
-```
-
-V2ray Batch 009 (138 config):
-```
-https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/batches/v2ray/batch_009.txt
 ```
 
 </details>
@@ -83,27 +78,27 @@ https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/batch
 <details>
 <summary><strong>Clash</strong></summary>
 
-Clash All (4138 config):
+Clash All (3946 config):
 ```
 https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/clash.yaml
 ```
 
-Clash VLESS (920 config):
+Clash VLESS (803 config):
 ```
 https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/protocols/vless_clash.yaml
 ```
 
-Clash TROJAN (1169 config):
+Clash TROJAN (1194 config):
 ```
 https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/protocols/trojan_clash.yaml
 ```
 
-Clash SS (971 config):
+Clash SS (784 config):
 ```
 https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/protocols/ss_clash.yaml
 ```
 
-Clash VMESS (1078 config):
+Clash VMESS (1165 config):
 ```
 https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/protocols/vmess_clash.yaml
 ```
@@ -143,27 +138,22 @@ Clash Batch 006 (500 config):
 https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/batches/clash/batch_006.yaml
 ```
 
-Clash Batch 007 (500 config):
-```
-https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/batches/clash/batch_007.yaml
-```
-
 </details>
 
 <details>
 <summary><strong>Patt</strong></summary>
 
-Patt All (429 config):
+Patt All (252 config):
 ```
 https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/patt/all.txt
 ```
 
-Patt VLESS (419 config):
+Patt VLESS (200 config):
 ```
 https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/patt/protocols/vless.txt
 ```
 
-Patt TROJAN (10 config):
+Patt TROJAN (52 config):
 ```
 https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/patt/protocols/trojan.txt
 ```
@@ -173,7 +163,7 @@ https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/patt/
 <details>
 <summary><strong>Patt Batches</strong></summary>
 
-Patt Batch 001 (429 config):
+Patt Batch 001 (252 config):
 ```
 https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/patt/batches/batch_001.txt
 ```
@@ -183,27 +173,27 @@ https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/patt/
 <details>
 <summary><strong>Custom (Fragment)</strong></summary>
 
-Custom All (4138 config):
+Custom All (3946 config):
 ```
 https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/farg/all_configs.json
 ```
 
-Custom VLESS (920 config):
+Custom VLESS (803 config):
 ```
 https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/farg/protocols/vless.json
 ```
 
-Custom TROJAN (1169 config):
+Custom TROJAN (1194 config):
 ```
 https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/farg/protocols/trojan.json
 ```
 
-Custom SS (971 config):
+Custom SS (784 config):
 ```
 https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/farg/protocols/ss.json
 ```
 
-Custom VMESS (1078 config):
+Custom VMESS (1165 config):
 ```
 https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/farg/protocols/vmess.json
 ```
@@ -248,14 +238,9 @@ Custom Batch 007 (500 config):
 https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/farg/batches/batch_007.json
 ```
 
-Custom Batch 008 (500 config):
+Custom Batch 008 (446 config):
 ```
 https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/farg/batches/batch_008.json
-```
-
-Custom Batch 009 (138 config):
-```
-https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/farg/batches/batch_009.json
 ```
 
 </details>
@@ -263,27 +248,27 @@ https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/farg/
 <details>
 <summary><strong>Local</strong></summary>
 
-Local All (4138 config):
+Local All (3946 config):
 ```
 https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/sni/all_configs_sni.txt
 ```
 
-Local VLESS (920 config):
+Local VLESS (803 config):
 ```
 https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/sni/protocols/vless_sni.txt
 ```
 
-Local TROJAN (1169 config):
+Local TROJAN (1194 config):
 ```
 https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/sni/protocols/trojan_sni.txt
 ```
 
-Local SS (971 config):
+Local SS (784 config):
 ```
 https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/sni/protocols/ss_sni.txt
 ```
 
-Local VMESS (1078 config):
+Local VMESS (1165 config):
 ```
 https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/sni/protocols/vmess_sni.txt
 ```
@@ -303,7 +288,7 @@ https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/batch
 <details>
 <summary><strong>TCP Pass (for advanced users)</strong></summary>
 
-> All configs that passed TCP ping. Total: **206483**
+> All configs that passed TCP ping. Total: **207021**
 
 TCP Pass Batch 001:
 ```
@@ -420,7 +405,7 @@ https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/tcp-p
 <details>
 <summary><strong>Local TCP Pass (for advanced users)</strong></summary>
 
-> SNI version of TCP Pass configs. Total: **206483**
+> SNI version of TCP Pass configs. Total: **207021**
 
 TCP Pass SNI Batch 001:
 ```
@@ -534,24 +519,25 @@ https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/tcp-p
 
 | Country | V2ray | Clash | Country | V2ray | Clash | Country | V2ray | Clash |
 |---------|-------|-------|---------|-------|-------|---------|-------|-------|
-| US | [965](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/us.txt) | [965](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/us_clash.yaml) | GB | [311](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/gb.txt) | [311](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/gb_clash.yaml) | HK | [274](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/hk.txt) | [274](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/hk_clash.yaml) |
-| SG | [269](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/sg.txt) | [269](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/sg_clash.yaml) | CA | [257](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/ca.txt) | [257](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/ca_clash.yaml) | DE | [237](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/de.txt) | [237](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/de_clash.yaml) |
-| NL | [236](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/nl.txt) | [236](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/nl_clash.yaml) | CN | [172](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/cn.txt) | [172](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/cn_clash.yaml) | JP | [124](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/jp.txt) | [124](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/jp_clash.yaml) |
-| TW | [83](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/tw.txt) | [83](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/tw_clash.yaml) | KR | [72](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/kr.txt) | [72](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/kr_clash.yaml) | FR | [43](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/fr.txt) | [43](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/fr_clash.yaml) |
-| ES | [41](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/es.txt) | [41](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/es_clash.yaml) | RU | [35](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/ru.txt) | [35](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/ru_clash.yaml) | IT | [35](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/it.txt) | [35](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/it_clash.yaml) |
-| SE | [33](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/se.txt) | [33](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/se_clash.yaml) | IN | [29](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/in.txt) | [29](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/in_clash.yaml) | AU | [29](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/au.txt) | [29](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/au_clash.yaml) |
-| PL | [27](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/pl.txt) | [27](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/pl_clash.yaml) | FI | [22](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/fi.txt) | [22](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/fi_clash.yaml) | IR | [21](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/ir.txt) | [21](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/ir_clash.yaml) |
-| TR | [17](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/tr.txt) | [17](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/tr_clash.yaml) | CH | [15](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/ch.txt) | [15](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/ch_clash.yaml) | AT | [14](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/at.txt) | [14](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/at_clash.yaml) |
-| CZ | [11](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/cz.txt) | [11](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/cz_clash.yaml) | LT | [10](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/lt.txt) | [10](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/lt_clash.yaml) | EE | [10](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/ee.txt) | [10](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/ee_clash.yaml) |
-| AE | [9](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/ae.txt) | [9](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/ae_clash.yaml) | NG | [8](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/ng.txt) | [8](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/ng_clash.yaml) | KZ | [7](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/kz.txt) | [7](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/kz_clash.yaml) |
-| AL | [7](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/al.txt) | [7](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/al_clash.yaml) | MY | [7](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/my.txt) | [7](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/my_clash.yaml) | ZA | [6](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/za.txt) | [6](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/za_clash.yaml) |
-| MX | [5](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/mx.txt) | [5](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/mx_clash.yaml) | SK | [5](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/sk.txt) | [5](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/sk_clash.yaml) | VN | [5](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/vn.txt) | [5](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/vn_clash.yaml) |
-| ID | [4](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/id.txt) | [4](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/id_clash.yaml) | LV | [4](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/lv.txt) | [4](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/lv_clash.yaml) | RO | [4](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/ro.txt) | [4](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/ro_clash.yaml) |
-| UA | [4](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/ua.txt) | [4](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/ua_clash.yaml) | BY | [4](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/by.txt) | [4](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/by_clash.yaml) | BR | [3](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/br.txt) | [3](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/br_clash.yaml) |
-| SC | [3](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/sc.txt) | [3](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/sc_clash.yaml) | CY | [3](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/cy.txt) | [3](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/cy_clash.yaml) | NO | [2](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/no.txt) | [2](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/no_clash.yaml) |
-| GR | [2](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/gr.txt) | [2](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/gr_clash.yaml) | BG | [2](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/bg.txt) | [2](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/bg_clash.yaml) | PE | [1](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/pe.txt) | [1](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/pe_clash.yaml) |
-| MN | [1](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/mn.txt) | [1](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/mn_clash.yaml) | TH | [1](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/th.txt) | [1](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/th_clash.yaml) | CL | [1](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/cl.txt) | [1](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/cl_clash.yaml) |
-| EG | [1](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/eg.txt) | [1](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/eg_clash.yaml) | IE | [1](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/ie.txt) | [1](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/ie_clash.yaml) | RS | [1](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/rs.txt) | [1](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/rs_clash.yaml) |
+| US | [824](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/us.txt) | [824](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/us_clash.yaml) | GB | [315](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/gb.txt) | [315](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/gb_clash.yaml) | HK | [313](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/hk.txt) | [313](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/hk_clash.yaml) |
+| SG | [289](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/sg.txt) | [289](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/sg_clash.yaml) | CA | [278](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/ca.txt) | [278](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/ca_clash.yaml) | DE | [269](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/de.txt) | [269](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/de_clash.yaml) |
+| NL | [261](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/nl.txt) | [261](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/nl_clash.yaml) | CN | [170](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/cn.txt) | [170](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/cn_clash.yaml) | JP | [140](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/jp.txt) | [140](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/jp_clash.yaml) |
+| TW | [82](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/tw.txt) | [82](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/tw_clash.yaml) | KR | [74](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/kr.txt) | [74](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/kr_clash.yaml) | ES | [55](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/es.txt) | [55](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/es_clash.yaml) |
+| FR | [48](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/fr.txt) | [48](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/fr_clash.yaml) | IT | [33](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/it.txt) | [33](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/it_clash.yaml) | FI | [33](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/fi.txt) | [33](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/fi_clash.yaml) |
+| PL | [32](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/pl.txt) | [32](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/pl_clash.yaml) | RU | [28](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/ru.txt) | [28](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/ru_clash.yaml) | SE | [27](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/se.txt) | [27](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/se_clash.yaml) |
+| TR | [23](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/tr.txt) | [23](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/tr_clash.yaml) | AU | [23](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/au.txt) | [23](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/au_clash.yaml) | IR | [21](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/ir.txt) | [21](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/ir_clash.yaml) |
+| CH | [15](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/ch.txt) | [15](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/ch_clash.yaml) | LT | [14](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/lt.txt) | [14](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/lt_clash.yaml) | EE | [13](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/ee.txt) | [13](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/ee_clash.yaml) |
+| IN | [12](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/in.txt) | [12](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/in_clash.yaml) | AT | [11](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/at.txt) | [11](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/at_clash.yaml) | CZ | [10](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/cz.txt) | [10](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/cz_clash.yaml) |
+| KZ | [9](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/kz.txt) | [9](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/kz_clash.yaml) | AZ | [9](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/az.txt) | [9](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/az_clash.yaml) | MY | [8](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/my.txt) | [8](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/my_clash.yaml) |
+| AE | [8](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/ae.txt) | [8](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/ae_clash.yaml) | AL | [7](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/al.txt) | [7](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/al_clash.yaml) | ZA | [6](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/za.txt) | [6](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/za_clash.yaml) |
+| NG | [6](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/ng.txt) | [6](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/ng_clash.yaml) | VN | [5](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/vn.txt) | [5](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/vn_clash.yaml) | BE | [5](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/be.txt) | [5](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/be_clash.yaml) |
+| RO | [4](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/ro.txt) | [4](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/ro_clash.yaml) | UA | [4](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/ua.txt) | [4](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/ua_clash.yaml) | LV | [4](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/lv.txt) | [4](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/lv_clash.yaml) |
+| ID | [4](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/id.txt) | [4](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/id_clash.yaml) | BY | [4](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/by.txt) | [4](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/by_clash.yaml) | BG | [3](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/bg.txt) | [3](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/bg_clash.yaml) |
+| CY | [3](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/cy.txt) | [3](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/cy_clash.yaml) | BR | [3](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/br.txt) | [3](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/br_clash.yaml) | SK | [2](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/sk.txt) | [2](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/sk_clash.yaml) |
+| MX | [2](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/mx.txt) | [2](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/mx_clash.yaml) | NO | [2](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/no.txt) | [2](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/no_clash.yaml) | GR | [2](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/gr.txt) | [2](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/gr_clash.yaml) |
+| IL | [2](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/il.txt) | [2](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/il_clash.yaml) | EG | [1](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/eg.txt) | [1](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/eg_clash.yaml) | TH | [1](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/th.txt) | [1](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/th_clash.yaml) |
+| PE | [1](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/pe.txt) | [1](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/pe_clash.yaml) | RS | [1](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/rs.txt) | [1](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/rs_clash.yaml) | MN | [1](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/mn.txt) | [1](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/mn_clash.yaml) |
+| CL | [1](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/cl.txt) | [1](https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/cl_clash.yaml) |  |  |  |  |  |  |
 
 </details>
 

@@ -62,20 +62,6 @@ dns:
 proxies:
   - name: "🇨🇿_1"
     type: vless
-    server: "212.102.38.25"
-    port: 443
-    uuid: "b34a52cb-cd52-49a8-9362-b8e97c151d49"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "udemy.com"
-    client-fingerprint: "ios"
-    reality-opts:
-      public-key: "23cb4W9THzBKsrECsLh-A_FcKZfkAtUONoDze8-GnQE"
-      short-id: "e90360ec7cc61b20"
-    flow: "xtls-rprx-vision"
-  - name: "🇨🇿_2"
-    type: vless
     server: "153.52.69.249"
     port: 443
     uuid: "7ad63b26-bf70-4872-8fab-ebaf73a1e19d"
@@ -87,6 +73,20 @@ proxies:
     reality-opts:
       public-key: "WVfpQqoeOrTtCq052_IOxvMv7RCWfLlAOxEfsH1aa2U"
       short-id: "d5492c7a39515c65"
+    flow: "xtls-rprx-vision"
+  - name: "🇨🇿_2"
+    type: vless
+    server: "212.102.38.25"
+    port: 443
+    uuid: "b34a52cb-cd52-49a8-9362-b8e97c151d49"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "udemy.com"
+    client-fingerprint: "ios"
+    reality-opts:
+      public-key: "23cb4W9THzBKsrECsLh-A_FcKZfkAtUONoDze8-GnQE"
+      short-id: "e90360ec7cc61b20"
     flow: "xtls-rprx-vision"
   - name: "🇨🇿_3"
     type: vless
@@ -104,10 +104,10 @@ proxies:
     flow: "xtls-rprx-vision"
   - name: "🇨🇿_4"
     type: ss
-    server: "45.86.51.18"
-    port: 19999
-    cipher: "aes-256-gcm"
-    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
+    server: "194.87.233.93"
+    port: 46190
+    cipher: "chacha20-ietf-poly1305"
+    password: "2Ef8X21WALqK7H6N8A78j5WYtzZ999PP8rF8DaLsb5LLyDLQpf5dGVAjdA3mj1wudigKXTt5heYU9jmaBbfxXBJJAqhPHkxe"
     udp: true
   - name: "🇨🇿_5"
     type: ss
@@ -146,17 +146,10 @@ proxies:
     udp: true
   - name: "🇨🇿_10"
     type: ss
-    server: "194.87.233.93"
-    port: 46190
-    cipher: "chacha20-ietf-poly1305"
-    password: "2Ef8X21WALqK7H6N8A78j5WYtzZ999PP8rF8DaLsb5LLyDLQpf5dGVAjdA3mj1wudigKXTt5heYU9jmaBbfxXBJJAqhPHkxe"
-    udp: true
-  - name: "🇨🇿_11"
-    type: ss
-    server: "194.87.233.93"
-    port: 46190
-    cipher: "chacha20-ietf-poly1305"
-    password: "2Ef8X21WALqK7H6N8A78j5WYtzZ999PP8rF8DaLsb5LLyDLQpf5dGVAjdA3mj1wudigKXTt5heYU9jmaBbfxXBJJAqhPHkxe"
+    server: "45.86.51.18"
+    port: 19999
+    cipher: "aes-256-gcm"
+    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
 
 proxy-groups:
@@ -184,7 +177,6 @@ proxy-groups:
       - "🇨🇿_8"
       - "🇨🇿_9"
       - "🇨🇿_10"
-      - "🇨🇿_11"
 
 
   - name: "Load Balance"
@@ -203,7 +195,6 @@ proxy-groups:
       - "🇨🇿_8"
       - "🇨🇿_9"
       - "🇨🇿_10"
-      - "🇨🇿_11"
 
 rules:
   - MATCH,PROXY

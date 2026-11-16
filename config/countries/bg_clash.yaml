@@ -75,6 +75,20 @@ proxies:
       short-id: "77bb0d07bddbc832"
     flow: "xtls-rprx-vision"
   - name: "🇧🇬_2"
+    type: vless
+    server: "bg.spirako.com"
+    port: 8443
+    uuid: "081cd1d2-4a06-440b-b68a-1472a6aa69f1"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "apple.com"
+    client-fingerprint: "ios"
+    reality-opts:
+      public-key: "0hH6R90pSxwm7nZPGtJJcJFhwCXU3Rvf-wcEHE7hczo"
+      short-id: "9ce04f63"
+    flow: "xtls-rprx-vision"
+  - name: "🇧🇬_3"
     type: trojan
     server: "38.54.27.117"
     port: 443
@@ -100,6 +114,7 @@ proxy-groups:
     proxies:
       - "🇧🇬_1"
       - "🇧🇬_2"
+      - "🇧🇬_3"
 
 
   - name: "Load Balance"
@@ -110,6 +125,7 @@ proxy-groups:
     proxies:
       - "🇧🇬_1"
       - "🇧🇬_2"
+      - "🇧🇬_3"
 
 rules:
   - MATCH,PROXY

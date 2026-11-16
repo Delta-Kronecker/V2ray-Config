@@ -60,14 +60,28 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇮🇪_1"
-    type: trojan
-    server: "54.74.210.220"
+  - name: "🇮🇱_1"
+    type: vless
+    server: "188.225.24.62"
     port: 443
-    password: "AE62539071"
-    sni: "funny-hen.rooster465.autos"
-    skip-cert-verify: true
+    uuid: "c0c949fc-2ed6-4597-b680-a1a3276ebf87"
     udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "img.bokovskay.app"
+    client-fingerprint: "firefox"
+    flow: "xtls-rprx-vision"
+  - name: "🇮🇱_2"
+    type: vless
+    server: "188.225.24.192"
+    port: 443
+    uuid: "c0c949fc-2ed6-4597-b680-a1a3276ebf87"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "portal.bokovskay.app"
+    client-fingerprint: "firefox"
+    flow: "xtls-rprx-vision"
 
 proxy-groups:
   - name: "PROXY"
@@ -84,7 +98,8 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇮🇪_1"
+      - "🇮🇱_1"
+      - "🇮🇱_2"
 
 
   - name: "Load Balance"
@@ -93,7 +108,8 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇮🇪_1"
+      - "🇮🇱_1"
+      - "🇮🇱_2"
 
 rules:
   - MATCH,PROXY
