@@ -74,13 +74,6 @@ proxies:
       public-key: "wAh4gvnTR3NRk0SFrkBRkX3tNeybFNodcmg7piumxiM"
       short-id: "87395f88"
     flow: "xtls-rprx-vision"
-  - name: "🇵🇭_2"
-    type: ss
-    server: "149.104.109.252"
-    port: 8882
-    cipher: "aes-256-gcm"
-    password: "kDWvXYZoTBcGkC4"
-    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -98,7 +91,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇵🇭_1"
-      - "🇵🇭_2"
 
 
   - name: "Load Balance"
@@ -108,7 +100,6 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇵🇭_1"
-      - "🇵🇭_2"
 
 rules:
   - MATCH,PROXY

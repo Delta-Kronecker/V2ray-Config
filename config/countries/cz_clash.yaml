@@ -62,20 +62,6 @@ dns:
 proxies:
   - name: "🇨🇿_1"
     type: vless
-    server: "83.141.92.168"
-    port: 443
-    uuid: "a7595994-695d-484e-bfcb-e9fbb73cfa39"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "sladovna.russianpiwo.fun"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "kpQWnVk3fEJXfPGFsMerUoPV_ZqUJUJFRnF1FvKyhRY"
-      short-id: "7a7d19880a9ee786"
-    flow: "xtls-rprx-vision"
-  - name: "🇨🇿_2"
-    type: vless
     server: "195.123.245.241"
     port: 443
     uuid: "7c053ca8-38cc-45e2-930c-eda1fd66f903"
@@ -88,7 +74,7 @@ proxies:
       public-key: "hlY5ce1UsVIgE46y5PlEZhUsSaXUnCtoDLLaGrhInjw"
       short-id: "23d0950d60bc0d5b"
     flow: "xtls-rprx-vision"
-  - name: "🇨🇿_3"
+  - name: "🇨🇿_2"
     type: vless
     server: "212.102.38.25"
     port: 443
@@ -102,6 +88,13 @@ proxies:
       public-key: "23cb4W9THzBKsrECsLh-A_FcKZfkAtUONoDze8-GnQE"
       short-id: "e90360ec7cc61b20"
     flow: "xtls-rprx-vision"
+  - name: "🇨🇿_3"
+    type: ss
+    server: "194.87.233.93"
+    port: 46190
+    cipher: "chacha20-ietf-poly1305"
+    password: "2Ef8X21WALqK7H6N8A78j5WYtzZ999PP8rF8DaLsb5LLyDLQpf5dGVAjdA3mj1wudigKXTt5heYU9jmaBbfxXBJJAqhPHkxe"
+    udp: true
   - name: "🇨🇿_4"
     type: ss
     server: "194.87.233.93"
@@ -130,13 +123,6 @@ proxies:
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
-  - name: "🇨🇿_8"
-    type: ss
-    server: "194.87.233.93"
-    port: 46190
-    cipher: "chacha20-ietf-poly1305"
-    password: "2Ef8X21WALqK7H6N8A78j5WYtzZ999PP8rF8DaLsb5LLyDLQpf5dGVAjdA3mj1wudigKXTt5heYU9jmaBbfxXBJJAqhPHkxe"
-    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -160,7 +146,6 @@ proxy-groups:
       - "🇨🇿_5"
       - "🇨🇿_6"
       - "🇨🇿_7"
-      - "🇨🇿_8"
 
 
   - name: "Load Balance"
@@ -176,7 +161,6 @@ proxy-groups:
       - "🇨🇿_5"
       - "🇨🇿_6"
       - "🇨🇿_7"
-      - "🇨🇿_8"
 
 rules:
   - MATCH,PROXY

@@ -60,36 +60,20 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇨🇾_1"
+  - name: "🇧🇭_1"
     type: vless
-    server: "194.55.167.133"
+    server: "bh1.vpnjantit.com"
     port: 443
-    uuid: "8197b9b9-8945-460f-99c9-325ef8a8a7c3"
+    uuid: "b36a16e4-ded8-11f1-bdea-5254b0a2c347"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "cy1.gofizz.in"
-    client-fingerprint: "firefox"
+    servername: "cloudflare.com"
+    client-fingerprint: "chrome"
     reality-opts:
-      public-key: "XSh3jB8zXtqpI38glgwN2Bn5imxN8Rkyc39LeBSD8BQ"
-      short-id: "24f1fa53275b"
+      public-key: "lDEkUokSL-mrM1jsH8UKs8-3cfJMvkxhY7k37iBkFi4"
+      short-id: "32b72239bc69220e"
     flow: "xtls-rprx-vision"
-  - name: "🇨🇾_2"
-    type: trojan
-    server: "195.133.93.234"
-    port: 443
-    password: "3723507166611775488"
-    sni: "wise-cowbird.boa152.lol"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇨🇾_3"
-    type: trojan
-    server: "195.133.93.81"
-    port: 443
-    password: "3723507166611775488"
-    sni: "sensible-ocelot.boa152.lol"
-    skip-cert-verify: true
-    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -106,9 +90,7 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇨🇾_1"
-      - "🇨🇾_2"
-      - "🇨🇾_3"
+      - "🇧🇭_1"
 
 
   - name: "Load Balance"
@@ -117,9 +99,7 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇨🇾_1"
-      - "🇨🇾_2"
-      - "🇨🇾_3"
+      - "🇧🇭_1"
 
 rules:
   - MATCH,PROXY

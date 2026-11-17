@@ -62,6 +62,26 @@ dns:
 proxies:
   - name: "🇧🇾_1"
     type: vless
+    server: "178.172.227.228"
+    port: 10444
+    uuid: "b6e5dc56-836f-48c1-9163-b0b0b43b647d"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "ads.x5.ru"
+    client-fingerprint: "safari"
+    reality-opts:
+      public-key: "0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo"
+      short-id: "8debcf36f1cc69ff"
+    flow: "xtls-rprx-vision"
+  - name: "🇧🇾_2"
+    type: vless
+    server: "178.172.227.124"
+    port: 10443
+    uuid: "1af36694-b548-4b18-89a0-bc076eab4ed7"
+    udp: true
+  - name: "🇧🇾_3"
+    type: vless
     server: "178.172.227.124"
     port: 10444
     uuid: "1af36694-b548-4b18-89a0-bc076eab4ed7"
@@ -74,7 +94,7 @@ proxies:
       public-key: "0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo"
       short-id: "8debcf36f1cc69ff"
     flow: "xtls-rprx-vision"
-  - name: "🇧🇾_2"
+  - name: "🇧🇾_4"
     type: vless
     server: "95.128.71.79"
     port: 10444
@@ -88,42 +108,6 @@ proxies:
       public-key: "0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo"
       short-id: "8debcf36f1cc69ff"
     flow: "xtls-rprx-vision"
-  - name: "🇧🇾_3"
-    type: vless
-    server: "178.172.227.228"
-    port: 10444
-    uuid: "b6e5dc56-836f-48c1-9163-b0b0b43b647d"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "ads.x5.ru"
-    client-fingerprint: "safari"
-    reality-opts:
-      public-key: "0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo"
-      short-id: "8debcf36f1cc69ff"
-    flow: "xtls-rprx-vision"
-  - name: "🇧🇾_4"
-    type: vless
-    server: "ec7a81g.de19.h1clayd.click"
-    port: 443
-    uuid: "07df3711-07a1-4649-9a61-3f16cb931d02"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "ec7a81g.de19.h1clayd.click"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "shUbIWcBJdXaDzO80KqTU9exgMarUCOiiZ56Dwl7XVU"
-      short-id: "7a8e24da4eb2c1b5"
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "43f41cd7fee0"
-  - name: "🇧🇾_5"
-    type: vless
-    server: "178.172.227.124"
-    port: 10443
-    uuid: "1af36694-b548-4b18-89a0-bc076eab4ed7"
-    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -144,7 +128,6 @@ proxy-groups:
       - "🇧🇾_2"
       - "🇧🇾_3"
       - "🇧🇾_4"
-      - "🇧🇾_5"
 
 
   - name: "Load Balance"
@@ -157,7 +140,6 @@ proxy-groups:
       - "🇧🇾_2"
       - "🇧🇾_3"
       - "🇧🇾_4"
-      - "🇧🇾_5"
 
 rules:
   - MATCH,PROXY
