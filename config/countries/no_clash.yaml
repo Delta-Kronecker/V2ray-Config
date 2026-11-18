@@ -61,19 +61,12 @@ dns:
 
 proxies:
   - name: "🇳🇴_1"
-    type: vless
-    server: "193.243.189.64"
-    port: 443
-    uuid: "8197b9b9-8945-460f-99c9-325ef8a8a7c3"
+    type: ss
+    server: "144.31.217.18"
+    port: 1883
+    cipher: "2022-blake3-aes-256-gcm"
+    password: "dfINKWLXoOgH3Ox72CAmkCvWmDlP+idaTuu/DdDG4FU=:V9v8Fd5AvDk3+nyah0WxCeqzv8Q5+cMXUj7WjVCgQz0="
     udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "no1.gofizz.in"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "631qtx5_iiR8HBYdp3duf2SMqdN0URE1AWVb85I_FFg"
-      short-id: "b12c3119d219dc"
-    flow: "xtls-rprx-vision"
   - name: "🇳🇴_2"
     type: ss
     server: "185.213.23.63"
@@ -87,20 +80,6 @@ proxies:
     port: 990
     cipher: "chacha20-ietf-poly1305"
     password: "ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44="
-    udp: true
-  - name: "🇳🇴_4"
-    type: ss
-    server: "144.31.217.18"
-    port: 1883
-    cipher: "2022-blake3-aes-256-gcm"
-    password: "dfINKWLXoOgH3Ox72CAmkCvWmDlP+idaTuu/DdDG4FU=:V9v8Fd5AvDk3+nyah0WxCeqzv8Q5+cMXUj7WjVCgQz0="
-    udp: true
-  - name: "🇳🇴_5"
-    type: ss
-    server: "144.31.217.18"
-    port: 1883
-    cipher: "2022-blake3-aes-256-gcm"
-    password: "dfINKWLXoOgH3Ox72CAmkCvWmDlP+idaTuu/DdDG4FU=:V9v8Fd5AvDk3+nyah0WxCeqzv8Q5+cMXUj7WjVCgQz0="
     udp: true
 
 proxy-groups:
@@ -121,8 +100,6 @@ proxy-groups:
       - "🇳🇴_1"
       - "🇳🇴_2"
       - "🇳🇴_3"
-      - "🇳🇴_4"
-      - "🇳🇴_5"
 
 
   - name: "Load Balance"
@@ -134,8 +111,6 @@ proxy-groups:
       - "🇳🇴_1"
       - "🇳🇴_2"
       - "🇳🇴_3"
-      - "🇳🇴_4"
-      - "🇳🇴_5"
 
 rules:
   - MATCH,PROXY

@@ -61,41 +61,48 @@ dns:
 
 proxies:
   - name: "🇦🇱_1"
-    type: vless
-    server: "79.182.70.212"
-    port: 443
-    uuid: "4201786b-d99b-4147-a5f0-20d47acddb81"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "7aa271t.es1.h1clayd.click"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "ZSmetD4e9QG5CiXhniHg5HJB68L4kwbgAkJmMHtVwEE"
-      short-id: "42426c882c5fcd41"
-    flow: "xtls-rprx-vision"
-  - name: "🇦🇱_2"
-    type: ss
-    server: "130.49.189.158"
-    port: 43558
-    cipher: "chacha20-ietf-poly1305"
-    password: "LNc9h/4NA9Q6ZHNeYHoT5X/fR9aoE9KQR1SWhVDHBog="
-    udp: true
-  - name: "🇦🇱_3"
-    type: ss
-    server: "130.49.189.158"
-    port: 43558
-    cipher: "chacha20-ietf-poly1305"
-    password: "0SxLXFtomY9ypO4o8rrNWEpNSZEFzsMnfhBETUd3oOw="
-    udp: true
-  - name: "🇦🇱_4"
     type: ss
     server: "130.49.189.158"
     port: 43558
     cipher: "chacha20-ietf-poly1305"
     password: "JYevOrmujurJsNP1ata0kNfjsxwFLAhgD73mrZPJP1I="
     udp: true
+  - name: "🇦🇱_2"
+    type: ss
+    server: "130.49.189.158"
+    port: 43558
+    cipher: "chacha20-ietf-poly1305"
+    password: "JYevOrmujurJsNP1ata0kNfjsxwFLAhgD73mrZPJP1I="
+    udp: true
+  - name: "🇦🇱_3"
+    type: ss
+    server: "130.49.189.158"
+    port: 43558
+    cipher: "chacha20-ietf-poly1305"
+    password: "LNc9h/4NA9Q6ZHNeYHoT5X/fR9aoE9KQR1SWhVDHBog="
+    udp: true
+  - name: "🇦🇱_4"
+    type: ss
+    server: "130.49.189.158"
+    port: 43558
+    cipher: "chacha20-ietf-poly1305"
+    password: "0SxLXFtomY9ypO4o8rrNWEpNSZEFzsMnfhBETUd3oOw="
+    udp: true
   - name: "🇦🇱_5"
+    type: ss
+    server: "130.49.189.158"
+    port: 43558
+    cipher: "chacha20-ietf-poly1305"
+    password: "LNc9h/4NA9Q6ZHNeYHoT5X/fR9aoE9KQR1SWhVDHBog="
+    udp: true
+  - name: "🇦🇱_6"
+    type: ss
+    server: "130.49.189.158"
+    port: 43558
+    cipher: "chacha20-ietf-poly1305"
+    password: "0SxLXFtomY9ypO4o8rrNWEpNSZEFzsMnfhBETUd3oOw="
+    udp: true
+  - name: "🇦🇱_7"
     type: ss
     server: "130.49.189.158"
     port: 43558
@@ -123,6 +130,8 @@ proxy-groups:
       - "🇦🇱_3"
       - "🇦🇱_4"
       - "🇦🇱_5"
+      - "🇦🇱_6"
+      - "🇦🇱_7"
 
 
   - name: "Load Balance"
@@ -136,6 +145,8 @@ proxy-groups:
       - "🇦🇱_3"
       - "🇦🇱_4"
       - "🇦🇱_5"
+      - "🇦🇱_6"
+      - "🇦🇱_7"
 
 rules:
   - MATCH,PROXY

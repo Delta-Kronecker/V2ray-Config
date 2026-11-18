@@ -61,20 +61,6 @@ dns:
 
 proxies:
   - name: "🇹🇭_1"
-    type: vless
-    server: "203.146.170.195"
-    port: 443
-    uuid: "8197b9b9-8945-460f-99c9-325ef8a8a7c3"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "th1.gofizzin.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "4LwH3FEPZZqjen5iuUlRqV4Buatjv8DxL3KUvE1ULWs"
-      short-id: "faaf02e8469f34"
-    flow: "xtls-rprx-vision"
-  - name: "🇹🇭_2"
     type: vmess
     server: "119.46.51.45"
     port: 37515
@@ -99,7 +85,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇹🇭_1"
-      - "🇹🇭_2"
 
 
   - name: "Load Balance"
@@ -109,7 +94,6 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇹🇭_1"
-      - "🇹🇭_2"
 
 rules:
   - MATCH,PROXY

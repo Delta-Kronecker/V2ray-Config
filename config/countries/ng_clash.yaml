@@ -61,50 +61,14 @@ dns:
 
 proxies:
   - name: "🇳🇬_1"
-    type: vless
-    server: "196.196.149.81"
-    port: 443
-    uuid: "4201786b-d99b-4147-a5f0-20d47acddb81"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "7aa271t.es1.h1clayd.click"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "ZSmetD4e9QG5CiXhniHg5HJB68L4kwbgAkJmMHtVwEE"
-      short-id: "42426c882c5fcd41"
-    flow: "xtls-rprx-vision"
-  - name: "🇳🇬_2"
-    type: vless
-    server: "167.88.51.43"
-    port: 443
-    uuid: "8197b9b9-8945-460f-99c9-325ef8a8a7c3"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "ng1.gofizz.in"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "SYKJ-zsxnjo1DG-ChEhfq2Smfo-f7CvKKssj9rzuCRw"
-      short-id: "2d850fa7"
-    flow: "xtls-rprx-vision"
-  - name: "🇳🇬_3"
     type: trojan
-    server: "sclass-00.catcat321.com"
-    port: 20103
-    password: "d7563108-615c-4338-a7bd-77f359869a4a"
-    sni: "hk.catxstar.com"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇳🇬_4"
-    type: trojan
-    server: "sclass-00.catcat321.com"
-    port: 20103
+    server: "sclass-c1.catcat321.com"
+    port: 20051
     password: "d9064589-74af-432a-9390-5d8a9da281bf"
     sni: "hk.catxstar.com"
     skip-cert-verify: true
     udp: true
-  - name: "🇳🇬_5"
+  - name: "🇳🇬_2"
     type: trojan
     server: "sclass-01.catcat321.com"
     port: 20103
@@ -112,36 +76,20 @@ proxies:
     sni: "hk.catxstar.com"
     skip-cert-verify: true
     udp: true
-  - name: "🇳🇬_6"
-    type: trojan
-    server: "sclass-b1.catcat321.com"
-    port: 20051
-    password: "d7563108-615c-4338-a7bd-77f359869a4a"
-    sni: "hk.catxstar.com"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇳🇬_7"
-    type: trojan
-    server: "157.254.38.210"
-    port: 20051
-    password: "d7563108-615c-4338-a7bd-77f359869a4a"
-    sni: "hk.catxstar.com"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇳🇬_8"
-    type: trojan
-    server: "157.254.38.210"
-    port: 20103
-    password: "d7563108-615c-4338-a7bd-77f359869a4a"
-    sni: "hk.catxstar.com"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇳🇬_9"
+  - name: "🇳🇬_3"
     type: trojan
     server: "103.97.91.17"
     port: 443
     password: "600421cf-11d7-429f-a65b-c30397f1bc03"
     sni: "la.freeguard.org"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇳🇬_4"
+    type: trojan
+    server: "157.254.38.210"
+    port: 20103
+    password: "d7563108-615c-4338-a7bd-77f359869a4a"
+    sni: "hk.catxstar.com"
     skip-cert-verify: true
     udp: true
 
@@ -164,11 +112,6 @@ proxy-groups:
       - "🇳🇬_2"
       - "🇳🇬_3"
       - "🇳🇬_4"
-      - "🇳🇬_5"
-      - "🇳🇬_6"
-      - "🇳🇬_7"
-      - "🇳🇬_8"
-      - "🇳🇬_9"
 
 
   - name: "Load Balance"
@@ -181,11 +124,6 @@ proxy-groups:
       - "🇳🇬_2"
       - "🇳🇬_3"
       - "🇳🇬_4"
-      - "🇳🇬_5"
-      - "🇳🇬_6"
-      - "🇳🇬_7"
-      - "🇳🇬_8"
-      - "🇳🇬_9"
 
 rules:
   - MATCH,PROXY

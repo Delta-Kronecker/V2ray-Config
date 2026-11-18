@@ -62,26 +62,17 @@ dns:
 proxies:
   - name: "🇪🇬_1"
     type: vless
-    server: "41.196.0.128"
+    server: "48.103.120.22"
     port: 443
-    uuid: "8197b9b9-8945-460f-99c9-325ef8a8a7c3"
+    uuid: "a30903dc-1bf0-0003-8b1b-603a3a56211c"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "eg1.gofizz.in"
+    servername: "svc-net-ctl.galioncc.com"
     client-fingerprint: "firefox"
     reality-opts:
-      public-key: "tyklNbOfb-FctP-J1OQa1yUHPY9p4co70RyYuRe9nR8"
-      short-id: "f68db13f"
-    flow: "xtls-rprx-vision"
-  - name: "🇪🇬_2"
-    type: trojan
-    server: "38.54.59.90"
-    port: 443
-    password: "af4b064a9c39472fb34ad8b113acdc6b"
-    sni: "38.54.59.90"
-    skip-cert-verify: true
-    udp: true
+      public-key: "drl7nndYdfzZY1aQ0eUAWmNV0nsHig2uDnu9siy9biQ"
+      short-id: "868419504747f6de"
 
 proxy-groups:
   - name: "PROXY"
@@ -99,7 +90,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇪🇬_1"
-      - "🇪🇬_2"
 
 
   - name: "Load Balance"
@@ -109,7 +99,6 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇪🇬_1"
-      - "🇪🇬_2"
 
 rules:
   - MATCH,PROXY
