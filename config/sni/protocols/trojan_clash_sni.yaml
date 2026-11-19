@@ -60,7 +60,46 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "@DeltaKroneckerGithub_1268"
+  - name: "@DeltaKroneckerGithub_1092"
+    type: trojan
+    server: "127.0.0.1"
+    port: 40443
+    password: "auRVImItMy7CqRAY7FC8Wg"
+    sni: "cdn.akamai.steamstatic.com"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/TELEGRAM-@NUFiLTER-TELEGRAM-@NUFiLTER-TELEGRAM-@NUFiLTER-TELEGRAM-@NUFiLTER-TELEGRAM-@NUFiLTER-TELEGRAM-@NUFiLTER-TELEGRAM-@NUFiLTER-TELEGRAM-@NUFiLTER"
+      headers:
+        Host: "copy_az_channel_NUFiLTER_17i.global.ssl.fastly.net."
+  - name: "@DeltaKroneckerGithub_1267"
+    type: trojan
+    server: "127.0.0.1"
+    port: 40443
+    password: "32787f90-c845-11ee-8ca5-1239d0255272"
+    sni: "sg-4.test3.net"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/howdy"
+      headers:
+        Host: "sg-4.test3.net"
+  - name: "@DeltaKroneckerGithub_1311"
+    type: trojan
+    server: "127.0.0.1"
+    port: 40443
+    password: "auRVImItMy7CqRAY7FC8Wg"
+    sni: "cdn.akamai.steamstatic.com"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/TELEGRAM-@NUFiLTER-TELEGRAM-@NUFiLTER-TELEGRAM-@NUFiLTER-TELEGRAM-@NUFiLTER-TELEGRAM-@NUFiLTER-TELEGRAM-@NUFiLTER-TELEGRAM-@NUFiLTER-TELEGRAM-@NUFiLTER"
+      headers:
+        Host: "copy_az_channel_NUFiLTER_10i.global.ssl.fastly.net."
+  - name: "@DeltaKroneckerGithub_1469"
     type: trojan
     server: "127.0.0.1"
     port: 40443
@@ -73,6 +112,19 @@ proxies:
       path: "/azadnet-5o5.pages.dev/?ed=2560"
       headers:
         Host: "azadnet-5o5.pages.dev"
+  - name: "@DeltaKroneckerGithub_1776"
+    type: trojan
+    server: "127.0.0.1"
+    port: 40443
+    password: "XnjwEJbEbqBt8bjlrKZPwg"
+    sni: "cf.lunex-vpn.xyz"
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/Lunex"
+      headers:
+        Host: "cf.lunex-vpn.xyz"
 
 proxy-groups:
   - name: "PROXY"
@@ -89,7 +141,11 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "@DeltaKroneckerGithub_1268"
+      - "@DeltaKroneckerGithub_1092"
+      - "@DeltaKroneckerGithub_1267"
+      - "@DeltaKroneckerGithub_1311"
+      - "@DeltaKroneckerGithub_1469"
+      - "@DeltaKroneckerGithub_1776"
 
 
   - name: "Load Balance"
@@ -98,7 +154,11 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "@DeltaKroneckerGithub_1268"
+      - "@DeltaKroneckerGithub_1092"
+      - "@DeltaKroneckerGithub_1267"
+      - "@DeltaKroneckerGithub_1311"
+      - "@DeltaKroneckerGithub_1469"
+      - "@DeltaKroneckerGithub_1776"
 
 rules:
   - MATCH,PROXY

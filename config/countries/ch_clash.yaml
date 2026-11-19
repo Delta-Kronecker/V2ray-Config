@@ -62,15 +62,53 @@ dns:
 proxies:
   - name: "🇨🇭_1"
     type: vless
-    server: "179.43.187.67"
-    port: 443
-    uuid: "9dd38d60-e683-47c6-bd53-d71bdfee78f3"
+    server: "45.95.232.233"
+    port: 8446
+    uuid: "dac0e736-5c69-4b7c-8b1d-27cbbc3bd948"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "portal.mavexa.ir"
-    client-fingerprint: "chrome"
+    servername: "1c.hlclub.tech"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "XxWn04baea-nyjxLud3mjo15Xz1DNwlDOOken4qHNVA"
+      short-id: "555ac69b22424282"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "grpc-tunnel"
   - name: "🇨🇭_2"
+    type: vless
+    server: "1c.hlclub.tech"
+    port: 27020
+    uuid: "d199d953-be71-4e19-807b-7df54286733f"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "1c.hlclub.tech"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "XxWn04baea-nyjxLud3mjo15Xz1DNwlDOOken4qHNVA"
+      short-id: "555ac69b22424282"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "grpc-tunnel"
+  - name: "🇨🇭_3"
+    type: vless
+    server: "1c.hlclub.tech"
+    port: 8446
+    uuid: "dac0e736-5c69-4b7c-8b1d-27cbbc3bd948"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "1c.hlclub.tech"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "XxWn04baea-nyjxLud3mjo15Xz1DNwlDOOken4qHNVA"
+      short-id: "555ac69b22424282"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "grpc-tunnel"
+  - name: "🇨🇭_4"
     type: vless
     server: "45.90.59.15"
     port: 443
@@ -84,21 +122,33 @@ proxies:
       public-key: "P7S4UPFlQbmiBr4txyy8NZIMTrmO3UdxyH16WBU-YzY"
       short-id: "19253fae84102271"
     flow: "xtls-rprx-vision"
-  - name: "🇨🇭_3"
+  - name: "🇨🇭_5"
     type: vless
-    server: "191.217.240.88"
-    port: 443
-    uuid: "2bba3b63-eb4c-470b-aa58-ae9d4a1430c8"
+    server: "45.95.232.233"
+    port: 27020
+    uuid: "d199d953-be71-4e19-807b-7df54286733f"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "191.217.240.88"
+    servername: "1c.hlclub.tech"
     client-fingerprint: "firefox"
     reality-opts:
-      public-key: "m6US_Wo7oYwRvmXWu2_bMRST1FB_rVcPpW3TqZX5_xY"
-      short-id: ""
-    flow: "xtls-rprx-vision"
-  - name: "🇨🇭_4"
+      public-key: "XxWn04baea-nyjxLud3mjo15Xz1DNwlDOOken4qHNVA"
+      short-id: "555ac69b22424282"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "grpc-tunnel"
+  - name: "🇨🇭_6"
+    type: vless
+    server: "179.43.187.67"
+    port: 443
+    uuid: "9dd38d60-e683-47c6-bd53-d71bdfee78f3"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "portal.mavexa.ir"
+    client-fingerprint: "chrome"
+  - name: "🇨🇭_7"
     type: trojan
     server: "83.228.224.161"
     port: 443
@@ -106,65 +156,51 @@ proxies:
     sni: "83.228.224.161"
     skip-cert-verify: true
     udp: true
-  - name: "🇨🇭_5"
-    type: ss
-    server: "79.127.184.104"
-    port: 19999
-    cipher: "aes-256-gcm"
-    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
-    udp: true
-  - name: "🇨🇭_6"
-    type: ss
-    server: "79.127.184.104"
-    port: 19999
-    cipher: "aes-256-gcm"
-    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
-    udp: true
-  - name: "🇨🇭_7"
-    type: ss
-    server: "23.166.88.127"
-    port: 19999
-    cipher: "aes-256-gcm"
-    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
-    udp: true
   - name: "🇨🇭_8"
     type: ss
-    server: "79.127.184.104"
+    server: "23.166.88.127"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
   - name: "🇨🇭_9"
     type: ss
-    server: "23.166.88.189"
+    server: "79.127.184.104"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
   - name: "🇨🇭_10"
     type: ss
-    server: "23.166.88.189"
+    server: "79.127.184.104"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
   - name: "🇨🇭_11"
     type: ss
-    server: "79.127.184.104"
+    server: "23.166.88.189"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
   - name: "🇨🇭_12"
     type: ss
-    server: "23.166.88.189"
+    server: "23.166.88.127"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
   - name: "🇨🇭_13"
     type: ss
-    server: "23.166.88.127"
+    server: "23.166.88.189"
+    port: 19999
+    cipher: "aes-256-gcm"
+    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
+    udp: true
+  - name: "🇨🇭_14"
+    type: ss
+    server: "79.127.184.104"
     port: 19999
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
@@ -198,6 +234,7 @@ proxy-groups:
       - "🇨🇭_11"
       - "🇨🇭_12"
       - "🇨🇭_13"
+      - "🇨🇭_14"
 
 
   - name: "Load Balance"
@@ -219,6 +256,7 @@ proxy-groups:
       - "🇨🇭_11"
       - "🇨🇭_12"
       - "🇨🇭_13"
+      - "🇨🇭_14"
 
 rules:
   - MATCH,PROXY

@@ -62,17 +62,6 @@ dns:
 proxies:
   - name: "🇧🇪_1"
     type: vless
-    server: "84.32.98.168"
-    port: 443
-    uuid: "fd90e601-a56c-42b8-aab7-aa02d26fcb04"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "app.streamru14.net"
-    client-fingerprint: "firefox"
-    flow: "xtls-rprx-vision"
-  - name: "🇧🇪_2"
-    type: vless
     server: "app.streamru14.net"
     port: 443
     uuid: "fd90e601-a56c-42b8-aab7-aa02d26fcb04"
@@ -82,19 +71,17 @@ proxies:
     servername: "app.streamru14.net"
     client-fingerprint: "chrome"
     flow: "xtls-rprx-vision"
-  - name: "🇧🇪_3"
+  - name: "🇧🇪_2"
     type: vless
-    server: "netherlandddtun.whooisthebest.ir"
-    port: 3134
-    uuid: "49fe1f7b-e6f6-43dc-a67d-caade85128ba"
+    server: "84.32.98.168"
+    port: 443
+    uuid: "fd90e601-a56c-42b8-aab7-aa02d26fcb04"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "aparat.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "BECatGFyR4lUoLv4-w-qOzPPDkAQt_P8yGB4cP3nE0k"
-      short-id: "e9b64ca7d55f2672"
+    servername: "app.streamru14.net"
+    client-fingerprint: "firefox"
+    flow: "xtls-rprx-vision"
 
 proxy-groups:
   - name: "PROXY"
@@ -113,7 +100,6 @@ proxy-groups:
     proxies:
       - "🇧🇪_1"
       - "🇧🇪_2"
-      - "🇧🇪_3"
 
 
   - name: "Load Balance"
@@ -124,7 +110,6 @@ proxy-groups:
     proxies:
       - "🇧🇪_1"
       - "🇧🇪_2"
-      - "🇧🇪_3"
 
 rules:
   - MATCH,PROXY
