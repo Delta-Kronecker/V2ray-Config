@@ -61,6 +61,20 @@ dns:
 
 proxies:
   - name: "🇧🇷_1"
+    type: vless
+    server: "147.45.116.64"
+    port: 8443
+    uuid: "e1b0016b-7f19-47fd-8b36-c471cf91012f"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "77.88.8.8"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "tm1f7W3RTgSx1F6NsoE32TborUxVe1udZQr4LhDAIio"
+      short-id: "6d5496b5539e2ee4"
+    flow: "xtls-rprx-vision"
+  - name: "🇧🇷_2"
     type: trojan
     server: "216.238.104.154"
     port: 443
@@ -68,7 +82,18 @@ proxies:
     sni: "216.238.104.154"
     skip-cert-verify: true
     udp: true
-  - name: "🇧🇷_2"
+  - name: "🇧🇷_3"
+    type: vmess
+    server: "103.14.27.207"
+    port: 1270
+    uuid: "5c040f1d-45db-43bd-8d46-e4950e433735"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "xmfhlpy.com"
+  - name: "🇧🇷_4"
     type: vmess
     server: "103.88.232.55"
     port: 1270
@@ -79,9 +104,9 @@ proxies:
     tls: true
     skip-cert-verify: true
     servername: "xmfhlpy.com"
-  - name: "🇧🇷_3"
+  - name: "🇧🇷_5"
     type: vmess
-    server: "103.14.27.207"
+    server: "leviko-br6130.shopingggg.ir"
     port: 1270
     uuid: "5c040f1d-45db-43bd-8d46-e4950e433735"
     alterId: 0
@@ -109,6 +134,8 @@ proxy-groups:
       - "🇧🇷_1"
       - "🇧🇷_2"
       - "🇧🇷_3"
+      - "🇧🇷_4"
+      - "🇧🇷_5"
 
 
   - name: "Load Balance"
@@ -120,6 +147,8 @@ proxy-groups:
       - "🇧🇷_1"
       - "🇧🇷_2"
       - "🇧🇷_3"
+      - "🇧🇷_4"
+      - "🇧🇷_5"
 
 rules:
   - MATCH,PROXY

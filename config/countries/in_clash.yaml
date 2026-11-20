@@ -101,21 +101,13 @@ proxies:
       short-id: "6bdc8320"
   - name: "🇮🇳_4"
     type: trojan
-    server: "64.227.131.19"
+    server: "143.110.246.228"
     port: 443
-    password: "21c6c7cb-332b-4a0c-9ad7-dff9c3111442"
-    sni: "us02web.zoom.us"
+    password: "3bcd9e33-8377-4b32-af33-217158577ff3"
+    sni: "kdlsupport.zendesk.com"
     skip-cert-verify: true
     udp: true
   - name: "🇮🇳_5"
-    type: trojan
-    server: "65.20.82.177"
-    port: 443
-    password: "Tg3RnK7Xp8B1"
-    sni: "ash.d50f6225-23b4-3a7b-9f15-a0fb2fc16803.kailib.com"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇮🇳_6"
     type: trojan
     server: "185.67.125.147"
     port: 443
@@ -123,7 +115,31 @@ proxies:
     sni: "polished-collie.adder289.quest"
     skip-cert-verify: true
     udp: true
+  - name: "🇮🇳_6"
+    type: trojan
+    server: "64.227.131.19"
+    port: 443
+    password: "21c6c7cb-332b-4a0c-9ad7-dff9c3111442"
+    sni: "us02web.zoom.us"
+    skip-cert-verify: true
+    udp: true
   - name: "🇮🇳_7"
+    type: trojan
+    server: "65.20.82.177"
+    port: 443
+    password: "Tg3RnK7Xp8B1"
+    sni: "ash.d50f6225-23b4-3a7b-9f15-a0fb2fc16803.kailib.com"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇮🇳_8"
+    type: trojan
+    server: "185.67.125.119"
+    port: 443
+    password: "3747000103274291200"
+    sni: "oriented-pug.adder289.quest"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇮🇳_9"
     type: trojan
     server: "185.67.125.147"
     port: 443
@@ -131,7 +147,7 @@ proxies:
     sni: "optimal-owl.goat627.mom"
     skip-cert-verify: true
     udp: true
-  - name: "🇮🇳_8"
+  - name: "🇮🇳_10"
     type: ss
     server: "103.181.177.88"
     port: 443
@@ -143,7 +159,7 @@ proxies:
       mode: "websocket"
       path: "14b02e2a-8930-4afb-8412-ea4a4954ca5b/?ed\\=2560"
       host: "ylnhh.us.ci"
-  - name: "🇮🇳_9"
+  - name: "🇮🇳_11"
     type: ss
     server: "103.181.177.88"
     port: 443
@@ -180,6 +196,8 @@ proxy-groups:
       - "🇮🇳_7"
       - "🇮🇳_8"
       - "🇮🇳_9"
+      - "🇮🇳_10"
+      - "🇮🇳_11"
 
 
   - name: "Load Balance"
@@ -197,6 +215,8 @@ proxy-groups:
       - "🇮🇳_7"
       - "🇮🇳_8"
       - "🇮🇳_9"
+      - "🇮🇳_10"
+      - "🇮🇳_11"
 
 rules:
   - MATCH,PROXY

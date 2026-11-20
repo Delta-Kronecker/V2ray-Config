@@ -60,20 +60,22 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇧🇭_1"
-    type: vless
-    server: "bh1.vpnjantit.com"
+  - name: "🇨🇱_1"
+    type: trojan
+    server: "leviko-cl7123.shopingggg.ir"
     port: 443
-    uuid: "b36a16e4-ded8-11f1-bdea-5254b0a2c347"
-    udp: true
-    tls: true
+    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
+    sni: "advanceyouremploymentskillsandcareerdevelopmenthub.com"
     skip-cert-verify: true
-    servername: "cloudflare.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "lDEkUokSL-mrM1jsH8UKs8-3cfJMvkxhY7k37iBkFi4"
-      short-id: "32b72239bc69220e"
-    flow: "xtls-rprx-vision"
+    udp: true
+  - name: "🇨🇱_2"
+    type: trojan
+    server: "64.176.7.205"
+    port: 443
+    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
+    sni: "advanceyouremploymentskillsandcareerdevelopmenthub.com"
+    skip-cert-verify: true
+    udp: true
 
 proxy-groups:
   - name: "PROXY"
@@ -90,7 +92,8 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇧🇭_1"
+      - "🇨🇱_1"
+      - "🇨🇱_2"
 
 
   - name: "Load Balance"
@@ -99,7 +102,8 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇧🇭_1"
+      - "🇨🇱_1"
+      - "🇨🇱_2"
 
 rules:
   - MATCH,PROXY

@@ -61,27 +61,13 @@ dns:
 
 proxies:
   - name: "🇧🇪_1"
-    type: vless
-    server: "app.streamru14.net"
-    port: 443
-    uuid: "fd90e601-a56c-42b8-aab7-aa02d26fcb04"
+    type: vmess
+    server: "zfd-hkv1.kunlun01dns.com"
+    port: 16115
+    uuid: "0802ac03-7973-39ef-a019-ba02de6c01e1"
+    alterId: 0
+    cipher: "auto"
     udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "app.streamru14.net"
-    client-fingerprint: "chrome"
-    flow: "xtls-rprx-vision"
-  - name: "🇧🇪_2"
-    type: vless
-    server: "84.32.98.168"
-    port: 443
-    uuid: "fd90e601-a56c-42b8-aab7-aa02d26fcb04"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "app.streamru14.net"
-    client-fingerprint: "firefox"
-    flow: "xtls-rprx-vision"
 
 proxy-groups:
   - name: "PROXY"
@@ -99,7 +85,6 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇧🇪_1"
-      - "🇧🇪_2"
 
 
   - name: "Load Balance"
@@ -109,7 +94,6 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇧🇪_1"
-      - "🇧🇪_2"
 
 rules:
   - MATCH,PROXY
