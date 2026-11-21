@@ -62,19 +62,6 @@ dns:
 proxies:
   - name: "🇱🇻_1"
     type: vless
-    server: "138.124.180.137"
-    port: 443
-    uuid: "5234b2b7-5e07-422c-8159-d62a676c00c6"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.apple.com"
-    reality-opts:
-      public-key: "GBdkyDLfr0LIZo_94Xv8ycAKOmkjArYzwJAEMhuXX2c"
-      short-id: "33acba1b"
-    flow: "xtls-rprx-vision"
-  - name: "🇱🇻_2"
-    type: vless
     server: "195.123.213.28"
     port: 443
     uuid: "02fcc1a4-ee90-4970-8bbb-4ffaa8109d24"
@@ -87,17 +74,48 @@ proxies:
       public-key: "NMgy1XgCSXExOg6Tg8xG9lCWttMF6sjdpB41lZy6FWo"
       short-id: "5c256336e3b673fa"
     flow: "xtls-rprx-vision"
-  - name: "🇱🇻_3"
+  - name: "🇱🇻_2"
     type: vless
-    server: "176.108.244.162"
+    server: "185.220.223.78"
     port: 443
-    uuid: "ffb93067-302d-0001-82c5-d89037205de7"
+    uuid: "70f1696c-8b82-4614-9c1e-8ec21201684d"
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: "ohyjf-ru-65sb.my-fade.cloud"
-    client-fingerprint: "firefox"
+    servername: "lv.meltun.org"
+    client-fingerprint: "safari"
+    reality-opts:
+      public-key: "wEJIqlLqor9Z_LMHvcsXh5FSoKMz3NbbcORwPDBgbhw"
+      short-id: "5a8e1a04f3d92b67"
+    flow: "xtls-rprx-vision"
+  - name: "🇱🇻_3"
+    type: vless
+    server: "195.123.209.159"
+    port: 8443
+    uuid: "9a597d68-6688-4046-bf24-a5a541e115e0"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.apple.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "6FI4VM9WlQEGVjyCvLDQLz1jOkrzzhtfGl9eQTBn6HU"
+      short-id: "f8d0271b4b5f9efc"
+    flow: "xtls-rprx-vision"
   - name: "🇱🇻_4"
+    type: vless
+    server: "45.38.143.210"
+    port: 30584
+    uuid: "cebc5f19-18d9-48e6-9029-fb4b04caf393"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "m.vk.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "2hV4TY2ygvQ7ISa5o4u_FUKXzlIhLgbsScE8M1h0m3Y"
+      short-id: "67ece882d65d0f1a"
+  - name: "🇱🇻_5"
     type: trojan
     server: "31.57.61.76"
     port: 2053
@@ -105,7 +123,7 @@ proxies:
     sni: "Koma-YT.PAGeS.Dev"
     skip-cert-verify: true
     udp: true
-  - name: "🇱🇻_5"
+  - name: "🇱🇻_6"
     type: trojan
     server: "31.57.92.205"
     port: 2053
@@ -113,7 +131,7 @@ proxies:
     sni: "Koma-YT.PAGeS.Dev"
     skip-cert-verify: true
     udp: true
-  - name: "🇱🇻_6"
+  - name: "🇱🇻_7"
     type: trojan
     server: "31.57.62.145"
     port: 2053
@@ -143,6 +161,7 @@ proxy-groups:
       - "🇱🇻_4"
       - "🇱🇻_5"
       - "🇱🇻_6"
+      - "🇱🇻_7"
 
 
   - name: "Load Balance"
@@ -157,6 +176,7 @@ proxy-groups:
       - "🇱🇻_4"
       - "🇱🇻_5"
       - "🇱🇻_6"
+      - "🇱🇻_7"
 
 rules:
   - MATCH,PROXY

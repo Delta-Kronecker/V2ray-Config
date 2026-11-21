@@ -87,19 +87,33 @@ proxies:
       public-key: "L9IllZt5vcjYVY_6rmCJ_9ypmJsBK8dSWkNVCStrZjk"
       short-id: "d8b58872"
   - name: "🇺🇦_3"
-    type: trojan
-    server: "173.242.51.189"
-    port: 443
-    password: "humanity"
-    sni: "www.cordweave.com"
-    skip-cert-verify: true
+    type: vless
+    server: "194.54.80.37"
+    port: 8443
+    uuid: "9a597d68-6688-4046-bf24-a5a541e115e0"
     udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.apple.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "6FI4VM9WlQEGVjyCvLDQLz1jOkrzzhtfGl9eQTBn6HU"
+      short-id: "f8d0271b4b5f9efc"
+    flow: "xtls-rprx-vision"
   - name: "🇺🇦_4"
     type: trojan
     server: "130.0.236.88"
     port: 443
     password: "d2adff89-5143-4d67-921f-3478464de5bb"
     sni: "ua.freeguard.org"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇺🇦_5"
+    type: trojan
+    server: "173.242.51.189"
+    port: 443
+    password: "humanity"
+    sni: "www.cordweave.com"
     skip-cert-verify: true
     udp: true
 
@@ -122,6 +136,7 @@ proxy-groups:
       - "🇺🇦_2"
       - "🇺🇦_3"
       - "🇺🇦_4"
+      - "🇺🇦_5"
 
 
   - name: "Load Balance"
@@ -134,6 +149,7 @@ proxy-groups:
       - "🇺🇦_2"
       - "🇺🇦_3"
       - "🇺🇦_4"
+      - "🇺🇦_5"
 
 rules:
   - MATCH,PROXY

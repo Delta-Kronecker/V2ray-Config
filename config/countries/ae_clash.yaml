@@ -61,6 +61,20 @@ dns:
 
 proxies:
   - name: "🇦🇪_1"
+    type: vless
+    server: "135.136.183.53"
+    port: 443
+    uuid: "0259e5aa-c188-4334-b204-32cd5ea859f6"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "dubai-cdn-keno.keno.su"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "56r4YuaW-BUEapWGlOvv-QX75OgLNP8KuE_Z1bBxO1g"
+      short-id: "47912f9d36a0a52b"
+    flow: "xtls-rprx-vision"
+  - name: "🇦🇪_2"
     type: trojan
     server: "154.90.55.81"
     port: 443
@@ -68,17 +82,17 @@ proxies:
     sni: "154.90.55.81"
     skip-cert-verify: true
     udp: true
-  - name: "🇦🇪_2"
+  - name: "🇦🇪_3"
     type: trojan
-    server: "157.254.38.210"
+    server: "Sclass-00.catcat321.com"
     port: 20123
     password: "d9064589-74af-432a-9390-5d8a9da281bf"
     sni: "hk.catxstar.com"
     skip-cert-verify: true
     udp: true
-  - name: "🇦🇪_3"
+  - name: "🇦🇪_4"
     type: trojan
-    server: "217.217.222.230"
+    server: "157.254.38.210"
     port: 20123
     password: "d9064589-74af-432a-9390-5d8a9da281bf"
     sni: "hk.catxstar.com"
@@ -103,6 +117,7 @@ proxy-groups:
       - "🇦🇪_1"
       - "🇦🇪_2"
       - "🇦🇪_3"
+      - "🇦🇪_4"
 
 
   - name: "Load Balance"
@@ -114,6 +129,7 @@ proxy-groups:
       - "🇦🇪_1"
       - "🇦🇪_2"
       - "🇦🇪_3"
+      - "🇦🇪_4"
 
 rules:
   - MATCH,PROXY

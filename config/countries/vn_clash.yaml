@@ -62,38 +62,6 @@ dns:
 proxies:
   - name: "🇻🇳_1"
     type: vless
-    server: "Kir3.crackerbinam.org"
-    port: 56026
-    uuid: "a1f0cbb8-c74a-4c27-b881-7b14d96aece1"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.cloudflare.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "gjOKbmRb5cGDPbdz3x8xkBFL43pn3xqL-I6sALHO7ls"
-      short-id: "99676967e6867063"
-  - name: "🇻🇳_2"
-    type: vless
-    server: "150.95.109.109"
-    port: 2086
-    uuid: "b83faafc-cbb7-4655-99d4-2c4c39a49d1b"
-    udp: true
-  - name: "🇻🇳_3"
-    type: vless
-    server: "leviko-vn7739.shopingggg.ir"
-    port: 56026
-    uuid: "a1f0cbb8-c74a-4c27-b881-7b14d96aece1"
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: "www.cloudflare.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "gjOKbmRb5cGDPbdz3x8xkBFL43pn3xqL-I6sALHO7ls"
-      short-id: "99676967e6867063"
-  - name: "🇻🇳_4"
-    type: vless
     server: "103.163.24.22"
     port: 56026
     uuid: "a1f0cbb8-c74a-4c27-b881-7b14d96aece1"
@@ -105,7 +73,20 @@ proxies:
     reality-opts:
       public-key: "gjOKbmRb5cGDPbdz3x8xkBFL43pn3xqL-I6sALHO7ls"
       short-id: "99676967e6867063"
-  - name: "🇻🇳_5"
+  - name: "🇻🇳_2"
+    type: vless
+    server: "Kir3.crackerbinam.org"
+    port: 56026
+    uuid: "a1f0cbb8-c74a-4c27-b881-7b14d96aece1"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.cloudflare.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "gjOKbmRb5cGDPbdz3x8xkBFL43pn3xqL-I6sALHO7ls"
+      short-id: "99676967e6867063"
+  - name: "🇻🇳_3"
     type: vless
     server: "kir3.crackerbinam.org"
     port: 56026
@@ -118,12 +99,26 @@ proxies:
     reality-opts:
       public-key: "gjOKbmRb5cGDPbdz3x8xkBFL43pn3xqL-I6sALHO7ls"
       short-id: "99676967e6867063"
-  - name: "🇻🇳_6"
+  - name: "🇻🇳_4"
+    type: vless
+    server: "150.95.109.109"
+    port: 2086
+    uuid: "b83faafc-cbb7-4655-99d4-2c4c39a49d1b"
+    udp: true
+  - name: "🇻🇳_5"
     type: trojan
     server: "36.50.134.29"
     port: 443
     password: "94d219c9-1afc-4d42-b090-8b3794764380"
     sni: "36.50.134.29"
+    skip-cert-verify: true
+    udp: true
+  - name: "🇻🇳_6"
+    type: trojan
+    server: "103.72.96.55"
+    port: 443
+    password: "c95357eb-2869-4511-8940-f0dc5e1ec9b1"
+    sni: "hanoiidc2.5gsieutocdo.com"
     skip-cert-verify: true
     udp: true
   - name: "🇻🇳_7"
@@ -135,14 +130,6 @@ proxies:
     skip-cert-verify: true
     udp: true
   - name: "🇻🇳_8"
-    type: trojan
-    server: "103.72.96.55"
-    port: 443
-    password: "c95357eb-2869-4511-8940-f0dc5e1ec9b1"
-    sni: "hanoiidc2.5gsieutocdo.com"
-    skip-cert-verify: true
-    udp: true
-  - name: "🇻🇳_9"
     type: trojan
     server: "103.9.77.6"
     port: 443
@@ -174,7 +161,6 @@ proxy-groups:
       - "🇻🇳_6"
       - "🇻🇳_7"
       - "🇻🇳_8"
-      - "🇻🇳_9"
 
 
   - name: "Load Balance"
@@ -191,7 +177,6 @@ proxy-groups:
       - "🇻🇳_6"
       - "🇻🇳_7"
       - "🇻🇳_8"
-      - "🇻🇳_9"
 
 rules:
   - MATCH,PROXY

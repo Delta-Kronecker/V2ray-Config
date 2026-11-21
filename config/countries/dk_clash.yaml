@@ -60,13 +60,20 @@ dns:
     - 208.67.220.220
 
 proxies:
-  - name: "🇵🇭_1"
-    type: ss
-    server: "149.104.109.252"
-    port: 8882
-    cipher: "aes-256-gcm"
-    password: "kDWvXYZoTBcGkC4"
+  - name: "🇩🇰_1"
+    type: vless
+    server: "135.136.33.134"
+    port: 8443
+    uuid: "9a597d68-6688-4046-bf24-a5a541e115e0"
     udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.apple.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "6FI4VM9WlQEGVjyCvLDQLz1jOkrzzhtfGl9eQTBn6HU"
+      short-id: "f8d0271b4b5f9efc"
+    flow: "xtls-rprx-vision"
 
 proxy-groups:
   - name: "PROXY"
@@ -83,7 +90,7 @@ proxy-groups:
     tolerance: 30
     lazy: true
     proxies:
-      - "🇵🇭_1"
+      - "🇩🇰_1"
 
 
   - name: "Load Balance"
@@ -92,7 +99,7 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "🇵🇭_1"
+      - "🇩🇰_1"
 
 rules:
   - MATCH,PROXY

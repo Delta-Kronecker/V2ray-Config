@@ -61,12 +61,32 @@ dns:
 
 proxies:
   - name: "🇮🇪_1"
+    type: vless
+    server: "irlanm.g44mozgh.ir"
+    port: 2016
+    uuid: "60ec0bb0-6ec1-4062-9246-66a6f8270c7e"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "play.google.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "7LJhG7I1nBVvFg0J1mbULGy2MoPjRSn4vRmI7TQUlBU"
+      short-id: "4d7130d17bb1e3bf"
+  - name: "🇮🇪_2"
     type: trojan
     server: "54.74.210.220"
     port: 443
     password: "AE62539071"
     sni: "funny-hen.rooster465.autos"
     skip-cert-verify: true
+    udp: true
+  - name: "🇮🇪_3"
+    type: ss
+    server: "20.223.233.64"
+    port: 443
+    cipher: "chacha20-ietf-poly1305"
+    password: "wb1pAoZ9Q354JdSs"
     udp: true
 
 proxy-groups:
@@ -85,6 +105,8 @@ proxy-groups:
     lazy: true
     proxies:
       - "🇮🇪_1"
+      - "🇮🇪_2"
+      - "🇮🇪_3"
 
 
   - name: "Load Balance"
@@ -94,6 +116,8 @@ proxy-groups:
     interval: 300
     proxies:
       - "🇮🇪_1"
+      - "🇮🇪_2"
+      - "🇮🇪_3"
 
 rules:
   - MATCH,PROXY

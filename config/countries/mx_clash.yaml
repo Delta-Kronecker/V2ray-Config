@@ -61,20 +61,26 @@ dns:
 
 proxies:
   - name: "🇲🇽_1"
+    type: vless
+    server: "40.233.21.121"
+    port: 63751
+    uuid: "93fc31e6-e1b4-4961-b028-7de968a434d1"
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: "www.cloudflare.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "U7t4RFE9MSMtC-o1DoJ8pYzKMfgVpTg6ZhTTknBrVkU"
+      short-id: "1f2519bb96e5589c"
+    flow: "xtls-rprx-vision"
+  - name: "🇲🇽_2"
     type: trojan
     server: "154.205.152.109"
     port: 443
     password: "af4b064a9c39472fb34ad8b113acdc6b"
     sni: "154.205.152.109"
     skip-cert-verify: true
-    udp: true
-  - name: "🇲🇽_2"
-    type: vmess
-    server: "38.60.224.173"
-    port: 32153
-    uuid: "5cf1f470-3f70-4589-a2a4-4657ea3a1edf"
-    alterId: 0
-    cipher: "auto"
     udp: true
 
 proxy-groups:
